@@ -1,0 +1,243 @@
+// ****** **************************************** задние стенки ********************************************************************************************************************************
+#IF $(tipshkaf:6)=2
+// размер крайней задней стенки должен быть равен размеру ниши плюс 9 плюс (mat:1/2-1)
+// размер средней задней стенки должен быть равен размеру ниши плюс ($(mat:1)/2-2)
+#LET iz=$(iz)+1
+#LET flagAltNap=0
+// ************************ ширина задних стенок **********************************************
+#IF $(spostal)=$(matvn:1) & $l=$(lkorp)-$(matvn:1)*2 // задняя стенка во всю ширину шкафа
+#LET spostl_backwall=-$(matvn:1)+7
+#LET larg_backwall=$(lkorp)-14
+#ELSEIF $(spostal)=$(matvn:1) // задняя стенка с левого края шкафа не во всю ширину
+#LET spostl_backwall=-$(matvn:1)+7
+#LET larg_backwall=$l+($(mat:1)/2-1)+($(matvn:1)-7)
+#ELSEIF $(spostal)=$(lkorp)-($l+$(matvn:1)) // задняя стенка с правого края шкафа не во всю ширину
+#LET spostl_backwall=-($(mat:1)/2-1)
+#LET larg_backwall=$l+($(matvn:1)-7)+($(mat:1)/2-1)
+#ELSE // ширина остальных задних стенок
+#LET spostl_backwall=1-$(mat:1)/2
+#LET larg_backwall=$l+($(mat:1)-2)
+#ENDIF
+// *****************************************************************************************************
+// ************************ высота задних стенок **********************************************
+#IF $(spostaa)=$(hzoc:0)+$(matvn:1) & $a=$(akorp)-$(hzoc:0)-$(matvn:1)*2 // задняя стенка во всю высоту шкафа
+#LET sposta_backwall=-$(matvn:1)+7
+#LET alte_backwall=$a+($(matvn:1)-7)*2
+#ELSEIF $(spostaa)=$(hzoc:0)+$(matvn:1) // задняя стенка с нижнего края шкафа не во всю высоту
+#LET sposta_backwall=-$(matvn:1)+7
+#LET alte_backwall=$a+($(matvn:1)-7)+($(mat:1)/2-1)
+#LET flagAltNap=1 //показывает что нужно рисовать царгу в нише которая не во всю высоту шкафа
+#ELSEIF $(spostaa)=$(akorp)-($a+$(matvn:1)) // задняя стенка с вверхнего края шкафа не во всю высоту
+#LET sposta_backwall=-($(mat:1)/2-1)
+#LET alte_backwall=$a+($(matvn:1)-7)+($(mat:1)/2-1)
+#ELSE // высота остальных задних стенок
+#LET sposta_backwall=1-$(mat:1)/2
+#LET alte_backwall=$a+($(mat:1)-2)
+#ENDIF
+// *****************************************************************************************************
+///задняя стенка
+/////проверка условия для обьединения задних стенок
+#LET xx1=$(spostaL)
+#LET xx2=$(spostaL)+$l
+#LET testindex=0
+#LET wallxstart=$(matvn:1)
+#LET wallxfinish=$(lkorp)-$(matvn:1)
+#LET wallx1=$(wallxstart)
+#LET flagNoHDF=0
+#FOR $(testBigWall)//$0:$(countBigWallFinish)
+#IF $(testindex)!$(countBigWallFinish)
+#LETS wallx2= $i//{$(testBigWall:$(testindex))}
+//#MSG $(wallx1) xx $(wallx2)
+//#MSG $(testindex) x $(wallx1) xx $(wallx2) x111
+#IF $(wallx2)-$(wallx1)<1200
+#IF $(spostaL)>=$(wallx1)-5 & $(spostaL)+$l-5<=$(wallx2)
+#LET flagNoHDF=1
+#ENDIF
+#ENDIF
+#LET wallx1=$(wallx2)
+#ELSE
+#ENDIF
+#LET testindex={$(testindex)+1}
+#ENDFOR
+#LETS wallx2=$(wallxfinish)
+//#MSG $(testindex) x $(wallx1) xx $(wallx2) x 222 {$(wallx2)-$(wallx1)}
+#IF $(wallx2)-$(wallx1)<1200 & $(countBigWallFinish)>0
+#IF $(spostaL)>=$(wallx1)-5 & $(spostaL)+$l-5<=$(wallx2)
+#LET flagNoHDF=1
+#ENDIF
+#ENDIF
+#IF $(lkorp)<=1200
+#LET flagNoHdf=1
+#ENDIF
+#IF $[datecompare;$(dataordine);25.10.2021]<0
+#LET flagNohdf=0
+#ENDIF
+//   FINALESCRIPT
+////////
+#IF  $(_backWallDis:1)!1 &  $(flagNoHDF)=0
+NUMDET	sa=$a-75	sl=75	sp=15-$(p)
+#LETV _wr=999KARKASZST
+#LETV _MNP=999KARKASZST
+////
+#IF $(larg_backwall)>$[ex;$(mat_backwall:6);m;2]
+018	COD= /ERROR=1	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Превышен MAX размер ширины пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+#ELSEIF $(alte_backwall)>$[ex;$(mat_backwall:6);m;1] & $[datecompare;$(dataordine);10.04.2019]>=0
+018	COD= /ERROR=1	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+#ELSE
+///для определенных цветов будет меняться материал на LDSPN8 mm по письму от бурлакова
+#IF $(_colkarkasback:1)[140;141;142;143;203;224]
+#LETS mat_backwall:4=DSPLN8|CVET_VST
+#ENDIF
+018	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)  //Задняя стенка
+// **************************************** расчёт транспортировочной подложки для задних стенок ********************************************
+#LETS mis_zst=$(larg_backwall)X$(alte_backwall)|$(mis_zst)
+// ******************************************************************************************************************************************
+#ENDIF
+#LET count_krep_back=8
+#IF $(larg_backwall)>1000 #LET count_krep_back=8+(int($(larg_backwall)/1000))*2
+#IF $(alte_backwall)>1000 #LET count_krep_back=8+(int($(alte_backwall)/1000))*2
+#IF $[datecompare;$(dataordine);02.09.2019]<0
+#FOR $1:$(count_krep_back)
+001	LATO=6	COD=999sh_4.2x25	L=1	A=1	P=1  // Test
+#ENDFOR
+#ENDIF
+#LETS count_krep_back_new=$(count_krep_back)+$(count_krep_back_new)
+#ENDIF
+#ENDIF
+// **********************************************************************************************************************************************************************************************
+// ************************************************** царги в нишах *****************************************************************************************************************************
+#IF ($(spostaa)=$(hzoc:0)+$(matvn:0) & $(tipshkaf:6)=2) & $l>=150 // | ($(spostaa)<=65 & $(tipshkaf:1)[1])
+#LET spostaZarg=0	 largZarg=$l
+#IF 0 // $(tipshkaf:1)[1]  // для встроенного шкафа
+#IF ($(pBokL:1)=1 | $(BokL:1)=9) & $(spostal)=$(mat:1)
+#LET spostaZarg=-$(mat:1)-$(pripuskPolSx:0)	 largZarg=$l-$(spostaZarg)
+#ELSEIF $(nerovnL:0)=1 & $(pBokL:1)=2 & $(spostal)=$(mat:1)
+#LET spostaZarg=$(LVID:0)-$(spostal)	 largZarg=$l-$(spostaZarg)
+#ENDIF
+#IF ($(pBokR:1)=1 | $(BokR:1)=9) & $(spostal)={$(lkorp)-$l-$(mat:1)}
+#LET largZarg=$l+$(pripuskPolDx:0)+$(mat:1)
+#ELSEIF $(nerovnR:0)=1 & $(pBokR:1)=2 & $(spostal)={$(lkorp)-$l-$(mat:1)}
+#LET largZarg=$l+$(mat:1)-$(RVID:0)
+#ENDIF
+#ENDIF
+#LETV _wr=999KARKASZSTC
+#LETV _MNP=999KARKASZSTC
+#LET _spostaa=$(spostaa)
+#LET _spostal=$(spostal)
+//#LETS sk=378917905	wk=$(_colkarkas:10)	nk=378917905	ek=$(_colkarkas:10)
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET FlagZarg=1
+/////проверка. есть ли модуль в нише с царгой
+#IF $(flagAltNap)=1 & $(_zargDis:0)=1
+#LET FlagZarg=0
+#ENDIF
+#FOR $(modulPars)
+#LETS modType=$[ex;$i;|;4]
+#IF $(modType)==M
+#LET modulSl=$[ex;$i;|;3]
+#LET modulSA=$[ex;$i;|;1]
+#IF $(modulSl)=$(spostaL) & $(modulSa)<{50+200}
+#LET flagZarg=0
+#ENDIF
+#ENDIF
+#ENDFOR
+/////////////////////////////////////////
+#LET spZarg=10
+#IF $(_backWallDis:1)=1
+#LET spZarg=0
+#ENDIF
+#IF $(flagZarg)=1
+NUMDET	sa=130	sl=$l/2	sp=-$(p)+($(mat:1)-9)
+026	SL=$(spostaZarg)	SP=$(spZarg)	L=$(largZarg)	sa=50  //Каркасная задняя стенка (царга)
+_agg_krep	p=200
+#ENDIF
+#ENDIF
+// **********************************************************************************************************************************************************************************************
+// ************************************************** размеры ниш на графике ********************************************************************************************************************
+#LET spostsLRaz=0	RazmerLarg=$l
+#LET spostsARaz=$a	RazmerAlt=$a
+// **************************************** расчёт до 21.08.2019 г. **************************************
+#IF 0
+#IF $(spostal)<=$(mat:1) & $(tipshkaf:6)[1] // крайнее левое положение
+#IF $(pBokL:1)=1 | $(bokL:1)=9
+#LET spostsLRaz=-$(mat:1)
+#LET RazmerLarg=$l-$(spostsLRaz)
+#ELSEIF $(nerovnL:0)=0 & $(pBokL:1)=2
+#LET spostsLRaz=$(mat_kor:1)-$(mat:1)
+#LET RazmerLarg=$l-$(spostsLRaz)
+#ELSEIF $(nerovnL:0)=1 & $(pBokL:1)=2
+#LET spostsLRaz=$(lvid:0)-$(mat:1)
+#LET RazmerLarg=$l-$(spostsLRaz)
+#ENDIF
+#ENDIF
+#IF $(spostal)={$(lkorp)-$l-$(mat:1)} & $(tipshkaf:6)[1] // крайнее правое положение
+#IF $(pBokR:1)=1 | $(bokR:1)=9
+// *********************** 04.03.2019 ***************************
+//#LET RazmerLarg=$l+$(mat:1)
+#LET RazmerLarg=$(RazmerLarg)+$(mat:1)
+// **************************************************************
+#ELSEIF $(nerovnR:0)=0 & $(pBokR:1)=2
+#LET RazmerLarg=$l-($(mat_kor:1)-$(mat:1))
+#ELSEIF $(nerovnR:0)=1 & $(pBokR:1)=2
+#LET RazmerLarg=$l-$(Rvid:0)+$(mat:1)
+#ENDIF
+#ENDIF
+#ENDIF
+// ****************************************************************************************************************
+#LET otsLrasm=0	otsRrasm=0
+#IF $l=$(LKORP)-$(mat_kor:1)*2
+#IF $(TIPSHKAF:6)=1
+#IF $(PBOKL:1)=2
+#LET otsLrasm=$(otsL)
+#ELSE
+#LET otsLrasm=0
+#ENDIF
+#IF $(PbokR:1)=2
+#LET otsRrasm=$(otsR)
+#ELSE
+#LET otsRrasm=0
+#ENDIF
+#ENDIF
+#LET RazmerLarg=$L+$(mat_kor:1)*2-($(otsLrasm)+$(otsRrasm))
+#ENDIF
+//VOLUME
+//#MSG $(RazmerLarg)
+//#MSG $(matvn:1)
+#IF $(in_size:0)=1 // размеры ниш
+023	COD= / /$(RazmerLarg)	SL=$(spostsLRaz)	SA=60	SP=0	L=$(RazmerLarg)	A=10	P=0  // ширина нишы
+023	COD= / /$(RazmerAlt)	SL=70	SA=$(spostsARaz)	SP=0	L=$a	A=10	P=0	az=90  //Высота нишы
+#ENDIF
+// ************************************************************************************************************************************************************************************************
+// ******************************************************* запрет на установку вертикальных перегородок при расстоянии менее 150 мм *****************************************************************************************
+#IF $(RazmerLarg)<150
+#LET spostaVertErr=$(RazmerLarg)+$(spostsLRaz)
+#IF $(spostal)+$(spostaVertErr)+$(mat:1)=$(LKORP) #LET spostaVertErr=-$(mat:1)
+#IF $(tipshkaf:6)[1] & $(spostal)+$(spostaVertErr)=$(LKORP) #LET spostaVertErr=-$(mat:1)
+014	COD= /ERROR=1	SL=$(spostaVertErr)-1	SP=$(spostsGor)	L=$(mat:1)+2	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Минимальное расстояние между вертикалями 150 мм	SL=$(spostaVertErr)+40	SA=0	L=800	az=-90  //сообщение об ошибке
+#ENDIF
+// ************************************************************************************************************************************************************************************************
+//проверка если ниша соприкасается с крышкой
+//FINALESCRIPT
+#IF $(TIPSHKAF:7)=2  & $(tipRaspshkaf:1)=1
+#IF $(spostaA)+$a+$(mat:1)=$(akorp)
+#IF $L>900 & $(mat:1)=16
+015	COD= /ERROR=1	SP=0	A=$a	P=$p	C1=5  //Полка на стяжках ДСП
+025	COD= / /Ширина крышки и дна шкафа шире 900мм рекомендуем вам установить \nвертикальную перегородку или увеличить толщину каркаса \nиначе детали могут изгибаться под весом предметов!	SL=0	SP=$p+10	L=$l	sa=$a-20  //сообщение об ошибке
+#ENDIF
+#ENDIF
+#ENDIF
+/////test
+#IF $(l)>$(mat:7) & $(spostaA)>0 & 1=2 //азмер полки больше пиломатериала
+#LETV _wr=999V_KARKASPERVERT
+#LETV _MNP=999V_KARKASPERVERT
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+014	SA=$(spostaAvert)	SP=$(spostaVert)	P=$(pvert)	x3=$(spostaAvert)	sl=$l/2-$(mat:1)/2  //Перегородка
+#ENDIF
+//////////////////////////////////////////////////////////////////////////плейсеры ///////////////////////////////////////////////////////
+//_new_place
+_old_place

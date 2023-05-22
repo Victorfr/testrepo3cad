@@ -1,0 +1,66 @@
+// размер крайней задней стенки должен быть равен размеру ниши плюс 9 плюс (mat:1/2-1)
+// размер средней задней стенки должен быть равен размеру ниши плюс ($(mat:1)/2-2)
+#LET iz=$(iz)+1
+#LET flagAltNap=0
+#LET minimumSize=150
+#LET polkW=6
+#LET vetroKrepL=8//зазор на полкодержатели для стекла
+#IF $L<=900+$(vetroKrepL)
+#LETV visible$(_ctx)=1
+#ELSE
+#LETV visible$(_ctx)=0
+#ENDIF
+// ********************рассчет количества полок для ниши****************************************************
+#LET countPolk={rnd($a/($(minimumSize)+6))-1}
+#IF $(countPolk)<=0
+#LET countpolk=0
+#ENDIF
+#LETV maxcount$(_ctx)=$(countpolk)
+#IF $(polkcount$(_ctx))>$(maxcount$(_ctx)) #LETV polkcount$(_ctx)=$(maxcount$(_ctx))
+#IF $(maxcount$(_ctx))>0
+#LET stepSa=int( ( $a-$(maxcount$(_ctx))*$(polkW) )/($(maxcount$(_ctx))+1))
+#IF $(stepsa)<$(minimumSize)
+#LETV maxcount$(_ctx)={$(maxcount$(_ctx))-1}
+#LET stepSa=int( ( $a-$(maxcount$(_ctx))*$(polkW) )/($(maxcount$(_ctx))+1))
+#IF $(polkcount$(_ctx))>$(maxcount$(_ctx)) #LETV polkcount$(_ctx)=$(maxcount$(_ctx))
+#ENDIF
+#ENDIF
+#LET count=$(polkcount$(_ctx))
+#IF $(addPolka$(_ctx):0)=0
+#LETV polkcount$(_ctx)=$(maxcount$(_ctx):0)
+#ENDIF
+//скрыть нишу	 если число максимально возможного числа полок = 0
+#IF $(maxcount$(_ctx):0)=0
+#LETV visible$(_ctx)=0
+#ENDIF
+/// **************************************************************полки стекло*******************************************************************************************
+_addpolk	p=$(profNapol)//	flagMixal=1
+//ADDNAPLIVING
+//_POLKASTEKLO
+/// *********************************************************************************************************************************************************
+#IF $[datecompare;$(dataordine);25.10.2021]<0
+#LET flagNoHdf=0
+#ENDIF
+//рассчет взят из шк отдельностоящего обычного (только заменены матvn и мат местами) где matvn-материал полок а mat-материал стенок
+#LETS tmpStr=$(mat)
+#IF $(lkorp)<=1200
+#LET flagNoHdf=1
+#ENDIF
+#IF $(flagNoHdf)=0
+_backwallMixal	mat=$(matvn)	matvn=$(tmpstr)
+#ENDIF
+//ADDNAP
+// *************************************размеры*****************************************
+#LET RazmerLarg=$L
+#LET razmerAlt=$a
+#LET spostsLRaz=0
+#LET spostsARaz=$a
+#IF $(in_size:0)=1 // размеры ниш
+023	COD= / /$(RazmerLarg)	SL=$(spostsLRaz)	SA=60	SP=0	L=$(RazmerLarg)	A=10	P=0  // ширина нишы
+023	COD= / /$(RazmerAlt)	SL=70	SA=$(spostsARaz)	SP=0	L=$a	A=10	P=0	az=90  //Высота нишы
+#ENDIF
+#IF $a<$(minimumSize)
+015	COD= /ERROR=1	SP=0	A=$a	P=$p	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Минимальное расстояние \n между полками $(minimumSize) мм	SL=-40	SA=$a/3	SP=$p+10	L=400	AZ=0  //сообщение об ошибке
+#ENDIF
+_placerMixal

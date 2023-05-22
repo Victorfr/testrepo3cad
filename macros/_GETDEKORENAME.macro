@@ -1,0 +1,5 @@
+#LETS NPOMACRONAME=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(draw)' and codvar like 'NPOMACRO']
+#LETS dekDES=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(NPOMACRONAME)' and codvar like 'DEKMACRONAME']
+#IF $(_ModDoorRasp:1)[$(cvetvstav:14)] & $(_patina:5)!60251733 & $(dekDes)!!
+#LETS dekDes=$(dekDes) с патиной
+#ENDIF

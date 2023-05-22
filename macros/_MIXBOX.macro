@@ -1,0 +1,60 @@
+////наполнение ящиками mixbox
+//полки шириной под шкаф 451
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+// ***************************************************************************************************
+_DATABOX
+///обнуление параметров для упаковки стекол
+#LETV maxStekloL=
+#LETS stekloParams=
+#LETV steklosize=X
+#LET polkaStekloCount=0
+#LET ndet=0
+#LET boxCount=0
+#LET flag_ust=1
+!SETCODICE x
+////габариты каркаса бокса
+#LET l =$(largMixBox:3)-22-22
+#LET p=530
+#LET a=$(altMixBox:0)
+#IF $a>2750 #LETV a=2750
+//если плейсер установлен в шк
+#IF $(FPL)!!N
+_PROVERKAPLMX
+//проверка плесейров на смену размера шкафа
+#IF $(placerTestL)!$(lkorpSh)
+#LET flag_ust=55
+#ENDIF
+#ENDIF
+NUMDET	SL=0	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#IF $(flag_ust)=1
+010	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;FPL=$(FPL) / /#L-1	P=$p  //Бок ЛВ ДСП
+NUMDET	SL=$l-$(mat:1)	SA=$A/2
+011	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;FPL=$(FPL) / /#L-1	P=$p  //Бок ПР ДСП
+#ELSE
+001	COD=999 /ERROR=1	P=$p+20  //Test
+#IF $(flag_ust)=2
+025	COD= / /Полка мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=3
+025	COD= / /Модуль мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=4
+025	COD= / /Увеличьте ширину ниши	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=5
+025	COD= / /Петля мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=6
+025	COD= / /Ошибка размещения	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=7
+025	COD= / /Двери мешают выдвижению \nнеобходимо установить фальшфасады по сторонам!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag_ust)=55
+025	COD= / /Нужно изменить размер шкафа под размер плейсера\n либо выбрать другой плейсер	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSE
+025	COD= / /Перекрытие дверей блокирует выдвижные	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+#ENDIF
+//_KOROBMIXAL
+//_finaleMixBox
+#LETS _macrofinale=_finaleMixBox

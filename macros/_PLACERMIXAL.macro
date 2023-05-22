@@ -1,0 +1,62 @@
+//наполнение миксал плейсеры
+#LET mod_min=10	spostapMod=10
+#LET profPlasMod={$(PKORP)-1-25-2-$(mod_min)}	profPlas={$(PKORP)-$(mod_min)}
+#LET spostaLPlas=0
+#LET largPlas=$L
+///gluhov параметры	 которые будут передаваться в плейсеры
+#LETS placerParams=$l;$(spostal);{$(spostaa)-$(karkasSA)}
+#IF $(TIPSHKAF:1)[7]
+#LETS placerParams=$l;$(spostal);$(spostaa);$(TIPSHKAF:1);$(PZAST:0);$(pkorp)
+#ENDIF
+//_OLD_PLACE
+/// *************************************новый modul****************************************************
+#IF $l>=400 & $l<=1200 & $(profPlasMod)>=300  //& $(flag_plas)=1
+#IF $(profPlasMod)>600 #LET profPlasMod=600
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=98	X2=модуль	x5=$(placerParams)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+/// *********************************************************************************************************
+///плейсер полок Lumix
+#IF $(lkorp)=$l+$(mat:1)*2
+#LETS placerParamsPolk=$(lkorp);$(spostal);{$(spostaa)-$(karkasSa)};$l
+#IF $(pkorp)=550 & $(lkorp)=451
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=104	X2=Полка Lumix	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=501
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=105	X2=Полка Lumix	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=601
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=106	X2=Полка Lumix	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=899
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=107	X2=Полка Lumix	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=999
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=108	X2=Полка Lumix	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=1199
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=109	X2=Полка Lumix	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+///ящики mixbox
+#IF $(pkorp)=550 & $(lkorp)=451
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=110	X2=Ящики MIXBOX	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=501
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=111	X2=Ящики MIXBOX	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=601
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=112	X2=Ящики MIXBOX	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=899
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=113	X2=Ящики MIXBOX	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=999
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=114	X2=Ящики MIXBOX	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#IF $(pkorp)=550 & $(lkorp)=1199
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$(profPlasMod)	x1=115	X2=Ящики MIXBOX	x5=$(placerParamsPolk)  //Плейсер модуля метабоксов с новым конструктивом
+#ENDIF
+#ENDIF
+////полка под обувь
+#IF $(l)>=550 & $(pkorp)>=550
+032	SL=$(spostalPlas)	SP=$(spostapMod)	L=$(largPlas)	P=$p-10-10	x1=116	X2=Полка с профилем под обувь	x5=$(placerParams)
+#ENDIF

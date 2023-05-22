@@ -1,0 +1,55 @@
+!parametri flagMixal=0
+#IF $(addPolka$(_ctx):0)=1
+// *********************************************************************************************************
+#IF $(autosize$(_ctx):0)=0//расстановка пололк стекло вручную по высоте
+//проверка значений по минимальной высоте
+#LETS polkdata=
+#FOR $1:$(polkcount$(_ctx))
+#IF $(polkSa$(i)$(_ctx):0)<$(minimumSize)
+#MSG Минимальное расстояние от низа $(minimumSize)мм
+#LETV polksa$(i)$(_ctx)=$(minimumSize)
+#ENDIF
+#IF  $(polksa$(i)$(_ctx):0)>$(a)-$(minimumSize)-$(polkw)
+#MSG Минимальное расстояние от верха $(minimumSize)мм
+#LETV polksa$(i)$(_ctx)={$a-$(minimumSize)-$(polkw)}
+#ENDIF
+#ENDFOR
+#LET count=$(polkcount$(_ctx))
+#FOR $1:$(polkcount$(_ctx))
+#LET cursa=$(polksa$(i)$(_ctx))
+#LET prevI=$(i)-1
+#IF $(i)>1
+#LET prevsa=$(polksa$(previ)$(_ctx))
+#IF $(cursa)-$(prevsa)-$(polkw)<$(minimumSize)
+#MSG смещение по высоте не может быть меньше $(minimumSize) мм от нижней полки!
+#LET newvalue=$(prevsa)+$(minimumSize)+$(polkw)
+#IF $(newvalue)>{$a-$(minimumSize)-$(polkw)}
+#LETV polkcount$(_ctx)={$(polkcount$(_ctx))-1}
+#MSG Полка будет удалена
+#LET count=$(polkcount$(_ctx))
+#ELSE
+#LETV polksa$(i)$(_ctx)=$(newvalue)
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDFOR
+//рисование полки
+#FOR $1:$(count)
+NUMDET	sa=$(polksa$(i)$(_ctx))	sl=$(l)/2
+//001	a=6	sa=$(polksa$(i)$(_ctx))
+#LET _spostaa=$(polksa$(i)$(_ctx))
+_POLKASTEKLO	a=$(polkw)	sa=$(_spostaa)	_spostaa={$(_spostaa)+$(spostaa)}
+#ENDFOR
+#ELSE // автоматическая расстановка
+#FOR $1:$(maxcount$(_ctx))
+#LETV polksa$(i)$(_ctx)={$(minimumSize)*$(i)}
+#ENDFOR
+#LET stepSa=int( ( $a-$(count)*$(polkW) )/($(count)+1))
+#FOR $1:$(count)
+NUMDET	sa=$(stepsa)*$(i)+$(polkW)*($(i)-1)	sl=$l/2
+#LET _spostaa=$(stepsa)*$(i)+$(polkW)*($(i)-1)
+_POLKASTEKLO	a=$(polkw)	sa=$(_spostaa)	_spostaa={$(_spostaa)+$(spostaa)}
+#LETV polksa$(i)$(_ctx)=$(stepsa)*$(i)+{$(polkW)*($(i)-1)}
+#ENDFOR
+#ENDIF
+#ENDIF

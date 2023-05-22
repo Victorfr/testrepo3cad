@@ -1,0 +1,44 @@
+#IF $(TIPSYSTEM:18)[ar2]
+#IF $a<200
+#LETS ksv={$(spostaa)+35}|{$(spostaa)+$a-35}|$(ksv)
+#LET count_sh=4+$(count_sh)
+#ELSEIF $a<350
+///когда попадает ручка профиль A=204 мм сверловок нет
+#IF  $(vertmannov$(_ctx):1)!1
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=4+$(count_sh)
+#ENDIF
+#ELSEIF $a<600
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/2)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=6+$(count_sh)
+#ELSEIF $a<850
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/3)}|{$(spostaa)+int($a*2/3)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=8+$(count_sh)
+#ELSEIF $a<1100
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/4)}|{$(spostaa)+int($a*2/4)}|{$(spostaa)+int($a*3/4)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=10+$(count_sh)
+#ELSEIF $a<1350
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/5)}|{$(spostaa)+int($a*2/5)}|{$(spostaa)+int($a*3/5)}|{$(spostaa)+int($a*4/5)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=12+$(count_sh)
+#ELSEIF $a<1600
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/6)}|{$(spostaa)+int($a*2/6)}|{$(spostaa)+int($a*3/6)}|{$(spostaa)+int($a*4/6)}|{$(spostaa)+int($a*5/6)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=14+$(count_sh)
+#ELSEIF $a<1850
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/7)}|{$(spostaa)+int($a*2/7)}|{$(spostaa)+int($a*3/7)}|{$(spostaa)+int($a*4/7)}|{$(spostaa)+int($a*5/7)}|{$(spostaa)+int($a*6/7)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=16+$(count_sh)
+#ELSEIF $a<2100
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/8)}|{$(spostaa)+int($a*2/8)}|{$(spostaa)+int($a*3/8)}|{$(spostaa)+int($a*4/8)}|{$(spostaa)+int($a*5/8)}|{$(spostaa)+int($a*6/8)}|{$(spostaa)+int($a*7/8)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=18+$(count_sh)
+#ELSEIF $a<2350
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/9)}|{$(spostaa)+int($a*2/9)}|{$(spostaa)+int($a*3/9)}|{$(spostaa)+int($a*4/9)}|{$(spostaa)+int($a*5/9)}|{$(spostaa)+int($a*6/9)}|{$(spostaa)+int($a*7/9)}|{$(spostaa)+int($a*8/9)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=20+$(count_sh)
+#ELSEIF $a<2700
+#LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/10)}|{$(spostaa)+int($a*2/10)}|{$(spostaa)+int($a*3/10)}|{$(spostaa)+int($a*4/10)}|{$(spostaa)+int($a*5/10)}|{$(spostaa)+int($a*6/10)}|{$(spostaa)+int($a*7/10)}|{$(spostaa)+int($a*8/10)}|{$(spostaa)+int($a*9/10)}|{$(spostaa)+$a-50}|$(ksv)
+#LET count_sh=22+$(count_sh)
+#ENDIF
+#LETS dlinStr=$[len;$(ksv)]
+#LETS sks=$[mid;$(ksv);1;{$(dlinStr)-1}]
+#ELSEIF $(TIPSYSTEM:18)[ar1;ar3]
+#LETS dlinStr=$[len;$(koord_sver)]
+#LETS sks=$[mid;$(koord_sver);1;{$(dlinStr)-1}]
+#ENDIF

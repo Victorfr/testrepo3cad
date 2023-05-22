@@ -1,0 +1,27 @@
+#LETV _MNP=0 //999KOMPLNAPR
+#IF $(TIPSHKAF:7)=3
+//#LETS tipsystem=$(tipsystem_old)	 col_system=$(col_system_old)
+// #LETS tipsystem=$(tipsystem_rasp)	 col_system=$(col_system_rasp)
+#LET flag_nar_rasp=1
+#LETV _WR=$(tipsystem:18)KOMPLNAPRR
+054	SL=$(mat:0)	SA=-$(tipsystem:3)+$(hzoc:0)+$(mat:0)+$(SaNapr)	SP=48	L=$l-$(mat:0)*2  // Направляющая для распашных дверей
+#LET sa_verh_nap={$A+$(tipsystem:4)-$(mat:0)}-$(sa_verh_nap_vst)
+#LET flag_nar_rasp=0
+054	COD=x	SL=$(mat:0)	SA=$(sa_verh_nap)	SP=70	L=$l-$(mat:0)*2	AX=180  //Направляющая для распашных дверей
+//#LETS tipsystem_old=$(tipsystem)	 col_system_old=$(col_system)
+#ELSE
+#LETV _WR=$(tipsystem:18)KOMPLNAPR
+#IF $(TIPSYSTEM:18)[AR3]
+#LETS col_system:4=$(cvetvstavprof:5)
+#LETS col_system:5=$(CVETVSTAVprof:6)
+#LETS col_system:6=$(CVETVSTAVprof:9)
+#ENDIF
+#LETS paramProf=MNP=$(_MNP:3);WR=$(_wr:3);_CPROF=$(col_system:6)
+#IF $(TIPSYSTEM:18)[AR3]
+#LETS paramProf=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(col_system:6)
+#ENDIF
+028	COD= /$(paramProf)	SL=$(mat:0)	SA=-$(tipsystem:3)+$(hzoc:0)+$(mat:0)+$(SaNapr)	SP=($(tipsystem:16)-$(tipsystem:15))/2	L=$l-$(mat:0)*2  //Профиль рельс нижний
+#LET pos_verh_napr=0	 sa_verh_nap={$A+$(tipsystem:4)-$(mat:0)}-$(sa_verh_nap_vst)
+#IF ($(sk_sys:0)=1 & $(TIPSYSTEM:18)==ar2) #LET pos_verh_napr=-93
+029	SL=$(mat:0)	SA=$(sa_verh_nap)	SP=$(pos_verh_napr)	L=$L-$(mat:0)*2	lato=$(lato_kr)  //Профиль рельс верхний
+#ENDIF

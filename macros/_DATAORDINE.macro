@@ -1,0 +1,38 @@
+#VB
+v("addednumber")=Ambiente.tnumero
+#ENDVB
+#VB
+set g=Ambiente.GetObject("GLOBAL")
+V("PercorsoOrdini")=g.PercorsoOrdini
+#ENDVB
+#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml
+#LETS filetest=$[dir;$(strPathname)]
+#IF $(filetest)[1]
+#VB
+Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")
+xmlDoc.load (V("strpathname"))
+strSearch = "ProjectMetadata"
+Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)
+for each node in currNode
+strName="DATA"
+Dim data: set data = node.getElementsByTagName(strName)
+for each el in data
+V("dataordine")=el.text
+next
+strLine="PRODUCT_LINE"
+Dim PRODUCT_LINE: set PRODUCT_LINE=node.getElementsByTagName(strLine)
+for each el in PRODUCT_LINE
+V("PRODUCTLINE")=el.text
+next
+next
+#ENDVB
+#LETV dataordine=$(dataordine)
+#LETV PRODUCTLINE=$(PRODUCTLINE)
+#ELSE
+//#LETV dataordine=$(.data)
+#VB
+if amb.curbox=0 then
+Ambiente.xMessaggio vbtab & vbtab & vbtab & "* * * * * * * * * * * * " & "Файл не найден  " & V("strPathname") & " * * * * * * * * * * * *"
+end if
+#ENDVB
+#ENDIF

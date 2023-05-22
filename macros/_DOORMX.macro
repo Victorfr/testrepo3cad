@@ -1,0 +1,110 @@
+//дверь миксал
+#LETS cod=MX1DOORRASP
+!SETCODICE X //$(cod)
+#LETV _MNP=$(cod)
+#LETV MNP=$(_MNP:3)
+#LETV _WR=$(cod)
+#LETV WR=$(_WR:3)
+!COMMENTO $(_WR:2)
+#LET numvst=1
+#LETS IDO=1
+#LETS IDD=1
+#LETS LPBR=
+#LET flagCorrector=0
+#IF $(_PRIMOCARICAMENTO)=1 & $(_FiaApertoAnta:1)=1
+#LETV _man_pos=09
+#ENDIF
+#LET opendoor=$[ex;$(LOCP_BX0);|;1]
+#LET show_door=6
+#LET show_num=6
+#LET show_vst=6
+#IF $(opendoor)=0
+#LET show_door=0
+#LET show_vst=0
+#LET show_num=9
+#ENDIF
+_dataBox
+////размеры дверей
+#LET doorDis=$[ex;$(LOCP_BX0);|;1]
+#IF $[ex;$(LOCP_BX0);|;5]=1
+//если фасад СД то добавляется 1 мм к размеру двери( так как стандартные размеры)
+!PLACERPAR placerparams	5
+//_KOROBMIXAL
+#LET altDoor=$[ex;$(placerparams);|;2]
+#LET largDoor=$[ex;$(placerparams);|;1]
+#LETS tmpAperto=$[ex;$(placerparams);|;3]
+#LETV apertoAnta=$(tmpAperto)
+#LETV l=$(largDoor)
+#LETV a=$(altDoor)
+#LETV altDoorMx=$(altDoor)
+#LETV largDoorMx=$(largDoor)
+#LETS FPL=
+#IF $(apertoAnta)[L]
+#LETV _FiaApertoAnta=1
+#ENDIF
+#IF $(apertoAnta)[R]
+#LETV _FiaApertoAnta=2
+#ENDIF
+#IF $(oldAperto)==
+#LETV oldAperto=$(apertoAnta)
+#ENDIF
+#IF $(oldAperto)!!$(apertoAnta)
+#LETV oldAperto=$(apertoAnta)
+#MSG При смене пложения двери нужно пересчитать проект
+#ENDIF
+#IF $l=0 | $a=0
+001	COD=999 /ERROR=1	A=500	P=$p+20  //Test
+025	COD= / /Ошибка размещения двери	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+//_modulnk
+#ELSE
+#LETS FPL=N
+#LET l=$(largDoorMx:3)
+#LET a=$(altDoorMx:3)
+#ENDIF
+////параметры для расчета комплектующих двери
+#LETS codVertProf=$(altDoorMx:4)
+#LETS codGorProf=$(largDoorMx:4)
+#LETS codManProf=$(altDoorMx:5)
+#LETS codPrefVetro=$(altDoorMx:7)
+#LETS vetroL=$(largDoorMx:6)
+#LETS vetroA=$(altDoorMx:6)
+#LET gorProfL=$(largDoorMx:5)
+#LET vertProfa=$(altDoorMx:3)
+#LET profW=8
+//графика дверей
+#IF $(doorDis)=0
+#LETS colorDoorProf=105
+001	a=$(profW)	l=$(gorProfL)	p=$(p)	c1=$(colorDoorProf)	sl=($l-$(gorProfL))/2
+001	a=$(profW)	l=$(gorProfL)	p=$(p)	c1=$(colorDoorProf)	sl=($l-$(gorProfL))/2	sa=$a-$(profW)
+001	l=$(profW)	a=$(vertProfA)	p=$P	c1=$(colorDoorProf)
+001	l=$(profW)	a=$(vertProfA)	p=$P	c1=$(colorDoorProf)	sl=$l-$(profW)
+001	l=$(vetroL)	a=$(vetroa)	sl=($l-$(vetroL))/2	sa=($a-$(vetroA))/2	sp=$p-7	c1=104	p=5
+#ENDIF
+//_PLACERMIXAL
+//_PLACERDOORMX
+//301
+///типология для спецификации дверей
+401	COD= / / /#L-1  //Дверь распашная Mixal
+//добавляется комплект петель
+001	LATO=6	COD=999mxPtl21v200 /FPL=$(FPL);TD=536  //Test
+///графика петель
+#IF $(_FIAAPERTOANTA:1)[1]
+001	c1=1	l=5	p=51	a=26	sa=100-26/2-10	sp=-51
+001	c1=1	l=5	p=51	a=26	sa=$a-90-13 	sp=-51
+#ELSE
+001	c1=1	l=5	p=51	a=26	sa=100-26/2	sp=-51	sl=$l-5
+001	c1=1	l=5	p=51	a=26	sa=$a-(100-26/2)	sp=-51	sl=$l-5
+#ENDIF
+//упаковка аналогична створкам купе
+_upakovka_door
+///передача родителю параметра двери
+#LETS LOC_BX2=$P
+#IF $(_FIAAPERTOANTA:1)=1
+#LETS doorAperto=L
+#ELSE
+#LETS doorAperto=R
+#ENDIF
+#LETS PlacerDoorParam=$l|$A|$(_ppl)|$(_ppa)|0|$(doorAperto)|{$(flagCorrector)}
+#LETS LOC_BX4=$(PlacerDoorParam)
+#LET _PLACERRIVPADRE=1 // принудительный пересчет родителя при изменении потомка

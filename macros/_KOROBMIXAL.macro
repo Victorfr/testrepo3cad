@@ -1,0 +1,133 @@
+//каркас mixal
+#LET vertDet=$p-$(profkarkasVertSP)
+#LET horDet=$p-$(profkarkasGorSP)
+//_KOROBLIVING
+#SELECT $(typeKarkas:1)//выборка по типу строения шкафа
+#CASE 1:2
+NUMDET	SL=0	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+010	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2
+NUMDET	SL=$l-$(mat:1)	SA=$A/2
+011	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2
+#IF $(typeKarkas:1)=1
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=$L-$(mat:0)*2-2
+#ENDIF
+#IF $(typeKarkas:1)=2
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=-$(mat:0)-2
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=$L-$(mat:1)
+#ENDIF
+//   KORPSHKAF
+NUMDET	SL=$l/2	SA=$(mat:1)+$(hzoc:0)/2
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+012	SL=0	L=$l	P=$(horDet)  //Дно ДСП
+_agg_krep	p=$(horDet)
+#LETV _wr=999K_KARKASKR
+#LETV _MNP=999K_KARKASKR
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+NUMDET	SL=$l/2	SA=$A-$(mat:1)
+013	SA=$a-$(mat:1)	L=$l	P=$(horDet)	SL=0  //Крышка ДСП
+_agg_krep	p=$(horDet)
+#CASE 3:4
+#LET saStag=0
+#IF $(typeKarkas:1)=4
+#LET saStag=$(mat:1)+2
+#ENDIF
+NUMDET	SL=0	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+010	P=$(vertDet)	sa=0	a=$a
+NUMDET	SL=$l-$(mat:0)	SA=$A/2
+011	P=$(vertDet)	sa=0	a=$a
+#LET dnoSa=0
+#IF $(addzoc)=1
+NUMDET	SL=$(mat:0)+35	SA=0
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+//////
+#LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SHPR=$(SHPR);NSE=$(SHPR)
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
+#LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
+#ENDIF
+///////
+017	COD= /$(paramsZoc)	SP=$(spzoc)  //Цоколь ДСП
+NUMDET	SL=$(mat:0)+35	SA=0	sp=20
+017	COD= /$(paramsZoc)	SP= 20  // Цоколь ДСП
+#LET spPie=$(horDet)-100
+#IF $(p)>=400
+047	COD= /TD=536  //Ножка регулировочная
+047	COD= /TD=536	SP=$(spPie)  //Ножка регулировочная
+047	COD= /TD=536	SL=$l-$(mat:1)-20  //Ножка регулировочная
+047	COD= /TD=536	SL=$l-$(mat:1)-20	SP=$(spPie)  //Ножка регулировочная
+#IF $l>900
+047	COD= /TD=536	SL=($l)/2  //Ножка регулировочная
+047	COD= /TD=536	SL=($l)/2	SP=$(spPie)  //Ножка регулировочная
+#ENDIF
+#ELSE
+001	COD=999nog_reg /TD=536 / /#Q4	L=30	A=30	P=30  //Test
+#IF $l>900
+001	COD=999nog_reg /TD=536 / /#Q2	L=30	A=30	P=30  //Test
+#ENDIF
+#ENDIF
+// ****************** самоклейки **************************
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
+#ENDIF
+// ***********************************************************
+// ******************* уголки **************************
+001	LATO=6	COD=999ug24x24x15 / / /#Q6	L=1	A=1	P=1  //Test
+// ****************************************************
+// ****************** пакет шурупов 20 шт.***************
+001	LATO=6	COD=999nab_sh4x16	L=1	A=1	P=1  // Test
+// ********************************************************
+#LET dnoSa=$(hzoc:0)
+#ENDIF
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+NUMDET	SL=$l/2	SA=$(mat:1)
+012	SL=$(mat:0)	L=$l-$(mat:0)*2	P=$(horDet)	sa=$(dnoSa)  //Дно ДСП
+_agg_krep	p=$(horDet)
+_DRAWSTAG	SL=$(mat:0)	L=$l-$(mat:0)*2	P=$(horDet)	sa=$(saStag)+$(dnoSa)	orienta=0
+#LETV _wr=999K_KARKASKR
+#LETV _MNP=999K_KARKASKR
+//  #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+NUMDET	SL=$l/2	SA=$A-$(mat:1)
+013	SA=$a-$(mat:1)	L=$l-$(mat:0)*2	P=$(horDet)	SL=$(mat:0)  //Крышка ДСП
+_agg_krep	p=$(horDet)
+_DRAWSTAG	SA=$a-$(mat:1)+$(saStag)	L=$l-$(mat:0)*2	P=$(horDet)	SL=$(mat:0)	orienta=0
+// *********************************************************
+#DEFAULT
+#MSG Ошибка в выборе варианта!
+#ENDSELECT
+///создание обработок под петли если есть двери
+#LETS petlZoneParams=
+#FOR $(doorsParams)
+#LETS doorAperto=$[ex;$(i);|;6]
+///взависимости от того с какой стороны в двери выбраны петли	 создаются обработки под петли
+#LETS colorPetl=105
+#IF $(doorAperto)[R]
+061	sa=100-26/2+10	sl=$l-($(mat:1)+5)	sp=$p-51	c1=$(colorPetl)
+061	sa=$a-100-26/2-10	sl=$l-($(mat:1)+5)	sp=$p-51	c1=$(colorPetl)
+#ENDIF
+#IF $(doorAperto)[L]
+061	sa=100-26/2+10	sl=($(mat:1))	sp=$p-51	c1=$(colorPetl)
+061	sa=$a-100-26/2-10	sl=($(mat:1))	sp=$p-51	c1=$(colorPetl)
+#ENDIF
+///передача параметров петель
+//_SHKAF
+#LETS petlZoneParams=MIXAL|$(doorAperto)
+#ENDFOR
+#LETS LOC_BX5=$(petlZoneParams)
+////////
+_placerDoorMx

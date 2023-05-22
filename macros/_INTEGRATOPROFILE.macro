@@ -1,0 +1,35 @@
+#IF $(_MANINTEGRATO:0)[07]
+_drawLfUpManInt
+#ELSEIF $(_MANINTEGRATO:0)[05]
+_drawManLeftInt
+#ELSEIF $(_MANINTEGRATO:0)[06]
+_drawLfUpManInt	az=180	sl=$l	sa=$a
+#ELSEIF $(_MANINTEGRATO:0)[08]
+_drawManLeftInt	az=180	sa=$a	sl=$L
+#ELSEIF $(_MANINTEGRATO:0)[09]
+#LET altFas=$a
+_drawManLeftInt	az=90	sa=$a	a=$l	l=$(altFas)
+#ELSEIF $(_MANINTEGRATO:0)[10]
+#LET altFas=$a
+_drawLfUpManInt	az=90	a=$l	l=$(altFas)	sa=$a
+#ELSEIF $(_MANINTEGRATO:0)[12]
+#LET altFas=$a
+_drawManLeftInt	az=-90	sl=$l	a=$l	l=$(altFas)
+#ELSEIF $(_MANINTEGRATO:0)[11]
+_drawLfUpManInt	az=-90	a=$l	l=$(altFas)	sl=$l
+#ELSEIF $(_MANINTEGRATO:0)[13]
+_drawMiddlaManInt
+#ELSEIF $(_MANINTEGRATO:0)[14]
+_drawMiddlaManInt	az=180	sa=$a	sl=$l
+#ELSEIF $(_MANINTEGRATO:0)[15]
+#LETS profilintegrato= a10	 25.75	22	 24.5	20.75	 25.75	19.5	  a10	 37	18	 42	11	36	5	 0	5
+#LET alte=$a
+#LET large=$l
+_drawMiddlaManInt	a=$L	l=$(alte)	az=90	sa=$a
+#ELSEIF $(_MANINTEGRATO:0)[16]
+#LETS profilintegrato= a10	 25.75	22	 24.5	20.75	 25.75	19.5	  a10	 37	18	 42	11	36	5	 0	5
+#LET alte=$a
+#LET large=$l
+_drawMiddlaManInt	a=$L	l=$(alte)	az=-90	sl=$l
+#ELSE
+#ENDIF

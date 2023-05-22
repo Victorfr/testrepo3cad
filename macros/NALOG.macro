@@ -1,0 +1,127 @@
+#LET zone_lato=0
+#LETS zone_params=
+#IF $(show_per:0)=1 #LET zone_lato=6
+// ************************************************************ расчёт ограничений плейсеров по по старому ******************************************************************************************************
+#IF $(tipsYSTEm:5)!0 & $(TIPSHKAF:1)!11
+#LET nalog=$(tipsystem:5)
+#IF $(NDV)=2
+034	SL=$(mat:1)+($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	SA=$(hzoc:0)+$(mat:0)	SP=$(mat:0)	L=$(nalog)+2	A=$a-$(mat:0)*2-$(hzoc:0)	lato=$(zone_lato)  //Область запрета выдвижения
+#IF $(size_per:0)=1
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)-1}	SL=$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+023	COD= / /{$(nalog)+2}	SL=$(mat:0)+($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(nalog)+2	A=0	P=1	X1=2  //Размер зоны перекрытия
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)-1}	SL=$(mat:0)+($(LDV)+$(tipsystem:19)*2)+1	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+#ENDIF
+#LETS OBL={$(mat:1)+(($(LDV)+{$(otsDoorlar)/2})+$(tipsystem:19)*2)-$(nalog)-1}	{$(nalog)+2}
+#LET ZONA=1
+#LETS zone_params={$(mat:1)+(($(LDV)+{$(otsDoorlar)/2})+$(tipsystem:19)*2)-$(nalog)-1}X{$(nalog)+2}
+#ELSEIF $(NDV)=3
+034	SL=$(mat:1)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
+//034	SL=$l-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
+//034	SL=$l-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1-$(matvnR:0)	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
+034	SL=$(LDV)+$(tipsystem:19)*2)+1+$(mat:0)+((($(LDV)+$(tipsystem:19)*2)-$(tipsystem:5)*2-2)	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
+#IF $(size_per:0)=1
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1}	SL=$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+023	COD= / /{$(nalog)*2+2}	SL=$(mat:0)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(nalog)*2+2	A=0	P=1	X1=2  //Размер зоны перекрытия
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-2}	SL=$(LDV)+$(tipsystem:19)*2)+1+$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-2	A=0	P=1	X1=2  //Размер до зоны перекрытия
+023	COD= / /{$(nalog)*2+2}	SL=$(LDV)+$(tipsystem:19)*2)+1+$(mat:0)+((($(LDV)+$(tipsystem:19)*2)-$(tipsystem:5)*2-2)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(nalog)*2+2	A=0	P=1	X1=2  //Размер зоны перекрытия
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1}	SL=$l-$(mat:0)-(($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+#ENDIF
+#LETS OBL={$(mat:1)+(($(LDV)+{$(otsDoorlar)/2})+$(tipsystem:19)*2)-$(nalog)*2-1}	{$(nalog)*2+2}	{$(LKORP)-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1-$(matvnR:0)}	{$(nalog)*2+2}
+//      INITSHKAewF
+#LET ZONA=2
+//#MSG $(obl)
+#LETS zone_params={$(mat:1)+(($(LDV)+{$(otsDoorlar)/2})+$(tipsystem:19)*2)-$(nalog)*2-1}X{$(nalog)*2+2}:{$(LKORP)-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1-$(matvnR:0)}X{$(nalog)*2+2}
+#ELSEIF $(NDV)=4
+#LETS OBL={$l-$(mat:1)*2-($(ldv)+{$(otsDoorlar)/2})*2-$(tipsystem:19)*4}	{$(ldv)+$(tipsystem:19)*2}	$(mat:1)
+#LET ZONA=3
+034	sl=$(mat:1)+$(tipsystem:19)*2+$(ldv)-1	l=2	lato=$(zone_lato)
+#LET door2xl=($(ldv)+$(TIPSYSTEM:19)*2)*2+$(mat:1)
+#LET door_m_zone_r=$(l)-$(mat:1)-$(door2xl)
+034	sl=$(door_m_zone_r)-1	l=$(door2xl)-$(door_m_zone_r)+2	lato=$(zone_lato)
+034	sl=$l-$(ldv)-$(mat:1)-$(TIPSYSTEM:19)*2-1	l=2	lato=$(zone_lato)
+///
+//передача параметров зон перекрытия
+//X - разделитель
+#LETS zone_params={$(mat:1)+$(tipsystem:19)*2+$(ldv)-1}X2:{$(door_m_zone_r)-1}X{$(door2xl)-$(door_m_zone_r)+2}:{$l-$(ldv)-$(mat:1)-$(TIPSYSTEM:19)*2-1}X2
+#ELSEIF $(ndv)=5
+#LET zona=4
+#LET zonap1=$(mat:1)+$(TIPSYSTEM:19)*2+$(ldv)-1
+#LET zonap2=$l-$(mat:1)-($(TIPSYSTEM:19)*2+$(ldv))*3-1
+#LET zonap3=$(mat:1)+($(TIPSYSTEM:19)*2+$(ldv))*2-1
+#LET zonap4=$l-$(mat:1)-($(TIPSYSTEM:19)*2+$(ldv))*2-1
+#LET zonap5=$(mat:1)+($(TIPSYSTEM:19)*2+$(ldv))*3-1
+#LET zonap6=$l-$(mat:1)-($(TIPSYSTEM:19)*2+$(ldv))-1
+034	sl=$(zonap1)	l=2	lato=$(zone_lato)
+034	sl=$(zonap2)	l=2	lato=$(zone_lato)
+034	sl=$(zonap3)	l=2	lato=$(zone_lato)
+034	sl=$(zonap4)	l=2	lato=$(zone_lato)
+034	sl=$(zonap5)	l=2	lato=$(zone_lato)
+034	sl=$(zonap6)	l=2	lato=$(zone_lato)
+#LETS zone_params=$(zonap1)X2:$(zonap2)X2:$(zonap3)X2:$(zonap4)X2:$(zonap5)X2:$(zonap6)X2
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:1)[11] //top line
+#LET zoneDoorL=136
+#IF $(NDOORTL:3)[2]
+034	sl={($(l)-$(zoneDoorL))/2}	SA=$(hzoc:0)+$(mat:0)	SP=$(mat:0)	L=$(zoneDoorL)	A=$a-$(mat:0)*2-$(hzoc:0)	lato=$(zone_lato)
+#IF $(size_per:0)=1 //размеры
+#LET lZoneRasm=($l-$(zoneDoorL))/2-$(mat:0)
+023	COD= / /{$(lzoneRasm)}	SL=$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(lZoneRasm)	A=0	P=1  //Размер до зоны перекрытия
+023	COD= / /{$(lzoneRasm)}	SL=($l+$(zoneDoorL))/2	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(lzoneRasm)	A=0	P=1  //Размер до зоны перекрытия
+#ENDIF
+#LET zona=1
+#LETS zone_params={($(l)-$(zoneDoorL))/2}X$(zoneDoorL)
+#ENDIF
+#IF $(NDOORTL:3)[3]
+#LET zoneDoorL=68
+034	sl=$(ldv)	SA=$(hzoc:0)+$(mat:0)	SP=$(mat:0)	L=$(zoneDoorL)	A=$a-$(mat:0)*2-$(hzoc:0)	lato=$(zone_lato)
+034	sl=$l-$(ldv)-$(zoneDoorL)	SA=$(hzoc:0)+$(mat:0)	SP=$(mat:0)	L=$(zoneDoorL)	A=$a-$(mat:0)*2-$(hzoc:0)	lato=$(zone_lato)
+#IF $(size_per:0)=1 //размеры
+023	COD= / /{$(ldv)-$(mat:0)}	SL=$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L={$(ldv)-$(mat:0)}	A=0	P=1  //Размер до зоны перекрытия
+023	COD= / /{$(ldv)-$(mat:0)}	SL=$l-$(ldv)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L={$(ldv)-$(mat:0)}	A=0	P=1  //Размер до зоны перекрытия
+023	COD= / /{$l-($(ldv)-$(mat:0))*2-$(mat:0)*2-$(zoneDoorL)*2}	SL=$(ldv)+$(zoneDoorL)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L={$l-($(ldv)-$(mat:0))*2-$(mat:0)*2-$(zoneDoorL)*2}	A=0	P=1  //Размер до зоны перекрытия
+#ENDIF
+#LET zona=2
+#LETS zone_params=$(ldv)X$(zoneDoorL):{$L-$(ldv)-$(zoneDoorL)}X$(zoneDoorL)
+#ENDIF
+#ENDIF
+// *************************************************************************************************************************************************************************************************************************
+//_old_place
+// ************************************************************ расчёт ограничений плейсеров по новому ******************************************************************************************************
+#IF 0
+#IF $(tipsYSTEm:5)!0
+#LET nalog=$(tipsystem:5)
+#IF $(NDV)=2
+//    034	SL=$(mat:1)+($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	SA=$(hzoc:0)+$(mat:0)	SP=$(mat:0)	L=$(nalog)+2	A=$a-$(hzoc:0)-$(mat:0)*2	lato=$(zone_lato)  //Область запрета выдвижения
+034	SL=$(mat:1)+($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	SA=$(otstniz:0)	SP=$(mat:0)	L=$(nalog)+2	A=$a-$(hzoc:0)-$(mat:0)*2	lato=$(zone_lato)  //Область запрета выдвижения
+#IF $(size_per:0)=1
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)-1}	SL=$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+023	COD= / /{$(nalog)+2}	SL=$(mat:0)+($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(nalog)+2	A=0	P=1	X1=2  //Размер зоны перекрытия
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)-1}	SL=$(mat:0)+($(LDV)+$(tipsystem:19)*2)+1	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+#ENDIF
+#LETS OBL=0	0 // передача параметра старому плейсеру с lato=24
+#LET OBL_l={$(otsOblL)+($(LDV)+$(tipsystem:19)*2)-$(nalog)-1}
+#LET OBL_R={$(otsOblR)+($(LDV)+$(tipsystem:19)*2)-$(nalog)-1}
+#LET OBL_ZAP={$(nalog)+2}
+#LET ZONA=1
+#ELSEIF $(NDV)=3
+034	SL=$(mat:1)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(hzoc:0)-$(mat:0)*2	sp=$(mat:0)	lato=$(zone_lato)
+034	SL=$l-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(hzoc:0)-$(mat:0)*2	sp=$(mat:0)	lato=$(zone_lato)
+#IF $(size_per:0)=1
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1}	SL=$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+023	COD= / /{$(nalog)*2+2}	SL=$(mat:0)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(nalog)*2+2	A=0	P=1	X1=2  //Размер зоны перекрытия
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-2}	SL=$(LDV)+$(tipsystem:19)*2)+1+$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-2	A=0	P=1	X1=2  //Размер до зоны перекрытия
+023	COD= / /{$(nalog)*2+2}	SL=$(LDV)+$(tipsystem:19)*2)+1+$(mat:0)+((($(LDV)+$(tipsystem:19)*2)-$(tipsystem:5)*2-2)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(nalog)*2+2	A=0	P=1	X1=2  //Размер зоны перекрытия
+023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1}	SL=$l-$(mat:0)-(($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
+#ENDIF
+#LETS OBL={$(mat:1)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1}	{$(nalog)*2+2}	{$l-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1}	{$(nalog)*2+2}
+#IF $(TIPSHKAF:6)=1 #LETS OBL={$(otsL)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1}	{$(nalog)*2+2}	{$l-$(otsR)-($(LDV)+$(tipsystem:19)*2)-1}	{$(nalog)*2+2}
+#LET ZONA=2
+#ELSEIF $(NDV)=4
+#LETS OBL={$l-$(mat:1)*2-$(ldv)*2-$(tipsystem:19)*4}	{$(ldv)+$(tipsystem:19)*2}	$(mat:1)
+#IF $(TIPSHKAF:6)=1 #LETS OBL={$l-($(otsL)+$(otsR))-$(ldv)*2-$(tipsystem:19)*4}	{$(ldv)+$(tipsystem:19)*2}	$(mat:1)
+#LET ZONA=3
+#ENDIF
+#ENDIF
+#ENDIF
+// *************************************************************************************************************************************************************************************************************************

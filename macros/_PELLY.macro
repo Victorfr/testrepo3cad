@@ -1,0 +1,35 @@
+!SETCODICE x
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+// ***************************************************************************************************
+_DATABOX
+#LETS cod_pan=999$(_pellyVar:6)
+#LETS cod_plan=999$(_pellyVar:9)
+#LETS 3ds=$(_pellyVar:7)
+#LET larg3ds=$(_pellyVar:3)
+#LET sl3ds=0
+#IF $(flag_padre)=1
+#LET sl3ds=($l-$(larg3ds))/2
+#ENDIF
+#LET flag_ust=1
+_petlprov
+#IF $(flag_ust)=1
+001	COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Корзина сетчатая  Bac Mesh Roller /#l-1	FACC=100	X4=$(3ds)	l=$(larg3ds)	sl=$(sl3ds)  //Test
+001	COD=$(cod_plan) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект роликовых направляющих /#l-1	FACC=100	lato=6  //Test
+#ELSE
+//volume
+001	COD=999 /ERROR=1	P=$p+20  //Test
+#IF $(flag_ust)=2
+025	COD= / /Полка мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag_ust)=3
+025	COD= / /Модуль мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag_ust)=4
+025	COD= / /Увеличьте ширину ниши	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag_ust)=5
+025	COD= / /Петля мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag_ust)=6
+025	COD= / /Ошибка размещения	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSE
+025	COD= / /Перекрытие дверей блокирует выдвижные	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+#ENDIF

@@ -1,0 +1,123 @@
+!parametri orienta	lprovsvet=0
+//orienta =1 вертикально
+//orienta =2 горизонтальный делитель
+///отрисовка стяжек
+#LET stagL=18
+#LET stagP=20
+#LET stagA=2
+#LET stagSl=0
+#LET stagSp=65
+!SAGOMA stagCir C25	9	0	10
+#IF $(p)<650
+#IF $(orienta)=0 //для полок
+#IF $(TIPSHKAF:6))=2 //отдельностоящий
+001	SA=-$(stagA)	SP=55	A=$(stagA)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)  // Test
+001	a=$(stagA)	sp=65	sa=-$(stagA)	sl=$L-$(stagL)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+001	a=$(stagA)	sp=$p-65	sa=-$(stagA)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+001	a=$(stagA)	sp=$p-55	sa=-$(stagA)	sl=$L-$(stagL)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+#ENDIF
+#IF $(TIPSHKAF:6)=1 // встраиваемый
+#IF $(spostaL)!0
+drawUgolok	l=26	a=26	sp=55	p=20
+drawUgolok	l=26	a=26	sp=$p-65	p=20
+#ENDIF
+#IF $(flagKrepR)=1
+drawUgolok	l=26	a=26	sp=65	p=20	sl=$l-26	sideUgol=1
+drawUgolok	l=26	a=26	sp=$p-55	p=20	sl=$l-26	sideUgol=1
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(orienta)=1 //для вертикалей
+#IF $(TIPSHKAF:6))=2 //отдельностоящий
+001	a=$(stagA)	sl=$(stagA)+$(l)	az=-90	sp=55	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+001	a=$(stagA)	sp=65	sa=$a-$(stagL)	sl=$(staga)+$l	az=-90	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+001	a=$(stagA)	sp=$p-65	sl=$(stagA)+$(l)	az=-90	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+001	a=$(stagA)	sp=$p-55	sl=$(l)+$(stagA)	sa=$a-$(stagL)	az=-90	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+#ENDIF
+#IF $(TIPSHKAF:6))=1 //встраиваемый
+#IF $(krep_vert_vstr_niz_lev)=0
+drawUgolok	l=26	a=26	sp=55	p=20	az=-90	sl=$L
+drawUgolok	l=26	a=26	sp=$p-65	p=20	az=-90	sl=$L
+#ENDIF
+#IF $(flagKrepVerhU)!0
+drawUgolok	l=26	a=26	sp=65	p=20	sa=$a-26	sideUgol=1	az=-90	sl=$L
+drawUgolok	l=26	a=26	sp=$p-55	p=20	sa=$a-26	sideUgol=1	az=-90	sl=$L
+#ENDIF
+#ENDIF
+#ENDIF
+#LETS strProvSvet=55;65;{$p-55};{$p-65}
+#ELSE
+#LET Ldet=$(p)
+#LET Lmin_sr=42
+#LET Lstag=32
+#LET Lmin1=70
+#LET Lmax1=83.9
+#LET Lmin2=84
+//#LET Lmax2=450
+//#LET Lmin3=450.1
+#LET Lmax2=429
+#LET Lmin3=429.1
+#LET Lmax3=600
+#LET Lmin4=600.1
+#LET Lmax4=750
+#LET Lmin5=750.1
+#LET Lmax5=1000
+#LET Nst=0	Lotv=0	Lstep=0
+//#LET Ldet=800
+#LET Nst= $[iif;$(Lmin1)<=$(Ldet) & $(Ldet)<=$(Lmax1);1;0]+$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);2;0]+$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);3;0]\
++$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);4;0]\
++$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);5;0]
+#LET Lotv=$(Ldet)/2*$[iif;$(Lmin1)<=$(Ldet)&$(Ldet)<=$(Lmax1);1;0]+($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/32)*32)/2*$[iif;$(Lmin2)<=$(Ldet)&$(Ldet)<=$(Lmax2);1;0]\
++($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/2/32)*32*2)/2*$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);1;0]\
++($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*3)/2*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
++($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*4)/2*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
+#LET Lstep=int(($(Ldet)-$(Lmin_sr)*2)/32)*32*$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);1;0]\
++int(($(Ldet)-$(Lmin_sr)*2)/2/32)*32*$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);1;0]\
++int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
++int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
+#LET st_count=$(Nst)-1
+#IF $(orienta)=0 //для горизонталей
+#IF $(TIPSHKAF:6))=2 //отдельностоящий
+#FOR $0:$(st_count)
+001	a=$(stagA)	sp=($(Lotv)+$(lstep)*$i}-5	sa=-$(stagA)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+001	a=$(stagA)	p=$(stagP)	sp=($(Lotv)+$(lstep)*$i}+5	sa=-$(stagA)	sl=$L-$(stagL)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+#ENDFOR
+#ENDIF
+#IF $(TIPSHKAF:6))=1 //встраиваемый
+#FOR $0:$(st_count)
+#IF $(spostaL)!0
+drawUgolok	l=26	a=26	p=20	sp=($(Lotv)+$(lstep)*$i}-5//	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
+#ENDIF
+#IF $(flagKrepR)=1
+drawUgolok	l=26	a=26	p=20	sl=$l-26	sideUgol=1	sp=($(Lotv)+$(lstep)*$i}+5//	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
+#ENDIF
+#ENDFOR
+#ENDIF
+#ENDIF
+#IF $(orienta)=1 // для вертикалей
+#IF $(TIPSHKAF:6))=2 //отдельностоящий
+#FOR $0:$(st_count)
+001	a=$(stagA)	sp=($(Lotv)+$(lstep)*$i}-5	sl=$l+$(stagA)	az=-90	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+001	a=$(stagA)	p=$(stagP)	sp=($(Lotv)+$(lstep)*$i}+5	sa=$a-$(stagL)	sl=$L+$(stagA)	az=-90	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
+#ENDFOR
+#ENDIF
+#IF $(TIPSHKAF:6))=1 //встраиваемый
+#FOR $0:$(st_count)
+#IF $(krep_vert_vstr_niz_lev)=0
+drawUgolok	l=26	a=26	p=20	sp=($(Lotv)+$(lstep)*$i}-5	az=-90	sl=$L//	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
+#ENDIF
+#IF $(flagKrepVerhU)!0
+drawUgolok	l=26	a=26	p=20	sa=$a-26	sideUgol=1	sp=($(Lotv)+$(lstep)*$i}+5	az=-90	sl=$L//	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
+#ENDIF
+#ENDFOR
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(lprovsvet)>0
+#FOR $(strprovsvet)
+#LET testCoord={$i}
+#IF $I>=$(lprovsvet)-11 & $I<=$(lprovsvet)
+001	a=100
+#ENDIF
+#ENDFOR
+#ENDIF

@@ -1,0 +1,5 @@
+#LETS TipVst=$(matvstav$(_ctx):10)
+#LETS matvstav$(_ctx)_old=$(matvstav$(_ctx))	 cvetvstav$(_ctx)_old=$(cvetvstav$(_ctx))
+#LETS matvstav$(_ctx)=$(matvstavV$(_ctx))	 cvetvstav$(_ctx)=$(cvetvstavV$(_ctx))
+040	COD=X	C1=$(matvstav$(_ctx):7)|$(.percorso)\foto\struttura\$(cvetvstav$(_ctx):5)|$(cvetvstav$(_ctx):6)	CX=cvetvstav$(_ctx)	X4=/no	lato=$(show_door)  //??????? ?????
+#LETS matvstav$(_ctx)=$(matvstav$(_ctx)_old)	 cvetvstav$(_ctx)=$(cvetvstav$(_ctx)_old)

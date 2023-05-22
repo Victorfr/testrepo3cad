@@ -1,0 +1,8 @@
+#LETV _wr=999UPAKSHKAF
+#LETV _MNP=999UPAKSHKAF
+001	LATO=6	COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3) /Упаковка шкафа	L=1	A=1	P=1  //гофрокартон
+#LET plosh=7
+001	LATO=6	COD=999GK /PLOSH=$(PLOSH) / /#L+3	L=1000	A=1000	P=0  //гофрокартон
+#LET larg=15
+001	LATO=6	COD=999SP /LARG=$(LARG) / /#L+3	L=1000	A=0	P=0  //скотч
+001	LATO=6	COD=999LPBL /LARG=$(LARG) / /#L+3	L=1000	A=0	P=0  //лента полипропиленовая

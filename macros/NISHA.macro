@@ -1,0 +1,20 @@
+#IF $(pzast:0)+$(pbokL:0)<=$P
+#ELSE
+#LETV pbokL={$P-$(pzast:0)}
+#ENDIF
+#IF $(pzast:0)+$(pbokR:0)<=$P
+#ELSE
+#LETV pbokR={$P-$(pzast:0)}
+#ENDIF
+#IF $(nerovnL:0)=0 & $(bokVnutrL:0)=1
+010  // Бок ЛВ
+#ENDIF
+#IF $(nerovnR:0)=0 & $(bokVnutrR:0)=1
+011
+#ENDIF
+#IF $(nerovnD:0)=0 & $(dnoVnutr:0)=1
+012
+#ENDIF
+#IF $(nerovnUp:0)=0 &  $(verhVnutr:0)=1
+012	SA=$A-$(mat:0)
+#ENDIF

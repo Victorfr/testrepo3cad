@@ -1,0 +1,77 @@
+//VOLUMELIVING
+///горизонтали
+#IF $(orienta)=0
+#IF $a=6 //полка стекло
+#LET spostakarkasP=0
+#LET vetroPolkProf=$p-{$(spostakarkasP)}-2
+#LET vetroKrepL=2
+//_polkasteklo	p=$(p)
+#LETV _WR=999K_VETRORIP6
+#LETV _MNP=999K_VETRORIP6
+#IF $(vetroPolkProf)>560
+#LET vetroPolkProf=560
+#IF $(oldUnico)!$(_idunico)
+#MSG Внимание! Глубина полки будет 560 мм
+#LETV oldUnico=$(_idunico)
+#ENDIF
+#ENDIF
+#LET flag=1
+#IF $l>900
+#LET flag=0
+#ENDIF
+#IF $(flag)=1
+NUMDET	SL=$L/2-50	SA=-35	p=$P
+#LET stekloL=int($l-$(vetroKrepL))
+057	l=$(stekloL)	sl=$(vetroKrepL)/2	p=$(vetroPolkProf)	sp=$(spostakarkasP)  // Полка стекло
+#IF $(maxStekloL)<$(stekloL)
+#LETV maxStekloL=$(stekloL)
+#LETS params=$(maxStekloL):$(vetroPolkProf)
+#LETV stekloSize=$(params)
+#ENDIF
+#LET polkaStekloCount=$(polkaStekloCount)+1
+#LETV stekloCount=$(polkaStekloCount)
+//         ADDNAPLIVING
+///увеличим количество держателей полки
+#LET stilosDerNCount=$(stilosDerNCount)+1
+#LET stilosDerVCount=$(stilosDerVCount)+1
+#ELSE
+//         _POLKASTEKLO
+001	COD=999 /ERROR=1	SL=$(podrezPol)	SP=$(spostakarkasP)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Полка превышаает допустимую ширину 900 мм!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+#ELSE // полка лдсп
+//расчет размеров
+#LET spostakarkasP=0
+#LET pgor={$(p)-{$(spostakarkasP)}-2}
+//отрисовка и рассчет пиломатериалов
+NUMDET	SL=$L/2-50	SA=-35	p=$P
+#LETV _wr=999K_KARKASPL
+#LETV _MNP=999K_KARKASPL
+////разделение пололк по материалам
+#IF $a=16
+#LET maxPolkL=900
+#ELSE
+#LET maxPolkL=1200
+#ENDIF
+#IF $l>$(maxPolkL)
+001	COD=999 /ERROR=1	SL=$(podrezPol)	SP=$(spostakarkasP)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Полка превышаает допустимую ширину $(maxPolkL)!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSE
+#IF $a=16
+_polkStil	mat=$(mat16)	_colkarkas=$(_COLKARKAS16)	p=$(pgor)
+#ELSEIF $a=22
+_polkStil	mat=$(mat22)	_colkarkas=$(_COLKARKAS22)	p=$(pgor)
+#ELSEIF $a=25
+_polkStil	mat=$(mat25)	_colkarkas=$(_COLKARKAS25)	p=$(pgor)
+#ENDIF
+///увеличим количество держателей полки
+#LET stilosDerNCount=$(stilosDerNCount)+1
+#ENDIF
+//      VOLUMELIVING
+#ENDIF
+#ENDIF
+//ADDNAPLIVING
+///вертикали
+#IF $(orienta)=1
+_profStilos
+#ENDIF

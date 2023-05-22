@@ -1,0 +1,104 @@
+// ************************************* закладные с доводчиком ********************************
+#IF $[datecompare;$(dataordine);04.10.2019]>=0
+#IF $[datecompare;$(dataordine);15.07.2019]>=0 & $(TIPSYSTEM:18)[ar1;ar3]
+#LETV DD=406299877
+#ENDIF
+#IF $(TIPRUCH:22)==Aristo_FS_
+#LETS cod_koles=comp_coles_h
+#ELSE
+#LETS cod_koles=comp_coles
+#ENDIF
+#LET countCol=0
+#IF $(flag_dovodchik)=1 & $(typeDoor:1)=1 & $(TIPSYSTEM:18)[ar1;ar3]
+//в самую левую дверь добавляются доводчики
+#IF ($(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | $(FPL)==N )  | ($(flag_padre)=2 & $(flag_dovodchik)=1) | $(dovodDoorPar)[1]
+001	LATO=6	COD=999SH_DOVOD /TD=536;SKP=1 / /#L-1	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999SH_DOVOD / / /#L-1	L=1	A=1	P=1  //Test
+#IF $(FPL)!!N
+001	LATO=6	COD=999SH_DOVOD /TD=536;SKP=1 / /#L-1	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999SH_DOVOD / / /#L-1	L=1	A=1	P=1  //Test
+#ENDIF
+#ENDIF
+#IF $(ndoors)=2
+#LET count_zak=2	 flag_dovodchik_new=1
+#LETV SHPR=2
+#ELSEIF $(ndoors)=3
+#IF $(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | $(SlDoorDx)+$(^spostaDoorRpSx)=rnd($(posl))
+#LET count_zak=1	 flag_dovodchik_new=1
+#LETV SHPR=1
+#ELSE
+#LET count_zak=2	 flag_dovodchik_new=1
+#LETV SHPR=2
+//001	LATO=6	COD=999$(cod_koles) / / /#L-1	L=1	A=1	P=1  // Test
+//001	LATO=6	COD=999sh_pos / / /#L-1	L=1	A=1	P=1  //Test
+#LET countCol=1
+#ENDIF
+#ELSEIF $(ndoors)=4
+#LET count_zak=1	 flag_dovodchik_new=1
+#LETV SHPR=1
+#IF $(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | $(SlDoorDx)+$(^spostaDoorRpSx)=rnd($(posl))
+//001	LATO=6	COD=999$(cod_koles) / / /#L-1	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999sh_pos / / /#L-1	L=1	A=1	P=1  //Test
+#LET countCol=1
+//021
+#ENDIF
+#ELSEIF $(ndoors)=5
+#IF $(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | $(SlDoorDx)+$(^spostaDoorRpSx)=rnd($(posl))
+#LET count_zak=1	 flag_dovodchik_new=1
+#LETV SHPR=1
+//          001	LATO=6	COD=999$(cod_koles) / / /#L-1	L=1	A=1	P=1  //Test
+//            001	LATO=6	COD=999sh_pos / / /#L-1	L=1	A=1	P=1  //Test
+#LET countCol=1
+// #MSG 1
+#ELSEIF rnd($(posl))=$(SlDoor2) | rnd($(posl))=$(SlDoor4)
+#LET count_zak=1	 flag_dovodchik_new=1
+#LETV SHPR=1
+// #MSG 2
+#ELSE
+//  001	LATO=6	COD=999$(cod_koles) / / /#L-1	L=1	A=1	P=1  //Test
+//   001	LATO=6	COD=999sh_pos / / /#L-1	L=1	A=1	P=1  //Test
+#LET countCol=1
+//#MSG 3
+#ENDIF
+#ENDIF
+#IF $[datecompare;$(dataordine);15.07.2019]>=0 & $(flag_dovodchik_new)=1 // & rnd($(posl))>=$(sldoor2) & rnd($(posl))<$(sldoor4)
+#IF $(ndoors)=5
+#IF rnd($(posl))>$(sldoor2) & rnd($(posl))<$(sldoor4)
+#LETV DD=406299877
+#ELSE
+#LETV DD=406299878
+#ENDIF
+#ELSE
+#LETV DD=406299878
+#ENDIF
+#ENDIF
+#ELSE
+//под двери нова добавляется комплекст колес под каждую дверь
+//001	LATO=6	COD=999$(cod_koles) / / /#L-1	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999sh_pos / / /#L-1	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSE
+// *****************************************************************************************************
+//   021
+// ************************************* закладные без доводчика ********************************
+#IF $(flag_dovodchik)=1 & $(typeDoor:1)=1 & $(TIPSYSTEM:18)[ar1;ar3]
+#IF $(ndoors)=2
+#LET count_zak=2
+#ELSEIF $(ndoors)=3
+#IF $(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | $(SlDoorDx)+$(^spostaDoorRpSx)=rnd($(posl))
+#LET count_zak=1
+#ELSE
+#LET count_zak=2
+#ENDIF
+#ELSEIF $(ndoors)=4
+#LET count_zak=1
+#ELSEIF $(ndoors)=5
+#IF $(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | $(SlDoorDx)+$(^spostaDoorRpSx)=rnd($(posl))
+#LET count_zak=1
+#ELSEIF rnd($(posl))=$(SlDoor2) | rnd($(posl))=$(SlDoor4)
+#LET count_zak=1
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
+// *****************************************************************************************************

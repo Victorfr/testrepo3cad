@@ -1,0 +1,158 @@
+_dataBox
+#IF $(_PRIMOCARICAMENTO)=1
+#LETS prof_door=
+#LETV pbokl=2
+#LETV pbokr=2
+#LETV pup=2
+#LETS msg_lim_kol=0
+#LETV tipsystem=$(TIPSYSTEM_pr:1)
+#IF $(matvn:1)[16]
+#LETV _colkarkas_vn=046
+#ENDIF
+#IF $(matvn:1)[22]
+//   #LETV _colkarkas=046
+#LETV _colkarkasKnUg=046
+#ENDIF
+#IF $(matvn:1)[25]
+#LETV _colkarkas_vn=047
+#LETV _colkarkasKnUg=046
+#ENDIF
+#IF $(mat:1)[16]
+#LETV _colkarkas=046
+#ENDIF
+#IF $(mat:1)[22]
+//   #LETV _colkarkas=046
+#ENDIF
+#IF $(mat:1)[25]
+#LETV _colkarkas=047
+#ENDIF
+#IF $(mat_kor:1)[16]
+#LETV _colkarkas_kor=046
+#ENDIF
+#IF $(mat_kor:1)[22]
+//   #LETV _colkarkas=046
+#ENDIF
+#IF $(mat:1)[25]
+#LETV _colkarkas_kor=047
+#ENDIF
+#LETV _colkarkasback=046
+#ENDIF
+#IF $[datecompare;$(dataordine);06.06.2019]<0
+#LETS matvn=$(mat)
+#ENDIF
+#IF $[datecompare;$(dataordine);$(_dataNewMet:3)]>=0 & $(tipshkaf:6)!1
+#IF $(_PRIMOCARICAMENTO)=1 & $(fsh:0)!$(_idunico)
+#IF $(tipshkaf:6)=2 #LET l=2000
+#LET a=2000
+#LET err_larg_door={$l+$a}
+#IF $(tipshkaf:7)=2 #LET l=1200	 a=1320
+#IF $(tipshkaf:7)=3 #LET l=1000	 a=1320
+#LET dekorOn=1
+#LETV fsh=$(_idunico)
+#ENDIF
+#ELSEIF $(tipshkaf:6)!1
+#IF $(_PRIMOCARICAMENTO)=1 & $(fsh:0)!$(_idunico)
+#IF $(tipshkaf:6)=2 #LET l=2000
+#LET a=2000
+#LET err_larg_door={$l+$a}
+#IF $(tipshkaf:7)=2 #LET l=1200	 a=1320
+#LET dekorOn=1
+#LETV fsh=$(_idunico)
+#ENDIF
+#ENDIF
+//test
+#IF $(TIPSHKAF:6)=1
+#LET PRIPUSKBOK=30
+#LET obrabotki=1
+#LETV hzoc=0
+#LET doorPripusk=$(mat_kor:1)-2.5
+#LET SxSpostaLRaspD=$(mat_kor:1)-$(doorPripusk)	 DxSpostaLRaspD=$(mat_kor:1)-$(doorPripusk)	 StSpostaARaspD=$(mat_kor:1)-$(doorPripusk)	 PnSpostaARaspD=$(mat_kor:1)-$(doorPripusk)
+#IF $(nerovnL:0)=1 #LET SxSpostaLRaspD=$(lvid:0)-$(doorPripusk)//SxFiaLarg=$(lvid:0)
+#IF $(nerovnR:0)=1 #LET DxSpostaLRaspD=$(rvid:0)-$(doorPripusk)// DxFiaLarg=$(rvid:0)
+#IF $(nerovnD:0)=1 #LET StSpostaARaspD=$(DVID:0)-$(doorPripusk)// StFiaLarg=$(DVID:0)
+#IF $(nerovnUp:0)=1 #LET PnSpostaARaspD=$(UVID:0)-$(doorPripusk)// PnFiaLarg=$(UVID:0)
+#IF $(TIPSHKAF:7)=3
+#IF $(DNO:1)=9 #LET StSpostaARaspD=-$(doorPripusk)
+#IF $(VERH:1)=9 #LET PnSpostaARaspD=-$(doorPripusk)
+#IF $(bokl:1)=9 #LET SxSpostaLRaspD=-$(doorPripusk)
+#IF $(bokr:1)=9 #LET DxSpostaLRaspD=-$(doorPripusk)
+#ENDIF
+#ELSE
+#LET doorPripusk=$(matvn:1)-2.5
+#LET PRIPUSKBOK=0
+#LET obrabotki=1
+#LET SxSpostaLRaspD=$(matvn:1)-$(doorPripusk)	 DxSpostaLRaspD=$(matvn:1)-$(doorPripusk)	 StSpostaARaspD=$(matvn:1)-$(doorPripusk)	 PnSpostaARaspD=$(matvn:1)-$(doorPripusk)
+_provObr
+#ENDIF
+#IF $(TIPSHKAF:7)=2
+#IF $(tipRaspshkaf:3)=0
+#LETV hzoc=0
+#ELSE
+#IF $(hzoc:0)<45
+#LETV hzoc=45
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:1)[11]
+#IF $(hzoc:0)<60
+#LETV hzoc=60
+#ENDIF
+#IF $(noZoc:0)=1
+#LETV noZoc=0
+#MSG Для данного типа шкафа нельзя убирать цоколь!
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:7)[0;1;3] & $(TIPSHKAF:6)=2 & $(hzoc:0)<45
+#LETV hzoc=45
+#ENDIF
+#IF $(noZoc:0)=1
+#LETV hzoc=0
+#ENDIF
+#IF $(TIPSHKAF:7)=2 & $(TIPSHKAF:6)=2 & $(tipRaspshkaf:1)=2 & $(dekor:0)=1 & $(hzoc:0)<58
+#LETV hzoc=58
+#ENDIF
+#LET LKOR=$(LVID:0)
+#LET NDET=0
+#LET numnisha=0
+#LETS paramnisha=
+#LET zazor_back=0//зазор расстояния между задними стенками для соединителя
+#LETS strPolkParams=
+#LETS strWallParams=
+#LETV otsL=0
+#LETV otsR=0
+#LET otsD=0	otsU=0
+#LET otsOblL=0	otsOblR=0
+#LET polkNumber=0
+#LET wallNumber=0
+#IF $(TIPSHKAF:6)[2]
+#LET sSposta={$(hzoc:0)+$(matvn:1)}
+#ELSE
+#LET sSposta=0
+#ENDIF
+//015
+#LET lato_kr=0
+#IF $(show_verh:0)=1 #LET lato_kr=6
+#LET SpostaPRaspD=2.5
+#LET otsDoorlar=0
+#LET SaNapr=0
+#LETS vid_vis=n // параметр прозрачности типологии 303
+#LET sa_verh_nap_vst=0
+#LET iz=0 // индекс задней стенки
+#LETS mis_zst=
+#LETS count_krep_back_new=
+#IF $(dekor:0)=1 & $(dekorOn)=1
+#LETV bokSx=1
+#LETV dekKolSx=1
+#LETV bokDx=1
+#LETV dekKolDx=1
+#LETV cornic=1
+#LET dekorOn=0
+#ENDIF
+// s-o
+#LETV dekKolSxDx=1
+#LETV dekPlan=1
+#ENDIF
+//#IF $(tipshkaf:6)=2 & $(tipshkaf:7)=1 // s-o ^
+//   #LETV dekKolSx=1
+//   #LETV dekKolDx=1
+//#ENDIF

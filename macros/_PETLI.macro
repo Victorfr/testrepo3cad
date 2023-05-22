@@ -1,0 +1,87 @@
+#IF $(_petl:1)!!999
+#IF $(FPL)!!N
+001	LATO=6	COD=999dempf / / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dempf / / /#L-1	L=1	A=1	P=1  //Test
+#ENDIF
+#LET spostaSxPetl=13-$(spostaLPetli)
+#LETS fiaPetl=sx
+#IF $(_FiaApertoAnta:1)=2
+#LET spostaSxPetl=$l-40+$(spostaLPetli)
+#LETS fiaPetl=dx
+#ENDIF
+#LETS 3ds=petlAl$(fiaPetl).3ds
+#IF $(_color_petl:1)=2 #LETS 3ds=petlBl$(fiaPetl).3ds
+#LET count_petl=2
+#IF $a>956 #LET count_petl=3
+#IF $a>1600 #LET count_petl=4
+#IF $a>2200 #LET count_petl=5
+#IF $a>2400 #LET count_petl=6
+///проверка двери на массу для модели зеркало на подложке
+#LET flagAddPetl=0
+#LET count_petl_finish=$(count_petl)
+#IF $(_modDoorRasp:1)[s30]
+#LET massaDoor={$l*$a/1000000}*21.63
+#SELECT $(count_petl)
+#CASE 2:
+#LET maxMassDoor=7.7
+#CASE 3:
+#LET maxMassDoor=13.7
+#CASE 4:
+#LET maxMassDoor=17.1
+#CASE 5:
+#LET maxMassDoor=22
+#ENDSELECT
+#IF $(massaDoor)>$(maxMassDoor)
+#LET flagAddPetl=1
+#LET count_petl_finish=$(count_petl)+2
+#ENDIF
+#ENDIF
+#LET sposta_petl=100
+#LETS petlParams=$(count_petl_finish)|
+//#LETS petlObrPar=$(count_petl)|$(petlYobr)|
+#IF $(_MODDOORRASP:1)[s30] & $(naklDoor)=1 //монтажная планка для вкладных дверей и зеркала на лдсп
+001	LATO=6	COD=999monPl5v / / /#L-1	L=1	A=1	P=1  //Test
+#ENDIF
+//   _PETLIOBR
+#LET addPrip=0
+#IF $(varPrip)!0
+#LET addPrip=$(misPrip)
+#ENDIF
+#FOR $1:$(count_petl)
+//// old
+#IF $(i)=2 #LET sposta_petl=$a-100
+#IF $(i)=3 & $(count_petl)=3 #LET sposta_petl=int($a/2)
+#IF $(i)>=3 & $(count_petl)=4
+#LET sposta_petl=int(($a-200)/3+100)
+#IF $(i)=4 #LET sposta_petl=int((($a-200)/3)*2+100)
+#ELSEIF $(i)>=3 & $(count_petl)=5
+#LET sposta_petl=int(($a-200)/4+100)
+#IF $(i)=4 #LET sposta_petl=int((($a-200)/4)*2+100)
+#IF $(i)=5 #LET sposta_petl=int((($a-200)/4)*3+100)
+#ENDIF
+#IF $I=1
+#LET sposta_petl=100+$(addPrip)
+#ELSEIF $i=$(count_petl)
+#LET sposta_petl=$a-(100+$(addPrip))
+#ELSE
+#LET spostPetls=int((($a-200)/($(count_petl)-1)))
+#LET sposta_petl=$(spostPetls)*($I-1)+100
+#ENDIF
+_petlja
+#IF $(i)!$(count_petl)
+#LETS petlParams=$(petlParams)$(sposta_petl)x{$(spostaSxPetl)}x68Y
+// #LETS petlObrPar=$(petlObrPar)$(sposta_petl)x
+#ELSE
+#LETS petlParams=$(petlParams)$(sposta_petl)x{$(spostaSxPetl)}x68
+//#LETS petlObrPar=$(petlObrPar)$(sposta_petl)
+#ENDIF
+#ENDFOR
+#IF $(flagAddPetl)=1
+#LET sposta_petl1=$a-200-$(addPrip)
+#LET sposta_petl2=200+$(addPrip)
+_petlja	sposta_petl=$(sposta_petl1)
+_petlja	sposta_petl=$(sposta_petl2)
+#LETS petlParams=$(petlParams)Y$(sposta_petl1)x{$(spostaSxPetl)}x68Y$(sposta_petl2)x{$(spostaSxPetl)}x68
+#ENDIF
+#ENDIF
+//_PETLIOBR

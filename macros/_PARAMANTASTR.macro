@@ -1,0 +1,179 @@
+!parametri flagKol=0
+//формирование параметров для модельный фасадов
+#LETS IDO=1
+#LETS IDD=1
+#LETS LPBR=
+#IF $(petlObr:0)=1
+#LETS pop=470043779
+#IF $(_FiaApertoAnta:1)=1
+#LET LPBR=6214833
+#ELSE
+#LET LPBR=6214834
+#ENDIF
+#ELSE
+#LETS POP=
+#LETS LPBR=
+#ENDIF
+#IF $(_MODDOORRASP:1)[s01;S27;S29]
+#IF $(flagCorrector)=1
+#IF $(_FiaApertoAnta:1)=1
+#LET LPBR=6214833
+#ELSE
+#LET LPBR=6214834
+#ENDIF
+#ENDIF
+#ENDIF
+///для фасадов со стеклом
+#IF $(_TipDoorRasp:3)[s]
+#LETS IDO=
+///для моделей крашеных
+#IF $(_ModDoorRasp:1)[s26;s01]
+#IF $(petlObr:0)!1 #LETS IDD=
+#ENDIF
+////для моделей пленк
+#IF $(petlobr:0)=1
+#ELSE
+#LETS idd=
+#ENDIF
+#ELSE  ///для глухих фасадов
+/////
+#LETS IDD=1
+#IF $(petlobr:0)=1 | $(flagCorrector)[1;2] | $(detMod)=3 //дверь на петлях дверь корректор дверь фасад тшки
+#LETS IDO=1_2
+#ELSE
+#LETS IDO=2
+#LETS IDD=
+#ENDIF
+#IF ($(_MODDOORRASP:1)[$(CVETVSTAV_DOOR:14)] & $(_patina:5)!60251733) & $(_TipDoorRasp:3)!!S
+#LETS IDO=
+#IF $(petlobr:0)=1 | (($(flagCorrector)=2 | $(detMod)=3) & $(_MODDOORRASP:1)[s08])
+#LETS IDD=1
+#ELSE
+#LETS IDD=
+#ENDIF
+#ENDIF
+#IF $(_ModDoorRasp:1)[s26;s01;S32]
+#LETS IDO=
+#LETS IDD=
+#IF $(petlobr:0)=1 | $(flagCorrector)[1;2] | $(detMod)=3
+#LETS IDD=1
+#ENDIF
+#ENDIF
+#IF $(_MODDOORRASP:1)[s27]
+#LETS IDO=1
+#IF $(petlObr:0)!1 & $(flagCorrector)!1
+#LETS IDO=
+#ENDIF
+#ENDIF
+#IF $(_MODDOORRASP:1)[s01;S32]
+#IF $(_petlObr:0)!1 & $(flagCorrector)!1 #LETS IDO=
+#ENDIF
+#ENDIF
+#IF $(_ModDoorRasp:1)[s29]
+#IF $(petlobr:0)=1 | $(flagCorrector)[1;2] | $(flagKol)=1 | $(detMod)[3] //если фасад на петлях Vector акрил или тшка пристыковки
+#LETS IDD=1
+#LETS IDO=1
+#IF $(_TipDoorRasp:3)[s]
+#LETS IDO=
+#ENDIF
+#ELSE
+#LETS ido=
+#LETS idd=
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:7)[4] //для выдвижных
+#LET pop=477649243 //флаг отверстия под выдвижные
+#LET LPBR=
+#LETS IDO=1_2
+#LETS IDD=1
+#IF ($(matvstav_door:5)[$(cvetvstav_door:14)]) & $(_patina:5)!60251733
+#LETS IDO=
+#ENDIF
+#IF $(_ModDoorRasp:1)[s26]
+#LETS IDD=1
+#LETS IDO=
+#ENDIF
+#IF $(_ModDoorRasp:1)[s27] //ICE
+#LETS IDD=1
+#LETS IDO=1
+#ENDIF
+#IF $(_ModDoorRasp:1)[s29]//Vector acryl
+#LETS IDD=1
+#LETS IDO=1
+#ENDIF
+#IF $(_ModDoorRasp:1)[S01;S32] //Jazz
+#LETS IDD=1
+#LETS IDO=
+#ENDIF
+#IF $(detMod)=1 //флаг боковых фасадов в модуле
+#IF $(_ModDoorRasp:1)[s27;s01;S32] //ICE/Jazz
+#LETS IDO=
+#LETS IDD=
+#ENDIF
+#IF $(_ModDoorRasp:1)[s08] //Classic
+#LETS IDO=2
+#LETS IDD=
+#IF ($(matvstav_door:5)[$(cvetvstav_door:14)]) & $(_patina:5)!60251733
+#LETS IDO=
+#LETS prip=
+#ENDIF
+#ENDIF
+#IF $(_ModDoorRasp:1)[s26] //Classic эмаль
+#LETS IDD=
+#LETS IDO=
+#ENDIF
+#IF $(_ModDoorRasp:1)[s29]//Vector acryl
+#LETS IDD=
+#LETS IDO=
+#ENDIF
+#ENDIF
+#ENDIF
+//направление текстуры NT для мленочных моделей
+//фактура FKF для крашеных моделей
+//тип вставки VVF только для фасадов со стеклом
+//патина PTN для моделей с патиной
+#IF 0 //так было в типологиях
+///если фасад со стеклом
+#LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);VVF=$(cvetvstav_old:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);FPL=$(fpl);POP=$(pop);LPBR=$(LPBR);NSE=$(SHPR)
+//если фасад глухой
+#LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);FPL=$(fpl);POP=$(pop);IDD=$(IDD) ;IDO=$(IDO);LPBR=$(LPBR);PRIP=$(prip);NSE=$(SHPR)
+//если фасад крашеный  со стеклом
+#LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);vz=$(cvetvstav_old:9);FPL=$(fpl);POP=$(pop);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
+//если фасад крашеный глухой
+#LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);FPL=$(fpl);POP=$(POP);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
+#ENDIF
+//приведем к общим значениям
+//если модель и дверь с корректором
+#IF $(_MODDOORRASP:1)[s27] & ($(flagCorrector)=2 | $(detMod)[3])
+#LET IDO=1
+#ENDIF
+#IF $(_MODDOORRASP:1)[s29]
+#IF $(flagCorrector)[1;2] //для дверей с  корректором меняется маршрут и тип товара
+#LETV _MNP=$(_MODDOORRASP:1)DOORSTAG
+#LETV _WR=$(_MODDOORRASP:1)DOORSTAG
+//#LETV MNP=$(_MNP:3)
+//#LETV WR=$(_WR:3)
+#ENDIF
+#LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
+#ELSE
+#LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);NPO=$(draw);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
+#ENDIF
+#IF $(_TipDoorRasp:3)[s]
+#LETS paramAnta=$(paramAnta);VVF=$(cvetvstav_old:9)
+#IF $(_MODDOORRASP:1)[s01]
+#LETS paramAnta=$(paramAnta);PLVS=$(PLVS)
+#ENDIF
+#ELSE //если фасад глухой
+#IF $(_MODDOORRASP:1)[s08] //для моделей. у которых надо указывать припуск
+#LETS paramAnta=$(paramAnta);PRIP=$(prip)
+#ENDIF
+#ENDIF
+#IF $(_MODDOORRASP:1)[s08;s27] // для моделей в пленке добавим
+#LETS paramAnta=$(paramAnta);NT=$(nt)
+#ENDIF
+#IF $(_MODDOORRASP:1)[s08;S26] //для моделей с патиной добавим
+#LETS paramAnta=$(paramAnta);PTN=$(_patina:5)
+#ENDIF
+#IF $(_MODDOORRASP:1)[s01;s26] //для крашеных моделей добавим
+#LETS paramAnta=$(paramAnta);_FKF=$(_factura:4)
+#ENDIF

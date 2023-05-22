@@ -1,0 +1,10 @@
+#LET pvert=$(p)-$(spostakarkasP)-1
+NUMDET	SL=0	SA=$A/2-35	p=$(pvert) // $(PVNUTR)
+#LETV _wr=999V_KARKASPERVERT
+#LETV _MNP=999V_KARKASPERVERT
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+014	SP=$(spostakarkasP)	P=$(pvert)
+//расчет крепежа
+_agg_krep	p=$(pvert)	krepPar=titus
+_DRAWSTAG	SP=$(spostakarkasP)	P=$(pvert)	orienta=1	l=$(mat:1)

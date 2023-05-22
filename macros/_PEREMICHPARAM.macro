@@ -1,0 +1,48 @@
+//расчет значений параметров для перемычки в дверях
+//сортировка по высоте параметров перемычек_CALCULATE_SIZE
+//_CALCULATE_SIZE
+#LET minIndex=$[ex;$(peremPar1);|;2]
+#LET count=$(numPerem)-1
+////параметры вставок
+#FOR $1:$(numPerem)		i
+#LET perSa=$[ex;$(peremPar$(i));|;2]
+#FOR $1:$(count)		j
+#LET perSaJ=$[ex;$(peremPar$(j));|;2]
+#LET nextInd=$(j)+1
+#LET perSajn=$[ex;$(peremPar$(nextInd));|;2]
+#IF $(perSaj)>$(perSajn)
+#LETS tempPar=$(peremPar$(j))
+#LETS peremPar$(j)=$(peremPar$(nextInd))
+#LETS peremPar$(nextInd)=$(tempPar)
+#ENDIF
+#ENDFOR
+#ENDFOR
+#FOR $1:$(numPerem)		i
+#LET perSa=$[ex;$(peremPar$(i));|;2]
+#LET perIndex=$[ex;$(peremPar$(i);|;1]
+#LETS peremParam$(perIndex)=$(i)|$(perSa)
+//025	COD= / /{$(numPerem)-$(i)+1}	sa=$(perSa)	lato=$(show_num)  //Номер детали
+//#MSG $(peremParam$(perIndex))
+#ENDFOR
+#LET flagNova=1
+#IF $(manNovaCount)>0
+053	LATO=6  //Ручка Nova
+//_addProfNova
+//_MAN_NOVA
+//обнулим значения переменных
+#ENDIF
+#LETS newProfParams=
+#FOR $(profNovaParams)
+#LET num$(i)=0
+#ENDFOR
+#FOR $(profNovaParams)
+#IF $(num$(i))=0
+#LETS newProfParams=$(newProfParams)$(i);
+#ENDIF
+#LET num$(i)=$(num$(I))+1
+#ENDFOR
+#FOR $(newProfParams)
+#LET countProfNova=$(num$(i))
+024	l=$(i)	lato=6
+#ENDFOR
+#LET flagNova=0

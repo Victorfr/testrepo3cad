@@ -1,0 +1,22 @@
+#LETS profilintegrato= a10	 25.75	22	 24.5	20.75	 25.75	19.5	  a10	 37	18	 42	11	36	5	 0	5
+!SAGOMA sagomatest    $(profilintegrato)	0	0	43	0	43	22
+!SAGMIRROR sagomatest    	$(sagomatest)	x
+!SAGSPOSTA sagomatest	$(sagomatest)	-43
+#LETS 3ds=IntegratoGW_new.3ds
+#LET rad=44.5
+#LET x=-({$(rad)*sin(45)})
+#LET y={$(rad)*CSD(45)}
+#IF $(_manIntY:0)+$(_manIntX:0)+10>=$a
+#LETV _manIntX=$a-$(_manIntY:0)-10
+#ENDIF
+#LET manLarg=$(_manIntY:0)
+#LET manLargY=$(_manIntX:0)
+#LETS manProfile= 0	$(manLarg)	0	$(manLarg)	A25	0	$(manLarg)	$(rad)*csd(45)	$(manLarg)+($(rad)-$(rad)*csd(45))	43	$(manLarg)+$(rad)	\
+43	$(manLarg)+$(manLargY)-$(rad)	A25	43	$(manLarg)+$(manLargY)-$(rad)	$(rad)*csd(45)	$(manLarg)+$(manLargY)-$(rad)+$(rad)*csd(45)	0	$(manLarg)+$(manLargY)
+!SAGOMA test $(manProfile)
+!SAGMIRROR test 	$(test)	Y
+!SAGOMAp sagfasad 0	0	$(manProfile)	0	$a	$l	$a	$l	0
+//!SAGMIRROR  sagfasad 	$(sagfasad)	y
+001	C1=$(color_door1)	dis=$(sagfasad)
+001	C1=$(color_door1)	dis=$(sagomatest)	lato=19	x1=$(test) 	ax=-90
+#LET latoFas=6

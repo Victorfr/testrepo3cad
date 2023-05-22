@@ -1,0 +1,37 @@
+#LET manCountNova=20
+#LETS
+#FOR $0:$(manCountNova)
+#LETS curIndex={$(i)}
+#IF $(_man_kupe$(curIndex):3)=1 & $(countShirD)={$(curIndex)+1} // ручка слева
+_add_man_nova	SL=$(sl_delit)+150	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+//053	SL=$(sl_delit)+150	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)  // Ручка Nova
+_addProfNova	SL=$(sl_delit)	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+//024	SL=$(sl_delit)	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+#LET l_delit=$(l_delit)-350	 sl_delit=-($(tipruch:8)-$(tipruch:16)/2-350)
+#ELSEIF $(_man_kupe$(curIndex):3)=2 & $(countShirD)=$(curIndex)+1 // ручка по центру
+#LET l_delit=($(l_delit)-200)/2	 sl_delit=-($(tipruch:8)-$(tipruch:16)/2)
+//053	SL=$(l_delit)	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)  // Ручка Nova
+//024	SL=$l-($(sl_delit)+$(l_delit))	SA=0	SP=$(sp_delit)	L=$(l_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_add_man_nova	SL=$(l_delit)	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_addProfNova	SL=$l-($(sl_delit)+$(l_delit))	SA=0	SP=$(sp_delit)	L=$(l_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+#ELSEIF $(_man_kupe$(curIndex):3)=3 & $(countShirD)=$(curIndex)+1 // ручка по справа
+#LET l_delit=$(l_delit)-350
+//053	SL=$(l_delit)	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)  // Ручка Nova
+//024	SL=$(l_delit)+200	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_add_man_nova	SL=$(l_delit)	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_addProfNova	SL=$(l_delit)+200	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+#ELSEIF $(_man_kupe$(curIndex):3)=4 & $(countShirD)=$(curIndex)+1 // ручка слева и справа
+//053	SL=$(sl_delit)+150	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)  // Ручка Nova
+//024	SL=$(sl_delit)	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+//053	SL=$(l_delit)-350	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)  // Ручка Nova
+//024	SL=$(l_delit)-150	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_add_man_nova	SL=$(sl_delit)+150	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_addProfNova	SL=$(sl_delit)	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_add_man_nova	SL=$(l_delit)-350	SP=$(sp_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+_addProfNova	SL=$(l_delit)-150	SA=0	SP=$(sp_delit)	L=150	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)
+#LET l_delit=$(l_delit)-700	 sl_delit=-($(tipruch:8)-$(tipruch:16)/2-200)+150
+#ENDIF
+#ENDFOR
+////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//_PEREMICHPARAM

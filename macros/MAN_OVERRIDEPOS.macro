@@ -1,0 +1,8 @@
+#IF $(_man:7)[naverhniytorec]
+#LETV _man_orient=0
+#LETS _man_pos=11	11	На верхний торец	11
+#ELSEIF $(_man:7)[verhniztorec]
+#LETV _man_orient=0
+#IF $(_MAN_POS:3)[2] #LETS _man_pos=11	11	На верхний торец	11
+#IF $(_MAN_POS:3)[8] #LETS _man_pos=12	12	На нижний торец	12
+#ENDIF

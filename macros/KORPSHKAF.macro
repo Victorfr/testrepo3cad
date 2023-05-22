@@ -1,0 +1,264 @@
+#LET det_mod=0 // параметр определящий детали модуля
+#LETS mat_old=$(mat)
+#LETS mat=$(matvn)
+#LETS _colkarkas_old=$(_colkarkas)
+#IF $[datecompare;$(dataordine);16.01.2019]>=0
+#LETS _colkarkas=$(_colkarkas_vn)
+#ENDIF
+#LET alt_bok=$a	sa_Bok=0	larg_Dno=$L-$(mat:0)*2	sl_Dno=$(mat:0)	prof_Dno=$P-0.5	wkBok=$(_colkarkas:10)	wkekDno=378917905
+#IF $[datecompare;$(dataordine);02.08.2019]>=0
+#IF $(noZoc:0)=1 #LET alt_bok=$a-$(mat:1)-$(hzoc:0)	sa_Bok=$(mat:1)+$(hzoc:0)	larg_Dno=$l	sl_Dno=0	prof_Dno=$P	wkBok=378917905	wkekDno=$(_colkarkas:10)
+#ENDIF
+// *****************************************
+#LET pBokL=$p
+#LET pBokR=$p
+#IF $(TIPSHKAF:1)[11]
+//#LET pDoors={$[ex;$(prof_door);|;1]}
+//#IF $(pDoors)=0 #LET pDoors=22 // установим по умолчанию толщину фасада 22 мм если не установлены двери еще
+#IF $(NDOORTL:1)[1]
+#LET pBokL=$p+3+8+$(pDoors)
+#ENDIF
+#IF $(NDOORTL:1)[2]
+#LET pBokR=$p+3+8+$(pDoors)
+#ENDIF
+#ENDIF
+NUMDET	SL=0	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+#LETS sk=$(_colkarkas:10)	wk=$(wkBok)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+010	SA=$(sa_Bok)	A=$(alt_bok)	P=$(pBokL)  //Бок ЛВ ДСП
+// *****************************************
+NUMDET	SL=$L	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+#LETS sk=$(_colkarkas:10)	wk=$(wkBok)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+011	SA=$(sa_Bok)	A=$(alt_bok)	P=$(pBokR)  //Бок ПР ДСП
+// *****************************************
+NUMDET	SL=$L/2	SA=$(hzoc:0)
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+//#LETS sk=$(_colkarkas:10)	wk=$(wkekDno)	nk=$(_colkarkas:10)	ek=$(wkekDno)
+//теперь кромится со всех сторон
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+012	SL=$(sl_Dno)	SA=$(hzoc:0)	L=$(larg_Dno)	P=$(prof_Dno)	X5=$(ndet)/$(mat_backwall:0)/$(det_mod)/$(nozoc:0)  //Дно ДСП
+_agg_krep	p=$P-0.5-100-70
+// *****************************************
+#IF $(sk_sys:0)=1 & $(TIPSYSTEM:18)[ar2]
+#LETS mat=$(mat_old)
+#LETS _colkarkas=$(_colkarkas_old)
+#LET skSysAlt=$(sksysheight:0)
+#LET prof_kr=$p-93
+NUMDET	SL=$L/2	SA=$A-$(mat:0)*2-$(skSysAlt)
+#LETV _wr=999K_KARKASKR
+#LETV _MNP=999K_KARKASKR
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET spPolkNova=10
+#LET pPolkNova=$p-110
+#IF $(_backWallDis:1)=1
+#LET spPolkNova=0
+#LET pPolkNova=$(pPolkNova)+10
+#ENDIF
+013	SA=$A-$(matvn:0)-$(Mat_old:1)-$(skSysAlt)	P=$(pPolkNova)	sp=$(spPolkNova)	l=$L-$(matvn:0)*2	sl=$(matvn:0)	lato=$(lato_kr)  // Крышка ДСП
+#IF $(lkorp)>1500 // добавляет вертикальную перегородку при ширине шкафа больше 1500. чтобы не провисала крышка
+NUMDET	SL=$(lkorp)/2	SA=$A-$(mat:0)*2-{$(skSysAlt)/2}
+#LETV _wr=999V_KARKASPERVERT
+#LETV _MNP=999V_KARKASPERVERT
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//VOLUME
+#LET spostaVert=10
+#IF $(_backWallDis:1)=1 #LET spostaVert=0
+//      NAPR
+#LET pNaprNova= $(tipsystem:16)
+#LET _spostal=$(lkorp)/2-$(mat:0)/2
+#LET pVertNova=$p-110-$(pNaprNova)
+#IF $(_backWallDis:1)=1
+#LET pVertNova=$(pVertNova)+10
+#ENDIF
+014	sa=$A-$(matvn:0)*2-$(skSysAlt)+$(matvn:0)	sl=$(lkorp)/2-$(mat:0)/2	a=$(skSysAlt)	P=$(pVertNova)	sp=$(spostaVert)
+#ENDIF
+_agg_krep	p=$P-0.5-100
+#LETS mat=$(matvn)
+#LETS _colkarkas=$(_colkarkas_vn)
+#ELSE
+#LET prof_kr=$P-0.5
+#ENDIF
+NUMDET	SL=$L/2	SA=$A-35
+#LETV _wr=999K_KARKASKR
+#LETV _MNP=999K_KARKASKR
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET saKrish=$a-$(mat:0)
+#IF $(TIPSHKAF:1)[11]
+#LET saKrish={$a-$(mat:0)-60}
+#ENDIF
+//013	SA=$A-$(mat:0)	P=$(prof_kr)	lato=$(lato_kr)  // Крышка ДСП
+013	SA=$(saKrish)	P=$(prof_kr)	lato=$(lato_kr)  // Крышка ДСП
+_agg_krep	p=$P-0.5-100
+// **************************************** планки для пристыковки *******************************************
+#IF $(TIPSHKAF:7)=1
+#IF $(_prist:1)=1
+//VNESHNIE
+NUMDET	SL=$(profPrist:0)	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET lPlankV=$(profPrist:0)-$(mat:1)-$(_MODDOORRASP:5)
+100	SA=$(hzoc:0)+$(mat:1)	A=$a-($(hzoc:0)+$(mat:1)*2)	p=100	sp=$p-100	sl=$(lPlankV)  //Планка ЛВ
+NUMDET	SL=$(profPrist:0)-80	SA=$A/2
+100	SL=$(lPlankV)	SA=$(hzoc:0)+$(mat:1)	SP=$p-$(mat:1)	A=$a-($(hzoc:0)+$(mat:1)*2)	P=100	AY=-90  //Планка ЛВ
+//#FOR $1:8
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+//#ENDFOR
+802	SL=$(^profPrist:0)+50-$(^profPrist:0)/2	L=$(^profPrist:0)/2	A=50	P=$p  //Определения касания пристыковочного (пристыкуемого) шкафа слева
+#ELSEIF $(_prist:1)=2
+NUMDET	SL=$l-$(profPrist:0)	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+100	SA=$(hzoc:0)+$(mat:1)	A=$a-($(hzoc:0)+$(mat:1)*2)	p=100	sp=$p-100	sl=$l-$(profPrist:0)+$(_MODDOORRASP:5)  //Планка ЛВ
+NUMDET	SL=$l+80-$(profPrist:0)	SA=$A/2
+100	SL=$l+$(mat:1)-$(profPrist:0)+$(_MODDOORRASP:5)	SA=$(hzoc:0)+$(mat:1)	SP=$p	A=$a-($(hzoc:0)+$(mat:1)*2)	P=100	Ay=90  //Планка ЛВ
+//#FOR $1:8
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+//#ENDFOR
+802	SL=$l-$(^profPrist:0)-50	L=$(^profPrist:0)/2	A=50	P=$p  //Определения касания пристыковочного (пристыкуемого) шкафа слева
+#ELSE
+803	L=10	A=50	P=$p  //Определения касания пристыковочного (пристыкуемого) шкафа слева
+803	SL=$l-10	L=10	A=50	P=$p  //Определения касания пристыковочного (пристыкуемого) шкафа слева
+#ENDIF
+#ENDIF
+// ***********************************************************************************************************
+#IF ($(TIPSHKAF:7)=2 & $(tipRaspshkaf:3)=0) | $(noZoc:0)=1
+// *************** декоративные опоры с крепежем и самоклейками для распашных шкафов *************************
+#IF $(tipRaspshkaf:1)=3
+#LET na=-$(_dekPie:5)
+048
+048	SP=$p-80  // Опора декоративная
+048	SL=$l-68  // Опора декоративная
+048	SL=$l-68	SP=$p-80  //Опора декоративная
+// #FOR $1:4
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
+#ENDIF
+001	LATO=6	COD=999sh_4.2x25 / / /#Q16	L=1	A=1	P=1  //Test
+// 001	LATO=6	COD=999sh_4.2x25	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999sh_4.2x25	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999sh_4.2x25	L=1	A=1	P=1  //Test
+//#ENDFOR
+#IF $l>899
+048	SL=$l/2-$(_dekPie:4)/2  // Опора декоративная
+048	SL=$l/2-$(_dekPie:4)/2	SP=$p-80  //Опора декоративная
+// #FOR $1:2
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q2	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+001	LATO=6	COD=999sh_4.2x25 / / /#Q8	L=1	A=1	P=1  //Test
+// 001	LATO=6	COD=999sh_4.2x25	L=1	A=1	P=1  //Test
+// 001	LATO=6	COD=999sh_4.2x25	L=1	A=1	P=1  //Test
+// 001	LATO=6	COD=999sh_4.2x25	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+#ENDIF
+#IF $(noZoc:0)=1
+001	LATO=6	COD=999nog_reg10 /TD=536 / /#Q4	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999nog_reg10	L=1	A=1	P=1
+//001	LATO=6	COD=999nog_reg10	L=1	A=1	P=1
+//001	LATO=6	COD=999nog_reg10	L=1	A=1	P=1
+#ENDIF
+// ***********************************************************************************
+#ELSE
+// ************************ ножки ***************************
+#LET spPie=$p-100
+#IF $(TIPSHKAF:7)!1
+#IF $p>870 & $p<921
+#LET spPie=$p-135
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:7)=2 & $(virovnit:0)=1 #LET spPie=($P+$[ex;$(prof_door);|;1]+$(SpostaPRaspD))-100
+#IF $(TIPSHKAF:1)[11] //top line
+//сестим ножки
+#LET spPie=$p-{(65+3+$(mat:0)+22)}
+#ENDIF
+#IF $p>=400
+047	COD= /TD=536  //Ножка регулировочная
+047	COD= /TD=536	SP=$(spPie)  //Ножка регулировочная
+047	COD= /TD=536	SL=$l-$(mat:1)-20  //Ножка регулировочная
+047	COD= /TD=536	SL=$l-$(mat:1)-20	SP=$(spPie)  //Ножка регулировочная
+#ELSE
+001	LATO=6	COD=999nog_reg /TD=536 / /#Q4	L=30	A=30	P=30  //Test
+#ENDIF
+// *********************************************************
+// ****************** самоклейки **************************
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
+#ENDIF
+// ***********************************************************
+// ******************* уголки **************************
+001	LATO=6	COD=999ug24x24x15 / / /#Q6	L=1	A=1	P=1  //Test
+// ****************************************************
+// ****************** пакет шурупов 20 шт.***************
+001	LATO=6	COD=999nab_sh4x16	L=1	A=1	P=1  // Test
+// ********************************************************
+// *****************************************
+NUMDET	SL=$(mat:0)+35	SA=0
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+#LET spzoc=$P-40-$(mat:0)
+#IF $(TIPSHKAF:7)=2 & $(virovnit:0)=1 #LET spzoc=($P+$[ex;$(prof_door);|;1]+$(SpostaPRaspD))-$(mat:0)-40
+#IF $(TIPSHKAF:7)=1 & $(TIPSHKAF:1)=11 //top line
+#LET spzoc=$p-65-$(mat:0)
+#ENDIF
+#IF (($(TIPSHKAF:7)=1 & $(_prist:1)[1;2]) | $(_prist1:1)=1)
+#LET spzoc=$P-$(mat:0)
+#ENDIF
+//////
+#LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NSE=$(SHPR)
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
+#LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
+#ENDIF
+///////
+017	COD= /$(paramsZoc)	SP=$(spzoc)  //Цоколь
+// ****************************************
+NUMDET	SL=$(l)/2	SA=0	SP=$p	ay=180
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+017	COD= /$(paramsZoc)	SP=20  //Цоколь
+#ENDIF
+// ****************************************
+///////////////////////////////размерные линии/////////////////////////////////////////////
+#IF $(size:0)=1
+023	COD= / /$L	SL=0	SA=$A	SP=-50	L=$L	A=-100	P=1	X1=2  //Размер корпуса
+023	COD= / /$P	SL=-50	SP=0	L=$P	P=$P	AY=90	X1=2  //Глубина корпуса
+023	COD= / /$A	SL=0	SA=$A	SP=0	L=$A	A=130	P=0	AZ=90	X1=2  //Высота корпуса
+#ENDIF
+///////////////////////////////////////////////////////////////////////////////////////////
+#LETV otstniz=$(hzoc:0)+$(mat:0)
+#LETV otstverh=$(mat:0)
+#IF $(sk_sys:0)=1
+#LETV otstverh=$(mat:1)+$(mat_old:1)+{$(sksysheight:0)}
+#ENDIF
+#IF $(TIPSHKAF:1)[11]//topline
+#LETV otstverh={$(mat:0)+60}
+#ENDIF
+#LETV matVnL=$(mat:1)
+#LETV matVnR=$(mat:1)
+#LETS _colkarkas=$(_colkarkas_old)
+#LETS mat=$(mat_old)

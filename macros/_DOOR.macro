@@ -1,0 +1,309 @@
+#LETV flag_man=0
+#LETS ksv=
+#LETS koord_sver=
+#LET count_sh=0
+#LET por=
+#LETV countShirD=0
+#LETV countPer=0
+#LET numberPerem=10
+#IF $(_PRIMOCARICAMENTO)=1
+#LET err_larg_door_pl={$l+$a}
+#LETV tipsystem=$(tipsystem_pr:1)
+#ENDIF
+#LETS LOC_BX2=|y
+//#LETS cod=$(tipsystem:18)DOORKUPE$(numvar:1)
+///////////////////////////
+//#IF $(nvst)>=6 & $(nvst)<10 #LETV numvar=6
+//#IF $(nvst)>=10 #LETV numvar=10
+///////////////////////////
+#LETS cod=$(tipsystem:18)$(typeDoor:3)$(numvar:1)
+!SETCODICE $(cod)
+#LETV _MNP=$(cod)
+#LETV MNP=$(_MNP:3)
+//_EXPOSITOR
+#LETV _WR=$(cod)
+#IF $a>2705 & $(tipsystem:18)[ar1]
+#LETS _wr:3=553567687
+#ENDIF
+#LETV WR=$(_WR:3)
+#LETS MNPDOVOD=$(_MNP:3)
+!COMMENTO $(_WR:2)
+!PLACERPAR paramDoors	6
+#LETS openDoorPar=$[estrai;$(paramDoors);|;1]
+#LETS dovodDoorPar=$[estrai;$(paramDoors);|;2]
+//#LETS openDoorPar=$(paramDoors:0)
+#LET flag_padre=0
+#LETV _tipruch=$(tipruch:21)
+#IF $(TIPSYSTEM:18)[ar3]
+#LETV OCF=$(CVETVSTAVprof:9)
+#ELSE
+#LETV _cprof=$(col_system:6)
+#ENDIF
+#LETS opendoorAll=$[ex;$(LOCP_BX0);|;1]
+#LETS opendoor=$[ex;$(opendoorAll);	;1]
+#LETS opendoor1=$[ex;$(opendoorAll);	;2]
+#LETS opendoor2=$[ex;$(opendoorAll);	;3]
+#LETS opendoor3=$[ex;$(opendoorAll);	;4]
+#LETS opendoor4=$[ex;$(opendoorAll);	;5]
+#LETS opendoor5=$[ex;$(opendoorAll);	;6]
+#LETS opendoor6=$[ex;$(opendoorAll);	;7]
+#LETS katcol_padre=$[ex;$(LOCP_BX0);|;3]
+#LETS col_system_padre=$[ex;$(LOCP_BX0);|;4]
+#LETS TIPRUCH_padre=$[ex;$(LOCP_BX0);|;2]
+#LETS TIPSYSTEM_padre=$[ex;$(LOCP_BX0);|;10]
+#LETS sk_sys_padre=$[ex;$(LOCP_BX0);|;11]
+#LETS flag_padre=$[ex;$(LOCP_BX0);|;5]  // параметр определяющий что элемент является плейсером
+#LETS SlDoorSx=$[ex;$(LOCP_BX0);|;6] // смещение крайней левой двери (если экспозитор	 то глубина правила экспозитора)
+#LETS Prof_expos=$(SlDoorSx)
+#LETS SlDoorDx=$[ex;$(LOCP_BX0);|;7] // смещение крайней правой двери
+#LETS flag_dovodchik=$[ex;$(LOCP_BX0);|;8]
+#LETS spostaDoorRpSx=$[ex;$(LOCP_BX0);|;9] // смещение дверей при левом пристыковочном шкафе
+#LETS count_rolNova=$[ex;$(LOCP_BX0);|;12] // количество роликов для дверей Nova
+#LETS krVnutrD=$[ex;$(LOCP_BX0);|;13] // количество внутренних кронштейнов
+#LETS krVneshD=$[ex;$(LOCP_BX0);|;14] // количество внешних кронштейнов
+#LETS ndoors=$[ex;$(LOCP_BX0);|;15] // количество дверей
+#LETS SlDoor2=$[ex;$(LOCP_BX0);|;16] // смещение второй двери
+#LETS SlDoor4=$[ex;$(LOCP_BX0);|;17] // смещение третьей двери
+#LET flag_dovodchik_new=0
+#LET show_door=6
+#LET show_num=6
+#IF $(openDoorPar)!0 #LET openDoor=$(openDoorPar)
+#IF $(opendoor)=0
+#LET show_door=0
+#LET show_num=9
+#ENDIF
+//параметры в который передаются тип шкафа и связанные переменные
+#LETS shkafTypeParams=$(locp_bx6)
+//_SHKAF
+#LETS SHPRpar=$[estrai;$(shkafTypeParams);|;2]
+#LETV NSE=$(shprpar)
+//MACRODOOR
+#LETV information=настройка параметров двери производится в правиле шкафа во вкладке "Двери"!
+#IF $(flag_padre)=1
+//#MSG has padre
+#LETV katcol=$(katcol_padre)
+#LETV TIPRUCH=$(TIPRUCH_padre)
+#LETV TIPSYSTEM=$(TIPSYSTEM_padre)
+#IF $(TIPSYSTEM:18)[ar3]
+//#LET cvetvstavprof=$(col_system_padre)
+#LETS col_system:4=$(cvetvstavprof:5)
+#LETS col_system:5=$(CVETVSTAVprof:6)
+#LETS col_system:6=$(CVETVSTAVprof:9)
+#LETV _cprof=$(col_system:6)
+#LETS col_system:8=$(cvetshleg:3)
+#ELSE
+#LETV col_system=$(col_system_padre)
+#ENDIF
+// #MSG $(cvetvstavprof)
+#LETV sk_sys=$(sk_sys_padre)
+#LETV FPL=
+#IF $[datecompare;$(dataordine);01.04.2019]>=0
+#LETV DD=406299877
+#IF $[datecompare;$(dataordine);01.07.2019]>=0
+#IF $(flag_dovodchik)=1
+#LETV DD=406299878
+#ENDIF
+#ELSE
+#IF $(flag_dovodchik)=1 & ($(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | $(SlDoorDx)+$(^spostaDoorRpSx)=rnd($(posl)))
+#LETV DD=406299878
+#ENDIF
+#ENDIF
+#ENDIF
+#ELSEIF $(flag_padre)=2 // параметры дверей экспозитора
+#LETS FPL=
+#LETV DD=406299877
+#IF $(posp)<{$(Prof_expos)-475}
+#IF $(opendoor6)=1
+#LET show_door=6
+#LET show_num=6
+#ENDIF
+#LETV dovodchik=0
+#LETV flag_dovodchik=0
+#ENDIF
+#IF $(posp)>{$(Prof_expos)-475} & $(posp)<{$(Prof_expos)-375}
+#IF $(opendoor5)=1
+#LET show_door=6
+#LET show_num=6
+#ENDIF
+#LETV dovodchik=0
+#LETV flag_dovodchik=0
+#ENDIF
+#IF $(posp)>{$(Prof_expos)-375} & $(posp)<{$(Prof_expos)-275}
+#IF $(opendoor4)=1
+#LET show_door=6
+#LET show_num=6
+#ENDIF
+#LETV dovodchik=0
+#LETV flag_dovodchik=0
+#ENDIF
+#IF $(posp)>{$(Prof_expos)-275} & $(posp)<{$(Prof_expos)-175}
+#IF $(opendoor3)=1
+#LET show_door=6
+#LET show_num=6
+#ENDIF
+#LETV dovodchik=0
+#LETV flag_dovodchik=0
+#ENDIF
+#IF $(posp)>{$(Prof_expos)-175} & $(posp)<{$(Prof_expos)-90}
+#IF $(opendoor2)=1
+#LET show_door=6
+#LET show_num=6
+#ENDIF
+#LETV dovodchik=0
+#LETV flag_dovodchik=0
+#ENDIF
+#IF $(posp)>{$(Prof_expos)-90}
+#IF $(opendoor1)=1
+#LET show_door=6
+#LET show_num=6
+#ENDIF
+#IF $[datecompare;$(dataordine);01.04.2019]>=0 & $(flag_dovodchik)=1
+#LETV DD=406299878
+#ENDIF
+#ENDIF
+#IF $(TIPSYSTEM:18)[AR3] //даннный способ не работает в плейсерах
+#LETS col_system:4=$(cvetvstavprof:5)
+#LETS col_system:5=$(CVETVSTAVprof:6)
+#LETS col_system:6=$(CVETVSTAVprof:9)
+#LETS col_system:8=$(cvetshleg:3)
+#LETV _cprof=$(col_system:6)
+//  #MSG   $(cvetvstavprof) [[ $(col_system:4)
+#ENDIF
+#ELSEIF $(flag_padre)=3
+#LETV TIPRUCH=$(TIPRUCH_padre)
+#LETV TIPSYSTEM=$(TIPSYSTEM_padre)
+#LETV katcol=$(katcol_padre)
+#LETV col_system=$(col_system_padre)
+#LETV FPL=
+#ELSE
+#LETV FPL=N
+#IF $(TIPSYSTEM:18)[AR3] //даннный способ не работает в плейсерах
+#LETS col_system:4=$(cvetvstavprof:5)
+#LETS col_system:5=$(CVETVSTAVprof:6)
+#LETS col_system:6=$(CVETVSTAVprof:9)
+#LETS col_system:8=$(cvetshleg:3)
+#LETV _cprof=$(col_system:6)
+//  #MSG   $(cvetvstavprof) [[ $(col_system:4)
+#ENDIF
+#ENDIF
+#IF $[datecompare;$(dataordine);01.04.2019]>=0
+#LETV dovodchik=$(DD:3)
+#ENDIF
+///параметры для номеров в делителе
+#LET nvst=0
+#LET numPerem=0
+#LET numNova=0
+#LET ManNovaCount=0
+#LETS profNovaParams=
+_DATABOX
+// ***************************** ограничение габаритов ****************************************
+#LET alt_door=$a
+//для купе аристо
+#IF $(TIPSYSTEM:18)[ar1] & $(typeDoor:1)=1
+#LETS tipsystem:14=3200
+#ENDIF
+//_DOORRASP
+//PEREMICH
+//VSTAV
+#IF $(FPL)!!N & $A>$(TIPSYSTEM:14)
+001	COD=999 /ERROR=1 / /#L-1	FACC=0  //Дверь распашная G
+#LET larg_msg=$l-4
+#IF $(larg_msg)<200 #LET larg_msg=200
+025	COD= / /Превышен максимальный размер двери!	SL=0	SA=$a/2	L=$(larg_msg)	sp=$p	a=300  //сообщение об ошибке
+#ENDIF
+#IF $a>$(tipsystem:14) & $(FPL)==N
+#LET a=$(tipsystem:14)	 alt_door=$(tipsystem:14)
+#VB
+dim alt_door
+alt_door=v("a")
+msgbox "Высота двери не может быть больше " + alt_door + " мм!"
+#ENDVB
+#ENDIF
+#IF $a<$(tipsystem:13) & $(FPL)==N & $(typeDoor:1)=1
+#LET a=$(tipsystem:13)	 alt_door=$(tipsystem:13)
+#VB
+dim alt_door
+alt_door=v("a")
+msgbox "Высота двери не может быть меньше " + alt_door + " мм!"
+#ENDVB
+#ELSEIF $a<300 & $(FPL)==N & $(typeDoor:1)=2
+#LET a=300	 alt_door=300
+#VB
+dim alt_door
+alt_door=v("a")
+msgbox "Высота двери не может быть меньше " + alt_door + " мм!"
+#ENDVB
+#ENDIF
+#IF $L>$(tipsystem:7) & $(FPL)==N & $(typeDoor:1)=1
+#LETV l=$(tipsystem:7)
+#VB
+dim lant_door
+lant_door=v("l")
+msgbox "Ширина двери не может быть больше " + lant_door + " мм!"
+#ENDVB
+#ELSEIF $L>507 & $(FPL)==N & $(typeDoor:1)=2
+#LETV l=507
+#VB
+dim lant_door
+lant_door=v("l")
+msgbox "Ширина двери не может быть больше " + lant_door + " мм!"
+#ENDVB
+#ENDIF
+#IF $L<500 & $(FPL)==N & $(typeDoor:1)=1
+#LETV l=500
+#VB
+msgbox "Ширина двери не может быть меньше 500 мм!"
+#ENDVB
+#ELSEIF $L<150 & $(FPL)==N & $(typeDoor:1)=2
+#LETV l=150
+#VB
+msgbox "Ширина двери не может быть меньше 150 мм!"
+#ENDVB
+#ENDIF
+#IF $a/4>$l & $(err_larg_door_pl)!{$l+$a} & $(typeDoor:1)=1
+#LET razn={rnd($a/4)-$l}
+#LET ldv=$l
+#LETV dd=406299877
+#VB
+dim ldv	razn
+ldv=v("ldv")
+razn=v("razn")
+msgbox "Ширина двери равна " + ldv + " мм	 что на " + razn + " мм меньше	 чем рекомендованная производителем." + vbCr + "УСТАНОВКА ДОВОДЧИКА ЗАПРЕЩЕНА!" + vbCr + "Фабрика не будет принимать претензии на ходовые качества двери!" + vbCr + "Рекомендации производителя: минимальная ширина двери = высота двери/4."
+#ENDVB
+#ENDIF
+#LET err_larg_door_pl={$l+$a}
+#IF $a/4>$l
+#LETV dd=406299877
+#ENDIF
+// **********************************************************************************
+//MACRODOOR
+#IF $(_PPL)<$L
+#LET ind=1
+#ELSEIF $(_PPL)<($L-100)*2
+#LET ind=2
+#ELSEIF $(_PPL)<$L*3
+#LET ind=3
+#ELSEIF $(_PPL)<$L*4
+#LET ind=4
+#ELSE
+#LET ind=5
+#ENDIF
+#LET _PLACERRIVPADRE=1 // принудительный пересчет родителя при изменении потомка
+#LETS _macrofinale=finalescriptDoor
+_upakovka_door
+#LET Numvst=0
+#LET lant_door=$L
+#LET alte_door=$a
+//FINALESCRIPTDOOR
+//параметры в который передаются тип шкафа и связанные переменные
+#LETS shkafTypeParams=$(locp_bx6)
+#LETS SHPRpar=$[estrai;$(shkafTypeParams);|;2]
+#LETV NSE=$(shprpar)
+///////
+#IF $(TYPEDOOR:1)[2] //распашные аристо
+#LETS PlacerDoorParam=$l|$A|$(_ppl)|$(_ppa)|ARISTORASP|0|0
+#LETS LOC_BX4=$(PlacerDoorParam)
+#LET _PLACERRIVPADRE=1 // принудительный пересчет родителя при изменении потомка
+#ENDIF
+//_KREPNOVA
+//finalescriptDoor

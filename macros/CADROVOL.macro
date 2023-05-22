@@ -1,0 +1,13 @@
+#IF $(orienta)=0 //gor
+//_profCadro	az=90	a=$l	sa=$(profLArg)
+//_profCadro	az=90	a=$l	sp=$P-$(profLArg)	sa=$(profLArg)
+//_cadroPlace	l=$L	a=$p-$(profLArg)*2	ax=-90	sp=$(profLArg)	sa=$(profLArg)
+// 001	c1=2
+//001	c1=55
+#ENDIF
+#IF $(orienta)=1
+// 001	c1=2
+// _profCadro
+// _profCadro	sp=$p-$(profLArg)
+//_CADROPLACE	ay=-90	l=$p	sl=$(profLarg)
+#ENDIF

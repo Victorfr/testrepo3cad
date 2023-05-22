@@ -1,0 +1,35 @@
+////проверка пересечения плейсера с петлями
+//зоны где располагаются петли
+#LETS petlZoneParams=$(locp_bx5)
+!PLACERPAR placerparams	5
+//_OLD_PLACE
+#LET spostaL=$(placerparams:1)//+$(falshL)
+#LET modL=$l//-{$(falshR)+$(falshL)}
+#LET spostaa=$(placerparams:2)+int($(_ppa))
+#IF $[LEN;$(petlzoneparams)]>0 //& $(_primocaricamento)!1
+#FOR $(petlZoneParams)  //проход по массиву петель
+#LETS petlPar=$i
+#LET petlSa=$[ex;$(petlPar);X;1]
+#LET petlSL=$[ex;$(petlPar);X;2]
+#LET petlA=$[ex;$(petlPar);X;3]
+#LET petlL=$[ex;$(petlPar);X;4]
+#IF $(spostaa)>=$(petlsa)
+#IF  $(spostaa) < {$(petlsa)+$(petlA)}
+#IF $(spostal)>$(petlsl) & $(spostal)<$(petlsl)+$(petlL)
+#LET flag_ust=5
+#ENDIF
+#IF $(spostal)<$(petlsl) & $(spostal)+$(modL)>$(petlsl)
+#LET flag_ust=5
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(spostaa)<$(petlsa) & $(spostaa)+$a>{$(petlsa)}
+#IF $(spostal)>$(petlsl) & $(spostal)<$(petlsl)+$(petlL)
+#LET flag_ust=5
+#ENDIF
+#IF $(spostal)<$(petlsl) & $(spostal)+$(modL)>$(petlsl)
+#LET flag_ust=5
+#ENDIF
+#ENDIF
+#ENDFOR
+#ENDIF

@@ -1,0 +1,43 @@
+//параметрический фасад
+#LETS draw=
+#LETS 3ds=classicS.3ds
+#LET SlVstav=129 // смещение вставки по ширине
+#LET SaVstav=109 // смещение вставки по высоте
+#LET AltPlan=83 // высота планки
+#LET SlPlan=65 // смещение планки по ширине
+//_PLANKIVSTAVKI
+///параметры	 зависящие от высоты и модели
+#IF $a>=1495 & $a<1835
+#LET draw=487633161
+#IF $(_MODDOORRASP:1)[s26]
+#LET draw=487633163
+#ENDIF
+#LET countPlanks=3
+#ENDIF
+#IF $a>=1835 & $a<=2035
+#LET draw=487633162
+#IF $(_MODDOORRASP:1)[s26]
+#LET draw=487633164
+#ENDIF
+#LET countPlanks=4
+#ENDIF
+//планка
+//расчет параметров стекла
+#LET stekloHeight=$a/2-65-65/2
+#LETS paramSteklo=2|$(stekloHeight)x$(stekloHeight)
+#LETS _gsd:7=$(paramSteklo)
+////
+040	COD=X	SL=50	SA=$(a)/2-$(AltPlan)/2	L=$l-50*2	A=$(AltPlan)	P=19	C1=$(color_door1)	c2=$(color_door2)	FACC=1	X5=plankaPar.3ds/N	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	lato=$(show_door) // Вставка двери
+//040	COD=X	SL=$(SlPlan)	SA=$(a)/2-$(AltPlan)/2	L=$l-$(slPlan)*2	A=$(AltPlan)	p=19	C1=$(color_door1)	FACC=1	X5=peregPar.3ds	lato=$(show_door)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)
+#LET otstPlank=83
+#LET altStep=($a/2-$(otstPlank)-$(otstPlank)/2)/$(countPlanks)
+//отрисовка планок
+#LET countPlanks=$(countPlanks)-1
+040	COD=X	SL=$(l)/2-23/2	SA=$(slPlan)	SP=$p-10	L=23	A=$a/2-$(SlPlan)/2-$(slPlan)	P=10	C1=$(color_door1)	FACC=1	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)  // Вставка двери
+#FOR $1:$(countPlanks)
+040	COD=X	SL=$(SlPlan)	SA={$(otstPlank)+$(altStep)*$(i)}	SP=$p-10	L=23	A=$l-$(slPlan)*2	P=10	Az=90	C1=$(color_door1)	FACC=1	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)  // Вставка двери
+#ENDFOR
+040	COD=X	SL=$(l)/2-23/2	SA=$(SlPlan)/2+$a/2	SP=$p-10	L=23	A=$a/2-$(SlPlan)/2-$(slPlan)	P=10	C1=$(color_door1)	FACC=1	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)  // Вставка двери
+#FOR $1:$(countPlanks)
+040	COD=X	SL=$(slPlan)	SA=$(a)/2+$(AltPlan)/2+$(altStep)*$(i)	SP=$p-10	L=23	A=$l-$(slPlan)*2	P=10	Az=90	C1=$(color_door1)	FACC=1	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds 	lato=$(show_door) // Вставка двери
+#ENDFOR

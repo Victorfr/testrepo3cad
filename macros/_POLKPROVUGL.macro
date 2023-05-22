@@ -1,0 +1,53 @@
+#LET provIndex=0
+#IF $(ugolL_Up:0)=1
+#LET provIndex=$(provIndex)+1
+#ENDIF
+#IF $(ugolL_Down:0)=1
+#LET provIndex=$(provIndex)+1
+#ENDIF
+#IF $(ugolR_Down:0)=1
+#LET provIndex=$(provIndex)+1
+#ENDIF
+#IF $(ugolR_Up:0)=1
+#LET provIndex=$(provIndex)+1
+#ENDIF
+#LETS UgolParams={$(ugolL_Up:0)}X{$(ugolL_Down:0)}X{$(ugolR_Down:0)}X{$(ugolR_Up:0)}
+#IF $(UgolParams)!!$(OldUgolParams) //изменение обработок на углах
+///старые значения обработок в углах
+#LET oldUgLU=$[ex;$(oldUgolParams);X;1]
+#LET oldUgLD=$[ex;$(oldUgolParams);X;2]
+#LET oldUgRD=$[ex;$(oldUgolParams);X;3]
+#LET oldUgRU=$[ex;$(oldUgolParams);X;4]
+#IF $(oldUgLU)=1 & $(ugolR_Down:0)=1
+#LETV ugolR_Down=0
+#LETS UgolParams={$(ugolL_Up:0)}X{$(ugolL_Down:0)}X{$(ugolR_Down:0)}X{$(ugolR_Up:0)}
+#ENDIF
+#IF $(oldUgLD)=1 & $(ugolR_Up:0)=1
+#LETV ugolR_Up=0
+#LETS UgolParams={$(ugolL_Up:0)}X{$(ugolL_Down:0)}X{$(ugolR_Down:0)}X{$(ugolR_Up:0)}
+#ENDIF
+#IF $(oldUgRD)=1 & $(ugolL_Up:0)=1
+#LETV ugolL_Up=0
+#LETS UgolParams={$(ugolL_Up:0)}X{$(ugolL_Down:0)}X{$(ugolR_Down:0)}X{$(ugolR_Up:0)}
+#ENDIF
+#IF $(oldUgRU)=1 & $(ugolL_Down:0)=1
+#LETV ugolL_Down=0
+#LETS UgolParams={$(ugolL_Up:0)}X{$(ugolL_Down:0)}X{$(ugolR_Down:0)}X{$(ugolR_Up:0)}
+#ENDIF
+#IF $(provIndex)>2
+#IF $(ugolL_Up:0)!$(oldUgLU)
+#LETV ugolL_Up=0
+#ENDIF
+#IF $(ugolL_Down:0)!$(oldUgLD)
+#LETV ugolL_Down=0
+#ENDIF
+#IF $(ugolR_Down:0)!$(oldUgRD)
+#LETV ugolR_Down=0
+#ENDIF
+#IF $(ugolR_Up:0)!$(oldUgRU)
+#LETV ugolR_Up=0
+#ENDIF
+#LETS UgolParams={$(ugolL_Up:0)}X{$(ugolL_Down:0)}X{$(ugolR_Down:0)}X{$(ugolR_Up:0)}
+#ENDIF
+#LETV OldUgolParams=$(UgolParams)
+#ENDIF

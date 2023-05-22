@@ -1,0 +1,9 @@
+_CALCULATE_SIZE	mis_zst=$(hdfsizemax)
+//расчет упаковки для хдф
+#IF $(hdfsizemax)!!TEST //$(mat_backwall:3)=4 & $(LargLDsp)>0 $ $(altLdsp)>0
+//#LETV _wr=999PODLZST
+//по письму марии насчет упаковок 16.01.2020
+#LETV _wr=999ZAGHDFUPAK
+#LETV _mnp=999KARKASZST
+111	LATO=6	COD=999ZAGHDFUPAK /MNP=$(_MNP:3);WR=$(_wr:3);TD=505 /Упаковка для задней стенки	L=$(LargLDsp)	A=$(AltLDsp)	P=16
+#ENDIF

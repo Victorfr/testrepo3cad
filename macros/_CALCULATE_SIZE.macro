@@ -1,0 +1,54 @@
+!parametri mis_zst=$(mis_zst)
+#VB
+Dim count
+Dim param_h(100)
+Dim param_l(100)
+Dim min_sizes(100)
+Dim max_size
+dim max_size_index
+str_data=V("mis_zst")
+'str_data="1500X100|1200X300|800X800|750X900"
+data_array=Split(str_data	"|")
+count=Ubound(data_array)
+for i=0 to count-1
+tmp_data=Split(Data_array(i)	"X")
+l=tmp_data(0)
+h=tmp_data(1)
+param_h(i)=calcola(h)
+param_l(i)=calcola(l)
+next
+'найдем номер детали с наибольшим размером
+x=0
+max_size_index=0
+max_size=0
+for i=0 to count-1
+if param_h(i) > param_l(i) then
+x=param_h(i)
+else
+x=param_l(i)
+end if
+if max_size<x then
+max_size=x
+max_size_index=i
+end if
+next
+'найдем минимальные размеры у деталей
+for i=0 to count-1
+minimum=0
+minimum=param_h(i)
+if minimum>param_l(i) then minimum=param_l(i)
+min_sizes(i)=minimum
+next
+'найдем наибольшее значение среди наименьших  и наименьшего размера из детали с максимальным размером
+maximum=0
+for i=0 to count-1
+if min_sizes(i)>maximum then
+maximum = min_sizes(i)
+end if
+next
+'max_size
+'maximum
+'msgbox max_size & " " & maximum
+v("LargLDsp")=max_size
+v("AltLDsp")=maximum
+#ENDVB

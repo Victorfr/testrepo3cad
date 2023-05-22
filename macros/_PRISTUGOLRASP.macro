@@ -1,0 +1,184 @@
+//макрос рисует пристыковочный уголок в распашных
+#IF $(_prist:1)!0
+#LET minPristProf=600//500
+#IF $(_primocaricamento)=1
+#LETV profprist=$(minPristProf)
+#ENDIF
+#IF {$(profprist:0)-$(profwallpris:0)}>$(minPristProf)
+#LETV profprist={$(minPristProf)+$(profwallpris:0)}
+#ENDIF
+///размеры колонки и деталей
+#LET profUg=$(profprist:0)
+#LET saPlanUg={$(hzoc:0)+2}
+#LET altPlanUg=$(akorp)-{$(hzoc:)}-4
+#LET flagDelKol=0
+#LET flagLargKol=0
+#LET pripKolSa=0
+#LET pripKolA=0
+#IF $(addprip:1)=1
+#IF $(pripVar:1)[1]
+#LET pripKolSa=$(pripvaldoor:0)
+#LET pripKolA=$a+$(pripvaldoor:0)
+#ENDIF
+#IF $(pripVar:1)[2]
+#LET pripKolSa=0
+#LET pripKolA=$a+$(pripvaldoor:0)
+#ENDIF
+#LET altPlanUg=$(altPlanUg)+$(pripvaldoor:0)
+#ENDIF
+#LET saPlanUg=$(saPlanUg)-$(pripKolSa)
+///проверки ограничений для предварительного деления тшки и фасада колонки
+//_MISURALIM	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	FLAGKOL=1
+#LET flagDelKol=0
+//пропишем ограничения для фасадов в планке
+_misuraplank	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)
+_misuraplank	L=146	A=$(altPlanUg)	P=$(_MODDOORRASP:5)
+#IF $(flagDelKol)=0
+//если планка во всю высоту но число дверей 2 или 4 то планка делится под двери
+#IF $(_DOORSRASP:1)[3;4]
+#LET flagDelKol=1
+#ENDIF
+#ENDIF
+//левый пристыковочный
+#IF $(_prist:1)[1]
+#IF $(ul)!0
+#LET ul=0
+#ENDIF
+#IF $(profwallpris:0)!0
+#LET nl=-$(profwallpris:0)
+#ELSE
+#LET nl=0
+#ENDIF
+//-$(profwallpris:0)
+!ADDPUNTO $(profUg)	0	$P+$(_MODDOORRASP:5)+50
+//      _SHKAF
+//      _DEKOR
+#LET _spostaLMacroT=0
+#IF $(flagDelKol)=0
+////для теста
+//#LETS cod=$(_MODDOORRASP:1)FASTH
+// #LETV _MNP=$(cod)
+// #LETV _WR=$(cod)
+//////
+//301
+_fasvid	SA=$(saPlanUg)	SP=$(p)	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=3	_spostaa=$(saPlanUg)
+//_fasvid	SL=$(profUg)-{$(profwallpris:0)}	SA=$(saPlanUg)	SP=$(p)+50+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	AY=90	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	detMod=4	_spostaa=$(saPlanUg)
+//фурнитура для крепления тшки
+//Шуруп 4.0x70 потай белый цинк с шагом по высоте делится 400
+#LET countAlt=int($(altPlanUg)/400)
+001	LATO=6	COD=999sh4x7whz / / /#Q{$(countAlt)}	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(flagDelKol)=1
+#LET altPrevUg=$(altPlanUg)
+#LET altPlanUg1=int($(altPlanUg)/2)
+#LET altPlanUg2=$(altPlanUg1)
+#IF not($(_DOORSRASP:1)[1;2;999])
+#LET altPlanUg1=int({$(AltSxStD:0)+3})
+#LET altPlanUg2=$(altPlanUg)-$(altPlanUg1)
+#ENDIF
+#IF $(addprip:0)=1
+#IF $(pripvar:1)[2]
+//#LET altPlanUg2=$(altPlanUg2)+$(pripvaldoor:0)
+#ENDIF
+#ENDIF
+_fasvid	SA=$(saPlanUg)	SP=$(p)	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg1)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=3	_spostaa=$(saPlanUg)
+//_fasvid	SL=$(profUg)-{$(profwallpris:0)}	SA=$(saPlanUg)	SP=$(p)+50+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg1)	P=$(_MODDOORRASP:5)	AY=90	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=4
+#LET saPlanUg=$(saPlanUg)+$(altPlanUg1)
+_fasvid	SA=$(saPlanUg)	SP=$(p)	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg2)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=3	_spostaa=$(saPlanUg)
+//_fasvid	SL=$(profUg)-{$(profwallpris:0)}	SA=$(saPlanUg)	SP=$(p)+50+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg2)	P=$(_MODDOORRASP:5)	AY=90	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=4
+#LET countAlt=int($(altPlanUg1)/400) +int($(altPlanUg2)/400)
+001	LATO=6	COD=999sh4x7whz / / /#Q{$(countAlt)}	L=1	A=1	P=1  //Test
+#ENDIF
+//показывает	 что колонка делится по высоте
+#IF $(flagDelKol)=1
+#ENDIF
+//колонка
+_drawKolonka	_colkarkas=$(_colkarkasKnUG)	sa=$(hzoc:0)-$(pripKolSa)	a=$(akorp)-$(hzoc:0)+$(pripvaldoor:0)	ay=90	sp=$p+50+$(_MODDOORRASP:5)	p=$(profUg)-{$(profwallpris:0)}
+//     KORPSHKAF
+///цоколь
+#IF $(hzoc:0)>0
+NUMDET	Sp=$p+45	SA=0	ay=90	sl=-$P+$(profUg)
+#LETS _colkarkasOld=$(_colkarkas)
+#LETS _colkarkas=$(_COLKARKAS_vn)
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+#LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NSE=$(SHPR)
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
+#LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
+#ENDIF
+///////
+017	COD= /$(paramsZoc)	SP=$p-40	ay=-90	l=50+40+$(_MODDOORRASP:5)	sl=$(profUg)-{$(profwallpris:0)}-40  //Цоколь
+#LETS _colkarkas=$(_COLKARKASOld)
+#ENDIF
+#ENDIF
+//правый пристыковочный
+#IF $(_prist:1)[2]
+#IF $(nl)!0
+#LET nl=0
+#ENDIF
+#IF $(profwallpris:0)!0
+#LET ul=$(profwallpris:0)
+#ELSE
+#LET ul=0
+#ENDIF
+#LET profUg=$(profprist:0)//-$(profwallpris:0)
+!ADDPUNTO $(lkorp)-$(profUg)+$(profwallpris:0)	0	$P+$(_MODDOORRASP:5)+50
+//#LET saPlanUg={$(hzoc:0)+2}
+//#LET altPlanUg=$(akorp)-{$(hzoc:)}-4
+//#LET flagDelKol=0
+//#LET flagLargKol=0
+///проверки ограничений для предварительного деления тшки и фасада колонки
+//_MISURALIM	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	FLAGKOL=1
+//пропишем ограничения для фасадов в планке
+//_misuraplank	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)
+//_misuraplank	L=146	A=$(altPlanUg)	P=$(_MODDOORRASP:5)
+#IF $(flagDelKol)=0
+//если планка во всю высоту но число дверей 2 или 4 то планка делится под двери
+#IF $(_DOORSRASP:1)[3;4]
+#LET flagDelKol=1
+#ENDIF
+#ENDIF
+#LET _spostaLMacroT=$l-($(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5))
+#IF $(flagDelKol)=0
+_fasvid	SA=$(saPlanUg)	SP=$(p)	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	sl=$(_spostaLMacroT)	flagKol=0	detMod=3	_spostaa=$(saPlanUg)
+//_fasvid	SL=$(l)-$(profug)+{$(profwallpris:0)}	SA=$(saPlanUg)	SP=$(p)+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	AY=-90	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=4
+//Шуруп 4.0x70 потай белый цинк с шагом по высоте делится 400
+#LET countAlt=int($(altPlanUg)/400)
+001	LATO=6	COD=999sh4x7whz / / /#Q{$(countAlt)}	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(flagDelKol)=1
+#LET altPrevUg=$(altPlanUg)
+#LET altPlanUg1=int($(altPlanUg)/2)
+#LET altPlanUg2=$(altPlanUg1)
+#IF not($(_DOORSRASP:1)[1;2;999])
+#LET altPlanUg1=int({$(AltSxStD:0)+3})
+#LET altPlanUg2=$(altPlanUg)-$(altPlanUg1)
+#ENDIF
+_fasvid	SA=$(saPlanUg)	SP=$(p)	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg1)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	sl=$l-($(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5))	flagKol=0	detMod=3	_spostaa=$(saPlanUg)
+//_fasvid	SL=$(l)-$(profug)+{$(profwallpris:0)}	SA=$(saPlanUg)	SP=$(p)+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg1)	P=$(_MODDOORRASP:5)	AY=-90	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=4
+#LET saPlanUg=$(saPlanUg)+$(altPlanUg1)
+_fasvid	SA=$(saPlanUg)	SP=$(p)	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg2)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	sl=$l-($(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5))	flagKol=0	detMod=3	_spostaa=$(saPlanUg)
+//_fasvid	SL=$(l)-$(profug)+{$(profwallpris:0)}	SA=$(saPlanUg)	SP=$(p)+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg2)	P=$(_MODDOORRASP:5)	AY=-90	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=4
+#LET countAlt=int($(altPlanUg1)/400) +int($(altPlanUg2)/400)
+001	LATO=6	COD=999sh4x7whz / / /#Q{$(countAlt)}	L=1	A=1	P=1  //Test
+#ENDIF
+_drawKolonka	_colkarkas=$(_colkarkasKnUG)	sa=$(hzoc:0)-$(pripKolSa)	a=$(akorp)-{$(hzoc:0)}+$(pripvaldoor:0)	ay=-90	sp=$p+$(_MODDOORRASP:5)	p=$(profUg)-{$(profwallpris:0)}	sl=$l
+#IF $(hzoc:0)>0
+#LETS _colkarkasOld=$(_colkarkas)
+#LETS _colkarkas=$(_COLKARKAS_vn)
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+#LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NSE=$(SHPR)
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
+#LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
+#ENDIF
+///////
+017	COD= /$(paramsZoc)	SP=$p-40	ay=-90	l=50+40+$(_MODDOORRASP:5)	sl=$l-($(profUg)-{$(profwallpris:0)}-40)+$(mat:0)  //Цоколь
+#LETS _colkarkas=$(_COLKARKASOld)
+#ENDIF
+#ENDIF
+////тут будет фурнитура////
+////===================////
+#ENDIF

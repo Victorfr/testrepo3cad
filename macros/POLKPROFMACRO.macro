@@ -1,0 +1,15 @@
+#IF $(flag_ust)=1
+#LETV _wr=999K_POLKOB
+#LETV _MNP=999K_POLKOB
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//графика и цена для полок миксал
+//064	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=$(FPL) / /#l-1	SP=0	P=$(p)
+_polkaprofil	ax=$(polkUgol)	sa=$(polkSa)	p=$(lpolk)	_spostaa=$(spostaPar)
+#IF $(fpl)[N]
+// _AGG_KREP_NEW
+#LET col_krep=4
+001	LATO=6	COD=999DUBVB /TD=536 / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(mat:6) /TD=536 / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_colkarkas:12) /TD=536 / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ENDIF
+#ENDIF

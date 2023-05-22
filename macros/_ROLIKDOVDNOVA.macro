@@ -1,0 +1,84 @@
+#IF $(fpl)==N & $(TIPSYSTEM:18)[ar2]
+#LET count_rolNova=1
+001	LATO=6	COD=999complRolN / / /#q$(count_rolNova)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999complRolV / / /#q$(count_rolNova)	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(flag_padre)[1;2] & $(TIPSYSTEM:18)[ar2]
+#IF $(SlDoorSx)+$(^spostaDoorRpSx)=rnd($(posl)) | ($(flag_padre)=2 & $(posl)<500)  //для первой двери в шкафу
+//#FOR $1:$(count_rolNova)
+// 001	LATO=6	COD=999complRolNv / / /#q$(count_rolNova)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999complRolN / / /#q$(count_rolNova)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999complRolV / / /#q$(count_rolNova)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#IF $(sk_sys:0)=1
+//#FOR $1:$(krVnutrD)
+001	LATO=6	COD=999kronInsDNv / / /#Q$(krVnutrD)	L=1	A=1	P=1  //Test
+//#ENDFOR
+//#FOR $1:$(krVneshD)
+001	LATO=6	COD=999kronOutDNv / / /#Q$(krVneshD)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+#IF $(dd:3)=1
+//001	LATO=6	COD=999dovodSxNv	L=1	A=1	P=1  // Test
+///были такие доводчики
+//001	LATO=6	COD=999dovodSxNv / / /#Q2	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999dovodDxNv / / /#Q2	L=1	A=1	P=1  //Test
+//замена левого правого доводчика на новые
+//001	LATO=6	COD=999SH_DOVOD /TD=536;SKP=1 / /#L-1#Q4	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999SH_DOVOD / / /#Q2	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999dovodDxNv	L=1	A=1	P=1  // Test
+#IF ($(krVnutrD)+$(krVneshD))>2
+#LET countKrepVG={($(krVnutrD)+$(krVneshD))-2}
+//#FOR $1:{($(krVnutrD)+$(krVneshD))-2}
+001	LATO=6	COD=999sh_pos / / /#Q$(countKrepVG)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+#IF $(sk_sys:0)=1
+001	LATO=6	COD=999kronInsDNv	L=1	A=1	P=1  // Test
+001	LATO=6	COD=999kronOutDNv	L=1	A=1	P=1  // Test
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(modSottoVst)[S18;S19;S20] // крепление нижних роликов
+#LET countKrepNizRol=8
+#IF $l>1200 #LET countKrepNizRol=12
+//#FOR $1:$(countKrepNizRol)
+001	LATO=6	COD=9993_9x9_5 /TD=536 / /#Q$(countKrepNizRol)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ELSE
+#LET countKrepNizRol=8
+#IF $l>1200 #LET countKrepNizRol=12
+//#FOR $1:$(countKrepNizRol)
+001	LATO=6	COD=9993_9x16 /TD=536 / /#Q$(countKrepNizRol)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+#IF $(modPensVst)[S18;S19;S20] // крепление верхних роликов
+#LET countKrepVerhRol=8
+#IF $(sk_sys:0)=1 #LET countKrepVerhRol=20
+//#FOR $1:$(countKrepVerhRol)
+001	LATO=6	COD=9993_9x9_5 /TD=536 / /#Q$(countKrepVerhRol)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ELSE
+#LET countKrepVerhRol=8
+#IF $(sk_sys:0)=1 #LET countKrepVerhRol=20
+//#FOR $1:$(countKrepVerhRol)
+001	LATO=6	COD=9993_9x16 /TD=536 / /#Q$(countKrepVerhRol)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+// *************************  позиционеры *********************************
+#IF $(dd:3)=0
+001	LATO=6	COD=999sh_pos	L=1	A=1	P=1  // Test
+#ELSE
+#IF $(ndoors)=5
+#IF rnd($(posl))>$(sldoor2) & rnd($(posl))<$(sldoor4)
+#LETV DD=406299877
+001	LATO=6	COD=999sh_pos	L=1	A=1	P=1  // Test
+#ELSE
+#LETV DD=406299878
+#ENDIF
+#ELSE
+#LETV DD=406299878
+#ENDIF
+#ENDIF
+// ************************************************************************
+#ENDIF

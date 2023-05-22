@@ -1,0 +1,32 @@
+#LET minA=2000//2207
+#LET maxA=2647
+#LET minL=1450
+#LET maxL=2794
+#LET minP=300//400
+#LET maxP=1000
+#IF $a<$(minA)
+#LETV a=$(minA)
+#IF $(_primocaricamento)!1
+#MSG Минимальная высота шкафа $(minA) мм!
+#ENDIF
+#ENDIF
+#IF $a>$(maxA)
+#LETV A=$(maxA)
+#MSG Максимальная высота шкафа $(maxA) мм!
+#ENDIF
+#IF $l<$(minL)
+#LETV l=$(minL)
+#MSG Минимальная ширина шкафа $(minL) мм!
+#ENDIF
+#IF $l>$(maxL)
+#LETV l=$(maxL)
+#MSG Максимальная ширина шкафа $(maxL) мм!
+#ENDIF
+#IF $p<$(minP)
+#LETV p=$(minP)
+#MSG Минимальная глубина шкафа $(minP) мм!
+#ENDIF
+#IF $P>$(maxP)
+#LETV p=$(maxP)
+#MSG Максимальная глубина шкафа $(maxP) мм!
+#ENDIF

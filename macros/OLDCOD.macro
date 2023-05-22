@@ -1,0 +1,52 @@
+#IF 0
+#IF  $[LEN;$(testVar)]=0
+#VB
+'Dim xhr : Set xhr = CreateObject("MSXML2.XMLHTTP.3.0")
+strUrl="http:/"+"/cadservice.space/fasad/default/"+V("artMat")+"/"+V("model")+"/10.10.2022"
+'strUrl="https:/"+"/cadservice.space/karkas/GetMatIdByColor/"+V("artMat")+"/" +V("selected")
+Dim objWinHttp: Set objWinHttp= CreateObject("WinHttp.WinHttpRequest.5.1")
+objWinHttp.Open "Get"	 strURL 	 false
+objWinHttp.Send
+If objWinHttp.Status = "200" Then
+strParams= objWinHttp.ResponseText
+end if
+strParams=Replace(strParams	";"	"	")
+V("strParams")=strParams
+Set objWinHttp=nothing
+#ENDVB
+#LETS testVar=$(strParams)
+///пересчет кромок
+#LETS artMat=$(codmat:3)
+#LETV selected=$(testvar:4)
+#VB
+strUrl="https:/"+"/cadservice.space/karkas/GetMatIdByColor/"+V("artMat")+"/" +V("selected")
+Dim objWinHttp: Set objWinHttp= CreateObject("WinHttp.WinHttpRequest.5.1")
+objWinHttp.Open "Get"	 strURL 	 false
+objWinHttp.Send
+If objWinHttp.Status = "200" Then
+strParams= objWinHttp.ResponseText
+end if
+strParams=Replace(strParams	";"	"	")
+V("strParams")=strParams
+Set objWinHttp=nothing
+#ENDVB
+#LETS varMat=$(strParams)
+#ENDIF
+#ENDIF
+///умолчания для кромок
+#IF $(_MODDOORRASP:1)[S02;S31;S28]
+#LETS artMat=$(codmat:3)
+#VB
+strUrl="https:/"+"/cadservice.space/karkas/GetMatIdByColor/"+V("artMat")+"/" +V("selected")
+Dim objWinHttp: Set objWinHttp= CreateObject("WinHttp.WinHttpRequest.5.1")
+objWinHttp.Open "Get"	 strURL 	 false
+objWinHttp.Send
+If objWinHttp.Status = "200" Then
+strParams= objWinHttp.ResponseText
+end if
+strParams=Replace(strParams	";"	"	")
+V("strParams")=strParams
+Set objWinHttp=nothing
+#ENDVB
+#LETS varMat=$(strParams)
+#ENDIF

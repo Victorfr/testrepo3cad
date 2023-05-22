@@ -1,0 +1,827 @@
+#IF $(tipshkaf:6)=1
+#LETS mat_old=$(mat)	 _colkarkas_old=$(_colkarkas)
+#LETS mat=$(mat_kor)	 _colkarkas=$(_colkarkas_kor)
+#IF $(_matPensili:3)=3
+#LETV nerovnUp=0
+#LETV verh=1
+#ENDIF
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#LET SpostaaBokL=0	 SpostaaBokR=0
+#LET VichetABokL=0	 VichetABokR=0
+#IF $(dno:1)=1 #LET SpostAaBokL=$(mat:1)	 SpostAaBokR=$(mat:1)
+#IF $(dno:1)=2 #LET SpostAaBokL=$(dvid)	 SpostAaBokR=$(dvid)
+#IF $(verh:1)=1 #LET VichetABokL=$(mat:1)	 VichetABokR=$(mat:1)
+#IF $(verh:1)=2 #LET VichetABokL=$(Uvid:0)	 VichetABokR=$(Uvid:0)
+#IF $(sk_sys:0)=1 #LET VichetABokL=0	 VichetABokR=0
+#LET SpostaAprisL=$(SpostAaBokL)	SpostaAprisR=$(SpostAaBokR)	VichetApristL=$(VichetABokL)	VichetApristR=$(VichetABokR)
+#IF $(pbokL:3)=$p
+#LET SpostAaBokL=-$(pripuskKorD:0)	 VichetABokL=-$(pripuskKorU:0)
+#ENDIF
+#IF $(pbokR:3)=$p
+#LET SpostAaBokR=-$(pripuskKorD:0)	 VichetABokR=-$(pripuskKorU:0)
+#ENDIF
+#LET alteBokL=$a-($(SpostaaBokL))-($(VichetABokL))
+#LET alteBokR=$a-($(SpostaaBokR))-($(VichetABokR))
+#LET altePristL=$a-($(SpostaAprisL))-($(VichetApristL))
+#LET altePristR=$a-($(SpostaAprisR))-($(VichetApristR))
+// ***********************************************************************************************
+#IF $(bokL:1)=1
+NUMDET	SL=0	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokL)>$(mat:7)
+#IF $(pBokL:1)=2 //на всю глубину
+100	COD= /ERROR=1	SA=$(SpostaaBokL)	A=$(alteBokL)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Превышен MAX размер пиломатериала! Уменьшите размер высоты или измените конструкцию шкафа!	SL=$(mat:1)*2	SA=50	L=$a	sp=$p+15	az=-90  //сообщение об ошибке
+#ELSE
+#LET alteBokL=$(alteBokL)/2
+100	SA=$(SpostaaBokL)	A=$(alteBokL)  //Планка ЛВ
+100	SA=$(SpostaaBokL)+$(alteBokL)	A=$(alteBokL) //Планка ЛВ
+// ****************************************** дополнительная фурнитура для крепления обклада 100 мм к стене **********************************************************
+#IF $(pbokL:3)=100 // dop_fur
+//#FOR $1:5
+001	LATO=6	COD=999sh4.2x40 / / /#Q5	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(_matFiaSx:3)=1
+001	LATO=6	COD=999dub_driva / / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=999dub6x30 / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+//#ENDFOR
+#ENDIF
+#ENDIF
+#ELSE
+100	SA=$(SpostaaBokL)	A=$(alteBokL)  //Планка ЛВ
+// ****************************************** дополнительная фурнитура для крепления обклада 100 мм к стене **********************************************************
+#IF $(pbokL:3)=100 // dop_fur
+//#FOR $1:5
+001	LATO=6	COD=999sh4.2x40 / / /#Q5	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(_matFiaSx:3)=1
+001	LATO=6	COD=999dub_driva / / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=999dub6x30 / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+//#ENDFOR
+#ENDIF
+// *********************************************************************************************************************************************************************
+#ENDIF
+// *************************************************************************************************
+#LETV otsL=$(mat:1)
+#ELSEIF $(bokL:1)=2
+#IF ($(lvid:0)-$(mat:0))+$(pripuskKorL:0)<75
+#LETV pripuskKorL={75-($(lvid:0)-$(mat:0))}
+#ENDIF
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+// #LETS sk=378917905	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+NUMDET	SL=0	SA=$A/2
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokL)>$(mat:7)
+//было до высоких шкафов
+// 100	COD= /ERROR=1	SL=$(LVID:0)-$(mat:0)	SA=$(SpostaaBokL)	A=$(alteBokL)	P=$(pbokL:3)-$(mat:1)	C1=5  //Планка ЛВ
+//  025	COD= / /Превышен MAX размер пиломатериала! Уменьшите размер высоты или измените конструкцию шкафа!	SL=$(mat:1)*2	SA=50	L=$a	sp=$p+15	az=-90  //сообщение об ошибке
+100	SL=$(LVID:0)-$(mat:0)	SA=$(SpostaaBokL)	A=$(alteBokL)/2	P=$(pbokL:3)-$(mat:1)  //Планка ЛВ
+100	SL=$(LVID:0)-$(mat:0)	SA=$(SpostaaBokL)+$(alteBokL)/2	A=$(alteBokL)/2	P=$(pbokL:3)-$(mat:1)  //Планка ЛВ
+#ELSE
+100	SL=$(LVID:0)-$(mat:0)	SA=$(SpostaaBokL)	A=$(alteBokL)	P=$(pbokL:3)-$(mat:1)  //Планка ЛВ
+#ENDIF
+// ***********************************************************************************************
+#LETV _wr=999KARKASZSTC
+#LETV _MNP=999KARKASZSTC
+// #LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET rot_tex=0
+#IF $(lvid:0)-$(mat:0)+$(pripuskKorL:0)>99 #LET rot_tex=90
+NUMDET	SL=0	SA=$A/2-80
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokL)>$(mat:7)
+//было предупреждение
+//103	COD= /ERROR=1	SL=0-$(pripuskKorL:0)	L=$(lvid:0)-$(mat:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)	A=$(alteBokL)	C1=5  // Планка фронт
+103	SL=0-$(pripuskKorL:0)	L=$(lvid:0)-$(mat:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)	A=$(alteBokL)/2  // Планка фронт
+103	SL=0-$(pripuskKorL:0)	L=$(lvid:0)-$(mat:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)+$(alteBokL)/2	A=$(alteBokL)/2  // Планка фронт
+#IF $(pbokL:3)=100
+#LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SA=$(mat:1)	SP=$p-$(mat:1)	L=$(pbokL:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SA=$a-500-$(mat:1)	SP=$p-$(mat:1)	L=$(pbokL:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+#ENDIF
+#ELSE
+103	SL=0-$(pripuskKorL:0)	L=$(lvid:0)-$(mat:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)	A=$(alteBokL)  // Планка фронт
+#IF $(pbokL:3)=100
+#LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SA=$(mat:1)	SP=$p-$(mat:1)	L=$(pbokL:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SA=$a-500-$(mat:1)	SP=$p-$(mat:1)	L=$(pbokL:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+#ENDIF
+#ENDIF
+// ***********************************************************************************************
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET rot_tex=0
+#IF $(lvid:0)+$(pripuskKorL:0)>99 #LET rot_tex=90
+NUMDET	SL=0	SA=$A/2-160
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokL)>$(mat:7)
+//103	COD= /ERROR=1	SL=0-$(pripuskKorL:0)	SP=$P-$(mat:0)	L=$(lvid:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)	A=$(alteBokL)	C1=5  // Планка фронт
+103	SL=0-$(pripuskKorL:0)	SP=$P-$(mat:0)	L=$(lvid:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)	A=$(alteBokL)/2  //Планка фронт
+103	SL=0-$(pripuskKorL:0)	SP=$P-$(mat:0)	L=$(lvid:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)+$(alteBokL)/2	A=$(alteBokL)/2  //Планка фронт
+#ELSE
+103	SL=0-$(pripuskKorL:0)	SP=$P-$(mat:0)	L=$(lvid:0)+$(pripuskKorL:0)	SA=$(SpostaaBokL)	A=$(alteBokL)  //Планка фронт
+#ENDIF
+// ***********************************************************************************************
+#LETV otsL=$(lvid:0)
+#LET mat_st=$(_matFiaSx:1)
+_krep_korob	l=$a
+#ELSE
+#LETV otsL=0
+#ENDIF
+#IF $(bokR:1)=1
+NUMDET	SL=$l	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokR)>$(mat:7)
+#IF $(pBokR:1)=2
+100	COD= /ERROR=1	SL=$L-$(mat:0)	SP=$P-$(pbokR:3)	P=$(pbokR:3)	SA=$(SpostaaBokR)	A=$(alteBokR)	C1=5  // Планка ПР
+025	COD= / /Превышен MAX размер пиломатериала! Уменьшите размер высоты или измените конструкцию шкафа!	SL=$l+$(mat:1)	SA=50	L=$a	sp=$p+15	az=-90  //сообщение об ошибке
+#ELSE
+#LET alteBokR=$(alteBokR)/2
+100	SL=$L-$(mat:0)	SP=$P-$(pbokR:3)	P=$(pbokR:3)	SA=$(SpostaaBokR)	A=$(alteBokR) //Планка ПР
+100	SL=$L-$(mat:0)	SP=$P-$(pbokR:3)	P=$(pbokR:3)	SA=$(SpostaaBokR)+$(alteBokR)	A=$(alteBokR) //Планка ПР
+// ****************************************** дополнительная фурнитура для крепления обклада 100 мм к стене **********************************************************
+#IF $(pbokR:3)=100 //dop_fur
+//#FOR $1:5
+001	LATO=6	COD=999sh4.2x40 / / /#Q5	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(_matFiaDx:3)=1
+001	LATO=6	COD=999dub_driva / / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=999dub6x30 / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+//#ENDFOR
+#ENDIF
+#ENDIF
+#ELSE
+100	SL=$L-$(mat:0)	SP=$P-$(pbokR:3)	P=$(pbokR:3)	SA=$(SpostaaBokR)	A=$(alteBokR) //Планка ПР
+// ****************************************** дополнительная фурнитура для крепления обклада 100 мм к стене **********************************************************
+#IF $(pbokR:3)=100 //dop_fur
+//#FOR $1:5
+001	LATO=6	COD=999sh4.2x40 / / /#Q5	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(_matFiaDx:3)=1
+001	LATO=6	COD=999dub_driva / / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=999dub6x30 / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+//#ENDFOR
+#ENDIF
+// *****************************************************************************************************************************************************************************
+#ENDIF
+// *************************************************************************************************
+#LETV otsR=$(mat:1)
+#ELSEIF $(bokR:1)=2
+#IF ($(rvid:0)-$(mat:1))+$(pripuskKorR:0)<75
+#LETV pripuskKorR={75-($(rvid:0)-$(mat:1))}
+#ENDIF
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+// #LETS sk=378917905	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+NUMDET	SL=$l	SA=$A/2
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokR)>$(mat:7)
+//100	COD= /ERROR=1	SL=$L-$(rvid:0)	SP=$P-$(^pbokR:3)	P=$(pbokR:3)-$(mat:1)	SA=$(SpostaaBokR)	A=$(alteBokR)	C1=5  // Планка ПР
+//025	COD= / /Превышен MAX размер пиломатериала! Уменьшите размер высоты или измените конструкцию шкафа!	SL=$l+$(mat:1)	SA=50	L=$a	sp=$p+15	az=-90  //сообщение об ошибке
+100	SL=$L-$(rvid:0)	SP=$P-$(^pbokR:3)	P=$(pbokR:3)-$(mat:1)	SA=$(SpostaaBokR)	A=$(alteBokR)/2  //Планка ПР
+100	SL=$L-$(rvid:0)	SP=$P-$(^pbokR:3)	P=$(pbokR:3)-$(mat:1)	SA=$(SpostaaBokR)+$(alteBokR)/2	A=$(alteBokR)/2  //Планка ПР
+#ELSE
+100	SL=$L-$(rvid:0)	SP=$P-$(^pbokR:3)	P=$(pbokR:3)-$(mat:1)	SA=$(SpostaaBokR)	A=$(alteBokR)  //Планка ПР
+#ENDIF
+// *************************************************************************************************
+#LETV _wr=999KARKASZSTC
+#LETV _MNP=999KARKASZSTC
+// #LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET rot_tex=0
+#IF $(rvid:0)-$(mat:0)+$(pripuskKorR:0)>99 #LET rot_tex=90
+NUMDET	SL=$l	SA=$A/2-80
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokR)>$(mat:7)
+//103	COD= /ERROR=1	SL=$l-($(rvid:0)-$(mat:0))	SP=$P-$(pbokR:3)	L=$(rvid:0)-$(mat:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)	A=$(alteBokR)	C1=5  // Планка фронт
+103	SL=$l-($(rvid:0)-$(mat:0))	SP=$P-$(pbokR:3)	L=$(rvid:0)-$(mat:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)	A=$(alteBokR)/2  // Планка фронт
+103	SL=$l-($(rvid:0)-$(mat:0))	SP=$P-$(pbokR:3)	L=$(rvid:0)-$(mat:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)+$(alteBokR)/2	A=$(alteBokR)/2  // Планка фронт
+#IF $(pbokR:3)=100
+#LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=$l-$(mat:1)	SA=$(mat:1)	SP=$p-$(mat:1)	L=$(pbokR:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=$l-$(mat:1)	SA=$a-500-$(mat:1)	SP=$p-$(mat:1)	L=$(pbokR:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+#ENDIF
+#ELSE
+103	SL=$l-($(rvid:0)-$(mat:0))	SP=$P-$(pbokR:3)	L=$(rvid:0)-$(mat:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)	A=$(alteBokR)  // Планка фронт
+#IF $(pbokR:3)=100
+#LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=$l-$(mat:1)	SA=$(mat:1)	SP=$p-$(mat:1)	L=$(pbokR:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=$l-$(mat:1)	SA=$a-500-$(mat:1)	SP=$p-$(mat:1)	L=$(pbokR:3)-$(mat:1)*2	A=500	AY=90  //Планка фронт
+#ENDIF
+#ENDIF
+// *************************************************************************************************
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET rot_tex=0
+#IF $(rvid:0)+$(pripuskKorR:0)>99 #LET rot_tex=90
+NUMDET	SL=$l	SA=$A/2-160
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+#IF $(alteBokR)>$(mat:7)
+//103	COD= /ERROR=1	SL=$l-$(rvid:0)	SP=$P-$(mat:0)	L=$(rvid:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)	A=$(alteBokR)	C1=5  // Планка фронт
+103	SL=$l-$(rvid:0)	SP=$P-$(mat:0)	L=$(rvid:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)	A=$(alteBokR)/2  // Планка фронт
+103	SL=$l-$(rvid:0)	SP=$P-$(mat:0)	L=$(rvid:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)+$(alteBokR)/2	A=$(alteBokR)/2  // Планка фронт
+#ELSE
+103	SL=$l-$(rvid:0)	SP=$P-$(mat:0)	L=$(rvid:0)+$(pripuskKorR:0)	SA=$(SpostaaBokR)	A=$(alteBokR)  // Планка фронт
+#ENDIF
+// *************************************************************************************************
+#LETV otsR=$(rvid:0)
+#LET mat_st=$(_matFiaDx:1)
+_krep_korob	l=$a
+#ELSE
+#LETV otsR=0
+#ENDIF
+///дно
+#IF $(dno:1)=1
+#IF $(pbokL:3)=$p & $(bokL:1)!9 // левая боковина во всю глубину
+#LET pripusk=50	otsLniz=-$(lvid:0)
+#IF $(nerovnL:0)=0 #LET otsLniz=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsLniz=$(pripuskKorL) //$(otsL)
+#ENDIF
+#IF $(pbokR:3)=$p & $(bokR:1)!9 // дно глубже правой боковины
+#LET pripusk=50	otsRniz=-$(rvid:0)
+#IF $(nerovnR:0)=0 #LET otsRniz=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsRniz=$(pripuskKorR) // $(otsR)
+#ENDIF
+#LET larg_dno=$L+$(^otsLniz)+$(^otsRniz)
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#IF $(larg_dno)>$(mat:7)
+//#LET larg_dno=$(larg_dno)/2
+//NUMDET	SL=$(larg_dno)+$(larg_dno)/2	SA=0
+//============================================
+///параметры изменения стыка по середине
+#LET larg_dno=$(larg_dno)/2
+#IF $(ldelverh:0)=0
+#LETV ldelVerh=$(larg_dno)
+#ENDIF
+#LET deltaDetVerh=$(larg_dno)-$(ldelVerh:0)
+#IF $(ldelVerhOld)!$(ldelVerh:0)
+#IF ($(larg_dno)-$(deltaDetVerh)>$(mat:7)) | ($(larg_dno)+$(deltaDetVerh)>$(mat:7))
+#MSG Превышена допустимая длина пиломатериала!
+#LETV ldelVerh=$(ldelVerhOld)
+#LET deltaDetVerh=$(larg_dno)-$(ldelVerh:0)
+#ENDIF
+#LETV ldelVerhOld=$(ldelVerh:0)
+#ENDIF
+///==========================================
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLniz)+$(larg_dno)-$(deltaDetVerh)	L=$(larg_dno)+$(deltaDetVerh)  //Планка низ
+// *************************************************************************************************
+#ELSE
+#LET deltaDetVerh=0
+#LETV ldelVerh=0
+#ENDIF
+NUMDET	SL=$(larg_dno)/2	SA=0
+// ********************************* старый конструктив шкафа 26.02.2019 **************************
+// 102	SL=$(otsLniz)	L=$(larg_dno)  // Планка низ
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLniz)	L=$(larg_dno)-$(deltaDetVerh)  // Планка низ
+// *************************************************************************************************
+#LET otsD=$(mat:0)
+#LET count_nog=int($l/500)
+#LET count_nog=$(count_nog)+1
+// ***************************************** ножки ********** с 01.07.2019 убрали по задаче redmine ********************************
+// #IF $(pdno:1)=1
+// #FOR $1:$(count_nog)
+// 001	LATO=6	COD=999nog_reg10	L=1	A=1	P=1  // Test
+// #ENDFOR
+// #ELSE
+// #FOR $1:$(count_nog)*2
+// 001	LATO=6	COD=999nog_reg10	L=1	A=1	P=1  // Test
+// #ENDFOR
+// #ENDIF
+// ********************************************************************************
+// ***************************** крепёж боковых планок *************************************
+//#FOR $1:4
+001	LATO=6	COD=999evrik / / /#Q4	L=1	A=1	P=1  //Test
+//#ENDFOR
+// *********************************************************************************
+#ELSEIF $(dno:1)=2 /////короб
+#LETV dvid=65
+#IF $(pbokL:3)=$p & $(bokL:1)!9 // левая боковина во всю глубину
+#LET pripusk=50	otsLniz=-$(lvid:0)
+#IF $(nerovnL:0)=0 #LET otsLniz=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsLniz=$(pripuskKorL) // $(otsL)
+#ENDIF
+#IF $(pbokR:3)=$p & $(bokR:1)!9 // левая боковина во всю глубину
+#LET pripusk=50	otsRniz=-$(Rvid:0)
+#IF $(nerovnR:0)=0 #LET otsRniz=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsRniz=$(pripuskKorR) // $(otsR)
+#ENDIF
+#LET larg_dno=$L+$(^otsLniz)+$(^otsRniz)
+#IF ($(dvid:0)-$(mat:0))+$(pripuskKorD:0)<75
+#LETV pripuskKorD={75-($(Dvid:0)-$(mat:0))}
+#ENDIF
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#IF $(larg_dno)>$(mat:7)
+//было
+//#LET larg_dno=$(larg_dno)/2
+//NUMDET	SL=$(larg_dno)+$(larg_dno)/2	SA=0
+//============================================
+///параметры изменения стыка по середине
+#LET larg_dno=$(larg_dno)/2
+#IF $(ldelverh:0)=0
+#LETV ldelVerh=$(larg_dno)
+#ENDIF
+#LET deltaDetVerh=$(larg_dno)-$(ldelVerh:0)
+#IF $(larg_verh)-$(deltaDetVerh) >$(mat:7)
+//#LETV ldelVerh=$(larg_verh)
+//#LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+#ENDIF
+#IF $(ldelVerhOld)!$(ldelVerh:0)
+#IF ($(larg_dno)-$(deltaDetVerh)>$(mat:7)) | ($(larg_dno)+$(deltaDetVerh)>$(mat:7))
+#MSG Превышена допустимая длина пиломатериала!
+#LETV ldelVerh=$(ldelVerhOld)
+#LET deltaDetVerh=$(larg_dno)-$(ldelVerh:0)
+#ENDIF
+#LETV ldelVerhOld=$(ldelVerh:0)
+#ENDIF
+///==========================================
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLniz)+$(larg_dno)-$(deltaDetVerh)	SA=$(Dvid:0)-$(mat:0)	L=$(larg_dno)+$(deltaDetVerh)   // Планка низ
+// *************************************************************************************************
+#ELSE
+#LET deltaDetVerh=0
+#LETV ldelVerh=0
+#ENDIF
+NUMDET	SL=$(larg_dno)/2	SA=0
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLniz)	SA=$(Dvid:0)-$(mat:0)	L=$(larg_dno)-$(deltaDetVerh)   // Планка низ
+// *************************************************************************************************
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+// #LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET rot_tex=0
+#IF $(dvid:0)-$(mat:0)+$(pripuskKorD:0)>99 #LET rot_tex=90
+#IF ($L+$(^otsLniz)+$(^otsRniz))>$(mat:7)
+NUMDET	SL=$(larg_dno)+$(larg_dno)/2+80	SA=0
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLniz)+$(larg_dno)-$(deltaDetVerh)	SA=-$(pripuskKorD:0)	L=$(larg_dno)+$(deltaDetVerh)	A=$(dvid:0)-$(mat:0)+$(pripuskKorD:0)  //Планка фронт ниж
+// *************************************************************************************************
+NUMDET	SL=$(larg_dno)+$(larg_dno)/2+160	SA=0
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLniz)+$(larg_dno)-$(deltaDetVerh)	SA=-$(pripuskKorD:0)	SP=$P-$(mat:0)	L=$(larg_dno)+$(deltaDetVerh)	A=$(dvid:0)-$(mat:0)+$(pripuskKorD:0)  //Планка фронт ниж
+// *************************************************************************************************
+#ENDIF
+NUMDET	SL=$(larg_dno)/2+80	SA=0
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLniz)	SA=-$(pripuskKorD:0)	L=$(larg_dno)-$(deltaDetVerh)	A=$(dvid:0)-$(mat:0)+$(pripuskKorD:0)  //Планка фронт ниж
+// *************************************************************************************************
+NUMDET	SL=$(larg_dno)/2+160	SA=0
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLniz)	SA=-$(pripuskKorD:0)	SP=$P-$(mat:0)	L=$(larg_dno)-$(deltaDetVerh)	A=$(dvid:0)-$(mat:0)+$(pripuskKorD:0)  //Планка фронт ниж
+// *************************************************************************************************
+#LET otsD=$(Dvid:0)
+#LET mat_st=2
+_krep_korob	l=$l
+#IF $(pdno:3)=100
+#LETV _wr=999KARKASZSTC
+#LETV _MNP=999KARKASZSTC
+#LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=500+$(mat:1)	SA=0	SP=$p-$(mat:1)	L=$(pdno:3)-$(mat:1)*2	A=500	AY=90	ax=90  //Планка фронт
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=$l-$(mat:1)	SA=0	SP=$p-$(mat:1)	L=$(pdno:3)-$(mat:1)*2	A=500	AY=90	ax=90  //Планка фронт
+#ENDIF
+#IF $(pdno:3)=$P
+#IF $(pbokL:3)=$p & $(bokL:1)!9
+047	COD= /TD=536	SL=$(matVnL:0)+20	SA=$(dvid:0)-$(mat:1)-30  //Ножка регулировочная
+047	COD= /TD=536	SL=$(matVnL:0)+20	SA=$(dvid:0)-$(mat:1)-30	SP=$p-100  //Ножка регулировочная
+#ENDIF
+#IF $(pbokR:3)=$p & $(bokR:1)!9
+047	COD= /TD=536	SL=$l-$(matVnR:0)-20	SA=$(dvid:0)-$(mat:1)-30  //Ножка регулировочная
+047	COD= /TD=536	SL=$l-$(matVnR:0)-20	SA=$(dvid:0)-$(mat:1)-30	SP=$p-100  //Ножка регулировочная
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(verh:1)=1 | ($(verh:1)=9 & $(sk_sys:0)=1)
+#IF $(pbokL:3)=$p & $(bokL:1)!9
+#LET pripusk=50	otsLVerh=-$(lvid:0)
+#IF $(nerovnL:0)=0 #LET otsLVerh=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsLVerh=$(pripuskKorL)
+#ENDIF
+#IF $(pbokR:3)=$p & $(bokR:1)!9
+#LET pripusk=50	otsRVerh=-$(rvid:0)
+#IF $(nerovnR:0)=0 #LET otsRVerh=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsRVerh=$(pripuskKorR)
+#ENDIF
+#LET larg_verh=$L+$(^otsLVerh)+$(^otsRVerh)	 sp_verh_pl=$P-$(pup:3)	 p_verh_pl=$(pup:3)
+#IF $(sk_sys:0)=1
+#LET sa_verh_nap_vst=16	 p_verh_pl=100	 sp_verh_pl=$P-100-100	 sp_verh_pl1=$P-100-100
+#IF ($(pup:3)=$p & $(verh:1)!9) #LET p_verh_pl=$(pup:3)-100	 sp_verh_pl=$P-100-($(pup:3)-100)	 sp_verh_pl1=$P-200
+#IF $(mat_kor:1)>16
+//#LETS mat_old=$(mat)	 _colkarkas_old=$(_colkarkas)
+#LETS mat=$(mat_kor1)	 _colkarkas=$(_colkarkas_kor1)
+#ENDIF
+#ENDIF
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#IF $(larg_verh)>$(mat:7)
+//============================================
+///параметры изменения стыка по середине
+#LET larg_verh=$(larg_verh)/2
+#IF $(ldelverh:0)=0
+#LETV ldelVerh=$(larg_verh)
+#ENDIF
+#LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+#IF $(larg_verh)-$(deltaDetVerh) >$(mat:7)
+//#LETV ldelVerh=$(larg_verh)
+//#LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+#ENDIF
+#IF $(ldelVerhOld)!$(ldelVerh:0)
+#IF ($(larg_verh)-$(deltaDetVerh)>$(mat:7)) | ($(larg_verh)+$(deltaDetVerh)>$(mat:7))
+#MSG Превышена допустимая длина пиломатериала!
+#LETV ldelVerh=$(ldelVerhOld)
+#LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+#ENDIF
+#LETV ldelVerhOld=$(ldelVerh:0)
+#ENDIF
+///==========================================
+NUMDET	SL=$(larg_verh)+$(larg_verh)/2	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLVerh)+$(larg_verh)-$(deltaDetVerh)	SA=$A-$(mat:0)	SP=$(sp_verh_pl)	L=$(larg_verh)+$(deltaDetVerh)	P=$(p_verh_pl) //Планка верх
+#IF $(sk_sys:0)=1 // & $(pup:3)!$p
+102	SL=-$(otsLVerh)+$(larg_verh)	SA=$A-$(mat:0)*2	SP=$(sp_verh_pl1)	L=$(larg_verh)	P=100 // $(p_verh_pl) //Планка верх
+#ENDIF
+// *************************************************************************************************
+#ELSE
+#LET deltaDetVerh=0
+#LETV ldelVerh=0
+#ENDIF
+NUMDET	SL=$(larg_verh)/2	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLVerh)	SA=$A-$(mat:0)	SP=$(sp_verh_pl)	L=$(larg_verh)-$(deltaDetVerh)	P=$(p_verh_pl) //Планка верх
+#IF $(sk_sys:0)=1 // & $(pup:3)!$p
+102	SL=-$(otsLVerh)	SA=$A-$(mat:0)*2	SP=$(sp_verh_pl1)	L=$(larg_verh)-$(deltaDetVerh)	P=100 // $(p_verh_pl) //Планка верх
+#ENDIF
+// *************************************************************************************************
+#IF $(mat_kor:1)>16 & $(pup:3)!$p & $(sk_sys:0)=1
+#LETS mat=$(mat_kor)	 _colkarkas=$(_colkarkas_kor)
+#ENDIF
+//#MSG $(mat)
+/// для новы должно быть 16мм
+#LET otsU=$(mat:0)
+// ***************************** крепёж верхней и боковых планок *************************************
+//#FOR $1:4
+001	LATO=6	COD=999evrik / / /#Q4	L=1	A=1	P=1  //Test
+//#ENDFOR
+#IF $(_matPensili:1)[1;2]
+#LETS cod_dub=999dub_driva
+#IF $(_matPensili:1)[2] #LETS cod_dub=999dub6x30
+#LET col_krepVpl=int($l/500)+2
+#IF $(pup:1)=2 #LET col_krepVpl=$(col_krepVpl)*2
+//#FOR $1:$(col_krepVpl)
+001	LATO=6	COD=999sh3_5x30 / / /#Q$(col_krepVpl)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(cod_dub) / / /#Q$(col_krepVpl)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+// *********************************************************************************
+#ELSEIF $(verh:1)=2
+#LETV uvid=65
+#IF $(pbokL:3)=$p & $(bokL:1)!9
+#LET pripusk=50	otsLVerh=-$(lvid:0)
+#IF $(nerovnL:0)=0 #LET otsLVerh=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsLVerh=$(pripuskKorL)
+#ENDIF
+#IF $(pbokR:3)=$p & $(BOKR:1)!9
+#LET pripusk=50	otsRVerh=-$(rvid:0)
+#IF $(nerovnR:0)=0 #LET otsRVerh=-$(mat:1)
+#ELSE
+#LET pripusk=0	otsRVerh=$(pripuskKorR)
+#ENDIF
+#LET larg_verh=$L+$(^otsLVerh)+$(^otsRVerh)
+#IF ($(uvid:0)-$(mat:0))+$(pripuskKorU:0)<75
+#LETV pripuskKorU={75-($(uvid:0)-$(mat:0))}
+#ENDIF
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#IF $(larg_verh)>$(mat:7)
+//#LET larg_verh=$(larg_verh)/2
+// #IF $(ldelverh:0)=0
+//   #LETV ldelVerh=$(larg_verh)
+//#ENDIF
+// #LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+//============================================
+///параметры изменения стыка по середине
+#LET larg_verh=$(larg_verh)/2
+#IF $(ldelverh:0)=0
+#LETV ldelVerh=$(larg_verh)
+#ENDIF
+#LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+#IF $(larg_verh)-$(deltaDetVerh) >$(mat:7)
+//#LETV ldelVerh=$(larg_verh)
+//#LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+#ENDIF
+#IF $(ldelVerhOld)!$(ldelVerh:0)
+#IF ($(larg_verh)-$(deltaDetVerh)>$(mat:7)) | ($(larg_verh)+$(deltaDetVerh)>$(mat:7))
+#MSG Превышена допустимая длина пиломатериала!
+#LETV ldelVerh=$(ldelVerhOld)
+#LET deltaDetVerh=$(larg_verh)-$(ldelVerh:0)
+#ENDIF
+#LETV ldelVerhOld=$(ldelVerh:0)
+#ENDIF
+///==========================================
+NUMDET	SL=$(larg_verh)+$(larg_verh)/2	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLVerh)+$(larg_verh)-$(deltaDetVerh)	SA=$A-$(uvid:0)	SP=$P-$(pup:3)	L=$(larg_verh)+$(deltaDetVerh)	P=$(pup:3) //Планка верх
+// *************************************************************************************************
+#ELSE
+#LET deltaDetVerh=0
+#LETV ldelVerh=0
+#ENDIF
+NUMDET	SL=$(larg_verh)/2	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+102	SL=-$(otsLVerh)	SA=$A-$(uvid:0)	SP=$P-$(pup:3)	L=$(larg_verh)-$(deltaDetVerh)	P=$(pup:3) //Планка верх
+// *************************************************************************************************
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+// #LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET rot_tex=0
+#IF $(uvid:0)-$(mat:0)+$(pripuskKorU:0)>99 #LET rot_tex=90
+#IF ($L+$(^otsLVerh)+$(^otsRVerh))>$(mat:7)
+NUMDET	SL=$(larg_verh)+$(larg_verh)/2+80	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLVerh)+$(larg_verh)-$(deltaDetVerh)	SA=$A-$(uvid:0)+$(mat:0)	SP=$P-$(pup:3)	L=$(larg_verh)+$(deltaDetVerh)	A=$(uvid:0)+$(pripuskKorU:0)-$(mat:0)  //Планка фронт ниж
+// *************************************************************************************************
+NUMDET	SL=$(larg_verh)+$(larg_verh)/2+160	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLVerh)+$(larg_verh)-$(deltaDetVerh)	SA=$A-$(uvid:0)+$(mat:0)	SP=$P-$(mat:0)	L=$(larg_verh)+$(deltaDetVerh)	A=$(uvid:0)+$(pripuskKorU:0)-$(mat:0)  // Планка фронт ниж
+// *************************************************************************************************
+#ENDIF
+NUMDET	SL=$(larg_verh)/2+80	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLVerh)	SA=$A-$(uvid:0)+$(mat:0)	SP=$P-$(pup:3)	L=$(larg_verh)-$(deltaDetVerh)	A=$(uvid:0)+$(pripuskKorU:0)-$(mat:0)  //Планка фронт ниж
+// *************************************************************************************************
+NUMDET	SL=$(larg_verh)/2+160	SA=$a-70
+// ********************************* новый конструктив шкафа 26.02.2019 **************************
+104	SL=-$(otsLVerh)	SA=$A-$(uvid:0)+$(mat:0)	SP=$P-$(mat:0)	L=$(larg_verh)-$(deltaDetVerh)	A=$(uvid:0)+$(pripuskKorU:0)-$(mat:0)  // Планка фронт ниж
+// *************************************************************************************************
+#LET otsU=$(Uvid:0)
+#LET mat_st=$(_matPensili:1)
+_krep_korob	l=$l
+#IF $(pup:3)=100
+#LETV _wr=999KARKASZSTC
+#LETV _MNP=999KARKASZSTC
+#LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=500+$(mat:1)	SA=$a	SP=$p-$(mat:1)	L=$(pup:3)-$(mat:1)*2	A=500	AY=90	AX=90  //Планка фронт
+103	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) /$(_wr:2)	SL=$l-$(mat:1)	SA=$a	SP=$p-$(mat:1)	L=$(pup:3)-$(mat:1)*2	A=500	AY=90	ax=90  //Планка фронт
+#ENDIF
+#ENDIF
+// *******************************  расчёт крепежа крышки во всю глубину *************************************************
+#IF $(verh:1)[1;2] & $(pup:3)=$P
+#LET col_ug_bok=rnd($p/300)
+#LET col_ug_back=rnd($l/500)
+#LET summ_ug=$(col_ug_bok)*2+$(col_ug_back)
+//#FOR $1:$(summ_ug)
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q$(summ_ug)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / / /#Q$(summ_ug)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q$(summ_ug)	L=1	A=1	P=1  //Test
+// #ENDFOR
+#IF $(pbokL:3)!$p | $(bokL:1)=9
+#LETS cod_dub=999dub6x30
+#IF $(_matFiaSx:3)=1 #LETS cod_dub=999dub_driva
+//#FOR $1:$(col_ug_bok)
+001	LATO=6	COD=999sh3_5x30 / / /#Q$(col_ug_bok)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(cod_dub) / / /#Q$(col_ug_bok)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ELSE
+//#FOR $1:$(col_ug_bok)
+001	LATO=6	COD=999sh4x16pot / / /#Q$(col_ug_bok)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+#IF $(pbokR:3)!$p | $(bokR:1)=9
+#LETS cod_dub=999dub6x30
+#IF $(_matFiaDx:3)=1 #LETS cod_dub=999dub_driva
+//#FOR $1:$(col_ug_bok)
+001	LATO=6	COD=999sh3_5x30 / / /#Q$(col_ug_bok)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(cod_dub) / / /#Q$(col_ug_bok)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ELSE
+//#FOR $1:$(col_ug_bok)
+001	LATO=6	COD=999sh4x16pot / / /#Q$(col_ug_bok)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+#LETS cod_dub=999dub6x30
+#IF $(_matBack:3)=1 #LETS cod_dub=999dub_driva
+//#FOR $1:$(col_ug_back)
+001	LATO=6	COD=999sh3_5x30 / / /#Q$(col_ug_back)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(cod_dub) / / /#Q$(col_ug_back)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+// *************************************************************************************************************************
+///////////////////////////////размерные линии/////////////////////////////////////////////
+#IF $(size:0)=1
+023	COD= / /$L	SL=0	SA=$A	SP=-50	L=$L	A=-100	P=1	X1=2  //Размер корпуса
+023	COD= / /$P	SL=-50	SP=0	L=$P	P=$P	AY=90	X1=2  //Глубина корпуса
+023	COD= / /$A	SL=0	SA=$A	SP=0	L=$A	A=130	P=0	AZ=90	X1=2  //Высота корпуса
+#ENDIF
+///////////////////////////////////////////////////////////////////////////////////////////
+#ENDIF
+// ********************************************** планки для пристыковки **************************************************
+#IF $(TIPSHKAF:7)=1
+#IF $(_prist:1)=1
+NUMDET	SL=$(profPrist:0)	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+100	SA=$(SpostaAprisL)	A=$a-($(SpostaAprisL)+$(VichetApristL))	p=100	sp=$p-100	sl=$(profPrist:0)-$(mat:1)  //Планка ЛВ
+100	SL=$(profPrist:0)-$(mat:1)	SA=$(SpostaAprisL)	SP=$p-$(mat:1)	A=$a-($(SpostaAprisL)+$(VichetApristL))	P=100	AY=-90  //Планка ЛВ
+//#FOR $1:8
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ELSEIF $(_prist:1)=2
+NUMDET	SL=$(profPrist:0)	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+// #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+100	SA=$(SpostaAprisR)	A=$a-($(SpostaAprisR)+$(VichetApristR))	p=100	sp=$p-100	sl=$l-$(profPrist:0)  //Планка ЛВ
+100	SL=$l+$(mat:1)-$(profPrist:0)	SA=$(SpostaAprisR)	SP=$p	A=$a-($(SpostaAprisR)+$(VichetApristR))	P=100	Ay=90  //Планка ЛВ
+//#FOR $1:8
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q8	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+#ENDIF
+// **************************************************************************************************************************
+#LETV matVnL=0
+#LETV matVnR=0
+#IF $(pbokL:3)=$p
+#IF $(nerovnL:0)=0 & $(bokl:1)!9
+#LETV matVnL=$(mat:1)
+#ELSEIF $(nerovnL:0)=1
+#LETV matVnL=$(lvid:0)
+#ENDIF
+#ENDIF
+#IF $(pbokR:3)=$p
+#IF $(nerovnR:0)=0 & $(bokr:1)!9
+#LETV matVnR=$(mat:1)
+#ELSEIF $(nerovnR:0)=1
+#LETV matVnR=$(rvid:0)
+#ENDIF
+#ENDIF
+#LETS mat=$(mat_old)	 _colkarkas=$(_colkarkas_old)
+#IF $(PDNO:0)=2
+#LETV otstniz=$(otsD)
+#ELSE
+#LETV otstniz=0
+#ENDIF
+//KORPSHKAF
+#IF $(PUP:0)=2
+#LETV otstverh=$(otsU)
+//======================================
+#IF $(sk_sys:0)=1
+#LETV otstverh={$(mat_kor1:1)+$(matvn:1)+$(sksysheight:0)}
+//+$(mat:1)}
+#ENDIF
+//======================================
+#ELSE
+#LETV otstverh=0
+//======================================
+#IF $(sk_sys:0)=1
+//   #LETV otstverh=300
+#ENDIF
+//======================================
+#ENDIF
+#IF $(sk_sys:0)=1 & $(TIPSYSTEM:18)==ar2
+#LET sl_polkNova=-$(pripuskpolSx)	 delta_polk=-$(pripuskpolDx)
+#IF $(pbokL:3)=$p #LET sl_polkNova=$(otsL)
+#IF $(pbokR:3)=$p #LET delta_polk=$(otsR)
+#LET larg_polk=$l-($(sl_polkNova)+$(delta_polk))
+//NUMDET	SL=$(larg_polk)/2	SA=$a-$(^otstverh)-30	sp=-100
+#LETV _wr=999K_KARKASPL
+#LETV _MNP=999K_KARKASPL
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+//savapos
+#IF $(larg_polk)>$(mat:7)
+#LET larg_polk=$(larg_polk)/2
+NUMDET	SL=$(l)/2+$(larg_polk)/2	SA=$a-$(^otstverh)-30	sp=-100
+102	SL=$(sl_polkNova)+$(larg_polk)	SP=-$(pripuskpolZad)	L=$(larg_polk)	P=($p+$(pripuskpolZad))-100	sa=$a-$(^otstverh)  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+#ENDIF
+NUMDET	SL=$(larg_polk)/2	SA=$a-$(^otstverh)-30	sp=-100
+102	SL=$(sl_polkNova)	SP=-$(pripuskpolZad)	L=$(larg_polk)	P=($p+$(pripuskpolZad))-100	sa=$a-$(^otstverh)  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+// *************** вычисляем крепёж для левой части горизонталей ***********************
+#IF $(otsLpol)<=0
+#LET krep_vert_vstr_niz_lev=$(_matFiaSx:1)
+#ELSE
+#LET krep_vert_vstr_niz_lev=0
+#ENDIF
+// *******************************************************************************
+// *************** вычисляем крепёж для правой части горизонталей ***********************
+#IF $(spostal)+$l+$(mat:1)=$(lkorp) & $(pbokR:1)!2
+#LET krep_vert_vstr_verh_prav=$(_matFiaDx:1)
+#ELSE
+#LET krep_vert_vstr_verh_prav=0
+#ENDIF
+// *******************************************************************************
+//=====================================================================================
+#IF $(lkorp)>1500 & $(lkorp)<3000 // добавляет вертикальную перегородку при ширине шкафа больше 1500. чтобы не провисала крышка
+NUMDET	SL=$(lkorp)/2	SA=$A-$(mat:0)*2-110
+#LETV _wr=999V_KARKASPERVERT
+#LETV _MNP=999V_KARKASPERVERT
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+//VOLUME
+#LET spostaVert=10
+//      NAPR
+#LET pNaprNova= $(tipsystem:16)
+#LET _spostal=$(lkorp)/2-$(mat:0)/2
+#LET pPeregSkSys=$p-135-$(pNaprNova)
+#IF $(pPeregSkSys)>100 & $(VERH:1)!9 //добавляет перегородку	 если ее ширина больше 100 мм
+014	sa=$a-$(^otstverh)+$(mat:1)	sl=$(lkorp)/2-$(mat:0)/2	a=$(sksysheight:0)	P=$(pPeregSkSys)	sp=$(spostaVert)
+#ENDIF
+#ELSEIF $(Lkorp)>=3000
+#LET slPeregor=$(lkorp)/4
+NUMDET	SL=$(lkorp)/2	SA=$A-$(mat:0)*2-110
+#LETV _wr=999V_KARKASPERVERT
+#LETV _MNP=999V_KARKASPERVERT
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+//VOLUME
+#LET spostaVert=10
+//      NAPR
+#LET pNaprNova= $(tipsystem:16)
+#LET _spostal=$(lkorp)/2-$(mat:0)/2
+#LET _spostaL=$(slPeregor)-$(mat:0)/2
+014	sa=$a-$(^otstverh)+$(mat:1)	sl=$(slPeregor)-$(mat:0)/2	a=$(sksysheight:0)	P=$p-135-$(pNaprNova)	sp=$(spostaVert)
+#LET _spostaL=$(slPeregor)*2-$(mat:0)/2
+014	sa=$a-$(^otstverh)+$(mat:1)	sl=$(slPeregor)*2-$(mat:0)/2	a=$(sksysheight:0)	P=$p-135-$(pNaprNova)	sp=$(spostaVert)
+#LET _spostaL=$(slPeregor)*3-$(mat:0)/2
+014	sa=$a-$(^otstverh)+$(mat:1)	sl=$(slPeregor)*3-$(mat:0)/2	a=$(sksysheight:0)	P=$p-135-$(pNaprNova)	sp=$(spostaVert)
+#ENDIF
+//=====================================================================================
+_agg_krep	p=$p-100
+#ENDIF
+#IF $(pBokL:1)=2 & $(BokL:1)!9
+#LETV pripuskPolSx=0
+#ENDIF
+#IF $(pBokR:1)=2 & $(BokR:1)!9
+#LETV pripuskPolDx=0
+#ENDIF
+// ************************** для вычисления ширины ниш ********************************
+#IF $(pbokL:1)!2 #LET otsOblL=$(otsL)
+#IF $(pbokR:1)!2 #LET otsOblR=$(otsR)
+// *************************************************************************************
+// ***************************** определение касания стены помещения плейсером *************************************
+800
+800	SL=$l  // Определения касания стены помещения (типология стены)
+// *****************************************************************************************************************
+//#MSG $(otsOblL) ---- $(otsOblR)

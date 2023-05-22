@@ -1,0 +1,30 @@
+#LET lmin=300
+#LET amin=480
+#LET lmax=1200
+#LET amax=1300
+#IF $(_patina:1)!!999 //цвета с патиной
+#LET lmax=850
+#LET amax=1300
+#ENDIF
+#IF $(_MODDOORRASP:1)[s30]
+#LET lmin=300
+#LET amin=300
+#LET amax=2600
+#LET lmax=800
+#ENDIF
+#IF $l<$(lmin)
+#MSG Минимальная ширина $(lmin) мм!
+#LETV l=$(lmin)
+#ENDIF
+#IF $l>$(lmax)
+#MSG Максимальная ширина $(lmax) мм!
+#LETV l=$(lmax)
+#ENDIF
+#IF $a<$(amin)
+#MSG Минимальная высота  $(amin) мм!
+#LETV a=$(amin)
+#ENDIF
+#IF $a>$(amax)
+#MSG Максимальная высота $(amax) мм!
+#LETV a=$(amax)
+#ENDIF

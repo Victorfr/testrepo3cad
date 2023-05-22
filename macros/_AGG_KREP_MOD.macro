@@ -1,0 +1,16 @@
+#IF $p>=70 & $p<=83.9 // одна стяжка
+#LET col_krep=2
+#ELSEIF $p>=84 & $p<=450 // две стяжки
+#LET col_krep=4
+#ELSEIF $p>=450.1 & $p<=600 // три стяжки
+#LET col_krep=6
+#ELSEIF $p>=600.1 & $p<=700 // четыре стяжки
+#LET col_krep=8
+#ELSEIF $p>=700.1 & $p<=900 // пять стяжек
+#LET col_krep=10
+#ENDIF
+//#FOR $1:$(col_krep)
+001	LATO=6	COD=999DUBVB / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(mat:6) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_colkarkas:12) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+//#ENDFOR

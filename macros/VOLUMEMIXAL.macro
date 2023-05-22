@@ -1,0 +1,22 @@
+//test mixal
+#LET _spostal=$(spostal)//+$(mat:1)
+#LET _spostaa=$(spostaa)-$(karkasSA)
+//для вертикальных
+#IF $(orienta)=1
+_KARKASPEREGOR	p=$(profNapol)
+//VOLUME
+#ELSE //для горизонтальных
+#LET flag=1
+#IF $(flag)=1
+#IF $a=6
+//полка стекло
+_polkasteklo	p=$(profNapol)
+#ELSE
+//полка каркасная
+_polkakarkas	p=$(profNapol)	mat=$(matvn)	_colkarkas=$(_COLKARKASvn)
+#ENDIF
+#ELSEIF $(flag)=4
+015	COD= /ERROR=1	SL=$(podrezPol)	p=$(pgor)	sp=$(spostakarkasP)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Полка попадает на фрезеровку петли!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+#ENDIF

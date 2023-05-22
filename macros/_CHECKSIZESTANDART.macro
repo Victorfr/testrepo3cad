@@ -1,0 +1,21 @@
+//условия должны распологаться в порядке уменьшения размера
+#IF $(testL)+100<=1000 & $(testA)+100<=660
+#LET sizeLfinish=1000
+#LET sizeAfinish=660
+#LET flagSize=1
+#ENDIF
+#IF $(testL)+100<=960 & $(testA)+100<=400
+#LET sizeLfinish=960
+#LET sizeAfinish=400
+#LET flagSize=1
+#ENDIF
+#IF $(testL)+100<=660 & $(testA)+100<=400
+#LET sizeLfinish=660
+#LET sizeAfinish=400
+#LET flagSize=1
+#ENDIF
+#IF $(testL)+100<=500 & $(testA)+100<=400
+#LET sizeLfinish=500
+#LET sizeAfinish=400
+#LET flagSize=1
+#ENDIF

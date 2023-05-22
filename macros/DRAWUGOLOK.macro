@@ -1,0 +1,9 @@
+!parametri sideUgol=0
+#LET ugolokL=2
+#IF $(sideUgol)=0
+001	a=$a	l=$(ugolokL)	sa=-$A	sp=-$p/2	C1=1||$(_ugolColor:4)
+001	a=$(ugolokL)	sa=-$(ugolokL)	l=$(a)	sp=-$p/2	C1=1||$(_ugolColor:4)
+#ELSE
+001	a=$a	l=$(ugolokL)	sa=-$A	sp=-$p/2	sl=$L-$(ugolokL)	C1=1||$(_ugolColor:4)
+001	a=$(ugolokL)	sa=-$(ugolokL)	l=$(a)	sp=-$p/2	C1=1||$(_ugolColor:4)
+#ENDIF

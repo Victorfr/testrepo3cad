@@ -1,0 +1,22 @@
+#IF $(dopFur)=0
+#LETV AllDopFur=0
+#ENDIF
+#IF $(AllDopFur)>0
+001	LATO=6	COD=999nab_sh4x16	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999pack_sh4.2x40	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999pack_DB8x52SH5x60	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999pack_sh3.5x30	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub_driva / / /#Q10	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q20	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q20	L=1	A=1	P=1  //Test
+#ENDIF
+#IF ($(bokL:1)!!9 | $(bokR:1)!!9 | $(dno:1)!!9 | $(verh:1)!!9) & $(_colkarkas_kor:1)!!$(_colkarkas:1)
+#IF $(_colkarkas_kor:14)==999sam
+001	LATO=6	COD=$(_colkarkas_kor:14) /COLSAM=$(_colkarkas_kor:15) / /#Q20	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas_kor:14) / / /#Q20	L=1	A=1	P=1  //Test
+#ENDIF
+#ENDIF

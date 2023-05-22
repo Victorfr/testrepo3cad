@@ -1,0 +1,48 @@
+//отрисовка каркса шкафа ливинг
+#LET ndet=0
+#LET spzoc=$P-40-$(mat:0)//смещение цоколя
+#LET karkasSa=0
+#LET spostakarkasP=$(spBackWall)+$(mat_backwall:3)
+#LET polkKrepeg=0//количество крепежа на полку
+//для передачи размеров шкафа в макросы наполнения//
+#LET korpA=$a
+#LET korpL=$l
+#LET korpP=$P
+////////////////////////////////////////////////////
+#IF $(tipshkafliving:1)=1 //шкаф с цоколем
+#IF $(hzoc:0)<45
+#LETV hzoc=45
+#ENDIF
+#ELSE
+#LETV hzoc=0
+#ENDIF
+#IF $(addNog:0)=1
+#LETV ua=$(_dekPie:5)
+#LET karkasSA=$(_dekPie:5)
+048	SA=0  // Опора декоративная
+048	SA=0	SP=$p-80  //Опора декоративная
+048	SL=$l-68	SA=0  //Опора декоративная
+048	SL=$l-68	SA=0	SP=$p-80  //Опора декоративная
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
+#ENDIF
+001	LATO=6	COD=999sh_4.2x25 / / /#Q16	L=1	A=1	P=1  //Test
+#IF $l>900
+048	SL=$l/2-$(_dekPie:4)/2	SA=0  //Опора декоративная
+048	SL=$l/2-$(_dekPie:4)/2	SA=0	SP=$p-80  //Опора декоративная
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q2	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+001	LATO=6	COD=999sh_4.2x25 / / /#Q8	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSE
+#IF $(ua)!0
+#LETV ua=0
+#ENDIF
+#ENDIF
+//отрисовка констрктивных деталей шкафа
+_korobLiving	sa=$(karkasSA)

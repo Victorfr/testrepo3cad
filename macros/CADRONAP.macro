@@ -1,0 +1,152 @@
+//_cadroPlace	l=$p-$(profLArg)*2	a=$a	sp=$(profLArg)	ay=-90
+_CADROPLACE
+_CADROPLACE	ay=-90	l=$p-$(profLarg)	sl=0	sp=$(profLarg)
+_CADROPLACE	a=$p-$(proflarg)*2	ax=-90	sp=$(proflarg)
+#IF $(spostaL)+$l+$(profLArg)=$(lkorp)
+_CADROPLACE	ay=-90	l=$p-$(profLarg)	sl=$l+$(proflarg)	sp=$(profLarg)
+#ENDIF
+#IF $(spostaa)+$(profLArg)+$a=$(akorp)
+_CADROPLACE	a=$p-$(proflarg)*2	ax=-90	sa=$a+$(proflarg)	sp=$(profLArg)
+#ENDIF
+//#MSG $(spostaL)
+//#MSG $(Lbox)
+#IF 0
+#LETV leftNish$(_ctx)=1
+#LETV rightNish$(_ctx)=1
+#LETV topNish$(_ctx)=1
+#LETV botNish$(_ctx)=1
+#LET drawLeft=1
+#LET drawRight=1
+#LETS xx1=
+#LET delta=0
+#FOR $(nishposfinale)
+#LETS param=$(i)
+#LET nishSpostal=$[ex;$(param);|;1]
+#LET nishSpostaa=$[ex;$(param);|;2]
+#LET nishL=$[ex;$(param);|;3]
+#LET nishA=$[ex;$(param);|;4]
+#IF $(spostaL)=$(nishSpostaL)+$(nishL)+$(profLarg)
+#IF $(spostaA)<=$(nishSpostaA) & $(spostaa)+$a<$(nishSpostaA)+$(nishA)
+//001	a=$(nishA)	sa=$(nishSpostaA)-$(spostaa)
+//#MSG $(nishSpostaL)
+//  #LET drawLeft=0
+#LETV leftNish$(_ctx)=0
+#LET newdelta={$(nishSpostaA)-$(spostaa)}
+#IF $(delta)=0
+#LETS xx1=$(delta);
+#ELSE
+#IF $(delta)>$(newDelta)
+#LETS xx1=$(newdelta);$(xx1)
+#ELSE
+#LETS xx1=$(xx1);$(newdelta)
+#ENDIF
+#ENDIF
+#LET delta=$(newdelta)
+//_profCadro	a=$(nishSpostaA)-$(spostaA)-$(profLarg)	sl=-$(profLarg)
+//_profCadro	a=$a+$(spostaa)-$(nishSpostaA)	sl=-$(profLarg)	sa=$(nishSpostaA)-$(spostaA)
+#ENDIF
+#IF $(spostaA)<$(nishSpostaA) & $(spostaA)+$a>=$(nishSPostaA)+$(nisha)
+//  #LET drawLeft=0
+#LET newdelta={$(nishSpostaA)-$(spostaa)}
+#IF $(delta)=0
+#LETS xx1=$(newdelta)
+#ELSE
+#IF $(delta)>$(newdelta)
+#LETS xx1=$(xx1);$(newdelta)
+#ELSE
+#LETS xx1=$(newdelta);$(xx1)
+#ENDIF
+#ENDIF
+#LET delta=$(newdelta)
+// 001	a=$(nisha)	sa=$(nishSpostaA)-$(spostaA)
+//#LETS xx1={$(nishSpostaA)-$(spostaa)};$(xx1)
+#ENDIF
+#IF $(spostaA)<$(nishSpostaA) & $(spostaA)+$a<=$(nishSPostaA)+$(nisha)
+// #LET drawLeft=0
+#LET newdelta={$(nishSpostaA)-$(spostaa)}
+#IF $(delta)=0
+#LETS xx1=$(newdelta)
+#ELSE
+#IF $(delta)>$(newdelta)
+#LETS xx1=$(xx1);$(newdelta)
+#ELSE
+#LETS xx1=$(newdelta);$(xx1)
+#ENDIF
+#ENDIF
+#LET delta=$(newdelta)
+// 001	a=$(nisha)	sa=$(nishSpostaA)-$(spostaA)
+//#LETS xx1={$(nishSpostaA)-$(spostaa)};$(xx1)
+#ENDIF
+#IF $(spostaa)>$(nishSpostaA) & $(spostaA)<$(nishSpostaA)+$(nishA)
+//  001
+#ENDIF
+#ENDIF
+#IF $(spostaL)+$l+$(profLarg)=$(nishSpostal)
+#IF $(spostaA)<$(nishSpostaA) & $(spostaa)+$a>$(nishSpostaA)
+//001
+/ #LET drawRight=0
+#ENDIF
+#ENDIF
+#ENDFOR
+#LET oldAlte=0
+#LET ind=0
+//VOLUME
+#LETS paramarray=
+//#MSG $(xx1)
+_arrayUpdate	paramarray=$(xx1)
+#FOR $(xx1)
+#LET ind=$(ind)+10
+#LET alteProf=$(i)-$(oldAlte)
+//_profCadro	a=$(alteProf)-$(profLarg)	sa=$(oldAlte)	sl=-$(profLarg)
+//_profCadro	a=$(alteProf)-$(profLarg)	sa=$(oldAlte)	sp=$(p)-$(profLarg)+15	sl=-$(profLarg)
+#LET oldAlte=$(i)
+#ENDFOR
+#IF $(oldAlte)!0
+// _profCadro	a=$a-$(oldalte)	sa=$(oldAlte)	sl=-$(profLarg)
+// _profCadro	a=$a-$(oldalte) 	sa=$(oldAlte)	sp=$(p)-$(profLarg)	sl=-$(profLarg)
+#ENDIF
+//горизонтальные   снизу
+_profCadro	az=90	a=$l//	sa=$(profLArg)
+_profCadro	az=90	a=$l	sp=$p-$(profLarg)
+//горизонтальные   сверху
+#IF {$(spostaA)+$a+$(proflarg)}=$(akorp)
+_profCadro	az=90	a=$l	sa=$a+$(profLarg)
+_profCadro	az=90	a=$l	sp=$p-$(profLarg)	sa=$a+$(profLarg)
+#IF $(l)+$(spostaL)+$(proflarg)=$(lkorp)
+_profCadro	a=$p-$(profLarg)*2	sl=$l	ax=-90	sp=$(profLarg)	sa=$a+$(profLarg)
+#ENDIF
+#LETV topNish$(_ctx)=1
+#ELSE
+#LETV topNish$(_ctx)=0
+#ENDIF
+//#IF $(spostaL)!$(profLarg)
+//вертикальные слева
+#IF $(drawLeft)=1
+_profCadro	a=$a	sl=-$(profLarg)
+_profCadro	a=$a	sp=$P-$(profLarg)	sl=-$(profLarg)
+#ENDIF
+//горизонтальные слева справа боковые
+_profCadro	a=$p-$(profLarg)*2	sl=-$(profLarg)	ax=-90	sp=$(profLarg)
+_profCadro	a=$p-$(profLarg)*2	sl=-$(profLarg)	ax=-90	sp=$(profLarg)	sa=$a+$(profLarg)
+_profCadro	a=$p-$(profLarg)*2	sl=$l	ax=-90	sp=$(profLarg)	sa=$a+$(profLarg)
+//если ниша самая правая в секции
+#IF $(l)+$(spostaL)+$(proflarg)=$(lkorp)
+_profCadro	a=$p-$(profLarg)*2	sl=$l	ax=-90	sp=$(profLarg)	sa=15
+//вертикальные справа
+//#IF $(drawRight)=1
+_profCadro	a=$a	sl=$L
+_profCadro	a=$a	sp=$P-$(profLarg)	sl=$L
+// #ENDIF
+//горизонтальные справа снизу
+#LETV rightNish$(_ctx)=1
+#ELSE
+#LETV rightNish$(_ctx)=0
+#ENDIF
+//#ENDIF
+#LETS nishPos= $(spostaL)|$(spostaA)|$(l)|$(a);$(nishPos)
+//_profCadro	az=90	a=$l//	sa=$(profLArg)
+_cadroPlace	l=$L	a=$a
+#IF $(spostaL)+$(l)+$(profLArg)=$(lkorp)
+_cadroPlace	l=$p-$(profLArg)*2	a=$a	sp=$(profLArg)	ay=-90	sl=$l+$(profLArg)
+#ENDIF
+#ENDIF

@@ -1,0 +1,88 @@
+_dataBox
+#LETV SHPR={$(curbox)+1}
+#LETV _krepeg=1
+#LETV _WR=999KARKAS
+#LETV WR=$(_WR:3)
+#LETV TSH=428616541
+!COMMENTO $(_wr:2)
+#IF $(_PRIMOCARICAMENTO)=1
+#LET a=2000
+#ENDIF
+#LET NDET=0
+#LET ALTBOX=$a
+#IF $a>2750
+#MSG максимальная высота секции 2750 мм!
+#LET a=2750
+#ENDIF
+#IF $a<360
+#MSG минимальная высота секции 360 мм!
+#LET a=360
+#ENDIF
+#IF $l>600
+#MSG максимальная ширина секции 600 мм!
+#LET l=600
+#ENDIF
+#IF $l<200
+#MSG минимальная ширина секции 200 мм!
+#LET l=200
+#ENDIF
+#IF $p>700
+#MSG максимальная глубина секции 700 мм!
+#LET p=700
+#ENDIF
+#IF $p<300
+#MSG минимальная глубина секции 300 мм!
+#LET p=300
+#ENDIF
+#LETS mat_old=$(mat)
+#LETS mat=$(mat_Bok)
+#IF $(latoBox:3)=1
+#LET slBok=$l-$(mat:1)	 slZst=0	 slNum=$l-20	 slNumZ=-10
+#LETS nkZ=$(_colkarkas:10)	 skZ=378917905
+#ELSE
+#LET slBok=0	 slZst=$(mat:1)	 slNum=20	 slNumZ=$l+10
+#LETS skZ=$(_colkarkas:10)	 nkZ=378917905
+#ENDIF
+NUMDET	SL=$(slNum)	SA=$A/2	sp=-20
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+106	SL=$(slBok)  // Боковина для скошенных и радиусных секций
+//010
+NUMDET	SL=$(slNumZ)	SA=$A/2	sp=-$p
+#LETV _wr=999KARKASZSTC
+#LETV _MNP=999KARKASZSTC
+#LETS sk=$(skZ)	wk=$(_colkarkas:10)	nk=$(nkZ)	ek=$(_colkarkas:10)
+107	SL=$(slZst)  //Задняя стенка для скошенных и радиусных секций
+// *************************************** крепеж задней стенки к боковине ***********************************************
+001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+//#FOR $1:2
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q2	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+//#ENDFOR
+#IF $a-64-64>800
+001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15)	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14)	L=1	A=1	P=1  // Test
+#ENDIF
+#ENDIF
+// ***********************************************************************************************************************
+// *************************************** саморезы для крепления секции к боковине шкафа ********************************
+#LETS codKrep=999sh4x30
+#IF $(mat:1)=22 #LETS codKrep=999sh4x35
+//#FOR $1:5
+001	LATO=6	COD=$(codKrep) / / /#Q5	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q5	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q5	L=1	A=1	P=1  //Test
+#ENDIF
+//#ENDFOR
+// ***********************************************************************************************************************
+#LETS mat=$(mat_old)

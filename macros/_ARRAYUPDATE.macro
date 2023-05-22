@@ -1,0 +1,28 @@
+!parametri paramarray=
+// #MSG $(paramarray)  1
+#IF $(paramarray)!!
+#VB
+dim massive
+addstr=V("paramarray")
+massive=split(addstr	";" )
+intcount=Ubound(massive)
+for n=0 to intcount
+for m=0 to intcount
+paramsX=Split(massive(m)	";")
+paramsY=Split(massive(n)	";")
+intposX=int(paramsX(0))
+intposY=int(paramsY(0))
+if m<>n then
+if intposX>intposY then
+tmp=massive(n)
+massive(n)=massive(m)
+massive(m)=tmp
+end if
+end if
+next
+next
+' msgbox join(massive	"X")
+V("paramarray")=join(massive	";")
+#ENDVB
+#LETS xx1=$(paramarray)
+#ENDIF

@@ -1,0 +1,21 @@
+//расчет упаковки для хдф
+#IF $(hdfsizemax)!!TEST
+//  #LET sizeL=$[EX;$(hdfsizemax);:;1]
+//  #LET sizeA=$[EX;$(hdfsizemax);:;2]
+//  #MSG $(hdfsizemax)
+//001	COD=999HDFUPAKZAG /TD=505	L=$(sizeL)	A=$(sizeA)	P=4	lato=6  //Test
+//упаковка
+_calculate_size	mis_zst=$(hdfsizemax)
+#LET sizeL=$(LargLDsp)
+#LET sizeA=$(AltLDsp)
+///было
+//#LETV _wr=999PODLZST
+//по письму марии насчет упаковок 16.01.2020
+#LETV _wr=999ZAGHDFUPAK
+001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(_MNP:3);WR=$(_wr:3);TD=505 /Упаковка для задней стенки /#L-1	L=$(sizeL)	A=$(sizeA)	P=16  //Test
+//распил дсп
+#LETV _MNP=999PODLZST
+#LETV _wr=999PODLZST
+105	COD= / / /#L+1	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
+#ENDIF
+/////

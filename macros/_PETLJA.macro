@@ -1,0 +1,87 @@
+#IF $(_petl:1)=1
+#IF $(_color_petl:1)=1
+//      050	COD=999petl95alnk / / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67	L=27	A=68	P=67	FACC=100	X4=$(3ds)  //Test
+//      001	LATO=6	COD=999montPlSen / / /#L-1	L=1	A=1	P=1  //Test
+//      001	LATO=6	COD=999zaglPetAl / / /#L-1	L=1	A=1	P=1  //Test
+//      001	LATO=6	COD=999ZagKPetlAl / / /#L-1	L=1	A=1	P=1  //Test
+//      001	LATO=6	COD=999OgrUgOtkr / / /#L-1	L=1	A=1	P=1  //Test
+//      001	LATO=6	COD=999sh4x16pot / / /#L-1#Q2	L=1	A=1	P=1  //Test
+050	COD=999petl95alnk /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlSen /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999ZagKPetlAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+//#IF $[datecompare;$(dataordine);11.10.2021]<0 //по тз от стешина нет ограничителя
+001	LATO=6	COD=999OgrUgOtkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+//#ENDIF
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(_color_petl:1)=2
+050	COD=999petl95Bl /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlBL /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetBl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999ZagKPetlBl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+// #IF $[datecompare;$(dataordine);11.10.2021]<0 //по тз от стешина нет ограничителя
+001	LATO=6	COD=999OgrUgOtkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+// #ENDIF
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSEIF $(_petl:1)=2
+#IF $(_color_petl:1)=1
+050	COD=999petl110met /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlSen /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999ZagKPetlAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+//#IF $[datecompare;$(dataordine);11.10.2021]<0 | $(lfiaKorp)[22] //по тз от стешина нет ограничителя
+001	LATO=6	COD=999OgrUg11Otkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+// #ENDIF
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(_color_petl:1)=2
+050	COD=999petl110Bl /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlBl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999ZagKPetlBl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetBl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+//#IF $[datecompare;$(dataordine);11.10.2021]<0 | $(lfiaKorp)[22] //по тз от стешина нет ограничителя
+001	LATO=6	COD=999OgrUg11Otkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+///#ENDIF
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSEIF $(_petl:1)=3
+#IF $(_color_petl:1)=1
+050	COD=999petl165Al /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlSen /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999OgrUg165Otkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(_color_petl:1)=2
+050	COD=999petl165Bl /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlBl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetBl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999OgrUg165Otkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSEIF $(_petl:1)=4
+// 050	COD=999petl110met / / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67	L=27	A=68	P=67	FACC=100	X4=$(3ds)  //Test
+050	COD=999petl110met /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlSen /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetInt /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999OgrUg11Otkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(_petl:1)=5
+050	COD=999petlSensVkl /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPlSen /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999zaglPetAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999OgrUg11Otkr /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+#IF $(PRODUCTLINE)==maria_shkaf
+001	LATO=6	COD=999ZagKPetlAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=999zaglPetInt /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+#ENDIF
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(_petl:1)=6
+050	COD=999petlNak95180 /FPL=$(FPL) / /#L-1	SL=$(spostaSxPetl)	SA=$(sposta_petl)-68/2	SP=-67  //Test
+001	LATO=6	COD=999montPldist /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999zaglPetInt /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999zaglPetAl /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999ogrpetl9585 /FPL=$(FPL) / /#L-1	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot /FPL=$(FPL) / /#L-1#Q2	L=1	A=1	P=1  //Test
+#ENDIF

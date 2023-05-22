@@ -1,0 +1,23 @@
+//параметры зон перекрытия
+#LETS petlZoneParams=$(locp_bx5)
+//параметры расположения плейсера
+!PLACERPAR placerparams	5
+//_PLACERMIXAL
+//_PROVERKAPLACER
+#LETS typePetl=$[ex;$(petlZoneParams);|;1]
+#LETS _spostaa=$(placerParams:2)
+///если плейсер в шкафу миксал (в котором установлены двери
+#LET flag_ust=1
+#LET lkorpSh=$(placerParams:0)
+#LET placerTestL=$(largMixBox:3)
+#IF $(typePetl)[MIXAL]
+#LET placerSa=rnd($(_ppa))+$(_spostaa)
+#LET placerA=$A
+///проверка пересечения плейсера с петлями в шк ( осуществляется только по высоте)
+#IF $(placerSa)<87 | ($(placerSa)>87 & $(placerSa)<113))
+#LET flag_ust=5
+#ENDIF
+#IF ($(placerSa)+$a)>($(_xda)-113)
+#LET flag_ust=5
+#ENDIF
+#ENDIF

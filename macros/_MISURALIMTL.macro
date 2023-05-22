@@ -1,0 +1,43 @@
+//_MISURALIM
+#LET flag_door=1
+#IF $(_ModDoorRasp:1)==s02 // Mix22
+#IF $a<2190 | $a>2590 | $L<730 | $l>1250
+#LET flag_door=0
+#ENDIF
+#IF $l>2040 & $(_colkarkas:18)=1
+#LETV TxtVst=0
+#ENDIF
+#IF $A>2040 & $(_colkarkas:18)=1
+#LETV TxtVst=1
+#ENDIF
+#IF $a<356 & $(_petl:1)!!999 //минимальная высота с петлями
+#LETV a=356
+#MSG Минимальная высота двери с петлями 356 мм!
+#ENDIF
+#ELSEIF $(_ModDoorRasp:1)[s04;S28] //Spark Vector
+#IF $a<2190 | $a>2590 | $L<730 | $l>1250
+#LET flag_door=0
+#ENDIF
+#IF $(TXTVST:0)=0
+#LETV txtvst=1
+#ENDIF
+#ELSEIF $(_ModDoorRasp:1)[s27] //ICE
+#IF $a<2190 | $a>2280 | $L<730 | $l>1250
+#LET flag_door=0
+#ENDIF
+#ELSEIF $(_ModDoorRasp:1)[s29;s31] //Vector Acril
+#IF $a<2190 | $a>2500 | $L<730 | $l>1250
+#LET flag_door=0
+#ENDIF
+#ELSEIF $(_ModDoorRasp:1)[s08] //Classic
+#LET minDoorLTL=747
+#LET maxDoorLTL=1150
+#LET minDoorATL=2240
+#LET maxDoorATL=2280
+#IF ($(_ModDoorRasp:1)[$(cvetvstav_door:14)] & $(_patina:5)!60251733)
+#LET maxDoorLTL=900
+#ENDIF
+#IF $L<$(minDoorLTL) | $L>$(maxDoorLTL) | $a<$(minDoorATL) | $a>$(maxDoorATL)
+#LET flag_door=0
+#ENDIF
+#ENDIF

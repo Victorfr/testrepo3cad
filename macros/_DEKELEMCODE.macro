@@ -1,0 +1,24 @@
+#LETS codWR=$(_ModDoorRasp:1)$(_nameParam)
+#LETS codMNP=$(_ModDoorRasp:1)$(_nameParam)
+#LET PRIP=4
+#IF $(_ModDoorRasp:1)[$(cvetvstav:14)] & $(_patina:5)!60251733 & not($(flagAllure)[1;2])
+#LETS codWR=$(_ModDoorRasp:1)$(_nameParam)PT
+#LETS codMNP=$(_ModDoorRasp:1)$(_nameParam)PT
+#LETS namedet=$(namedet) с патиной
+#LET prip=
+#ENDIF
+///добавить добавление глянц. мат. к коду для модели Classic эмаль
+#IF $(_ModDoorRasp:1)[S26;S01]
+#IF $(_facturaDek:1)[1]//глянц
+#LETS codWR=$(codWR)GL
+#LETS codMNP=$(codMNP)GL
+#ELSEIF $(_facturaDek:1)[2] //mat
+#LETS codWR=$(codWR)MT
+#LETS codMNP=$(codMNP)MT
+#ELSEIF $(_facturaDek:1)[3] //mat
+#LETS codWR=$(codWR)ST
+#LETS codMNP=$(codMNP)ST
+#ENDIF
+#ENDIF
+#LETV _wr=$(codWR)
+#LETV _MNP=$(codMNP)

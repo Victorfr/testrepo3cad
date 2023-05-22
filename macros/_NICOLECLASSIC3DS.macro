@@ -1,0 +1,57 @@
+#IF $(_ModDoorRasp:1)[s26] //classic emal
+#LETS draw=464343208//0021_001
+#LETS 3ds=classicbok.3ds
+#IF $a>=236 & $a<=355
+#LETS 3ds=classic02.3ds
+#LETS draw=464343209//0021_002
+#ENDIF
+#IF $a>=177 & $a<=235
+#LETS 3ds=classic03.3ds
+#LETS draw=464343210//0021_003
+#ENDIF
+#IF $a>=117 & $a<=2280 & ($l>58 & $L<295)
+#LETS 3ds=classic00.3ds
+#LETS draw=473963372//0021_000
+#ENDIF
+#IF $(detMod)[3;4]
+#LETS 3ds=classic00.3ds
+#LETS draw=473963372//0021_000
+#ENDIF
+#ELSE // classic
+#LETS draw=404904557
+#LETS 3ds=classicbok.3ds //0020_001
+#IF $a>=236 & $a<=355
+#LETS 3ds=classic02.3ds
+#LETS draw=455591722 //0020_002
+#ENDIF
+#IF $a>=177 & $a<=235
+#LETS 3ds=classic03.3ds
+#LETS draw=455591711 //0020_003
+#ENDIF
+#IF $a>=117 & $a<=2280 & ($l>58 & $L<295)
+#LETS 3ds=classic00.3ds
+#LETS draw=473963332//0020_000
+#ENDIF
+#IF $(detMod)[3;4]
+#LETS 3ds=classic00.3ds
+#LETS draw=473963332//0020_000
+#ENDIF
+#ENDIF
+#IF $(_MODDOORRASP:1)[s27] //ICE
+#LETS 3ds=iceG.3ds
+#LETS draw=404879828 //0016_001
+#ENDIF
+#IF $(_MODDOORRASP:1)[s01] //Jazz
+#LETS draw=464423351//0017_001
+#IF $(_TIPDOORRASP:3)[gjp] | $(_gjp:0)=1
+#LETS draw=686694492 //0017_309
+#ENDIF
+#LETS 3ds=iceG.3ds
+#ENDIF
+#IF $(_MODDOORRASP:1)[s32] //Jazz
+#LETS draw=77777777// 0036_001
+#LETS 3ds=iceG.3ds
+#ENDIF
+#IF $(_MODDOORRASP:1)[s29] //Vector acril
+#LETS 3ds=box_fas.3ds
+#ENDIF

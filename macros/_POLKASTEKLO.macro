@@ -1,0 +1,38 @@
+!parametri flagMixal=0
+#LET vetroPolkProf=$(P)-$(spostakarkasP)-2
+#LETV _WR=999K_VETRORIP6
+#LETV _MNP=999K_VETRORIP6
+//если полки устанавливаются в шк миксал то наряд на полки стекло другой
+#IF $(flagMixal)=1
+#LETV _MNP=999K_VETROMX6
+#ENDIF
+#IF $(vetroPolkProf)>560
+#LET vetroPolkProf=560
+#IF $(oldUnico)!$(_idunico)
+#MSG Внимание! Глубина полки будет 560 мм
+#LETV oldUnico=$(_idunico)
+#ENDIF
+#ENDIF
+#LET flag=1
+#IF $p-$(vetroPolkProf)-$(spostakarkasP)<100
+_petliZonesPolki	spostaa=$(_spostaa)	l=$l-$(vetroKrepL)
+#ENDIF
+#IF $(flag)=1
+057	l=$l-$(vetroKrepL)	sl=$(vetroKrepL)/2	p=$(vetroPolkProf)	sp=$(spostakarkasP)  // Полка стекло
+#ELSEIF $(flag)=4
+015	COD= /ERROR=1	SL=$(vetroKrepL)/2	SP=$(spostakarkasP)	P=$(vetroPolkProf)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Полка попадает на фрезеровку петли!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+//015
+#IF {$(maxStekloL)}<{$L-$(vetroKrepL)}
+#LETV maxStekloL={$l-$(vetroKrepL)}
+#LETS params=$(maxStekloL):$(vetroPolkProf)
+#LETV stekloSize=$(params)
+#ENDIF
+#LET polkaStekloCount=$(polkaStekloCount)+1
+#LETV stekloCount=$(polkaStekloCount)
+//VSTAV
+//_FINALELIVING
+_AGG_KREP	krepPar=polksteklo
+//#LET polkKrepeg=$(polkKrepeg)+4
+//15

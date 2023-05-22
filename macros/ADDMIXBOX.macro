@@ -1,0 +1,123 @@
+//ящик mixbox
+#LET boxCount=$(boxCount)+1
+#LET largBox=$[ex;$(largMixBox:7);X;1]
+#LET profBox=$[ex;$(largMixBox:7);X;2]
+#LET altBox=$(typBox$(_ctx):3)
+//#MSG $(largBox)
+#LETS test=$[mid;$(_ctx);2;5]
+#LET boxSa=0
+#IF {$(test)}>0
+#IF $(saBox$(_ctx):0)<30
+#LETV saBox$(_ctx)=30
+#ENDIF
+#LETS nomeCtx= $[FORMAT;{$(test)-1}]
+#LETV prevAltBox$(_ctx)=$(typBox_$(nomeCtx):3)
+#LETV prevSaBox$(_ctx)=$(saBox_$(nomeCtx):0)
+#LETV itogSaBox$(_ctx)={$(itogSaBox_$(nomectx))+$(prevAltBox$(_ctx))+$(saBox$(_ctx):0)}
+#ELSE
+#LETV itogSaBox$(_ctx)=$(saBox$(_ctx))
+#ENDIF
+#LET boxSa=$(itogSaBox$(_ctx))
+#IF $(boxSa)+$(altBox)>$A
+//#MSG Уменьшите смещение по высоте или высоту наполнения
+//001	COD=999 /ERROR=1	SA=$(boxSa)	A=	A=200  //Test
+// 025	COD= / /Уменьшите смещение по высоте или высоту наполнения	SL=-$l/2	SA=$(boxSa)	SP=$p+20	L=600   // Номер детали
+// #LETV altMixBox=$(boxSa)+$(altBox)
+#ENDIF
+#LETV altMixBox=$(boxSa)+$(altBox)
+#LET altMixBox=$(boxSa)+$(altBox)
+025	COD= / /{$(test)}	sl=$l/2	sa=$(boxSa) //Номер детали
+//NUMDET
+////графика профилей
+#LETS colorProf=105
+#IF $(typBox$(_ctx):1)=1 //Mixbox45
+001	SL=($l-($(largBox)+58))/2	SA=$(boxSa)+45	SP=$P-$(profbox)-58	L=45	A=$(profBox)+58	P=45	AX=-90	C1=$(colorProf)	DIS=mxB45  //Test
+001	SL=($l-($(largBox)+58))/2	SA=$(boxSa)+45	SP=$(p)	L=45	A=$(largBox)+58	P=45	AY=90	AX=-90	C1=$(colorProf)	DIS=mxB45  //Test
+!SAGMIRROR sagR mxB45 x
+001	SL=$l-($l-($(largBox)+58))/2	SA=$(boxSa)+45	SP=$p-$(profBox)-58	L=29	A=$(profBox)+58	P=45	AX=-90	C1=$(colorProf)	DIS=$(sagR)  //Test
+001	SA=$(boxSa)+45	L=29	A=$(largBox)+58	P=45	AX=-90	ay=90	sp=$p-$(profBox)-58	C1=$(colorProf)	sl=($l-($(largBox)+58))/2	DIS=$(sagR)//Test
+//добавление артикула ящика
+001	LATO=6	COD=999MIXBOX45 /WR=375116382;FPL=$(FPL) /Ящик MIXBOX высотой 45 мм в шкаф шириной $(largMixBox:3)/#L-1  //Test
+001	LATO=6	COD=$(largMixBox:4)  //Test
+//стекло
+#ENDIF
+#IF $(typBox$(_ctx):1)=2 //Mixbox100
+001	sl=($l-($(largBox)+58))/2	SA=$(boxSa)+100	L=103	A=$(profBox)+58	P=51	AX=-90	C1=$(colorProf)	DIS=mxB100	sp=$P-$(profbox)-58  //Test
+001	SL=($l-($(largBox)+58))/2	SA=$(boxSa)+100	SP=$(p)	L=103	A=$(largBox)+58	P=51	AY=90	AX=-90	C1=$(colorProf)	DIS=mxB100  //Test
+!SAGMIRROR sagR mxB100 x
+001	SL=$l-($l-($(largBox)+58))/2	SA=$(boxSa)+100	L=29	A=$(profBox)+58	P=51	AX=-90	C1=$(colorProf)	DIS=$(sagR)	SP=$P-$(profbox)-58  //Test
+001	SA=$(boxSa)+100	L=29	A=$(largBox)+58	P=51	AX=-90	ay=90	sp=$p-$(profBox)-58	C1=$(colorProf)	sl=($l-($(largBox)+58))/2	DIS=$(sagR)//Test
+//добавление артикула ящика
+001	LATO=6	COD=999MIXBOX100 /WR=375116382;FPL=$(FPL) /Ящик MIXBOX высотой 100 мм в шкаф шириной $(largMixBox:3) /#L-1  //Test
+001	LATO=6	COD=$(largMixBox:5)  //Test
+//стекло
+#LETV _WR=999K_VETROMX4
+#LETV _MNP=999K_VETROMX4
+//62	l=$(LArgBox)	sl=($l-$(largBox))/2	p=$(profBox)	sa=$(boxSa)+4	sp=58/2
+#ENDIF
+#IF $(typBox$(_ctx):1)=3 //Mixbox200
+001	sl=($l-($(largBox)+58))/2	SA=$(boxSa)+200	L=103	A=$(profBox)+58	P=51	AX=-90	C1=$(colorProf)	DIS=mxB200	sp=$P-$(profbox)-58  //Test
+001	SL=($l-($(largBox)+58))/2	SA=$(boxSa)+200	SP=$p	L=103	A=$(largBox)+58	P=51	AY=90	AX=-90	C1=$(colorProf)	DIS=mxB200  //Test
+!SAGMIRROR sagR mxB200 x
+001	SL=$l-($l-($(largBox)+58))/2	SA=$(boxSa)+200	SP=$P-$(profbox)-58	L=29	A=$(profBox)+58	P=51	AX=-90	C1=$(colorProf)	DIS=$(sagR)  //Test
+001	SA=$(boxSa)+200	L=29	A=$(largBox)+58	P=51	AX=-90	ay=90	sp=$p-$(profBox)-58	C1=$(colorProf)	sl=($l-($(largBox)+58))/2	DIS=$(sagR)//Test
+//добавление артикула ящика
+001	LATO=6	COD=999MIXBOX200 /WR=375116382;FPL=$(FPL) /Ящик MIXBOX высотой 200 мм в шкаф шириной $(largMixBox:3) /#L-1  //Test
+001	LATO=6	COD=$(largMixBox:6)  //Test
+//стекло
+#LETV _WR=999K_VETROMX4
+#LETV _MNP=999K_VETROMX4
+// 62	l=$(LArgBox)	sl=($l-$(largBox))/2	p=$(profBox)	sa=$(boxSa)+4	sp=58/2
+#ENDIF
+////////////но ящика
+#IF $(dnoMat$(_ctx):1)=1
+#LETV _WR=999K_VETROMX4
+#LETV _MNP=999K_VETROMX4
+062	COD= /MNP=$(_MNP:3);WR=$(_wr:3)	SL=($l-$(largBox))/2	SA=$(boxSa)+4	SP=$p-$(profbox)-58/2	L=$(LArgBox)	P=$(profBox)  //Стекло листовое ТОНИРОВАННОЕ 4мм
+#IF {$(maxStekloL)}<{$(LArgBox)}
+#LETV maxStekloL={$(LArgBox)}
+#LETS params=$(maxStekloL):$(profBox)
+#LETV stekloSize=$(params)
+#ENDIF
+#LET polkaStekloCount=$(polkaStekloCount)+1
+#LETV stekloCount=$(polkaStekloCount)
+#ENDIF
+///Дно ldsp
+#IF $(dnoMat$(_ctx):1)=2
+#LETV _wr=999KARKASZST
+#LETV _MNP=999KARKASZST
+018	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKH=$(_colkarkas$(_ctx):8);NDS=$(ndet);FPL=$(FPL) /Дно ящика MIXBOX {$(test)} /#l-1	SL=($l-$(largBox))/2	SA=$(boxSa)+4+$(mat_backwall$(_ctx):3)	SP=$p-$(profbox)-58/2	L=$(largBox)	A=$(profBox)	P=$(mat_backwall$(_ctx):3)	AX=-90	C1=1|$(.percorso)\foto\struttura\$(_colkarkas$(_ctx):3)|$(_colkarkas$(_ctx):4)|90	X4=$(_colkarkas$(_ctx):8)/$(mat_backwall$(_ctx):4)  //Задняя стенка
+#ENDIF
+///направляющие (обработки такие же как под 450длиной)
+#LET prof_napr=450
+#IF {$p}>=500
+#LET prof_napr=501
+#LETS cod_napr_Sx=999vd4d500
+#ELSEIF {$p}>=450
+#LET prof_napr=451
+#LETS cod_napr_Sx=999vd4d450
+#ELSEIF {$p}>=400
+#LET prof_napr=401
+#LETS cod_napr_Sx=999vd4d400
+#ELSEIF {$p}>=350
+#LET prof_napr=351
+#LETS cod_napr_Sx=999vd4d350
+#ELSEIF {$p}>=300
+#LET prof_napr=301
+#LETS cod_napr_Sx=999vd4d300
+#ELSEIF {$p}>=250
+#LET prof_napr=251
+#LETS cod_napr_Sx=999vd4d250
+#ENDIF
+///направляющие (обработки такие же как под 450длиной)
+#LET prof_napr=451
+//обнулим коды направляющих так как ящики используются со своими направляющими
+#LETS cod_napr_Sx=///999vd4d450
+#LETS cod_napr_Dx=//999vdFix4d
+//////////////////////////////////////////////////
+#LET l_napr=5
+#LET _spostaa=0
+#LET _spostal=0
+//_KORPVID
+042	COD= / / /#L+3	SL=$(mat:1)	SA=$(boxSa)+18	a=20  //Направляющая выдвижного ящика ЛВ
+043	COD= / / /#L+3	SL=$l-$(L_napr)-$(mat:1)	SA=$(boxSa)+18	a=20  //Направляющая выдвижного ящика ПР

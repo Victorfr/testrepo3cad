@@ -1,0 +1,136 @@
+////макрос определяющий нишу для выдвижных элементов
+/// принимает ширину высоту ниши	 где будет распологаться внутрянка
+//SxSpostaLRaspD=2.5 // левый зазор
+//DxSpostaLRaspD=2.5 // правый зазор
+//SpostaPRaspD=2.5 // зазор по глубине между боковиной и фасадом
+//PnSpostaARaspD=2.5 // верхний зазор
+//StSpostaARaspD=2.5 // нижний зазор
+//_MODUL
+//001	l=$l-$(mat:1)*2	sl=$(mat:1)
+#LET modulLB=$l-$(mat:1)*2
+//количество выдвижных
+#LET vidCount={$(NUMB_METBOX:1)}
+#LET altVid=rnd(($a-5*$(vidCount))/$(vidCount)} ) // высльа фасада для выдвижного
+//_VIDLIVINGBASE
+#LET fasA=$(altVid)-($(PnSpostaARaspD)+$(StSpostaARaspD))
+#LET pop=477649243 //флаг отверстия под выдвижные
+#LET ido=999
+#LETS LPBR=
+//_PARAMANTASTR
+////для пересчета изменяемости отдельных высот
+#IF $(oldNumbMet)!$(vidCount)
+#LETV oldNumbMet=$(vidCount)
+#FOR $1:$(vidCount)
+#LETV altmetabox$(i)=$(altVid)
+#LETV oldAltMet$(i)=$(altVid)
+#ENDFOR
+#ENDIF
+//001
+#IF $(oldAltBox)!$A
+#LETV oldAltBox=$(a)
+#FOR $1:$(vidCount)
+#LETV altmetabox$(i)=$(altVid)
+#LETV oldAltMet$(i)=$(altVid)
+#ENDFOR
+#ENDIF
+#IF $(vidCount)>1
+#FOR $1:$(VidCount)
+#LET nextInd=$(i)+1
+#IF $(oldAltMet$(i))!$(altmetabox$(i):0)
+#IF $(i)=$(vidcount)
+//#IF $(altMetaBox$(i):0)>$(oldAltMet$(i))
+// #LETV altMetaBox$(i)=$(oldAltMet$(i))
+//#ELSE
+#LET nextInd=$(i)-1
+#LET deltaAlt=$(altmetabox$(i))-$(oldAltMet$(i))
+#LETV altmetabox$(nextInd)=$(altmetabox$(nextInd):0)-$(deltaAlt)
+#LETV oldAltMet$(nextInd)=$(altmetabox$(nextInd))
+#LETV oldAltMet$(i)=$(altMetaBox$(i):0)
+//#ENDIF
+#ELSE
+#LET deltaAlt=$(altmetabox$(i))-$(oldAltMet$(i))
+#LETV altmetabox$(nextInd)=$(altmetabox$(nextInd):0)-$(deltaAlt)
+#LETV oldAltMet$(nextInd)=$(altmetabox$(nextInd))
+#LETV oldAltMet$(i)=$(altMetaBox$(i):0)
+#ENDIF
+#ENDIF
+#ENDFOR
+#ELSE
+#IF $(oldAltMet1)!$(altMetaBox1)
+#LETV altMetaBox1=$(oldAltMet1)
+#ENDIF
+#ENDIF
+//_ADDPOLK
+#IF $(_MAN:1)[999] & $(pto:0)=0
+#IF $(fasBig:0)=0
+#LET fasA=$(FasA)-30
+#LET spostaAfas=30
+#ELSE
+#LET spostaAfas=0
+#ENDIF
+#ELSE
+#LET spostaAfas=0
+#ENDIF
+#LET fasL=int({$l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD))})
+//_vdbox
+//_DEKOR
+//_DOOR
+//смещение выдвижных относительно фасада
+#LET deltaAkorpvid=0
+#LET slVid=0
+#LET saVid=0
+#LET spVid=0
+//#LET sposta_macro=0//$(spostaa_met)
+//#LET saVid=-$(mat:1)+5
+#FOR $1:$(vidCOunt)
+#IF $(aperto)
+!MTTRASLA 0	0	250
+#ENDIF
+#LET fasA=$(altmetabox$(i):0)-$(spostaAFas)
+#LET index=$(i)
+#LET prevInd=$(index)-1
+#IF $(index)>1
+#LET fasAprev={$(fasAprev)+$(altmetabox$(prevInd):0)}-$(spostaafas)
+#ELSE
+#LET fasAprev=0
+#ENDIF
+#IF $(index)>1 | $(rip_sot:1)=1
+#LET saVid=-$(mat:1)
+#LET deltaAkorpvid=$(mat:1)
+#ENDIF
+//для передачи смещений в вызываемые макросы
+#LET macrosSposta={{$(fasAprev)+($(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+16+$(mat:1)+$(saVid)}-{$(PnSpostaARaspD)+$(fasAprev)+($(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)}}
+#LET macrosSpostaL={$(mat:1)+$(slVid)-$(SxSpostaLRaspD)}
+////для теста
+#LETS cod=999VDBOX
+#LETV _MNP=$(cod)
+#LETV _WR=$(cod)
+001	LATO=6	COD=$(cod) /MNP=$(_MNP:3);WR=$(_wr:3);NUMVD=$(i);PTO=$(_PTO);TD=505 /Выдвижной ящик  //Test
+//////
+//==================================================
+#IF $(_tipFasMat)=1
+_fasVid	SL=$(SxSpostaLRaspD)	SA=$(PnSpostaARaspD)+$(fasAprev)+($(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)	SP=$(p)	L=$(fasL)	A=$(fasA)	P=$(_ModDoorRasp:5)	_COLKARKAS=$(_COLKARKASFAS)	detYash=1
+#ELSE
+///каркасный фасад
+#LET show_num = 9
+#LET saTipo=$(PnSpostaARaspD)+$(fasAprev)+($(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)
+//300	COD= / / /#L+3	SL=$(SxSpostaLRaspD)	SA=$(saTipo)	SP=$(p)	L=$(fasL)	A=$(fasA)	p=$(mat_fasVD:1)
+_karkasfas	SL=$(SxSpostaLRaspD)	SA=$(PnSpostaARaspD)+$(fasAprev)+($(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)	SP=$(p)	L=$(fasL)	A=$(fasA)	P=$(_ModDoorRasp:5)	_COLKARKAS=$(_col_fasVD)	matmodul=$(mat)	mat=$(mat_fasVD)	TxtVst=$(TxtVstVD)	detYash=1
+025	COD= / /Фасад $(fasa)x$(fasl)	SL=$l/2-125	SA=$(saTipo)-10	L=250	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+// ********************************* ручка *********************
+#IF $(_man:1)!!999
+001	LATO=6	COD=$(_man:12) /FPL=N / /#L+3	L=1	A=1	P=1  //Test
+//#FOR $1:$(_man:14)
+001	LATO=6	COD=$(_man:13) /FPL=N / /#L+3#Q$(_man:14)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF
+// *************************************************************
+#ENDIF
+///======================================================
+//для передачи смещения в обработки в макросе
+#LET spostaa_met=$(sposta_macro)+$(fasAprev)+($(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+16+$(mat:1)+$(saVid) // координаты высоты метабокса относительно дна шкафа
+#LET spostaNavesP=0	spostaNavesA=0
+_korpVid	SL=$(mat:1)+$(slVid)	SA=$(fasAprev)+($(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+16+$(mat:1)+$(saVid)	SP=13-$(spVid)	L=$(lShkaf)-$(mat:1)*2	A=$(fasA)-($(mat:1)*2+16+10)+$(deltaAkorpvid)	P=$p-13	_COLKARKAS=$(_COL_VD)	MAT_OLD=$(MAT)	MAT=$(MAT_VD)	detYash=1
+///======================================================
+#ENDFOR
+//_DOORRASP

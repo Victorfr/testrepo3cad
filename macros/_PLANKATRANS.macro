@@ -1,0 +1,9 @@
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+#LETS _MNP:3=411712487
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//046	A=100	lato=1  //Транспортировочная царга ДСП без графики
+051	COD= / /Монтажная планка  //Боковина без сверления и без номера на схеме сборки
+//_DEKOR
+// #FOR $1:4
+001	LATO=6	COD=999evrik / / /#Q4	L=1	A=1	P=1  //Test

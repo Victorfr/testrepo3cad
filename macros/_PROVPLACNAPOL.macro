@@ -1,0 +1,60 @@
+#LET spostaa=$(placerparams:2)+int($(_ppa))
+// _PROVERKAPLACER
+#LET spostaL=$(placerparams:1)//+$(falshL)
+#LET modL=$l//-{$(falshR)+$(falshL)}
+///новый расчет
+//#LET modulSl=$(spostal)
+#LET modulX1=$(spostal)
+#LET modulX2=$(spostal)+$(modL)
+#IF $(petlZoneParams)!!
+#FOR $(petlZoneParams)  //проход по массиву петель
+#LETS petlPar=$i
+#LET petlSa=$[ex;$(petlPar);X;1]
+#LET petlSL=$[ex;$(petlPar);X;2]
+#LET petlA=$[ex;$(petlPar);X;3]
+#LET petlL=$[ex;$(petlPar);X;4]
+// #MSG $(petlSL)
+#IF $(spostaa)>=$(petlsa)
+#IF  $(spostaa) < {$(petlsa)+$(petlA)}
+//////////////////////////////////////////////////////////////////////////////////////////////
+////изменение глубины	 если модуль попадает на петлю	 но есть фальш фасад
+#LET modultestX1=$(modulX1)
+#LET modultestX2=$(modulX2)
+#IF $(falsh_pol_sx:1)=0 & $(falsh_sx:1)=1
+#LET modultestX1=$(spostaL)
+#ENDIF
+#IF $(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1
+#LET modultestX2={$(spostal)+$(modL)}
+#ENDIF
+#IF ($(modultestX1)>=$(petlSl) &  $(modultestX1)<=$(petlSl)+$(petlL) & $(modultestX2)>=$(petlSl)+$(petlL)) | ($(modultestX1)<$(petlSl)& $(modultestX2)>=$(petlSL)+$(petlL)) | ($(modultestX1)<$(petlSl) & $(modultestX2)>=$(petlSl))
+#LET flag_prof_mod=1
+#ENDIF
+//////////////////////////////////////////////////////////////////////////////////////////////
+#IF ($(modulX1)>=$(petlSl) &  $(modulx1)<=$(petlSl)+$(petlL) & $(modulX2)>=$(petlSl)+$(petlL)) | ($(modulX1)<$(petlSl)& $(modulX2)>=$(petlSL)+$(petlL)) | ($(modulX1)<$(petlSl) & $(modulX2)>=$(petlSl))
+#LET flag_ust=5
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(spostaa)<$(petlsa) & $(spostaa)+$a>{$(petlsa)}
+//#MSG $(spostaL) xx $(petlsl)
+//#MSG $(modulX1)>=$(petlSl) & $(modulX2)>=$(petlSl)+$(petlL))| ($(modulX1)<$(petlSl)& $(modulX2)>=$(petlSL)+$(petlL))
+//////////////////////////////////////////////////////////////////////////////////////////////
+////изменение глубины	 если модуль попадает на петлю	 но есть фальш фасад
+#LET modultestX1=$(modulX1)
+#LET modultestX2=$(modulX2)
+#IF $(falsh_pol_sx:1)=0 & $(falsh_sx:1)=1
+#LET modultestX1=$(spostaL)
+#ENDIF
+#IF $(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1
+#LET modultestX2={$(spostal)+$(modL)}
+#ENDIF
+#IF ($(modultestX1)>=$(petlSl) &  $(modultestX1)<=$(petlSl)+$(petlL) & $(modultestX2)>=$(petlSl)+$(petlL)) | ($(modultestX1)<$(petlSl)& $(modultestX2)>=$(petlSL)+$(petlL)) | ($(modultestX1)<$(petlSl) & $(modultestX2)>=$(petlSl))
+#LET flag_prof_mod=1
+#ENDIF
+//////////////////////////////////////////////////////////////////////////////////////////////
+#IF ($(modulX1)>=$(petlSl) &  $(modulx1)<=$(petlSl)+$(petlL) & $(modulX2)>=$(petlSl)+$(petlL))| ($(modulX1)<$(petlSl)& $(modulX2)>=$(petlSL)+$(petlL)) | ($(modulX1)<$(petlSl) & $(modulX2)>=$(petlSl))
+#LET flag_ust=5
+#ENDIF
+#ENDIF
+#ENDFOR
+#ENDIF

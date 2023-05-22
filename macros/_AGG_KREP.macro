@@ -1,0 +1,54 @@
+//#IF 0
+!parametri krepPar=$(_krepeg:3)
+#IF $(TIPSHKAF:6)=2
+#IF $p>=70 & $p<=83.9 // одна стяжка
+#LET col_krep=2
+#ELSEIF $p>=84 & $p<=429 // две стяжки
+#LET col_krep=4
+#ELSEIF $p>=429.1 & $p<=600 // три стяжки
+#LET col_krep=6
+#ELSEIF $p>=600.1 & $p<=750 // четыре стяжки
+#LET col_krep=8
+#ELSEIF $p>=750.1 & $p<=900 // пять стяжек
+#LET col_krep=10
+#ENDIF
+#IF $(krepPar)[rastex]
+001	LATO=6	COD=999dub9047974 / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999ex79462 / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=$(_colkarkas:12) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSEIF $(krepPar)[polksteklo]
+001	LATO=6	COD=999vetroKrep / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=999DUBVB / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(mat:6) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_colkarkas:12) /TD=536 / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSEIF $(TIPSHKAF:6)=1
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q4	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / / /#Q4	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q4	L=1	A=1	P=1  //Test
+#IF $(krep_vert_vstr_niz_lev)=2
+001	LATO=6	COD=999sh3_5x30 / / /#Q2	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub6x30 / / /#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(krep_vert_vstr_niz_lev)=1
+001	LATO=6	COD=999sh3_5x30 / / /#Q2	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub_driva / / /#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(krep_vert_vstr_niz_lev)=0
+001	LATO=6	COD=999sh4x16pot / / /#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+#IF $(krep_vert_vstr_verh_prav)=2
+001	LATO=6	COD=999sh3_5x30 / / /#Q2	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub6x30 / / /#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(krep_vert_vstr_verh_prav)=1
+001	LATO=6	COD=999sh3_5x30 / / /#Q2	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub_driva / / /#Q2	L=1	A=1	P=1  //Test
+#ELSEIF $(krep_vert_vstr_verh_prav)=0
+001	LATO=6	COD=999sh4x16pot / / /#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+#ENDIF

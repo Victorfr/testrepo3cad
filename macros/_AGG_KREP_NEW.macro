@@ -1,0 +1,42 @@
+//_AGG_KREP
+!parametri krepPar=	multiCount=1	flagTD=
+//_DRAWSTAG
+//010
+#LET Ldet=$(p)
+#LET Lmin_sr=42
+#LET Lstag=32
+#LET Lmin1=70
+#LET Lmax1=83.9
+#LET Lmin2=84
+//#LET Lmax2=450
+//#LET Lmin3=450.1
+#LET Lmax2=429
+#LET Lmin3=429.1
+#LET Lmax3=600
+#LET Lmin4=600.1
+#LET Lmax4=750
+#LET Lmin5=750.1
+#LET Lmax5=1000
+#LET Nst=0	Lotv=0	Lstep=0
+//#LET Ldet=800
+#LET Nst= $[iif;$(Lmin1)<=$(Ldet) & $(Ldet)<=$(Lmax1);1;0]+$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);2;0]+$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);3;0]\
++$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);4;0]\
++$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);5;0]
+#LET st_count=$(Nst)-1
+#LET col_krep=$(NST)*$(multiCount)
+#IF $(krepPar)[rastex]
+001	LATO=6	COD=999dub9047974 / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999ex79462 / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=$(_colkarkas:12) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ENDIF
+#ELSEIF $(krepPar)[polksteklo]
+001	LATO=6	COD=999vetroKrep / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=999DUBVB /TD=536 / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(mat:6) /TD=536 / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_colkarkas:12) /TD=536 / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ENDIF

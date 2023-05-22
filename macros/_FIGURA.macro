@@ -1,0 +1,72 @@
+!SETCODICE
+!COMMENTO $[TOCRLF;|;1. Выбрать направление профиля |2. Изменить профиль]
+#LETV _idunico_sag=$(_idunico)
+#LETV npr_sag_info=$(npr_sag:2)
+#IF $(edit_col:0)=0
+#LETV texture=
+#LETV colrgb=
+#LETV angle_tex=
+#ENDIF
+#IF $[LEN;$(texture:0)]>0
+#IF $(scale_tex:0)=1
+#IF $(x_tex$(_idunico_sag:0))!$(flx_tex$(_idunico_sag:0))
+#LET kfx=rn3($(x_tex$(_idunico_sag:0))/100)
+#LET flx_tex$(_idunico_sag:0)=$(x_tex$(_idunico_sag:0))
+#ENDIF
+#IF $(y_tex$(_idunico_sag:0))!$(fly_tex$(_idunico_sag:0))
+#LET kfy=rn3($(y_tex$(_idunico_sag:0))/100)
+#LET fly_tex$(_idunico_sag:0)=$(y_tex$(_idunico_sag:0))
+#ENDIF
+210	SL=$l+70	SA=$a+80	   SP=$p/2	L=$(x_tex$(_idunico_sag:0))	 A=1	 X1=8	 X3=Масштаб текстуры X;x_tex$(_idunico_sag:0);0	  X4=1	  X5=9 	X6=-1000;1000
+210	SL=$l+70	SA=$a+130	  SP=$p/2	L=$(y_tex$(_idunico_sag:0))	 A=1	 X1=9	 X3=Масштаб текстуры Y;y_tex$(_idunico_sag:0);0	  X4=1	  X5=9 	X6=-1000;1000
+#ELSE
+#LET kfx=rn3($l/1000)
+#LET kfy=rn3($a/1000)
+#ENDIF
+#ELSE
+#LET x_tex$(_idunico_sag:0)=100
+#LET y_tex$(_idunico_sag:0)=100
+#ENDIF
+#LETS XC1=$(mat_sag:3)|$(texture:0)|$(colrgb:0)|$(angle_tex)|$(kfx)|$(kfy)
+#LETS idformat=$[FORMAT;$(_idunico_sag:0);0000]
+#LETS dsagoma_$(idformat)=
+#SETVARS PROFC
+//replace perc
+#VB
+V("TMP")=REPLACE(V("_PERC")	";"	"	")
+#ENDVB
+!SAGOMA profilo $(TMP)
+!SAGOMA profilo a30	0	0	100	25	200	50
+#IF $(dsagoma_$(idformat))!!
+#IF $(lato21:0)=1
+1	LATO=21	SA=0	A=$a	C1=$(XC1)	C2=$(XC12)	DIS=$(dsagoma_$(idformat))	X1=$(kol_segm:0)
+#ELSE
+1	SA=0	A=$a	C1=$(XC1)	C2=$(XC12)	DIS=$(dsagoma_$(idformat))	X1=$(PROFILO)  // Cornice Porta
+#ENDIF
+!SAGSPOSTA sag_for_LAP_$(idformat)	$(dsagoma_$(idformat))	0	0	-90
+!SAGXY ttx	tty	0	$(sag_for_LAP_$(idformat))
+!SAGXY ttx1	tty1	0.5	$(sag_for_LAP_$(idformat))
+!SAGXY ttx2	tty2	1	$(sag_for_LAP_$(idformat))
+#IF $(npr_sag:1)[0] #LET a=rnd($[IIF;abs($(ttx))>abs($(ttx1));abs($(ttx));abs($(ttx1))])	p=rnd($[IIF;abs($(tty1))>abs($(tty2));abs($(tty1));abs($(tty2))])
+#IF $(npr_sag:1)[1] #LET l=rnd($[IIF;abs($(tty1))>abs($(tty2));abs($(tty1));abs($(tty2))])	p=rnd($[IIF;abs($(ttx))>abs($(ttx1));abs($(ttx));abs($(ttx1))])
+#IF $(npr_sag:1)[2] #LET a=rnd(abs($(ttx1)))	l=rnd($[IIF;abs($(tty1))>abs($(tty2));abs($(tty1));abs($(tty2))])
+//997	COD= / /\n\n$(ttx) \n$(tty)\
+//         \n\n$(ttx1) \n$(tty1)\
+//         \n\n$(ttx2) \n$(tty2)\
+//         	X1=6
+210	SE=$(npr_sag:1)[0]	SL=$l	   SA=$a+30	 SP=$p/2	 L=$l	 A=10	  X1=5	  X3=Ш;l;0	  X4=1	 X5=3
+210	SE=$(npr_sag:1)[1]	SL=$l/2	 SA=$a	    SP=$p	   L=$a	 A=10	  X1=9	  X3=В;a;0	  X4=1	 X5=4
+210	SE=$(npr_sag:1)[2]	SL=$l/2	 SA=$a/2	  SP=$p	   L=$p	 A=10	  X1=4	  X3=Г;p;0	  X4=1	 X5=2
+#ELSE
+210	SL=$l	   SA=$a+30	 SP=$p/2	 L=$l	 A=10	 X1=8	 X3=Ш;l;0	  X4=1	  X5=3
+210	SL=$l/2	 SA=$a	    SP=$p	   L=$a	 A=10	 X1=9	  X3=В;a;0	  X4=1	  X5=4
+210	SE=$(lato21:0)!1	SL=$l/2	 SA=$a/2	 SP=$p	   L=$p	 A=10	  X1=4	  X3=Г;p;0	  X4=1	 X5=2
+#IF $(lato21:0)=1
+#LET P=$l
+!SAGOMA ESTRUSO 0	0	$l	0	$l	$a	0	$a
+1	LATO=21	SA=0	L=$l	A=$a	P=$p	C1=$(XC1)	C2=$(XC1)	DIS=$(ESTRUSO)	X1=$(kol_segm:0)
+#ELSE
+!SAGOMA ESTRUSO 0	0	-$a	0	-$a	$l	0	$l
+001	SP=$p	A=$p	AZ=90	AX=90	C1=$(XC1)	C2=$(XC1)	DIS=$(ESTRUSO)	X1=$(PROFILO)  //Cornice Porta
+#ENDIF
+#ENDIF

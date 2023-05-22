@@ -1,0 +1,130 @@
+#LETS cod=999VDBOX
+#LETV _MNP=$(cod)
+#LETV _WR=$(cod)
+#IF $(aperto)
+!MTTRASLA 0	0	250
+#ENDIF
+001	LATO=6	COD=$(cod) /MNP=$(_MNP:3);WR=$(_wr:3);NUMVD=$(NUMVD);PTO=$(_PTO);TD=505 /Выдвижной ящик  //Test
+// ************************ расчет направляющих *******************************
+#IF $[datecompare;$(dataordine);$(_dataNewMet:3)]>=0
+#IF {$p-13}>=500
+#LET prof_napr=501
+#LETS cod_napr_Sx=999vd4d500
+#ELSEIF {$p-13}>=450
+#LET prof_napr=451
+#LETS cod_napr_Sx=999vd4d450
+#ELSEIF {$p-13}>=400
+#LET prof_napr=401
+#LETS cod_napr_Sx=999vd4d400
+#ELSEIF {$p-13}>=250
+#LET prof_napr=251
+#LETS cod_napr_Sx=999vd4d250
+#ENDIF
+#LETS cod_napr_Dx=999vdFix4d
+#LET l_napr=5
+#LET delta4d=17.5
+#LET deltaProf=1
+#ELSE
+#IF {$p-3}>=500
+#LET prof_napr=500
+#LETS cod_napr_Sx=999akt5d500Sx
+#LETS cod_napr_Dx=999akt5d500Dx
+#ELSEIF {$p-3}>=450
+#LET prof_napr=450
+#LETS cod_napr_Sx=999akt5d450Sx
+#LETS cod_napr_Dx=999akt5d450Dx
+#ELSEIF {$p-3}>=270
+#LET prof_napr=270
+#LETS cod_napr_Sx=999akt5d270Sx
+#LETS cod_napr_Dx=999akt5d270Dx
+#ENDIF
+#LET l_napr=8
+#LET delta4d=0
+#LET deltaProf=10
+#ENDIF
+// ****************************************************************************
+// ******************************  фасад выдвижного **************************************
+#LET delta_prof=$(mat_falsh:1)+2	l_fasad=$l-$(mat:1)*2-4	sl_fasad=$(mat:1)+2
+#IF $(_tip_met:1)=1 #LET delta_prof=-2	l_fasad=$l-4	sl_fasad=2
+#LETS mat_old=$(mat)	_colkarkas_old=$(_colkarkas)
+#LETS mat=$(mat_falsh)	_colkarkas=$(_col_falsh)
+#LETV _wr=999T_FASMET
+#LETV _mnp=999T_FASMET
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+300	COD= / / /#L+3	SL=$(sl_fasad)	L=$(l_fasad)  //Фасад
+// ****************************************************************************
+// ******************************* дно выдвижного *****************************
+#LETS mat=$(mat_vd)	_colkarkas=$(_col_vd)
+#LETV _WR=999k_DNOMET
+#LETV _MNP=999k_DNOMET
+#LETS sk=378917905	wk=378917905	nk=378917905	ek=378917905
+037	COD= / / /#L+3  //Дно ДСП выдвижного ящика
+#LET kol_krep=8
+#IF $l-(8*2+$(mat_old:1)*2+$(mat:1)*2)>600 #LET kol_krep=10
+//#FOR $1:$(kol_krep)
+001	LATO=6	COD=999DUBVB / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(mat:6) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_colkarkas:12) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
+//#ENDFOR
+// ****************************************************************************
+// ************************* задняя стенка выдвижного *************************
+#LETV _wr=999t_karkasZSTCM
+#LETV _mnp=999t_karkasZSTCM
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+041	COD= / / /#L+3  // Задняя стенка ДСП выдвижного ящика
+// ****************************************************************************
+#LETV _wr=999T_KARKASBOKVD
+#LETV _mnp=999T_KARKASBOKVD
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+038	COD= / / /#L+3  // Боковина ДСП выдвижного ящика левая
+039	COD= / / /#L+3  // Боковина ДСП выдвижного ящика правая
+#LET kol_krep=4
+#IF $a-4-10-$(mat_old:1)-14>200 #LET kol_krep=8
+//#FOR $1:$(kol_krep)
+001	LATO=6	COD=999DUBVB / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(mat:6) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_colkarkas:12) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#LETS razm_Lvd={$l-($(l_napr)*2+$(mat_old:1)*2+$(mat:1)*2)}	 razm_Avd={((2+$(mat_old:1)+14)+($a-4-10-$(mat_old:1)-14))-(2+$(mat_old:1)+14+13+$(mat:1))}	 razm_Pvd={$(prof_napr)-$(deltaProf)-$(mat:1)}
+#LETS mat=$(mat_old)	_colkarkas=$(_colkarkas_old)
+!mtreset
+#LET _spostaa={$(spostaa_met)}
+#LET _spostal=0
+042	COD= / / /#L+3  //Направляющая выдвижного ящика ЛВ
+043	COD= / / /#L+3  //Направляющая выдвижного ящика ПР
+#LET _spostaa=0
+// *************************HETTICH 9203434 Фиксаторы для ACTRO 5D***************
+#IF $[datecompare;$(dataordine);$(_dataNewMet:3)]=-1
+001	LATO=6	COD=999fixActSx / / /#L+3  //Test
+001	LATO=6	COD=999fixActdx / / /#L+3  //Test
+#ENDIF
+// ******************************************************************************
+// **********************Шуруп 3	0x25 потай	 белый цинк*************************
+//#FOR $1:4
+001	LATO=6	COD=999sh3x25 / / /#L+3#Q4  //Test
+//#ENDFOR
+// ******************************************************************************
+// ******************HETTICH 1008302 Крепежный шуруп 6	3х10	5/13 мм для направляющих*****
+//#FOR $1:8
+001	LATO=6	COD=999sh6x10 / / /#L+3#Q8  //Test
+//#ENDFOR
+// ******************************************************************************
+// *************************************************** PTO ******************************************
+#IF $(pto:0)=1
+001	LATO=6	COD=999vdPto4d / / /#L+3  //Test
+#LETV _WR=999PTO
+#LETV _MNP=999PTO
+052	COD= / / /#L+3  //Штанга для синхронизации PTO
+#ENDIF
+// **************************************************************************************************
+// ********************************* ручка *********************
+#IF $(_man:1)!!999
+001	LATO=6	COD=$(_man:12)	L=1	A=1	P=1  //Test
+//#FOR $1:$(_man:14)
+001	LATO=6	COD=$(_man:13) / / /#Q$(_man:14)	L=1	A=1	P=1  //Test
+// #ENDFOR
+#ENDIF
+// *************************************************************
+// ************************************************************
+025	COD= / /ШхВхГ $(razm_Lvd)x$(razm_Avd)x$(razm_Pvd)	sa=$a-110	sl=$l/2-($l-100)/2	sp=$(prof_met)+10	l=$l-100 //Номер детали
+// **************************************************************

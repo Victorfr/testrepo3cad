@@ -1,0 +1,34 @@
+//ограничения для стилус
+#LET minL=400
+#LET maxL=10000
+#LET minA=360
+#LET maxA=3000
+#LET minP=400
+#LET maxP=600
+#IF $(stTypeKrep:1)[1]
+#LET minP=200
+#ENDIF
+#IF $L<$(minL)
+#LETV l=$(minL)
+#MSG Минимальная ширина гардеробной $(minL) мм!
+#ENDIF
+#IF $l>$(maxL)
+#LETV l=$(maxL)
+#MSG Максимальная ширина гардеробной $(maxL) мм!
+#ENDIF
+#IF $a<$(minA)
+#LETV a=$(minA)
+#MSG Минимальная высота гардеробной $(minA) мм!
+#ENDIF
+#IF $a>$(maxa)
+#LETV a=$(maxa)
+#MSG Максимальная высота гардеробной $(maxA) мм!
+#ENDIF
+#IF $p<$(minP)
+#LETV p=$(minP)
+#MSG Минимальная глубина гардеробной $(minP) мм!
+#ENDIF
+#IF $p>$(maxP)
+#LETV p=$(maxP)
+#MSG Максимальная глубина гардеробной $(maxP) мм!
+#ENDIF

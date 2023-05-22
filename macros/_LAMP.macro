@@ -1,0 +1,10 @@
+#IF $(lamp:0)=1
+   044	SL=$(matvnL:0)-9	SP=$p-228  //Светильник врезной
+   044	SL=$l-$(matvnR:0)-1	SP=$p-228  //Светильник врезной
+   001	LATO=6	COD=999LedLenta / / /#Q2	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=999SensVkl / / /#Q2	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=999TransForLedLent / / /#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+//test for visual studio!!!test for visual studio!!!
+//test кириллицы
+#MSG умае123

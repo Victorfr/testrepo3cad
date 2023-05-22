@@ -1,0 +1,22 @@
+#IF $(_ModDoorRasp:1)[s26]
+#LETS IDO=
+#LETS IDD=
+///303	COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstavDek:9);_FKF=$(_facturaDek:4);PTN=$(_patinaDek:5);NPO=$(draw);FPL=$(fpl)	C1=$(c1)	MAN=0  //Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+#ELSE
+#LETS IDO=2
+#LETS IDD=
+#IF ($(matvstav:5)[$(cvetvstav:14)]) & $(_patina:5)!60251733
+#LETS IDO=
+#ENDIF
+//303	MAN=0	c1=$(c1)  // Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+#ENDIF
+#LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstavDek:9);NPO=$(draw);FPL=$(fpl);IDO=$(IDO);IDD=$(IDD);PRIP=$(PRIP)
+#IF $(_MODDOORRASP:1)[s08;s27] // для моделей в пленке добавим
+#LETS paramAnta=$(paramAnta);NT=$(nt)
+#ENDIF
+#IF $(_MODDOORRASP:1)[s08;s27;S26] //для моделей с патиной добавим
+#LETS paramAnta=$(paramAnta);PTN=$(_patinaDek:5)
+#ENDIF
+#IF $(_MODDOORRASP:1)[s01;s26] //для крашеных моделей добавим
+#LETS paramAnta=$(paramAnta);_FKF=$(_facturaDek:4)
+#ENDIF

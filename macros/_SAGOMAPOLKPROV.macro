@@ -1,0 +1,301 @@
+////проверки размеров
+#LETS gabarite=$l$p
+#IF $(ugolL_Up:0)=1
+#IF $(_typRipL_Up:1)=1///изменение радиуса
+#LETV oldGabarite=$(gabarite)
+//#LET recalculate=1
+#IF $(rad1:0)+1>=$p
+#LETV rad1={$p-1}
+#ENDIF
+#IF $(rad1:0)+1>=$l
+#LETV rad1={$l-1}
+#ENDIF
+///проверка с радиусами
+#IF $(ugolL_Down:0)=1
+#IF $(_typRipL_Down:1)=1 //если спереди слева радиус
+#IF $(rad1:0)+1+$(rad1LD:0)>$p
+//#LETV rad1={$p-1-$(rad1LD:0)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(_typRipL_Down:1)=3 //если спереди слева скос
+#IF $(rad1:0)+1+$p-$(scosPLD)>$p
+//#LETV rad1=$(scosPLD)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(ugolR_Up:0)=1 & $(_typRipR_Up:1)=1 //если справа сзади радиус
+#IF $(rad1:0)+1+$(rad1Ru:0)>$L
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_Up:0)=1 & $(_typRipR_Up:1)=3 //если справа сзади скос
+#IF $(rad1:0)+1+$l-$(scoslRU)>$L
+#LET profilError=1
+#ENDIF
+#ENDIF
+//////////////////////
+// #LETV oldRad1=$(rad1:0)
+#ENDIF
+//////////////////////////////////////////////////////////////////////////////
+#IF $(_typRipL_Up:1)=3///изменение скоса
+#LETV oldGabarite=$(gabarite)
+//      _SAGOMAPOLK
+#LET recalculate=1
+#IF $l-$(scosLLU)-1>$l
+//#LETV lscos=$(oldlscos)
+#LET profilError=1
+#ENDIF
+#IF $p-$(scospLU)-1>$P
+// #LETV pscos=$(oldpscos)
+#LET profilError=1
+#ENDIF
+#IF $(pscos:0)+1>$p
+//#LETV pscos=$(oldpscos)
+#LET profilError=1
+#ENDIF
+////////////////////////
+#IF $(ugolR_Up:0)=1 & $(_typRipR_Up:1)=1 //если справа сзади радиус
+#IF $(rad1RU:0)+1+$(scosLLU)>$L
+//#LETV rad1ru={$l-1-$(scosLLU)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_Up:0)=1 & $(_typRipR_Up:1)=3 //если справа сзади скос
+#IF $l-$(scoslRU)+1+$(scosLLU)>$L
+//#LETV lscos=$(oldLscos)
+#LET profilError=1
+//#MSG Необходимо увеличить ширину скоса справа сзади или слева сзади!
+//#LETV _typRipL_Up=1
+#ENDIF
+#ENDIF
+//////////////////////////////////
+#IF $(ugolL_Down:0)=1 & $(_typRipL_Down:1)=1//если слева снизу радиус
+#IF $(scosPLU)+1+$(rad1LD:0)>$P
+//#LETV rad1LD=$p-1-$(scosPLU)
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolL_Down:0)=1 & $(_typRipL_Down:1)=3//если слева снизу скос
+#IF $(scosPLU)+1>$(scosPLD:0)
+//  #LETV pscos=$(oldPscos)
+#LET profilError=1
+//            #MSG Необходимо увеличить глубину скоса слева сзади или слева спереди!
+//#LETV _typRipL_Up=1
+#ENDIF
+#ENDIF
+// #LETV oldLscos=$(lscos:0)
+//#LETV oldPscos=$(pscos:0)
+#ENDIF
+#ELSE
+//#LETV oldRad1=999
+// #LETV oldLscos=999
+//#LETV oldPscos=999
+#ENDIF
+#IF $(ugolL_down:0)=1
+#IF $(_typRipL_Down:1)=1
+#LETV oldGabarite=$(gabarite)
+#LET recalculate=1
+#IF $(rad1ld:0)+1>=$p
+#LETV rad1ld={$p-1}
+#ENDIF
+#IF $(rad1ld:0)+1>=$l
+#LETV rad1ld={$l-1}
+#ENDIF
+///проверка с радиусами
+#IF $(ugolL_UP:0)=1 & $(_typRipL_Up:1)=1 //если сзади слева радиус
+#IF $(rad1LD:0)+1+$(rad1:0)>=$p
+//#LETV rad1LD={$p-1-$(rad1:0)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolL_UP:0)=1 & $(_typRipL_Up:1)=3 //если сзади слева скос
+#IF $(rad1LD:0)+1+$(scospLU)>=$p
+//#LETV rad1LD={$p-1-$(scospLU)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_down:0)=1 & $(_typRipR_Down:1)=1 //если спереди справа радиус
+#IF $(rad1LD:0)+1+$(rad1RD:0)>=$l
+//#LETV rad1LD={$l-1-$(rad1RD:0)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_down:0)=1 & $(_typRipR_Down:1)=3 //если спереди справа скос
+#IF $(rad1LD:0)+1+$l-$(scosLRD)>$l
+//#LETV rad1LD=$(scosLRD)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+//////////////////////////////////
+///#LETV oldRad1LD=$(rad1LD:0)
+#ENDIF
+////////////////////////////////////
+#IF $(_typRipL_Down:1)=3// изменение параметров скоса
+#LETV oldGabarite=$(gabarite)
+#LET recalculate=1
+#IF $(ugolL_UP:0)=1 & $(_typRipL_Up:1)=1
+#IF $(rad1:0)+1+$p-$(scosPLD)>=$p
+// #LETV rad1=$(scosPLD)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+//_SAGOMAPOLK
+#IF $(ugolL_UP:0)=1 & $(_typRipL_Up:1)=3 //если сзади слева скос
+#IF 1+$(scosPLD)<=$(scosPLU)
+//  #LETV pscosLD=$(oldpScosLD)
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_down:0)=1 & $(_typRipR_Down:1)=1
+#IF $(rad1RD:0)+1+$(xa1)>=$l
+//#LETV rad1RD={$l-1-$(xa1)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_down:0)=1 & $(_typRipR_Down:1)=3 //если спереди справа скос
+#IF  $(scosLLD)+1-$(scosLRD)>0
+//#LETV lscosLD=$(oldLscosLD)
+#LET profilError=1
+////#LETV _typRipL_Down=1
+//#MSG Необходимо увеличить ширину скоса слева спереди или справа спереди!
+#ENDIF
+#ENDIF
+//#LETV oldLscosLD=$(lscosLD:0)
+//#LETV oldpscosLD=$(pscosLD:0)
+#ENDIF
+#ELSE
+#ENDIF
+#IF $(ugolR_Up:0)=1
+#IF $(_typRipR_Up:1)=1 //изменение радиуса
+#LETV oldGabarite=$(gabarite)
+#LET recalculate=1
+#IF $(rad1ru:0)+1>=$p
+#LETV rad1ru={$p-1}
+#ENDIF
+#IF $(rad1ru:0)+1>=$l
+#LETV rad1ru={$l-1}
+#ENDIF
+#IF $(ugolR_down:0)=1 & $(_typRipR_Down:1)=1
+#IF $(rad1ru:0)+1+$(rad1rd:0)>$p
+//#LETV rad1ru=$p-$(rad1rd:0)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_down:0)=1 & $(_typRipR_Down:1)=3 //справа спереди скос
+#IF $(rad1ru:0)+1>$(scosPRD:0)
+//#LETV rad1ru=$(scosPRD:0)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolL_up:0)=1 & $(_typRipL_Up:1)=1
+#IF $(rad1Ru:0)+1+$(rad1:0)>$L
+//#LETV rad1ru={$l-1-$(rad1:0)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolL_up:0)=1 & $(_typRipL_Up:1)=3 //справа сзади скос
+#IF $(rad1Ru:0)+1+$(scosLLU)>$L
+// #LETV rad1ru={$l-1-$(scosLLU)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+//////////
+//#LETV oldRad1Ru=$(rad1Ru:0)
+#ENDIF
+#IF $(_typRipR_Up:1)=3 //изменение скоса
+#LET recalculate=1
+#LETV oldGabarite=$(gabarite)
+//      _SAGOMAPOLK
+#IF $(ugolL_up:0)=1 & $(_typRipL_Up:1)=3
+#IF $l-$(scoslRU)+1+$(scosLLU)>$L
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolL_up:0)=1 & $(_typRipL_Up:1)=1 //слева сзади радиус
+#IF $(rad1:0)+1>$(scosLRU)
+///#LETV rad1=$(scosLRU)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_Down:0)=1 & $(_typRipR_Down:1)=1 //справа спереди радиус
+#IF $(rad1RD:0)+1+$(scosPRU)>=$P
+//#LETV rad1RD=$p-$(scosPRu)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+//#LETV oldLscosRU=$(lscosRU:0)
+//#LETV oldpscosRU=$(pscosRU:0)
+#ENDIF
+#ELSE
+#ENDIF
+#IF $(ugolR_down:0)=1
+#IF $(_typRipR_Down:1)=1//изменение радиуса
+#LET recalculate=1
+#IF $(rad1rd:0)+1>$p
+#LETV rad1rd={$p-1}
+#ENDIF
+#IF $(rad1rd:0)+1>$l
+#LETV rad1rd={$l-1}
+#ENDIF
+///проверка с радиусами
+#IF $(ugolL_down:0)=1 & $(_typRipL_Down:1)=1
+#IF $(rad1RD:0)+1+$(rad1LD:0)>=$L
+//#LETV rad1rd={$l-1-$(rad1LD:0)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolL_down:0)=1 & $(_typRipL_Down:1)=3
+#IF $(rad1RD:0)+1+$(scosLLD)>=$l
+//#LETV rad1RD={$l-1-$(scosLLD)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_Up:0)=1 & $(_typRipR_Up:1)=3 //справа сзади скос
+#IF $(rad1RD:0)+1+$(scosPRU)>=$P
+//#LETV rad1RD={$p-1-$(scosPRU)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_Up:0)=1 & $(_typRipR_Up:1)=1
+#IF $(rad1RD:0)+1+$(rad1RU:0)>$p
+//#LETV rad1rd={$p-1-$(rad1RU:0)}
+#LET profilError=1
+#ENDIF
+#ENDIF
+// #LETV oldRad1RD=$(rad1rd:0)
+#ENDIF
+#IF $(_typRipR_Down:1)=3 //& ($(oldLscosRD)!$(lscosRD:0) | $(oldPscosRD)!$(pscosRD:0)| $(oldGabarite)!!$(gabarite)) //изменение скоса
+///ограничения по габаритам
+#LETV oldGabarite=$(gabarite)
+//#LET recalculate=1
+///////
+#IF $(ugolL_down:0)=1 & $(_typRipL_Down:1)=1 //если слева спереди радиус
+#IF $(rad1LD:0)+1+{$l-$(scosLRD)}>$L
+//#LETV rad1LD=$(scosLRD)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolL_down:0)=1 & $(_typRipL_Down:1)=3 //если слева спереди скос
+#IF $(scosLLD)+1>$(scosLRD)
+//#LETV lscosRD=$(oldLscosRD)
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_up:0)=1 & $(_typRipR_up:1)=1 //если справа сзади радиус
+#IF $(rad1RU)+1>$(scosLRD)
+//#LETV rad1RU=$(scosLRD)-1
+#LET profilError=1
+#ENDIF
+#ENDIF
+#IF $(ugolR_up:0)=1 & $(_typRipR_up:1)=3 //если справа сзади скос
+#IF $(scosPRU)+1>$(scospRD)
+#LET profilError=1
+#ENDIF
+#ENDIF
+// #LETV oldLscosRD=$(lscosRD:0)
+// #LETV oldPscosRD=$(pscosRD:0)
+#ENDIF
+#ELSE
+#ENDIF

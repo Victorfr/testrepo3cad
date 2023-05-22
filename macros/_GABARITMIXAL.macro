@@ -1,0 +1,39 @@
+//////Ограничения размеров шкафов Mixal
+//стандартные размеры шкафа
+#IF $(countDoorMl:1)!999
+#LETV l=$(largShMixal:4)
+#LETV a=$(altShMixal:3)
+#LET minP=200
+#LET maxP=600
+#ELSE //если нет дверей то гикие размерыс ограничениями
+#LET minL=200
+#LET maxL=1200
+#LET minA=300
+#LET maxA=2620
+#LET minP=200
+#LET maxP=650
+#IF $(l)<$(minL)
+#LETV L=$(MinL)
+#MSG Ширина шкафа не может быть меньше $(minL) мм!
+#ENDIF
+#IF $l>$(maxL)
+#LETV L=$(maxL)
+#MSG Щирина шкафа не может быть больше $(MaxL) мм!
+#ENDIF
+#IF $(a)<$(mina)
+#LETV a=$(Mina)
+#MSG Высота шкафа не может быть меньше $(minA) мм!
+#ENDIF
+#IF $a>$(maxa)
+#LETV a=$(maxA)
+#MSG Высота шкафа не может быть больше $(MaxA) мм!
+#ENDIF
+#ENDIF
+#IF $(P)<$(minP)
+#LETV P=$(MinP)
+#MSG Глубина шкафа не может быть меньше $(minP) мм!
+#ENDIF
+#IF $P>$(maxP)
+#LETV p=$(maxP)
+#MSG Глубина шкафа не может быть больше $(MaxP) мм!
+#ENDIF

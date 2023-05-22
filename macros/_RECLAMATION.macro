@@ -1,0 +1,15 @@
+#IF $(filetest)[1]
+#VB
+Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")
+xmlDoc.load (V("strpathname"))
+strSearch = "Destination"
+Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)
+for each node in currNode
+strName="ProjectName"
+Dim ProjectName: set ProjectName = node.getElementsByTagName(strName)
+for each el in ProjectName
+V("reclamation")=el.text
+next
+next
+#ENDVB
+#ENDIF

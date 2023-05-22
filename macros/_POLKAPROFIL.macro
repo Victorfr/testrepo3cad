@@ -1,0 +1,77 @@
+//110	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=N / /#l-1	SP=0	P=$(p)  //Полка на стяжках ДСП
+///перенес в макрофинале
+#LETV _wr=999K_POLKOB
+#LETV _MNP=999K_POLKOB
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LET profileLenght=$l+30
+#IF $(polkprofSizeMx)!!X
+#LET profileLenght=($l+30+100)
+#ENDIF
+064	LATO=6	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=$(FPL) / /#l-1	SP=0	P=$(p)+2  //Полка с профилем под обувь MIXAL
+001	A=$(mat:1)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)  // Test
+///
+///графика профилей Teatrix
+#LETS colorProf=105
+001	SP=$P	A=45	P=2	C1=$(colorProf)  // Test
+001	SA=45-2	SP=$P-3	A=2	P=5	C1=$(colorProf)  // Test
+001	SP=$p/2-3	A=36	P=6	C1=$(colorProf)	sa=$a  // Test
+001	SP=50-3	A=36	P=6	C1=$(colorProf)	sa=$a
+///если под углом то к смещениям добавляется учет угла
+#IF $(FPL)!!N
+///тест сверления
+#IF $(ugolPolk:0)=1
+///если полка под углом
+//расчет смещений координат точек относительно нуля полки
+#LET spUgStag1=100*cos(30)+12.5*cos(60)
+#LET saUgStag1=100*sin(30)-12.5*sin(60)
+#LET spUgStag2=($(lpolk)-100)*cos(30)+12.5*cos(60)
+#LET saUgStag2=($(lpolk)-100)*sin(30)-12.5*sin(60)
+//#MSG $(saUgStag1)
+//в типологии передаются координаты относительно шкафа (10мм - смешение полки по глубине для задней стенки)
+#LET otvSa=rnd($(_spostaa)+$(polksa)-$(saUgStag2))
+#LET _spostap=rnd($(spUgStag2)+10)
+// #MSG $(_spostap) xx $(otvSa)
+063	SA=$a/2	SP=$p-100	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  // Типология сверления под полки с профилем
+063	SA=$a/2	SP=$p-100	sl=$L-5	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  // Типология сверления под полки с профилем
+//в типологии передаются координаты относительно шкафа (10мм - смешение полки по глубине для задней стенки)
+#LET otvSa=rnd($(_spostaa)+$(polksa)-$(saUgStag1))
+#LET _spostap=rnd($(spUgStag1)+10)
+063	SA=$a/2	SP=100	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  // Типология сверления под полки с профилем
+063	SL=$L-5	SA=$a/2	SP=100	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  // Типология сверления под полки с профилем
+#ELSE
+///если полка горизонтально
+#LET otvSa=$(_spostaa)+12.5
+#LET _spostap=$(profanditaPlaser)-100-2-10
+063	SA=$a/2	SP=$p-100	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  //Типология сверления под полки с профилем
+063	SL=$l-5	SA=$a/2	SP=$p-100	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  //Типология сверления под полки с профилем
+#LET _spostap=110
+063	SA=$a/2	SP=100	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  // Типология сверления под полки с профилем
+063	SL=$l-5	SA=$a/2	SP=100	L=5	A=5	P=5	X8=$(_spostal)o$(otvSa)o$(_spostap)  // Типология сверления под полки с профилем
+#ENDIF
+#ENDIF
+//профиль под обувь без сверловки
+// 22/07/2021 Salavat
+// 001	LATO=6	COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);FPL=$(FPL) /$(_wr:2) /#L-1	A=36	P=6  //Test
+// 001	LATO=6	COD=999mxlProf480 / / /#L+1	L=$(l)	A=1	P=1  //Test
+//402	LATO=6	COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);FPL=$(FPL) /$(_wr:2) /#L-1	l=36	A=$l	P=6  //Test
+//001	LATO=6	COD=999mxlProf480 / / /#L+1;#q2	L=36	A=$(l)	P=6  //Test
+//001	LATO=6	COD=999mxVint4x20 / / /#L+1;#q6	L=1	A=1	P=1  //Test
+#LET polkL=($l+30)
+#LETV _wr=999PROFPOLKDER
+#LETV _MNP=999PROFPOLKDER
+402	LATO=6	COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);FPL=$(FPL) /$(_wr:2) /#L-1	l=36	A=$l	P=6  //Test
+//001	LATO=6	COD=999mxlProf480 / / /#L+1;#q$(polkL)	L=36	A=1000	P=6  //Test
+#IF $(polkprofSizeMx)!!X
+#LET polkL=($l+30+100)
+#ENDIF
+#LETV _wr=999PROFPOLKDER
+#LETV _MNP=999PROFPOLKDER
+402	LATO=6	COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);FPL=$(FPL) /$(_wr:2) /#L-1	l=36	A=$l	P=6  //Test
+#LETV _wr=999PROFPOLKOB
+#LETV _MNP=999PROFPOLKOB
+//403	LATO=6	COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);FPL=$(FPL) /$(_wr:2) /#L-1	l=36	A=$l	P=6
+//001	LATO=6	COD=999mxlProf480 / / /#L+1;#q$(polkL)	L=36	A=1000	P=6  //Test
+//001	LATO=6	COD=999mxVint4x20 / / /#L+1;#q6	L=1	A=1	P=1  //Test
+// 22/07/2021 Salavat
+// 064
+//015

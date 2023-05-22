@@ -1,0 +1,262 @@
+//_SHKAF
+#IF $(_PRIMOCARICAMENTO)=1
+#LETV LargDxStD={rnd($l/2-$(zazorDoors))}
+#LETV LargSxStD={rnd($l/2-$(zazorDoors))}
+#LETV LargDxPnD={rnd($l/2-$(zazorDoors))}
+#LETV LargSxPnD={rnd($l/2-$(zazorDoors))}
+#LETV LOldSt=$L
+#LETV LOldPn=$L
+#LETV AltSxStD={rnd($a/2-$(zazorDoors))}
+#LETV AltSxPnD={rnd($a/2-$(zazorDoors))}
+#LETV AltDxStD={rnd($a/2-$(zazorDoors))}
+#LETV AltDxPnD={rnd($a/2-$(zazorDoors))}
+#LETV AOldSx=$A
+#LETV AOldDx=$A
+#ENDIF
+// ************************** для исправления старых заказов в которых не было переменной $(LOldSt) с misura
+#IF $(LOldSt:0)=0
+#LETV LOldSt=$L
+#ENDIF
+#IF $(LOldPn:0)=0
+#LETV LOldPn=$L
+#ENDIF
+#IF $(AOldSx:0)=0
+#LETV AOldSx=$L
+#ENDIF
+#IF $(AOldDx:0)=0
+#LETV AOldDx=$L
+#ENDIF
+// *********************************************************************************************************
+// ********************************** ширина левой и правой нижних дверей ******************************************
+#IF $l!$(LOldSt:0)
+#LETV LargSxStD={rnd($l/2-$(zazorDoors))}
+#LETV LargDxStD={rnd($l/2-$(zazorDoors))}
+#LETV LOldSt=$L
+#ELSEIF $(LargSxStDOld)!$(LargSxStD:0)
+#LETV LargDxStD={rnd($l-$(LargSxStD:0)-$(SpostaPRaspD)*2)}
+#IF $(LargSxStD:0)<146
+#LETV LargSxStD=146
+#LETV LargDxStD={rnd($l-$(LargSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargDxStD:0)>596
+#LETV LargDxStD=596
+#LETV LargSxStD={rnd($l-$(LargDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargSxStD:0)>596
+#LETV LargSxStD=596
+#LETV LargDxStD={rnd($l-$(LargSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargDxStD:0)<146
+#LETV LargDxStD=146
+#LETV LargSxStD={rnd($l-$(LargDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET LargSxStDOld=$(LargSxStD:0)
+#LET LargDxStDOld=$(LargDxStD:0)
+#ELSEIF $(LargDxStDOld)!$(LargDxStD:0)
+#LETV LargSxStD={rnd($l-$(LargDxStD:0)-$(SpostaPRaspD)*2)}
+#IF $(LargDxStD:0)<146
+#LETV LargDxStD=146
+#LETV LargSxStD={rnd($l-$(LargDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargSxStD:0)>596
+#LETV LargSxStD=596
+#LETV LargDxStD={rnd($l-$(LargSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargDxStD:0)>596
+#LETV LargDxStD=596
+#LETV LargSxStD={rnd($l-$(LargDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargSxStD:0)<146
+#LETV LargSxStD=146
+#LETV LargDxStD={rnd($l-$(LargSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET LargDxStDOld=$(LargDxStD:0)
+#LET LargSxStDOld=$(LargSxStD:0)
+#ENDIF
+// *****************************************************************************************************************
+// ********************************** ширина левой и правой верхних дверей ******************************************
+#IF $l!$(LOldPn:0)
+#LETV LargSxPnD={rnd($l/2-$(zazorDoors))}
+#LETV LargDxPnD={rnd($l/2-$(zazorDoors))}
+#LETV LOldPn=$L
+#ELSEIF $(LargSxPnDOld)!$(LargSxPnD:0)
+#LETV LargDxPnD={rnd($l-$(LargSxPnD:0)-$(SpostaPRaspD)*2)}
+#IF $(LargSxPnD:0)<146
+#LETV LargSxPnD=146
+#LETV LargDxPnD={rnd($l-$(LargSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargDxPnD:0)>596
+#LETV LargDxPnD=596
+#LETV LargSxPnD={rnd($l-$(LargDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargSxPnD:0)>596
+#LETV LargSxPnD=596
+#LETV LargDxPnD={rnd($l-$(LargSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargDxPnD:0)<146
+#LETV LargDxPnD=146
+#LETV LargSxPnD={rnd($l-$(LargDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET LargSxPnDOld=$(LargSxPnD:0)
+#LET LargDxPnDOld=$(LargDxPnD:0)
+#ELSEIF $(LargDxPnDOld)!$(LargDxPnD:0)
+#LETV LargSxPnD={rnd($l-$(LargDxPnD:0)-$(SpostaPRaspD)*2)}
+#IF $(LargDxPnD:0)<146
+#LETV LargDxPnD=146
+#LETV LargSxPnD={rnd($l-$(LargDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargSxPnD:0)>596
+#LETV LargSxPnD=596
+#LETV LargDxPnD={rnd($l-$(LargSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargDxPnD:0)>596
+#LETV LargDxPnD=596
+#LETV LargSxPnD={rnd($l-$(LargDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(LargSxPnD:0)<146
+#LETV LargSxPnD=146
+#LETV LargDxPnD={rnd($l-$(LargSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET LargDxPnDOld=$(LargDxPnD:0)
+#LET LargSxPnDOld=$(LargSxPnD:0)
+#ENDIF
+// *****************************************************************************************************************
+// ********************************** высота левых нижней и верхней дверей **********************************************************
+#LET altDoorMin=356
+#IF $a!$(AOldSx:0)
+#LETV AltSxStD={rnd($a/2-$(zazorDoors))}
+#LETV AltSxPnD={rnd($a/2-$(zazorDoors))}
+#LETV AOldSx=$a
+#ELSEIF $(AltSxStDOld)!$(AltSxStD:0)
+#LETV AltSxPnD={rnd($a-$(AltSxStD:0)-$(SpostaPRaspD)*2)}
+#IF $(AltSxStD:0)<$(altDoorMin)
+#LETV AltSxStD=$(altDoorMin)
+#LETV AltSxPnD={rnd($a-$(AltSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltSxPnD:0)>2595
+#LETV AltSxPnD=2595
+#LETV AltSxStD={rnd($a-$(AltSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltSxStD:0)>2595
+#LETV AltSxStD=2595
+#LETV AltSxPnD={rnd($a-$(AltSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltSxPnD:0)<$(altDoorMin)
+#LETV AltSxPnD=$(altDoorMin)
+#LETV AltSxStD={rnd($a-$(AltSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET AltSxStDOld=$(AltSxStD:0)
+#LET AltSxPnDOld=$(AltSxPnD:0)
+#ELSEIF $(AltSxPnDOld)!$(AltSxPnD:0)
+#LETV AltSxStD={rnd($a-$(AltSxPnD:0)-$(SpostaPRaspD)*2)}
+#IF $(AltSxPnD:0)<$(altDoorMin)
+#LETV AltSxPnD=$(altDoorMin)
+#LETV AltSxStD={rnd($a-$(AltSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltSxStD:0)>2595
+#LETV AltSxStD=2595
+#LETV AltSxPnD={rnd($a-$(AltSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltSxPnD:0)>2595
+#LETV AltSxPnD=2595
+#LETV AltSxStD={rnd($a-$(AltSxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltSxStD:0)<$(altDoorMin)
+#LETV AltSxStD=$(altDoorMin)
+#LETV AltSxPnD={rnd($a-$(AltSxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET AltSxPnDOld=$(AltSxPnD:0)
+#LET AltSxStDOld=$(AltSxStD:0)
+#ENDIF
+// *****************************************************************************************************************
+// ********************************** высота правых нижней и верхней дверей **********************************************************
+#IF $a!$(AOldDx:0)
+#LETV AltDxStD={rnd($a/2-$(zazorDoors))}
+#LETV AltDxPnD={rnd($a/2-$(zazorDoors))}
+#LETV AOldDx=$a
+#ELSEIF $(AltDxStDOld)!$(AltDxStD:0)
+#LETV AltDxPnD={rnd($a-$(AltDxStD:0)-$(SpostaPRaspD)*2)}
+#IF $(AltDxStD:0)<$(altDoorMin)
+#LETV AltDxStD=$(altDoorMin)
+#LETV AltDxPnD={rnd($a-$(AltDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltDxPnD:0)>2595
+#LETV AltDxPnD=2595
+#LETV AltDxStD={rnd($a-$(AltDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltDxStD:0)>2595
+#LETV AltDxStD=2595
+#LETV AltDxPnD={rnd($a-$(AltDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltDxPnD:0)<$(altDoorMin)
+#LETV AltDxPnD=$(altDoorMin)
+#LETV AltDxStD={rnd($a-$(AltDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET AltDxStDOld=$(AltDxStD:0)
+#LET AltDxPnDOld=$(AltDxPnD:0)
+#ELSEIF $(AltDxPnDOld)!$(AltDxPnD:0)
+#LETV AltDxStD={rnd($a-$(AltDxPnD:0)-$(SpostaPRaspD)*2)}
+#IF $(AltDxPnD:0)<$(altDoorMin)
+#LETV AltDxPnD=$(altDoorMin)
+#LETV AltDxStD={rnd($a-$(AltDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltDxStD:0)>2595
+#LETV AltDxStD=2595
+#LETV AltDxPnD={rnd($a-$(AltDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltDxPnD:0)>2595
+#LETV AltDxPnD=2595
+#LETV AltDxStD={rnd($a-$(AltDxPnD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#IF $(AltDxStD:0)<$(altDoorMin)
+#LETV AltDxStD=$(altDoorMin)
+#LETV AltDxPnD={rnd($a-$(AltDxStD:0)-$(SpostaPRaspD)*2)}
+#ENDIF
+#LET AltDxPnDOld=$(AltDxPnD:0)
+#LET AltDxStDOld=$(AltDxStD:0)
+#ENDIF
+// *****************************************************************************************************************
+#LETV LargSxStD={rnd($(LargSxStD:0)}
+#LETV LargDxStD={rnd($(LargDxStD:0)}
+#LETV LargSxPnD={rnd($(LargSxPnD:0)}
+#LETV LargDxPnD={rnd($(LargDxPnD:0)}
+#LETV AltSxStD={rnd($(AltSxStD:0)}
+#LETV AltSxPnD={rnd($(AltSxPnD:0)}
+#LETV AltDxStD={rnd($(AltDxStD:0)}
+#LETV AltDxPnD={rnd($(AltDxPnD:0)}
+// ******************************************** выравнивание высот и ширин *****************************************
+#IF $(LargSxStD:0)!$(LargSxPnD:0)
+#LETV AltSxStD=$(AltDxStD:0)
+#LETV AltSxPnD=$(AltDxPnD:0)
+#ENDIF
+#IF $(AltSxStD:0)!$(AltDxStD:0)
+#LETV LargSxStD=$(LargSxPnD:0)
+#LETV LargDxStD=$(LargDxPnD:0)
+#ENDIF
+// *****************************************************************************************************************
+//#MSG $(LargSxStD:0) x $(LargDxStD:0)
+//_DOORRASP
+//_DOORMX
+///дообавил ппараметр x6 в плейсеры - сторона открывания двери
+#IF $(_PRIST:0)[1] //левый
+#LET flagPetlL=1
+#LET flagPetlR=0
+#ENDIF
+#IF $(_prist:0)[2] //правый
+#LET flagPetlL=0
+#LET flagPetlR=1
+#ENDIF
+#IF $(_doorsRasp:1)=2
+049	L=$(LargSxStD:0)	x5=$(LargSxStD:0)x$a	x6=L	x7=$(pripParams)  //Плейсер распашной двери
+049	SL=$(LargSxStD:0)+$(SpostaPRaspD)*2	L=$(LargDxStD:0)	x5=$(LargDxStD:0)x$a	x6=R	x7=$(pripParams)  //Плейсер распашной двери
+#ELSEIF $(_doorsRasp:1)=3
+049	A=$(AltSxStD:0)	x5=$lx$(AltSxStD:0)	x7=$(pripBotParams)  //Плейсер распашной двери
+049	SA=$(AltSxStD:0)+$(SpostaPRaspD)*2	A=$(AltSxPnD:0)	x5=$lx$(AltSxPnD:0)	x7=$(pripTopParams) //Плейсер распашной двери
+#ELSEIF $(_doorsRasp:1)=4
+049	L=$(LargSxStD:0)	A=$(AltSxStD:0)	x5=$(LargSxStD:0)x$(AltSxStD:0) 	x6=L	x7=$(pripBotParams) //Плейсер распашной двери
+049	SL=$(LargSxStD:0)+$(SpostaPRaspD)*2	L=$(LargDxStD:0)	A=$(AltDxStD:0)	x5=$(LargDxStD:0)x$(AltDxStD:0)	x6=R	x7=$(pripBotParams)   //Плейсер распашной двери
+049	SA=$(AltSxStD:0)+$(SpostaPRaspD)*2	L=$(LargSxPnD:0)	A=$(AltSxPnD:0)	x5=$(LargSxPnD:0)x$(AltSxPnD:0)	x6=L	x7=$(pripTopParams)  //Плейсер распашной двери
+049	SL=$(LargSxPnD:0)+$(SpostaPRaspD)*2	SA=$(AltDxStD:0)+$(SpostaPRaspD)*2	L=$(LargDxPnD:0)	A=$(AltDxPnD:0)	x5=$(LargDxPnD:0)x$(AltDxPnD:0)	x6=R	x7=$(pripTopParams)   //Плейсер распашной двери
+#ELSE
+049	X5=$lx$a	x6=LR	x7=$(pripParams)  //Плейсер распашной двери
+#ENDIF

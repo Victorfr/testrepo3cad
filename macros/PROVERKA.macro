@@ -1,0 +1,90 @@
+//#MSG $(strPolkParams)
+//#MSG $(strWallParams)
+#LETS peresech=
+#LET countProverka=0
+#LET oldnum=0
+#LETS strParamsAll=
+#LET oldpolknum=
+#FOR $0:$(POLknumber)
+#LETS testStr=$[estrai;$(strPolkParams);|;$i]
+#LET testNumb=$[estrai;$(testStr);x;0]
+//      #IF $(ndet) ! $(testNumb) //деталь не текущая
+#LET spL=$[estrai;$(testStr);x;2]
+#LET spA=$[estrai;$(testStr);x;3]
+#LET spL_L=$[estrai;$(testStr);x;4)
+#LET spL_A=$[estrai;$(testStr);x;5)
+#LET x1=$(spl)
+#LET x2=$(spl)+$(spl_l)
+//   #LET xx1=$(spostal)
+// #LET xx2=$(spostal)+$(l)
+#LETS addstr=
+#LET WallCountCur=0
+#FOR $0:$(wallnumber)
+#LETS testStr=$[estrai;$(strWallParams);|;$i]
+#LET testNumbW=$[estrai;$(testStr);x;0]
+#LET w_spL=$[estrai;$(testStr);x;2]
+#LET w_spA=$[estrai;$(testStr);x;3]
+#LET w_spL_L=$[estrai;$(testStr);x;4)
+#LET w_spL_A=$[estrai;$(testStr);x;5)
+#LET w_x1=$(w_spl)
+#LET w_x2=$(w_spl)+$(w_spl_l)
+#LET w_xx1=$(spostal)
+#LET w_xx2=$(spostal)+$(l)
+#IF $(w_x1)>$(x1) & $(w_x1)<$(x2)
+#IF $(w_spa)<$(spa)
+#IF  {$(w_spa)+$(w_spl_a)}   =    $(spa)
+#LETS peresech=$(testNumb)x$(testNumbw)|$(peresech)
+//////
+#IF $(oldNum)!$(testNumbw)
+#LETS addstr=$(testnumbw)/$(w_spL)x$(addstr)
+#LET oldNum=$(testNumbw)
+#LET WallCountCur=$(WallCountCur)+1
+#ENDIF
+//             #ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDFOR
+#IF $(oldPolkNum)!$(testNumb)
+#IF $(addstr)!!
+//#MSG $(WallCountCur)
+//  #MSG $(addstr)
+//  #FOR $1:$(wallcountcur)
+//     #LETS curstr=$[estrai;$(addstr);X;$i]
+//            #MSG $(curstr)
+//   #ENDFOR
+///сортировка массива
+#VB
+dim massive
+addstr=V("addstr")
+massive=split(addstr	"X" )
+intcount=Ubound(massive)
+for n=0 to intcount
+for m=0 to intcount
+paramsX=Split(massive(m)	"/")
+paramsY=Split(massive(n)	"/")
+intposX=int(paramsX(1))
+intposY=int(paramsY(1))
+if m<>n then
+if intposX>intposY then
+tmp=massive(n)
+massive(n)=massive(m)
+massive(m)=tmp
+end if
+end if
+next
+next
+' msgbox join(massive	"X")
+V("addstr")=join(massive	"X")
+#ENDVB
+///
+///        !!!строка идет в Volume!!!
+#LETS strParamsAll=$(testNumb)x$(addStr)|$(strParamsAll)
+///////////////
+#LET countProverka=$(countProverka)+1
+#ENDIF
+#LET oldPolkNum=$(testNumb)
+#ENDIF
+#ENDFOR
+#LETV strParamsAllLast=$(strParamsAll)
+#LETV countProverkaLast=$(countProverka)

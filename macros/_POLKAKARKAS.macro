@@ -1,0 +1,25 @@
+//расчет размеров
+#LET pgor=$(p)-$(spostakarkasP)-2
+//отрисовка и рассчет пиломатериалов
+NUMDET	SL=$L/2-50	SA=-35	p=$P
+#LETV _wr=999K_KARKASPL
+#LETV _MNP=999K_KARKASPL
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+015	p=$(pgor)	sp=$(spostakarkasP)
+//рассчет крепежа
+#IF $p>=70 & $p<=83.9 // одна стяжка
+#LET col_krep=2
+#ELSEIF $p>=84 & $p<=429 // две стяжки
+#LET col_krep=4
+#ELSEIF $p>=429.1 & $p<=600 // три стяжки
+#LET col_krep=6
+#ELSEIF $p>=600.1 & $p<=750 // четыре стяжки
+#LET col_krep=8
+#ELSEIF $p>=750.1 & $p<=900 // пять стяжек
+#LET col_krep=10
+#ENDIF
+001	LATO=6	COD=999DUBVB / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(mat:6) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_colkarkas:12) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+_drawStag	p=$(pgor)	sp=$(spostaKarkasP)

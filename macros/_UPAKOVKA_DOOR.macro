@@ -1,0 +1,44 @@
+#IF $a<=2700
+#LETV _wr=999ZAGUPAK
+#LETV _MNP=999ZAGUPAK
+105	COD= / / /#Q2	L=70	A=$a+50  //Детали для упаковки
+//105	L=70	A=$a+50 //Детали для упаковки
+105	COD= / / /#Q2	L=70	A=$l+82  //Детали для упаковки
+//105	L=70	A=$l+82 //Детали для упаковки
+#LETV _wr=999REBROUPAK
+#LETV _MNP=999REBROUPAK
+#LET count_rebro=(int(($a+50-100)/(200+150)))*2+2
+//#FOR $1:$(count_rebro)
+105	COD= / / /#Q$(count_rebro)	L=150	A=$l+82	P=6  //Детали для упаковки
+//#ENDFOR
+#ENDIF
+#IF $a>2700 ///упаковка для высоких дверей
+/////детали лдсп 16 мм
+#LETV _wr=999ZAGUPAK
+#LETV _MNP=999ZAGUPAK
+#LET hUpak=$a+50
+105	COD= / / /#Q2	L=70	A=$(hUpak)-500  //Детали для упаковки
+105	COD= / / /#Q10	L=70	A=500  //Детали для упаковки
+//105	L=70	A=$a+50 //Детали для упаковки
+105	COD= / / /#Q2	L=70	A=$l+82  //Детали для упаковки
+//105	L=70	A=$l+82 //Детали для упаковки
+///детали мдф 6 мм
+#LETV _wr=999REBROUPAK
+#LETV _MNP=999REBROUPAK
+#LET count_rebro=(int(($a+50-100)/(200+150)))*2
+//#FOR $1:$(count_rebro)
+105	COD= / / /#Q$(count_rebro)	L=150	A=$l+82	P=6  //Детали для упаковки
+#ENDIF
+//===================================================================================================================
+#LET plosh=rn3((($a+100)*($l+100)*2+$a*$p*2+$l*$p*2)/1000000)
+001	LATO=6	COD=999GK /PLOSH=$(PLOSH)	L=($a+100)*($l+100)*2+$a*$p*2+$l*$p*2	A=1	P=1  //гофрокартон
+001	LATO=6	COD=999PVP /PLOSH=$(PLOSH)	L=($a+100)*($l+100)*2+$a*$p*2+$l*$p*2	A=1	P=1 // пузырчая пленка
+#LET larg=rn3((($a+20)*2+($l+20)*2)/1000)
+001	LATO=6	COD=999ZNAKL /LARG=$(LARG)	L=($a+20)*2+($l+20)*2	A=1	P=1  // уголок пенопласт
+#LET larg=rn3((($a+50+$p)*2*2+($l+50+$p)*2*2)/1000)
+001	LATO=6	COD=999SP /LARG=$(LARG)	L=($a+50+$p)*2*2+($l+50+$p)*2*2	A=1	P=1  // скотч
+001	LATO=6	COD=999KL /LARG=$(LARG)	L=($a+50+$p)*2*2+($l+50+$p)*2*2	A=1	P=1  // креп лента
+#LET count_skoba=$(count_rebro)*4+8
+//#FOR $1:$(count_skoba)
+001	LATO=6	COD=999SKOBA_SENCO / / /#Q$(count_skoba)	L=1	A=1	P=1  //скобы
+//#ENDFOR

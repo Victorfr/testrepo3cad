@@ -1,0 +1,150 @@
+//размещение места под плейсер
+#LET zonel=0
+#LET zoner=0
+#LET petl=0	petlR=0
+// ******************рассчет под петли**************************************
+#LET petlSize=
+#LET flag_plas=1
+#LET spostaaPlas=0
+#LET spostaagorplas=0
+#LET spostalGorplas=0
+#LET spostarGorPlas=0
+#LET spostalPlas=0
+/// размеры плейсера для типологий
+#LET profPlas=$p
+#LET largPlas=$l
+#LET lgorplase=$L
+/// смещения и локальные переменные для расчетов зон
+#LET mod_min=0
+#LET zonaApetl=130
+#LET zonaLpetl=50
+#LET zoneLtop=0
+#LET zonelbott=0
+#LET zoneRtop=0
+#LET zoneRbott=0
+#LET zoneTop=0
+#LET zoneBott=0
+#LET spostaAlpetl=0
+#LET spostaArpetl=0
+#LET flagVidElement=1 //флаг установки выдижных элементов
+#LET flagVidElementL=1
+#LET flagVidElementR=1
+#LET spostapMod=0
+////////////////////////////////////////////////////////
+//соприкосновения ниш для левых петель
+#IF $(spostal)=$(mat:1)
+#LET petlSize=1
+#LET petl=1
+//для верхней левой ниши с петлей
+#IF $a+$(spostaa)>$(akorp)-$(zonaApetl)
+#LET spostaagorplas=$(zonaapetl)
+#LET spostalGorPlas=$(zonalPetl)
+#LET spostaAlpetl=0
+#LET zoneLtop=$(zonaapetl)
+#LET zonetop=$(zonaapetl)
+#ENDIF
+//для нижней левой ниши с петлей
+#IF $(spostaa)<$(zonaApetl)
+#LET spostaaPlas=$(zonaApetl)
+#LET spostaagorplas=$(zonaapetl)
+#LET spostaAlpetl=$(zonaapetl)
+#LET zoneLbott=$(zonaapetl)
+#LET zonebott=$(zonaapetl)
+#ENDIF
+#IF $(_doorPolog:1)=2
+#LET spostalGorPlas=$(zonalPetl)
+#LET flagVidElement=0	flagVidElementL=0
+#ENDIF
+#ENDIF
+//соприкосновения ниш для правых петель
+#IF $(spostal)+$l=$(korpl)-$(mat:1)
+#LET petlSize=1
+//для верхней правой ниши с петлей
+#IF $a+$(spostaa)>$(akorp)-$(zonaApetl)
+#LET spostaagorplas=$(zonaapetl)
+#LET spostarGorPlas=$(zonalPetl)
+#LET zoneRtop=$(zonaapetl)
+#LET spostaArpetl=0
+#LET zonetop=$(zonaapetl)
+#ENDIF
+//для нижней правой ниши с петлей
+#IF $(spostaa)<$(zonaApetl)
+#LET spostaaPlas=$(zonaApetl)
+#LET spostaagorplas=$(zonaapetl)
+#LET zoneRbott=$(zonaapetl)
+#LET spostaArpetl=$(zonaapetl)
+#LET zonebott=$(zonaapetl)
+#ENDIF
+#IF $(_doorPolog:1)=2
+#LET spostarGorPlas=$(zonalPetl)
+#LET flagVidElement=0	flagVidElementR=0
+#ENDIF
+#ENDIF
+///////////////////////////////////////////////////////////////////////////
+//_OLD_PLACE
+// ************************************ плейсер штанги **************************************************
+#IF $l<=1950
+045	SL=$(spostalPlas)	L=$(largPlas)	P=15	X2=штанга  //Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+// ************************************ плейсер прямоугольной штанги *************************************
+#IF $l<=3600
+045	SL=$(spostalPlas)+1	SA=$a-60	SP=$(profPlas)/2-7	L=$(largPlas)-2	A=30	P=15	X1=7	X2=штанга  //Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+//_OLD_PLACE
+#IF $(tipshkaf:7)!3
+//   _OLD_PLACE
+#IF $(flagVidElement)=1 //попадает в дверь или нет
+_zonePlacer	sa=$(spostaaPlas)	a={$a-($(zonetop)+$(zonebott))}  // плейсер для выдвижных элементов
+#ENDIF
+#IF $(flagVidElementL)=1 //попадает в дверь или нет
+_zoneplacerL	sa=$(spostaAlpetl)	a={$a-($(zoneLtop)+$(zoneLbott))}
+#ENDIF
+#IF $(flagVidElementR)=1 //попадает в дверь или нет
+_zoneplacerR	sa=$(spostaARpetl)	a={$a-($(zoneRtop)+$(zoneRbott))}
+#ENDIF
+_gorplacer_sh	SA={$(spostaagorplas)}	a=$a-$(spostaagorplas)	sl=$(spostalGorPlas)	l={$L-($(spostalGorPlas)+$(spostarGorPlas))}
+_placerfurn //различные крепления
+//_OLD_PLACE
+//// **************************************  Универсальная сетчатая полка (ШхГ) 1000х300 ****************************
+#IF $a>=200 & $l>=300 & $l<=1000 & $(profPlas)>=300
+045	SL=0	SA=0	SP=$(spostapMod)	L=$l	A=$a	P=300	X1=26	X2=сетчатая полка	x5=$(profPlas)  //Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+//// **************************************  светильники крепление снизу к полке 400 мм ****************************
+#IF $l>=400
+045	SL=0	SA=$a-30	SP=$(profPlas)-30	L=$l	A=30	P=30	X1=34	X2=Светильник //Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+//// **************************************  светильники крепление снизу к полке 400 мм ****************************
+#IF $l>=550
+045	SL=0	SA=$a-30	SP=$(profPlas)-30	L=$l	A=30	P=30	X1=35	X2=Светильник //Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+//// **************************************  светильники крепление снизу к полке 400 мм ****************************
+#IF $l>=850
+045	SL=0	SA=$a-30	SP=$(profPlas)-30	L=$l	A=30	P=30	X1=36	X2=Светильник //Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+//   _OLD_PLACE
+// ************************************** JET LT281A.1162PS Светильник-штанга 281 светодиодный на аккумуляторе L 1162mm с датчиком движения Металлик****************************
+#IF $l>1061 & $l<1163
+045	SL=0	SA=0	SP=($(profPlas)/2-19/2)	L=$l	A=$a	P=19	X1=73	X2=Светильник-штанга //Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+//// **************************************  000 IB1135 Гладильная доска выдвижная	 складная ****************************
+#IF $a>=130 & $l>=310 & $(profPlas)>=500
+045	SL=0	SA=0	SP=($(profPlas)/2-500/2)+$(mod_min)	L=$l	A=100	P=500	X1=89	X2=Гладильная доска//Плейсер ящиков
+#ENDIF
+// *******************************************************************************************************
+#IF $a>=170 & $l[568] & $(profPlas)>=494
+045	SL=0	SA=0	SP=$(spostapMod)	L=$l	A=$a	P=490	X1=99	X2=корзина сетчатая Pelly	X5=$(placerParams)  //Плейсер ящиков
+#ENDIF
+#IF $a>=170 & $l[468] & $(profPlas)>=494
+045	SL=0	SA=0	SP=$(spostapMod)	L=$l	A=$a	P=490	X1=100	X2=корзина сетчатая Pelly	X5=$(placerParams)  //Плейсер ящиков
+#ENDIF
+#IF $a>=170 & $l[368] & $(profPlas)>=494
+045	SL=0	SA=0	SP=$(spostapMod)	L=$l	A=$a	P=490	X1=101	X2=корзина сетчатая Pelly	X5=$(placerParams)  //Плейсер ящиков
+#ENDIF
+#ENDIF

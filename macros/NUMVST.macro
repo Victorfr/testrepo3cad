@@ -1,0 +1,4 @@
+//#MSG $(spostaa)
+#LET Numvst=$(Numvst)+1
+025	COD= / /$(Numvst)	lato=$(show_num)  //Номер детали
+025	LATO=$(show_num)	COD= / /Видимая высота вставки $a	L=$l-20	A=180	sl=-$l/2+10	sa=-120  //Номер детали

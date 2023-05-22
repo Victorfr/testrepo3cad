@@ -1,0 +1,53 @@
+#IF $(TIPSHKAF:1)[11] // topline
+#LET lProfNapr=$l-$(mat:0)*2-4
+#LETV COL_SYSTEM=0033
+#LET lNapr=$l-2*$(mat:1)04
+#LETS codNapr=999$(ndoorTL:7)
+#LETV _WR=$(tipsystem:18)KOMPLNAPR
+#LETV _MNP=$(tipsystem:18)KOMPLNAPR
+!SAGMIRROR  sagTest $(tipsystem:11) XY
+!SAGSPOSTA sagTest	$(sagTest)	-59	-58
+!SAGOMA path 0	0	$(lProfNapr)	0
+#LETS parX4=$(tipsystem:18)/$(ndoorTL:7)/$(katcol:4)/$(col_system:6)
+//028	COD= /MNP=$(_MNP:3);WR=$(_wr:3)	SL=$(mat:0)+2	SA=$(hzoc:0)-58	SP=$p-65	L=$(lProfNapr)	A=58	P=59	DIS=$(sagTest)	X4=$(parX4)  //Профиль рельс нижний
+028	COD= /WR=$(_wr:3)	SL=$(mat:0)+2	SA=$(hzoc:0)-58	SP=$p-65	L=58	A=$(lProfNapr)	P=59	DIS=$(sagTest)	X4=$(parX4)	lato=19	x1=$(path) //Профиль рельс нижний
+!SAGMIRROR sagVerh $(TIPSYSTEM:12) x
+!SAGSPOSTA sagVerh	$(sagVerh)	-1	1.3
+029	SL=$(mat:0)+2	SA=$a-58.5	SP=$p 	L=$(lProfNapr)	a=58.5	p=153	lato=$(lato_kr)	DIS=$(sagVerh)  //Профиль рельс верхний
+////дополнительная фурнитура
+#IF $(ndoorTL:3)=2
+//HETTICH 9275786 Набор фурнитуры для 2х дверного шкафа
+// 001	LATO=6	COD=999TLFur2d / / /#Q1	L=1	A=1	P=1  //Test
+//6.3х14
+// 001	LATO=6	COD=999shur63x14 / / /#Q40	L=1	A=1	P=1  //Test
+///4х16 набор 20 шт
+// 001	LATO=6	COD=999nab_sh4x16 / / /#Q1	L=1	A=1	P=1  //Test
+///4х16 2 шт
+//001	LATO=6	COD=999sh4x16pot / / /#Q10	L=1	A=1	P=1  //Test
+///Демпфер для 2х дверного шкафа
+//001	LATO=6	COD=999TLdem2d / / /#Q1	L=1	A=1	P=1  //Test
+#LETS paramFur=topline2door
+#ELSEIF $(ndoorTL:3)=3
+//HETTICH 9275786 Набор фурнитуры для 2х дверного шкафа
+//  001	LATO=6	COD=999TLFur3d / / /#Q1	L=1	A=1	P=1  //Test
+//6.3х14
+//  001	LATO=6	COD=999shur63x14 / / /#Q60	L=1	A=1	P=1  //Test
+///4х16 набор 20 шт
+// 001	LATO=6	COD=999nab_sh4x16 / / /#Q2	L=1	A=1	P=1  //Test
+///4х16 2 шт
+// 001	LATO=6	COD=999sh4x16pot / / /#Q2	L=1	A=1	P=1  //Test
+///Демпфер для 2х дверного шкафа
+// 001	LATO=6	COD=999TLdem3d / / /#Q1	L=1	A=1	P=1  //Test
+#LETS paramFur=topline3door
+#ENDIF
+#LETV _wr=TL1DOPFUR
+400	COD=TL1DOPFUR	X4=$(paramFur)  //Фурнитура
+#ELSE
+#IF $(TIPSHKAF:7)[1;3]
+#IF $(TIPSHKAF:6)=2
+NAPDOOR	SL=$(otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)	SP=$P-$(tipsystem:16)	L=$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
+#ELSE
+NAPDOOR	SL=($(otsL)-$(mat:1))+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)-$(mat:1)	SP=$P-$(tipsystem:16)	L=$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))+$(mat:1)*2	P=$(tipsystem:16)
+#ENDIF
+#ENDIF
+#ENDIF

@@ -1,0 +1,64 @@
+//ограничения размеров
+//установка ограничений взависимости от типа ливинг
+#LET pmax=700
+#LET amax=1320
+#LET lmax=1200
+#IF $(tipshkaf:1)=9 //шкаф living
+#LET lmin=200//300
+#LET amin=180
+///место под расчеты мтгтмальной высоты места под плейсер
+//_PLACERDOORS
+#ELSE // комод ливинг
+#LET lmin=300//400
+#LET amin=180+$(^hzoc:0)
+#ENDIF
+#IF $(tipshkafliving:1)=1
+#LET pmin=300//400
+#ELSE
+#LET pmin=200
+#IF $(tipshkaf:7)=4 //
+#IF $(NAVESLIVING:1)!0
+#LET NavesP=60
+#ELSE
+#LET Navesp=0
+#ENDIF
+#LET pmin= 251+$(spBackWall)+$(mat_backwall:3)+5+$(NavesP)
+#IF $(_doorPolog:1)[2;3;4] // для вкладных дверей увеличивается минимальная глубина
+#LET pmin=251+$(spBackWall)+$(mat_backwall:3)+$(_ModDoorRasp:5)+$(NavesP)+5
+///$p-$(spostakarkasP)-13+$(spVid)-$(spostaNavesP)
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(tipshkafliving:3)[0] & $(addNog:0)=0   // антресоль
+#IF $(tipshkaf:1)=9 //шкаф living
+#LET lmax=1200
+#ELSE
+#LET lmax=900
+#LET pmax=600
+#ENDIF
+#IF $a+$l>1920 & $p>450
+#MSG Шкаф с такими габаритами нельзя подвешивать.Необходимо установить цоколь или опоры!
+001	LATO=6	COD=999 /ERROR=1 /Шкаф с такими габаритами нельзя подвешивать.Необходимо установить цоколь или опоры!	SA=$a+50	A=100  //Test
+#ENDIF
+#IF $(tipshkaf:1)[10] // комод
+#IF {$a+$l}>1920
+#MSG нужно изменить суммарный габарит секции
+#IF $a>$L
+#LET temp=1920-$L
+#LETV a=$(temp)
+#ELSE
+#LET temp=1920-$a
+#LETV l=$(temp)
+#ENDIF
+#LET OldL=$L
+#LET OldA=$A
+#ENDIF
+_changeGabarite
+#ELSEIF $p<=450
+_changeGabarite
+#ELSE
+_changeGabarite
+#ENDIF
+#ELSE  //не антресоль
+_changeGabarite
+#ENDIF

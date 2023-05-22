@@ -1,0 +1,146 @@
+#LETS mat_old=$(mat)	 _colkarkas_old=$(_colkarkas)
+#LETS mat=$(mat_rip)	 _colkarkas=$(_colkarkas_rip)
+// *********************************** скошеная плока *******************************
+#IF $(lscos:0)>$l-100
+#LETV lscos={$l-100}
+#ENDIF
+#IF $(pscos:0)>$p-100
+#LETV pscos={$p-100}
+#ENDIF
+#IF $(RAD1:0)>=$l-$(mat_bok:1)-1
+#LETV RAD1={$l-$(mat_bok:1)-2}
+#ENDIF
+#LET RAD=50
+#LET ang=atn((($l-$(mat_bok:1)-1)-$(lscos:0))/(($p-$(mat_bok:1)-1)-$(pscos:0)))
+#LET angP=$(ang)/2
+#LET angL=(90-$(ang))/2
+#LET SpPP=$(RAD)*tan($(angP))
+#LET SpPP1=$(SpPP)*sin($(ang))
+#LET SpPP2=$(SpPP)*cos($(ang))
+#LET cplP=$(RAD)*sin($(angP))
+#LET cplP1=$(RAD)-($(RAD)*cos($(angP)))
+#LET SpPL=$(RAD)*tan($(angL))
+#LET SpPL1=$(SpPL)*sin(90-$(ang))
+#LET SpPL2=$(SpPL)*cos(90-$(ang))
+#LET cplL=$(RAD)*sin($(angL))
+#LET cplL1=$(RAD)-($(RAD)*cos($(angL)))
+// ***********************************************************************************
+#IF $(latoBox:3)=1
+#LET slRip=1
+#LETS wkR=$(_colkarkas:10)	 ekR=378917905
+#IF $(_TYPRIP:1)=1
+#LETS cpl=$(RAD1:0)*sqr(2)/2
+#LETS radRip=A30	$(RAD1:0)	$p-$(mat_bok:1)-1	$(RAD1:0)-$(cpl)	(($p-$(mat_bok:1)-1)-$(RAD1:0))+$(cpl)	0	($p-$(mat_bok:1)-1)-$(RAD1:0)
+!SAGOMA sagRip 0	0	$l-$(mat_bok:1)-1	0	$l-$(mat_bok:1)-1	$p-$(mat_bok:1)-1	$(radRip)
+#ELSEIF $(_TYPRIP:1)=2
+#IF ($p-$(mat_bok:1)-1)-$(RAD2:0)<150
+#LETV rad2={($p-$(mat_bok:1)-1)-150}
+#ENDIF
+#IF ($l-$(mat_bok:1)-1)-$(RAD2:0)<150
+#LETV rad2={($l-$(mat_bok:1)-1)-150}
+#ENDIF
+#LETS cpl=$(RAD2:0)*sqr(2)/2
+#LETS radRip=A30	$(RAD2:0)	$p-$(mat_bok:1)-1	$(cpl)	($p-$(mat_bok:1)-1)-$(cpl)	0	($p-$(mat_bok:1)-1)-$(rad2:0)
+!SAGOMA sagRip 0	0	$l-$(mat_bok:1)-1	0	$l-$(mat_bok:1)-1	$p-$(mat_bok:1)-1	$(radRip)
+#ELSE
+#LETS RadP=A30	$(SpPP1)	$(pscos:0)+$(SpPP2)	$(cplP1)	($(pscos:0)-$(SpPP))+$(cplP)	0	$(pscos:0)-$(SpPP)
+#LETS RadL=A30	($l-$(mat_bok:1)-1)-($(lscos:0)-$(SpPL))	$p-$(mat_bok:1)-1	(($l-$(mat_bok:1)-1)-($(lscos:0)-$(SpPL)))-$(cpll)	($p-$(mat_bok:1)-1)-$(cpll1)	($l-$(mat_bok:1)-1)-($(lscos:0)+$(SpPL2))	($p-$(mat_bok:1)-1)-$(SpPL1)
+!SAGOMA sagRip 0	0	$l-$(mat_bok:1)-1	0	$l-$(mat_bok:1)-1	$p-$(mat_bok:1)-1	$(RadL)	$(RadP)
+#ENDIF
+#ELSE
+#LET slRip=$(mat_bok:1)
+#LETS ekR=$(_colkarkas:10)	 wkR=378917905
+#IF $(_TYPRIP:1)=1
+#LETS cpl=$(RAD1:0)*sqr(2)/2
+#LETS radRip=A30	$l-$(mat_bok:1)-1	($p-$(mat_bok:1)-1)-$(RAD1:0)	(($l-$(mat_bok:1)-1)-$(RAD1:0))+$(cpl)	(($p-$(mat_bok:1)-1)-$(RAD1:0))+$(cpl)	($l-$(mat_bok:1)-1)-$(RAD1:0)	$p-$(mat_bok:1)-1
+!SAGOMA sagRip 0	0	$l-$(mat_bok:1)-1	0	$(radRip)	0	$p-$(mat_bok:1)-1
+#ELSEIF $(_TYPRIP:1)=2
+#IF ($p-$(mat_bok:1)-1)-$(RAD2:0)<150
+#LETV rad2={($p-$(mat_bok:1)-1)-150}
+#ENDIF
+#IF ($l-$(mat_bok:1)-1)-$(RAD2:0)<150
+#LETV rad2={($l-$(mat_bok:1)-1)-150}
+#ENDIF
+#LETS cpl=$(RAD2:0)*sqr(2)/2
+#LETS radRip=A30	$l-$(mat_bok:1)-1	($p-$(mat_bok:1)-1)-$(RAD2:0)	($l-$(mat_bok:1)-1)-$(cpl)	($p-$(mat_bok:1)-1)-$(cpl)	($l-$(mat_bok:1)-1)-$(RAD2:0)	$p-$(mat_bok:1)-1
+!SAGOMA sagRip 0	0	$l-$(mat_bok:1)-1	0	$(radRip)	0	$p-$(mat_bok:1)-1
+#ELSE
+#LETS RadP=A30	$l-$(mat_bok:1)-1	$(pscos:0)-$(SpPP)	($l-$(mat_bok:1)-1)-$(cplP1)	($(pscos:0)-$(SpPP))+$(cplP)	($l-$(mat_bok:1)-1)-$(SpPP1)	$(pscos:0)+$(SpPP2)
+#LETS RadL=A30	$(lscos:0)+$(SpPL2)	($p-$(mat_bok:1)-1)-$(SpPL1)	($(lscos:0)-$(SpPL))+$(cpll)	($p-$(mat_bok:1)-1)-$(cpll1)	$(lscos:0)-$(SpPL)	$p-$(mat_bok:1)-1
+!SAGOMA sagRip 0	0	$l-$(mat_bok:1)-1	0	$(RadP)	$(RadL)	0	$p-$(mat_bok:1)-1
+#ENDIF
+#ENDIF
+#LET spostaaRip=0
+#IF $(spostaa)=0 #LET spostaaRip=1
+#IF $(spostaa)=$(ALTBOX)-$(mat:1) #LET spostaaRip=-1
+#LET _spostal=$(spostal)
+#LET _spostaa=$(spostaa)
+NUMDET	SL=$l/2	SA=-$a	sp=-20
+#LETV _wr=999K_KARKASPL
+#LETV _MNP=999K_KARKASPL
+#LETS sk=$(_colkarkas:10)	wk=$(wkR)	nk=378917905	ek=$(ekR)
+////////////////////////добавление параметров при размере деталей//////////////////////////////////
+#LET detL=$l-$(mat_bok:1)-1
+#LET detW=$p-$(mat_bok:1)-1
+#LET usl1=$[IIF;($(detL)<450)|$(detW)<150));0;1]
+#LET usl2=$[IIF;($(detW)<450|$(detL)<150));0;1]
+//#MSG $(detL) xx $(detW) xx $(usl1) | $(usl2)
+#LET proverka=$[iif;$(usl1)|$(usl2);0;1]
+#IF $(proverka)=1
+#IF $(detL)>$(detW)
+//  #LET detL=450
+#ELSE
+// #LET detW=450
+#ENDIF
+#LETS SDR=$(detW)
+#LETS DDR=$(detL)
+#IF $[ex;$(_COLKARKAS:9);|;3]>=2 & $(_COLKARKAS:27)=0
+// #IF $(sdr)!450
+#LETS SDR={$(SDR)}//-2}
+//#ENDIF
+//#IF $(ddr)!450
+#LETS DDR={$(DDR)}//-2}
+//#ENDIF
+#ENDIF
+#ELSE
+#LETS sdr=
+#LETS ddr=
+#IF $[ex;$(_COLKARKAS:9);|;3]>=2 & $(_COLKARKAS:27)=0
+#LETS SDR={$p-$(mat_bok:1)-1}//-2}
+#LETS DDR={$l-$(mat_bok:1)-1}//-2}
+#ENDIF
+#ENDIF
+/////////////////////////////////////////////////////////
+//110
+108	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=1_2;IDO=1;NSE=$(SHPR)	SL=$(slRip)	SA=$(spostaaRip)	DIS=$(sagRip)  //Полка для скошенных и радиусных секций
+/////////////////////////////////////////////////////////
+#LETS mat=$(mat_old)	 _colkarkas=$(_colkarkas_old)
+// *************************************** крепеж полок ***********************************************
+001	LATO=6	COD=999EVRIK / / /#Q4	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+//#FOR $1:4
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
+#ENDIF
+//#ENDFOR
+#IF ($l-$(mat_bok:1)-1)-64-64>300
+001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15)	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14)	L=1	A=1	P=1  // Test
+#ENDIF
+#ENDIF
+#IF ($p-$(mat_bok:1)-1)-32-64>300
+001	LATO=6	COD=999EVRIK	L=1	A=1	P=1  //Test
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15)	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14)	L=1	A=1	P=1  // Test
+#ENDIF
+#ENDIF
+// ****************************************************************************************************

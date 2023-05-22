@@ -1,0 +1,5 @@
+#LET plosh=rn3((($a+100)*($l+100)*2+$a*$p*2+$l*$p*2)/1000000)
+001	LATO=6	COD=999GK /PLOSH=$(PLOSH)	L=1000	A=1000	P=0  // гофрокартон
+#LET larg=rn3((($a+50+$p)*2*2+($l+50+$p)*2*2)/1000)
+001	LATO=6	COD=999SP /LARG=$(LARG)	L=1000	A=0	P=0  // скотч
+001	LATO=6	COD=999LPBL /LARG=$(LARG)	L=1000	A=0	P=0  // лента полипропиленовая

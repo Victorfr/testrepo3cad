@@ -1,0 +1,44 @@
+#IF $(_ModDoorRasp:7)==DSP
+#IF $(_colkarkas:18)=1
+#IF $(TxtVst:1)=1
+#LET rot_txt=90
+#LETS nt=5723736 // вертик
+#ELSE
+#LET rot_txt=0
+#LETS nt=5723737  // гориз
+#ENDIF
+#ELSE
+#LETS nt=
+#ENDIF
+#IF $[ex;$(LOCP_BX0);|;4]=1
+#LETS color_door1=12	 color_door2=12
+#LETS matvstav:7=12
+#ELSE
+#LETS color_door1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)|$(rot_txt:0)	 color_door2=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)|90
+#IF $(_ModDoorRasp:1)[S12;D02;E02]
+#LETS color_door2=1|$(.percorso)\foto\struttura\$(_colkrom:3)|$(_colkrom:4)|90
+#ENDIF
+#ENDIF
+#ELSEIF $(_ModDoorRasp:7)==MDF
+#IF $(TxtVst:1)==0
+#LETS nt=5723737
+#ELSEIF $(TxtVst:1)==1
+#LETS nt=5723736
+#ELSE
+#LETS nt=11726799
+#ENDIF
+#LET rot_txt=0
+#IF $(TxtVst:1)=1 #LET rot_txt=90
+#LETS matvstav_old=$(matvstav)	 cvetvstav_old=$(cvetvstav)
+#LETS matvstav=$(matvstav_door)	 cvetvstav=$(cvetvstav_door)
+#IF $[ex;$(LOCP_BX0);|;4]=1
+#LETS color_door1=12
+#LETS matvstav:7=12
+#LETS vid_vis=y
+#LET show_vst=6
+#ELSE
+#LETS color_door1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
+#IF ($(matvstav:5)[s08] & $(cvetvstav:11)=1) #LETS color_door1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|{90-$(rot_txt)}
+#LETS vid_vis=n
+#ENDIF
+#ENDIF

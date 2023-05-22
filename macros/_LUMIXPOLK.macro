@@ -1,0 +1,80 @@
+!SETCODICE x
+//полки шириной под шкаф 451
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+// ***************************************************************************************************
+_DATABOX
+///обнуление параметров для упаковки стекол
+#LETV maxStekloL=
+#LETS stekloParams=
+#LETV steklosize=X
+#LET polkaStekloCount=0
+#LET larg=$[ex;$(LumixPolk:3);X;1]
+#LET prof=$[ex;$(LumixPolk:3);X;2]
+#LET vetroL=$[ex;$(LumixPolk:4);X;1]
+#LET vetroP=$[ex;$(LumixPolk:4);X;2]
+#LETS codPolk=$(lumixPolk:$(LumixPolkType:3))
+#LET flag_ust=1
+#LET l=$(larg)
+#LET p=$(prof)
+#LET a=35
+#LETS colorProf=105
+//если плейсер установлен в шк
+#IF $(FPL)!!N
+_PROVERKAPLMX
+#ENDIF
+//цена
+#IF $(flag_ust)=1
+001	LATO=6	COD=$(codPolk) /FPL=$(FPL) /Полка Mixal Lumix в разборе /#L-1  //Test
+//графика профилей
+001	L=26	A=35	C1=$(colorProf)	DIS=profMiLu  //Test
+001	L=26	A=35	C1=$(colorProf)	DIS=profMiLu	ay=90	p=$l	sp=$P //Test
+!SAGMIRROR prof1 profMiLu X
+001	L=26	A=35	C1=$(colorProf)	DIS=$(prof1)	sl=$l  //Test
+001	L=26	A=35	C1=$(colorProf)	DIS=$(prof1)	ay=90	p=$l//Test
+//если полка с вешалом то отрисовка вешал
+#IF $(LumixPolkType:1)[2;4]
+001	SL=5	SA=-(102-35)	SP=$p/2-14/2	L=14	A=102-35+4	P=14	C1=$(colorProf)  // Test
+001	SL=$l-14-5	SA=-(102-35)	SP=$p/2-14/2	L=14	A=102-35+4	P=14	C1=$(colorProf)  // Test
+001	SL=5	SA=-(102-35)	SP=$p/2-14/2	L=$l-5-5	A=14	P=14	C1=$(colorProf)  // Test
+#ENDIF
+///графика стекла
+//_POLKASTEKLO
+#LETV _WR=999K_VETROMX4
+#LETV _MNP=999K_VETROMX4
+//062
+//057
+062	COD= / / /#L-1	SL=($l-$(vetroL))/2	SA=$a-4	SP=($p-$(vetroP))/2	L=$(vetroL)	P=$(vetroP)  //Test
+//_POLKASTEKLO
+#IF {$(maxStekloL)}<{$(vetroL)}
+#LETV maxStekloL={$(vetroL)}
+#LETS params=$(maxStekloL):$(vetroP)
+#LETV stekloSize=$(params)
+#ENDIF
+#LET polkaStekloCount=$(polkaStekloCount)+1
+#LETV stekloCount=$(polkaStekloCount)
+#ELSE
+001	COD=999 /ERROR=1	P=$p+20  //Test
+#IF $(flag_ust)=2
+025	COD= / /Полка мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=3
+025	COD= / /Модуль мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=4
+025	COD= / /Увеличьте ширину ниши	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=5
+025	COD= / /Петля мешает установке	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=6
+025	COD= / /Ошибка размещения	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7	sp=$p+100  //сообщение об ошибке
+#ELSEIF $(flag_ust)=7
+025	COD= / /Двери мешают выдвижению \nнеобходимо установить фальшфасады по сторонам!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSE
+025	COD= / /Перекрытие дверей блокирует выдвижные	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+#ENDIF
+//_finaleLumixPolk
+#LETS _macrofinale=_finaleLumixPolk
+//_PLACERMIXAL
+//_MODUL
+//передача данных о плейсере
+#LETS LOC_BX1=$(_ppa)|$A|$(LumixPolkType:1)|LUMIXPOLK
+#LET _PLACERRIVPADRE=1

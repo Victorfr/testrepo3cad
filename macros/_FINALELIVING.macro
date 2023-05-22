@@ -1,0 +1,93 @@
+///финальный скрипт для Living
+//_CALCULATE_DSPHDF
+#IF $(mat:0)=16
+#IF $(TIPSHKAFliving:3)=0 & $(addnog:0)=0 & $l>900
+#IF $(countVert)=0
+// #MSG Ширина крышки и дна шкафа шире 900мм рекомендуем вам установить вертикальную перегородку или увеличить толщину каркаса!
+#ENDIF
+#ENDIF
+#ENDIF
+//расчет упаковки для хдф
+#IF $(hdfsizemax)!!TEST
+//  #LET sizeL=$[EX;$(hdfsizemax);:;1]
+//  #LET sizeA=$[EX;$(hdfsizemax);:;2]
+//  #MSG $(hdfsizemax)
+//001	COD=999HDFUPAKZAG /TD=505	L=$(sizeL)	A=$(sizeA)	P=4	lato=6  //Test
+//упаковка
+_calculate_size	mis_zst=$(hdfsizemax)
+#LET sizeL=$(LargLDsp)
+#LET sizeA=$(AltLDsp)
+///было
+//#LETV _wr=999PODLZST
+//по письму марии насчет упаковок 16.01.2020
+#LETV _wr=999ZAGHDFUPAK
+001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(NAVESLIVING:8);WR=$(_wr:3);TD=505 /Упаковка для задней стенки /#L+1	L=$(sizeL)	A=$(sizeA)	P=16  //Test
+//распил дсп
+#LETV _MNP=999PODLZST
+#LETV _wr=999PODLZST
+105	COD= / / /#L+3	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
+#ENDIF
+/////
+//расчет упаковки для стеклянных полок
+#IF $(steklosizemax)!!X
+//#MSG $(polkaStekloCount)
+//  #LET sizeL=$[EX;$(hdfsizemax);:;1]
+//  #LET sizeA=$[EX;$(hdfsizemax);:;2]
+//  #MSG $(hdfsizemax)
+//упаковка
+#LET upakCount1=int($(stekloCountScene)/10)
+#LET upakCount2=FRC($(stekloCountScene)/10)
+#IF $(upakCount2)>0 #LET upakCount2=1
+#LET upakCount=$(upakCount1)+$(upakCount2)
+//#MSG $(upakCount1) xx $(upakCount2)
+//   #IF $(upakCount)<=0 #LET upakCount=1
+_calculate_size	mis_zst=$(steklosizemax)
+#LET sizeLfinish=$(LargLDsp)
+#LET sizeAfinish=$(AltLDsp)
+////////////////подбор стандартных размеров упаковок/////////////
+_checkSizeStandart	testL=$(LargLDsp)	testA=$(AltLDsp)
+//#MSG $(sizeLfinish) x $(sizeAfinish)
+#LET sumA=$(sizeLfinish)+$(sizeAfinish)
+#LET finishLa=$(sizeLfinish)
+#LET finishAa=$(sizeAfinish)
+_checkSizeStandart	testL=$(AltLDsp)	testA=$(LargLDsp)
+//#MSG $(sizeLfinish) x $(sizeAfinish)
+#LET sumB=$(sizeLfinish)+$(sizeAfinish)
+#LET finishLb=$(sizeLfinish)
+#LET finishAb=$(sizeAfinish)
+#IF $(sumA)>$(sumB)
+#LET sizeL=$(finishLb)
+#LET sizeA=$(finishAb)
+#ELSE
+#LET sizeL=$(finishLa)
+#LET sizeA=$(finishAa)
+#ENDIF
+//#LET sizeL=$(sizeLfinish)
+//#LET sizeA=$(sizeAfinish)
+/////////////////////////////////////////////////////////////////
+#LETV _wr=999PODLZST
+// #LETV _MNP=999ZAGLSDSP
+#LETV _MNP=999K_VETRORIP6
+001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(_MNP:3);WR=$(_wr:3);TD=505 /Упаковка для стеклянных полок /#L+1#Q$(upakCount)	L=$(sizeL)	A=$(sizeA)	P=16  //Test
+//распил дсп
+#LETV _MNP=999ZAGLSDSP
+//   #MSG $(_wr)
+105	COD= / /Подложка для стеклянных полок /#L+3#Q2	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
+#ENDIF
+/////
+//проверка для дверей шкафа на упор в элементы дивайдера
+#LET ind=0
+#IF $(_DOORPOLOG:1)[2;3] & $(TIPSHKAF:7)[2] & $(_DOORSRASP:1)!1
+#FOR $(doorsParams)
+#LET ind=$(ind)+1
+#IF $(flagDoor$(ind))=0
+#LET flagUpor=0
+#ENDIF
+#ENDFOR
+#IF $(flagUpor)=0
+025	COD= / /\3Необходимо установить перегородки для упора дверей	SA=$a+50	A=100	l=$L  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+001	LATO=6	COD=999 /ERROR=1 /Необходимо установить перегородки для упора дверей	SA=$a+50	A=100  // Test
+#ENDIF
+#ENDIF
+#LETV _WR=999KARKAS
+#LETV WR=$(_WR:3)

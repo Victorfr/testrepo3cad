@@ -1,0 +1,512 @@
+#FOR $(doorsParams)
+#LETS curPetlParams=$i
+#LET usePetlObr={$[ex;$(curPetlParams);|;5]}
+#IF $(usePetlObr)=1
+#LET flagCorrector={$[ex;$(curPetlParams);|;8]}
+#ENDIF
+#IF $(usePetlObr)=0
+#LET flagCorrector={$[ex;$(curPetlParams);|;7]}
+#ENDIF
+#ENDFOR
+#IF $(tipshkaf:6)=1
+#LET PVNUTR=$(pzast:0)
+#ELSEIF $(tipshkaf:6)=2
+#LET PVNUTR=$P-$(TIPSYSTEM:17)
+#IF $(tipshkaf:7)[0;2]
+#LET PVNUTR=$P-1
+#IF $(flagCorrector)[1;2]
+#LET pvnutr=$P-5
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:1)[11]
+#LET PVNUTR=$P-1
+#IF $(flagCorrector)[1;2]
+#LET pvnutr=$P-5
+#ENDIF
+#ENDIF
+#IF $(tipshkaf:7)=3 #LET PVNUTR=$P-70
+#ENDIF
+#LET ProvTolMat=1200
+#IF $[datecompare;$(dataordine);23.01.2019]=1
+#IF $(mat:1)=16 #LET ProvTolMat=900
+#ENDIF
+#LET maxPilomat=2000
+#LET testSmPl=0
+#LET popr=0
+#IF $(orienta)=1 // вертикальный делитель
+#LET countVert=$(countVert)+1
+#LET poprL={-$(mat:0)/2}
+NUMDET	SL=0	SA=$A/2-35	p=$(pvert) // $(PVNUTR)
+// ************************************ создание массива с данными вертикальных перегородок *********************************************************
+#LET wallNumber=$(wallNumber)+1
+#LETS strWallParams=$(ndet)x{int($(spostal))}x$(spostaa)x$lx$ax$p|$(strWallParams)
+// **************************************************************************************************************************************************
+#LET _spostal=$(spostal)
+#LET _spostaa=$(spostaa)
+#LET pvert=$(PVNUTR)-10
+#IF $(tipshkaf:6)=2
+///если деталь во всю высоту во встраиваемом шк
+//#IF $a=$(akorp)-$(matvn:1)*2-$(hzoc:0)
+#IF ($a=($(akorp)-$(matvn:1)*2-$(hzoc:0))) | ($(TIPSHKAF:1)[11] & ($a=$(akorp)-$(matvn:1)*2-$(hzoc:0)-60))
+//строка которая хранит положения перегородок во всю высоту
+#LETS strBigWall={int($(spostaL))}|$(strBigWall)
+#LET countBigWall=$(countBigWall)+1
+#ENDIF
+#IF $(testSmPl)==0
+#IF $(popr)!=0 #LET popr=0
+#ENDIF
+#IF $a<{$(AKORP)-$(mat:0)*2-$(hzoc:0)}
+#LET pvert=$(PVNUTR)-11
+#ENDIF
+//#MSG {($a+300)}={$(AKORP)-$(mat:0)*2-$(hzoc:0)} & $(sk_sys:0)=1
+#IF ($a)={$(AKORP)-$(matvn:0)*2-$(hzoc:0)-300-$(mat:1)} & $(sk_sys:0)=1
+#LET pvert=$(PVNUTR)-10
+#LETS strBigWall={int($(spostaL))}|$(strBigWall)
+#LET countBigWall=$(countBigWall)+1
+#ENDIF
+#LET spostaVert=10
+#LET spostaAvert=0
+#LET altVert=$A-$(popr)
+#ELSE
+#LET pvert=$(PVNUTR)+$(pripuskPolZad)
+#LET spostaVert=-$(pripuskPolZad)
+#IF $a<{$(AKORP)-($(otstverh:0)+$(otstniz:0))}
+#LET pvert=$(pvert)-1
+#ENDIF
+#LET spostaAvert=0
+#LET altVert=$A
+#IF $(nerovnd:0)=1 & $(pdno:1)=1
+#LET spostaAvert=-$(pripuskKorD:0)
+#LET altVert=$(altVert)+$(pripuskKorD:0)
+#ENDIF
+#IF $(nerovnUp:0)=1 & $(pup:1)=1
+#LET altVert=$(altVert)+$(pripuskKorU:0)
+#ENDIF
+#LET spostaAvert=$(spostaAvert)
+#IF $(AKORP)=$a  | $(AKORP)=$a+$(spostaa)
+#IF $(AKORP)=$a+$(spostaa) & $(spostaa)!0 & $(pdno:1)=1
+#LET spostaAvert=$(spostaAvert)+$(pripuskKord:0)	altVert=$a+$(pripuskKoru:0)
+#ELSE
+#LET altVert=$(altVert)
+#ENDIF
+#ELSE
+#IF $(nerovnD:0)=1 & $(dno:1)=2 & $(pdno:1)=1 & $(spostaa)=0
+#LET altVert=$a+$(pripuskKord:0)
+#ELSEIF $(nerovnD:0)=1 & $(dno:1)=2 & $(pdno:1)=1 & $(spostaa)!0
+#LET spostaAvert=$(spostaAvert)+$(pripuskKord:0)	altVert=$a
+#ELSE
+#LET altVert=$a
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(_backWallDis:1)=1 //если без задней стенки
+#LET spostaVert=0
+#LET pvert=$(pvert)+10
+#ENDIF
+#LETV _wr=999V_KARKASPERVERT
+#LETV _MNP=999V_KARKASPERVERT
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#IF $(TIPSHKAF:6)=1 #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//#MSG $(spostaa) --- $a
+#IF $(altVert)>$(mat:7)
+014	COD= /ERROR=1	SP=$(spostaVert)	A=$(altVert)	P=$(pvert)	SA=$(spostaAvert)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Превышен MAX размер пиломатериала! Установите горизонтальную перегородку!	SL=$(mat:1)*2	SA=50	L=$a	sp=$p	az=-90  //сообщение об ошибке
+#ELSE
+014	SA=$(spostaAvert)	SP=$(spostaVert)	A=$(altVert)	P=$(pvert)	x3=$(spostaAvert)  //Перегородка
+#ENDIF
+//#MSG $(spostaAvert) xx $(ndet)
+// *************** вычисляем крепёж для нижней части вертикалей ***********************
+#IF $(spostaa)=0
+#LET krep_vert_vstr_niz_lev=2
+#ELSE
+#LET krep_vert_vstr_niz_lev=0
+#ENDIF
+//   #MSG $(spostal) $(ndet)
+// *******************************************************************************
+// *************** вычисляем крепёж для верхней части вертикалей ***********************
+#IF $(spostaa)+$a=$(akorp)
+#LET krep_vert_vstr_verh_prav=$(_matPensili:1)
+#ELSE
+#LET krep_vert_vstr_verh_prav=0
+#ENDIF
+// *******************************************************************************
+_agg_krep	p=$(pvert)
+//отрисовка стяжек
+#LET flagKrepVerhU=1
+#IF $(spostaa)+$a=$(akorp)
+#LET flagKrepVerhU=0
+#ENDIF
+_drawStag	SL=0	SP=$(spostaVert)	L=$(mat:0)	P=$(pvert)	A=$(altVert)	orienta=$(orienta)	sa=$(spostaAvert)
+#IF $(tipshkaf:6)=2
+#LETS mat_old=$(mat)
+#LETS mat=$(matvn)
+#LETS _colkarkas_old=$(_colkarkas)
+#IF $[datecompare;$(dataordine);16.01.2019]>=0
+#LETS _colkarkas=$(_colkarkas_vn)
+#ENDIF
+#ENDIF
+#IF (($(spostaa)=$(mat:0)+$(HZOC:0)) & $(tipshkaf:6)=2 & $(tipshkaf:7)!2) | ($(tipshkaf:6)=1 & $(nerovnd:0)=1 & $(pdno:1)=2 & $(spostaa)<=65) | (($(spostaa)=$(mat:0)+$(HZOC:0)) & $(tipshkaf:6)=2 & $(tipshkaf:7)=2 & $(tipRaspshkaf:3)!0) & $(noZoc:0)!1
+NUMDET	SL=$l+30	SA=-70	sp=-$(p)/2
+#LETV _wr=999T_KARKASPER
+#LETV _MNP=999T_KARKASPER
+#IF $(tipshkaf:6)=1
+#LETS mat_old=$(mat)	 _colkarkas_old=$(_colkarkas)
+#LETS mat=$(mat_kor)	 _colkarkas=$(_colkarkas_kor)
+#ENDIF
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+#IF $(tipshkaf:6)=1
+027	SL=0	a=65+$(pripuskKorD:0)-$(mat:0)	SA=-65-$(pripuskKorD:0)	SP=$(mat:0)*2+($p-$(mat:0)*3)	L=$p-$(mat:0)*2	AY=90  //	Az=90  //Перемычка для подиума
+#ELSE
+#LET spPerem=$(mat:0)*2+($p-40-$(mat:0)*3)	 lperem=$p-40-$(mat:0)*2-20
+#IF $(TIPSHKAF:7)=2 & $(virovnit:0)=1 #LET spPerem=($P+$[ex;$(prof_door);|;1]+$(SpostaPRaspD))-$(mat:0)-40	 lperem=($P+$[ex;$(prof_door);|;1]+$(SpostaPRaspD))-40-$(mat:0)*2-20
+#IF (($(TIPSHKAF:7)=1 & $(_prist:1)[1;2]) | $(_prist1:1)=1) #LET spPerem=$(mat:0)*2+($p-$(mat:0)*3)	 lperem=$p-$(mat:0)*2-20
+#IF $(TIPSHKAF:1)[11] //topline
+#LET lperem=$p-$(mat:0)*2-65-20
+#LET spPErem=$(lperem)+20+$(mat:0)
+#ENDIF
+027	SL=0	SA=-($(mat:0)+$(HZOC:0))	SP=$(spPerem)	L=$(lperem)	AY=90  //	Az=90  //Перемычка для подиума
+#ENDIF
+// ********************************ножка регулировочная *****************************************
+#IF $(pkorp)>=400
+047	COD= /TD=536	SA=-30-$(mat:1)	X8=$(_spostal)o$(_spostaa)  //Ножка регулировочная
+#ELSE
+001	LATO=6	COD=999nog_reg	L=30	A=30	P=30  //Test
+#ENDIF
+#LET spPie=$p-100
+#IF $(TIPSHKAF:7)=2 & $(virovnit:0)=1 #LET spPie=($P+$[ex;$(prof_door);|;1]+$(SpostaPRaspD))-100
+#IF $(TIPSHKAF:1)[11]
+#LET spPie=$p-150
+#ENDIF
+#IF $(pkorp)>=400
+047	SA=-30-$(mat:1)	SP=$(spPie)	X8=$(_spostal)o$(_spostaa)  //Ножка регулировочная
+#ELSE
+001	LATO=6	COD=999nog_reg	L=30	A=30	P=30  //Test
+#ENDIF
+// *****************************************************************************************************
+// ****************** самоклейки **************************
+#IF $(_colkarkas_vn:14)==999sam
+001	LATO=6	COD=$(_colkarkas_vn:14) /COLSAM=$(_colkarkas_vn:15) / /#Q2	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas_vn:14) / / /#Q2	L=1	A=1	P=1  //Test
+#ENDIF
+// ***********************************************************
+#IF $(tipshkaf:6)=1
+#LETS mat=$(mat_old)	 _colkarkas=$(_colkarkas_old)
+#ENDIF
+// ******************* уголки **************************
+001	LATO=6	COD=999ug24x24x15 / / /#Q3	L=1	A=1	P=1  //Test
+// ****************************************************
+#ENDIF
+#IF $(noZoc:0)=1
+001	LATO=6	COD=999nog_reg10 / / /#Q2	L=1	A=1	P=1  // Test
+// 001	LATO=6	COD=999nog_reg10	L=1	A=1	P=1
+#ENDIF
+#IF $(tipshkaf:6)=2
+#LETS mat=$(mat_old)
+#LETS _colkarkas=$(_colkarkas_old)
+#ENDIF
+// ****************************************** дополнительная фурнитура для вертикальных перегородок встраиваемых шкафов **********************************************************
+#IF $(TIPSHKAF:6)=1
+#LET cout_dop_krep=0
+#IF $(altVert)>2000 #LET cout_dop_krep=3
+#IF $(altVert)>2500 #LET cout_dop_krep=4
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q$(cout_dop_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / / /#Q$(cout_dop_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot / / /#Q$(cout_dop_krep)	L=1	A=1	P=1  //Test
+#IF $(_matBack:3)=2
+001	LATO=6	COD=999sh3_5x30 / / /#Q$(cout_dop_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub6x30 / / /#Q$(cout_dop_krep)	L=1	A=1	P=1  //Test
+#ELSEIF $(_matBack:3)=1
+001	LATO=6	COD=999sh3_5x30 / / /#Q$(cout_dop_krep)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub_driva / / /#Q$(cout_dop_krep)	L=1	A=1	P=1  //Test
+#ENDIF
+#ENDIF
+// *******************************************************************************************************************************************************************************
+#ELSE // горизонтальный делитель
+#IF $(tipshkaf:6)=2
+#LET pgor=$(PVNUTR)-11
+#LET spostsGor=10
+#IF $(_backWallDis:1)=1 //если нет задней стенки
+#LET spostsGor=0
+#LET pgor=$(pgor)+10
+#ENDIF
+#ELSE
+#LET pgor=$(PVNUTR)+$(pripuskPolZad)-1
+#LET spostsGor=-$(pripuskPolZad)
+#ENDIF
+///так было до добавление широких полок
+#IF $(l)>$(mat:7)
+NUMDET	SL=$L/4-50	SA=-35	p=$(pgor)
+#ELSE
+NUMDET	SL=$L/2-50	SA=-35	p=$(pgor)
+#ENDIF
+#LET podrezPol=0	 podrezZad=0	 lpol=$L
+#IF $(TIPSHKAF:6)=1
+#IF $(PBOKL:1)=2
+#LET otsLpol=0 // $(otsL)
+#ELSE
+#LET otsLpol=0
+#ENDIF
+#IF $(PbokR:1)=2
+#LET otsRpol=$(otsR)
+#ELSE
+#LET otsRpol=0
+#ENDIF
+//INITSHKAF
+// *******************************  04.03.2019 *********************************************
+// #IF $l=$(LKORP)-$(mat_kor:1)*2
+#IF ($l=$(LKORP)-$(mat:1)*2)  //| ($(TIPSHKAF:6)=1 & $l=$(lkorp)) //полка во всю ширину шкафа
+#IF $(PBOKL:1)=2 & $(PbokR:1)=2
+#LET otsLpol=$(otsL)
+#ENDIF
+// #LET podrezPol=$(otsLpol)-$(mat:1)-$(pripuskPolSx:0)	lpol=$L+$(mat_kor:1)*2+$(pripuskPolSx:0)+$(pripuskPolDx:0)-($(otsLpol)+$(otsRpol))
+#LET podrezPol=$(otsLpol)-$(mat:1)-$(pripuskPolSx:0)	lpol={$L+$(mat:1)*2+$(pripuskPolSx:0)+$(pripuskPolDx:0)-($(otsLpol)+$(otsRpol))}
+#ELSEIF  ($(TIPSHKAF:6)=1 & ( $l=$(lkorp) | ($l=$(lkorp)-$(otsL) & $(PBOKL:1)=2) | ($l=$(lkorp)-$(otsR) & $(PBOKR:1)=2)  )  //полка во всю ширину в встраиваемом шкафу
+#LET podrezPol=-$(pripuskPolSx:0)
+#LET lpol=$l+$(pripuskPolSx:0)+$(pripuskPolDx:0)
+// *****************************************************************************************
+#ELSEIF {$(spostaL)-$(mat:1)}<=$(otsL) // крайние левые полки
+// #LET podrezPol=$(otsLpol)-$(mat:1)-$(pripuskPolSx:0)	 lpol=$L-$(podrezPol)
+#LET podrezPol=$(otsLpol)-$(pripuskPolSx:0)	 lpol=$L-$(podrezPol)
+#ELSEIF $(spostaL)+$L=$(LKORP) // -$(mat:1) // крайние правые полки
+// #LET lpol=$L-($(otsRpol)-$(mat:1)-$(pripuskPolDx:0))
+#LET lpol=$L-($(otsRpol)-$(pripuskPolDx:0))
+#ENDIF
+#ENDIF
+#LET polkNumber=$(polkNumber)+1
+#LETS strPolkParams=$(ndet)x$(spostal)x$(spostaa)x$lx$ax$p|$(strPolkParams)
+//формирование строки с параметрами предыдущих элементов
+//проверить текущую полку с остальными
+#LET flag=0
+#FOR $0:$(polknumber)
+#LETS testStr=$[estrai;$(strPolkParams);|;$i]
+#LET testNumb=$[estrai;$(testStr);x;0]
+#IF $(ndet) ! $(testNumb) //деталь не текущая
+#LET spL=$[estrai;$(testStr);x;2]
+#LET spA=$[estrai;$(testStr);x;3]
+#LET spL_L=$[estrai;$(testStr);x;4)
+#LET spL_A=$[estrai;$(testStr);x;5)
+#LET x1=$(spl)
+#LET x2=$(spl)+$(spl_l)
+#LET xx1=$(spostal)
+#LET xx2=$(spostal)+$(l)
+#IF $(xx1)>=$(x1) & $(xx2)<=$(x2)
+#LET diffAlt=abs($(spostaa)-$(spA)-$(spl_a))
+#IF $(spostaa)>$(spa)
+#LET diffAlt=$(spostaa)-$(spa)-$(spl_a)
+#ELSE
+#LET diffAlt=$(spa)-$(spostaa)-$a
+#ENDIF
+#IF $(diffalt)<180 #LET flag=1
+#ENDIF
+#ENDIF
+#ENDFOR
+#LET xA=$(spostal)
+#LET xB=0
+#LET lstart=0
+#LET lend=0
+#LET wallcount=0
+#LET smLpolk=$(lpol)/2-$(otsL) //по умолчанию смещение полки длиной больше пиломатериала равно половине длины полки
+#LET testSmPl=0
+#LET lpolki=$l
+#IF $(strParamsAllLast:0)!0
+#FOR $1:$(countProverkaLast)
+#LETS test=$[estrai;$(strParamsAllLast);|;$i]
+#LET curind=$[estrai;$(test);X;0]
+//proverka
+#LET index=1
+#LETS ind=$[estrai;$(test);X;$(index)]
+#IF $(curind)=$(ndet)
+////!!!!очень аккуратно с условием -  если будет всегда неверно то возникнет бесконечный цикл!!!!
+#LET xA=$(spostal)
+#LET xB=0
+#LET test_l=0
+#DO $(ind)==
+#LET index=$(index)+1
+#LETS ind=$[estrai;$(test);X;$(index)]
+//#MSG $(ind)
+#IF $(ind)!!
+////проверка всех перегородок
+#LETS lper=$[estrai;$(ind);/;2]//положение по l перегородки
+//#MSG $(ind)
+#LET number=$[estrai;$(ind);/;1]
+//#LET xb={$(lper)-$(spostal)-$(mat:0)}
+#LET xb={$(lper)}//-$(spostal)-$(mat:0)}
+// #LET xb={$(lper)-$(spostal)-$(otsL)}
+// #MSG $(xb)-$(xa)
+#LET test_l=$(xb)-$(xa)
+//#MSG $(lper)-$(spostal)-$(mat:0)
+#LET xa=$(xb)+$(mat:0)
+#IF $(test_l)>$(ProvTolMat)
+#LET flag=2
+#ENDIF
+///проверка для полок длиной больше пиломатериала
+#IF $(lpolki)>$(mat:7)
+#IF $(testSmPl)=0
+#LET testSmPl=$(smLpolk)-$(lper)
+#ELSE
+#IF abs($(testSmPl))>abs($(smLpolk)-$(lper))
+#LET testSmPl={$(smLpolk)-$(lper)}
+#ENDIF
+#ENDIF
+#ENDIF
+///////
+#ENDIF
+#LET wallcount=$(wallcount)+1
+#LOOP
+///деление перегородки если ее длина больше длины пиломатериала
+//proverka
+#IF $(flag)!2
+#LET test_l=$l-$(lper)
+#IF $(test_l)>$(ProvTolMat)
+#LET flag=2
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDFOR
+#ENDIF
+#IF $(wallcount)=0
+#IF $(lpol)>$(ProvTolMat) #LET flag=2
+#ENDIF
+#IF {$(spostaa)-$(hzoc:0)-$(mat:0)}<180//240 //проверка расстояния между дном и полкой
+#LET flag=1
+#ENDIF
+// salavat 09.09.2021
+//#IF $(akorp)-$(spostaa)-$(mat:0)*2<240  //проверка расстояния между крышкой и полкой
+#IF $(akorp)-$(spostaa)-($(mat:0)+$(matvn:0))<180//240  //проверка расстояния между крышкой и полкой
+// salavat 09.09.2021
+#LET flag=1
+#ENDIF
+#IF $(lpol)>$(mat:7)
+// #LET flag=3
+#ENDIF
+/////////////////////////////////////////////////////
+///проверка текущую полку по ширине и опоре на стенку
+//   FINALESCRIPT
+#FOR $0:$(wallnumber)
+#LETS testStr=$[estrai;$(strWallParams);|;$i]
+#LET testNumb=$[estrai;$(testStr);x;0]
+#LET spL=$[estrai;$(testStr);x;2]
+#LET spA=$[estrai;$(testStr);x;3]
+#LET spL_L=$[estrai;$(testStr);x;4)
+#LET spL_A=$[estrai;$(testStr);x;5)
+#LET x1=$(spl)
+#LET x2=$(spl)+$(spl_l)
+#LET xx1=$(spostal)
+#LET xx2=$(spostal)+$(l)
+#IF $(xx1)>=$(x1) & $(xx2)<=$(x2)
+#MSG полка $(ndet) пересекается со стенкой $(testNumb)
+#ENDIF
+#ENDFOR
+///////////////////////////////////////////////////
+///////////////проверка пересечения полки с петлей/////////////
+//  petlZoneParams - параметр в котором находятся положения петель в шкафу под которые идут обработки
+#IF not($(TIPSHKAF:6)[1] & $(TIPSHKAF:7)[2] & $p-$(pzast:0)>=100)
+_petliZonesPolki
+#ENDIF
+//////////////////////////////////////////////////
+// #IF $(tipshkaf:6)=2
+// #LET pgor=$(PVNUTR)-11
+// #LET spostsGor=10
+// #ELSE
+// #LET pgor=$(PVNUTR)+$(pripuskPolZad)-1
+// #LET spostsGor=-$(pripuskPolZad)
+// #ENDIF
+#LET _spostal=$(spostal)
+#LET _spostaa=$(spostaa)
+// NUMDET	SL=$L/2-50	SA=-35	p=$(pgor)
+#LETV _wr=999K_KARKASPL
+#LETV _MNP=999K_KARKASPL
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+//по тз от ильяса все вертикали и горизонты кромятся в шкафах
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//#IF $(TIPSHKAF:6)=1 #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//   #MSG $(_spostal) $(ndet)
+///проверка на пересечения с царгой
+#IF ($(_spostaa)-{$(matvn:1)}-{$(hzoc:0)}  < 250) & $(_zargDis:1)=0
+#LET flag=5
+#ENDIF
+#IF $(flag)=0
+//   NUMDET	SL=$(podrezPol)+($(lpol)-$(testSmPl))/2-50	SA=-35	p=$(pgor)	sl=$(lpol)
+///для тестов
+#IF $(lpol)>$(mat:7) //азмер полки больше пиломатериала
+//  #LET flag=3
+#LET testSmPl=$(testSmPl)+($(spostaL)+$(otsL)-$(mat:0)/2)}
+#LET lpol=$(lpol)/2
+015	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)-$(testSmPl)	P=$(pgor)  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+#LET _spostal={($(podrezPol)+$(lpol)-$(testSmPl))}
+NUMDET	SL=$(podrezPol)+$(lpol)+($(lpol)+$(testSmPl))/2-$(testSmPl)-50	SA=-35	p=$(pgor)
+#LET spostal={$(_spostaL)+$(spostaL)}
+015	SL=$(podrezPol)+$(lpol)-$(testSmPl)	SP=$(spostsGor)	L=$(lpol)+$(testSmPl)	P=$(pgor)  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+//#LET bigpolk=$(bigpolk)+1
+#ELSE
+015	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)-$(testSmPl)	P=$(pgor)  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+#ENDIF
+//015	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)-$(testSmPl)	P=$(pgor)  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+// *************** вычисляем крепёж для левой части горизонталей ***********************
+#IF $(otsLpol)<=0
+#LET krep_vert_vstr_niz_lev=$(_matFiaSx:1)
+#ELSE
+#LET krep_vert_vstr_niz_lev=0
+#ENDIF
+//#MSG $(otstLpol) xxx $(spostal)+$l+$(mat:1)=$(lkorp) & $(pbokR:1)!2
+// *******************************************************************************
+// *************** вычисляем крепёж для правой части горизонталей ***********************
+#IF $(spostal)+$l+$(mat:1)=$(lkorp) & $(pbokR:1)!2
+#LET krep_vert_vstr_verh_prav=$(_matFiaDx:1)
+#ELSE
+#LET krep_vert_vstr_verh_prav=0
+#ENDIF
+#LET flagKrepR=1
+#IF $(spostal)+$l =$(lkorp) & $(pbokR:1)!2
+#LET flagKrepR=0
+#ENDIF
+#IF $(spostal)+$l+$(mat_kor:1) =$(lkorp) & $(pbokR:1)=2
+#LET flagKrepR=0
+#ENDIF
+// *******************************************************************************
+_agg_krep	p=$(PVNUTR)-1-10
+#IF $(testSmPl)!0
+#LET popr=$(testSmPl)+$(mat:1)/2
+#ELSE
+#LET popr=0
+#ENDIF
+#LET lprovsvet={$p-228+8-$(spostsGor)}
+_draWSTAg	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)-$(popr) 	P=$(pgor)	orienta=$(orienta)	lprovsvet=$(lprovsvet)
+#ELSEIF $(flag)=1
+015	COD= /ERROR=1	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Минимальное расстояние между элементами 180 мм	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag)=2
+//      015	COD=x / /Ошибка	SL=$(podrezLev)	SP=10	L=$(lpol)	P=$(PVNUTR)-2-10	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+015	COD= /ERROR=1	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Максимальное расстояние между опорами полки $(ProvTolMat) мм	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag)=3
+015	COD= /ERROR=1	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Превышен MAX размер пиломатериала! Установите вертикальную перегородку во всю высоту шкафа!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag)=4
+015	COD= /ERROR=1	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Полка попадает на фрезеровку петли!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ELSEIF $(flag)=5
+015	COD= /ERROR=1	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Установке полки мешает царга!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+// ****************************************** дополнительная фурнитура для горизонтальных перегородок встраиваемых шкафов **********************************************************
+#IF $(TIPSHKAF:6)=1
+#IF $(lpol)>600
+//уголок Grandis
+001	LATO=6	COD=999grandUg	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_COLKARKAS:13)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh4x16pot	L=1	A=1	P=1  //Test
+#IF $(_matBack:3)=2
+001	LATO=6	COD=999sh3_5x30	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub6x30	L=1	A=1	P=1  //Test
+#ELSEIF $(_matBack:3)=1
+001	LATO=6	COD=999sh3_5x30	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999dub_driva	L=1	A=1	P=1  //Test
+#ENDIF
+#ENDIF
+#ENDIF
+// *******************************************************************************************************************************************************************************
+#ENDIF

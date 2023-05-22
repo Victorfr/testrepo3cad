@@ -1,0 +1,2 @@
+#LET NDETPL=$(NDET)+$(_IDUNICO)+1
+025	COD= / /\4$(NDETPL)  //Номер детали

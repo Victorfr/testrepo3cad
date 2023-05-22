@@ -1,0 +1,38 @@
+#IF $(pasp_count)=0
+#LETV AllCount_pasp=0
+#ENDIF
+#LETS cod_pasport=
+#IF $(productLine)==MARIA_SHKAF
+// ********************* шильдик *********************************
+001	LATO=6	COD=999shildM	L=1	A=1	P=1  // Test
+// ***************************************************************
+#LETS cod_pasport=999pasport_sh
+#ELSEIF $(productLine)==ELDOR_SHKAF
+#LETS cod_pasport=999pasport_sh_el
+#ELSEIF $(productLine)==EDDOM_SHKAF
+#LETS cod_pasport=999pasport_sh_ed
+#ELSEIF $(productLine)==TVDOM_SHKAF
+#LETS cod_pasport=999pasport_sh_td
+#ENDIF
+#IF $(AllCount_pasp)>0
+001	LATO=6	COD=$(cod_pasport)	L=1	A=1	P=1  // Test
+#ENDIF
+#IF $(furNabor)!!X
+#LETV _wr=999NAB_FUR_OST
+#IF $(TIPSHKAF:6)=1
+#LETV _wr=999NAB_FUR_VST
+#ENDIF
+#IF $(TIPSHKAF:1)[9;10]
+#LETV _wr=999NAB_FUR_LIV
+#ENDIF
+056  //Наборы
+#ENDIF
+#IF $(TIPSHKAF:1)[2]
+#IF $(allScUp:0)>0
+#LETS codLenta=9993MGRPH
+001	LATO=6	COD=$(codLenta)	L=1	A=1	P=1  // Test
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:1)[12]
+001	LATO=6	COD=999mxRemKom /TD=536 /MIXAL 601002 ремкомплект для профиля	L=1	A=1	P=1  //Test
+#ENDIF

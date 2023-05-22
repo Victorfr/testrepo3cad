@@ -1,0 +1,66 @@
+#LET alt_door=$a
+// ******************************************* шлегельx по новому ************************************
+#LET flag_shleg=1
+// **************************************************************************************************
+// ******************************************* шлегель по старому ************************************
+//#LET flag_shleg=0
+// ***************************************************************************************************
+#LETS lato_prof=66455997 // левый профиль
+#LET count_zak=0
+#IF $(TIPSYSTEM:18)[ar1;ar3]
+#VB
+dim Outsks
+insks=v("sks")
+mass=Split(insks	"|")
+ReDim Outsks(UBound(mass))
+for i=0 to UBound(mass)
+for n=0 to UBound(mass)
+var1=calcola(mass(i))
+var2=calcola(mass(n))
+if var1>var2 then
+cnt=cnt+1
+end if
+next
+Outsks(cnt)=mass(i)
+cnt=0
+next
+v("sks")=Join(Outsks	"|")
+#ENDVB
+#ENDIF
+///глухов правки под профиль под покраску
+///
+020	L=$(tipruch:8)	P=$(tipruch:9)	X7=1	lato=$(show_door)  //Профиль-ручка
+!SAGMIRROR prof90 $(tipruch:4) X
+#LET flag_shleg=1
+#LETS lato_prof=66455998
+020	SL=$L	DIS=$(prof90)	lato=$(show_door)	X7=2  // Профиль-ручка
+#LET sp_prof_gor=0
+#IF $(tipruch:7)[ar2]
+#LET sp_prof_gor=$p-$(tipruch:11)
+//#LET flagNova=3
+//024	SL=150+22+29	SA=10	SP=0	L=$a-20	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)
+//024	SL=$l-150-22	SA=10	SP=0	L=$a-20	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)
+//вертикальные профили в двери
+#LETS oldColSys=$(COL_SYSTEM:1)
+#LETV col_system=0014
+//_addProfNova	SL=150+22+29	SA=200	SP=0	L=$a-400	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)	flagNova=3
+//_addProfNova	SL=$l-150-22	SA=200	SP=0	L=$a-400	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)	flagNova=3
+_addProfNova	SL=150+22+29	SA=10	SP=0	L=$a-20	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)	flagNova=3	profIdo=3
+_addProfNova	SL=$l-150-22	SA=10	SP=0	L=$a-20	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)	flagNova=3	profIdo=4
+//_PEREMICHPARAM
+#IF $l>1000 | $a>=2600
+//024	SL=$l/2+29/2	SA=10	SP=0	L=$a-20	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)
+// _addProfNova	SL=$l/2+29/2	SA=200	SP=0	L=$a-400	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)	flagNova=3
+_addProfNova	SL=$l/2+29/2	SA=10	SP=0	L=$a-20	A=29	P=$(tipruch:15)	az=-90	lato=$(show_door)	flagNova=3	profIdo=5
+#ENDIF
+#LETV col_system=$(oldColSys)
+#ENDIF
+_rolikDovdNova
+// ******************************* доводчик по новому ***********************************************
+_dovodAristo
+// **************************************************************************************************
+#LET profIdo=21
+021	SL=$(tipruch:16)/2	SP=$(sp_prof_gor)	L=$L-$(tipruch:16)	X5=$(countCol)	lato=$(show_door)  //Профиль гориз нижний
+#LET profIdo=22
+022	SL=$(tipruch:16)/2	L=$L-$(tipruch:16)	sp=$(sp_prof_gor)	lato=$(show_door)  // Профиль гориз верхний
+#LETS stroka=

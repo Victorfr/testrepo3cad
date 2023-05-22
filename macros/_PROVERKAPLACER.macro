@@ -1,0 +1,116 @@
+////проверка пересечения плейсера с петлями
+//зоны где располагаются петли
+#LETS petlZoneParams=$(locp_bx5)
+!PLACERPAR placerparams	5
+//_OLD_PLACE
+#LET flag_prof_mod=0 //параметр	 указывающий	 что глубину модуля нужно изменить под петли
+#LET spostaL=$(placerparams:1)//+$(falshL)
+#IF $(falsh_pol_sx:1)=0
+//#LET spostaL=$(spostaL)+$(largFalshL:0)
+#ENDIF
+#LET modL=$l//-{$(falshR)+$(falshL)}
+#IF $(falsh_pol_dx:1)=0
+//#LET modL=$l-$(largFalshR:0)
+#ENDIF
+///новый расчет
+//#LET modulSl=$(spostal)
+#LET modulX1=$(spostal)
+#IF $(falsh_pol_sx:1)=0 & $(falsh_sx:1)=1
+#LET modulX1=$(spostaL)+$(largFalshL:0)
+// #LET flag_prof_mod=1
+#ENDIF
+#LET modulX2=$(spostal)+$(modL)
+#IF $(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1
+#LET modulX2={$(spostal)+$(modL)-$(largFalshR:0)}
+//#LET flag_prof_mod=1
+#ENDIF
+#LET spostaa=$(placerparams:2)+int($(_ppa))
+#IF $[LEN;$(petlzoneparams)]>0 //& $(_primocaricamento)!1
+#LETS proverkaMod=$[ex;$(petlzoneparams);|;1]
+#IF $(proverkaMod)!!ARISTORASP
+///проверка типа шкафов
+#IF $(proverkaMod)==MIXAL
+#IF $(falsh_sx:1)=0 | $(falsh_dx:1)=0
+#LET flag_ust=7
+#ENDIF
+/////////////обычные шкафы
+#ELSE
+#FOR $(petlZoneParams)  //проход по массиву петель
+#LETS petlPar=$i
+#LET petlSa=$[ex;$(petlPar);X;1]
+#LET petlSL=$[ex;$(petlPar);X;2]
+#LET petlA=$[ex;$(petlPar);X;3]
+#LET petlL=$[ex;$(petlPar);X;4]
+// #MSG $(petlSL)
+#IF $(spostaa)>=$(petlsa)
+#IF  $(spostaa) < {$(petlsa)+$(petlA)}
+//////////////////////////////////////////////////////////////////////////////////////////////
+////изменение глубины	 если модуль попадает на петлю	 но есть фальш фасад
+#LET modultestX1=$(modulX1)
+#LET modultestX2=$(modulX2)
+#IF $(falsh_pol_sx:1)=0 & $(falsh_sx:1)=1
+#LET modultestX1=$(spostaL)
+#ENDIF
+#IF $(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1
+#LET modultestX2={$(spostal)+$(modL)}
+#ENDIF
+#IF ($(modultestX1)>=$(petlSl) &  $(modultestX1)<=$(petlSl)+$(petlL) & $(modultestX2)>=$(petlSl)+$(petlL)) | ($(modultestX1)<$(petlSl)& $(modultestX2)>=$(petlSL)+$(petlL)) | ($(modultestX1)<$(petlSl) & $(modultestX2)>=$(petlSl))
+#LET flag_prof_mod=1
+#ENDIF
+//////////////////////////////////////////////////////////////////////////////////////////////
+#IF ($(modulX1)>=$(petlSl) &  $(modulx1)<=$(petlSl)+$(petlL) & $(modulX2)>=$(petlSl)+$(petlL)) | ($(modulX1)<$(petlSl)& $(modulX2)>=$(petlSL)+$(petlL)) | ($(modulX1)<$(petlSl) & $(modulX2)>=$(petlSl))
+#LET flag_ust=5
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(spostaa)<$(petlsa) & $(spostaa)+$a>{$(petlsa)}
+//#MSG $(spostaL) xx $(petlsl)
+//#MSG $(modulX1)>=$(petlSl) & $(modulX2)>=$(petlSl)+$(petlL))| ($(modulX1)<$(petlSl)& $(modulX2)>=$(petlSL)+$(petlL))
+//////////////////////////////////////////////////////////////////////////////////////////////
+////изменение глубины	 если модуль попадает на петлю	 но есть фальш фасад
+#LET modultestX1=$(modulX1)
+#LET modultestX2=$(modulX2)
+#IF $(falsh_pol_sx:1)=0 & $(falsh_sx:1)=1
+#LET modultestX1=$(spostaL)
+#ENDIF
+#IF $(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1
+#LET modultestX2={$(spostal)+$(modL)}
+#ENDIF
+#IF ($(modultestX1)>=$(petlSl) &  $(modultestX1)<=$(petlSl)+$(petlL) & $(modultestX2)>=$(petlSl)+$(petlL)) | ($(modultestX1)<$(petlSl)& $(modultestX2)>=$(petlSL)+$(petlL)) | ($(modultestX1)<$(petlSl) & $(modultestX2)>=$(petlSl))
+#LET flag_prof_mod=1
+#ENDIF
+//////////////////////////////////////////////////////////////////////////////////////////////
+#IF ($(modulX1)>=$(petlSl) &  $(modulx1)<=$(petlSl)+$(petlL) & $(modulX2)>=$(petlSl)+$(petlL))| ($(modulX1)<$(petlSl)& $(modulX2)>=$(petlSL)+$(petlL)) | ($(modulX1)<$(petlSl) & $(modulX2)>=$(petlSl))
+#LET flag_ust=5
+#ENDIF
+#ENDIF
+#ENDFOR
+//если шкаф в котором модуль - MIXAL
+#ENDIF
+#ELSE //если модуль установлен в распашные аристо
+#LET flagL={$[ex;$(petlzoneparams);|;2]}
+#LET flagR={$[ex;$(petlzoneparams);|;3]}
+#LET korpLsh=$[ex;$(zone_prov);|;1]
+#LET korpMatSh=$[ex;$(zone_prov);|;4]
+#IF $(flagL)=1
+#IF $(spostaL)<$(korpMatSh)+70
+#IF $(falsh_pol_sx:1)=0 & $(falsh_sx:1)=1
+#LET flag_ust=1
+#ELSE
+#LET flag_ust=7
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(flagR)=1
+#IF $(spostaL)+$l>$(korpLsh)-70-$(korpMatSh)
+#IF $(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1
+#LET flag_ust=1
+#ELSE
+#LET flag_ust=7
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
+//volume
+/////////

@@ -1,0 +1,23 @@
+#LET ruchOts=$[ex;$(TIPRUCH:26);:;1]
+//#LET doorA=$a-30
+#LET doorA=$a-25
+#LET doorSA=25/2
+#IF $(_doorsRasp_ar1:1)=2
+#LET doorL=int($l-$(ruchOts)-8)/2
+///переделать формулу для двух дверей после письма от ильяса
+055	L=$(doorL)	sl=$(ruchOts)/2	a=$(doorA)	sa=$(doorSA) //Плейсер распашной двери Аристо
+055	L=$(doorL)	sl=$(ruchOts)/2+$(doorL)+8	a=$(doorA)	sa=$(doorSA) //Плейсер распашной двери Аристо
+#ELSE
+#LET doorL=$L-$(ruchOts)
+055	L=$(doorL)	sl=$(ruchOts)/2	a=$(doorA)	sa=$(doorSA) //Плейсер распашной двери Аристо
+#ENDIF
+//////old formulas
+#IF 0
+#IF $(_doorsRasp_ar1:1)=2
+055	L=int(($l-$[ex;$(TIPRUCH:26);:;2])/2)  //Плейсер распашной двери Аристо
+055	SL=$l/2+$[ex;$(TIPRUCH:26);:;2]/2	L=int(($l-$[ex;$(TIPRUCH:26);:;2])/2)  // Плейсер распашной двери Аристо
+#ELSE
+055  // Плейсер распашной двери Аристо
+#ENDIF
+#ENDIF
+////////////////

@@ -1,0 +1,53 @@
+//#LET koord_sver={$(spostaa)+12.5}
+#LETS koord_sver={int($(spostaa)+12.5)}|$(koord_sver)
+#LET sp_delit=0	 a_delit=$(tipruch:14)	 l_delit=$l+$(tipruch:8)*2-$(tipruch:16)	 sl_delit=-($(tipruch:8)-$(tipruch:16)/2)
+#LET numPerem=$(numPerem)+1
+#IF $(tipsystem:18)[ar2]
+#LET sp_delit=$p-$(tipruch:15)	 a_delit=$a
+// #MSG $(nvst)
+#ENDIF
+#IF $(a_delit)=29
+#LETV flag_man=1
+#ENDIF
+#IF $(flag_man)=1 & $a=29
+#LETV countShirD={$(countShirD)+1}
+#LET flagNova=2
+_man_Nova
+#LET flagNova=0
+#LETS idManPos= $(_MAN_KUPE$(numNova))
+#LET numNova=$(numNova)+1
+#LETS parManNova$(numNova)=$(spostaA)|$A|$(idManPos:3)|$(idManPos:4) //смещение по высоте высота тип положения
+_addProfNova	SL=$(sl_delit)	SA=0	SP=$(sp_delit)	L=$(l_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)	flagNova=2	profIdo=7
+#ELSE
+//#MSG $(tipsystem:18)/$(katcol:7)/$(col_system:6)/$(koord_sver)///рамка горизонтальная узкая
+#IF $(tipsystem:18)[ar2]
+#LETV _wr=AR2GOR_NPR
+#LETV _mnp=AR2GOR_NPR
+#LETS paramRazd=MNP=$(_MNP:3);WR=$(_WR:3);_cprof=$(col_system:6);BRD=$(tipruch:27);PRF=$(tipruch:28);UKP=689985695;IDO=1
+067	COD=AR2GOR_NPR /$(paramRazd) /$(_WR:2)	SL=$(sl_delit)	SA=$(a_delit)	SP=$(sp_delit)	L=$(a_delit)	A=$(l_delit)	P=$(tipruch:15)	az=90	lato=$(show_door)  //Рамка горизонтальная узкая
+#ELSE
+#LET numberPerem=$(numberPerem)+1
+024	SL=$(sl_delit)	SA=0	SP=$(sp_delit)	L=$(l_delit)	A=$(a_delit)	P=$(tipruch:15)	lato=$(show_door)	x7=$(col_system:$(col_sysst:4))/$(tipruch:27)/$(tipruch:28)/$(tipruch:29)/$(tipruch:30)/$(sks)/$(numberPerem)
+#ENDIF
+#ENDIF
+/////////////тест перемычек для расчета вставок между двумя профилями
+#IF $a=29
+#LETV countPer={$(countPer)+1}
+#LETS parPer$(countPer)=$(spostaA)|$A
+#ENDIF
+//////////////////
+#IF $(tipsystem:18)[ar2]
+_add_usil	flagNova=0
+#ENDIF
+//025	COD= / /$(numPerem)	lato=$(show_num)  //Номер детали
+#LETS peremPar$(numPerem)=$(numPerem)|$(spostaA)
+//#MSG $(peremParam$(numPerem))
+//MACRODOOR
+//_peremichParam
+//VSTAV
+#LETV numManNova=$(numNova)
+//#MSG $(spostaa)
+//FINALESCRIPTDOOR
+//_CALCUL_BACK_KREP
+//ADDNAPLIVING
+//_CALCULATE_DSPHDF

@@ -1,0 +1,64 @@
+//каркасные детали
+#LET _spostal=$(spostal)//+$(mat:1)
+#LET _spostaa=$(spostaa)-$(karkasSA)
+#LETS mat_old=$(mat)	_colkarkas_old=$(_colkarkas)
+#LETS mat=$(matvn)	_colkarkas=$(_colkarkasvn)
+///
+//для вертикальных
+#IF $(orienta)=1
+#LET countVert=$(countVert)+1
+#IF $l!$(mat:1)
+#MSG Материал вертикальных деталей не может отличаться от материала перегородок!
+#LETV l = $(mat:1)
+#ENDIF
+#IF $l=$(mat:1)
+//каркасная перегородка
+_KARKASPEREGOR	p=$(profNapol)
+#ENDIF
+//VOLUME
+#ELSE //для горизонтальных
+#LET flag=1
+_petliZonesPolki
+#IF $(flag)=1
+#IF $a=6
+//полка стекло
+_polkasteklo	p=$(profNapol)
+#ELSE
+//полка каркасная
+_polkakarkas	p=$(profNapol)
+#ENDIF
+#ELSEIF $(flag)=4
+015	COD= /ERROR=1	SL=$(podrezPol)	p=$(pgor)	sp=$(spostakarkasP)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+025	COD= / /Полка попадает на фрезеровку петли!	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке
+#ENDIF
+#ENDIF
+#LETS mat=$(mat_old)	_colkarkas=$(_colkarkas_old)
+//для проверки вкладных дверей на упор в полку или перегородку
+//#MSG $(spostaa) $(spostal) $a $l  $(orienta)
+#LET indexDoor=0
+#FOR $(doorsParams)
+#LET doorL=$[EX;$(i);|;1]
+#LET doorA=$[EX;$(i);|;2]
+#LET doorSL=rnd($[EX;$(i);|;3])
+#LET doorSA=rnd($[EX;$(i);|;4]}
+#LET indexDoor=$(indexDoor)+1
+#IF $(flagDoor$(indexDoor))=0
+#IF $(orienta)=1 // верт перегородка
+//если
+#IF ($(spostaa)>$(doorSa) & $(spostaa)<$(doorSa)+$(doorA)) | ($(spostaa)<$(doorSa) & $(spostaa)+$(a)>$(doorSa))
+#IF $(spostal)>$(doorSl) & $(spostal)<$(doorSl)+$(doorL)
+#LET flagDoor$(IndexDoor)=1
+#ENDIF
+#IF $(spostal)<$(doorSl) & $(spostaL)+$l>$(doorSl)
+#LET flagDoor$(indexDoor)=1
+#ENDIF
+#ENDIF
+#ELSE //полка
+#IF ($(spostaL)>$(doorSl) & $(spostaL)<$(doorSl)+$(doorL)) | ($(spostaL)<$(doorSl) & $(spotsaL)+$l>$(doorSL))
+#IF ($(spostaa)>$(doorSa) & $(spostaa)<$(doorSA)+$(doorA)))
+#LET flagDoor$(indexDoor)=1
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDFOR

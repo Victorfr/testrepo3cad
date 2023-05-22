@@ -1,0 +1,117 @@
+//макрос шкафа ливинг
+#LETV _krepeg=2 //!!!передает в типологии обработки для ливинга!!!
+#LETV _WR=999KARKAS
+#LETV WR=$(_WR:3)
+#LETV TSH=$(tipshkaf:5) //тип шкаф распашной ливинг
+#LETV SHPR={$(curbox)+1}
+#LET det_mod=0
+!COMMENTO $(_wr:2)
+#LET countVert=0
+//////////////////////////////////
+_gabaritLimit
+#LET spBackWall=17
+/////переменные//////
+!PLACERVAR doorsParams 4
+#LET index=0
+#LET flagUpor=1 //упираются двери или нет в каркас (чтобы не болтались)
+//обнуление флагов установки дверей
+#FOR $0:4
+#LET index=$(index)+1
+#LET flagDoor$(index)=0
+#ENDFOR
+!PLACERVAR prof_door 2
+//чтение данных из вара двери 4
+!PLACERVAR doorsParams 4
+//_SHKAF
+#IF $(_PRIMOCARICAMENTO)=1
+//#LETS prof_door=
+//#LETV pbokl=2
+//#LETV pbokr=2
+//#LETV pup=2
+#LETS msg_lim_kol=0
+#IF $(mat:1)[16]
+#LETV _colkarkas=046
+#ENDIF
+#IF $(mat:1)[22]
+//   #LETV _colkarkas=046
+#ENDIF
+#IF $(mat:1)[25]
+#LETV _colkarkas=047
+#ENDIF
+#LETV _colkarkasback=046
+#ENDIF
+#LETV maxStekloL=
+#LETS stekloParams=
+#LETV steklosize=X
+#LET polkaStekloCount=0
+#LETV varParamSkaf=$(TIPSHKAF:7)
+#LETS last_param=
+#FOR $(prof_door)
+#LETS last_param=$(i)
+#ENDFOR
+#LETS prof_door=$(last_param)
+#LET akorp=$(a)
+#LET pDoor=$[ex;$(prof_door);|;1]
+//012
+#IF $(pDoor)=0 #LET pDoor=20
+#LET profPolog=$(pDoor)+2
+#LET SxSpostaLRaspD=2.5
+#LET DxSpostaLRaspD=2.5
+#LET SpostaPRaspD=2.5
+#LET zazorDoors=2.5
+#LET PnSpostaARaspD=2.5
+#LET StSpostaARaspD=2.5
+#LET ssposta=0
+#IF $(_doorPolog:1)=1
+#LET profNapol=$(p)
+#ELSE
+#LET profNapol=$(p)-$(profPolog)
+#ENDIF
+#LET profkarkasVertSP=0
+#LET profkarkasGorSP=0
+#IF $(_doorPolog:1)=3
+#LET profkarkasVertSP=$(profPolog)
+#ELSEIF $(_doorPolog:1)=4
+#LET profkarkasGorSP=$(profPolog)
+#ENDIF
+////////////////////////////////////
+// ********************* паспорт	 шильдик	 ноборы фурнитуры ************************
+#LETV pasp_count=1
+_pasport
+// ***************************************************************
+// ********************* упаковка шкафа **************************
+_upakovka_shkaf
+// ***************************************************************
+//014
+///////////конструктив//////////////
+//для петель отрисовка и проверка
+#LETS petlZoneParams=
+#LET petlFinishCount=0
+#FOR $(doorsParams)
+#LETS curPetlParams=$i
+#LET usePetlObr={$[ex;$(curPetlParams);|;5]}
+//   #MSG $(curPetlParams)
+#LET doorParSL=int($[ex;$(curPetlParams);|;3])
+#LET doorParSA=int($[ex;$(curPetlParams);|;4])
+//#MSG $(doorParSL) $(doorParSa)
+#IF $(usePetlObr)=1
+_drawPetlSone	doorNalog=$(_DOORPOLOG:1)	p=$p-$(profkarkasVertSP)
+#ENDIF
+#ENDFOR
+//передача данных потомку о типе шкафа и номер шкафа
+#LETS LOC_BX6=$(TIPRASPSHKAF:1)|$(SHPR)
+/////
+#LETS LOC_BX5=$(petlZoneParams)
+///////////////////////
+//010
+_provObr
+_karkasliving
+_DATABOX
+//_addNaves//	sa=$(karkasSa)
+// ******************************** декоры **************************
+_DEKOR	flagZoc=$[IIF;$(tipshkafliving:3)=1;0;1]	_factura=$(_facturaDek)	patina=$(_patinaDek)
+// ***************************************************************
+#LET flagInnerDoors=
+///финальный скрипт
+//_FINALELIVING
+#LETS _macrofinale= _finaleLiving

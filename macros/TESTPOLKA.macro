@@ -1,0 +1,1 @@
+015	SL=$(podrezLev)	L=$(lpol)+$(pr_left:3)+$(pr_right:3)	sl=-$(pr_left:3)  // Полка на стяжках

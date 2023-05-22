@@ -1,0 +1,20 @@
+#LET largDoor=$(largShMixal:5)
+#LET altDoor=$(altShMixal:4)
+#LETS doorVarParams=$(largDoor)|$(altDoor)
+#IF $(countDoorMl:1)=999
+#LETS doorVarParams=ERROR
+#ENDIF
+//если 1 дверь
+//_PLACERDOORS
+#IF $(countDoorMl:1)=1
+//добавить сюда плейсер двери миксал
+//001	p=20	l=$(largDoor)	a=$(altDoor)	sp=$P+2	sl={($l-$(largDoor))/2}	sa={($a-$(altDoor))/2}
+049	p=20	l=$(largDoor)	a=$(altDoor)	sp=$P+2	sl={($l-$(largDoor))/2}	sa={($a-$(altDoor))/2}	x1=103	x5=$(doorVarParams)|N
+#ENDIF
+//если две двери
+#IF $(countDoorMl:1)=2
+049	p=20	l=$(largDoor)	a=$(altDoor)	sp=$p+2	sl={($l-$(largDoor)*2)/3}	sa={($(a)-$(altDoor))/2}	x1=103	x5=$(doorVarParams)|L
+049	p=20	l=$(largDoor)	a=$(altDoor)	sp=$p+2	sl={$l-$(largDoor)-($l-$(largDoor)*2)/3}	sa={($(a)-$(altDoor))/2}	x1=103	x5=$(doorVarParams)|R
+#ENDIF
+//_OLD_PLACE
+#LETS LOC_BX0=$(NODOORSRASP:0)|$(_FiaApertoAnta:1)|0|$(_VdVisDoor:0)|1|0| // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre

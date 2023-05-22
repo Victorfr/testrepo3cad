@@ -1,0 +1,3 @@
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//015	p=$(pgor)	sp=$(spostakarkasP)
+110	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);IDD=;IDO=;FPL=	SP=0	P=$p  //Полка на стяжках ДСП

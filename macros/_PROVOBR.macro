@@ -1,0 +1,7 @@
+#IF $(provobr:0)!!X
+001	COD= / /\3Нажмите кнопку "Пересчет"	X1=6	x2=0	LATO=9
+//#IF $(_PRIMOCARICAMENTO)=1
+//#ELSE
+// #MSG Нажмите кнопку "Пересчет"
+//#ENDIF
+#ENDIF

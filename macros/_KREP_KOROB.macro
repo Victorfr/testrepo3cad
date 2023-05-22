@@ -1,0 +1,17 @@
+#LET count_krep_kor=(int($l/1000)*2)+4
+#FOR $1:$(count_krep_kor)
+001	LATO=6	COD=999ug24x24x15	L=1	A=1	P=1  // Test
+001	LATO=6	COD=999sh4x16pot	L=1	A=1	P=1  // Test
+001	LATO=6	COD=999sh4x16pot	L=1	A=1	P=1  // Test
+#ENDFOR
+#LET count_krep_kor=(int($l/1000))+2
+#FOR $1:$(count_krep_kor)
+001	LATO=6	COD=999ug24x24x15	L=1	A=1	P=1  // Test
+001	LATO=6	COD=999sh4x16pot	L=1	A=1	P=1  // Test
+#IF $(mat_st)=1
+001	LATO=6	COD=999dub_driva	L=1	A=1	P=1  // Test
+#ELSEIF $(mat_st)=2
+001	LATO=6	COD=999dub6x30	L=1	A=1	P=1  // Test
+#ENDIF
+001	LATO=6	COD=999sh3_5x30	L=1	A=1	P=1  // Test
+#ENDFOR

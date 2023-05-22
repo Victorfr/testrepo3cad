@@ -1,0 +1,72 @@
+#IF $(rad1:0)<50
+// #LETV rad1=50
+#ENDIF
+#IF $(rad1:0)>250
+#LETV rad1=250
+#ENDIF
+#IF $(rad1LD:0)<50
+//  #LETV rad1LD=50
+#ENDIF
+#IF $(rad1LD:0)>250
+#LETV rad1LD=250
+#ENDIF
+#IF $(rad1RD:0)<50
+#LETV rad1RD=50
+#ENDIF
+#IF $(rad1RD:0)>250
+#LETV rad1RD=250
+#ENDIF
+#IF $(rad1RU:0)<50
+//   #LETV rad1RU=50
+#ENDIF
+#IF $(rad1RU:0)>250
+#LETV rad1RU=250
+#ENDIF
+#IF $(lscos:0)<50
+//#LETV lscos=50
+#ENDIF
+#IF $(lscos:0)>$l-100
+#LETV lscos={$l-100}
+#ENDIF
+#IF $(pscos:0)<50
+#LETV pscos=50
+#ENDIF
+#IF $(pscos:0)>$p-100
+#LETV pscos={$p-100}
+#ENDIF
+#IF $(LscosLD:0)<50
+#LETV lscosld=50
+#ENDIF
+#IF $(lscosLD:0)>$l-100
+#LETV lscosld={$l-100}
+#ENDIF
+#IF $(pscosLD:0)<50
+#LETV pscosLD=50
+#ENDIF
+#IF $(pscosLD:0)>$p-100
+#LETV pscosLD={$P-100}
+#ENDIF
+#IF $(lscosrd:0)<50
+#LETV lscosRD=50
+#ENDIF
+#IF $(lscosRD:0)>$l-100
+#LETV lscosRd={$l-100}
+#ENDIF
+#IF $(pscosRD:0)<50
+#LETV pscosRD=50
+#ENDIF
+#IF $(pscosRD:0)>$p-100
+#LETV pscosRD={$p-100}
+#ENDIF
+#IF $(lscosRU:0)<50
+#LETV lscosRU=50
+#ENDIF
+#IF $(lscosRU)>$l-100
+#LETV lscosRU={$L-100}
+#ENDIF
+#IF $(pscosRU)<50
+#LETV pscosRU=50
+#ENDIF
+#IF $(pscosRU)>$P-100
+#LETV pscosRU={$p-100}
+#ENDIF

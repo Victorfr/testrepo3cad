@@ -1,0 +1,92 @@
+//$[ex;$(doorsParams);|;5]
+!parametri doorNalog=1
+#LET countPetl=$[ex;$(curPetlParams);|;6]
+#LETS petlParams=$[ex;$(curPetlParams);|;7]
+#LETS petlObrPar=
+#LETS petlObrPar=$(countPetl)|37|
+//_PETLIOBR
+#FOR $1:$(countPetl)
+#LETS petlPar=$[ex;$(petlParams);y;$(i)]
+#LET petlSa=int($[ex;$(petlPar);x;1]+$(doorParSA))
+//_DOORRASP
+#LET petlSL=int($[ex;$(petlPar);x;2])
+#LET petlA=int($[ex;$(petlPar);x;3])
+#LET petlL=50
+#LET petlOtvSP=37
+#LET petlSL={$(doorPArSL)+$(petlSL)}
+#LET testLpetl=0
+#IF $(_PRIST:1)[1;2]
+#LET testLpetl=$l
+#IF $(_PRIST:1)[1]
+#LET testLpetl={$(profprist:0)}-$(profwallpris:0)+50+$(_MODDOORRASPug:5)
+#ENDIF
+#IF $(_PRIST:1)[2]
+#LET testLpetl=-{$(profprist:0)}-$(profwallpris:0)+50+$(_MODDOORRASPug:5)
+#ENDIF
+#ENDIF
+// #MSG $(petlSL)<{($(l)-$(testLpetl))/2+$(testLpetl)}
+#LET latoPetl=1
+#IF $(petlSL)<($(l)-$(testLpetl))/2+$(testLpetl)
+//пестля с левой стороны
+#LET petlSL=$(petlSL)
+#IF $(_PRIST:1)[1] //левый пристыковочный
+#LET petlSl=$(testLpetl)-37
+#ENDIF
+//#MSG 1
+#LET latoPetl=1
+#ELSE
+#LET latoPetl=2
+//пестля с правой стороны
+// #MSG 2
+#LET petlSL=$(petlSL)-23
+#IF $(_PRIST:1)[2] //левый пристыковочный
+#LET petlSl=$l-({$(profprist:0)}-$(profwallpris:0)+50+$(_MODDOORRASPug:5))+37
+#ENDIF
+#ENDIF
+//#MSG $(petlSl)
+#IF $(doorNalog)[1;3]
+#LET petlOtvSP=37
+#ELSE
+#SELECT $(pdoor)
+#CASE 16
+#LET petlOtvSP=55
+#CASE 19
+#LET petlOtvSP=58
+#CASE 20
+#LET petlOtvSP=59
+#CASE 22
+#LET petlOtvSP=61
+#DEFAULT
+#LET petlOtvSP=55
+#ENDSELECT
+#ENDIF
+//   TIPOLOGI
+#IF $(_prist:1)[1;2]
+//если шк пристыковочный
+#IF $(_PRIST:1)[1] & $(latoPetl)=1
+059	sa=$(petlSA)-16	sp=$p-$(petlOtvSP)+60	l=60	sl=$(petlSL)	ay=90	lato=6
+059	sa=$(petlSA)+16	sp=$p-$(petlOtvSP)+60	l=60	sl=$(petlSL)	ay=90	lato=6
+#ELSEIF $(_PRIST:1)[2] & $(latoPetl)=2
+059	sa=$(petlSA)-16	sp=$p-$(petlOtvSP)+60	l=60	sl=$(petlSL)	ay=90	lato=6
+059	sa=$(petlSA)+16	sp=$p-$(petlOtvSP)+60	l=60	sl=$(petlSL)	ay=90	lato=6
+#ELSE
+059	sa=$(petlSA)-16	sp=$p-$(petlOtvSP)	l=60	sl=$(petlSL)	lato=6
+059	sa=$(petlSA)+16	sp=$p-$(petlOtvSP)	l=60	sl=$(petlSL)	lato=6
+#ENDIF
+//     #LETS  petlObrPar=$(petlObrPar)x$(petlSa)
+#ELSE
+059	sa=$(petlSA)-16	sp=$p-$(petlOtvSP)	l=60	sl=$(petlSL)	lato=6
+059	sa=$(petlSA)+16	sp=$p-$(petlOtvSP)	l=60	sl=$(petlSL)	lato=6
+#ENDIF
+#LET petlSa={$(petlSA)-$(petlA)/2}
+//_MODUL
+// просто графика для
+//  001	sa=$(petlSA)	a=$(petlA)	l=$(petlL)	sl=$(petlSL)	p=100	sp=$(p)-100	c1=3
+//#IF $i!$(countPetl)
+// #LET perlsl=1
+//#LETS petlZoneParams=$(petlZoneParams)$(petlSA)x$(petlSl)x$(petlA)x$(petlL);
+//#ELSE
+#LETS petlZoneParams=$(petlZoneParams)$(petlSA)x$(petlSl)x$(petlA)x$(petlL);
+//#ENDIF
+#LET petlFinishCount=$(petlFinishCount)+1
+#ENDFOR

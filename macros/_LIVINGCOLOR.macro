@@ -1,0 +1,55 @@
+//ia? ?acia?ia
+_lvclimit
+///oei oiaa?a naeoey 40813273
+!SETCODICE S33LIVINGCOL
+#LETV _WR=S33LIVINGCOL
+#LETV _MNP=S33LIVINGCOL
+#LETV WR=$(_WR:3)
+#LETV MNP=$(_mnp:3)
+#LETV TSH=714449184//$(tipshkaf:5) //oei oeao ?aniaoiie eeaeia
+#LETV SHPR={$(curbox)+1}
+#LET ndet=0
+!COMMENTO $(_wr:2)
+///ea?ean
+//for all details
+#LETS DRAW=734543886
+//_MODFASAD
+#LETS color=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
+//303
+#LET spBackWall=16
+//010
+#LETS codPilomat=LMDF16
+#LETS codBok=S33V_BOKCOL$(_Factura:7)
+#LETV _wr=$(codBok)
+#LETV _MNP=$(codBok)
+#LETS paramBok=MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR)
+NUMDET	SL=0	SA=$A/2
+600  //Aieiaeia e?aoaiie naeoee Living
+NUMDET	SL=$l-16	SA=$A/2
+600	SL=$L-16  // Aieiaeia e?aoaiie naeoee Living
+#LETS codKR =S33K_KRCOL$(_Factura:7)
+#LETV _wr=$(codKR)
+#LETV _MNP=$(codKR)
+#LETS paramKr=MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR)
+NUMDET	SL=$l/2	SA=$A-16
+601	SL=16	SA=$a-16	L=$L-32  // E?uoea e?aoaiie naeoee  Living
+NUMDET	SL=$l/2	SA=16
+#LETS codDn =S33K_DNOCOL$(_Factura:7)
+#LETV _wr=$(codDn)
+#LETV _MNP=$(codDn)
+#LETS paramDn=MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR)
+602	SL=16	L=$L-32  // Aii e?aoaiie naeoee Living
+#LETS codZD =S33T_ZADCOL$(_Factura:7)
+#LETV _wr=$(codZD )
+#LETV _MNP=$(codZD )
+#LETS paramZd=MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR)
+NUMDET	SL=$l/2	SA=16	sp=-$p
+604	SL=16	SA=16	L=$l-32	A=$a-32  // Caaiyy noaiea e?aoaiie naeoee
+//volumecol
+//603
+//iaaan
+001	COD=999navSAH305 / /Iaaan SAH 305 /#Q2	L=1	A=1	P=1  //Test
+//oo?oi aey iaaana
+001	COD=999shurNav / /Oo?oi-iaaan aey SAH 305 6o50 ii /#Q2	L=1	A=1	P=1  //Test
+001	COD=999dubKrNav / /A?aaeu a.e???ea-iaaana 8o40 ii /#Q2	L=1	A=1	P=1  //Test
+//aiaaaeaiea oo?ieoo?u

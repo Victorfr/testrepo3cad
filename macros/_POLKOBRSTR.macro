@@ -1,0 +1,42 @@
+//расчет обработок
+#LETS polkObrStr=
+#IF $(ugolL_Up:0)=1
+#IF $(_TYPRIPL_UP:1)=1
+#LETS addPar=$(rad1:0)
+#ENDIF
+#IF $(_TYPRIPL_UP:1)=3
+#LETS addPar=$(pscos:0)x$(lscos:0)
+#ENDIF
+#LET uglObr=1
+#LETS polkObrStr=$(polkObrStr)$(_TYPRIPL_UP:4)|$(addPar)|$(uglObr);
+#ENDIF
+#IF $(ugolL_Down:0)=1
+#IF $(_TYPRIPL_Down:1)=1
+#LETS addPar=$(rad1LD:0)
+#ENDIF
+#IF $(_TYPRIPL_down:1)=3
+#LETS addPar=$(pscosLD:0)x$(lscosLD:0)
+#ENDIF
+#LET uglObr=2
+#LETS polkObrStr=$(polkObrStr)$(_TYPRIPL_Down:4)|$(addPar)|$(uglObr);
+#ENDIF
+#IF $(ugolR_Down:0)=1
+#IF $(_TYPRIPR_Down:1)=1
+#LETS addPar=$(rad1RD:0)
+#ENDIF
+#IF $(_TYPRIPR_down:1)=3
+#LETS addPar=$(pscosRD:0)x$(lscosRD:0)
+#ENDIF
+#LET uglObr=3
+#LETS polkObrStr=$(polkObrStr)$(_TYPRIPR_Down:4)|$(addPar)|$(uglObr);
+#ENDIF
+#IF $(ugolR_Up:0)=1
+#IF $(_TYPRIPR_Up:1)=1
+#LETS addPar=$(rad1RU:0)
+#ENDIF
+#IF $(_TYPRIPR_Up:1)=3
+#LETS addPar=$(pscosRU:0)x$(lscosRU:0)
+#ENDIF
+#LET uglObr=4
+#LETS polkObrStr=$(polkObrStr)$(_TYPRIPR_Up:4)|$(addPar)|$(uglObr)
+#ENDIF

@@ -1,0 +1,11 @@
+#LET countPak={$(count_krep_back_new)}/10
+#IF $(countPak)>int({$(count_krep_back_new)}/10)
+#LET countPak=$(countPak)+1
+#ENDIF
+#LET countPak=int($(countPak))
+#IF $[datecompare;$(dataordine);02.09.2019]>=0
+//#FOR $1:$(countPak)
+001	LATO=6	COD=999pack_shPG3.5x16 / / /#Q$(countPak)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999KrZstPak / / /#Q$(countPak)	L=1	A=1	P=1  //Test
+//#ENDFOR
+#ENDIF

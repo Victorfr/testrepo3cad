@@ -1,0 +1,111 @@
+#LET NDV=$(NDOORS:3)
+#LET err_pl_door=0
+#LET LDV=RND((($l-$(mat:0)*2)+$[ex;$(NDOORS:6);z;$(tipruch:6)])/$(NDOORS:3))
+#LET ADV=$a-($(hzoc:0)+$(mat:0)*2)
+#LET krVnutrD=0
+#LET krVneshD=0
+#IF $(sk_sys:0)=1
+#LET ADV=$a+29-($(hzoc:0)+$(mat:0)*2)
+//   #IF $(TIPSHKAF:6)=2 #LET ADV=$a+$(tipsystem:3)+$(tipsystem:4)-($(hzoc:0)+$(mat:0)+10)
+#IF $(TIPSHKAF:6)=2 #LET ADV={$(akorp)-($(hzoc:0)+$(mat:1)*2)}+6
+#ENDIF
+//#MSG $a+$(tipsystem:3)+$(tipsystem:4)-($(hzoc:0)+$(mat:0)+10)
+//для купе аристо
+#IF $(TIPSYSTEM:18)[ar1] & $(TIPSHKAF:1)=1
+#LETS tipsystem:14=3200
+#ENDIF
+#IF $(ADV)>$(tipsystem:14)
+#LET alt_max=$(tipsystem:14)
+#LET delta_alt=$(ADV)-$(alt_max)
+#VB
+dim alt_max	 delta_alt
+alt_max=v("alt_max")
+delta_alt=v("delta_alt")
+msgbox "Дверь не может быть высотой более " + alt_max + " мм!" + vbCr + "Уменьшите высоту шкафа на " + delta_alt + " мм!"
+#ENDVB
+#ENDIF
+#IF $(LDV)<500
+#LET razn_min={rnd((500-$(LDV))*$(NDV)}
+#VB
+dim razn_min
+razn_min=v("razn_min")
+msgbox "Дверь не может быть шириной менее 500 мм!" + vbCr + "Выберите меньшее количество дверей или увеличьте ширину шкафа на " + razn_min + " мм!"
+#ENDVB
+#LET err_pl_door=1
+#ENDIF
+#IF $(ADV)/4>$(LDV) & $(err_pl_door)=0 & $(err_larg_door)!{$l+$a}
+#LET razn={rnd($(ADV)/4)-$(LDV)}
+#VB
+dim ldv	adv	razn
+ldv=v("LDV")
+razn=v("razn")
+msgbox "Расчётная ширина двери равна " + ldv + " мм	 что на " + razn + " мм меньше	 чем рекомендованная производителем." + vbCr + "УСТАНОВКА ДОВОДЧИКА ЗАПРЕЩЕНА!" + vbCr + "Фабрика не будет принимать претензии на ходовые качества двери!" + vbCr + "Рекомендации производителя: минимальная ширина двери = высота двери/4."
+#ENDVB
+#ENDIF
+#LET err_larg_door={$l+$a}
+#IF $(ADV)/4>$(LDV) & $(err_pl_door)=0
+#LETV DD_S=406299877
+#ENDIF
+#IF $(NDV)>3 & $(show_numDoor)!1
+#VB
+'msgbox "В шкафу с количеством дверей 4-е и более	 зоны перекрытия отсутствуют!"
+#ENDVB
+#LET show_numDoor=1
+#ENDIF
+#LETS placerDoorParams=$(NODOORS:0)
+#LET SlDoor_Sx=$(mat:0)+$(tipsystem:19)	 SlDoor_Dx=$l-$(LDV)-$(mat:0)-$(tipsystem:19)
+#IF $(NDV)=2 & $(err_pl_door)=0
+#IF $PM=1
+30	SL=0	SP=3	L=$(LDV)	P=$(tipruch:9)	X6=$(placerDoorParams)|$(DOVODCHIK:1)
+30	SL=$(LDV)-$(tipsystem:5)	SP=3+38.5	L=$(LDV)	P=$(tipruch:9)	X6=$(placerDoorParams)
+#ELSE
+030	SL=$(SlDoor_Sx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)|$(DOVODCHIK:1)  //Плейсер двери
+030	SL=$(SlDoor_Dx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+#ENDIF
+#LET show_numDoor=0
+#LET count_rolNova=2
+#IF $(ldv)>1200 #LET count_rolNova=3
+#IF $(sk_sys:0)=1 #LET krVnutrD=1	 krVneshD=1
+#ELSEIF $(NDV)=3 & $(err_pl_door)=0
+030	SL=$(SlDoor_Sx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(ldv)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)|$(DOVODCHIK:1)  //Плейсер двери
+030	SL=$(LDV)+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$(SlDoor_Dx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+#LET show_numDoor=0
+#LET count_rolNova=3
+#IF $(ldv)>1200 #LET count_rolNova=5
+#IF $(sk_sys:0)=1 #LET krVnutrD=2	 krVneshD=1
+#ELSEIF $(NDV)=4 & $(err_pl_door)=0
+#IF $(NDOORS:4)=2 // четыре двери симметрично
+030	SL=$(SlDoor_Sx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)|$(DOVODCHIK:1)  //Плейсер двери
+030	SL=$(LDV)+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$l-($(LDV)*2+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2)	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$(SlDoor_Dx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+#ELSE // четыре двери попеременно
+030	SL=$(SlDoor_Sx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)|$(DOVODCHIK:1)  //Плейсер двери
+030	SL=$(LDV)+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$l-($(LDV)*2+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$(SlDoor_Dx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+#ENDIF
+#LET count_rolNova=4
+#IF $(ldv)>1200 #LET count_rolNova=6
+#IF $(sk_sys:0)=1 #LET krVnutrD=2	 krVneshD=2
+#ELSEIF $(NDV)=5 & $(err_pl_door)=0
+030	SL=$(SlDoor_Sx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)|$(DOVODCHIK:1)  //Плейсер двери
+030	SL=$(LDV)+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$l/2-$(ldv)/2	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X5={$l/2-$(ldv)/2}	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$l-($(LDV)*2+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2)	SA=$(hzoc:0)+$(mat:0)-5	SP=3+38.5	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+030	SL=$(SlDoor_Dx)	SA=$(hzoc:0)+$(mat:0)-5	SP=3	L=$(LDV)	A=$(ADV)	P=$(tipruch:9)	X6=$(placerDoorParams)  //Плейсер двери
+#LET count_rolNova=5
+#IF $(ldv)>1200 #LET count_rolNova=8
+#IF $(sk_sys:0)=1 #LET krVnutrD=3	 krVneshD=2
+#IF $(TIPSHKAF:6)[1] // для встраиваемого
+///параметры плейсера
+#LET SlDoor2={$(LDV)+$(MAT:0)-($(tipsystem:5)+$(tipsystem:19))/2}+$(placerDoorSL)
+//MACRODOOR
+#LET SlDoor4={$l-($(LDV)*2+$(MAT:0)-($(tipsystem:5)+$(tipsystem:19))/2)}+$(placerDoorSL)
+#ELSE
+#LET SlDoor2={$(LDV)+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2}
+//MACRODOOR
+#LET SlDoor4={$l-($(LDV)*2+$(mat:0)-($(tipsystem:5)+$(tipsystem:19))/2)}
+#ENDIF
+#ENDIF

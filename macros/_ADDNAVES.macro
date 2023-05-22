@@ -1,0 +1,58 @@
+#LETS navCodL=$[ex;$(navesLiving:4);|;1]
+#LETS navCodR=$[ex;$(navesLiving:4);|;2]
+#LETS navZagL=$[ex;$(navesColor:4);|;1]
+#LETS navZagR=$[ex;$(navesColor:4);|;2]
+#LETS navShina=$(navesLiving:7)
+#LETS navDub=Dub8x52Sh5x60
+#LET navL=$[ex;$(navesLiving:6);|;1]
+#LET navA=$[ex;$(navesLiving:6);|;2]
+#LET navP=$[ex;$(navesLiving:6);|;3]
+#LET dubCount=0
+#IF $(navesLiving:1)[1] //SAH130
+//L
+058	LATO=6	SL=$(mat:1)	SA=$(a)-$(mat:1)-25	SP=$(spostakarkasP)+21  // Сверление под навесы D10G13
+058	LATO=6	SL=$(mat:1)	SA=$(a)-$(mat:1)-25	SP=$(spostakarkasP)+53  // Сверление под навесы D10G13
+//R
+058	LATO=6	SL=$l-$(mat:1)-1	SA=$(a)-$(mat:1)-25	SP=$(spostakarkasP)+21  // Сверление под навесы D10G13
+058	LATO=6	SL=$l-$(mat:1)-1	SA=$(a)-$(mat:1)-25	SP=$(spostakarkasP)+53  // Сверление под навесы D10G13
+//010
+#LET dubCount=4
+#ELSEIF $(navesLiving:1)[2] //CAMAR807
+//L
+058	LATO=6	SL=$(mat:1)	SA=$(a)-$(mat:1)-21	SP=$(spostakarkasP)+20  //Сверление под навесы D10G13
+058	LATO=6	SL=$(mat:1)	SA=$(a)-$(mat:1)-21	SP=$(spostakarkasP)+52  //Сверление под навесы D10G13
+058	LATO=6	SL=$(mat:1)	SA=$(a)-$(mat:1)-85	SP=$(spostakarkasP)+20  // Сверление под навесы D10G13
+058	LATO=6	SL=$(mat:1)	SA=$(a)-$(mat:1)-85	SP=$(spostakarkasP)+52  // Сверление под навесы D10G13
+//R
+058	LATO=6	SL=$l-$(mat:1)-1	SA=$(a)-$(mat:1)-21	SP=$(spostakarkasP)+20  //Сверление под навесы D10G13
+058	LATO=6	SL=$l-$(mat:1)-1	SA=$(a)-$(mat:1)-21	SP=$(spostakarkasP)+52  // Сверление под навесы D10G13
+058	LATO=6	SL=$l-$(mat:1)-1	SA=$(a)-$(mat:1)-85	SP=$(spostakarkasP)+20  // Сверление под навесы D10G13
+058	LATO=6	SL=$l-$(mat:1)-1	SA=$(a)-$(mat:1)-85	SP=$(spostakarkasP)+52  // Сверление под навесы D10G13
+#LET dubCount=8
+#ENDIF
+#IF $(navesLiving:1)[1;2]
+//графика
+001	SL=$(mat:1)	SA=$a-$(nava)-$(mat:1)	SP=$(spostakarkasP)	L=$(navl)	A=$(nava)	P=$(navp)	C1=1||$(navesColor:5)//|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)||$(navesColor:5)  //Test
+001	SL=$l-$(mat:1)-$(navl)	SA=$a-$(nava)-$(mat:1)	SP=$(spostakarkasP)	L=$(navl)	A=$(nava)	P=$(navp)	C1=1||$(navesColor:5)//1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)||$(navesColor:5)  //Test
+// Цена
+// навес левый
+001	lato=6	cod=999$(navcodL)
+// навес правый
+001	lato=6	cod=999$(navcodR)
+// Шина
+001	LATO=6	COD=999$(navShina) / / /#Q2  // Test
+// Дюбель
+001	LATO=6	COD=999$(navDub) / / /#Q$(dubCount)  // Test
+// заглушка лев
+001	lato=6	cod=999$(navZagL)
+// заглушка пр
+001	lato=6	cod=999$(navZagR)
+#ENDIF
+//когда выбрано без навесов
+#IF $(navesLiving:1)=999
+///добавляются уголки
+#LETS codUglZagl=$(_colkarkas:13)
+//уголок Grandis
+001	LATO=6	COD=999grandUg/ / /#Q2	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(codUglZagl) / / /#Q2  //Test
+#ENDIF

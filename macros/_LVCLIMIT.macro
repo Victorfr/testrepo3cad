@@ -1,0 +1,39 @@
+#LET minA=250
+#LET minP=200
+#LET minL=200
+#LET maxP=600
+#LET maxL=2300
+#LET maxA=2300
+#IF $L>=0 & $l<700
+#LET maxA=2300
+#ENDIF
+#IF $L>=700 & $l<800
+#LET maxA=2000
+#ENDIF
+#IF $L>=800 & $l<1000
+#LET maxA=900
+#ENDIF
+#IF $L>=1000 & $l<2000
+#LET maxA=700
+#ENDIF
+#IF $L>=2000 & $l<=2300
+#LET maxA=600
+#ENDIF
+#IF $A<$(minA)
+#LETV a=$(minA)
+#ENDIF
+#IF $l<$(minl)
+#LETV l=$(minl)
+#ENDIF
+#IF $p<$(minp)
+#LETV p=$(minp)
+#ENDIF
+#IF $A>$(maxA)
+#LETV a=$(maxA)
+#ENDIF
+#IF $p>$(maxp)
+#LETV p=$(maxp)
+#ENDIF
+#IF $l>$(maxl)
+#LETV l=$(maxl)
+#ENDIF

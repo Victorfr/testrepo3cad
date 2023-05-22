@@ -1,0 +1,26 @@
+#FOR $(petlZoneParams)  //проход по массиву петель
+#LETS petlPar=$i
+#LET petlSa=$[ex;$(petlPar);X;1]
+#LET petlSL=$[ex;$(petlPar);X;2]
+#LET petlA=$[ex;$(petlPar);X;3]
+#LET petlL=$[ex;$(petlPar);X;4]
+#IF $(spostaa)>=$(petlsa)
+#IF  $(spostaa) < {$(petlsa)+$(petlA)}
+#IF $(spostal)>$(petlsl) & $(spostal)<$(petlsl)+$(petlL)
+#LET flag=4
+#ENDIF
+#IF $(spostal)<$(petlsl) & $(spostal)+$l>$(petlsl)
+#LET flag=4
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(spostaa)+$a>$(petlsa) & $(spostaa)+$a<{$(petlsa)+$(petla)}
+#IF $(spostal)>$(petlsl) & $(spostal)<$(petlsl)+$(petlL)
+#LET flag=4
+#ENDIF
+//#MSG $(spostal)<$(petlsl) & $(spostal)+$l<$(petlsl)+$(petlL)
+#IF $(spostal)<$(petlsl) & $(spostal)+$l>$(petlsl)
+#LET flag=4
+#ENDIF
+#ENDIF
+#ENDFOR

@@ -1,0 +1,276 @@
+#LETS VarVst=$[EX;$(_TipVstav:5);w;1]
+#LETS VarVst1=$[EX;$(_TipVstav:5);w;2]
+#LET SlVstav=129 // смещение вставки по ширине
+#LET SaVstav=109 // смещение вставки по высоте
+#LET AltPlan=93 // высота планки
+#LET SlPlan=114 // смещение планки по ширине
+#LET DeltaAlt=62.5*2 // поправка расчёта высоты
+#LET ConstSaPlan=30+65/2 // смещение положения широких планок относительно низа вставки
+#LET l_vv=rnd($l-230)
+#LET A_vv=rnd($a-190)
+#LET Sl_vv=115
+#LET Sa_vv=95
+#LETS draw=$(_TipVstav:8)
+#LETS draw_NPD=$(_TipVstav:11)
+#LETS paramVst=
+#LET kolVst=0
+#IF $[mid;$(VarVst);1;3]==NIC
+#IF $(VarVst1)==G
+// *************************** вставки глухие ******************************************************
+040	COD=X	SL=$(SlVstav)	SA=$(SaVstav)	L=$l-$(SlVstav)*2	A=$a-$(SaVstav)*2	P=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)  // Вставка двери
+// ***********************************************************************************************************
+#ELSE
+// *************************** вставки стекло ******************************************************
+_VstVetro	sl=$(Sl_vv)	sa=$(Sa_vv)	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1
+#LETS paramVst=$(l_vv)T$(a_vv)
+// *************************************************************************************************
+#ENDIF
+#ELSEIF $[mid;$(VarVst);1;3]==DEL
+#LET SpostaPlan=(($a-$(DeltaAlt))/4+$(ConstSaPlan))-$(AltPlan)/2
+#IF $(VarVst)==DEL2 #LET SpostaPlan=(($a-$(DeltaAlt))/3+$(ConstSaPlan))-$(AltPlan)/2
+#IF $(VarVst)==DEL3 #LET SpostaPlan=(($a-$(DeltaAlt))/2+$(ConstSaPlan))-$(AltPlan)/2
+// *************************** перемычка горизонтальная ******************************************************
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan)	L=$l-$(SlPlan)*2	A=$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=planka.3ds	lato=$(show_door)
+// ***********************************************************************************************************
+// *************************** тонкие планки *****************************************************************
+#IF $(VarVst1)==DS1
+#IF $(VarVst)==DEL3
+040	COD=X	SL=$l/2-23/2	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+$(AltPlan)+23-15)+($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/3-23/2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+$(AltPlan)+23-15)+(($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/3)*2-23/2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2-23/2	SA=$(SpostaPlan)-($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)+15	SP=$p-10	L=23	A=$a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+23)-($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/3	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+23)-(($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/3)*2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ELSE
+040	COD=X	SL=$l/2-23/2	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+$(AltPlan)+23-15)+($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/4-23/2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+$(AltPlan)+23-15)+(($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/4)*2-23/2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+$(AltPlan)+23-15)+(($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/4)*3-23/2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ENDIF
+#ELSEIF $(VarVst1)==DS2
+#IF $(VarVst)==DEL3
+040	COD=X	SL=$l/2-23/2	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+$(AltPlan)+23-15)+($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/3-23/2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=($(SpostaPlan)+$(AltPlan)+23-15)+(($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/3)*2-23/2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ELSE
+040	COD=X	SL=$l/2-23/2-130/2	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2-23/2+130/2	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan)+$(AltPlan)+($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/2-23/2	SP=$p-10	L=23	A=($l-$(SlPlan)*2)/2-130/2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2+130/2	SA=$(SpostaPlan)+$(AltPlan)+($a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2)/2-23/2	SP=$p-10	L=23	A=($l-$(SlPlan)*2)/2-130/2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ENDIF
+#ENDIF
+// ******************************************************************************************
+// *************************** вставки глухие ******************************************************
+#IF $(VarVst1)[G;S2;DS1;DS2] & $(_TipVstav:4)!!0032_404
+040	COD=X	SL=$(SlVstav)	SA=$(SaVstav)	L=$l-$(SlVstav)*2	A=$(SpostaPlan)-$(SaVstav)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[G;S3]
+040	COD=X	SL=$(SlVstav)	SA=$(SpostaPlan)+$(AltPlan)	L=$l-$(SlVstav)*2	A=$a-($(SpostaPlan)+$(AltPlan)+$(SaVstav))	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+// ******************************************************************************************
+// *************************** вставки стекло ******************************************************
+#IF $(VarVst1)[S1;S3] | ($(VarVst)[DEL3] & $(VarVst1)[DS1])
+#LET a_vv=rnd($(SpostaPlan)-$(ConstSaPlan)+$(AltPlan)/2-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(Sa_vv)	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1
+#LETS paramVst=$(l_vv)T$(a_vv)
+#ENDIF
+#IF $(VarVst1)[S1;S2;DS1;DS2]
+#LET a_vv=rnd(($a-$(DeltaAlt))-($(SpostaPlan)-$(ConstSaPlan)+$(AltPlan)/2)-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(SpostaPlan)+$(AltPlan)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+// *************************************************************************************************
+#ELSEIF $[mid;$(VarVst);1;3]==ARI
+#LET SpostaPlan=(($a-$(DeltaAlt))/4+$(ConstSaPlan))-$(AltPlan)/2	 SpostaPlan1=(($a-$(DeltaAlt))/4+$(ConstSaPlan))+265-$(AltPlan)/2
+#IF $(VarVst)==ARI2 #LET SpostaPlan=(($a-$(DeltaAlt))/3+$(ConstSaPlan))-$(AltPlan)/2	 SpostaPlan1=(($a-$(DeltaAlt))/3+$(ConstSaPlan))+265-$(AltPlan)/2
+#IF $(VarVst)==ARI3 #LET SpostaPlan=(($a-$(DeltaAlt))/2+$(ConstSaPlan))-$(AltPlan)/2-100-32.5	 SpostaPlan1=(($a-$(DeltaAlt))/2+$(ConstSaPlan))-$(AltPlan)/2+100+32.5
+// *************************** перемычка горизонтальная ******************************************************
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan)	L=$l-$(SlPlan)*2	A=$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=planka.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan1)	L=$l-$(SlPlan)*2	A=$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=planka.3ds	lato=$(show_door)
+// ***********************************************************************************************************
+// *************************** тонкие планки *****************************************************************
+#IF $[mid;$(VarVst1);1;2]==DS
+040	COD=X	SL=$l/2-23/2	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$(SpostaPlan1)-$(SpostaPlan)-63	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2-23/2-90	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$(SpostaPlan1)-$(SpostaPlan)-63	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2-23/2+90	SA=$(SpostaPlan)+$(AltPlan)-15	SP=$p-10	L=23	A=$(SpostaPlan1)-$(SpostaPlan)-63	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ENDIF
+// ***********************************************************************************************************
+// *************************** вставки глухие ******************************************************
+#IF $(VarVst1)[G;S3;S4;DS1;DS3]
+040	COD=X	SL=$(SlVstav)	SA=$(SaVstav)	L=$l-$(SlVstav)*2	A=$(SpostaPlan)-$(SaVstav)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[G;S2;S4]
+040	COD=X	SL=$(SlVstav)	SA=$(SpostaPlan)+$(AltPlan)	L=$l-$(SlVstav)*2	A=$(SpostaPlan1)-$(SpostaPlan)-$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[G;S3;DS1]
+040	COD=X	SL=$(SlVstav)	SA=$(SpostaPlan1)+$(AltPlan)	L=$l-$(SlVstav)*2	A=$a-($(SpostaPlan1)+$(AltPlan)+$(SaVstav))	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+// ***********************************************************************************************************
+// *************************** вставки стекло ******************************************************
+#IF $(VarVst1)[S1;S2;DS2]
+#LET a_vv=rnd($(SpostaPlan)-$(ConstSaPlan)+$(AltPlan)/2-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(Sa_vv)	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1
+#LETS paramVst=$(l_vv)T$(a_vv)
+#ENDIF
+#IF $(VarVst1)[S1;S3;DS1;DS2;DS3]
+#LET a_vv=265-65
+_VstVetro	sl=$(Sl_vv)	sa=$(SpostaPlan)+$(AltPlan)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+#IF $(VarVst1)[S1;S2;S4;DS2;DS3]
+#LET a_vv=rnd(($a-$(DeltaAlt))-($(SpostaPlan1)-$(ConstSaPlan)+$(AltPlan)/2)-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(SpostaPlan1)+$(AltPlan)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+// *************************************************************************************************
+#ELSEIF $[mid;$(VarVst);1;3]==CLA
+#LET SpostaPlan=(($a-$(DeltaAlt))/5+$(ConstSaPlan))-$(AltPlan)/2	 SpostaPlan1=(($a-$(DeltaAlt))/5)*4+$(ConstSaPlan)-$(AltPlan)/2
+// *************************** перемычка горизонтальная ******************************************************
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan)	L=$l-$(SlPlan)*2	A=$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=planka.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan1)	L=$l-$(SlPlan)*2	A=$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=planka.3ds	lato=$(show_door)
+// ***********************************************************************************************************
+// *************************** вставки глухие *****************************************************************
+#IF $(VarVst1)[G;S3;S4]
+040	COD=X	SL=$(SlVstav)	SA=$(SaVstav)	L=$l-$(SlVstav)*2	A=$(SpostaPlan)-$(SaVstav)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[G;S2]
+040	COD=X	SL=$(SlVstav)	SA=$(SpostaPlan)+$(AltPlan)	L=$l-$(SlVstav)*2	A=$(SpostaPlan1)-$(SpostaPlan)-$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[G;S3;S5]
+040	COD=X	SL=$(SlVstav)	SA=$(SpostaPlan1)+$(AltPlan)	L=$l-$(SlVstav)*2	A=$a-($(SpostaPlan1)+$(AltPlan)+$(SaVstav))	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+// ***********************************************************************************************************
+// *************************** вставки стекло ******************************************************
+#IF $(VarVst1)[S1;S2;S5]
+#LET a_vv=rnd($(SpostaPlan)-$(ConstSaPlan)+$(AltPlan)/2-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(Sa_vv)	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1
+#LETS paramVst=$(l_vv)T$(a_vv)
+#ENDIF
+#IF $(VarVst1)[S1;S3;S4;S5]
+#LET a_vv=rnd(($a-$(DeltaAlt))-($(SpostaPlan)-$(ConstSaPlan)+$(AltPlan)/2)*2-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(SpostaPlan)+$(AltPlan)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+#IF $(VarVst1)[S1;S2;S4;DS2;DS3]
+#LET a_vv=rnd(($a-$(DeltaAlt))-($(SpostaPlan1)-$(ConstSaPlan)+$(AltPlan)/2)-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(SpostaPlan1)+$(AltPlan)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+// *************************************************************************************************
+#ELSEIF $[mid;$(VarVst);1;3]==DES
+#LET SpostaPlan=(($a-$(DeltaAlt))/3+$(ConstSaPlan))-$(AltPlan)/2	 SpostaPlan1=(($a-$(DeltaAlt))/3)*2+$(ConstSaPlan)-$(AltPlan)/2
+// *************************** перемычка горизонтальная ******************************************************
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan)	L=$l-$(SlPlan)*2	A=$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=planka.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$(SpostaPlan1)	L=$l-$(SlPlan)*2	A=$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=planka.3ds	lato=$(show_door)
+// ***********************************************************************************************************
+// *************************** тонкие планки ******************************************************
+#LET TangAng=(($(SpostaPlan1)-$(SpostaPlan)-$(AltPlan))+30)/($l-$(SlPlan)*2)
+#LET AngPlanT=atn($(TangAng))
+#LET AngPlanT1=90-$(AngPlanT)
+#LET SpostaAPlanT=cos($(AngPlanT))*(23/2)
+#LET SpostalPlanT=sin($(AngPlanT))*(23/2)
+#LET SpostaAPlanT1=cos($(AngPlanT1))*(23/2)
+#LET SpostalPlanT1=sin($(AngPlanT1))*(23/2)
+#LET altPlanT=($l-$(SlPlan)*2)/cos($(AngPlanT))
+#IF (not($(VarVst1)[DS3;DS7]) & $[mid;$(VarVst1);1;2]==DS
+040	COD=X	SL=$(SlPlan)-$(SpostalPlanT)	SA=$(SpostaPlan)+$(AltPlan)+$(SpostaAPlanT)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=90-$(AngPlanT)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=($(SlPlan)+$l-$(SlPlan)*2)-$(SpostalPlanT1)	SA=$(SpostaPlan)+$(AltPlan)-$(SpostaAPlanT1)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=-$(AngPlanT1)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[DS1;DS3;DS5;DS7]
+040	COD=X	SL=$(SlPlan)-$(SpostalPlanT)	SA=$(SpostaPlan1)+$(AltPlan)+$(SpostaAPlanT)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=90-$(AngPlanT)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=($(SlPlan)+$l-$(SlPlan)*2)-$(SpostalPlanT1)	SA=$(SpostaPlan1)+$(AltPlan)-$(SpostaAPlanT1)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=-$(AngPlanT1)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[DS2;DS3;DS5;DS7]
+040	COD=X	SL=$(SlPlan)-$(SpostalPlanT)	SA=$(SaVstav)+$(SpostaAPlanT)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=90-$(AngPlanT)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=($(SlPlan)+$l-$(SlPlan)*2)-$(SpostalPlanT1)	SA=$(SaVstav)-$(SpostaAPlanT1)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=-$(AngPlanT1)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#ENDIF
+// **************************************************************************************************************
+// *************************** вставки глухие *****************************************************************
+#IF $(VarVst1)[G;S3;DS1;DS4]
+040	COD=X	SL=$(SlVstav)	SA=$(SaVstav)	L=$l-$(SlVstav)*2	A=$(SpostaPlan)-$(SaVstav)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[G;S2;DS3]
+040	COD=X	SL=$(SlVstav)	SA=$(SpostaPlan)+$(AltPlan)	L=$l-$(SlVstav)*2	A=$(SpostaPlan1)-$(SpostaPlan)-$(AltPlan)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+#IF $(VarVst1)[G;S3;DS2;DS4]
+040	COD=X	SL=$(SlVstav)	SA=$(SpostaPlan1)+$(AltPlan)	L=$l-$(SlVstav)*2	A=$a-($(SpostaPlan1)+$(AltPlan)+$(SaVstav))	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=vstavg.3ds	lato=$(show_door)
+#ENDIF
+// ***********************************************************************************************************
+// *************************** вставки стекло ******************************************************
+#IF $(VarVst1)[S1;S2;DS2;DS3;DS5;DS6;DS7]
+#LET a_vv=rnd($(SpostaPlan)-$(ConstSaPlan)+$(AltPlan)/2-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(Sa_vv)	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1
+#LETS paramVst=$(l_vv)T$(a_vv)
+#ENDIF
+#IF $(VarVst1)[S1;S3;DS1;DS2;DS4;DS5;DS6;DS7]
+#LET a_vv=rnd(($a-$(DeltaAlt))-($(SpostaPlan)-$(ConstSaPlan)+$(AltPlan)/2)*2-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(SpostaPlan)+$(AltPlan)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+#IF $(VarVst1)[S1;S2;DS1;DS3;DS5;DS6;DS7]
+#LET a_vv=rnd(($a-$(DeltaAlt))-($(SpostaPlan1)-$(ConstSaPlan)+$(AltPlan)/2)-65)
+_VstVetro	sl=$(Sl_vv)	sa=$(SpostaPlan1)+$(AltPlan)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+// *************************************************************************************************
+#ELSEIF $(VarVst)[SD401]
+//#MSG $a+30-$(DeltaAlt)-($(SpostaPlan)-$(ConstSaPlan))-($(AltPlan)*3)/2
+040	COD=X	SL=$l/2-23/2-130/2	SA=$(SaVstav)-15	SP=$p-10	L=23	A=$a+30-$(SaVstav)*2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2-23/2+130/2	SA=$(SaVstav)-15	SP=$p-10	L=23	A=$a+30-$(SaVstav)*2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$a/2+23/2	SP=$p-10	L=23	A=($l-$(SlPlan)*2)/2-130/2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2+130/2	SA=$a/2+23/2	SP=$p-10	L=23	A=($l-$(SlPlan)*2)/2-130/2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+_VstVetro	sl=$(Sl_vv)	sa=$(SaVstav)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ELSEIF $(VarVst)[SD402]
+040	COD=X	SL=$l/2-23/2	SA=$(SaVstav)-15	SP=$p-10	L=23	A=$a+30-$(SaVstav)*2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2-23/2-90-23/2	SA=$(SaVstav)-15	SP=$p-10	L=23	A=$a+30-$(SaVstav)*2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$l/2-23/2+90+23/2	SA=$(SaVstav)-15	SP=$p-10	L=23	A=$a+30-$(SaVstav)*2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+_VstVetro	sl=$(Sl_vv)	sa=$(SaVstav)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ELSEIF $(VarVst)[SD403]
+040	COD=X	SL=$l/2-23/2	SA=$(SaVstav)-15	SP=$p-10	L=23	A=$a+30-$(SaVstav)*2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#LET shag=($a-$(SaVstav)*2)/3+23/2
+040	COD=X	SL=$(SlPlan)	SA=$(SaVstav)+$(shag)	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$(SaVstav)+$(shag)*2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+_VstVetro	sl=$(Sl_vv)	sa=$(SaVstav)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ELSEIF $(VarVst)[SD404]
+040	COD=X	SL=$l/2-23/2	SA=$(SaVstav)-15	SP=$p-10	L=23	A=$a+30-$(SaVstav)*2	P=10	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+#LET shag=($a-$(SaVstav)*2)/4+23/2
+040	COD=X	SL=$(SlPlan)	SA=$(SaVstav)+$(shag)	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$(SaVstav)+$(shag)*2	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=$(SlPlan)	SA=$(SaVstav)+$(shag)*3	SP=$p-10	L=23	A=$l-$(SlPlan)*2	P=10	Az=90	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+_VstVetro	sl=$(Sl_vv)	sa=$(SaVstav)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ELSEIF $(VarVst)[SD405]
+#LET TangAng=($a+30-$(SaVstav)*2)/($l-$(SlPlan)*2)
+#LET AngPlanT=atn($(TangAng))
+#LET AngPlanT1=90-$(AngPlanT)
+#LET SpostaAPlanT=cos($(AngPlanT))*(23/2)
+#LET SpostalPlanT=sin($(AngPlanT))*(23/2)
+#LET SpostaAPlanT1=cos($(AngPlanT1))*(23/2)
+#LET SpostalPlanT1=sin($(AngPlanT1))*(23/2)
+#LET altPlanT=($l-$(SlPlan)*2)/cos($(AngPlanT))
+040	COD=X	SL=$(SlPlan)-$(SpostalPlanT)	SA=$(SaVstav)+$(SpostaAPlanT)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=90-$(AngPlanT)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+040	COD=X	SL=($(SlPlan)+$l-$(SlPlan)*2)-$(SpostalPlanT1)	SA=$(SaVstav)-$(SpostaAPlanT1)-15	SP=$p-10	L=23	A=$(altPlanT)	P=10	Az=-$(AngPlanT1)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	X4=$(matvstav:5)/no/0/0/0/0/0/0/0/$(_patina:3)	X5=plankat.3ds	lato=$(show_door)
+_VstVetro	sl=$(Sl_vv)	sa=$(SaVstav)-15	l=$(l_vv)	a=$(a_vv)
+#LET kolVst=1+$(kolVst)
+#LETS paramVst=$(l_vv)T$(a_vv)T$(paramVst)
+#ENDIF
+#LETS paramVst=$(kolVst)W$(paramVst)

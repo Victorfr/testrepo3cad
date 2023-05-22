@@ -1,0 +1,25 @@
+//меняет размеры взависимости от максимумов-минимумов
+#IF $p<$(pmin)
+#MSG Минимальная глубина шкафа $(pmin) мм!
+#LETV p=$(pmin)
+#ENDIF
+#IF $p>$(pmax)
+#MSG Максимальная глубина шкафа $(pmax) мм!
+#LETV p=$(pmax)
+#ENDIF
+#IF $l<$(lmin)
+#MSG Минимальная ширина шкафа $(lmin) мм!
+#LETV l=$(lmin)
+#ENDIF
+#IF $l>$(lmax)
+#MSG Максимальная ширина шкафа $(lmax) мм!
+#LETV l=$(lmax)
+#ENDIF
+#IF $a<$(amin)
+#MSG Минимальная высота шкафа $(amin) мм!
+#LETV a=$(amin)
+#ENDIF
+#IF $a>$(amax)
+#MSG Максимальная высота шкафа $(amax) мм!
+#LETV a=$(amax)
+#ENDIF

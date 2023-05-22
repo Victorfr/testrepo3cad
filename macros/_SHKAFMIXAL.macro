@@ -1,0 +1,136 @@
+///миксал
+//макрос шкафа ливинг
+#LETV _krepeg=2 //!!!передает в типологии обработки для ливинга!!!
+#LETV _WR=999KARKAS
+#LETV WR=$(_WR:3)
+#LETV TSH=$(tipshkaf:5) //тип шкаф распашной ливинг
+#LETV SHPR={$(curbox)+1}
+#LET det_mod=0
+!COMMENTO $(_wr:2)
+#LET countVert=0
+#LET profkarkasVertSP=0
+#LET profkarkasGorSP=0
+//////////////////////////////////
+//_gabaritLimit
+#LET spBackWall=0//17
+//обнуление строки с параметрами перегородок во всю высоту
+#LETS strBigWall=
+#LET countBigWall=0
+/////переменные//////
+!PLACERVAR doorsParams 4
+#LET index=0
+#LET flagUpor=1 //упираются двери или нет в каркас (чтобы не болтались)
+//обнуление флагов установки дверей
+#FOR $0:4
+   #LET index=$(index)+1
+   #LET flagDoor$(index)=0
+#ENDFOR
+#LET shMantera=0
+#IF $(matvn:1)[18]
+   #LETV shMantera=1
+   #LETV _krepeg=1
+   #LETV addzoc=1
+#ELSE
+   #LETV shMantera=0
+#ENDIF
+#IF $(shMantera)=0
+   #LETV hzoc=0
+#ENDIF
+#IF $(shMantera)=1
+   #LETS mat_backwall:3=8
+#ENDIF
+////////////////////////////////////////////////
+//VOLUMEMIXAL
+//_SHKAF
+#IF $(_PRIMOCARICAMENTO)=1
+   //#LETS prof_door=
+   //#LETV pbokl=2
+   //#LETV pbokr=2
+   //#LETV pup=2
+   #LETS msg_lim_kol=0
+#ENDIF
+///обнуление параметров для упаковки стекол
+#LETV maxStekloL=
+#LETS stekloParams=
+#LETV steklosize=X
+#LET polkaStekloCount=0
+#LETV varParamSkaf=$(TIPSHKAF:7)
+#LETS last_param=
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///обработка данных из дверей
+!PLACERVAR prof_door 2
+//чтение данных из вара двери 4
+!PLACERVAR doorsParams 4
+//_SHKAF
+///чтение данных из наполнений
+!PLACERVAR modulPars 1
+#LET flagPolkLed=0
+#FOR $(modulpars)
+   #LETS typePlaser=$[ex;$(i);|;4]
+   #IF $(typePlaser)[LUMIXPOLK]
+      #LET typePolk=$[ex;$(i);|;3]
+      #IF $(typePolk)[3;4]
+         ///если тип полки с подсветкой( вне зависимости от количества полок) добавляется трансформатор
+         #LET flagPolkLed=1
+      #ENDIF
+   #ENDIF
+#ENDFOR
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//010
+///обуление нумерации деталей
+_gabaritMixal
+//_FINALELIVING
+#FOR $(prof_door)
+   #LETS last_param=$(i)
+#ENDFOR
+#LETS prof_door=$(last_param)
+#LET akorp=$(a)
+#LET pDoor=$[ex;$(prof_door);|;1]
+//012
+#IF $(pDoor)=0 #LET pDoor=20
+#LET profPolog=$(pDoor)+2
+#LET SxSpostaLRaspD=2.5
+#LET DxSpostaLRaspD=2.5
+#LET SpostaPRaspD=2.5
+#LET zazorDoors=2.5
+#LET PnSpostaARaspD=2.5
+#LET StSpostaARaspD=2.5
+#LET ssposta=0
+#LET profNapol=$(p)
+#LET profkarkasVertSP=0
+#LET profkarkasGorSP=0
+////////////////////////////////////
+// ********************* паспорт	 шильдик	 ноборы фурнитуры ************************
+#LETV pasp_count=1
+_pasport
+// ***************************************************************
+// ********************* упаковка шкафа **************************
+_upakovka_shkaf
+// ***************************************************************
+//014
+//_SHKAFLIVING
+_provObr
+_karkasMixal
+_DATABOX
+//_karkasliving
+//_KOROBMIXAL
+//_KOROBMIXAL
+//_placerDoorMx
+#LET flagInnerDoors=
+///финальный скрипт
+//_FINALEmixal
+//_SHKAF
+//передача потомку параметров шкафа
+#LETS param_shkaf=|||||{$(PKORP)-1-25-2-$(mod_min)}|$(PKORP)
+#LETS LOC_BX3=$(param_shkaf) // передача данных потомку
+//передача данных для плейсеров
+//#LETS testvar=||||1|
+//#LETS LOC_BX0=$(testvar)
+#LET _PLACERRIVFIGLI=1 // принудительный пересчет потомка при изменении родителя
+//если установлена полка Lumix с Led добавляются дополнительные ком товары
+#IF $(flagPolkLed)=1
+   001	LATO=6	COD=999TransForLedLent / /Трансформатор для ленты	L=1	A=1	P=1  // Test
+   001	LATO=6	COD=999alumDrDat / /Датчик открывания двери для ШК	L=1	A=1	P=1  // Test
+#ENDIF
+_lamp	matvnL=$(mat)	matvnR=$(mat)
+#LETS _macrofinale= _finaleMixal

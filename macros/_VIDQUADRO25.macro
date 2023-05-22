@@ -1,0 +1,58 @@
+#IF {$p}>=500
+#LET prof_napr=501
+#LETS cod_napr_Sx=999qdr2550L
+#LETS cod_napr_Dx=999qdr2550R
+#ELSEIF {$p}>=450
+#LET prof_napr=451
+#LETS cod_napr_Sx=999qdr2545l
+#LETS cod_napr_Dx=999qdr2545R
+#ELSEIF {$p}>=400
+#LET prof_napr=401
+#LETS cod_napr_Sx=999qdr2540l
+#LETS cod_napr_Dx=999qdr2540R
+#ELSEIF {$p}>=350
+#LET prof_napr=351
+#LETS cod_napr_Sx=999qdr2535l
+#LETS cod_napr_Dx=999qdr2535R
+#ELSEIF {$p}>=300
+#LET prof_napr=301
+#LETS cod_napr_Sx=999qdr2530l
+#LETS cod_napr_Dx=999qdr2530R
+#ELSEIF {$p}>=250
+#LET prof_napr=251
+#LETS cod_napr_Sx=999qdr2525l
+#LETS cod_napr_Dx=999qdr2525R
+#ENDIF
+///при PTO меняются сами направляющие
+#IF $(pto:0)=1
+#IF {$p}>=500
+#LET prof_napr=501
+#LETS cod_napr_Sx=999qdr25P2O50L
+#LETS cod_napr_Dx=999qdr25P2O50R
+#ELSEIF {$p}>=450
+#LET prof_napr=451
+#LETS cod_napr_Sx=999qdr25P2O45L
+#LETS cod_napr_Dx=999qdr25P2O45R
+#ELSEIF {$p}>=400
+#LET prof_napr=401
+#LETS cod_napr_Sx=999qdr25P2O40L
+#LETS cod_napr_Dx=999qdr25P2O40R
+#ELSEIF {$p}>=350
+#LET prof_napr=351
+#LETS cod_napr_Sx=999qdr25P2O35L
+#LETS cod_napr_Dx=999qdr25P2O35R
+#ELSEIF {$p}>=300
+#LET prof_napr=301
+#LETS cod_napr_Sx=999qdr25P2O30L
+#LETS cod_napr_Dx=999qdr25P2O30R
+#ELSEIF {$p}>=250
+#LET prof_napr=251
+#LETS cod_napr_Sx=999qdr25P2O25L
+#LETS cod_napr_Dx=999qdr25P2O25R
+#ENDIF
+#IF $p<250
+#LET prof_napr=251
+#LETS cod_napr_Sx=999qdr25P2O25L
+#LETS cod_napr_Dx=999qdr25P2O25R
+#ENDIF
+#ENDIF

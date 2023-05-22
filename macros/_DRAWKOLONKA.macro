@@ -1,0 +1,56 @@
+////для теста
+#LETS cod=999KOLPRST
+#LETV _MNP=$(cod)
+#LETV _WR=$(cod)
+001	LATO=6	COD=$(cod) /MNP=$(_MNP:3);WR=$(_wr:3) /$(_WR:2)	L=50  //Test
+#LETV _wr=999v_kolBok
+#LETV _MNP=999v_kolBok
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//NUMDET	vid_num=6
+#LET altBok=$a
+#IF $A>2700
+#LET altBok=int($a/2)
+#ENDIF
+051	COD= / /$(_WR:2) 16 мм /#L+3	L=$(matknug:1)	A=$(altBok)  //Боковина без сверления и без номера на схеме сборки
+051	COD= / /$(_WR:2) 16 мм /#L+3	SL=$(matknug:1)+18	L=$(matknug:1)	A=$(altBok)  //большая боковина
+#IF $A>2700
+051	COD= / /$(_WR:2) 16 мм /#L+3	L=$(matknug:1)	A=$(altBok)	sa=$(altBok)  //Боковина без сверления и без номера на схеме сборки
+051	COD= / /$(_WR:2) 16 мм /#L+3	SL=$(matknug:1)+18	L=$(matknug:1)	A=$(altBok)	sa=$(altBok)
+#ENDIF
+//NUMDET	vid_num=6
+//перемычки из 18 лдсп
+#LETV _wr=999v_kolBok18
+#LETV _MNP=999v_kolBok18
+#LET countPl18mm=0
+_drawPerem	_colkarkas=$(_colkarkasKnUG18)
+//колонка пристыковки
+#IF $(flagDelKol)=0
+_fasvid	Sp=$(profUg)-{$(profwallpris:0)}	sa=2	SP=$(p)+50+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	detMod=4	_spostaa=$(saPlanUg)
+#ELSE
+#LET altPrevUg=$(altPlanUg)
+#LET altPlanUg1=int($(altPlanUg)/2)
+#LET altPlanUg2=$(altPlanUg1)
+#IF not($(_DOORSRASP:1)[1;2;999])
+#LET altPlanUg1=int({$(AltSxStD:0)+3})
+#LET altPlanUg2=$(altPlanUg)-$(altPlanUg1)
+#ENDIF
+#IF $(addprip:0)=1
+#IF $(pripvar:1)[2]
+//#LET altPlanUg2=$(altPlanUg2)+$(pripvaldoor:0)
+#ENDIF
+#ENDIF
+_fasvid	Sp=$(profUg)-{$(profwallpris:0)}	SA=2	SP=$(p)+50+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg1)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=4
+#LET saPlanUg=2+$(altPlanUg1)
+_fasvid	Sp=$(profUg)-{$(profwallpris:0)}	SA=$(saPlanUg)	SP=$(p)+50+$(_MODDOORRASP:5)	L=50	A=$(altPlanUg2)	P=$(_MODDOORRASP:5)	_COLKARKAS=$(_COLKARKASFAS)	SHOW_NUM=6	flagKol=0	detMod=4
+#ENDIF
+///добавление фурнитуры
+//для колонки
+///EUROORVEL 031Z Уголок металлический 404015
+001	LATO=6	COD=999ug40x40 / / /#Q$(countPl18mm)	L=1	A=1	P=1  //Test
+///Шуруп 3.5x16 потай белый
+001	LATO=6	COD=999sh3.5x16pot / / /#Q{$(countPl18mm)*3}	L=1	A=1	P=1  //Test
+///Шуруп 4/2x30 KR
+001	LATO=6	COD=999sh4x30 / / /#Q{$(countPl18mm)*4}	L=1	A=1	P=1  //Test
+//для тшки
+///Шуруп 4.2x40 KR	 умень. гол
+001	LATO=6	COD=999sh4.2x40 / / /#Q{12}	L=1	A=1	P=1  //Test

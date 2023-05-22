@@ -1,0 +1,140 @@
+////макрос определяющий нишу для выдвижных элементов
+/// принимает ширину высоту ниши	 где будет распологаться внутрянка
+//SxSpostaLRaspD=2.5 // левый зазор
+//DxSpostaLRaspD=2.5 // правый зазор
+//SpostaPRaspD=2.5 // зазор по глубине между боковиной и фасадом
+//PnSpostaARaspD=2.5 // верхний зазор
+//StSpostaARaspD=2.5 // нижний зазор
+#LET IDO=1
+#LET IDD=1
+#LETS LPBR=
+//количество выдвижных
+#LET vidCount={$(NUMB_METBOX:1)}
+#LET altVid=rnd($a/$(vidCount)) // высльа фасада для выдвижного
+#LET fasA=$(altVid)-($(PnSpostaARaspD)+$(StSpostaARaspD))
+#IF $(_MAN:1)[999] & $(pto:0)=0
+#IF $(fasBig:0)=0
+#LET fasA=$(FasA)-30
+#LET spostaAfas=30
+#ELSE
+#LET spostaAfas=0
+#ENDIF
+#ELSE
+#LET spostaAfas=0
+#ENDIF
+#LET fasL=$l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD))
+//_vdbox
+//_DEKOR
+//_DOOR
+//смещение выдвижных относительно фасада
+#LET deltaAkorpvid=0
+#IF $(_doorPolog:1)[2;4]
+#LET slVid=-$(mat:1)
+#ELSE
+#LET slVid=0
+#ENDIF
+#IF $(_doorPolog:1)[2;3]
+#LET saVid=-$(mat:1)
+#LET deltaAkorpvid=30
+#ELSE
+#LET saVid=0
+#ENDIF
+#IF $(_DOORPOLOG:1)[2;3;4]
+#LET spVid=-$(pDoor)-$(SpostaPRaspD)
+#ELSE
+#LET spVid=0
+#ENDIF
+#LET sposta_macro= $(spostaa_met)-$(karkasSa)
+//_GABARITLIMIT
+//301
+//38
+//_GABARITLIMIT
+#IF $(PTO:1)=1
+#LETV fasBig=0
+#ENDIF
+#IF $(paramsTmpStr)!!$(vidCount)x$(pto:0)
+#LETV paramsTmpStr=$(vidCount)x$(pto:0)
+#FOR $1:$(vidCount)
+#LETV altmetabox$(i)=$(altVid)-{($(PnSpostaARaspD)+$(StSpostaARaspD))}
+#LETV oldAltMet$(i)=$(altVid)
+#ENDFOR
+#ENDIF
+#LET deltaSa=0
+#FOR $1:4
+#LET deltasa$(i)=0
+#ENDFOR
+#LET fasFinish=$(fasA)
+#FOR $1:$(vidCOunt)
+#IF $(aperto)
+!MTTRASLA 0	0	250
+#ENDIF
+#LET index=$(i)
+#LET newFas=$(altmetabox$(i))
+#IF $(index)=$(vidCount)
+#LET allFinish=0+{($(PnSpostaARaspD)+$(StSpostaARaspD))}*($(vidCount))
+#FOR $1:$(vidcount)
+#LET allFinish=$(allFinish)+$(altmetabox$(i))
+#ENDFOR
+#LET deltaFasD=$(allFinish)-$(altVid)*$I
+#LET deltaFas=$(altmetabox$(i))
+#LET newFas=$(deltaFas)-$(deltaFasD)
+#ENDIF
+#IF $(_MAN:1)[999] & $(pto:0)=0
+#IF $(fasBig:0)=0
+#LET newFas=$(newFas)-30
+#ENDIF
+#ENDIF
+#IF $(index)>0
+#LET ind={$(index)-1}
+#LET deltaSa$(index)=$(fasFinish)-$(newFas)
+#ENDIF
+#LET deltaSa=0
+#FOR $1:$(index)
+#LET nevInd={$i}-1
+#LET deltaSa=-(-$(deltasa)+$(deltaSa$(nevInd))
+#ENDFOR
+#LET newAlt=$(newFas)
+#LET macrosSposta={{($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+$(deltaSa)+16+$(mat:1)+$(saVid)}-{$(PnSpostaARaspD)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)}}
+#LET macrosSpostaL={$(mat:1)+$(slVid)-$(SxSpostaLRaspD)}
+///изменения для увеличения габаритов выдвижного
+#IF $(index)>1 & $(_doorPolog:1)[1;4]
+//#LET deltaAkorpvid=30
+#ENDIF
+///
+//   #MSG $(macrossposta)
+///данные для обработки наборов ремкомплектов красок
+#IF $(_MODDOORRASP$(fasind):1)[S26;S01;S08]
+#LETV curkrasid$(fasind)=$(cvetvstav_door$(fasind):9)
+#IF $(_PATINA$(fasind):1)!!999
+#LETV curpatid$(fasind)=$(_PATINA$(fasind):5)
+#ENDIF
+#ENDIF
+//   001
+#LET fasInd=$(i)-1
+//в фасад передаем переопределенные варианты из групп для каждого фасада
+_fasVid	SL=$(SxSpostaLRaspD)	SA=$(PnSpostaARaspD)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+{$(deltaSa)}	SP=$(p)	L=$(fasL)	A=$(newAlt)	P=$(_ModDoorRasp:5)	_COLKARKAS=$(_COLKARKASFAS$(FasInd))\
+	cvetvstav_door=$(cvetvstav_door$(fasInd))	cvetvstav=$(cvetvstav$(fasInd)	TxtVst=$(TxtVst$(fasInd))	_factura=$(_factura$(fasInd))	_patina=$(_patina$(fasInd))	_colkrom=$(_colkrom$(FasInd))	detYash=2	kromLaser=$(kromLaser$(fasInd))\
+	_gjp=$(_gjp$(fasInd))	gjpCountLine=$(gjpCountLine$(fasInd))	_tipDoorRasp=$(_TIPDOORRASP$(fasInd))
+#LET spostaa_met=$(sposta_macro)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+16+$(mat:1)+$(saVid)
+#LET spostaNavesP=0	spostaNavesA=0
+//проверка навесов
+#IF $(NAVESLIVING:1)!999 & $(vidCount)=$(index) //если ящик самый верхний
+#LET spostaNavesA=$(navA)	spostaNavesp={60-13+3}
+#IF $(NAVESLIVING:1)[1] & $(pto:1)!1 & $(_man:1)[999] & $(fasBig:1)!1
+#LET spostaNavesP=0	spostaNavesA=0
+#ENDIF
+#ENDIF
+//   _GABARITLIMIT
+//#MSG $p-$(spostakarkasP)-13+$(spVid)-$(spostaNavesP)
+_korpVid	SL=$(mat:1)+$(slVid)	SA=($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+$(deltaSa)+16+$(mat:1)+$(saVid)	SP=$(spostakarkasP)+13-$(spVid)+$(spostaNavesP)	L=$(lShkaf)-$(mat:1)*2	A=$(newAlt)-($(mat:1)*2+16+10)+$(deltaAkorpvid)	P=$p-$(spostakarkasP)-13+$(spVid)-$(spostaNavesP)	_COLKARKAS=$(_COL_VD)	MAT_OLD=$(MAT)	MAT=$(MAT_VD)
+//_korpVid	SL=$(mat:1)+$(slVid)	SA=($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+16+$(mat:1)+$(saVid)	SP=$(spostakarkasP)+13-$(spVid)	L=$(lShkaf)-$(mat:1)*2	A=$(fasA)-($(mat:1)*2+16+10)-$(spostaNavesA)	P=$p-$(spostakarkasP)-13+$(spVid)	_COLKARKAS=$(_COL_VD)	MAT_OLD=$(MAT)	MAT=$(MAT_VD)
+#ENDFOR
+#IF $(flagFasadNoDnoObr)=1
+// ******************* уголки **************************
+001	LATO=6	COD=999ug24x24x15 / / /#Q{2*$(vidCOunt)}	L=1	A=1	P=1  //Test
+// ****************************************************
+// ****************** пакет шурупов 20 шт.***************
+001	LATO=6	COD=999nab_sh4x16	L=1	A=1	P=1  // Test
+// ********************************************************
+#ENDIF
+//_DOORRASP

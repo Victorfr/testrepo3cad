@@ -1,0 +1,80 @@
+#IF $l>1000+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2] & $(tipshkaf:7)=3 // Аристо расп
+#LET l={1000+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2]}
+#MSG ширина шкафа не может быть больше {1000+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2]} мм!
+#ENDIF
+#IF $l>1200 & $(tipshkaf:7)=2
+#LETV l=1200
+#MSG ширина шкафа не может быть больше 1200 мм!
+#ELSEIF $l>2750
+#LETV l=2750
+#MSG ширина шкафа не может быть больше 2750 мм в связи с ограничением размеров пиломатериалов!
+#ENDIF
+#IF $l<{$(matvn:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)} & $(tipshkaf:7)=1
+#LETV l={$(matvn:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)}
+#MSG ширина шкафа не может быть меньше {$(matvn:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)} мм!
+#ENDIF
+//#IF $a>2040 & $(tipshkaf:7)=2 & $(tipRaspshkaf:3)=0
+//#LETV a=2040
+// #MSG высота шкафа не может быть больше 2040 мм!
+//#ELSE
+///по заявке от Ильяса
+#IF $a>2750
+#LETV a=2750
+#MSG высота шкафа не может быть больше 2750 мм в связи с ограничением размеров пиломатериалов!
+#ENDIF
+#IF $a<1000 & $(tipshkaf:7)=1
+#LETV a=1000
+#MSG высота шкафа не может быть меньше 1000 мм!
+#ENDIF
+#IF $p>1000
+#LETV p=1000
+#MSG глубина шкафа не может быть больше 1000 мм!
+#ENDIF
+#IF $a<300 & $(tipshkaf:7)[0;2]
+#LETV a=300
+#MSG высота шкафа не может быть меньше 300 мм!
+#ENDIF
+#IF $a<300+$(matvn:1)*2+$(hzoc:0)+30 & $(tipshkaf:7)[3]
+#LETV a={300+$(matvn:1)*2+$(hzoc:0)+30}
+#MSG высота шкафа не может быть меньше {300+$(matvn:1)*2+$(hzoc:0)+30} мм!
+#ENDIF
+//ограничение по ширине
+#IF $l<200 & $(tipshkaf:7)[0;2]
+#LETV l=200
+#MSG ширина шкафа не может быть меньше 200 мм!
+#ENDIF
+#IF $l<150+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1] & $(tipshkaf:7)[3]
+#LET l=(150+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1])
+#MSG ширина шкафа не может быть меньше {150+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1]} мм!
+#ENDIF
+#IF $(TIPSHKAF:7)[0;1;3]
+#LET pMin=300
+#IF $(matVN:1)[22;25] & $(noZoc:0)=1 & $(TIPSHKAF:7)=0
+#LET pMin=200
+#ENDIF
+#IF $p<$(pMin) & $(noZoc:0)=1
+#LETV p=$(pMin)
+#MSG глубина шкафа не может быть меньше $(pMin) мм!
+#ENDIF
+#IF $p<300 & $(noZoc:0)=0
+#LETV p=300
+#MSG глубина шкафа не может быть меньше 300 мм!
+#ENDIF
+#ENDIF
+#IF $(TIPSHKAF:7)[2]
+#IF $(tipRaspshkaf:3)[1] //шкаф с цоколем
+#LET pMinZoc=300//340//400
+#IF $p<$(pMinZoc)
+#LETV p=$(pMinZoc)
+#MSG глубина шкафа не может быть меньше $(pMinZoc) мм!
+// #IF $p<400
+//#LETV p=400
+//#MSG глубина шкафа не может быть меньше 400 мм!
+#ENDIF
+#ELSE // антресоль / на опорах
+#IF $p<200
+#LETV p=200
+#MSG глубина шкафа не может быть меньше 200 мм!
+#ENDIF
+#ENDIF
+#ENDIF

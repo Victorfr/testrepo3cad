@@ -1,0 +1,14 @@
+#IF $(_doorsRasp:1)!999
+DOORSRASP	SL=$(SxSpostaLRaspD)	SA=$(StSpostaARaspD)+$(hzoc:0)	SP=$p+$(SpostaPRaspD)	l={$l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD))}	a={$a-($(StSpostaARaspD)+$(PnSpostaARaspD))-$(hzoc:0)}	p=20
+#ENDIF
+#LETS paramsPlacers=$(NODOORSRASP:0)|$(_FiaApertoAnta:1)|$(_doorsRasp:1)|$(_VdVisDoor:0)|1|$(spostaLPetli)|$(matKorp)|$(naklDoor)|$(lfia)|$(doorNalog)
+#IF $(_PRIST:1)[1;2]
+#LETS paramsPlacers=$(paramsPlacers)|$(_prist:1)
+#ENDIF
+//#LETS LOC_BX0=$(NODOORSRASP:0)|$(_FiaApertoAnta:1)|$(_doorsRasp:1)|$(_VdVisDoor:0)|1|$(spostaLPetli)|$(matKorp)|$(naklDoor)|$(lfia)|$(doorNalog) // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
+#LETS LOC_BX0=$(paramsPlacers)
+//#MSG $a
+//INITSHKAF
+//_DOORRASP
+//_SHKAF
+//#MSG $(NODOORSRASP:0)|$(_FiaApertoAnta:1)|$(_doorsRasp:1)|$(_VdVisDoor:0)|1

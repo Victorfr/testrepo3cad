@@ -1,0 +1,56 @@
+!parametri c1=$(col1)	namedet=	flagDrawTest=	flagAllure=
+#LET flagCorrector=0
+///выборка имени детали по номеру программы обработки и имени чертежа
+_getDekoreName
+/////////////////////////////////////////////////////////////////////
+#LETS namedet=$(dekDes)
+#LETS tipshkaf:8=$(namedet)
+#LET PRIP=4
+#IF $(_ModDoorRasp:1)[$(cvetvstav:14)] & $(_patina:5)!60251733
+#LET prip=
+#ENDIF
+///
+#IF $(_ModDoorRasp:1)[s08] & $(_patina:5)!60251733
+//#LETS _MNP:3=480680448
+#ENDIF
+#IF $(flagDrawTest)=1
+_NICOLECLASSIC3DS
+#ENDIF
+_paramAntaDek
+#IF $(flagAllure)[1;2]
+#LETV patinaolddek=$(_patinaDek)
+#LETV _patina=999
+#IF $(flagAllure)[1]
+///////////////////////////////////////
+_dekElemCode	_nameParam=DEKKOLALR
+///////////////////////////////////////
+_paramAntaDek	_patinaDek=$(_patina)
+303	C1=$(c1)	MAN=0	X0=$(flagAllure)  //Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+#ENDIF
+#IF $(flagAllure)[2]
+///////////////////////////////////////
+// _dekElemCode	_nameParam=DEKELMALR
+//S26DEKELMPROF
+#LETV _wr=$(_MODDOORRASP:1)DEKELMPROF
+#LETV _MNP=$(_MODDOORRASP:1)DEKELMPROF
+///////////////////////////////////////
+///добавить наряд на вставку профиля
+//001	COD=$(_wr:1) /$(paramAnta) /$(_wr:2)	lato=6  //Test
+///////////////////////////////////////
+// _dekElemCode	_nameParam=DEKELMALR
+//S26DEKELMPROF
+_paramAntaDek	_patinaDek=$(_patina)
+303	C1=$(c1)	MAN=0	X0=$(flagAllure)  //Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+#ENDIF
+#LETV _patina=$(patinaolddek)
+///////////////////////////////////////
+_dekElemCode	_nameParam=DEKELM
+_paramAntaDek
+///////////////////////////////////////
+#ELSE
+#IF $(namedet)!!
+303	COD= / /$(namedet)	C1=$(c1)	MAN=0 //Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+#ELSE
+303	C1=$(c1)	MAN=0  //Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+#ENDIF
+#ENDIF
