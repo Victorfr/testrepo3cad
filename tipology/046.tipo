@@ -1,0 +1,1 @@
+046,Транспортировочная царга ДСП без графики,$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR) /$(_wr:2),6,0,$a/2-100,-$(mat:1),$l,200,$(mat:1),,,,,,,,,,,,LAP//,,,,$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)///$(_colkarkas:27),,,,,,,,

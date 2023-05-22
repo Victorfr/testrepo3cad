@@ -1,0 +1,1 @@
+018,Задняя стенка ХДФ (ДСП),$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);_CKH=$(_colkarkasback:8);NDS=$(ndet) /$(_WR:2) $(ndet),,,,,$L,$A,$P,1|$(.percorso)\foto\struttura\$(_colkarkasback:3)|$(_colkarkasback:4)|90,,,,,,,,,,,LAP//,,,,$(_colkarkasback:8)/$(mat_backwall:4),,,,,,,,

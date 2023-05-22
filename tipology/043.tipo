@@ -1,0 +1,1 @@
+043,Направляющая выдвижного ящика ПР,$(cod_napr_Dx),,$l-$(mat:1)-$(l_napr),(2+$(mat:0)+55)-(20+$(delta4d)),$p-$(prof_napr),$(l_napr),40,$(prof_napr),2,,,,,,,,,,,LAP//,,,,,,,,$(_spostal)o$(_spostaa)o$(_spostap),,,,

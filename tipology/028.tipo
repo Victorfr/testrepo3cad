@@ -1,0 +1,1 @@
+028,Профиль рельс нижний,$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);_CPROF=$(col_system:6) /$(_WR:2),,0,0,$P-100,$L,10,100,1|$(.percorso)\foto\col_system\$(col_system:4)|$(col_system:5)|90,,,,$(tipsystem:11),,,,,,,LAP//,,,,$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6),,,,,,,,

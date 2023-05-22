@@ -1,0 +1,1 @@
+042,Направляющая выдвижного ящика ЛВ,$(cod_napr_Sx),,$(mat),(2+$(mat:0)+55)-(20+$(delta4d)),$p-$(prof_napr),$(l_napr),40,$(prof_napr),2,,,,,,,,,,,LAP//,,,,,,,,$(_spostal)o$(_spostaa)o$(_spostap),,,,

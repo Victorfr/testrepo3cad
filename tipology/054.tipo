@@ -1,0 +1,1 @@
+054,Направляющая для распашных дверей,$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);_CPROF=$(col_system:6) /$(_wr:2),,0,0,0,$l,7,22,1|$(.percorso)\foto\col_system\$(col_system:4)|$(col_system:5)|90,,,,aristonrasp,,,,,,,LAP//,,,,$(tipsystem:18)/$(col_system:6)/$(flag_nar_rasp),,,,,,,,
