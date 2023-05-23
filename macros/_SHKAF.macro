@@ -10,14 +10,14 @@
 #LET usePetlObr=0
 #LET countVert=0
 #IF $(TIPSHKAF:7)[2] //распашные двери
-#IF $(_PRIST:1)[1;2]
-#IF $(TIPSHKAF:1)[7] //встраиваемый
-#LETV TSH=633527500
-#ENDIF
-#IF $(TIPSHKAF:1)[8] // отдельностоящий
-#LETV TSH=633527499
-#ENDIF
-#ENDIF
+   #IF $(_PRIST:1)[1;2]
+      #IF $(TIPSHKAF:1)[7] //встраиваемый
+         #LETV TSH=633527500
+      #ENDIF
+      #IF $(TIPSHKAF:1)[8] // отдельностоящий
+         #LETV TSH=633527499
+      #ENDIF
+   #ENDIF
 #ENDIF
 !COMMENTO $(_wr:2)
 INITSHKAF
@@ -33,52 +33,52 @@ INITSHKAF
 #LET petlFinishCount=0
 #LET bigpolk=0
 #FOR $(doorsParams)
-#LETS curPetlParams=$i
-#LET usePetlObr={$[ex;$(curPetlParams);|;5]}
-#IF $(usePetlObr)=1
-#LET flagCorrector={$[ex;$(curPetlParams);|;8]}
-#ENDIF
-#IF $(usePetlObr)=0
-#LET flagCorrector={$[ex;$(curPetlParams);|;7]}
-#ENDIF
-//   #MSG $(curPetlParams)
-#LET doorParSL=int($[ex;$(curPetlParams);|;3])
-#LET doorParSA=int($[ex;$(curPetlParams);|;4])
-//#MSG $(doorParSL) $(doorParSa)
-#IF $(usePetlObr)[1;2]
-_drawPetlSone
-#ENDIF
-#LETS testPar=$[ex;$(curPetlParams);|;5]
-#IF $(testPar)[ARISTORASP] //если двери распашные аристо
-#LET parDoorL=0
-#LET parDoorR=0
-#IF $(doorParSL)>$l/2
-#LET parDoorR=1
-#ELSE
-#LET parDoorL=1
-#ENDIF
-#LETS petlZoneParams=ARISTORASP|$(parDoorL)|$(parDoorR)
-#ENDIF
-#LET doorAperto={$[ex;$(curPetlParams);|;9]}
-//если ШК встраиваемый
-#IF $(TIPSHKAF:6)[1]
-//если левая боковина стоит без боковины
-#IF $(BOKL:1)[9]
-//если стоит дверь петли слева
-#IF $(doorAperto)=1
-001	p=$(p)	l=16	C1=203
-025	COD= / /Петли не к чему крепить!!!	SL=-25	SA=$a/2	L=300	sp=$p/2-150	AY=180+90  //сообщение об ошибке
-#ENDIF
-#ENDIF
-//если правая боковина стоит без боковины
-#IF $(BOKR:1)[9]
-//если стоит дверь петли справа
-#IF $(doorAperto)=2
-001	p=$(p)	l=16	C1=203	sl=$l-16
-025	COD= / /Петли не к чему крепить!!!	SL=$l+25	SA=$a/2	L=300	sp=$p/2+150	AY=90  //сообщение об ошибке
-#ENDIF
-#ENDIF
-#ENDIF
+   #LETS curPetlParams=$i
+   #LET usePetlObr={$[ex;$(curPetlParams);|;5]}
+   #IF $(usePetlObr)=1
+      #LET flagCorrector={$[ex;$(curPetlParams);|;8]}
+   #ENDIF
+   #IF $(usePetlObr)=0
+      #LET flagCorrector={$[ex;$(curPetlParams);|;7]}
+   #ENDIF
+   //   #MSG $(curPetlParams)
+   #LET doorParSL=int($[ex;$(curPetlParams);|;3])
+   #LET doorParSA=int($[ex;$(curPetlParams);|;4])
+   //#MSG $(doorParSL) $(doorParSa)
+   #IF $(usePetlObr)[1;2]
+      _drawPetlSone
+   #ENDIF
+   #LETS testPar=$[ex;$(curPetlParams);|;5]
+   #IF $(testPar)[ARISTORASP] //если двери распашные аристо
+      #LET parDoorL=0
+      #LET parDoorR=0
+      #IF $(doorParSL)>$l/2
+         #LET parDoorR=1
+      #ELSE
+         #LET parDoorL=1
+      #ENDIF
+      #LETS petlZoneParams=ARISTORASP|$(parDoorL)|$(parDoorR)
+   #ENDIF
+   #LET doorAperto={$[ex;$(curPetlParams);|;9]}
+   //если ШК встраиваемый
+   #IF $(TIPSHKAF:6)[1]
+      //если левая боковина стоит без боковины
+      #IF $(BOKL:1)[9]
+         //если стоит дверь петли слева
+         #IF $(doorAperto)=1
+            001	p=$(p)	l=16	C1=203
+            025	COD= / /Петли не к чему крепить!!!	SL=-25	SA=$a/2	L=300	sp=$p/2-150	AY=180+90  //сообщение об ошибке
+         #ENDIF
+      #ENDIF
+      //если правая боковина стоит без боковины
+      #IF $(BOKR:1)[9]
+         //если стоит дверь петли справа
+         #IF $(doorAperto)=2
+            001	p=$(p)	l=16	C1=203	sl=$l-16
+            025	COD= / /Петли не к чему крепить!!!	SL=$l+25	SA=$a/2	L=300	sp=$p/2+150	AY=90  //сообщение об ошибке
+         #ENDIF
+      #ENDIF
+   #ENDIF
 #ENDFOR
 //KORPSHKAF
 //#MSG $(doorsParams)
@@ -94,27 +94,27 @@ _drawPetlSone
 //ADDNAP
 #LETS last_param=
 #FOR $(prof_door)
-#LETS last_param=$(i)
+   #LETS last_param=$(i)
 #ENDFOR
 #LETS prof_door=$(last_param)
 //////
 #IF $(TIPSHKAF:7)=2 & $(virovnit:0)=1
-#LET p=$(new_prof:0)-$(SpostaPRaspD)-$[ex;$(prof_door);|;1]
+   #LET p=$(new_prof:0)-$(SpostaPRaspD)-$[ex;$(prof_door);|;1]
 #ENDIF
 #IF $(TIPSHKAF:1)[11]
-#LET pDoors={$[ex;$(prof_door);|;1]}
-#IF $(pDoors)=0 #LET pDoors=22 // установим по умолчанию толщину фасада 22 мм если не установлены двери еще
+   #LET pDoors={$[ex;$(prof_door);|;1]}
+   #IF $(pDoors)=0 #LET pDoors=22 // установим по умолчанию толщину фасада 22 мм если не установлены двери еще
 #ENDIF
 //#MSG $(AKORP)!$A & $[ex;$(prof_door);|;2]==y
 #IF ($(akorpprov)!$A) & ($[ex;$(prof_door);|;2]==y)
-#VB
-msgbox "После изменения высоты шкафа	 необходимо проверить расположение коммерческих товаров и разделителей вставок в двери!"
-#ENDVB
-#LETV akorpprov=$(a)
+   #VB
+      msgbox "После изменения высоты шкафа	 необходимо проверить расположение коммерческих товаров и разделителей вставок в двери!"
+   #ENDVB
+   #LETV akorpprov=$(a)
 #ENDIF
 #LET LKORP=$L
 #LET AKORP=$A
-#LET PKORP=$P
+#LET PKORP=$P 
 // ********************* паспорт	 шильдик	 ноборы фурнитуры ************************
 #LETV pasp_count=1
 _pasport
@@ -123,419 +123,419 @@ _pasport
 _upakovka_shkaf
 // ***************************************************************
 #IF $(tipshkaf:6)=2 //отдельностоящий
-//_DEKOR
-001	LATO=6	COD=999UgKrep50x25 / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999ZagUgKrep50x25 / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999Dub8x52Sh5x60 / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999sh4x16pot / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
-#IF $(tipshkaf:7)=1 & $(TIPSHKAF:1)[11] //шкаф top line
-_misuraTopLine
-#ELSE // обычные шкафы
-_misuraShkaf
-#ENDIF
-//   _MISURALIM
-//   051
-// ******************************** декоры **************************
-//VOLUME
-//ADDNAP
-_dekor
-// ***************************************************************
-KORPSHKAF
+   //_DEKOR
+   001	LATO=6	COD=999UgKrep50x25 / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=999ZagUgKrep50x25 / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=999Dub8x52Sh5x60 / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=999sh4x16pot / / /#Q$(krepStena:0)	L=1	A=1	P=1  //Test
+   #IF $(tipshkaf:7)=1 & $(TIPSHKAF:1)[11] //шкаф top line
+      _misuraTopLine
+   #ELSE // обычные шкафы
+      _misuraShkaf
+   #ENDIF
+   //   _MISURALIM
+   //   051
+   // ******************************** декоры **************************
+   //VOLUME
+   //ADDNAP
+   _dekor
+   // ***************************************************************
+   KORPSHKAF
 #ELSEIF $(tipshkaf:6)=1
-#IF $(nerovnUp:0)!1 & ($(verh:1)=9 | ($(verh:1)=1 & $(pup:3)=$p)))
-#ELSE
-#IF $(sk_sys:0)=1
-#VB
-msgbox "Для установки скрытой системы необходимо указать отсутствие верхней планки	 либо выбрать верхнюю планку во всю глубину!"
-#ENDVB
-#LETV sk_sys=0
-#ENDIF
-#ENDIF
-// ****************************************** дополнительная фурнитура для встраиваемых шкафов в заказа **********************************************************
-#LETV dopFur=1
-_dop_fur
-// ***************************************************************************************************************************************************************
-#IF $l>1200 & $(tipshkaf:7)=2
-#MSG ширина шкафа не может быть больше 1200 мм!
-#LETV l=1200
-#ELSEIF ($l>{3000+$(mat_kor:1)*2} )& $(TIPSHKAF:1) & $(TIPSYSTEM:18)[AR3]
-#MSG ширина шкафа не может быть больше {3000+$(mat_kor:1)*2} мм!
-#LETV l={3000+$(mat_kor:1)*2}
-#ELSEIF $l>5300
-#MSG ширина шкафа не может быть больше 5300 мм в связи с ограничением размеров пиломатериалов!
-#LETV l=5300
-#ENDIF
-#IF $l<{$(mat:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)} & $(tipshkaf:7)=1 & $(_PRIMOCARICAMENTO)!1
-#LETV l={$(mat:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)}
-#MSG ширина шкафа не может быть меньше {$(mat:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)} мм!
-#ENDIF
-#LET maxA=3277 //2750
-#IF $(tipshkaf:7)=1
-#IF $(bokL:1)=1 & $(bokR:1)=1 & $(pbokl:1)=1 & $(pbokr:1)=1
-// #LET maxA=3277 //ограничение для высокого шкафа
-#ENDIF
-#ENDIF
-#IF $a>$(maxA)
-#LETV a=$(maxA)
-#MSG высота шкафа не может быть больше $(maxA)мм в связи с ограничением размеров пиломатериалов!
-#ENDIF
-#IF $[datecompare;$(dataordine);20.04.2020]>=0
-#LET minA=700
-#ELSE
-#LET minA=1000
-#ENDIF
-#IF $a<$(minA) & $(tipshkaf:7)=1
-#LETV a=$(minA)
-#MSG высота шкафа не может быть меньше $(minA) мм!
-#ENDIF
-#IF $a<300 & $(tipshkaf:7)[0;2]
-#LETV a=300
-#MSG высота шкафа не может быть меньше 300 мм!
-#ENDIF
-#IF $l<200 & $(tipshkaf:7)[0;2]
-#LETV l=200
-#MSG ширина шкафа не может быть меньше 300 мм!
-#ENDIF
-#IF $p<200
-#LETV p=200
-#MSG глубина шкафа не может быть меньше 200 мм!
-#ENDIF
-#IF $[datecompare;$(dataordine);17.10.2019]>=0
-#IF $p>1000
-#LETV p=1000
-#MSG глубина шкафа не может быть больше 1000 мм!
-#ENDIF
-#ENDIF
-#IF $[datecompare;$(dataordine);$(_dataNewMet:3)]>=0
-#IF $(_PRIMOCARICAMENTO)=1 & $(fsh:0)!$(_idunico)
-!LASER TmpV	$L/2	0	$P/2	$L/2	10	$P/2	2  //лазер потолка
-!LASER TmpL	0	50	150	10	50	150	3  //лазер стены
-!LASER TmpK	0	50	150	10	50	150	5  //лазер колонны
-#IF $(tmpv)<$(nomevar:4) #LET A={$(tmpv)} #LET A=$(nomevar:4)
-#IF $A=0 #LET A=2000
-#IF $(TmpL)<$(TmpK) #LET lSH=$(TmpL) #LET lSH=$(TmpK)
-//ограничение размера лазера для шкафов с распашными
-#IF $(tipshkaf:7)[2]
-#IF $(lsh)>1200 #LET lsh=1200
-#ELSEIF $(tipshkaf:7)[3]
-#IF $(lsh)>1000 #LET lsh=1000
-#ENDIF
-////
-#LET l=$(lSH)
-#IF $(lSH)>5300 #LET l=5300
-#IF $(lSH)=99999
-#IF $(tipshkaf:7)[2]
-#LET l=1200
-#ELSEIF $(tipshkaf:7)[3]
-#LET l=1000
-#ELSE
-#LET l=2000
-#ENDIF
-#ENDIF
-#LETV pZast={$P-100}
-#LETV fsh=$(_idunico)
-#ENDIF
-#ELSE
-#IF $(_PRIMOCARICAMENTO)=1
-!LASER TmpV	$L/2	0	$P/2	$L/2	10	$P/2	2  //лазер потолка
-!LASER TmpL	0	50	150	10	50	150	3  //лазер стены
-!LASER TmpK	0	50	150	10	50	150	5  //лазер колонны
-#IF $(tmpv)<$(nomevar:4) #LET A={$(tmpv)} #LET A=$(nomevar:4)
-#IF $A=0 #LET A=2000
-#IF $(TmpL)<$(TmpK) #LET lSH=$(TmpL) #LET lSH=$(TmpK)
-#LET l=$(lSH)
-#IF $(lSH)>5300 #LET l=5300
-#IF $(lSH)=99999
-#IF $(tipshkaf:7)=2
-#LET l=1200
-#ELSE
-#LET l=2000
-#ENDIF
-#ENDIF
-#LETV pZast={$P-100}
-#ENDIF
-#ENDIF
-701	SL=0	SA=$A/2	SP=$P/2-50	A=1	X1=1	X3=L	X4=1	X5=3	X6=200;4300
-701	SL=$L	SA=$A/2	SP=$P/2-50	A=1	X1=0	X3=L	X4=1	X5=3	X6=200;4300  //Dragger
-#IF $(tipshkaf:7)[0;2] & (($(bokl:1)=9 & $(bokr:1)=9 & $(dno:1)=9 & $(verh:1)=9) | (($(pbokl:1)=2 | ($(bokl:1)=9 & $(pbokl:1)=1)) & ($(pbokr:1)=2 | ($(bokr:1)=9 & $(pbokr:1)=1)) & ($(pdno:1)=2 | ($(dno:1)=9 & $(pdno:1)=1)) & ($(pup:1)=2 | ($(verh:1)=9 & $(pup:1)=1))))
-#LET maxPzast={$p-1}
-//#IF $(flagCorrector)=1
-#IF $(flagCorrector)=1 & $(_DOORSRASP:1)[1;2] //для высоких дверей уменьшяется глубина наполнения
-#LET maxPzast={$p-5}
-#ENDIF
-#IF $(pZast)>$(maxPzast)
-#LETV pZast=$(maxPzast)
-#ENDIF
-#ELSEIF $(TIPSHKAF:7)=3
-#IF $(pZast)>{$P-70}
-#VB
-msgbox "Для увеличения глубины застройки удалите весь обклад	 или выберите обклад во всю глубину шкафа со всех сторон!"
-#ENDVB
-#LETV pZast={$P-70}
-#ENDIF
-#ELSE
-#IF $(pZast)>{$P-100}
-#VB
-msgbox "Для увеличения глубины застройки удалите весь обклад	 или выберите обклад во всю глубину шкафа со всех сторон!"
-#ENDVB
-#LETV pZast={$P-100}
-#ENDIF
-#ENDIF
-#IF $(pZast)>1000
-#LETV pZast=1000
-#MSG глубина застройки не может быть больше 1000 мм!
-#ENDIF
-701	X1=10	A=1	X3=ALTEZZA;A;$A	X4=0	X5=2	X6=$(Range)	SL=$L/2	SA=$A	SP=$P/2	L=$A	X6=200;4300
-701	SL=$L/2	SP=$P+50	L=$P	A=1	X1=2	X3=P	X4=1	X5=2	X6=300;4350  //стрелка глубина
-//NISHA
-VNESHNIE
-#IF $l>1000+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2] & $(tipshkaf:7)[3]
-#LET l=(1000+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2])
-#MSG ширина шкафа не может быть больше {1000+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2]} мм!
-#ENDIF
-#IF $l<150+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1] & $(tipshkaf:7)[3]
-#LET l=(150+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1])
-#MSG ширина шкафа не может быть больше {150+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]} мм!
-#ENDIF
-#IF $(_PRIMOCARICAMENTO)=1
-#LETV pripuskKorL=30
-#LETV pripuskKorR=30
-#ENDIF
+   #IF $(nerovnUp:0)!1 & ($(verh:1)=9 | ($(verh:1)=1 & $(pup:3)=$p)))
+   #ELSE
+      #IF $(sk_sys:0)=1
+         #VB
+            msgbox "Для установки скрытой системы необходимо указать отсутствие верхней планки	 либо выбрать верхнюю планку во всю глубину!"
+         #ENDVB
+         #LETV sk_sys=0
+      #ENDIF
+   #ENDIF
+   // ****************************************** дополнительная фурнитура для встраиваемых шкафов в заказа **********************************************************
+   #LETV dopFur=1
+   _dop_fur
+   // ***************************************************************************************************************************************************************
+   #IF $l>1200 & $(tipshkaf:7)=2
+      #MSG ширина шкафа не может быть больше 1200 мм!
+      #LETV l=1200
+   #ELSEIF ($l>{3000+$(mat_kor:1)*2} )& $(TIPSHKAF:1) & $(TIPSYSTEM:18)[AR3]
+      #MSG ширина шкафа не может быть больше {3000+$(mat_kor:1)*2} мм!
+      #LETV l={3000+$(mat_kor:1)*2}
+   #ELSEIF $l>5300
+      #MSG ширина шкафа не может быть больше 5300 мм в связи с ограничением размеров пиломатериалов!
+      #LETV l=5300
+   #ENDIF
+   #IF $l<{$(mat:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)} & $(tipshkaf:7)=1 & $(_PRIMOCARICAMENTO)!1
+      #LETV l={$(mat:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)}
+      #MSG ширина шкафа не может быть меньше {$(mat:1)*2+($(tipsystem:6)+$(tipsystem:19)*2)*2-$(tipsystem:5)} мм!
+   #ENDIF
+   #LET maxA=3277 //2750
+   #IF $(tipshkaf:7)=1
+      #IF $(bokL:1)=1 & $(bokR:1)=1 & $(pbokl:1)=1 & $(pbokr:1)=1
+         // #LET maxA=3277 //ограничение для высокого шкафа
+      #ENDIF
+   #ENDIF
+   #IF $a>$(maxA)
+      #LETV a=$(maxA)
+      #MSG высота шкафа не может быть больше $(maxA)мм в связи с ограничением размеров пиломатериалов!
+   #ENDIF
+   #IF $[datecompare;$(dataordine);20.04.2020]>=0
+      #LET minA=700
+   #ELSE
+      #LET minA=1000
+   #ENDIF
+   #IF $a<$(minA) & $(tipshkaf:7)=1
+      #LETV a=$(minA)
+      #MSG высота шкафа не может быть меньше $(minA) мм!
+   #ENDIF
+   #IF $a<300 & $(tipshkaf:7)[0;2]
+      #LETV a=300
+      #MSG высота шкафа не может быть меньше 300 мм!
+   #ENDIF
+   #IF $l<200 & $(tipshkaf:7)[0;2]
+      #LETV l=200
+      #MSG ширина шкафа не может быть меньше 300 мм!
+   #ENDIF
+   #IF $p<200
+      #LETV p=200
+      #MSG глубина шкафа не может быть меньше 200 мм!
+   #ENDIF
+   #IF $[datecompare;$(dataordine);17.10.2019]>=0
+      #IF $p>1000
+         #LETV p=1000
+         #MSG глубина шкафа не может быть больше 1000 мм!
+      #ENDIF
+   #ENDIF
+   #IF $[datecompare;$(dataordine);$(_dataNewMet:3)]>=0
+      #IF $(_PRIMOCARICAMENTO)=1 & $(fsh:0)!$(_idunico)
+         !LASER TmpV	$L/2	0	$P/2	$L/2	10	$P/2	2  //лазер потолка
+         !LASER TmpL	0	50	150	10	50	150	3  //лазер стены
+         !LASER TmpK	0	50	150	10	50	150	5  //лазер колонны
+         #IF $(tmpv)<$(nomevar:4) #LET A={$(tmpv)} #LET A=$(nomevar:4)
+         #IF $A=0 #LET A=2000
+         #IF $(TmpL)<$(TmpK) #LET lSH=$(TmpL) #LET lSH=$(TmpK)
+         //ограничение размера лазера для шкафов с распашными
+         #IF $(tipshkaf:7)[2]
+            #IF $(lsh)>1200 #LET lsh=1200
+         #ELSEIF $(tipshkaf:7)[3]
+            #IF $(lsh)>1000 #LET lsh=1000
+         #ENDIF
+         ////
+         #LET l=$(lSH)
+         #IF $(lSH)>5300 #LET l=5300
+         #IF $(lSH)=99999
+            #IF $(tipshkaf:7)[2]
+               #LET l=1200
+            #ELSEIF $(tipshkaf:7)[3]
+               #LET l=1000
+            #ELSE
+               #LET l=2000
+            #ENDIF
+         #ENDIF
+         #LETV pZast={$P-100}
+         #LETV fsh=$(_idunico)
+      #ENDIF
+   #ELSE
+      #IF $(_PRIMOCARICAMENTO)=1
+         !LASER TmpV	$L/2	0	$P/2	$L/2	10	$P/2	2  //лазер потолка
+         !LASER TmpL	0	50	150	10	50	150	3  //лазер стены
+         !LASER TmpK	0	50	150	10	50	150	5  //лазер колонны
+         #IF $(tmpv)<$(nomevar:4) #LET A={$(tmpv)} #LET A=$(nomevar:4)
+         #IF $A=0 #LET A=2000
+         #IF $(TmpL)<$(TmpK) #LET lSH=$(TmpL) #LET lSH=$(TmpK)
+         #LET l=$(lSH)
+         #IF $(lSH)>5300 #LET l=5300
+         #IF $(lSH)=99999
+            #IF $(tipshkaf:7)=2
+               #LET l=1200
+            #ELSE
+               #LET l=2000
+            #ENDIF
+         #ENDIF
+         #LETV pZast={$P-100}
+      #ENDIF
+   #ENDIF
+   701	SL=0	SA=$A/2	SP=$P/2-50	A=1	X1=1	X3=L	X4=1	X5=3	X6=200;4300
+   701	SL=$L	SA=$A/2	SP=$P/2-50	A=1	X1=0	X3=L	X4=1	X5=3	X6=200;4300  //Dragger
+   #IF $(tipshkaf:7)[0;2] & (($(bokl:1)=9 & $(bokr:1)=9 & $(dno:1)=9 & $(verh:1)=9) | (($(pbokl:1)=2 | ($(bokl:1)=9 & $(pbokl:1)=1)) & ($(pbokr:1)=2 | ($(bokr:1)=9 & $(pbokr:1)=1)) & ($(pdno:1)=2 | ($(dno:1)=9 & $(pdno:1)=1)) & ($(pup:1)=2 | ($(verh:1)=9 & $(pup:1)=1))))
+      #LET maxPzast={$p-1}
+      //#IF $(flagCorrector)=1
+      #IF $(flagCorrector)=1 & $(_DOORSRASP:1)[1;2] //для высоких дверей уменьшяется глубина наполнения
+         #LET maxPzast={$p-5}
+      #ENDIF
+      #IF $(pZast)>$(maxPzast)
+         #LETV pZast=$(maxPzast)
+      #ENDIF
+   #ELSEIF $(TIPSHKAF:7)=3
+      #IF $(pZast)>{$P-70}
+         #VB
+            msgbox "Для увеличения глубины застройки удалите весь обклад	 или выберите обклад во всю глубину шкафа со всех сторон!"
+         #ENDVB
+         #LETV pZast={$P-70}
+      #ENDIF
+   #ELSE
+      #IF $(pZast)>{$P-100}
+         #VB
+            msgbox "Для увеличения глубины застройки удалите весь обклад	 или выберите обклад во всю глубину шкафа со всех сторон!"
+         #ENDVB
+         #LETV pZast={$P-100}
+      #ENDIF
+   #ENDIF
+   #IF $(pZast)>1000
+      #LETV pZast=1000
+      #MSG глубина застройки не может быть больше 1000 мм!
+   #ENDIF
+   701	X1=10	A=1	X3=ALTEZZA;A;$A	X4=0	X5=2	X6=$(Range)	SL=$L/2	SA=$A	SP=$P/2	L=$A	X6=200;4300
+   701	SL=$L/2	SP=$P+50	L=$P	A=1	X1=2	X3=P	X4=1	X5=2	X6=300;4350  //стрелка глубина
+   //NISHA
+   VNESHNIE
+   #IF $l>1000+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2] & $(tipshkaf:7)[3]
+      #LET l=(1000+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2])
+      #MSG ширина шкафа не может быть больше {1000+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2]} мм!
+   #ENDIF
+   #IF $l<150+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1] & $(tipshkaf:7)[3]
+      #LET l=(150+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1])
+      #MSG ширина шкафа не может быть больше {150+$(^otsL)+$(^otsR)+$[ex;$(TIPRUCH:26);:;1]} мм!
+   #ENDIF
+   #IF $(_PRIMOCARICAMENTO)=1
+      #LETV pripuskKorL=30
+      #LETV pripuskKorR=30
+   #ENDIF
 #ENDIF
 #IF $(tipshkaf:6)=2
-#LETS mat_old=$(mat)
-#LETS mat=$(matvn)
+   #LETS mat_old=$(mat)
+   #LETS mat=$(matvn)
 #ENDIF
 #IF $(TIPSHKAF:7)=1 //двери купэ
-#IF $(TIPSHKAF:1)[11] // top line
-//плейсеры под новые двери
-#LET doorAlt={$a-$(hzoc:0)+43}
-#LET doorSD=$(mat:0)
-#LET doorSB=$L
-#LET DooRAA=$(doorSD)-2
-#LET doorDD=20
-#IF $(NDOORTL:3)[2] //двухдверный шкаф
-// KORPSHKAF
-//NAPR
-#LET doorLarg=int(($(DoorSB)-($(DoorSD)-$(DoorAA))*2+$(DoorDD))/2)
-#IF $(NDOORTL:1)[2]
-#LET spDoorL={$p+2}
-#LET spdoorR={$p+3+8+$(pDoors)+2}
-#ELSEIF $(NDOORTL:1)[1]
-#LET spDoorR={$p+2}
-#LET spdoorL={$p+3+8+$(pDoors)+2}
-#ENDIF
-030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorL)	sl=2	x1=102	x5=1
-030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorR)	sl=2+$(doorLarg)-$(doorDD)	x1=102	x5=2
-NALOG	LDV=$(doorLarg)
-#ELSEIF $(NDOORTL:3)[3]//трехдверный шкаф
-#LET doorLarg=int(($(DoorSB)-($(DoorSD)-$(DoorAA))*2+$(DoorDD)*2)/3)
-#LET spDoorL={$p+2}
-#LET spdoorR={$p+$(pDoors)+2+2}
-030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorL)	sl=2	x1=102	x5=1
-030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorL)	sl=$l-$(doorLarg)-2	x1=102	x5=2
-030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorR)	sl=2+$(doorLarg)-$(doorDD)	x1=102	x5=3
-NALOG	LDV=$(doorLarg)
-#ENDIF
-#LETS paramColorSystem=$(COL_SYSTEM:1)
-#IF $(TIPSYSTEM:18)[ar3] //для крашенного профиля передаем параметр варианта цвета профиля
-#LETS paramColorSystem=$(cvetvstavprof:1)
-#ENDIF
-#LETS testvar=$(NODOORS:0)	0	0	0	0	0	0|$(TIPRUCH:1)|$(katcol:1)|$(paramColorSystem)|1|$(SlDoor_Sx)|$(SlDoor_Dx)|$(dd_s:3)|$(spostaDorrPrist)|$(TIPSYSTEM:1)|$(sk_sys:0)|$(count_rolNova)|$(krVnutrD)|$(krVneshD)|$(NDOORS:3)|$(SlDoor2)|$(SlDoor4)
-#LETS LOC_BX0=$(testvar) // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
-//VOLUME
-#LET pModPlacer={$(PKORP)-25-2-$(mod_min)}
-#LETS param_shkaf=$(OBL)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|$(pModPlacer)
-#IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$(OBL)|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
-//добавление параметров зоны перекрытия дверей к параметрам шкафа
-#LETS param_shkaf=$(param_shkaf)|$(zone_params)
-#ELSE
-#LET Del_Larg_Door=0	 Sl_Door_Pr=0	spostaDorrPrist=0
-#IF $(_prist:1)=1
-#LET Del_Larg_Door=$(profPrist:0)-$(^otsL) 	 Sl_Door_Pr=$(profPrist:0)-$(^otsL)
-#IF $(TIPSHKAF:6)=2
-#LET Del_Larg_Door=$(profPrist:0)-$(mat:1)-$(_MODDOORRASP:5)
-#LET  Sl_Door_Pr=$(profPrist:0)-$(mat:1) -$(_MODDOORRASP:5)
-#ENDIF
-#LET spostaDorrPrist=$(^Sl_Door_Pr)+1001
-#ELSEIF $(_prist:1)=2
-#LET Del_Larg_Door=$(profPrist:0)-$(^otsR)
-#IF $(TIPSHKAF:6)=2 #LET Del_Larg_Door=$(profPrist:0)-$(mat:1)-$(_MODDOORRASP:5)
-#ENDIF
-//#MSG $(^otsL)
-_kreplenie_naprav
-#IF $(TIPSHKAF:6)=2
-#LET lustDoor=$l-$(mat:0)*2
-#LET austDoor={$a-$(^hzoc:0)-$(mat:0)}
-//#MSG $A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))-$(SaNapr)
-//INITSHKAF
-//VNESHNIE
-#LET placerDoorSL={$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)+$(SaNapr)}
-#LET placerDoorL={$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)}
-#IF $(_PRIST:1)[1]
-//#LET placerDoorSL={$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)//-$(_MODDOORRASP:5)
-//#LET placerDoorL={$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)}//+$(_MODDOORRASP:5)
-#ENDIF
-#IF $(_PRIST:1)[2]
-//#LET placerDoorSL={$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)-$(_MODDOORRASP:5)
-//#LET placerDoorL={$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)}+$(_MODDOORRASP:5)
-#ENDIF
-//    DOORS	SL=$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)+$(SaNapr)	SP=$P-$(tipsystem:16)	L=$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)	A={$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))-$(SaNapr)}	P=$(tipsystem:16)
-DOORS	SL=$(placerDoorSL)	SA=$(otsD)+$(tipsystem:3)+$(SaNapr)	SP=$P-$(tipsystem:16)	L=$(placerDoorL)	A={$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))-$(SaNapr)}	P=$(tipsystem:16)
-NALOG	sl=$(^otsDoorlar)/2+$(^Sl_Door_Pr)	l=$l-$(^otsDoorlar)-$(^Del_Larg_Door)
-#LET SlDoor_Sx=$(SlDoor_Sx)+$(otsL)+$(otsDoorlar)/2	 SlDoor_Dx=$(SlDoor_Dx)+$(otsL)+$(otsDoorlar)/2
-#ELSE
-#LET lustDoor=$L-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)
-#LET austDoor= $A-($(^otsD)+$(^otsU))
-#LET placerDoorSL= {($(^otsL)-$(mat:1))+$(^Sl_Door_Pr)}
-#LET placerDoorL={$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)}
-//DOORS	SL=($(^otsL)-$(mat:1))+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)-$(mat:1)	SP=$P-$(tipsystem:16)	L=$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)	A=$A+$(mat:1)*2-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
-DOORS	SL=$(placerDoorSL)	SA=$(otsD)+$(tipsystem:3)-$(mat:1)	SP=$P-$(tipsystem:16)	L=$(placerDoorL)	A=$A+$(mat:1)*2-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
-NALOG	sl=($(^otsL)-$(mat:1))+$(^Sl_Door_Pr)	l=$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	SA=$(otsD)+$(tipsystem:3)-$(mat:1)
-#LET SlDoor_Sx=$(SlDoor_Sx)+($(otsL)-$(mat:1))	 SlDoor_Dx=$(SlDoor_Dx)+($(otsL)-$(mat:1))
-#ENDIF
-//#MSG $L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)
-// #MSG $(lustDoor) xx $(austDoor)
-#LETS paramColorSystem=$(COL_SYSTEM:1)
-#IF $(TIPSYSTEM:18)[ar3] //для крашенного профиля передаем параметр варианта цвета профиля
-#LETS paramColorSystem=$(cvetvstavprof:1)
-#ENDIF
-#LETS testvar=$(NODOORS:0)	0	0	0	0	0	0|$(TIPRUCH:1)|$(katcol:1)|$(paramColorSystem)|1|$(SlDoor_Sx)|$(SlDoor_Dx)|$(dd_s:3)|$(spostaDorrPrist)|$(TIPSYSTEM:1)|$(sk_sys:0)|$(count_rolNova)|$(krVnutrD)|$(krVneshD)|$(NDOORS:3)|$(SlDoor2)|$(SlDoor4)
-#LETS LOC_BX0=$(testvar) // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
-#LETS param_shkaf=$(OBL)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-101-25-2-$(mod_min)}
-#IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$(OBL)|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
-//добавление параметров зоны перекрытия дверей к параметрам шкафа
-#LETS param_shkaf=$(param_shkaf)|$(zone_params)
-//позиционеры для дверей //если есть доводчик
-#IF $(dd_s:3)=1 & $(TIPSYSTEM:18)==ar2
-#SELECT $(NDOORS:3)
-#CASE 3
-001	LATO=6	COD=999sh_pos / / /#Q1	L=1	A=1	P=1  //Test
-#CASE 4
-001	LATO=6	COD=999sh_pos / / /#Q2	L=1	A=1	P=1  //Test
-#CASE 5
-001	LATO=6	COD=999sh_pos / / /#Q3	L=1	A=1	P=1  //Test
-#ENDSELECT
-#ENDIF
-//
-#ENDIF
+   #IF $(TIPSHKAF:1)[11] // top line
+      //плейсеры под новые двери
+      #LET doorAlt={$a-$(hzoc:0)+43}
+      #LET doorSD=$(mat:0)
+      #LET doorSB=$L
+      #LET DooRAA=$(doorSD)-2
+      #LET doorDD=20
+      #IF $(NDOORTL:3)[2] //двухдверный шкаф
+         // KORPSHKAF
+         //NAPR
+         #LET doorLarg=int(($(DoorSB)-($(DoorSD)-$(DoorAA))*2+$(DoorDD))/2)
+         #IF $(NDOORTL:1)[2]
+            #LET spDoorL={$p+2}
+            #LET spdoorR={$p+3+8+$(pDoors)+2}
+         #ELSEIF $(NDOORTL:1)[1]
+            #LET spDoorR={$p+2}
+            #LET spdoorL={$p+3+8+$(pDoors)+2}
+         #ENDIF
+         030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorL)	sl=2	x1=102	x5=1
+         030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorR)	sl=2+$(doorLarg)-$(doorDD)	x1=102	x5=2
+         NALOG	LDV=$(doorLarg)
+      #ELSEIF $(NDOORTL:3)[3]//трехдверный шкаф
+         #LET doorLarg=int(($(DoorSB)-($(DoorSD)-$(DoorAA))*2+$(DoorDD)*2)/3)
+         #LET spDoorL={$p+2}
+         #LET spdoorR={$p+$(pDoors)+2+2}
+         030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorL)	sl=2	x1=102	x5=1
+         030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorL)	sl=$l-$(doorLarg)-2	x1=102	x5=2
+         030	a=$(doorAlt)	sa=$(hzoc:0)-43	l=$(doorLarg)	p=$(pDoors)	sp=$(spDoorR)	sl=2+$(doorLarg)-$(doorDD)	x1=102	x5=3
+         NALOG	LDV=$(doorLarg)
+      #ENDIF
+      #LETS paramColorSystem=$(COL_SYSTEM:1)
+      #IF $(TIPSYSTEM:18)[ar3] //для крашенного профиля передаем параметр варианта цвета профиля
+         #LETS paramColorSystem=$(cvetvstavprof:1)
+      #ENDIF
+      #LETS testvar=$(NODOORS:0)	0	0	0	0	0	0|$(TIPRUCH:1)|$(katcol:1)|$(paramColorSystem)|1|$(SlDoor_Sx)|$(SlDoor_Dx)|$(dd_s:3)|$(spostaDorrPrist)|$(TIPSYSTEM:1)|$(sk_sys:0)|$(count_rolNova)|$(krVnutrD)|$(krVneshD)|$(NDOORS:3)|$(SlDoor2)|$(SlDoor4)
+      #LETS LOC_BX0=$(testvar) // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
+      //VOLUME
+      #LET pModPlacer={$(PKORP)-25-2-$(mod_min)}
+      #LETS param_shkaf=$(OBL)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|$(pModPlacer)
+      #IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$(OBL)|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
+      //добавление параметров зоны перекрытия дверей к параметрам шкафа
+      #LETS param_shkaf=$(param_shkaf)|$(zone_params)
+   #ELSE
+      #LET Del_Larg_Door=0	 Sl_Door_Pr=0	spostaDorrPrist=0
+      #IF $(_prist:1)=1
+         #LET Del_Larg_Door=$(profPrist:0)-$(^otsL) 	 Sl_Door_Pr=$(profPrist:0)-$(^otsL)
+         #IF $(TIPSHKAF:6)=2
+            #LET Del_Larg_Door=$(profPrist:0)-$(mat:1)-$(_MODDOORRASP:5)
+            #LET  Sl_Door_Pr=$(profPrist:0)-$(mat:1) -$(_MODDOORRASP:5)
+         #ENDIF
+         #LET spostaDorrPrist=$(^Sl_Door_Pr)+1001
+      #ELSEIF $(_prist:1)=2
+         #LET Del_Larg_Door=$(profPrist:0)-$(^otsR)
+         #IF $(TIPSHKAF:6)=2 #LET Del_Larg_Door=$(profPrist:0)-$(mat:1)-$(_MODDOORRASP:5)
+      #ENDIF
+      //#MSG $(^otsL)
+      _kreplenie_naprav
+      #IF $(TIPSHKAF:6)=2
+         #LET lustDoor=$l-$(mat:0)*2
+         #LET austDoor={$a-$(^hzoc:0)-$(mat:0)}
+         //#MSG $A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))-$(SaNapr)
+         //INITSHKAF
+         //VNESHNIE
+         #LET placerDoorSL={$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)+$(SaNapr)}
+         #LET placerDoorL={$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)}
+         #IF $(_PRIST:1)[1]
+            //#LET placerDoorSL={$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)//-$(_MODDOORRASP:5)
+            //#LET placerDoorL={$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)}//+$(_MODDOORRASP:5)
+         #ENDIF
+         #IF $(_PRIST:1)[2]
+            //#LET placerDoorSL={$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)-$(_MODDOORRASP:5)
+            //#LET placerDoorL={$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)}+$(_MODDOORRASP:5)
+         #ENDIF
+         //    DOORS	SL=$(^otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)+$(SaNapr)	SP=$P-$(tipsystem:16)	L=$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)	A={$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))-$(SaNapr)}	P=$(tipsystem:16)
+         DOORS	SL=$(placerDoorSL)	SA=$(otsD)+$(tipsystem:3)+$(SaNapr)	SP=$P-$(tipsystem:16)	L=$(placerDoorL)	A={$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))-$(SaNapr)}	P=$(tipsystem:16)
+         NALOG	sl=$(^otsDoorlar)/2+$(^Sl_Door_Pr)	l=$l-$(^otsDoorlar)-$(^Del_Larg_Door)
+         #LET SlDoor_Sx=$(SlDoor_Sx)+$(otsL)+$(otsDoorlar)/2	 SlDoor_Dx=$(SlDoor_Dx)+$(otsL)+$(otsDoorlar)/2
+      #ELSE
+         #LET lustDoor=$L-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)
+         #LET austDoor= $A-($(^otsD)+$(^otsU))
+         #LET placerDoorSL= {($(^otsL)-$(mat:1))+$(^Sl_Door_Pr)}
+         #LET placerDoorL={$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)}
+         //DOORS	SL=($(^otsL)-$(mat:1))+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)-$(mat:1)	SP=$P-$(tipsystem:16)	L=$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)	A=$A+$(mat:1)*2-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
+         DOORS	SL=$(placerDoorSL)	SA=$(otsD)+$(tipsystem:3)-$(mat:1)	SP=$P-$(tipsystem:16)	L=$(placerDoorL)	A=$A+$(mat:1)*2-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
+         NALOG	sl=($(^otsL)-$(mat:1))+$(^Sl_Door_Pr)	l=$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	SA=$(otsD)+$(tipsystem:3)-$(mat:1)
+         #LET SlDoor_Sx=$(SlDoor_Sx)+($(otsL)-$(mat:1))	 SlDoor_Dx=$(SlDoor_Dx)+($(otsL)-$(mat:1))
+      #ENDIF
+      //#MSG $L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)
+      // #MSG $(lustDoor) xx $(austDoor)
+      #LETS paramColorSystem=$(COL_SYSTEM:1)
+      #IF $(TIPSYSTEM:18)[ar3] //для крашенного профиля передаем параметр варианта цвета профиля
+         #LETS paramColorSystem=$(cvetvstavprof:1)
+      #ENDIF
+      #LETS testvar=$(NODOORS:0)	0	0	0	0	0	0|$(TIPRUCH:1)|$(katcol:1)|$(paramColorSystem)|1|$(SlDoor_Sx)|$(SlDoor_Dx)|$(dd_s:3)|$(spostaDorrPrist)|$(TIPSYSTEM:1)|$(sk_sys:0)|$(count_rolNova)|$(krVnutrD)|$(krVneshD)|$(NDOORS:3)|$(SlDoor2)|$(SlDoor4)
+      #LETS LOC_BX0=$(testvar) // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
+      #LETS param_shkaf=$(OBL)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-101-25-2-$(mod_min)}
+      #IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$(OBL)|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
+      //добавление параметров зоны перекрытия дверей к параметрам шкафа
+      #LETS param_shkaf=$(param_shkaf)|$(zone_params)
+      //позиционеры для дверей //если есть доводчик
+      #IF $(dd_s:3)=1 & $(TIPSYSTEM:18)==ar2
+         #SELECT $(NDOORS:3)
+         #CASE 3
+            001	LATO=6	COD=999sh_pos / / /#Q1	L=1	A=1	P=1  //Test
+         #CASE 4
+            001	LATO=6	COD=999sh_pos / / /#Q2	L=1	A=1	P=1  //Test
+         #CASE 5
+            001	LATO=6	COD=999sh_pos / / /#Q3	L=1	A=1	P=1  //Test
+         #ENDSELECT
+      #ENDIF
+      //
+   #ENDIF
 #ELSEIF $(TIPSHKAF:7)=2 ///распашной
-//   _KOROBLIVING
-//#IF $(_doorsRasp:1)!999
-//  DOORSRASP	SL=$(SxSpostaLRaspD)	SA=$(StSpostaARaspD)+$(hzoc:0)	SP=$p+$(SpostaPRaspD)	l=$l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD))	a=$a-($(StSpostaARaspD)+$(PnSpostaARaspD))-$(hzoc:0)	p=20
-//#ENDIF
-// #LETS LOC_BX0=$(NODOORSRASP:0)|$(_FiaApertoAnta:1)|$(_doorsRasp:1)|$(_VdVisDoor:0)|1 // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
-//_DOORRASP
-#LET zazorDoors=2.5
-#LET spostaLPetli=0
-#LET matKorp=0
-#LET naklDoor=0
-#IF $(TIPSHKAF:6)=1
-#LET lfia=$(mat_kor:0)
-#ELSE
-#LET lfia=$(matvn:0)
-#ENDIF
-///проверка глубины пристыковки для встраиваемых распашных
-#IF $(TIPSHKAF:6))=1
-#IF $(pkorp)-1!$(pzast:0)
-#IF $(_DOORSRASP:1)!999 & $(_DOORSRASP:1)=4
-#MSG Для установки 4 дверей нужно	 чтобы глубина наполнения была равна глубине шкафа -1 мм!
-#LETV _DOORSRASP=999
-#ENDIF
-#ENDIF
-#ENDIF
-///////
-#IF $(_PRIST:1)[1;2]
-#IF $(TIPSHKAF:6)
-#LET spostaColon=0
-#LET alteColon=$(akorp)
-#IF $(nerovnd:0)=1
-#LET spostaColon=$(DVID:0)-$(doorPripusk)-2.5
-#LET alteColon=$(akorp)-$(spostaColon)
-#ENDIF
-#IF $(nerovnUp:0)=1
-#LET alteColon=$(alteColon)-{$(UVID:0)}+$(doorPripusk)+2.5
-#ENDIF
-_pristUgolRasp	_MODDOORRASP=$(_MODDOORRASPUG)	_TipDoorRasp=$(_TipDoorRaspUG)	TxtVst=$(TxtVstFAS)	sa=$(spostaColon)	akorp=$(alteColon)
-#ELSE
-_pristUgolRasp	_MODDOORRASP=$(_MODDOORRASPUG)	_TipDoorRasp=$(_TipDoorRaspUG)	TxtVst=$(TxtVstFAS)
-#ENDIF
-#ENDIF
-#LET slPlacers=0
-#LET saPlacers=0
-#LET lPlacers=$l
-//левый пристыковочный
-#IF $(_prist:1)[1]
-#LET slPlacers=$(profprist:0)-$(profwallpris:0)+50+$(_MODDOORRASPug:5)
-#LET lPlacers=$l-($(profprist:0)-$(profwallpris:0)+50+$(_MODDOORRASPug:5))
-#ENDIF
-//правый пристыковочный
-#IF $(_prist:1)[2]
-#LET slPlacers=0
-#LET lPlacers=$l-({$(profprist:0)}-{$(profwallpris:0)}+50+$(_MODDOORRASPug:5))
-#ENDIF
-//#MSG $l-($(profprist:0)-$(profwallpris:0)+50+$(_MODDOORRASP:5))
-#LET aPlacers=$a
-#LETS pripParams=
-#LETS pripBotParams=
-#LETS pripTopParams=
-#IF $(addPrip:1)=1
-#LETS pripParams=$(pripVar:1);$(pripValDoor:0)
-#LET aPlacers=$a+$(pripValDoor:0)
-#IF $(pripVar:1)[1] //припуск снизу
-//для нижних дверей передаем припуски
-#LET saPlacers=-$(pripValDoor:0)
-#LETS pripBotParams=$(pripParams)
-#ENDIF
-#IF $(pripVar:1)[2] //припуск сверху
-//для верхних дверей передаем припуски
-#LETS pripTopParams=$(pripParams)
-#LET saPlacers=0//$(pripValDoor:0)
-#ENDIF
-#ENDIF
-//DOORSRASP
-_placerDoors	lfia=$(lfia)	doorNalog=1	l=$(lPlacers)	sl=$(slPlacers)	a=$(aPlacers)	sa=$(saPlacers)
-#LET zona=0
-#LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-1-25-2-$(mod_min)}
-#IF $(flagCorrector)=1
-#LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-5-25-2-$(mod_min)}
-#ENDIF
-#IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$l|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
+   //   _KOROBLIVING
+   //#IF $(_doorsRasp:1)!999
+   //  DOORSRASP	SL=$(SxSpostaLRaspD)	SA=$(StSpostaARaspD)+$(hzoc:0)	SP=$p+$(SpostaPRaspD)	l=$l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD))	a=$a-($(StSpostaARaspD)+$(PnSpostaARaspD))-$(hzoc:0)	p=20
+   //#ENDIF
+   // #LETS LOC_BX0=$(NODOORSRASP:0)|$(_FiaApertoAnta:1)|$(_doorsRasp:1)|$(_VdVisDoor:0)|1 // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
+   //_DOORRASP
+   #LET zazorDoors=2.5
+   #LET spostaLPetli=0
+   #LET matKorp=0
+   #LET naklDoor=0
+   #IF $(TIPSHKAF:6)=1
+      #LET lfia=$(mat_kor:0)
+   #ELSE
+      #LET lfia=$(matvn:0)
+   #ENDIF
+   ///проверка глубины пристыковки для встраиваемых распашных
+   #IF $(TIPSHKAF:6))=1
+      #IF $(pkorp)-1!$(pzast:0)
+         #IF $(_DOORSRASP:1)!999 & $(_DOORSRASP:1)=4
+            #MSG Для установки 4 дверей нужно	 чтобы глубина наполнения была равна глубине шкафа -1 мм!
+            #LETV _DOORSRASP=999
+         #ENDIF
+      #ENDIF
+   #ENDIF
+   ///////
+   #IF $(_PRIST:1)[1;2]
+      #IF $(TIPSHKAF:6)
+         #LET spostaColon=0
+         #LET alteColon=$(akorp)
+         #IF $(nerovnd:0)=1
+            #LET spostaColon=$(DVID:0)-$(doorPripusk)-2.5
+            #LET alteColon=$(akorp)-$(spostaColon)
+         #ENDIF
+         #IF $(nerovnUp:0)=1
+            #LET alteColon=$(alteColon)-{$(UVID:0)}+$(doorPripusk)+2.5
+         #ENDIF
+         _pristUgolRasp	_MODDOORRASP=$(_MODDOORRASPUG)	_TipDoorRasp=$(_TipDoorRaspUG)	TxtVst=$(TxtVstFAS)	sa=$(spostaColon)	akorp=$(alteColon)
+      #ELSE
+         _pristUgolRasp	_MODDOORRASP=$(_MODDOORRASPUG)	_TipDoorRasp=$(_TipDoorRaspUG)	TxtVst=$(TxtVstFAS)
+      #ENDIF
+   #ENDIF
+   #LET slPlacers=0
+   #LET saPlacers=0
+   #LET lPlacers=$l
+   //левый пристыковочный
+   #IF $(_prist:1)[1]
+      #LET slPlacers=$(profprist:0)-$(profwallpris:0)+50+$(_MODDOORRASPug:5)
+      #LET lPlacers=$l-($(profprist:0)-$(profwallpris:0)+50+$(_MODDOORRASPug:5))
+   #ENDIF
+   //правый пристыковочный
+   #IF $(_prist:1)[2]
+      #LET slPlacers=0
+      #LET lPlacers=$l-({$(profprist:0)}-{$(profwallpris:0)}+50+$(_MODDOORRASPug:5))
+   #ENDIF
+   //#MSG $l-($(profprist:0)-$(profwallpris:0)+50+$(_MODDOORRASP:5))
+   #LET aPlacers=$a
+   #LETS pripParams=
+   #LETS pripBotParams=
+   #LETS pripTopParams=
+   #IF $(addPrip:1)=1
+      #LETS pripParams=$(pripVar:1);$(pripValDoor:0)
+      #LET aPlacers=$a+$(pripValDoor:0)
+      #IF $(pripVar:1)[1] //припуск снизу
+         //для нижних дверей передаем припуски
+         #LET saPlacers=-$(pripValDoor:0)
+         #LETS pripBotParams=$(pripParams)
+      #ENDIF
+      #IF $(pripVar:1)[2] //припуск сверху
+         //для верхних дверей передаем припуски
+         #LETS pripTopParams=$(pripParams)
+         #LET saPlacers=0//$(pripValDoor:0)
+      #ENDIF
+   #ENDIF
+   //DOORSRASP
+   _placerDoors	lfia=$(lfia)	doorNalog=1	l=$(lPlacers)	sl=$(slPlacers)	a=$(aPlacers)	sa=$(saPlacers)
+   #LET zona=0
+   #LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-1-25-2-$(mod_min)}
+   #IF $(flagCorrector)=1
+      #LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-5-25-2-$(mod_min)}
+   #ENDIF
+   #IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$l|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
 #ELSEIF $(TIPSHKAF:7)=3
-//#MSG $l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD)+28+$[ex;$(TIPRUCH:26);:;1])
-#LET Del_Larg_Door=0	 Sl_Door_Pr=0
-_kreplenie_naprav
-#IF $(TIPSHKAF:6)=2 //отдельностоящий
-#LET lproem=$(l)-$(mat:1)*2
-#LET slproem=$(mat:1)
-#LET saproem=$(hzoc:0)+$(mat:1)
-#LET aproem=$a-$(mat:1)*2-$(hzoc:0)
+   //#MSG $l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD)+28+$[ex;$(TIPRUCH:26);:;1])
+   #LET Del_Larg_Door=0	 Sl_Door_Pr=0
+   _kreplenie_naprav
+   #IF $(TIPSHKAF:6)=2 //отдельностоящий
+      #LET lproem=$(l)-$(mat:1)*2
+      #LET slproem=$(mat:1)
+      #LET saproem=$(hzoc:0)+$(mat:1)
+      #LET aproem=$a-$(mat:1)*2-$(hzoc:0)
+   #ELSE
+      #LET lproem=$L-($(^otsL)+$(^otsR)) //встраиваемый
+      #LET slproem=$(^otsL)
+      #LET saproem=$(^otsD)
+      #LET aproem=$A-($(^otsD)+$(^otsU))
+   #ENDIF
+   DOORSRASPAR	SL=$(slProem)	SA=$(saproem)	SP=$p-34	L=$(lproem)	A=$(aproem)	P=30
+   //DOORSRASPAR	SL=$(SxSpostaLRaspD)+14+$[ex;$(TIPRUCH:26);:;1]/2	SA=$(StSpostaARaspD)+$(hzoc:0)+14+15	SP=$p-34	l=$l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD)+28+$[ex;$(TIPRUCH:26);:;1])	a=$a-($(StSpostaARaspD)+$(PnSpostaARaspD)+28+30)-$(hzoc:0)	p=30
+   #LETS testvar=$(NODOORS:0)	0	0	0	0	0	0|$(TIPRUCH:1)|$(katcol:1)|$(COL_SYSTEM:1)|3|0|0|0|0|$(TIPSYSTEM:1)|0|0|0|0
+   #LETS LOC_BX0=$(testvar) // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
+   //#LETS param_shkaf=$(OBL)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-71-25-2-$(mod_min)}
+   #LETS param_shkaf=$(l)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-71-25-2-$(mod_min)}
+   #IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$(OBL)|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
+   //DOORS
+   //_DOORRASP
 #ELSE
-#LET lproem=$L-($(^otsL)+$(^otsR)) //встраиваемый
-#LET slproem=$(^otsL)
-#LET saproem=$(^otsD)
-#LET aproem=$A-($(^otsD)+$(^otsU))
-#ENDIF
-DOORSRASPAR	SL=$(slProem)	SA=$(saproem)	SP=$p-34	L=$(lproem)	A=$(aproem)	P=30
-//DOORSRASPAR	SL=$(SxSpostaLRaspD)+14+$[ex;$(TIPRUCH:26);:;1]/2	SA=$(StSpostaARaspD)+$(hzoc:0)+14+15	SP=$p-34	l=$l-($(SxSpostaLRaspD)+$(DxSpostaLRaspD)+28+$[ex;$(TIPRUCH:26);:;1])	a=$a-($(StSpostaARaspD)+$(PnSpostaARaspD)+28+30)-$(hzoc:0)	p=30
-#LETS testvar=$(NODOORS:0)	0	0	0	0	0	0|$(TIPRUCH:1)|$(katcol:1)|$(COL_SYSTEM:1)|3|0|0|0|0|$(TIPSYSTEM:1)|0|0|0|0
-#LETS LOC_BX0=$(testvar) // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
-//#LETS param_shkaf=$(OBL)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-71-25-2-$(mod_min)}
-#LETS param_shkaf=$(l)|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-71-25-2-$(mod_min)}
-#IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$(OBL)|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
-//DOORS
-//_DOORRASP
-#ELSE
-#LETS LOC_BX0=||||1 // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
-#LET zona=0
-#LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-1-25-2-$(mod_min)}
-#IF $(flagCorrector)=1
-#LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-5-25-2-$(mod_min)}
-#ENDIF
-#IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$l|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
+   #LETS LOC_BX0=||||1 // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
+   #LET zona=0
+   #LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-1-25-2-$(mod_min)}
+   #IF $(flagCorrector)=1
+      #LETS param_shkaf=$l|$(ZONA)|$(hzoc:0)|$(mat:1)|$(in_size:0)|{$(PKORP)-5-25-2-$(mod_min)}
+   #ENDIF
+   #IF $(TIPSHKAF:6)=1 #LETS param_shkaf=$l|$(ZONA)|$(otstniz)|0|$(in_size:0)|{$(pZast:0)-25-2-$(mod_min)}
 #ENDIF
 #IF $(tipshkaf:6)=2
-#LETS mat=$(mat_old)
+   #LETS mat=$(mat_old)
 #ENDIF
 //передача данных потомку о типе шкафа и номер шкафа
 #LETS LOC_BX6=$(TIPRASPSHKAF:1)|$(SHPR)
