@@ -38,17 +38,16 @@ _addpolk	p=$(profNapol)//	flagMixal=1
 //ADDNAPLIVING
 //_POLKASTEKLO
 /// *********************************************************************************************************************************************************
-#IF $[datecompare;$(dataordine);25.10.2021]<0
 #LET flagNoHdf=0
-#ENDIF
-//рассчет взят из шк отдельностоящего обычного (только заменены матvn и мат местами) где matvn-материал полок а mat-материал стенок
-#LETS tmpStr=$(mat)
 #IF $(lkorp)<=1200
 #LET flagNoHdf=1
 #ENDIF
-#IF $(flagNoHdf)=0
-_backwallMixal	mat=$(matvn)	matvn=$(tmpstr)
+#IF $[datecompare;$(dataordine);25.10.2021]<0
+#LET flagNohdf=0
 #ENDIF
+//рассчет взят из шк отдельностоящего обычного (только заменены матvn и мат местами) где matvn-материал полок а mat-материал стенок
+#LETS tmpStr=$(mat)
+_backwallMixal	mat=$(matvn)	matvn=$(tmpstr)
 //ADDNAP
 // *************************************размеры*****************************************
 #LET RazmerLarg=$L

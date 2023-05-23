@@ -1,1 +1,1 @@
-602,Дно крашеной секции Living,$(codDn) /$(paramDn) /$(_WR:2) $(ndet),,,,,$L,16,$P,$(color),,0,,,,,,,,,LAP//,,,,$(codPilomat)/$(DRAW),,,,,,,,
+602,Дно крашеной секции Living,$(codDn) /$(paramDn) /$(_WR:2) $(ndet),,,,,$L,16,$P,$(color),,0,,,,,,,,,LAP//,,,,$(codPilomat)/$(draw),,,,,,,,

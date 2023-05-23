@@ -1,7 +1,7 @@
 {
   "Cod": "CM591Z.001BL",
   "Des": "Крючок мебельный 591 однорожковый замак черный матовый",
-  "Dis": "pegs,codpegs=003",
+  "Dis": "pegs,pegs=003",
   "Fl1": "",
   "Tip": "2800",
   "Diml": 12.0,
@@ -27,7 +27,7 @@
   "VarEscludi": null,
   "Codalt": "",
   "Foto": "",
-  "Ordinamento": 0,
+  "Ordinamento": 10,
   "CodBase": "",
   "Ngalias": "",
   "Ngvarianti": null,

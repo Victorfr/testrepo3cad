@@ -11,7 +11,7 @@
 #IF $(p)<650
 #IF $(orienta)=0 //для полок
 #IF $(TIPSHKAF:6))=2 //отдельностоящий
-001	SA=-$(stagA)	SP=55	A=$(stagA)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)  // Test
+001	a=$(stagA)	sp=55	sa=-$(stagA)	sl=0	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
 001	a=$(stagA)	sp=65	sa=-$(stagA)	sl=$L-$(stagL)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
 001	a=$(stagA)	sp=$p-65	sa=-$(stagA)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)
 001	a=$(stagA)	sp=$p-55	sa=-$(stagA)	sl=$L-$(stagL)	C1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)	DIS=$(stagCir)

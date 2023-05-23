@@ -1,6 +1,21 @@
 NUMDET	SL=$l/2	SA=$A/2
+#IF $(orienta)=0
 #LETS codPl =S33K_POLKCOL$(_Factura:7)
 #LETV _wr=$(codPl )
 #LETV _MNP=$(codPl )
-#LETS paramPl=MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR)
-603	sp=$(spBackWall)	p=$p-$(spBackWall)-1
+#LETS paramPl=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR);IDD=1;NPO=$(Draw)
+#LETS polkObr=$(spostaa);$(polkObr)
+#LETS color=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
+//603	COD= / / /#L+3	SP=$(spBackWall)	P=$p-$(spBackWall)-1	x8={$(spostaL)}|{$(spostaa)-16}  //Полка крашеной секции Living
+603	COD= / / /#L+3	SP=$(spBackWall)	P=$p-$(spBackWall)-1	X8={$(spostaL)}|{$(spostaa)}	X9=$(spostal)  //Полка крашеной секции Living
+#ENDIF
+#IF $(orienta)=1
+#LETS codVr =S33V_VERTCOL$(_Factura:7)
+#LETV _wr=$(codVr)
+#LETV _MNP=$(codVr)
+#LETS paramVr=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR);IDD=1;NPO=$(Draw)
+#LETS polkObr=$(spostaa);$(polkObr)
+#LETS color=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
+//603	COD= / / /#L+3	SP=$(spBackWall)	P=$p-$(spBackWall)-1	x8=$(spostaa)  //Полка крашеной секции Living
+605	COD= / / /#L+3	SP=$(spBackWall)	P=$p-$(spBackWall)-1	x8={$(spostal)}|$(spostaA)	X9=$(spostaa)
+#ENDIF

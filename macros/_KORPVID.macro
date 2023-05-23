@@ -95,7 +95,6 @@ _vidQuadro25
 #LET kol_krep=$(kol_krep)+8
 #ENDIF
 //_AGG_KREP
-//_AGG_KREP_MOD
 //001	LATO=6	COD=999DUBVB / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
 //001	LATO=6	COD=$(mat:6) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
 //001	LATO=6	COD=$(_colkarkas:12) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
@@ -127,8 +126,6 @@ _vidQuadro25
 // **************************************************************
 //001
 ///весь крепеж в 1 месте
-//_AGG_KREP_new	multiCount=1
-#IF 1
 #IF $(krepPar)[rastex]
 001	LATO=6	COD=999dub9047974 / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
 001	LATO=6	COD=999ex79462 / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
@@ -141,7 +138,6 @@ _vidQuadro25
 001	LATO=6	COD=999DUBVB / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
 001	LATO=6	COD=$(mat:6) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
 001	LATO=6	COD=$(_colkarkas:12) / / /#L+3#Q$(kol_krep)	L=1	A=1	P=1  //Test
-#ENDIF
 #ENDIF
 #IF $(aperto) // если открывание то сбросить смещения чтобы направляющие остались на месте
 !mtreset
@@ -168,7 +164,7 @@ _vidQuadro25
 #IF $(newNaprFlag)=1
 #LETS flagPl=
 #IF $(detYash)!1
-#LETS flagPl=N
+//#LETS flagPl=N
 #ENDIF
 001	LATO=6	COD=$(codFixL) /FPL=$(flagPL) / /#L+3  //Test
 001	LATO=6	COD=$(codFixR) /FPL=$(flagPL) / /#L+3  //Test

@@ -23,6 +23,11 @@
 #LETS cod_napr_Sx=999qdr2525l
 #LETS cod_napr_Dx=999qdr2525R
 #ENDIF
+#IF $(P)<250
+#LET prof_napr=251
+#LETS cod_napr_Sx=999qdr2525l
+#LETS cod_napr_Dx=999qdr2525R
+#ENDIF
 ///при PTO меняются сами направляющие
 #IF $(pto:0)=1
 #IF {$p}>=500

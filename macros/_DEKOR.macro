@@ -8,20 +8,9 @@
 //_paramAntaDEK
 //_DEKORE303
 #IF $(dekor:0)=1
-//#IF $(dekKolSx:0)=0 | $(dekKolDx:0)=0  //s-o 15.08.22
+//#IF $(dekKolSx:0)=0 | $(dekKolDx:0)=0
 //   #LETV cornic=0
 //#ENDIF
-#IF $(_prist:0)[1] | $(dekKolSx:0)!1
-#LETV bokSx=0
-#ENDIF
-#IF $(_prist:0)[2] | $(dekKolDx:0)!1
-#LETV bokDx=0
-#ENDIF
-#IF $(TIPSHKAF:7)=1 & $(dekKolSxDx:0)!1 // << *** s-o 15.08.22
-#LETV bokSx=0
-#LETV bokDx=0
-#LETV dekPlan=0
-#ENDIF // *** >>
 #IF $(TxtVstDek:1)==0
 #LETS nt=5723737
 #ELSEIF $(TxtVstDek:1)==1
@@ -34,15 +23,15 @@
 #LET lCornice=$l+($(matKn:1)*3+$(_ModDoorRasp:5)-5)*2
 #LET lShDek=$l
 #LET SlGabDek=0
-#LET otsDoorlar=$[IIF;$(dekkolsxdx:0);$(_ModDoorRasp:5)*2;0]; // s-o 15.08.22
-#LET SaNapr=$[IIF;$(dekkolsxdx:0);$(_ModDoorRasp:5);0]; // s-o 15.08.22
+#LET otsDoorlar=$(_ModDoorRasp:5)*2
+#LET SaNapr=$(_ModDoorRasp:5)
 #LETS matvstav_old=$(matvstav)	 cvetvstav_old=$(cvetvstav)	 _patina_old=$(_patina)
 #LETS matvstav=$(matvstavDek)	 cvetvstav=$(cvetvstavDek)	 _patina=$(_patinaDek)
 #LET rot_txt=0
 #IF $(TxtVstDek:1)=1 #LET rot_txt=90
 #LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
 #IF ($(matvstav:5)[s08] & $(cvetvstav:11)=1) #LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|{90-$(rot_txt)}
-#IF $(TIPSHKAF:7)=1 // купе
+#IF $(TIPSHKAF:7)=1
 // ***************************************** внутренние панели **************************************************************************
 #LETS 3ds=dek1.3ds
 #LET AltGorPl=$l-$(matvn:1)*2
@@ -78,7 +67,6 @@ _DEKELEMCODE	_nameParam=$(_nameParam)
 #LETV _wr=$(codWR)
 #LETV _MNP=$(codMNP)
 ///////////////////////////////////////
-#IF $(dekKolSxDx:0)=1 // << *** s-o 15.08.22 только при наличии колонок
 #LETS draw=404879828 //0016_001
 #IF $(_ModDoorRasp:1)[s26]
 #LETS draw=464423351 //0017_001
@@ -124,22 +112,14 @@ _dekore303	SL=$(slPlankR)	SA=$(matvn:1)+$(hzoc:0)+$(_ModDoorRasp:5)	SP=$p-100	L=
 // ************************************** крепление внутренних панелей *******************************************
 001	LATO=6	COD=999sh4x30 / / /#Q18	L=1	A=1	P=1  //Test
 // ***************************************************************************************************************
-#ENDIF // *** >>
-#ENDIF // ^ купе ^
+#ENDIF
 // ***************************************** наружние декоративные панели панели **************************************************************************
 #LETS 3ds=dek3.3ds
 #LET AltGorDekPl=$l	 SlNakZoc=0	 lNakZoc=$(hzoc:0)
-#IF $(TIPSHKAF:7)=1 & $(dekKolSxDx:0)=1 // купе //  & $(dekKolSxDx:0)=1 s-o 15.08.22
+#IF $(TIPSHKAF:7)=1
 #LET AltGorDekPl=$l-($(mat:1)+$(SaNapr)-1)*2	 SlNakZoc=$(mat:1)+$(SaNapr)-1	 lNakZoc=$(mat:1)+$(hzoc:0)+$(SaNapr)-2
 #IF $(_PRIST:1)!0
 #LET AltGorDekPl=$l-($(mat:1)+$(SaNapr)-1)-$(profPrist:0)
-#IF $(_prist:1)=1
-#LET slNakZoc=$(profPrist:0)
-#ENDIF
-#ENDIF
-#ELSEIF $(TIPSHKAF:7)=1 // купе с отключенными боковыми колонками
-#IF $(_PRIST:1)!0
-#LET AltGorDekPl=$l-$(profPrist:0)
 #IF $(_prist:1)=1
 #LET slNakZoc=$(profPrist:0)
 #ENDIF
@@ -151,9 +131,9 @@ _dekore303	SL=$(slPlankR)	SA=$(matvn:1)+$(hzoc:0)+$(_ModDoorRasp:5)	SP=$p-100	L=
 ///////////////////////////////////////
 _dekElemCode	_nameParam=DEKELM
 ///////////////////////////////////////
-#IF $(dekVst:0)=1 // вставка
+#IF $(dekVst:0)=1
 #LET AltGorDekPl=$l/2-50
-#IF $(TIPSHKAF:7)=1 & $(dekKolSxDx:0)=1 #LET AltGorDekPl=($l-($(mat:1)+$(SaNapr)-1)*2)/2-50
+#IF $(TIPSHKAF:7)=1 #LET AltGorDekPl=($l-($(mat:1)+$(SaNapr)-1)*2)/2-50
 #IF $(_prist:1)!0
 #LET AltGorDekPl=($l-$(profPrist:0))/2-50
 #IF $(TIPSHKAF:7)=1 #LET AltGorDekPl=($l-($(mat:1)+$(SaNapr)-1)-$(profPrist:0))/2-50
@@ -166,14 +146,11 @@ _dekElemCode	_nameParam=DEKELM
 #LET slDekVst=$(profPrist:0)+$(AltGorDekPl)+100
 #ENDIF
 #ENDIF
-#IF $(dekKolSxDx:0)=1 & ($(dekKolSx:0) | $(dekKolDx:0))
 _dekore303	SL=$(slDekVst)	SA=$(lNakZoc)	SP=$p	L=$(lNakZoc)	A=$(AltGorDekPl)	P=$(_ModDoorRasp:5)	AZ=90	MAN=0  //накладка на цоколь
-#ENDIF
 #IF $(TIPSHKAF:7)=1 & $(dekPlan:0)=1
 _dekore303	SL=$(slDekVst)	SA=$a	SP=$p	L=$(mat:1)+42	A=$(AltGorDekPl)	P=$(_ModDoorRasp:5)	Az=90	MAN=0  //накладка на верхний рельс
 #ENDIF
 // ********************************************* крепление накладки на цоколь и верхний рельс ******************************************************************
-#IF ($(dekKolSxDx:0)=1 & ($(dekKolSx:0) | $(dekKolDx:0))) | ($(TIPSHKAF:7)=1 & $(dekPlan:0)=1) //s-o
 #LET count_krep_nak=int($(AltGorDekPl)/500)
 // #FOR $1:$(count_krep_nak)
 001	LATO=6	COD=999ug31x31 / / /#Q$(count_krep_nak)	L=1	A=1	P=1  //Test
@@ -182,7 +159,6 @@ _dekore303	SL=$(slDekVst)	SA=$a	SP=$p	L=$(mat:1)+42	A=$(AltGorDekPl)	P=$(_ModDoo
 001	LATO=6	COD=999sh3.5x16pot / / /#Q$(count_krep_nak)	L=1	A=1	P=1  //Test
 001	LATO=6	COD=999sh3.5x16pot / / /#Q$(count_krep_nak)	L=1	A=1	P=1  //Test
 // #ENDFOR
-#ENDIF
 // ************************************************************************************************************************************************************
 #LETS 3ds=dek2.3ds
 #LETS draw=404879776 //0032_327
@@ -196,39 +172,25 @@ _dekore303	SL=$(slDekVst)	SA=$a	SP=$p	L=$(mat:1)+42	A=$(AltGorDekPl)	P=$(_ModDoo
 #LET slDekVstNak=$(profPrist:0)+$(AltGorDekPl)
 #ENDIF
 #ENDIF
-#IF $(dekKolSxDx:0)=1 // << *** s-o 15.08.22
 //  _dekore303	SL=$l/2-50	SA=0	SP=$p	L=100	A=$(lNakZoc)	P=$(_ModDoorRasp:5)	MAN=0 //декоративная вставка в накладку на цоколь
 _dekore303	SL=$(slDekVstNak)	SA=$(lNakZoc)	SP=$p	L=$(lNakZoc)	A=100	P=$(_ModDoorRasp:5)	MAN=0	az=90 //декоративная вставка в накладку на цоколь
-// ********************************************* крепление декоративных втставок ******************************************************************
-001	LATO=6	COD=999stPl80 / / /#Q2	L=1	A=1	P=1  //Test
-//001	LATO=6	COD=999stPl80 / / /#Q2	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999ug31x31 / / /#Q1	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999sh3.5x16pot / / /#Q12	L=1	A=1	P=1  //Test
-// ************************************************************************************************************************************************************
-#ENDIF // *** >>
 #IF $(TIPSHKAF:7)=1 & $(dekPlan:0)=1
 //   _dekore303	SL=$l/2-50	SA=$a-($(mat:1)+42)	SP=$p	L=100	A=$(mat:1)+42	P=$(_ModDoorRasp:5)	MAN=0 // декоративная вставка в накладку на верхний рельс
 _dekore303	SL=$(slDekVstNak)	SA=$a	SP=$p	L=$(mat:1)+42	A=100	P=$(_ModDoorRasp:5)	MAN=0	az=90 // декоративная вставка в накладку на верхний рельс
-// ********************************************* крепление декоративных втставок ******************************************************************
-001	LATO=6	COD=999stPl80 / / /#Q2	L=1	A=1	P=1  //Test
-//001	LATO=6	COD=999stPl80 / / /#Q2	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999ug31x31 / / /#Q1	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999sh3.5x16pot / / /#Q12	L=1	A=1	P=1  //Test
-// ************************************************************************************************************************************************************
 #ENDIF
 // ********************************************* крепление декоративных втставок ******************************************************************
-//001	LATO=6	COD=999stPl80 / / /#Q4	L=1	A=1	P=1  //Test
-////001	LATO=6	COD=999stPl80 / / /#Q2	L=1	A=1	P=1  //Test
-//001	LATO=6	COD=999ug31x31 / / /#Q2	L=1	A=1	P=1  //Test
-//001	LATO=6	COD=999sh3.5x16pot / / /#Q24	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999stPl80 / / /#Q4	L=1	A=1	P=1  //Test
+//001	LATO=6	COD=999stPl80 / / /#Q2	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999ug31x31 / / /#Q2	L=1	A=1	P=1  //Test
+001	LATO=6	COD=999sh3.5x16pot / / /#Q24	L=1	A=1	P=1  //Test
 // ************************************************************************************************************************************************************
-#ENDIF  // ^ декор. вставка ^
+#ENDIF
 #LETS 3ds=dek3.3ds
 #LETS draw=404879765 //0032_000
 #IF $(_ModDoorRasp:1)[s26]
 #LETS draw=463208906//0033_000
 #ENDIF
-#IF $(flagZoc)!1 & ($(dekKolSx:0) | $(dekKolDx:0)) & $(dekKolSxDx:0)=1 //s-o 15.08.22
+#IF $(flagZoc)!1
 _dekore303	SL=$(SlNakZoc)	SA=$(lNakZoc)	SP=$p	L=$(lNakZoc)	A=$(AltGorDekPl)	P=$(_ModDoorRasp:5)	Az=90	MAN=0  //накладка на цоколь
 #ENDIF
 #IF $(TIPSHKAF:7)=1
@@ -238,20 +200,18 @@ _dekore303	SL=$(SlNakZoc)	SA=$a	SP=$p	L=$(mat:1)+42	A=$(AltGorDekPl)	P=$(_ModDoo
 #ENDIF
 // ***************************************************************************************************************
 // ********************************************* крепление накладки на цоколь и верхний рельс ******************************************************************
-#IF ($(flagZoc)!1 & ($(dekKolSx:0) | $(dekKolDx:0)) & $(dekKolSxDx:0)=1) | ($(TIPSHKAF:7)=1 & $(dekPlan:0)=1)
 #LET count_krep_nak=int($(AltGorDekPl)/500)
 001	LATO=6	COD=999ug31x31 / / /#Q$(count_krep_nak)	L=1	A=1	P=1  //Test
 001	LATO=6	COD=999sh3.5x16pot / / /#Q{$(count_krep_nak)*4}	L=1	A=1	P=1  //Test
-#ENDIF
 // ************************************************************************************************************************************************************
 #LET SlSxDek=15+$(matKn:1)*5
 #LET SlDxDek=$l
 #LET lDekKol=95
 #LET AltDekV=125
 #LET AltDekKol=$a-$(AltDekV)*2
-#IF ($(TIPSHKAF:7)=1 & $(dekKolSxDx:0)=1) #LET SlSxDek=14+$(matKn:1)*3	 SlDxDek=$l-($(mat:1)+17)	 lDekKol=14+$(matKn:1)*3+$(mat:1)+17 //s-o
+#IF $(TIPSHKAF:7)=1 #LET SlSxDek=14+$(matKn:1)*3	 SlDxDek=$l-($(mat:1)+17)	 lDekKol=14+$(matKn:1)*3+$(mat:1)+17
 // ***************************************************************** декоративная колонка слева ****************************************************************
-#IF $(dekKolSx:0)=1 & $(_PRIST:1)!1 & $(dekKolSxDx:0)=1 // << *** s-o 15.08.22 наличии колонок
+#IF $(dekKolSx:0)=1 & $(_PRIST:1)!1
 #LETS 3ds=dek2.3ds
 #LETS draw=404879776
 #IF $(_ModDoorRasp:1)[s26]
@@ -302,7 +262,7 @@ _dekore303	SL=-$(SlSxDek)	SA=$(AltDekV)	SP=$p	L=$(lDekKol)	A=$(AltDekKol)	P=$(_M
 #ENDIF
 // ****************************************************************************************************************************************************************
 // **************************************************************** крепление левой декоративной колоки и подставок если нет декоративной боковины ***************
-#IF $(bokSx:0)=0 & $(dekKolSx:0)=1 & $(_prist:1)!1 & $(dekKolSxDx:0)=1
+#IF $(bokSx:0)=0 & $(dekKolSx:0)=1 & $(_prist:1)!1
 #IF $(TIPSHKAF:7)=1
 #LET lShDek=$(lShDek)+14+$(matKn:1)*3
 #ELSE
@@ -316,7 +276,7 @@ _dekore303	SL=-$(SlSxDek)	SA=$(AltDekV)	SP=$p	L=$(lDekKol)	A=$(AltDekKol)	P=$(_M
 #ENDIF
 // ******************************************************************************************************************************************************************
 // ***************************************************************** декоративная колонка справа ****************************************************************
-#IF $(dekKolDx:0)=1 & $(_PRIST:1)!2 & $(dekKolSxDx:0)=1
+#IF $(dekKolDx:0)=1 & $(_PRIST:1)!2
 #LETS 3ds=dek2.3ds
 #LETS draw=404879776
 #IF $(_ModDoorRasp:1)[s26]
@@ -571,34 +531,16 @@ _dekore303	SL=$l/6-25	SA=$a	SP=$p-33	L=75	A=50	P=108	MAN=0 // вставка в 
 _dekore303	SL=($l/6)*5-25	SA=$a	SP=$p-33	L=75	A=50	P=108	MAN=0 //вставка в карниз
 #LET lCornice=$(lCornice)-100
 #ENDIF
-//<<************ s-o 15.08.22
-#IF ($(dekkolsx:0)!=1 & $(dekkoldx:0)!=1) |  $(dekkolsxdx:0)!=1
-#LETS sagomaSx_cor= 0	$P
-#LETS sagomaDx_cor= $L	$P
-#IF $(cornicSx:0)=1
-#LETS sagomaSx_cor= 0	0	 0	$P
-#LET deltaCorSx=$p
-#ENDIF
-#IF $(cornicDx:0)=1
-#LETS sagomaDx_cor= $L	$P	 $L	0
-#LET deltaCorDx=$p
-#ENDIF
-#ELSEIF $(dekkolsx:0)!=1
-#LETS sagomaSx_cor= 0	$P
-#IF $(cornicSx:0)=1
-#LETS sagomaSx_cor= 0	0	 0	$P
-#LET deltaCorSx=$p
-#ENDIF
-#ELSEIF $(dekkoldx:0)!=1
-#LETS sagomaDx_cor= $L	$P
-#IF $(cornicDx:0)=1
-#LETS sagomaDx_cor= $L	$P	 $L	0
-#LET deltaCorDx=$p
-#ENDIF
-#ENDIF
-// *******>>
 #LET lCornice=$(lCornice)+$(deltaCorSx)+$(deltaCorDx)-$(profPrist:0)
-!SAGOMA tmp_cor $(sagomaSx_cor)	$(sagomaDx_cor) // old
+#IF $(dekkolsx:0)!=1 & $(dekkoldx:0)!=1
+!SAGOMA tmp_cor 0	$P	 $L	 $P
+#ELSEIF $(dekkolsx:0)!=1
+!SAGOMA tmp_cor 0	$P	 $(sagomaDx_cor)
+#ELSEIF $(dekkoldx:0)!=1
+!SAGOMA tmp_cor $(sagomaSx_cor)	$L	 $P
+#ELSE
+!SAGOMA tmp_cor $(sagomaSx_cor)	$(sagomaDx_cor)
+#ENDIF
 #IF $(_PRIST:1)=1
 !SAGOMA tmp_cor 0+$(profPrist:0)	$p	$(sagomaDx_cor)
 #ENDIF

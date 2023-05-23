@@ -5,6 +5,10 @@
 #LETV a=$(altShMixal:3)
 #LET minP=200
 #LET maxP=600
+#IF $(shMantera)=1
+#LET maxP=800
+#LET minP=500
+#ENDIF
 #ELSE //если нет дверей то гикие размерыс ограничениями
 #LET minL=200
 #LET maxL=1200
@@ -27,6 +31,10 @@
 #IF $a>$(maxa)
 #LETV a=$(maxA)
 #MSG Высота шкафа не может быть больше $(MaxA) мм!
+#ENDIF
+#IF $(shMantera)=1
+#LET maxP=800
+#LET minP=500
 #ENDIF
 #ENDIF
 #IF $(P)<$(minP)

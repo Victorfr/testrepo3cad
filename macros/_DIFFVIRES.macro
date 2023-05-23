@@ -1,0 +1,5 @@
+!parametri	nameMainSag=	mainSag	viresBottom	viresBack	viresWidth	viresHeight
+!SAGOMA innerOne 0	0	0	$(viresWidth)	$(viresHeight)	$(viresWidth)	$(viresHeight)	0
+!SAGSPOSTA innerone	 $(innerone)	-$(viresBottom)	-$(viresBack)
+#LETS x=$(nameMainSag)
+!SAGDIFF $(x)	 $(mainSag)	$(innerone)

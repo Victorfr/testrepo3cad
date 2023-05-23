@@ -11,12 +11,14 @@
 #LETS cod=AR2PROF_US
 #LETV _WR=$(cod)
 #LETV _MNP=$(cod)
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=17	SA=-23	SP=$(sp_delit)-5	L=6.8	A=150	P=56	ax=90	ay=-90	lato=$(show_door)  //Профиль разделительный
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l-167	SA=-23	SP=$(sp_delit)-5	L=6.8	A=150	P=56	lato=$(show_door)	ax=90	ay=-90  //Профиль разделительный
+//065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=17	SA=-23	SP=$(sp_delit)-5	P=6.8	L=150	A=56	ax=90	ay=-90  //Профиль разделительный
+//065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l-167	SA=-23	SP=$(sp_delit)-5	P=6.8	L=150	A=56	lato=$(show_door)	ax=90	ay=-90  //Профиль разделительный
+065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=17	SA=-23	SP=$(sp_delit)-5	P=56	L=6.8	A=150	ax=90	ay=-90  //Профиль разделительный
+065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l-167	SA=-23	SP=$(sp_delit)-5	P=56	L=6.8	A=150	lato=$(show_door)	ax=90	ay=-90  //Профиль разделительный
 #LET larg_us=int($l-17*2-34*2-150*2-10)
 #IF $l>990 | $(alte_door)>=2600
 //#IF $l>1000 | $a>=2600
 #LET larg_us=int($(larg_us)/2-27)
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);;BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l/2+23	SA=-23	SP=$(sp_delit)-5	L=6.8	A=$(larg_us)	P=56	ax=90	ay=-90	lato=$(show_door)  //Профиль разделительный
+065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);;BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l/2+23	SA=-23	SP=$(sp_delit)-5	P=56	L=6.8	A=$(larg_us)	ax=90	ay=-90  //Профиль разделительный
 #ENDIF
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);;BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	 SL=205	SA=-23	SP=$(sp_delit)-5	L=6.8)	A=$(larg_us)	P=56	ax=90	ay=-90	lato=$(show_door)  //Профиль разделительный
+065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);;BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	 SL=205	SA=-23	SP=$(sp_delit)-5	P=56	L=6.8	A=$(larg_us)	ax=90	ay=-90  //Профиль разделительный

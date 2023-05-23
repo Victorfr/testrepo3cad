@@ -29,12 +29,15 @@
 #IF $(matvn:1)[18]
    #LETV shMantera=1
    #LETV _krepeg=1
-   #LETV addzoc=1
+   // #LETV addzoc=1
+   #LET .globale1=1
 #ELSE
    #LETV shMantera=0
+   #LET .globale1=0
 #ENDIF
 #IF $(shMantera)=0
-   #LETV hzoc=0
+   //#LETV hzoc=0
+   //#LETV addzoc=0
 #ENDIF
 #IF $(shMantera)=1
    #LETS mat_backwall:3=8
@@ -48,6 +51,10 @@
    //#LETV pbokr=2
    //#LETV pup=2
    #LETS msg_lim_kol=0
+#IF $(shMantera)=0
+   #LETV hzoc=0
+   #LETV addzoc=0
+#ENDIF
 #ENDIF
 ///обнуление параметров для упаковки стекол
 #LETV maxStekloL=
@@ -69,7 +76,7 @@
    #LETS typePlaser=$[ex;$(i);|;4]
    #IF $(typePlaser)[LUMIXPOLK]
       #LET typePolk=$[ex;$(i);|;3]
-      #IF $(typePolk)[3;4]
+      #IF $(typePolk)=3
          ///если тип полки с подсветкой( вне зависимости от количества полок) добавляется трансформатор
          #LET flagPolkLed=1
       #ENDIF
@@ -132,5 +139,9 @@ _DATABOX
    001	LATO=6	COD=999TransForLedLent / /Трансформатор для ленты	L=1	A=1	P=1  // Test
    001	LATO=6	COD=999alumDrDat / /Датчик открывания двери для ШК	L=1	A=1	P=1  // Test
 #ENDIF
-_lamp	matvnL=$(mat)	matvnR=$(mat)
+#LET otstupLamp=228
+#IF $(shMantera)=1
+   #LET utstupLamp=$(lampoffset:0)
+#ENDIF
+_lamp	matvnL=$(mat)	matvnR=$(mat)	otstupLamp=$(utstupLamp)	leftlamp=$(lampleft:0)	rightlamp=$(lampright:0)	shMantera=$(shMantera)
 #LETS _macrofinale= _finaleMixal

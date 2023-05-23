@@ -43,13 +43,13 @@
 #ENDIF
 #IF $(_MODDOORRASP:1)[s01] //Jazz
 #LETS draw=464423351//0017_001
-#IF $(_TIPDOORRASP:3)[gjp] | $(_gjp:0)=1
+#IF $(_gjp:0)=1
 #LETS draw=686694492 //0017_309
 #ENDIF
 #LETS 3ds=iceG.3ds
 #ENDIF
-#IF $(_MODDOORRASP:1)[s32] //Jazz
-#LETS draw=77777777// 0036_001
+#IF $(_MODDOORRASP:1)[s32] //Integrato
+#LETS draw=739533252// 0036_001
 #LETS 3ds=iceG.3ds
 #ENDIF
 #IF $(_MODDOORRASP:1)[s29] //Vector acril

@@ -1,13 +1,15 @@
-#IF $(TIPSYSTEM:18)[ar2]
+#IF $(TIPSYSTEM:18)==ar2
 #IF $a<200
 #LETS ksv={$(spostaa)+35}|{$(spostaa)+$a-35}|$(ksv)
 #LET count_sh=4+$(count_sh)
 #ELSEIF $a<350
-///когда попадает ручка профиль A=204 мм сверловок нет
+//если установлена ручка профиль вертикально то сверловки не добавляются
 #IF  $(vertmannov$(_ctx):1)!1
 #LETS ksv={$(spostaa)+50}|{$(spostaa)+$a-50}|$(ksv)
 #LET count_sh=4+$(count_sh)
 #ENDIF
+//#LETS ksv={$(spostaa)+50}|{$(spostaa)+$a-50}|$(ksv)
+//#LET count_sh=4+$(count_sh)
 #ELSEIF $a<600
 #LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/2)}|{$(spostaa)+$a-50}|$(ksv)
 #LET count_sh=6+$(count_sh)
@@ -32,7 +34,7 @@
 #ELSEIF $a<2350
 #LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/9)}|{$(spostaa)+int($a*2/9)}|{$(spostaa)+int($a*3/9)}|{$(spostaa)+int($a*4/9)}|{$(spostaa)+int($a*5/9)}|{$(spostaa)+int($a*6/9)}|{$(spostaa)+int($a*7/9)}|{$(spostaa)+int($a*8/9)}|{$(spostaa)+$a-50}|$(ksv)
 #LET count_sh=20+$(count_sh)
-#ELSEIF $a<2700
+#ELSEIF $a<2600
 #LETS ksv={$(spostaa)+50}|{$(spostaa)+int($a/10)}|{$(spostaa)+int($a*2/10)}|{$(spostaa)+int($a*3/10)}|{$(spostaa)+int($a*4/10)}|{$(spostaa)+int($a*5/10)}|{$(spostaa)+int($a*6/10)}|{$(spostaa)+int($a*7/10)}|{$(spostaa)+int($a*8/10)}|{$(spostaa)+int($a*9/10)}|{$(spostaa)+$a-50}|$(ksv)
 #LET count_sh=22+$(count_sh)
 #ENDIF

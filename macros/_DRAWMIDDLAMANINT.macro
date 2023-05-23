@@ -6,8 +6,23 @@
 #LET rad=44.5
 #LET x=-({$(rad)*sin(45)})
 #LET y={$(rad)*CSD(45)}
-#IF $(_manIntY:0)+$(_manIntX:0)+10>=$a
-#LETV _manIntX=$a-$(_manIntY:0)-10
+#IF $(oldManX)!$(_manIntX:0) |  $(oldAlt)!$a
+#IF $(_manIntY:0)+$(_manIntX:0)+10>$A
+#LETV _manIntX={$a-$(_manIntY:0)-10}
+#ENDIF
+#IF $(_manIntY:0)<$(minIntSize)
+#LETV _manIntY=$(minIntSize)
+#LETV _manIntX=$(_manIntY:0)+200
+#ENDIF
+#LETV oldManX={$(_manIntX:0)}
+#LETV oldAlt=$a
+#ENDIF
+#IF {$(oldManY)}!$(_manIntY:0)|  $(oldAlt)!$a
+#IF $(_manIntY:0)+$(_manIntX:0)+$(minIntSize)>$A
+#LETV _manIntY={$a-$(_manIntX:0)-$(minIntSize)}
+#ENDIF
+#LETV oldManY={$(_manIntY:0)}
+#LETV oldAlt=$a
 #ENDIF
 #LET manLarg=$(_manIntY:0)
 #LET manLargY=$(_manIntX:0)

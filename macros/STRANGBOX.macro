@@ -112,7 +112,7 @@ NUMDET	SL=$l/2	SA=-$a	sp=-20
 #ENDIF
 /////////////////////////////////////////////////////////
 //110
-108	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=1_2;IDO=1;NSE=$(SHPR)	SL=$(slRip)	SA=$(spostaaRip)	DIS=$(sagRip)  //Полка для скошенных и радиусных секций
+108	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=1_2;IDO=1	SL=$(slRip)	SA=$(spostaaRip)	DIS=$(sagRip)  //Полка для скошенных и радиусных секций
 /////////////////////////////////////////////////////////
 #LETS mat=$(mat_old)	 _colkarkas=$(_colkarkas_old)
 // *************************************** крепеж полок ***********************************************

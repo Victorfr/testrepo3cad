@@ -1,6 +1,5 @@
 #LET countPlan=int($(a)/400)
 //NUMDET	vid_num=6
-#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
 051	COD= / /$(_WR:2) 18 мм /#L+3	SL=$(matknug:1)	L=18	A=150  //Боковина без сверления и без номера на схеме сборки
 //NUMDET	vid_num=6
 051	COD= / /$(_WR:2) 18 мм /#L+3	SL=$(matknug:1)	SA=$(a)-150-50	L=18	A=150  //Боковина без сверления и без номера на схеме сборки

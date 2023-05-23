@@ -5,6 +5,9 @@
 // #LETS paramFas=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;IDO=1;IDD=1
 //     300	COD= /$(paramFas) / /#L+3	SL=0	SA=0	SP=0	L=$l	A=$a	X7=$(mat:1)/$(TIPSHKAF:7)/$(macrosSposta)/$(macrosSpostaL)/$(deltaAkorpvid)/$(_colkarkas:10)  // Фасад выдвижного ящика
 #LETS paramsL=#L+3
+#IF $(shMantera)=1
+#LETV _MNP:3=753763563
+#ENDIF
 #LETS paramFas=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK)
 #IF $(detYash)=0
 #LETS paramsL=#L+1
@@ -12,6 +15,8 @@
 #LETS paramFas=$(paramFas);IDO=1;IDD=1
 #ENDIF
 man_overridepos
-//300	COD= / / /#L+3	l=$l	a=$a	sa=0	sl=0	sp=0	X7=$(matmodul:1)/$(TIPSHKAF:7)/$(macrosSposta)/$(macrosSpostaL)/$(deltaAkorpvid)/$(_colkarkas:10)
-300	COD= /$(paramFas) / /$(paramsL)	SL=0	SA=0	SP=0	L=$l	A=$a	X7=$(mat:1)/$(TIPSHKAF:7)/$(macrosSposta)/$(macrosSpostaL)/$(deltaAkorpvid)/$(_colkarkas:10)  // Фасад выдвижного ящика
+//detmod=1 фальш планка модуля
+//300	COD= / / /$(paramsL)	SL=0	SA=0	SP=0	L=$l	A=$a	X7=$(matmodul:1)/$(TIPSHKAF:7)/$(macrosSposta)/$(macrosSpostaL)/$(deltaAkorpvid)/$(_colkarkas:10)  // Фасад выдвижного ящика
 //100	SP=$(mat:0)	P=$L	AY=90	MAN=12	X9=$(_man:3)/$(_man:4)/$(_man:5)/$(_man_pos:3)/$(_man_orient:3)/$(_man:6)/$(man_vert:0)/$(_man10:3)  //Бок ЛВ ДСП
+300	COD= /$(paramFas) / /$(paramsL)	SL=0	SA=0	SP=0	L=$l	A=$a	X7=$(mat:1)/$(TIPSHKAF:7)/$(macrosSposta)/$(macrosSpostaL)/$(deltaAkorpvid)/$(_colkarkas:10)  // Фасад выдвижного ящика
+//010

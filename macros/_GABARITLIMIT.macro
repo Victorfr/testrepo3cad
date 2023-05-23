@@ -9,13 +9,13 @@
 ///место под расчеты мтгтмальной высоты места под плейсер
 //_PLACERDOORS
 #ELSE // комод ливинг
-#LET lmin=300//400
+#LET lmin=400
 #LET amin=180+$(^hzoc:0)
 #ENDIF
 #IF $(tipshkafliving:1)=1
 #LET pmin=300//400
 #ELSE
-#LET pmin=200
+#LET pmin=125//200
 #IF $(tipshkaf:7)=4 //
 #IF $(NAVESLIVING:1)!0
 #LET NavesP=60

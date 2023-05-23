@@ -1,4 +1,13 @@
 man_overridepos
+#VB
+namebokfas="Боковой фасад"
+v("namebokfas")=namebokfas
+#ENDVB
+//FINALESCRIPT
+#IF $(flagbok)==on
+#LETS _wr:2=$(namebokfas)
+//$(_wr:2)
+#ENDIF
 #IF $(_ModDoorRasp:7)[DSP]
 #IF $(_ModDoorRasp:1)[S12;E02;D02] //для меоделей  у которых выбирается кромка отдельно	 заменим параметр в варианте( так как в самом варе используется без индекса)
 #LETS _colkarkas:7=$(_COLKROM:5)
@@ -80,6 +89,9 @@ _upakovka_door
 #IF $(flagCorrector)[2;3]
 #LETS _wr:2=Дверь купе Top Line
 #ENDIF
+#IF $(flagbok)==on
+#LETS _wr:2=$(namebokfas)
+#ENDIF
 #IF $(a)<146 | $(l)<146
 #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
 #ENDIF
@@ -95,7 +107,8 @@ _upakovka_door
 //#LET SDR={$l-2}
 //#LET DDR={$a-2}
 #ENDIF
-301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);SDR=$(SDR);DDR=$(DDR);NSE=$(SHPR) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
+//301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);SDR=$(SDR);DDR=$(DDR);NSE=$(SHPR) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
+301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);SDR=$(SDR);DDR=$(DDR);NSE=$(SHPR) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
 #ELSE
 //_FASVID
 301	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	x5=$(x5par)	lato=$(show_door)  //Дверь распашная
@@ -342,24 +355,29 @@ _paramantastr
 #IF $(_man:1)!999 #LETV _man=999
 #LET latofas=0
 //расположение ручки интеграто integrato
+#LETS dis=
 #IF $(_MANINTEGRATO:0)[01] // слева
 #LETS profilintegrato= a10	 25.75	22	 24.5	20.75	 25.75	19.5	  a10	 37	18	 42	11	 36	5	 0	5      	
 !SAGOMA sagfasad  0	0	 $L	0	 $L	$p	  $(profilintegrato)//
+#LETS dis=$(sagfasad)
 #ELSEIF $(_MANINTEGRATO:0)[02]  // справа
 #LETS profilintegrato= $L	5	 a10	 $L-36	5	 $L-42	11	 $L-37	18	  a10	 $l-25.75	19.5	 $l-24.5	20.75	 $l-25.75	22// //	 //
 !SAGOMA sagfasad    0	0	 $L	0	  $(profilintegrato)	 0	22////
+#LETS dis=$(sagfasad)
 #ELSEIF $(_MANINTEGRATO:0)[03] // сверху
 #LETS profilintegrato=5	$a	  a10	 5	 $a-36	 11	 $a-42	 18	 $a-37	 a10	 19.5	$a-25.75	 20.75	$a-24.5	 22	$a-25.75
 !SAGOMAL sagfasad  0	0 	 0	$A	 $(profilintegrato)	 $p	0
+#LETS dis=$(sagfasad)
 #ELSEIF $(_MANINTEGRATO:0)[04]  // снизу
 #LETS profilintegrato=a10	 22	25.75	 20.75	24.5	 19.5	25.75	 a10	  18	36	 11	 42	 5	37	 5	0  //a10	   //5	$a   5	 $a-36	 11	 $a-42	 18	 $a-37	
 !SAGOMAL sagfasad  0	0 	 0	$A	 22	$A	  $(profilintegrato)
+#LETS dis=$(sagfasad)
 #ENDIF
 #LETS draw=$(_manIntegrato:4)
 _integratoProfile
 _paramantastr
 //607	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)	a=$a	p=$P	l=$l
-303	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)	lato=$(latofas)   //Боковина фасадная
+303	COD= / / /#l-1	C1=$(color_door1)	dis=$(dis)	FACC=0	X1=$(sagomap)	lato=$(latofas)   //Боковина фасадная
 025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
 #ENDIF
 #ELSEIF $(_ModDoorRasp:7)[LMDF]
@@ -399,6 +417,9 @@ _paramantastr
 #ENDIF
 #IF $(flagCorrector)[2;3]
 #LETS _wr:2=Дверь купе Top Line
+#ENDIF
+#IF $(flagbok)==on
+#LETS _wr:2=$(namebokfas)
 #ENDIF
 #IF $(a)<146 | $(l)<146
 #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)

@@ -21,10 +21,10 @@ _DATABOX
 //если плейсер установлен в шк
 #IF $(FPL)!!N
 _PROVERKAPLMX
+#ENDIF
 //проверка плесейров на смену размера шкафа
 #IF $(placerTestL)!$(lkorpSh)
 #LET flag_ust=55
-#ENDIF
 #ENDIF
 NUMDET	SL=0	SA=$A/2
 #LETV _wr=999v_karkasBok

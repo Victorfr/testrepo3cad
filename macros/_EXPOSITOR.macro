@@ -73,8 +73,7 @@ DOORS	SL=$(otsL)	SA=$(otsD)+$(tipsystem:3)	SP=$P-($(tipsystem:16)*3+30)	L=$L-($(
 DOORS	SL=$(otsL)	SA=$(otsD)+$(tipsystem:3)	SP=$P-($(tipsystem:16)*4+45)	L=$L-($(otsL)+$(otsR))	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
 DOORS	SL=$(otsL)	SA=$(otsD)+$(tipsystem:3)	SP=$P-($(tipsystem:16)*5+60)	L=$L-($(otsL)+$(otsR))	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
 DOORS	SL=$(otsL)	SA=$(otsD)+$(tipsystem:3)	SP=$P-($(tipsystem:16)*6+75)	L=$L-($(otsL)+$(otsR))	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
-#LETS testvar=$(NODOORS:0)	$(show_door1:0)	$(show_door2:0)	$(show_door3:0)	$(show_door4:0)	$(show_door5:0)	$(show_door6:0)|$(TIPRUCH:1)|$(katcol:1)|$(COL_SYSTEM:1)|2|$p|0|$(dd_s:3)||||2|||2
-//#LETS testvar=$(NODOORS:0)	0	0	0	0	0	0|$(TIPRUCH:1)|$(katcol:1)|$(paramColorSystem)|1|$(SlDoor_Sx)|$(SlDoor_Dx)|$(dd_s:3)|$(spostaDorrPrist)|$(TIPSYSTEM:1)|$(sk_sys:0)|$(count_rolNova)|$(krVnutrD)|$(krVneshD)|$(NDOORS:3)|$(SlDoor2)|$(SlDoor4)
+#LETS testvar=$(NODOORS:0)	$(show_door1:0)	$(show_door2:0)	$(show_door3:0)	$(show_door4:0)	$(show_door5:0)	$(show_door6:0)|$(TIPRUCH:1)|$(katcol:1)|$(COL_SYSTEM:1)|2|$p|0|$(dd_s:3)|||||||2
 #LETS LOC_BX0=$(testvar) // передача данных потомку - дверям
 //_SHKAF
 #LET _PLACERRIVFIGLI=1 // принудительный пересчёт потомка при изменении родителя

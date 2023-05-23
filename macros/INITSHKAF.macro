@@ -32,10 +32,10 @@ _dataBox
 #IF $(mat_kor:1)[22]
 //   #LETV _colkarkas=046
 #ENDIF
-#IF $(mat:1)[25]
+#IF $(mat_kor:1)[25]
 #LETV _colkarkas_kor=047
 #ENDIF
-#LETV _colkarkasback=046
+//_SHKAFLIVING
 #ENDIF
 #IF $[datecompare;$(dataordine);06.06.2019]<0
 #LETS matvn=$(mat)
@@ -148,11 +148,7 @@ _provObr
 #LETV cornic=1
 #LET dekorOn=0
 #ENDIF
-// s-o
-#LETV dekKolSxDx=1
-#LETV dekPlan=1
+#IF $(tipshkaf:6)=2 & $(tipshkaf:7)=1
+#LETV dekKolSx=1
+#LETV dekKolDx=1
 #ENDIF
-//#IF $(tipshkaf:6)=2 & $(tipshkaf:7)=1 // s-o ^
-//   #LETV dekKolSx=1
-//   #LETV dekKolDx=1
-//#ENDIF

@@ -25,7 +25,7 @@
 #IF $a<2190 | $a>2280 | $L<730 | $l>1250
 #LET flag_door=0
 #ENDIF
-#ELSEIF $(_ModDoorRasp:1)[s29;s31] //Vector Acril
+#ELSEIF $(_ModDoorRasp:1)[s29;S31] //Vector Acril
 #IF $a<2190 | $a>2500 | $L<730 | $l>1250
 #LET flag_door=0
 #ENDIF

@@ -428,12 +428,12 @@ _krep_korob	l=$l
 #ENDIF
 #IF $(pdno:3)=$P
 #IF $(pbokL:3)=$p & $(bokL:1)!9
-047	COD= /TD=536	SL=$(matVnL:0)+20	SA=$(dvid:0)-$(mat:1)-30  //Ножка регулировочная
-047	COD= /TD=536	SL=$(matVnL:0)+20	SA=$(dvid:0)-$(mat:1)-30	SP=$p-100  //Ножка регулировочная
+047	SL=$(matVnL:0)+20	SA=$(dvid:0)-$(mat:1)-30  //Ножка регулировочная
+047	SL=$(matVnL:0)+20	SA=$(dvid:0)-$(mat:1)-30	SP=$p-100  //Ножка регулировочная
 #ENDIF
 #IF $(pbokR:3)=$p & $(bokR:1)!9
-047	COD= /TD=536	SL=$l-$(matVnR:0)-20	SA=$(dvid:0)-$(mat:1)-30  //Ножка регулировочная
-047	COD= /TD=536	SL=$l-$(matVnR:0)-20	SA=$(dvid:0)-$(mat:1)-30	SP=$p-100  //Ножка регулировочная
+047	SA=$(dvid:0)-$(mat:1)-30	SL=$l-$(matVnR:0)-20  // Ножка регулировочная
+047	SA=$(dvid:0)-$(mat:1)-30	SP=$p-100	sl=$l-$(matVnR:0)-20  // Ножка регулировочная
 #ENDIF
 #ENDIF
 #ENDIF

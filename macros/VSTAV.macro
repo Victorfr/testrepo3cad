@@ -1,6 +1,7 @@
 #LET vichetL=$[EX;$(matvstav:4);:;1]
 // salavat 09.09.2021
-#IF $(matvstav$(_ctx):5)[S02] & $(cvetvstav$(_ctx):1)[2377;2378;2379;2380;008;2486;2485;2490;2362]
+#LETS changedcolor=2377;2378;2379;2380;2504;008;2486;2485;2490;2362
+#IF $(matvstav$(_ctx):5)[S02] & $(cvetvstav$(_ctx):1)[$(changedcolor)]
 #LET vichetL=$(vichetL)-1
 #ENDIF
 // salavat 09.09.2021
@@ -27,13 +28,11 @@
 #BREAK $(indexloop)>10 //выход если бесконечный цикл
 #LOOP  $(teststr)== //выход если пустая строка
 ////по письму бурлакова сделаем подмену материала для некоторых цветов
-#IF $(matvstav$(_ctx):5)[s14;S02]
-#IF $(cvetvstav$(_ctx):1)[2377;2378;2379;2380;2489;2504;008;2486;2485;2490;2362]
+#IF $(matvstav$(_ctx):5)[s14;s02]
+#IF $(cvetvstav$(_ctx):1)[$(changedcolor)]//[2377;2378;2379;2380;2489;2504;008;2486;2485;2490;2362]
 #LETS matvstav:6=DSPLN8
 #ENDIF
 #ENDIF
-//#MSG $(matvstav$(_ctx))
-//040
 // ************************************* для подбора уплотнителя *************************************
 #LETS tip_door=cupe
 //040
@@ -67,7 +66,7 @@
 #LET popravka=0
 #IF $(matvstav$(_ctx):3)=4
 #LET popravka=0
-#ELSEIF $(matvstav$(_ctx):3)=8 | ($(matvstav$(_ctx):5)[S02] & $(cvetvstav$(_ctx):1)[2377;2378;2379;2380;008;2486;2485;2490;2362]) // salavat 09.09.2021
+#ELSEIF $(matvstav$(_ctx):3)=8 | ($(matvstav$(_ctx):5)[S02] & $(cvetvstav$(_ctx):1)[$(changedcolor)]//[2377;2378;2379;2380;2504;008;2486;2485;2490;2362]) // salavat 09.09.2021
 #LET popravka=3
 #ELSEIF $(matvstav$(_ctx):3)=10
 #LET popravka=1
@@ -342,20 +341,19 @@
 #LET show_msg_vst$(_idunico)=1
 #LETS Msg_vst_error=высота вставки менее 356 мм!
 #ENDIF
-// 21/07/2021 Salavat
-#IF $(alt_vst)>2500
+#IF $(alt_vst)>2300
 #IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 2500 мм!
+#MSG вставка не может быть высотой более 2300 мм!
 #ENDIF
 #LET flag_vstavka=0
 #LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 2500 мм!
+#LETS Msg_vst_error=высота вставки более 2300 мм!
 #ENDIF
-#IF $(alt_vst)<=2500 #LET lmax_vst=600
-#IF $(alt_vst)<=2300 #LET lmax_vst=900
-#IF $(alt_vst)<=1000 #LET lmax_vst=1000
-#IF $(alt_vst)<=900 #LET lmax_vst=1163
-// 21/07/2021 Salavat
+#IF $(alt_vst)<=2300 #LET lmax_vst=600
+#IF $(alt_vst)<=2200 #LET lmax_vst=700
+#IF $(alt_vst)<=2100 #LET lmax_vst=800
+#IF $(alt_vst)<=2000 #LET lmax_vst=900
+#IF $(alt_vst)<=1300 #LET lmax_vst=1150
 #IF $(l_vst)<$(lmin_vst)
 #IF $(show_msg_vst$(_idunico))=0
 #MSG вставка не может быть шириной менее $(lmin_vst) мм!
@@ -550,7 +548,6 @@ numvst	SL=$l/2	SA=$a/2
 #IF $(TIPSYSTEM:18)==ar2 #LET sposta_vstav=$p-1-$(matvstav$(_ctx):3)
 // ******************************************************* вставка без 3ds файла *************************************************
 #LET lVstav=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)
-//#MSG lVstav=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)
 #LET slVstav=-($(tipruch:8)*2-$(vichetL))/2
 #IF $(vertmannov$(_ctx):0)=1
 #LET lVstav=$(lant_door)-70
@@ -558,14 +555,14 @@ numvst	SL=$l/2	SA=$a/2
 //добавим верт. профиль сзади
 //PEREMICH
 //_PEREMICHPARAM
-//024	COD=999USILITEL /WR=365778991	SL=56+17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
-//024	COD=999USILITEL /WR=365778991	SL=$l-17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
+// 024	COD=999USILITEL /WR=382205416	SL=56+17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
+// 024	COD=999USILITEL /WR=382205416	SL=$l-17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
+//_ADD_USIL для теста
 #LETS cod=AR2PROF_US
 #LETV _WR=$(cod)
 #LETV _MNP=$(cod)
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6)	SL=56+17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6)	SL=$l-17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
-//_ADD_USIL
+065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=17	SA=8	SP=$(sp_delit)-5	l=6.8	a=170	p=56	lato=$(show_door)	ay=90  //Профиль разделительный
+065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l-17-56	SA=8	SP=$(sp_delit)-5	l=6.8	a=170	p=56	lato=$(show_door)	ay=90  //Профиль разделительный
 _add_man_nova	SL=29	SP=$(sp_delit)	sa=2	P=$(tipruch:15)	lato=$(show_door)	az=-90	flagNova=3
 _add_man_nova	SL=$l	SP=$(sp_delit)	sa=2	P=$(tipruch:15)	lato=$(show_door)	az=-90	flagNova=3
 //024	COD=999USILITEL /WR=382205416	SL=17	SA=-23	SP=$(sp_delit)-5	L=150	A=56	P=5	lato=$(show_door)  //Профиль разделительный

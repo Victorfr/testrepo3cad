@@ -1,7 +1,7 @@
 {
   "Cod": "RZ397Z.003BL.BL",
   "Des": "Крючок мебельный 397 трехрожковый замак черный",
-  "Dis": "pegs,codpegs=011",
+  "Dis": "pegs,pegs=011",
   "Fl1": "",
   "Tip": "2800",
   "Diml": 64.0,
@@ -27,7 +27,7 @@
   "VarEscludi": null,
   "Codalt": "",
   "Foto": "",
-  "Ordinamento": 0,
+  "Ordinamento": 10,
   "CodBase": "",
   "Ngalias": "",
   "Ngvarianti": null,

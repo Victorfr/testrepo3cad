@@ -65,12 +65,14 @@ _checkSizeStandart	testL=$(AltLDsp)	testA=$(LargLDsp)
 //#LET sizeL=$(sizeLfinish)
 //#LET sizeA=$(sizeAfinish)
 /////////////////////////////////////////////////////////////////
-#LETV _wr=999PODLZST
-// #LETV _MNP=999ZAGLSDSP
+#LETV _wr=999ZAGHDFUPAK
 #LETV _MNP=999K_VETRORIP6
+// #LETV _MNP=999ZAGLSDSP
+// #LETS _wr:3=468427024
 001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(_MNP:3);WR=$(_wr:3);TD=505 /Упаковка для стеклянных полок /#L+1#Q$(upakCount)	L=$(sizeL)	A=$(sizeA)	P=16  //Test
 //распил дсп
 #LETV _MNP=999ZAGLSDSP
+#LETV _wr=999PODLZST
 //   #MSG $(_wr)
 105	COD= / /Подложка для стеклянных полок /#L+3#Q2	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
 #ENDIF

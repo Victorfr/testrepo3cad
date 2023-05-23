@@ -18,6 +18,9 @@
 #LETV MNP=$(_MNP:3)
 #LETV _WR=$(cod)
 #LETV WR=$(_WR:3)
+#LET p=$(_ModDoorRasp:5)
+#LET numvst=1
+#LETS IDD=1
 #IF $(MATVSTAV:6)[ZERK4;ZERKbr4;ZERK4_evr_sil;ZERK4_evr_br;vetStopBr;vetStopSl]
 #IF $(_MODDOORRASP:1)[S08;S27]
 #LETS cod=$(cod)RET
@@ -27,9 +30,6 @@
 #LETV WR=$(_WR:3)
 #ENDIF
 #ENDIF
-#LET p=$(_ModDoorRasp:5)
-#LET numvst=1
-#LETS IDD=1
 // ************************************* для подбора уплотнителя *************************************
 #LETS tip_door=rasp
 //_MISURALIM

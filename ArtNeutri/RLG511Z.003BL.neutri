@@ -1,7 +1,7 @@
 {
   "Cod": "RLG511Z.003BL",
   "Des": "Крючок мебельный JET 511 трехрожковый замак черный матовый",
-  "Dis": "pegs,codpegs=005",
+  "Dis": "pegs,pegs=005",
   "Fl1": "",
   "Tip": "2800",
   "Diml": 75.0,
@@ -27,7 +27,7 @@
   "VarEscludi": null,
   "Codalt": "",
   "Foto": "",
-  "Ordinamento": 0,
+  "Ordinamento": 10,
   "CodBase": "",
   "Ngalias": "",
   "Ngvarianti": null,

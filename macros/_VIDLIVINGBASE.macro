@@ -52,8 +52,8 @@
 #IF $(PTO:1)=1
 #LETV fasBig=0
 #ENDIF
-#IF $(paramsTmpStr)!!$(vidCount)x$(pto:0)
-#LETV paramsTmpStr=$(vidCount)x$(pto:0)
+#IF $(paramsTmpStr)!!$(vidCount)x$(pto:0)x$(fasBig:0)
+#LETV paramsTmpStr=$(vidCount)x$(pto:0)x$(fasBig:0)
 #FOR $1:$(vidCount)
 #LETV altmetabox$(i)=$(altVid)-{($(PnSpostaARaspD)+$(StSpostaARaspD))}
 #LETV oldAltMet$(i)=$(altVid)
@@ -78,6 +78,7 @@
 #LET deltaFasD=$(allFinish)-$(altVid)*$I
 #LET deltaFas=$(altmetabox$(i))
 #LET newFas=$(deltaFas)-$(deltaFasD)
+#LETV altmetabox$(i)=$(newFas)
 #ENDIF
 #IF $(_MAN:1)[999] & $(pto:0)=0
 #IF $(fasBig:0)=0
@@ -94,7 +95,19 @@
 #LET deltaSa=-(-$(deltasa)+$(deltaSa$(nevInd))
 #ENDFOR
 #LET newAlt=$(newFas)
+#IF $(index)<=1
 #LET macrosSposta={{($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+$(deltaSa)+16+$(mat:1)+$(saVid)}-{$(PnSpostaARaspD)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)}}
+#ENDIF
+#LET altnew=$(altmetabox$(i):0)
+#LET prevInd=$(i)-1
+#IF $(index)>1
+#LET fasAprev={$(fasAprev)+$(altmetabox$(prevInd):0)}-$(spostaafas)
+#ELSE
+#LET fasAprev=0
+#ENDIF
+//#MSG $(altPrev)
+//#MSG  {{($(fasAprev)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+$(deltaSa)+16+$(mat:1)+$(saVid)}-{$(PnSpostaARaspD)+($(fasAprev)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)}} xxx
+//   _VIDMODULNK
 #LET macrosSpostaL={$(mat:1)+$(slVid)-$(SxSpostaLRaspD)}
 ///изменения для увеличения габаритов выдвижного
 #IF $(index)>1 & $(_doorPolog:1)[1;4]
@@ -114,7 +127,7 @@
 //в фасад передаем переопределенные варианты из групп для каждого фасада
 _fasVid	SL=$(SxSpostaLRaspD)	SA=$(PnSpostaARaspD)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+{$(deltaSa)}	SP=$(p)	L=$(fasL)	A=$(newAlt)	P=$(_ModDoorRasp:5)	_COLKARKAS=$(_COLKARKASFAS$(FasInd))\
 	cvetvstav_door=$(cvetvstav_door$(fasInd))	cvetvstav=$(cvetvstav$(fasInd)	TxtVst=$(TxtVst$(fasInd))	_factura=$(_factura$(fasInd))	_patina=$(_patina$(fasInd))	_colkrom=$(_colkrom$(FasInd))	detYash=2	kromLaser=$(kromLaser$(fasInd))\
-	_gjp=$(_gjp$(fasInd))	gjpCountLine=$(gjpCountLine$(fasInd))	_tipDoorRasp=$(_TIPDOORRASP$(fasInd))
+	_gjp=$(_gjp$(fasInd))	gjpCountLine=$(gjpCountLine$(fasInd))	_tipDoorRasp=$(_TIPDOORRASP$(fasInd))	_manIntX=$(_manIntx$(fasInd))	_manIntY=$(_manIntY$(fasInd))	_manIntegrato=$(_manIntegrato$(fasInd))
 #LET spostaa_met=$(sposta_macro)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+16+$(mat:1)+$(saVid)
 #LET spostaNavesP=0	spostaNavesA=0
 //проверка навесов

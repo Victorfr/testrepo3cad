@@ -1,7 +1,6 @@
 #LET ruchOts=$[ex;$(TIPRUCH:26);:;1]
-//#LET doorA=$a-30
 #LET doorA=$a-25
-#LET doorSA=25/2
+#LET doorSA=15
 #IF $(_doorsRasp_ar1:1)=2
 #LET doorL=int($l-$(ruchOts)-8)/2
 ///переделать формулу для двух дверей после письма от ильяса

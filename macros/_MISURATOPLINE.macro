@@ -1,8 +1,8 @@
-#LET minA=2000//2207
+#LET minA=2207
 #LET maxA=2647
 #LET minL=1450
 #LET maxL=2794
-#LET minP=300//400
+#LET minP=300
 #LET maxP=1000
 #IF $a<$(minA)
 #LETV a=$(minA)

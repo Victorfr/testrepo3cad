@@ -119,9 +119,9 @@ _karkasfas	SL=$(SxSpostaLRaspD)	SA=$(PnSpostaARaspD)+$(fasAprev)+($(StSpostaARas
 025	COD= / /Фасад $(fasa)x$(fasl)	SL=$l/2-125	SA=$(saTipo)-10	L=250	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
 // ********************************* ручка *********************
 #IF $(_man:1)!!999
-001	LATO=6	COD=$(_man:12) /FPL=N / /#L+3	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_man:12) / / /#L+3	L=1	A=1	P=1  //Test
 //#FOR $1:$(_man:14)
-001	LATO=6	COD=$(_man:13) /FPL=N / /#L+3#Q$(_man:14)	L=1	A=1	P=1  //Test
+001	LATO=6	COD=$(_man:13) / / /#L+3#Q$(_man:14)	L=1	A=1	P=1  //Test
 //#ENDFOR
 #ENDIF
 // *************************************************************

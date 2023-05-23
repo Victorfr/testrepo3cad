@@ -1,0 +1,12 @@
+#LETV _wr=999v_karkasBokmod
+#LETV _MNP=999v_karkasBokmod
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+//100	SL=0	SA=$(sa_falsh_fasad)+$(lbokSA)	SP=$(sp_falsh_fasad)+$(profAdd)	L=$(falshLargPlank)	P=$(mat:1)	A=$(a_falsh_fasad)-$(lBokSA)	Ay=90	x4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0	MAN=0  //Фасад
+//100	SL=0	SA=$(sa_falsh_fasad)+$(lBokSA)	SP=$(falshLargPlank)	L=$(falshLargPlank)	P=$(mat:1)	A=$(a_falsh_fasad)-$(lBokSA)	Ay=90	x4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0	MAN=0  //Фасад
+//010	sl=$(lbokSl)	p=$(pBok)	a=$a-$(mat:0)-$(lbokSA)	sa=$(lbokSa)
+//038
+#LETS paramsAnta=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK)
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>1
+#LETS paramsAnta=$(paramsAnta);SDR={$(falshLargPlank)-1};DDR={$(a_falsh_fasad)-$(lBokSA)}
+#ENDIF
+100	COD= /$(paramsAnta)	MAN=0	p=$P	X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад

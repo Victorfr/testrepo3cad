@@ -18,7 +18,6 @@ _gabaritLimit
 //#LETV pbokl=2
 //#LETV pbokr=2
 //#LETV pup=2
-#LETV vidType=2
 #LETS msg_lim_kol=0
 #IF $(mat:1)[16]
 #LETV _colkarkas=046
@@ -30,7 +29,7 @@ _gabaritLimit
 #LETV _colkarkas=047
 #ENDIF
 #LETV _col_vd=046
-#LETV _colkarkasback=046
+#LETV vidType=2
 #ENDIF
 #LET det_mod=0
 #LETS last_param=
@@ -45,7 +44,7 @@ _gabaritLimit
 #LET pDoor=$(_ModDoorRasp:5)
 #LET profPolog=$(pDoor)+2
 #IF $(pto:0)=1
-#LET profPolog=$(pDoor)+5//2
+#LET profPolog=$(pDoor)+5
 #ENDIF
 #LET SxSpostaLRaspD=2.5 // левый зазор
 #LET DxSpostaLRaspD=2.5 // правый зазор
@@ -115,7 +114,7 @@ _DEKOR	flagZoc=$[IIF;$(tipshkafliving:3)=1;0;1]	ndet=	_factura=$(_facturadek)
 #LETS _ModDoorRasp = $(_Old_ModDoorRasp)
 //_DOP_FUR
 // ***************************************************************
-//_FINALELIVING
+// *****************ремкомплект для крашеных фасадов и патины********
 #IF $(_MODDOORRASP:1)[s01;s08;s26]
 #IF $(naborkras)!!X
 //001	LATO=6	COD=999NABREMKRAS /OCF=$(naborkras) /Комплект для ремонта крашеных фасадов /#L-1	L=1	A=1	P=1  //Test
@@ -134,5 +133,7 @@ _DEKOR	flagZoc=$[IIF;$(tipshkafliving:3)=1;0;1]	ndet=	_factura=$(_facturadek)
 001	LATO=6	COD=999komprempat /PTN=$(naborpat)	L=1	A=1	P=1  //Test
 #ENDIF
 #ENDIF
+// *****************************************************************************
+//_FINALELIVING
 ///финальный скрипт
 #LETS _macrofinale= _finaleLiving

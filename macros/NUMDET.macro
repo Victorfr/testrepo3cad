@@ -2,5 +2,5 @@
 #LET vid_num=9
 //#IF $(in_size:0)=0 #LET vid_num=6
 #IF $(hideNums:0)=1 #LET vid_num=6
-//025	COD= / /$(NDET)	lato=$(vid_num) //Номер детали
+//025	COD= / /$(NDET)	LATO=$(vid_num) //Номер детали
 025	COD= / /$(NDET) 	l=100	a=70*$(sizemsht:0)	LATO=$(vid_num) //Номер детали

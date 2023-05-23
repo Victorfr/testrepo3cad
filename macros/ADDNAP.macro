@@ -61,7 +61,7 @@
 #ENDFOR
 #LETS wallx2=$(wallxfinish)
 //#MSG $(testindex) x $(wallx1) xx $(wallx2) x 222 {$(wallx2)-$(wallx1)}
-#IF $(wallx2)-$(wallx1)<1200 & $(countBigWallFinish)>0
+#IF $(wallx2)-$(wallx1)<1200
 #IF $(spostaL)>=$(wallx1)-5 & $(spostaL)+$l-5<=$(wallx2)
 #LET flagNoHDF=1
 #ENDIF
@@ -69,16 +69,18 @@
 #IF $(lkorp)<=1200
 #LET flagNoHdf=1
 #ENDIF
+//   FINALESCRIPT
+////////
 #IF $[datecompare;$(dataordine);25.10.2021]<0
 #LET flagNohdf=0
 #ENDIF
-//   FINALESCRIPT
-////////
-#IF  $(_backWallDis:1)!1 &  $(flagNoHDF)=0
+#IF  $(_backWallDis:1)!1 & $(flagNoHDF)=0
+#IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020]
+#LETS mat_backwall:4=DSPLN8|CVET_VST
+#ENDIF
 NUMDET	sa=$a-75	sl=75	sp=15-$(p)
 #LETV _wr=999KARKASZST
 #LETV _MNP=999KARKASZST
-////
 #IF $(larg_backwall)>$[ex;$(mat_backwall:6);m;2]
 018	COD= /ERROR=1	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
 025	COD= / /Превышен MAX размер ширины пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
@@ -87,13 +89,15 @@ NUMDET	sa=$a-75	sl=75	sp=15-$(p)
 025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
 025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
 #ELSE
-///для определенных цветов будет меняться материал на LDSPN8 mm по письму от бурлакова
-#IF $(_colkarkasback:1)[140;141;142;143;203;224]
-#LETS mat_backwall:4=DSPLN8|CVET_VST
-#ENDIF
-018	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)  //Задняя стенка
+// _MERGEBACKWALL
+#LETS backPar=$(mat_backwall:4)
+#LETS parName=$[estrai;$(backPar);|;2]
+#LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
+018	COD= /$(varBack)	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)  //Задняя стенка
 // **************************************** расчёт транспортировочной подложки для задних стенок ********************************************
+#IF $(mat_backwall)!0
 #LETS mis_zst=$(larg_backwall)X$(alte_backwall)|$(mis_zst)
+#ENDIF
 // ******************************************************************************************************************************************
 #ENDIF
 #LET count_krep_back=8
@@ -131,7 +135,7 @@ NUMDET	sa=$a-75	sl=75	sp=15-$(p)
 #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
 #LET FlagZarg=1
 /////проверка. есть ли модуль в нише с царгой
-#IF $(flagAltNap)=1 & $(_zargDis:0)=1
+#IF $(_zargDis:0)=1
 #LET FlagZarg=0
 #ENDIF
 #FOR $(modulPars)

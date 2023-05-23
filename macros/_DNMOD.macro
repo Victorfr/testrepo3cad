@@ -1,0 +1,7 @@
+#LETV _wr=999k_karkasDnmod
+#LETV _MNP=999k_karkasDnmod
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+012	sl=$(mat:0)	p=$(dnoProf)	l=$(dnoLarg)	sl=$(dnoSl)
+// _agg_krep_mod	p=$(p)	detMod=1
+_AGG_KREP_mod	p=$(p)	multiCount=2

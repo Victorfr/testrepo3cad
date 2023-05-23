@@ -65,7 +65,6 @@
 #ENDIF
 #ENDIF
 #ELSEIF $(_ModDoorRasp:1)[s08;s26]// ограничения по модели Classic
-//  #MSG $a x $L
 #LET minA=356
 #IF $(TIPSHKAF:7)[4]
 #LET minA=177
@@ -81,17 +80,14 @@
 #ENDIF
 #ENDIF
 /////
-//#MSG $a x $l
-//   _MISURALIM
 #IF (($a>=2240 & $a<=$(maxACor) & $(_MODDOORRASP:1)[s26]) | ($a>=2240 & $a<=2280 & $(_MODDOORRASP:1)[s08])) & ($l>=295 & $l<=$(maxlCor)) //для корректоров
 //#LET flagCorrector=1
 #LETV txtvst=1
 #IF $a>2240
 //если размер не проходит в стандартные то колонка делится
-//  #LET flagDelKol=1
+#LET flagDelKol=1
 #ENDIF
 #ELSE
-//      #MSG $a x $l
 #IF ($a>=$(minA) & $a<=716) & ($l>=296 & $l<=1196)
 #ELSEIF ($a>=717 & $a<=2280) & ($l>=296 & $l<=596)
 #ELSEIF ($a>=117 & $a<=2280) & ($l>=58 & $l<=300)

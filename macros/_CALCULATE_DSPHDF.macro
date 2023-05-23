@@ -1,6 +1,6 @@
 _CALCULATE_SIZE	mis_zst=$(hdfsizemax)
 //расчет упаковки для хдф
-#IF $(hdfsizemax)!!TEST //$(mat_backwall:3)=4 & $(LargLDsp)>0 $ $(altLdsp)>0
+#IF $(hdfsizemax)!!TEST //(mat_backwall:3)=4 & $(LargLDsp)>0 $ $(altLdsp)>0//
 //#LETV _wr=999PODLZST
 //по письму марии насчет упаковок 16.01.2020
 #LETV _wr=999ZAGHDFUPAK

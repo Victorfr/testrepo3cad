@@ -2,455 +2,466 @@
 #LET flag_door=1
 #LETV flagCorrector=0
 #IF $(_ModDoorRasp:1)==s02 // ограничения по модели Mix 22
-#IF $(_TipDoorRasp:3)==S
-#IF ($A>=297 & $A<=716) & ($L>=296 & $L<=1196)
-#ELSEIF ($A>=717 & $A<=1316) & ($L>=296 & $L<=596)
-#ELSE
-#LET flag_door=0
-#ENDIF
-#ELSE //Двери G
-#LET maxAcor=2600
-#IF $(kromLaser:0)=1
-#LET maxAcor=2500
-#ENDIF
-#LET maxLcor=650
-#IF ($a>=2185 & $a<=$(maxAcor)) & ($l>=295 & $l<=$(maxLcor))
-#LETV flagCorrector=1
-#ELSE
-#IF $a>2040 & $l>2040
-#LETV l=2040
-#MSG максимальный размер двери может быть 2190х2040 мм или 2040х2190 мм!
-#ENDIF
-#IF $l<117 & $a<117
-#LETV l=117
-#ENDIF
-#LET minL=70
-#IF $(flagKol)=1 //ограничения для колонки пристыковки
-#LET minL=50
-#ENDIF
-#IF ($A>=30 & $A<=2190) & ($L>=$(minL) & $L<=2190)
-#ELSE
-#LET flag_door=0
-#IF $(flagKol)=1
-#IF $a>2190
-//если высота больше допустимой то делим колонку
-//#LET flagDelKol=1
-#LET flag_door=1
-#ENDIF
-#ENDIF
-#ENDIF
-#ENDIF
-#IF $l>2040 & $(_colkarkas:18)=1
-#LETV TxtVst=0
-#ENDIF
-#IF $A>2040 & $(_colkarkas:18)=1
-#LETV TxtVst=1
-#ENDIF
-#IF $a<356 & $(_petl:1)!!999 //минимальная высота с петлями
-#LETV a=356
-#MSG Минимальная высота двери с петлями 356 мм!
-#ENDIF
-#ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      #IF ($A>=297 & $A<=716) & ($L>=296 & $L<=1196)
+      #ELSEIF ($A>=717 & $A<=1316) & ($L>=296 & $L<=596)
+      #ELSE
+         #LET flag_door=0
+      #ENDIF
+   #ELSE //Двери G
+      #LET maxAcor=2595
+      #IF $(kromLaser:0)=1
+         #LET maxAcor=2500
+      #ENDIF
+      #LET maxLcor=650
+      #IF ($a>=2185 & $a<=$(maxAcor)) & ($l>=295 & $l<=$(maxLcor))
+         #LETV flagCorrector=1
+      #ELSE
+         #IF $a>2040 & $l>2040
+            #LETV l=2040
+            #MSG максимальный размер двери может быть 2190х2040 мм или 2040х2190 мм!
+         #ENDIF
+         #IF $l<117 & $a<117
+            #LETV l=117
+         #ENDIF
+         #LET minL=70
+         #IF $(flagKol)=1 //ограничения для колонки пристыковки
+            #LET minL=50
+         #ENDIF
+         #IF ($A>=30 & $A<=2190) & ($L>=$(minL) & $L<=2190)
+         #ELSE
+            #LET flag_door=0
+            #IF $(flagKol)=1
+               #IF $a>2190
+                  //если высота больше допустимой то делим колонку
+                  //#LET flagDelKol=1
+                  #LET flag_door=1
+               #ENDIF
+            #ENDIF
+         #ENDIF
+      #ENDIF
+      #IF $l>2040 & $(_colkarkas:18)=1
+         #LETV TxtVst=0
+      #ENDIF
+      #IF $A>2040 & $(_colkarkas:18)=1
+         #LETV TxtVst=1
+      #ENDIF
+      #IF $a<356 & $(_petl:1)!!999 //минимальная высота с петлями
+         #LETV a=356
+         #MSG Минимальная высота двери с петлями 356 мм!
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_ModDoorRasp:1)==s04 // ограничения по модели Spark
-#IF $(_TipDoorRasp:3)==S
-#IF ($A>=297 & $A<=716) & ($L>=296 & $L<=1196)
-#ELSEIF ($A>=717 & $A<=1316) & ($L>=296 & $L<=596)
-#ELSE
-#LET flag_door=0
-#ENDIF
-#ELSE
-#LET maxLcor=650
-#IF ($a>=2185 & $a<=2600) & ($l>=295 & $l<=$(maxLcor)) //для корректоров
-#LETV flagCorrector=1
-#LETV txtvst=1
-#ELSE
-#IF $(_COLKARKAS:1)[109;110;111]
-#IF $(txtVst:1)=0 & $(a)>2040
-#MSG Для горизонтального положения текстуры в выбраном цвете максимальная высота 2040 мм!
-#LETV txtVst=1
-#ENDIF
-#ENDIF
-#IF $a>2040 & $l>2040
-#LETV l=2040
-#MSG максимальный размер двери может быть 2190х2040 мм или 2040х2190 мм!
-#ENDIF
-#IF $l<117 & $a<117
-#LETV l=117
-#ENDIF
-#LET minL=70
-#LET maxA=2190
-#IF $(flagKol)=1
-#LET minL=50
-#LET maxA=2590
-#ENDIF
-#IF ($A>=30 & $A<=$(maxA)) & ($L>=$(minL) & $L<=2190)
-#ELSE
-#LET flag_door=0
-#ENDIF
-#ENDIF
-#ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      #IF ($A>=297 & $A<=716) & ($L>=296 & $L<=1196)
+      #ELSEIF ($A>=717 & $A<=1316) & ($L>=296 & $L<=596)
+      #ELSE
+         #LET flag_door=0
+      #ENDIF
+   #ELSE
+      #LET maxLcor=650
+      #IF ($a>=2185 & $a<=2595) & ($l>=295 & $l<=$(maxLcor)) //для корректоров
+         #LETV flagCorrector=1
+         #LETV txtvst=1
+      #ELSE
+         #IF $(_COLKARKAS:1)[109;110;111]
+            #IF $(txtVst:1)=0 & $(a)>2040
+               #MSG Для горизонтального положения текстуры в выбраном цвете максимальная высота 2040 мм!
+               #LETV txtVst=1
+            #ENDIF
+         #ENDIF
+         #IF $a>2040 & $l>2040
+            #LETV l=2040
+            #MSG максимальный размер двери может быть 2190х2040 мм или 2040х2190 мм!
+         #ENDIF
+         #IF $l<117 & $a<117
+            #LETV l=117
+         #ENDIF
+         #LET minL=70
+         #LET maxA=2190
+         #IF $(flagKol)=1
+            #LET minL=50
+            #LET maxA=2590
+         #ENDIF
+         #IF ($A>=30 & $A<=$(maxA)) & ($L>=$(minL) & $L<=2190)
+         #ELSE
+            #LET flag_door=0
+         #ENDIF
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_ModDoorRasp:1)[s08;s26]// ограничения по модели Classic
-#LET minA=356
-#IF $(TIPSHKAF:7)[4]
-#LET minA=177
-#ENDIF
-#IF $(_TipDoorRasp:3)==S
-//1316
-#IF ($a>=476 & $a<=2036) & ($l>=295 & $l<=596)
-#ELSEIF ($a>=356 & $a<=475) & ($l>=295 & $l<=896)
-#ELSE
-#LET flag_door=0
-#ENDIF
-///для параметрических фасадов доп. условие
-#LET maxAdoor=2035
-#IF ($a>=1495 & $a<=$(maxAdoor)) & ($l>=295 & $l<=595)
-#IF $(_gsd:1)=1
-// #LETV _gsd=34 //если вариант фрезеровки обычный. то устанавливаю первый вариант фрезеровки с необходимой высотой
-#ENDIF
-#ENDIF
-#IF ($a>=1495 & $a<=$(maxAdoor)) & ($l>=295 & $l<=595) & $(_gsd:1)!1
-#LET flag_door=1
-#ENDIF
-///
-#ELSE
-#LET maxACor=2750//2500
-#LET maxlCor=600//596
-///ограничения изменились с 20.01.2021
-#IF $[datecompare;$(dataordine);20.01.2021]>=0 & $(_MODDOORRASP:1)[s26]
-#IF $a>2300
-#LET maxLCor=600
-#ELSE
-#LET maxLcor=900
-#ENDIF
-#ENDIF
-//_shkaf
-/////
-#IF (($a>=2240 & $a<=$(maxACor) & $(_MODDOORRASP:1)[s26]) | ($a>=2240 & $a<=2280 & $(_MODDOORRASP:1)[s08])) & ($l>=295 & $l<=$(maxlCor)) //для корректоров
-#LETV flagCorrector=1
-#LETV txtvst=1
-#ELSE
-#IF ($a>=$(minA) & $a<=716) & ($l>=296 & $l<=1196)
-#ELSEIF ($a>=717 & $a<=2280) & ($l>=296 & $l<=596)
-#ELSEIF ($a>=117 & $a<=2280) & ($l>=58 & $l<=300)
-#ELSE
-#LET flag_door=0
-#ENDIF
-#ENDIF
-#ENDIF
+   #LET minA=356
+   #IF $(TIPSHKAF:7)[4]
+      #LET minA=177
+   #ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      //1316
+      #IF ($a>=476 & $a<=2036) & ($l>=295 & $l<=596)
+      #ELSEIF ($a>=356 & $a<=475) & ($l>=295 & $l<=896)
+      #ELSE
+         #LET flag_door=0
+      #ENDIF
+      ///для параметрических фасадов доп. условие
+      #LET maxAdoor=2035
+      #IF ($a>=1495 & $a<=$(maxAdoor)) & ($l>=295 & $l<=595)
+         #IF $(_gsd:1)=1
+            // #LETV _gsd=34 //если вариант фрезеровки обычный. то устанавливаю первый вариант фрезеровки с необходимой высотой
+         #ENDIF
+      #ENDIF
+      #IF ($a>=1495 & $a<=$(maxAdoor)) & ($l>=295 & $l<=595) & $(_gsd:1)!1
+         #LET flag_door=1
+      #ENDIF
+      ///
+   #ELSE
+      #LET maxACor=2500
+      #LET maxlCor=596
+      ///ограничения изменились с 20.01.2021
+      #IF $[datecompare;$(dataordine);20.01.2021]>=0 & $(_MODDOORRASP:1)[s26]
+         #IF $a>2300
+            #LET maxLCor=600
+         #ELSE
+            #LET maxLcor=900
+         #ENDIF
+      #ENDIF
+      //_shkaf
+      /////
+      #IF (($a>=2240 & $a<=$(maxACor) & $(_MODDOORRASP:1)[s26]) | ($a>=2240 & $a<=2280 & $(_MODDOORRASP:1)[s08])) & ($l>=295 & $l<=$(maxlCor)) //для корректоров
+         #LETV flagCorrector=1
+         #LETV txtvst=1
+      #ELSE
+         #IF ($a>=$(minA) & $a<=716) & ($l>=296 & $l<=1196)
+         #ELSEIF ($a>=717 & $a<=2280) & ($l>=296 & $l<=596)
+         #ELSEIF ($a>=117 & $a<=2280) & ($l>=58 & $l<=300)
+         #ELSE
+            #LET flag_door=0
+         #ENDIF
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_ModDoorRasp:1)[s12;d02;e02] // ограничения по модели Energy //comfort
-#IF $(_TipDoorRasp:3)==S
-#IF ($A>=296 & $A<=1316) & ($L>=296 & $L<=596)
-#ELSEIF ($A>=296 & $A<=796) & ($L>=597 & $L<=1196)
-#ELSE
-#LET flag_door=0
-#ENDIF
-#ELSE
-#LET maxA=2500//2300
-#IF $(_COLKARKAS:18)[1]
-#IF $(TXTVST:0)=0
-#LET maxA=2295
-#ENDIF
-#ENDIF
-#IF $(a)>2185)
-#LETV flagCorrector=1
-#ENDIF
-#IF ($A>=30 & $A<=$(maxA)) & ($L>=70 & $L<=2040)
-#ELSE
-#LET flag_door=0
-#ENDIF
-#ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      #IF ($A>=296 & $A<=1316) & ($L>=296 & $L<=596)
+      #ELSEIF ($A>=296 & $A<=796) & ($L>=597 & $L<=1196)
+      #ELSE
+         #LET flag_door=0
+      #ENDIF
+   #ELSE
+      #LET maxA=2500//2295
+      #LET maxL=2040
+      #IF $(_COLKARKAS:18)[1]
+         #IF $(TXTVST:0)=0
+            #LET maxA=2040
+            #LET maxL=2295
+         #ENDIF
+      #ENDIF
+      #IF $(a)>2185)
+         #LETV flagCorrector=1
+      #ENDIF
+      #IF ($A>=30 & $A<=$(maxA) & ($L>=70 & $L<=$(maxL))
+      #ELSE
+         #LET flag_door=0
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_ModDoorRasp:1)[S24] //
-#IF $a<356 | $a>=1496  | $l<296 | $l>596
-#LET flag_door=0
-#ENDIF
+   #IF $a<356 | $a>=1496  | $l<296 | $l>596
+      #LET flag_door=0
+   #ENDIF
 #ELSEIF $(_ModDoorRasp:1)[S30] //Зеркало на подложке
-#LET maxAdoor=2600
-#IF $[DATECOMPARE;$(DATAORDINE);22.01.2021]>=0
-#IF $(matvstav:1)[51;52]
-#LET maxAdoor=2500
-#ENDIF
-#ENDIF
-#IF $a<355 | $a>$(maxAdoor) | $l<295 | $L>650
-#LET flag_door=0
-#ENDIF
-#LET massaDoor={$l*$a/1000000}*21.63
-#SELECT $(count_petl)
-#CASE 2:
-#LET maxMassDoor=7.7
-#CASE 3:
-#LET maxMassDoor=13.7
-#CASE 4:
-#LET maxMassDoor=17.1
-#CASE 5:
-#LET maxMassDoor=22
-#ENDSELECT
-// #IF $(massaDoor)>$(maxMassDoor) #LET flag_door=22
+   #LET maxAdoor=2600
+   #IF $[DATECOMPARE;$(DATAORDINE);22.01.2021]>=0
+      #IF $(matvstav:1)[51;52]
+         #LET maxAdoor=2500
+      #ENDIF
+   #ENDIF
+   #IF $a<355 | $a>$(maxAdoor) | $l<295 | $L>650
+      #LET flag_door=0
+   #ENDIF
+   #LET massaDoor={$l*$a/1000000}*21.63
+   #SELECT $(count_petl)
+   #CASE 2:
+      #LET maxMassDoor=7.7
+   #CASE 3:
+      #LET maxMassDoor=13.7
+   #CASE 4:
+      #LET maxMassDoor=17.1
+   #CASE 5:
+      #LET maxMassDoor=22
+   #ENDSELECT
+   // #IF $(massaDoor)>$(maxMassDoor) #LET flag_door=22
 #ELSEIF $(_MODDOORRASP:1)[s27] //ice
-#LET minA=117
-#LET maxA=2280
-#LET minL=30
-#LET maxL=1196
-#IF ($a>=2185 & $a<=2280) & ($l>=295 & $l<=595) //для корректоров
-#LETV flagCorrector=1
-#LETV txtvst=1
-#ELSE
-#IF $l<$(minL)
-//#LETV l=$(minL)
-//#MSG Минимальная ширина двери $(minL)!
-#LET flag_door=0
-#ENDIF
-#IF $l>$(maxL)
-//#LETV L=$(maxL)
-//#MSG Максимальная ширина двери $(maxL)!
-#LET flag_door=0
-#ENDIF
-#IF $a<$(minA)
-#LET flag_door=0
-#ENDIF
-#IF $a>$(maxA)
-#LETV flag_door=0
-#IF $(flagKol)=1
-#LET flagDelKol=1
-#ENDIF
-#ENDIF
-#ENDIF
-#IF $(_TipDoorRasp:3)==S
-#IF $a>=356 & $a<=1316
-#IF $a<=716
-#LET maxL=1196
-#ELSE
-#LET maxL=596
-#ENDIF
-#ELSE
-#LET flag_door=0
-#ENDIF
-#IF $L<296 | $L>$(maxL)
-#LET flag_door=0
-#ENDIF
-#ENDIF
+   #LET minA=117
+   #LET maxA=2280
+   #LET minL=30
+   #LET maxL=1196
+   #IF ($a>=2185 & $a<=2280) & ($l>=295 & $l<=595) //для корректоров
+      #LETV flagCorrector=1
+      #LETV txtvst=1
+   #ELSE
+      #IF $l<$(minL)
+         //#LETV l=$(minL)
+         //#MSG Минимальная ширина двери $(minL)!
+         #LET flag_door=0
+      #ENDIF
+      #IF $l>$(maxL)
+         //#LETV L=$(maxL)
+         //#MSG Максимальная ширина двери $(maxL)!
+         #LET flag_door=0
+      #ENDIF
+      #IF $a<$(minA)
+         #LET flag_door=0
+      #ENDIF
+      #IF $a>$(maxA)
+         #LETV flag_door=0
+         #IF $(flagKol)=1
+            #LET flagDelKol=1
+         #ENDIF
+      #ENDIF
+   #ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      #IF $a>=356 & $a<=1316
+         #IF $a<=716
+            #LET maxL=1196
+         #ELSE
+            #LET maxL=596
+         #ENDIF
+      #ELSE
+         #LET flag_door=0
+      #ENDIF
+      #IF $L<296 | $L>$(maxL)
+         #LET flag_door=0
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_MODDOORRASP:1)[s28] //vector
-#IF $(_COLKARKAS:18)[1]
-#IF $(TXTVST:1)=1 //если текстура вертикально
-#LET minL=71
-#LET minA=30
-#LET maxL=1196
-#LET maxA=2190
-#ELSE //если текстура горизонтально
-#LET minL=30
-#LET minA=71
-#LET maxL=2190
-#LET maxA=1196
-#ENDIF
-#ELSE
-#LET minL=71
-#LET minA=30
-#LET maxL=1196
-#LET maxA=2190
-#ENDIF
-#IF $(flagKol)=1
-#LET minL=50//71
-#LET minA=30
-#LET maxL=1196
-#LET maxA=2190
-#ENDIF
-///один из габаритов должен быть больше 117 по тз
-#IF $a<117 & $l<117
-#LET flag_door=0
-#ENDIF
-#IF $(_TipDoorRasp:3)==S
-#LET minA=297
-#LET maxA=1316
-#IF $a<717
-#LET minl=296
-#LET maxL=1196
-#ELSE
-#LET minL=296
-#LET maxL=596
-#ENDIF
-#ENDIF
-#IF ($a>=2185 & $a<=2600) & ($l>=295 & $l<=595) //для корректоров
-#LETV flagCorrector=1
-#LETV txtvst=1
-#IF ($l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)) & $(_TIPDOORRASP:3)==S
-#LET flag_door=0
-#ENDIF
-#ELSE
-#IF $l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)
-#LET flag_door=0
-//  #MSG $l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)
-#IF $(FLAGKOL)=1//если фасад тшка или колонка пристыковки
-#LET flag_door=1
-#IF $a>$(maxa) //если высота больше максимальной то колонка делится по высоте
-//#LET flagDelKol=1
-#ENDIF
-#IF $l>$(maxL)
-#ENDIF
-#ENDIF
-#ENDIF
-#ENDIF
+   #IF $(_COLKARKAS:18)[1]
+      #IF $(TXTVST:1)=1 //если текстура вертикально
+         #LET minL=71
+         #LET minA=30
+         #LET maxL=1196
+         #LET maxA=2190
+      #ELSE //если текстура горизонтально
+         #LET minL=30
+         #LET minA=71
+         #LET maxL=2190
+         #LET maxA=1196
+      #ENDIF
+   #ELSE
+      #LET minL=71
+      #LET minA=30
+      #LET maxL=1196
+      #LET maxA=2190
+   #ENDIF
+   #IF $(flagKol)=1
+      #LET minL=50//71
+      #LET minA=30
+      #LET maxL=1196
+      #LET maxA=2190
+   #ENDIF
+   ///один из габаритов должен быть больше 117 по тз
+   #IF $a<117 & $l<117
+      #LET flag_door=0
+   #ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      #LET minA=297
+      #LET maxA=1316
+      #IF $a<717
+         #LET minl=296
+         #LET maxL=1196
+      #ELSE
+         #LET minL=296
+         #LET maxL=596
+      #ENDIF
+   #ENDIF
+   #IF ($a>=2185 & $a<=2595) & ($l>=295 & $l<=595) //для корректоров
+      #LETV flagCorrector=1
+      #LETV txtvst=1
+      #IF ($l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)) & $(_TIPDOORRASP:3)==S
+         #LET flag_door=0
+      #ENDIF
+   #ELSE
+      #IF $l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)
+         #LET flag_door=0
+         //  #MSG $l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)
+         #IF $(FLAGKOL)=1//если фасад тшка или колонка пристыковки
+            #LET flag_door=1
+            #IF $a>$(maxa) //если высота больше максимальной то колонка делится по высоте
+               //#LET flagDelKol=1
+            #ENDIF
+            #IF $l>$(maxL)
+            #ENDIF
+         #ENDIF
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_MODDOORRASP:1)[s29;s31] //vector acryl vector touch
-#IF $(_MODDOORRASP:1)[s29]
-#IF $(TXTVST:1)=1 //если текстура вертикально
-#LET minL=71
-#LET minA=30
-#LET maxL=1196
-#LET maxA=2190
-#ELSE //если текстура горизонтально
-#LET minL=30
-#LET minA=71
-#LET maxL=2190
-#LET maxA=1196
-#ENDIF
-#ENDIF
-#LET minL=71
-#LET minA=30
-#LET maxL=1196
-#LET maxA=2190
-///один из габаритов должен быть больше 117 по тз
-#IF $a<117 & $l<117
-#LET flag_door=0
-#ENDIF
-#IF $(_TipDoorRasp:3)==S
-#LET minA=297
-#LET maxA=1316
-#IF $a<717
-#LET minl=296
-#LET maxL=1196
-#ELSE
-#LET minL=296
-#LET maxL=596
-#ENDIF
-#ENDIF
-#LET maxlCor=595
-#IF $(flagKol)=1
-#LET maxA=2500
-#ENDIF
-#IF $(_MODDOORRASP:1)[s31] #LET maxLcor=650
-#IF ($a>=2185 & $a<=2600) & ($l>=295 & $l<=$(maxlCor)) //для корректоров
-#LETV flagCorrector=1
-#IF $(_TIPDOORRASP:3)==S & ($l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA))
-#LET flag_door=0
-#ENDIF
-#ELSE
-#IF $l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)
-#LET flag_door=0
-#ENDIF
-#ENDIF
+   #IF $(_MODDOORRASP:1)[s29]
+      #IF $(TXTVST:1)=1 //если текстура вертикально
+         #LET minL=71
+         #LET minA=30
+         #LET maxL=1196
+         #LET maxA=2190
+      #ELSE //если текстура горизонтально
+         #LET minL=30
+         #LET minA=71
+         #LET maxL=2190
+         #LET maxA=1196
+      #ENDIF
+   #ENDIF
+   #LET minL=71
+   #LET minA=30
+   #LET maxL=1196
+   #LET maxA=2190
+   ///один из габаритов должен быть больше 117 по тз
+   #IF $a<117 & $l<117
+      #LET flag_door=0
+   #ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      #LET minA=297
+      #LET maxA=1316
+      #IF $a<717
+         #LET minl=296
+         #LET maxL=1196
+      #ELSE
+         #LET minL=296
+         #LET maxL=596
+      #ENDIF
+   #ENDIF
+   #LET maxlCor=595
+   #IF $(flagKol)=1
+      #LET maxA=2500
+   #ENDIF
+   #IF $(_MODDOORRASP:1)[s31] #LET maxLcor=650
+   #IF ($a>=2185 & $a<=2500) & ($l>=295 & $l<=$(maxlCor)) //для корректоров
+      #LETV flagCorrector=1
+      #IF $(_TIPDOORRASP:3)==S & ($l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA))
+         #LET flag_door=0
+      #ENDIF
+   #ELSE
+      #IF $l<$(minL) | $l>$(maxL) | $a<$(minA) | $a>$(maxA)
+         #LET flag_door=0
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_MODDOORRASP:1)[s01]//JAzz
-#LET minA=117
-#LET maxA=2300
-#LET minL=30
-#IF $[DATECOMPARE;$(dataordine);25.02.2021]>=0
-#LET maxL=900
-#IF $(detyash)[1;2]//если деталь ящика комода 2 или модуля 1
-#LET maxL=1200
-#ENDIF
-#IF $a>=2185 & $a<=2300
-#LET maxLcor=900
-#ENDIF
-#IF $a>2300
-#LET maxLcor=600
-#ENDIF
-#ELSE
-#LET maxLcor=600
-#LET maxL=1200
-#ENDIF
-//если фасад колонка пристыковки то другие ограничения
-#IF $(flagKol)=1
-#LET maxA=2500
-#LET maxL=1200
-#LET minA=117
-#LET minL=30
-#ENDIF
-//фасад GJP
-#IF $(_gjp:0)=1 | $(_TIPDOORRASP:3)[gjp]
-#LET minL=50
-#LET maxL=1200
-#IF $L>=50 & $L<=107
-#LET mina=100
-#LET maxA=2500
-#ENDIF
-#IF $L>=108 & $L<=609
-#LET mina=50
-#LET maxA=2500
-#ENDIF
-#IF $L>=610 & $L<=709
-#LET mina=50
-#LET maxA=2000
-#ENDIF
-#IF $L>=710 & $L<=909
-#LET mina=50
-#LET maxA=900
-#ENDIF
-#IF $L>=910 & $L<=1200
-#LET mina=50
-#LET maxA=700
-#ENDIF
-#IF $a<$(mina) | $a>$(maxA) | $l<$(minL) | $l>$(maxL)
-#LET flag_door=0
-#ENDIF
-#ENDIF
-#LET maxACor=2750//2500
-#IF ($a>=2185 & $a<=$(maxACor)) & ($l>=295 & $l<=$(maxLcor))//595 //для корректоров
-#LETV flagCorrector=1
-#LETV txtvst=1
-#ELSE
-#IF $l<$(minL)
-//#LETV l=$(minL)
-//#MSG Минимальная ширина двери $(minL)!
-#LET flag_door=0
-#ENDIF
-#IF $l>$(maxL)
-//#LETV L=$(maxL)
-//#MSG Максимальная ширина двери $(maxL)!
-#LET flag_door=0
-#ENDIF
-#IF $a<$(minA)
-#LET flag_door=0
-#ENDIF
-#IF $a>$(maxA)
-#LETV flag_door=0
-#ENDIF
-#ENDIF
-#IF $(_TipDoorRasp:3)==S
-#IF $a>=356 & $a<=1316
-#IF $a<=716
-#LET maxL=1196
-#ELSE
-#LET maxL=596
-#ENDIF
-#ELSE
-#LET flag_door=0
-#ENDIF
-#IF $L<296 | $L>$(maxL)
-#LET flag_door=0
-#ENDIF
-#ENDIF
+   #LET minA=117
+   #LET maxA=2580//2300
+   #LET minL=30
+   #IF $[DATECOMPARE;$(dataordine);25.02.2021]>=0
+      #LET maxL=900
+      #IF $(detyash)[1;2]//если деталь ящика комода 2 или модуля 1
+         #LET maxL=1200
+      #ENDIF
+      #IF $a>=2185 & $a<=2300
+         #LET maxLcor=900
+      #ENDIF
+      #IF $a>2300
+         #LET maxLcor=595
+      #ENDIF
+   #ELSE
+      #LET maxLcor=595
+      #LET maxL=1200
+   #ENDIF
+   //если фасад колонка пристыковки то другие ограничения
+   #IF $(flagKol)=1
+      #LET maxA=2500
+      #LET maxL=1200
+      #LET minA=117
+      #LET minL=30
+   #ENDIF
+   //фасад GJP
+   #IF $(_gjp:0)=1
+      #LET minL=50
+      #LET maxL=1200
+      #IF $L>=50 & $L<=107
+         #LET mina=100
+         #LET maxA=2500
+      #ENDIF
+      #IF $L>=108 & $L<=609
+         #LET mina=50
+         #LET maxA=2500
+      #ENDIF
+      #IF $L>=610 & $L<=709
+         #LET mina=50
+         #LET maxA=2000
+      #ENDIF
+      #IF $L>=710 & $L<=909
+         #LET mina=50
+         #LET maxA=900
+      #ENDIF
+      #IF $L>=910 & $L<=1200
+         #LET mina=50
+         #LET maxA=700
+      #ENDIF
+      #IF $a<$(mina) | $a>$(maxA) | $l<$(minL) | $l>$(maxL)
+         #LET flag_door=0
+      #ENDIF
+   #ENDIF
+   #IF ($a>=2185 & $a<=2580) & ($l>=295 & $l<=$(maxLcor))//595 //для корректоров
+      #LETV flagCorrector=1
+      #LETV txtvst=1
+   #ELSE
+      #IF $l<$(minL)
+         //#LETV l=$(minL)
+         //#MSG Минимальная ширина двери $(minL)!
+         #LET flag_door=0
+      #ENDIF
+      #IF $l>$(maxL)
+         //#LETV L=$(maxL)
+         //#MSG Максимальная ширина двери $(maxL)!
+         #LET flag_door=0
+      #ENDIF
+      #IF $a<$(minA)
+         #LET flag_door=0
+      #ENDIF
+      #IF $a>$(maxA)
+         #LETV flag_door=0
+      #ENDIF
+   #ENDIF
+   #IF $(_TipDoorRasp:3)==S
+      #IF $a>=356 & $a<=1316
+         #IF $a<=716
+            #LET maxL=1196
+         #ELSE
+            #LET maxL=596
+         #ENDIF
+      #ELSE
+         #LET flag_door=0
+      #ENDIF
+      #IF $L<296 | $L>$(maxL)
+         #LET flag_door=0
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_MODDOORRASP:1)[s32]//Integrato
-#LET maxL=1200
-#LET maxA=2500
-#LET minA=100
-#LET minL=30
-#IF $L>=100 & $l<=600
-#LET minA=100
-#LET maxA=2500
+   #LET maxL=1200
+   #LET maxA=2500
+   #LET minA=100
+   #LET minL=30
+   #IF $L>=100 & $l<=600
+      #LET minA=100
+      #LET maxA=2500
+   #ENDIF
+   #IF $L>600 & $l<=700
+      #LET minA=100
+      #LET maxA=2000
+   #ENDIF
+   #IF $L>701 & $l<=900
+      #LET minA=100
+      #LET maxA=900
+   #ENDIF
+   #IF $L>901 & $l<=1200
+      #LET minA=100
+      #LET maxA=700
+   #ENDIF
+   #IF $(_TIPDOORRASP:3)[gw]
+      #LET MinA=220
+   #ENDIF
+   #IF ($a>=2185 & $a<=$(maxA)) & ($l>=295 & $l<=595)//595 //для корректоров
+      #LETV flagCorrector=1
+      #LETV txtvst=1
+   #ELSE
+      #IF ($a<$(mina) | $a>$(maxA)) | ($l<$(minL) | $l>$(maxL))
+         #LET flag_door=0
+      #ENDIF
+   #ENDIF
 #ENDIF
-#IF $L>600 & $l<=700
-#LET minA=100
-#LET maxA=2000
-#ENDIF
-#IF $L>701 & $l<=900
-#LET minA=100
-#LET maxA=900
-#ENDIF
-#IF $L>901 & $l<=1200
-#LET minA=100
-#LET maxA=700
-#ENDIF
-#IF $(_TIPDOORRASP:3)[gw]
-#LET MinA=220
-#ENDIF
-#IF ($a<$(mina) | $a>$(maxA)) | ($l<$(minL) | $l>$(maxL))
-#LET flag_door=0
-#ENDIF
+#IF $(petlObr)=1
+   #IF $l>650
+      #LET flag_door=0
+   #ENDIF
 #ENDIF

@@ -45,9 +45,19 @@
 #ELSE
 #IF $(TIPSHKAF:7)[1;3]
 #IF $(TIPSHKAF:6)=2
+#IF $(TIPSHKAF:7)[3]
+NAPDOOR	SL=$(otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)	SP=$P-$(tipsystem:16)	L=$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)\
+	katcol=$(KATCOLarrs)	col_system=$(COL_SYSTEMarrs)
+#ELSE
 NAPDOOR	SL=$(otsL)+$(^otsDoorlar)/2+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)	SP=$P-$(tipsystem:16)	L=$L-($(^otsL)+$(^otsR))-$(^otsDoorlar)-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))	P=$(tipsystem:16)
+#ENDIF
+#ELSE
+#IF $(TIPSHKAF:7)[3]
+NAPDOOR	SL=($(otsL)-$(mat:1))+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)-$(mat:1)	SP=$P-$(tipsystem:16)	L=$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))+$(mat:1)*2	P=$(tipsystem:16)\
+	katcol=$(KATCOLarrs)	col_system=$(COL_SYSTEMarrs)
 #ELSE
 NAPDOOR	SL=($(otsL)-$(mat:1))+$(^Sl_Door_Pr)	SA=$(otsD)+$(tipsystem:3)-$(mat:1)	SP=$P-$(tipsystem:16)	L=$L+$(mat:1)*2-($(^otsL)+$(^otsR))-$(^Del_Larg_Door)	A=$A-($(otsD)+$(otsU))-($(tipsystem:3)+$(tipsystem:4))+$(mat:1)*2	P=$(tipsystem:16)
+#ENDIF
 #ENDIF
 #ENDIF
 #ENDIF

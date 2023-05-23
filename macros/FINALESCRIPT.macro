@@ -15,15 +15,11 @@ PROVERKA
       018	SL=$(sl_zst)	SA=$a-$(mat:1)-{$(sksysheight:0)}-9	SP=0	L=$(larg_zst)	A={$(sksysheight:0)}+18	P=$(mat_backwall:3)  //Задняя стенка
    #ENDIF
    #LETS oldColkarkastmp = $(_COLKARKAS:0)
-
    #IF not($(ColkarkasUniq)==NotLastBox)
-
       #FOR $(ColkarkasUniq)
-
          #LETV _COLKARKAS=$(I)
          //#MSG $(_COLKARKAS:13)
          001	LATO=6	COD=999grandUg / /Grandis Уголок стальной 20х20 мм /#Q4 //Test
-
          001	LATO=6	COD=$(_COLKARKAS:13) / /Grandis Пластиковая заглушка 20х20 мм для стального уголка /#Q4  //Test
       #ENDFOR
       #LETV _COLKARKAS=$(oldColkarkastmp)
@@ -46,7 +42,6 @@ NAPR
 #ENDIF
 #LET pripuskKorD=0	 pripuskKorU=0
 _mergeBackWall
-//ADDNAP
 #IF $(mat_backwall:3)=4
    #LETV hdfsize =$(mis_zst)
 #ELSE

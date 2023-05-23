@@ -167,7 +167,6 @@
 #LETS col_system:6=$(CVETVSTAVprof:9)
 #LETS col_system:8=$(cvetshleg:3)
 #LETV _cprof=$(col_system:6)
-//  #MSG   $(cvetvstavprof) [[ $(col_system:4)
 #ENDIF
 #ELSEIF $(flag_padre)=3
 #LETV TIPRUCH=$(TIPRUCH_padre)
@@ -183,7 +182,6 @@
 #LETS col_system:6=$(CVETVSTAVprof:9)
 #LETS col_system:8=$(cvetshleg:3)
 #LETV _cprof=$(col_system:6)
-//  #MSG   $(cvetvstavprof) [[ $(col_system:4)
 #ENDIF
 #ENDIF
 #IF $[datecompare;$(dataordine);01.04.2019]>=0
@@ -203,8 +201,6 @@ _DATABOX
 #LETS tipsystem:14=3200
 #ENDIF
 //_DOORRASP
-//PEREMICH
-//VSTAV
 #IF $(FPL)!!N & $A>$(TIPSYSTEM:14)
 001	COD=999 /ERROR=1 / /#L-1	FACC=0  //Дверь распашная G
 #LET larg_msg=$l-4

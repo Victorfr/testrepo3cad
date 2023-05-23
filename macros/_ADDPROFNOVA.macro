@@ -4,7 +4,8 @@
 #LETV _mnp=AR2VERT_USIL
 #LETV _wr=AR2VERT_USIL
 #LETS paramsProf=_cprof=$(col_system:6);MNP=$(_MNP:3);WR=$(_WR:3);BRD=$(tipruch:27);PRF=$(tipruch:28);UKP=689985697;IDO=1
-066	COD= /$(paramsProf) /$(_wr:2) /#L+1	l=16.5	P=$a	a=$L	lato=$(show_door)	aZ=90	ay=90	sa=$a	sp=16	lato=$(show_door) //Вертикальный профиль усиливающий
+// 066	COD= /$(paramsProf) /$(_wr:2) /#L+1	A=16.5	P=38.4	L=$L	lato=$(show_door)	ax=90	sp=16 //Вертикальный профиль усиливающий
+066	COD= /$(paramsProf) /$(_wr:2) /#L+1	A=$L	P=38.4	L=16.5	lato=$(show_door)	ax=90	ay=-90	sp=16 //Вертикальный профиль усиливающий
 #ELSE
 024	a=$(a)	p=$(p)	lato=$(show_door)
 #ENDIF

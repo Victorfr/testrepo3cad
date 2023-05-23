@@ -1,12 +1,7 @@
 #FOR $(doorsParams)
 #LETS curPetlParams=$i
 #LET usePetlObr={$[ex;$(curPetlParams);|;5]}
-#IF $(usePetlObr)=1
 #LET flagCorrector={$[ex;$(curPetlParams);|;8]}
-#ENDIF
-#IF $(usePetlObr)=0
-#LET flagCorrector={$[ex;$(curPetlParams);|;7]}
-#ENDIF
 #ENDFOR
 #IF $(tipshkaf:6)=1
 #LET PVNUTR=$(pzast:0)
@@ -171,7 +166,7 @@ NUMDET	SL=$l+30	SA=-70	sp=-$(p)/2
 #IF $(pkorp)>=400
 047	COD= /TD=536	SA=-30-$(mat:1)	X8=$(_spostal)o$(_spostaa)  //Ножка регулировочная
 #ELSE
-001	LATO=6	COD=999nog_reg	L=30	A=30	P=30  //Test
+001	LATO=6	COD=999nog_reg /TD=536	L=30	A=30	P=30  //Test
 #ENDIF
 #LET spPie=$p-100
 #IF $(TIPSHKAF:7)=2 & $(virovnit:0)=1 #LET spPie=($P+$[ex;$(prof_door);|;1]+$(SpostaPRaspD))-100
@@ -370,12 +365,12 @@ NUMDET	SL=$L/2-50	SA=-35	p=$(pgor)
 #IF $(wallcount)=0
 #IF $(lpol)>$(ProvTolMat) #LET flag=2
 #ENDIF
-#IF {$(spostaa)-$(hzoc:0)-$(mat:0)}<180//240 //проверка расстояния между дном и полкой
+#IF {$(spostaa)-$(hzoc:0)-$(mat:0)}<180 //проверка расстояния между дном и полкой
 #LET flag=1
 #ENDIF
 // salavat 09.09.2021
 //#IF $(akorp)-$(spostaa)-$(mat:0)*2<240  //проверка расстояния между крышкой и полкой
-#IF $(akorp)-$(spostaa)-($(mat:0)+$(matvn:0))<180//240  //проверка расстояния между крышкой и полкой
+#IF $(akorp)-$(spostaa)-($(mat:0)+$(matvn:0))<180  //проверка расстояния между крышкой и полкой
 // salavat 09.09.2021
 #LET flag=1
 #ENDIF
@@ -473,8 +468,7 @@ _agg_krep	p=$(PVNUTR)-1-10
 #ELSE
 #LET popr=0
 #ENDIF
-#LET lprovsvet={$p-228+8-$(spostsGor)}
-_draWSTAg	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)-$(popr) 	P=$(pgor)	orienta=$(orienta)	lprovsvet=$(lprovsvet)
+_draWSTAg	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)-$(popr) 	P=$(pgor)	orienta=$(orienta)
 #ELSEIF $(flag)=1
 015	COD= /ERROR=1	SL=$(podrezPol)	SP=$(spostsGor)	L=$(lpol)	P=$(pgor)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
 025	COD= / /Минимальное расстояние между элементами 180 мм	SL=$l/2-$l*0.7/2	SA=$(mat:0)	L=$l*0.7  //сообщение об ошибке

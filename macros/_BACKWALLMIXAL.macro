@@ -33,9 +33,6 @@
 NUMDET	sa=$a-75	sl=75	sp=15-$(p)
 #LETV _wr=999KARKASZST
 #LETV _MNP=999KARKASZST
-#IF $(_colkarkasback:1)[140;141;142;143]
-#LETS mat_backwall:4=DSPLN8|CVET_VST
-#ENDIF
 #IF $(larg_backwall)>$[ex;$(mat_backwall:6);m;2]
 018	COD= /ERROR=1	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
 025	COD= / /Превышен MAX размер ширины пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке

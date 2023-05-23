@@ -19,6 +19,9 @@
 #LETS codWR=$(codWR)ST
 #LETS codMNP=$(codMNP)ST
 #ENDIF
+#IF $l<=100
+#LETS codMNP=$(_ModDoorRasp:1)COR$(_factura:7)
+#ENDIF
 #ENDIF
 #LETV _wr=$(codWR)
 #LETV _MNP=$(codMNP)

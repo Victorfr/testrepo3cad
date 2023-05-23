@@ -1,7 +1,7 @@
 {
   "Cod": "RZ397Z.002BL.BL",
   "Des": "Крючок мебельный 397 двухрожковый замак черный",
-  "Dis": "pegs,codpegs=001",
+  "Dis": "pegs,pegs=001",
   "Fl1": "",
   "Tip": "2800",
   "Diml": 27.0,
@@ -27,7 +27,7 @@
   "VarEscludi": null,
   "Codalt": "",
   "Foto": "",
-  "Ordinamento": 0,
+  "Ordinamento": 10,
   "CodBase": "",
   "Ngalias": "",
   "Ngvarianti": null,

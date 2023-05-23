@@ -1,4 +1,4 @@
-#IF $(flagCorrector)[1] | {$(correctorType)}[1;2]
+#IF $(flagCorrector)[1] | $(correctorType)[1;2]
 #LETV correctorCheck={$(flagCorrector)}
 #IF $(correctorType)[1]
 #LETV correctorCheck=1
@@ -11,7 +11,6 @@
 #LETV correctorCheck=X
 #ENDIF
 #IF $(correctorCount)!!X
-// #MSG $(correctorCount)
 #LET countCOr=rnd({$(correctorCount)}/2)
 #IF $(flagCorrector)[2]
 //  #LET countCor=$(countCor)*2
@@ -33,6 +32,7 @@
 001	LATO=6	COD=999kompremfas /CFK=$(naborkras)	L=1	A=1	P=1  //Test
 001	LATO=6	COD=999gofrYashF	L=1	A=1	P=1  //Test
 #ENDIF
+#IF 0
 #IF $(naborpat)!!X
 #LETV _WR=999remfaspat
 #LETV _MNP=999remfaspat
@@ -40,5 +40,6 @@
 001	LATO=6	COD=999remfaspat /MNP=$(_MNP:3);WR=$(_wr:3);PTN=$(naborpat);FPL=$(FPL) /$(_wr:2) /#L-1	L=1	A=1	P=1  //Test
 001	LATO=6	COD=999komprempat /PTN=$(naborpat)	L=1	A=1	P=1  //Test
 001	LATO=6	COD=999gofrYashF	L=1	A=1	P=1  //Test
+#ENDIF
 #ENDIF
 #ENDIF

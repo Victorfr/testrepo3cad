@@ -234,7 +234,6 @@
 #LETV LargDxStD=$(LargDxPnD:0)
 #ENDIF
 // *****************************************************************************************************************
-//#MSG $(LargSxStD:0) x $(LargDxStD:0)
 //_DOORRASP
 //_DOORMX
 ///дообавил ппараметр x6 в плейсеры - сторона открывания двери
@@ -258,5 +257,5 @@
 049	SA=$(AltSxStD:0)+$(SpostaPRaspD)*2	L=$(LargSxPnD:0)	A=$(AltSxPnD:0)	x5=$(LargSxPnD:0)x$(AltSxPnD:0)	x6=L	x7=$(pripTopParams)  //Плейсер распашной двери
 049	SL=$(LargSxPnD:0)+$(SpostaPRaspD)*2	SA=$(AltDxStD:0)+$(SpostaPRaspD)*2	L=$(LargDxPnD:0)	A=$(AltDxPnD:0)	x5=$(LargDxPnD:0)x$(AltDxPnD:0)	x6=R	x7=$(pripTopParams)   //Плейсер распашной двери
 #ELSE
-049	X5=$lx$a	x6=LR	x7=$(pripParams)  //Плейсер распашной двери
+049	X5=$lx$a	x6=LR	x7=$(pripParams)   //Плейсер распашной двери
 #ENDIF

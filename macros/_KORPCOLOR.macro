@@ -1,0 +1,34 @@
+///каркас
+//_MODFASAD
+#LETS color=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
+//303
+#LET spBackWall=16
+//010
+#LETS codPilomat=LMDF16
+#LETS codBok=S33V_BOKCOL$(_Factura:7)
+#LETV _wr=$(codBok)
+#LETV _MNP=$(codBok)
+#LETS paramBok=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR);IDD=1;NPO=$(Draw)
+NUMDET	SL=0	SA=$A/2
+600	COD= / / /#L+3	X5=2	X6=$(polkObr)  //Боковина крашеной секции Living
+NUMDET	SL=$l-16	SA=$A/2
+600	COD= / / /#L+3	SL=$L-16	X5=1	X6=$(polkObr)  //Боковина крашеной секции Living
+#LETS codKR =S33K_KRCOL$(_Factura:7)
+#LETV _wr=$(codKR)
+#LETV _MNP=$(codKR)
+#LETS paramKr=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR);IDD=1;NPO=$(Draw)
+NUMDET	SL=$l/2	SA=$A-16
+601	COD= / / /#L+3	SL=16	SA=$a-16	L=$L-32  //Крышка крашеной секции  Living
+NUMDET	SL=$l/2	SA=16
+#LETS codDn =S33K_DNOCOL$(_Factura:7)
+#LETV _wr=$(codDn)
+#LETV _MNP=$(codDn)
+#LETS paramDn=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR);IDD=1;NPO=$(Draw)
+602	COD= / / /#L+3	SL=16	L=$L-32  //Дно крашеной секции Living
+#LETS codZD =S33T_ZADCOL$(_Factura:7)
+#LETS codZD =S33ZADCOL$(_Factura:7)
+#LETV _wr=$(codZD )
+#LETV _MNP=$(codZD )
+#LETS paramZd=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);_FKF=$(_factura:4);NSE=$(SHPR);IDD=1;NPO=$(Draw)
+NUMDET	SL=$l/2	SA=16	sp=-$p
+604	COD= / / /#L+3	SL=16	SA=16	L=$l-32	A=$a-32  //Задняя стенка крашеной секции

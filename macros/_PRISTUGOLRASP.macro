@@ -1,11 +1,10 @@
 //макрос рисует пристыковочный уголок в распашных
 #IF $(_prist:1)!0
-#LET minPristProf=600//500
 #IF $(_primocaricamento)=1
-#LETV profprist=$(minPristProf)
+#LETV profprist=500
 #ENDIF
-#IF {$(profprist:0)-$(profwallpris:0)}>$(minPristProf)
-#LETV profprist={$(minPristProf)+$(profwallpris:0)}
+#IF {$(profprist:0)-$(profwallpris:0)}>500
+#LETV profprist={500+$(profwallpris:0)}
 #ENDIF
 ///размеры колонки и деталей
 #LET profUg=$(profprist:0)
@@ -29,7 +28,6 @@
 #LET saPlanUg=$(saPlanUg)-$(pripKolSa)
 ///проверки ограничений для предварительного деления тшки и фасада колонки
 //_MISURALIM	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)	FLAGKOL=1
-#LET flagDelKol=0
 //пропишем ограничения для фасадов в планке
 _misuraplank	L=$(profUg)-$(profwallpris:0)+50+$(_MODDOORRASP:5)	A=$(altPlanUg)	P=$(_MODDOORRASP:5)
 _misuraplank	L=146	A=$(altPlanUg)	P=$(_MODDOORRASP:5)

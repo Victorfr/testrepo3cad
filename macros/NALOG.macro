@@ -17,8 +17,7 @@
 #ELSEIF $(NDV)=3
 034	SL=$(mat:1)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
 //034	SL=$l-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
-//034	SL=$l-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1-$(matvnR:0)	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
-034	SL=$(LDV)+$(tipsystem:19)*2)+1+$(mat:0)+((($(LDV)+$(tipsystem:19)*2)-$(tipsystem:5)*2-2)	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
+034	SL=$l-$(mat:1)-($(LDV)+$(tipsystem:19)*2)-1-$(matvnR:0)	L=$(nalog)*2+2	SA=$(hzoc:0)+$(mat:0)	A=$a-$(mat:0)*2-$(hzoc:0)	sp=$(mat:0)	lato=$(zone_lato)
 #IF $(size_per:0)=1
 023	COD= / /{($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1}	SL=$(mat:0)	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	A=0	P=1	X1=2  //Размер до зоны перекрытия
 023	COD= / /{$(nalog)*2+2}	SL=$(mat:0)+($(LDV)+$(tipsystem:19)*2)-$(nalog)*2-1	SA=$(hzoc:0)+$(mat:0)+100	SP=$p-150	L=$(nalog)*2+2	A=0	P=1	X1=2  //Размер зоны перекрытия

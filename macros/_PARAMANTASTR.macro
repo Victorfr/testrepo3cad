@@ -52,7 +52,7 @@
 #LETS IDD=
 #ENDIF
 #ENDIF
-#IF $(_ModDoorRasp:1)[s26;s01;S32]
+#IF $(_ModDoorRasp:1)[s26;s01]
 #LETS IDO=
 #LETS IDD=
 #IF $(petlobr:0)=1 | $(flagCorrector)[1;2] | $(detMod)=3
@@ -65,8 +65,19 @@
 #LETS IDO=
 #ENDIF
 #ENDIF
-#IF $(_MODDOORRASP:1)[s01;S32]
+#IF $(_MODDOORRASP:1)[s32]
+#LETS IDO=
+#IF $(petlobr:0)=1 | $(flagCorrector)[1;2] | $(detMod)=3
+#LETS IDD=1
+#ENDIF
+#ENDIF
+#IF $(_MODDOORRASP:1)[s01]
 #IF $(_petlObr:0)!1 & $(flagCorrector)!1 #LETS IDO=
+#ENDIF
+#ENDIF
+#IF $(_TIPDOORRASP:3)[GW]
+#IF $(_MODDOORRASP:1)[S32]
+//  #LETS IDD=1_2
 #ENDIF
 #ENDIF
 #IF $(_ModDoorRasp:1)[s29]
@@ -101,12 +112,20 @@
 #LETS IDD=1
 #LETS IDO=1
 #ENDIF
-#IF $(_ModDoorRasp:1)[S01;S32] //Jazz
+#IF $(_ModDoorRasp:1)[S01] //Jazz
 #LETS IDD=1
 #LETS IDO=
 #ENDIF
+#IF $(_MODDOORRASP:1)[S32]
+#IF $(detMod)!1
+#LETS idd=1
+#ELSE
+#LETS idd=
+#ENDIF
+#LETS ido=
+#ENDIF
 #IF $(detMod)=1 //флаг боковых фасадов в модуле
-#IF $(_ModDoorRasp:1)[s27;s01;S32] //ICE/Jazz
+#IF $(_ModDoorRasp:1)[s27;s01] //ICE/Jazz
 #LETS IDO=
 #LETS IDD=
 #ENDIF
@@ -151,8 +170,8 @@
 #IF $(flagCorrector)[1;2] //для дверей с  корректором меняется маршрут и тип товара
 #LETV _MNP=$(_MODDOORRASP:1)DOORSTAG
 #LETV _WR=$(_MODDOORRASP:1)DOORSTAG
-//#LETV MNP=$(_MNP:3)
-//#LETV WR=$(_WR:3)
+#LETV MNP=$(_MNP:3)
+#LETV WR=$(_WR:3)
 #ENDIF
 #LETS paramAnta=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
 #ELSE
@@ -174,6 +193,6 @@
 #IF $(_MODDOORRASP:1)[s08;S26] //для моделей с патиной добавим
 #LETS paramAnta=$(paramAnta);PTN=$(_patina:5)
 #ENDIF
-#IF $(_MODDOORRASP:1)[s01;s26] //для крашеных моделей добавим
+#IF $(_MODDOORRASP:1)[s01;s26;S32] //для крашеных моделей добавим
 #LETS paramAnta=$(paramAnta);_FKF=$(_factura:4)
 #ENDIF

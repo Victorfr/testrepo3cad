@@ -83,9 +83,9 @@ NUMDET	SL=$(mat:0)+35	SA=0
 047	COD= /TD=536	SL=($l)/2	SP=$(spPie)  //Ножка регулировочная
 #ENDIF
 #ELSE
-001	COD=999nog_reg /TD=536 / /#Q4	L=30	A=30	P=30  //Test
+001	LATO=6	COD=999nog_reg /TD=536 / /#Q4	L=30	A=30	P=30  //Test
 #IF $l>900
-001	COD=999nog_reg /TD=536 / /#Q2	L=30	A=30	P=30  //Test
+001	LATO=6	COD=999nog_reg /TD=536 / /#Q2	L=30	A=30	P=30  //Test
 #ENDIF
 #ENDIF
 // ****************** самоклейки **************************
