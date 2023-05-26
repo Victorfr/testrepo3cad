@@ -63,7 +63,6 @@ T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
 //_KORPVID
 //_FASVID
 //_KARKASFAS
-#msg test from other pc
 #LET ssposta=0
 #LETV _krepeg=1
 #LETS ndet=
@@ -120,6 +119,8 @@ T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
 //100  // Планка ЛВ
 #LETV _krepeg=1
 //301
+
+#MSG Привет из 3када!!
 //_SHKAF
 //010
 //_FASVID
