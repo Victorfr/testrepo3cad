@@ -1,0 +1,89 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=doorkupe.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=u1
+SPEC=
+DIVIDER=PEREMICH,VSTAV,$(tipruch:12),$(tipruch:10),$(tipruch:8),$(tipruch:8),$(tipruch:14),,4,$(tipruch:14)
+TRADFLAGS=
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,MNP,,,,,,,,,,,,0
+T,WR,,,,,,,,,,,,0
+T,FPL,,,,,,,,,,,,0
+T,tipsystem_pr,,,,,,,,,,,,$[ex;$(LOCP_BX0);|;5]!!1 & $(_PRIMOCARICAMENTO)=1
+T,tipsystem,,,,#IF $[ex;$(LOCP_BX0);|;5]!!1\n   $(tipsystem:1)==$(tipsystem_pr:1)\n#ELSE\n   $(tipsystem)\n#ENDIF,,,,,,,,$[ex;$(LOCP_BX0);|;5]!!1
+T,tipruch,,,,$(tipsystem:18)==$(tipruch:7),,,,,,,,$[ex;$(LOCP_BX0);|;5]!!1
+C,sk_sys,,$(tipsystem:18)==ar2,Скрытая система,,,,,,,2,,0
+T,numvar,,,,,,,,,,,,0
+T,katcol,,,,$(tipruch:22)[$(katcol:9)],,,,,,,,$[ex;$(LOCP_BX0);|;5]!!1
+T,col_system,,,,$(katcol:8)[$(col_system:3)] & $(tipruch:22)[$(col_system:7)],,,,,,,,$[ex;$(LOCP_BX0);|;5]!!1
+E,information,,,Информация,,,,,,,8,,$[ex;$(LOCP_BX0);|;5][1]
+T,dovodchik,,$(^tipruch:20)!0,,,,,,,,,,$[datecompare;$(dataordine);01.04.2019]=-1
+S,flag_man,,,,,,,,,,,,0
+S,countShirD
+T,_man_kupe,,$(flag_man)=1 & $(countShirD)>0,Ручка на первом делителе,,,,,,,2
+T,_man_kupe,_man_kupe1,$(flag_man)=1 & $(countShirD)>1,Ручка на втором делителе,,,,,,,2
+T,_man_kupe,_man_kupe2,$(flag_man)=1 & $(countShirD)>2,Ручка на третьем делителе,,,,,,,2
+T,_man_kupe,_man_kupe2,$(flag_man)=1 & $(countShirD)>2,Ручка на третьем делителе,,,,,,,2
+T,_man_kupe,_man_kupe2,$(flag_man)=1 & $(countShirD)>2,Ручка на третьем делителе,,,,,,,2
+T,DD,,$[datecompare;$(dataordine);01.04.2019]>=0,,,,,,,,,,$[ex;$(LOCP_BX0);|;5]!!1 & $(tipsystem:18)!!ar2
++,VSTAV,,$(opendoor)=0
+T,_cprof,,,,,,,,,,,,0
+T,_tipruch,,,,,,,,,,,,0
+T,_DataNewVst,,,,,,,,,,,,0
+
+[GRAFICA]
+_door
+//_rolikDovdNova
+//TIPOLOGI
+//VSTAV
+//_krepnova
+// 040
+//303
+//304
+//PEREMICH
+// _PlankiVstavki
+//_DEKOR
+//_AGG_KREP
+//_MODUL
+//_SHKAF
+//_VDBOX
+//ADDNAP
+//DOORS
+//INITSHKAF
+//KORPSHKAF
+//MACRODOOR
+//NALOG
+//NAPDOOR
+//NAPR
+//NISHA
+//NUMDET
+//NUMDETPL
+//PEREMICH
+//PROVERKA
+//TESTPOLKA
+//TIPOLOGI
+//VNESHNIE
+//VOLUME
+//_MODUL
+
+
+//VSTAV

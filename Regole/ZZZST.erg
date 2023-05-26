@@ -1,0 +1,71 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,mat_backwall,,,Материал задней стенки,$(mat_backwall:3)[4;10]
+T,_colkarkas,_colkarkasback,,Цвет задней стенки,$(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1
+
+[GRAFICA]
+
+!SETCODICE x
+
+_DATABOX
+#LET det_mod=0
+#LET p=$(mat_backwall:3)
+#LET ndet=
+#LET _spostal=0
+#LET _spostaa=0
+#IF $a>$[ex;$(mat_backwall:6);m;1]
+   #LET a=$[ex;$(mat_backwall:6);m;1]
+   #MSG перегородка не может быть высотой более $[ex;$(mat_backwall:6);m;1] мм!
+#ENDIF
+#IF $l>$[ex;$(mat_backwall:6);m;2]
+   #LET l=$[ex;$(mat_backwall:6);m;2]
+   #MSG перегородка не может быть глубиной более $[ex;$(mat_backwall:6);m;2] мм!
+#ENDIF
+#IF $a<100 | $l<100
+   #IF $a<100 #LET a=100
+   #IF $l<100 #LET l=100
+   #MSG высота или ширина задней стенки не может меньше 100 мм!
+#ENDIF
+#LETV _wr=999KARKASZST
+#LETV _MNP=999KARKASZST
+018,COD= / / /#l-1,SL=0,SA=0,SP=0  //Задняя стенка
+#LET count_krep_back=8
+#IF $l>1000 #LET count_krep_back=8+(int($l/1000))*2
+#IF $a>1000 #LET count_krep_back=8+(int($a/1000))*2
+#LET countPak=$(count_krep_back)/10
+#IF $(countPak)>int($(count_krep_back)/10)
+   #LET countPak=$(countPak)+1
+#ENDIF
+#LET countPak=int($(countPak))
+#FOR $1:$(countPak)
+   001,LATO=6,COD=999pack_shPG3.5x16 / / /#l-1,L=1,A=1,P=1  //Test
+#ENDFOR
+// ********************** размеры перегородки ****************************************
+023,COD= / /$l,SL=0,SP=0,sa=$a+20,L=$l,P=0,X1=2  //Глубина корпуса
+023,COD= / /$A,SL=-20,SA=$A,SP=0,L=$A,A=0,P=0,AZ=90,X1=2  //Высота корпуса
+// ***********************************************************************************

@@ -1,0 +1,52 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 1950, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+M,prof_nn,,,Длина
+T,tipsystem,,,,$(tipsystem:18)==AR1,,,,,,,,0
+T,katcol,,,,$(katcol:8)==an
+T,col_system,,,,$(col_system:9)=1
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#IF $(prof_nn:0)=0
+   #LETV prof_nn=600
+#ENDIF
+#IF $(prof_nn:0)>5300
+   #LETV prof_nn=5300
+   #MSG максимальная длина направляющей 5300 мм!
+#ENDIF
+#LET l=350,a=45,p=2
+001,LATO=9,COD= / /Направляющая для распашной двери Aristo //Test
+001,LATO=6,COD=$(tipsystem:18)KOMPLNAPRR /WR=365778300;_CPROF=$(col_system:6);FPL=N /Направляющая для распашной двери Aristo /#l-1,L=$(prof_nn:0),A=10,P=22  //Test
+#LETV _WR=$(tipsystem:18)napr_nr
+#LETV _MNP=$(tipsystem:18)napr_nr
+029,LATO=6,COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);_CPROF=$(col_system:6) /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_nn:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/r/0/n  //Профиль рельс верхний

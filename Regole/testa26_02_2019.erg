@@ -1,0 +1,290 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 0, 0, 0
+DIM.MASSIMA= 3000, 3000, 3000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=
+
+
+[gene]
+U,cfo,famiglia,,Тип заказа,,CFO
+U,LI,List,,Прайс
+J,DataC,,,Дата доставки
+J,DataU,,,Дата ссылки
+J,Data_arvv,,,Дата поставки
+M,SC1,,,Скидка 1
+M,SC2,,,Скидка 2
+M,SC3,,,Скидка 3
+M,SC4,,,Скидка 4
+L,_RIFHOST,,,Менеджер
+S,_RIFCLIENT,,,Клиент
+S,RIFPROD,,,Производство
+T,cassa,,,Тип упаковки
+S,VSOrdine1,,,Прим. заказа 1
+S,VSORDINE2,,,Прим. заказа 2
+S,VSORDINE3,,,Прим. заказа 3
+T,_passw,,,,,,,,,,,,0
+S,VSORDINE4,,,Прим. заказа 4
+T,_version_sh
+
+[COMANDI_PIPPO1]
+// DBS SELECT COD,DES FROM ARTNEUTRI
+DBS SELECT COD,DES FROM articoli
+
+[COMANDI_STATOCLI]
+#IF $(tab8:0)>0
+   #MSG ATTENZIONE: cliente bloccato!
+#ENDIF
+
+[COMANDI_AGE]
+// #IF $(provv:0)=0
+DEF PROVV={$(cage:3) + $(tab9:0)} {$(cage:3)+$(tab9:0)}
+// #ENDIF
+
+[COMANDI_PIPPO]
+DBS SELECT COD,DES FROM ARTNEUTRI
+
+[INFOTOOL_LIST]
+Imposta il listino e controlla
+che vada tutto bene
+altrimenti i prezzi non vengono fuori!
+
+[COMANDI_MMAAIL]
+
+//#MSG $(mmaail:0)
+#VB
+   'dim X
+   'set X=ambiente.getobject("XAMB")
+   'stop
+   'msgbox ex(X.info.info.var("mmaail"),",",1)
+   'if ex(X.info.info.var("FAMIGLIA"),",",1)="001" THEN
+   'MSGBOX ex(X.info.info.var("FAMIGLIA"),",",1) & "*-*-*-" & X.info.info.var("FAMIGLIA")
+   
+#ENDVB
+
+[COMANDI_CFO]
+#LET TIPO_FAM=$(FAMIGLIA:0)
+
+#VB
+   'dim X
+   'set X=ambiente.getobject("XAMB")
+   'if ex(X.info.info.var("FAMIGLIA"),",",1)="001" THEN
+   'MSGBOX ex(X.info.info.var("FAMIGLIA"),",",1) & "*-*-*-" & X.info.info.var("FAMIGLIA")
+   
+   if calcola(v("tipo_fam"))=1 Then
+      AMBIENTE.bCONFERMATO.value=1
+   ELSE
+      AMBIENTE.bCONFERMATO.value=0
+   END IF
+   
+   'SET X=NOTHING
+   
+#ENDVB
+
+[COMANDI_GENERALE]
+
+#LETS path=$(.curdir)/
+#LETS filename=DAUNETCADSAGOME.DLL
+#LETS filenamezip=AGG_NETCADSAGOME.ZIP
+#IF $[dir;$(path)$(filename)]!1
+   #VB
+      Set xhr = CreateObject("MSXML2.XMLHTTP.3.0")
+      Set fso = CreateObject("Scripting.FileSystemObject")
+      Set objShell = CreateObject("Shell.Application")
+      
+      strName=ucase(V("filenamezip"))
+      strLoad = "http:/"+"/162930.selcdn.ru/3cad/netCadSagome/"+strName
+      xhr.Open "GET",strLoad, False
+      xhr.send
+      intTest=xhr.STATUS
+      
+      If inttest=200 Then
+         Dim stream : Set stream = CreateObject("Adodb.Stream")
+         stream.Type = 1
+         stream.Open
+         stream.Write xhr.responseBody
+         strsavefile=V("path")+v("filenamezip")
+         stream.SaveToFile V("path")+v("filenamezip"), 2
+         stream.Close
+         Ambiente.xMessaggio "TESTA.ERG" & " AGG_NETCADSAGOME " & "download successfully"
+      else
+         Ambiente.xMessaggio "TESTA.ERG" & " AGG_NETCADSAGOME " & "Error " & intTest & " " & xhr.statusText
+      End If
+      
+      ExtractTo="./"
+      if FSO.FileExists(strName) then
+         sourceFile = fso.GetAbsolutePathName(strName)
+         destFolder = fso.GetAbsolutePathName(ExtractTo)
+         Set FilesInZip=objShell.NameSpace(sourceFile).Items()
+         objShell.NameSpace(destFolder).copyHere FilesInZip, 16
+      end if
+      
+      Set fso = Nothing
+      Set objShell = Nothing
+      Set FilesInZip = Nothing
+      Set xhr = Nothing
+   #ENDVB
+   #LET fl_netCad=$(fl_netCad)+1
+#ENDIF
+
+#IF $(fl_netCad)>=1 & $(fl_netCad)<7 & $[dir;$(path)$(filename)]=1
+   #VB
+      RegAsmFilePath = V(".windir") & "Microsoft.NET\Framework\v4.0.30319\RegAsm.exe"
+      keys = " /codebase /nologo /silent /tlb"
+      ArgStr = """" & V("filename") & """" & keys
+      CreateObject("Shell.Application").ShellExecute RegAsmFilePath, ArgStr, "", "runas", 0
+   #ENDVB
+   #LET fl_netCad=$(fl_netCad)+10
+#ENDIF
+
+
+#LETS filename=AGG_CADEXTENSION.ZIP
+#IF $[dir;$(path)$(filename)]!1
+   #VB
+      Set xhr = CreateObject("MSXML2.XMLHTTP.3.0")
+      Set fso = CreateObject("Scripting.FileSystemObject")
+      Set objShell = CreateObject("Shell.Application")
+      Set g=Ambiente.GetObject("GLOBAL")
+      
+      strName=ucase(V("filename"))
+      strLoad = "http:/"+"/162930.selcdn.ru/3cad/CadExtension/"+strName
+      xhr.Open "GET",strLoad, False
+      xhr.send
+      intTest=xhr.STATUS
+      
+      If inttest=200 Then
+         Dim stream : Set stream = CreateObject("Adodb.Stream")
+         stream.Type = 1
+         stream.Open
+         stream.Write xhr.responseBody
+         strsavefile=V("path")+v("filename")
+         stream.SaveToFile V("path")+v("filename"), 2
+         stream.Close
+         Ambiente.xMessaggio "TESTA.ERG" & " AGG_CADEXTENSION " & "download successfully"
+      else
+         Ambiente.xMessaggio "TESTA.ERG" & " AGG_CADEXTENSION " & "Error " & intTest & " " & xhr.statusText
+      End If
+      
+      ExtractTo=g.percorsoprocedure
+      if FSO.FileExists(strName) then
+         sourceFile = fso.GetAbsolutePathName(strName)
+         destFolder = fso.GetAbsolutePathName(ExtractTo)
+         Set FilesInZip=objShell.NameSpace(sourceFile).Items()
+         objShell.NameSpace(destFolder).copyHere FilesInZip, 16
+      end if
+      
+      Set fso = Nothing
+      Set objShell = Nothing
+      Set FilesInZip = Nothing
+      Set xhr = Nothing
+      Set g = Nothing
+   #ENDVB
+#ENDIF
+
+
+#IF 0
+   #VB
+      dim xamb,xdoc
+      set xamb=ambiente.getobject("XAMB")
+      Set xdoc = CreateObject("MSXML2.DOMDocument")
+      xdoc.loadXML(Ambiente.GetObject("REMOTO").RichiediPreventivo())
+      xamb.info.listino = xdoc.selectSingleNode("PREV/TESTA/LISTINO").text
+   #ENDVB
+#ENDIF
+
+#IF 0
+   #LET isrivaluta=$(.GLOBALE[77])
+   #VB
+      if v("isrivaluta")="" and ambiente.tab1.CurrTab=2 then
+         Ambiente.RivalutaOrdine
+         v(".GLOBALE[77]")=777
+      end if
+   #ENDVB
+#ENDIF
+
+#IF 0
+   #IF $(test)=0
+      #VB
+         Ambiente.ProcessaHTML "DAUGOAMBIENTE",""
+      #ENDVB
+      #LET test=1
+   #ENDIF
+#ENDIF
+
+#IF 0
+   #VB
+      dim loginSt
+      Set loginSt=CreateObject("rlogin.crea")
+      v("st")=loginSt.GetSt(Ambiente)
+      loginSt=Nothing
+   #ENDVB
+   #LETV passw=$(st)
+   #LETV _passw=$(st)
+#ENDIF
+
+
+#VB
+   set g=Ambiente.GetObject("GLOBAL")
+   V("PercorsoOrdini")=g.PercorsoOrdini
+   Set g = Nothing
+#ENDVB
+#LETS strPathname=$(PercorsoOrdini)\metadata.xml
+#LETS filetest=$[dir;$(strPathname)]
+#IF $(filetest)[1]
+   #VB
+      Dim objFSO,g,flName,cat,xmlDoc,strSearch,currNode
+      Dim number,data,prodLine
+      set g=Ambiente.GetObject("GLOBAL")
+      flName="maria.vbs": cat=V(".percorso")
+      strPath3cad=V("strPath3cad")
+      strPathname=V("strPathname")
+      PercorsoOrdini=V("PercorsoOrdini")
+      Set objFSO = CreateObject("Scripting.FileSystemObject")
+      Set xmlDoc = CreateObject("MSXML2.DOMDocument")
+      xmlDoc.load (strPathname)
+      strSearch = "ProjectMetadata"
+      set currNode = xmlDoc.getElementsByTagName(strsearch)
+      strName="NUMERO"
+      strLine="PRODUCT_LINE"
+      for each node in currNode
+         set data = node.getElementsByTagName(strName)
+         for each el in data
+            V("numeroordine")=el.text
+            number = el.text
+         next
+         set data = node.getElementsByTagName(strLine)
+         for each el in data
+            prodLine = el.text
+         next
+      next
+      if len(prodLine)>0 then
+         if ucase(prodLine)="ED" then
+            '##################################################################################
+            ' копирование с заменой maria.vbs из папки HTML каталога в папку _ecadpro\procedure
+            '##################################################################################
+            'objFSO.CopyFile ""&cat&"\HTML\"&flName&"" , ""&g.percorsoprocedure&"\"&flName&"",True
+         end if
+      else
+      end if
+      
+      objFSO.CopyFile ""&strPathname&"" , ""&PercorsoOrdini&"\metadata"&number&".xml",True
+      Set g = Nothing
+      Set objFSO = Nothing
+      Set xmlDoc = Nothing
+   #ENDVB
+#ENDIF

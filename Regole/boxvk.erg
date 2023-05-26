@@ -1,0 +1,148 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=boxvk.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=4
+SPEC=
+DIVIDER=
+TRADFLAGS=
+
+
+[gene]
+T,MODELLO
+
+[GRAFICA]
+//#LETS  LOC_BX1 = $(box),$(zarL),$(zarR) // передача данных потомкам
+// #LETS OBL={$(LDV)-$(nalog)*2},{$(nalog)*2},{$L-$(LDV)},{$(nalog)*2}
+//#MSG {RND($(_PPL))}_$L_$(_XDL)
+#LETS parPadre=$(LOCP_BX1)
+
+#LET zona=$(parPadre:0)
+#LET lzarL=$(parPadre:1)
+#LET lzarR=$(parPadre:2)
+#LET OBL1=$(parPadre:3)
+#LET OBL2=$(parPadre:4)
+#LET OBL3=$(parPadre:5)
+#LET OBL4=$(parPadre:6)
+//#MSG $(boxPad)_$(lzarL)_$(lzarR)_$(OBL1)_$(obl2)_$(OBL3)_$(obl4)
+
+#IF {RND($(_PPL))}=0
+   #LET boxPad=1
+#ELSEIF {RND($(_PPL))+$L}=$(_XDL)
+   #LET boxPad=2
+#ELSE
+   #LET boxPad=3
+#ENDIF
+//=================АЛЬТЕРНАТИВА ПРОСТАВЛЕНИЯ ЦАРГ СЛЕВА/СПРАВА
+#IF $(boxPad)=1
+   
+   #IF {RND($(_PPL))+$L}>$(OBL1)
+      016,SL=0,L=$L,A=200,P=$P,C1=0
+      025,SL=$L/2-200,L=400,COD= / /Перемести ПР перегородку влево min на {{RND($(_PPL))+$L}-$(OBL1)} мм  // Номер детали
+   #ELSE
+      016,SL=0,L=$(lzarL),A=200,P=$P  // Полка вкладная
+      016,SL=$(lzarL),L=$L-$(lzarL),A=200,P=$P
+   #ENDIF
+   
+#ELSEIF $(boxPad)=2
+   #LET OBL=$(OBL1)+$(OBL2)
+   #IF $(OBL3)>$(OBL1) #LET OBL=$(OBL3)+$(OBL4)
+   #IF $(OBL5)>$(OBL3) #LET OBL=$(OBL5)+$(OBL6)
+   #IF $(OBL7)>$(OBL5) #LET OBL=$(OBL7)+$(OBL8)
+   
+   // #MSG {$(OBL1)+$(OBL2)+$(OBL3)+$(OBL4)+$(OBL5)+$(OBL6)+$(OBL7)+$(OBL8)}
+   #IF $(_PPL)<$(OBL)
+      016,SL=0,L=$L,A=200,P=$P,C1=0
+      025,SL=$L/2-200,L=400,COD= / /Перемести ЛВ перегородку вправо min на {ABS(RND($(_PPL))-$(OBL))} мм  // Номер детали
+   #ELSE
+      016,SL=0,L=$L-$(^lzarR),A=200,P=$P
+      016,SL=$L-$(lzarR),L=$(lzarR),A=200,P=$P  // Полка вкладная
+   #ENDIF
+   
+#ELSEIF $(boxPad)=3
+   
+   #LET PERL=0,OBL1N=$(OBL1),OBL3N=$(OBL3),OBL5N=$(OBL5),OBL7N=$(OBL7)
+   #IF $(OBL1N)=0 #LET OBL1N=$(_PPL)+5
+   #IF $(OBL3N)=0 #LET OBL3N=$(_PPL)+5
+   #IF $(OBL5N)=0 #LET OBL5N=$(_PPL)+5
+   #IF $(OBL7N)=0 #LET OBL7N=$(_PPL)+5
+   #IF $(zona)=1
+      
+   #ENDIF
+   #IF ($(_PPL)<$(^OBL1N)+$(^OBL2))&($(_PPL)<$(^OBL3N)+$(^OBL4))&($(_PPL)<$(^OBL5N)+$(^OBL6))&($(_PPL)<$(^OBL7N)+$(^OBL8)) #LET PERL=1
+   
+   #IF (($(_PPL)+$L)>$(OBL1))&(($(_PPL)+$L)>$(OBL3))&(($(_PPL)+$L)>$(OBL5))&(($(_PPL)+$L)>$(OBL7)) #LET PERL=1
+   
+   #IF $(PERL)=1
+      016,SL=0,L=$L,A=200,P=$P,C1=0
+      #LET TEXTSMESH=0
+      #IF $(_PPL)<{$(^OBL1)+$(^OBL2)}
+         #LET TEXTSMESH=ABS(RND({$(^OBL1)+$(^OBL2)}-$(_PPL))
+      #ELSEIF $(_PPL)<{$(^OBL3)+$(^OBL4)}
+         #LET TEXTSMESH=ABS(RND({$(^OBL3)+$(^OBL4)}-$(_PPL))
+      #ELSEIF $(_PPL)<{$(^OBL5)+$(^OBL6)}
+         #LET TEXTSMESH=ABS(RND({$(^OBL5)+$(^OBL6)}-$(_PPL))
+      #ELSEIF $(_PPL)<{$(^OBL7)+$(^OBL8)}
+         #LET TEXTSMESH=ABS(RND({$(^OBL7)+$(^OBL8)}-$(_PPL))
+      #ENDIF
+      //#MSG $(TEXTSMESH)
+      025,SL=$L/2-200,L=400,COD= / /Перемести ЛВ перегородку вправо min на $(TEXTSMESH) мм  // Номер детали
+      
+   #ELSE
+      016,SL=0,L=$L,A=200,P=$P
+   #ENDIF
+#ENDIF
+
+#IF 0  //========================== ВОЗМОЖНОСТЬ ПРОСТАВЛЕНИЯ ЦАРГ СЛЕВА/СПРАВА
+   #IF $(boxPad)=1
+      016,SL=0,L=$(lzarL),A=200,P=$P  // Полка вкладная
+      #IF {RND($(_PPL))+$L}>$(OBL1)
+         #LET deltaL={RND($(_PPL))+$L}-$(OBL1)
+         016,SL=$L-$(deltaL),L=$(deltaL),A=200,P=$P
+      #ENDIF
+      016,SL=$(lzarL),L=$L-$(lzarL),A=200,P=$P
+   #ELSEIF $(boxPad)=2
+      #LET deltaL=0
+      #IF $(OBL3)=0 // 2 дверный
+         #IF $(_PPL)<{$(OBL1)+$(OBL2)}
+            #LET deltaL={$(OBL1)+$(OBL2)}-$(_PPL)
+            016,SL=0,L=$(deltaL),A=200,P=$P
+         #ENDIF
+      #ELSE // 3 дверный
+         #IF $(_PPL)<{$(OBL3)+$(OBL4)}
+            #LET deltaL={$(OBL3)+$(OBL4)}-$(_PPL)
+            016,SL=0,L=$(deltaL),A=200,P=$P
+         #ENDIF
+      #ENDIF
+      016,SL=$(deltaL),L=$L-$(^lzarR)-$(deltaL),A=200,P=$P
+      016,SL=$L-$(lzarR),L=$(lzarR),A=200,P=$P  // Полка вкладная
+   #ELSEIF $(boxPad)=3
+      #IF $(_PPL)<{$(OBL1)+$(OBL2)}
+         
+      #ENDIF
+      #IF
+         
+         
+         016,SL=0,L=$(lzarL),A=200,P=$P  // Полка вкладная
+         016,SL=$(lzarL),L=$L-{$(lzarL)-$(lzarL)},A=200,P=$P
+         016,SL=$L-$(lzarR),L=$(lzarR),A=200,P=$P  // Полка вкладная
+      #ELSE
+         016,SL=0,L=$L,A=200,P=$P
+         
+      #ENDIF
+   #ENDIF
+#ENDIF
+//025,SL=$L/2,COD= / /\4BOX$(boxpad)  //Номер детали

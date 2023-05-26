@@ -1,0 +1,91 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=_svel.erg
+COMMENTI=Свободный артикул
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 0, 0, 0
+DIM.MASSIMA= 3000, 3000, 3000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,_idcat,,,,$(_idcat:3)=355811022,,,,,,,,0
+D,izdel_test,,,Ком. товары,$(izdel_test:0) ,!test1.html/?$(_idcat:1)&$(MR3SHOPID)&$(CRMUSER)
+E,izdel_des,,,Описание коммерческого товара,,,,,,,2
+T,FPL,,,,,,,,,,,,0
+
+[GRAFICA]
+#VB
+   v("addednumber")=Ambiente.tnumero
+#ENDVB
+#VB
+   set g=Ambiente.GetObject("GLOBAL")
+   V("PercorsoOrdini")=g.PercorsoOrdini
+#ENDVB
+#LETS MR3SHOPID=0
+#LETS CRMUSER=0
+#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml
+#LETS filetest=$[dir;$(strPathname)]
+#IF $(filetest)[1]
+   #VB
+      Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")
+      xmlDoc.load (V("strpathname"))
+      strSearch = "ProjectMetadata"
+      Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)
+      for each node in currNode
+         strName="MR3SHOPID"
+         Dim data: set data = node.getElementsByTagName(strName)
+         for each el in data
+            V("MR3SHOPID")=el.text
+         next
+         strNameUser="USER"
+         Dim dataUser: set dataUser = node.getElementsByTagName(strNameUser)
+         for each elUser in dataUser
+            V("CRMUSER")=elUser.text
+         next
+         
+         
+         strNameProduct="PRODUCT_LINE"
+         Dim dataProduct: set dataProduct = node.getElementsByTagName(strNameProduct)
+         for each elProduct in dataProduct
+            V("PRODUCT_LINE")=elProduct.text
+         next
+         
+         
+      next
+   #ENDVB
+#ENDIF
+// *****************************параметр определяющий что элемент является плейсером****************
+#LET flag_padre=0
+#LETS flag_padre=$[ex;$(LOCP_BX0);|;5]
+#IF $(flag_padre)=1
+   #LETV FPL=
+#ELSE
+   #LETV FPL=N
+#ENDIF
+//***************************************************************************************************
+#IF $(izdel_test:0)!!
+   
+   !SETCODICE $(izdel_test:0)
+   025,COD= / /$(izdel_test:0),SL=0,SP=0,L=$l,A=$a  //Текст
+   #LETV izdel_des=$(izdel_test:1)  //Текст
+   
+#ELSE
+   025,COD= / /000,SL=0,SP=0,L=$l,A=$a  //Свободный элемент
+   !SETCODICE x
+   
+#ENDIF

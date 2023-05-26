@@ -1,0 +1,67 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=20
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=7
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+
+[GRAFICA]
+
+!SETCODICE x
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+//***************************************************************************************************
+_DATABOX
+#LET larg_shtang=$l-30
+#IF $l-45>1800
+   #LET larg_shtang=($l-60)/3
+   001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$(larg_shtang)+30,L=$(larg_shtang),A=30,P=8,C1=2  //Test
+   001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$(larg_shtang)*2+45,L=$(larg_shtang),A=30,P=8,C1=2  //Test
+   001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$(larg_shtang)+15,SP=-3,L=15,A=80,P=15,C1=2  //Test
+   001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$(larg_shtang)*2+30,SP=-3,L=15,A=80,P=15,C1=2  //Test
+   #IF $(show_msg_vst$(_idunico))=0
+      #MSG ширина штанги превышает 900 мм. в заказ будут добавлены 3-и штанги и 2-а соединителя!
+      #LET show_msg_vst$(_idunico)=1
+   #ENDIF
+#ELSEIF $l-30>900
+   #LET larg_shtang=($l-45)/2
+   001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$l/2+7.5,L=$(larg_shtang),A=30,P=8,C1=2  //Test
+   001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$l/2-7.5,SP=-3,L=15,A=80,P=15,C1=2  //Test
+   #IF $(show_msg_vst$(_idunico))=0
+      #MSG ширина штанги превышает 900 мм. в заказ будут добавлены 2-е штанги и 1-н соединитель!
+      #LET show_msg_vst$(_idunico)=1
+   #ENDIF
+#ENDIF
+001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,A=30,P=8,C1=2,l=$(larg_shtang),sl=15  //Test
+
+001,COD=999shdertorzBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель крайний /#l-1,SP=-3,L=15,A=80,P=15,C1=2  //Test
+001,COD=999shdertorzBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель крайний /#l-1,SL=$l-15,SP=-3,L=15,A=80,P=15,C1=2  //Test
+
+// ****************************************************** размер по высоте ***********************************************************************
+#LETS zone_prov=$(locp_bx3)
+#IF $[estrai;$(zone_prov);|;5]=1
+   // 023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=210,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+   //  023,COD= / /{rnd($(posa))},SL=210,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+#ENDIF
+//*************************************************************************************************

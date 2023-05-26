@@ -1,0 +1,59 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=20
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 300, 1, 1
+DIM.MASSIMA= 1000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=25
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,_color_univer_rip,,,,#IF $(_PRIMOCARICAMENTO)=1\n   $(_color_univer_rip:1)==0002\n#ELSE\n   $(_color_univer_rip)\n#ENDIF
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+
+[GRAFICA]
+
+!SETCODICE x
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+//***************************************************************************************************
+_DATABOX
+#IF $(_color_univer_rip:1)[0001] // белый
+   #LETS cod_rip=999univer_rip_wt
+   #LETS cod_krep=999kr_univer_rip_wt
+#ELSE // серый
+   #LETS cod_rip=999univer_rip_sil
+   #LETS cod_krep=999kr_univer_rip_sil
+#ENDIF
+#LETS 3ds=$(.percorso)\3ds\Polka_Setka_S.3DS
+001,COD=$(cod_rip) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Универсальная сетчатая полка для белья /#l-1,C1=2,GL=$(3ds)  //Test
+#FOR $1:2
+   001,LATO=6,COD=$(cod_krep) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект креплений для одной полки /#l-1,L=1,A=1,P=1  //Test
+#ENDFOR
+#FOR $1:8
+   001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=1,A=1,P=1  //Test
+#ENDFOR
+
+// ****************************************************** размер по высоте ***********************************************************************
+#LETS zone_prov=$(locp_bx3)
+#IF $[estrai;$(locp_bx3);|;5]=1
+   // 023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+   023,COD= / /{rnd($(posa))},SL=280,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+#ENDIF
+// *******************************************************************************************************************************************************

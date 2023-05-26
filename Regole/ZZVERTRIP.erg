@@ -1,0 +1,98 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,mat,,,,$(mat:3)=1
+T,_colkarkas,,,,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1
+C,krepShkaf,,,Крепление к шкафу,,,,,,,2
+M,kolKrepShkaf,,$(krepShkaf:0)=1,Количество креплений,,,5,1
+C,krepDsp,,,Крепление к ДСП,,,,,,,2
+M,kolKrepDsp,,$(krepDsp:0)=1,Количество креплений,,,,1
+C,krepGips,,,Крепление к гипсокартону,,,,,,,2
+M,kolKrepGips,,$(krepGips:0)=1,Количество креплений,,,,1
+C,krepBeton,,,Крепление к бетону/кирпичу,,,,,,,2
+M,kolKrepBeton,,$(krepBeton:0)=1,Количество креплений,,,,1
+
+[GRAFICA]
+
+!SETCODICE x
+
+_DATABOX
+#LET det_mod=0
+#LET l=$(mat:1)
+#LET ndet=
+#LET _spostal=0
+#LET _spostaa=0
+#IF $a>2750
+   #LET a=2750
+   #MSG перегородка не может быть высотой более 2750 мм!
+#ENDIF
+#IF $P>2040
+   #LET p=2040
+   #MSG перегородка не может быть глубиной более 2040 мм!
+#ENDIF
+#IF $a<100 | $p<100
+   #IF $a<100 #LET a=100
+   #IF $p<100 #LET p=100
+   #MSG высота или глубина перегородки не может меньше 100 мм!
+#ENDIF
+#LETV _wr=999V_KARKASPERVERT
+#LETV _MNP=999V_KARKASPERVERT
+#LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+// 014,COD= / / /#l-1  //Перегородка
+010,COD= / / /#l-1,P=$p  //Перегородка
+#IF $(krepDsp:0)=1
+   #FOR $1:$(kolKrepDsp:0)
+      001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF
+#IF $(krepGips:0)=1
+   #FOR $1:$(kolKrepGips:0)
+      001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh3_5x30 / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999dub_driva / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF
+#IF $(krepBeton:0)=1
+   #FOR $1:$(kolKrepBeton:0)
+      001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh3_5x30 / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999dub6x30 / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF
+#IF $(krepShkaf:0)=1
+   #FOR $1:$(kolKrepShkaf:0)
+      001,LATO=6,COD=999sh4x30 / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF
+// ********************** размеры перегородки ****************************************
+023,COD= / /$P,SL=0,SP=0,L=$P,P=$P,AY=90,X1=2  //Глубина корпуса
+023,COD= / /$A,SL=0,SA=$A,SP=0,L=$A,A=0,P=0,AZ=90,X1=2  //Высота корпуса
+// ***********************************************************************************

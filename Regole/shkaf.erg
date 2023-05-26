@@ -1,0 +1,211 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=shkaf.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 6000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=VOLUME,ADDNAP,$(otstverh:0),$(otstniz:0),$(matvnL:0),$(matvnR:0),$(mat:1),$(mat:1),,$(mat:1),,,4
+TRADFLAGS=
+
+
+[gene]
+-,karkas_shkafa,,,Каркас
+T,MODELLO
+S,provobr,,,,,,,,,,,,0
+S,fsh,,,,,,,,,,,,0
+M,pasp_count,,,,,,,,,,,,0
+M,AllCount_pasp,,,,,,,,,,,,0
+M,DopFur,,$(tipshkaf:6)=1,,,,,,,,,,0
+M,AllDopFur,,$(tipshkaf:6)=1,,,,,,,,,,0
+S,dataordine,,,,  ,,,,,,,,0
+S,PRODUCTLINE,,,,,,,,,,,,0
+S,strParamsAllLast,,,,,,,,,,,,0
+S,countProverkaLast,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,MNP,,,,,,,,,,,,0
+T,WR,,,,,,,,,,,,0
+T,TSH,,,,,,,,,,,,0
+T,size,,,Размеры шкафа
+T,in_size,,,Внутренние размеры
+C,show_verh,,,Скрыть крышку,,,,,,,,,0
+M,otstniz,,,,,,,,,,,,0
+M,otstverh,,,,,,,,,,,,0
+M,otsL,,,,,,,,,,,,0
+M,otsR,,,,,,,,,,,,0
+T,tipshkaf,,,Тип,,,,,,,,,$(_primocaricamento)=1
+T,tipshkaf,tipshkaf_VV,,Тип шкафа,$(tipshkaf_VV:1)==$(tipshkaf:1),,,,,,9
+T,tipRaspshkaf,,$(tipshkaf:1)[8],Тип,,,,,,,,,$(_primocaricamento)=1
+Z,nisha,,0,Показать нишу
+M,pZast,,$(tipshkaf:6)=1,Глубина наполнения
+T,matGl,matGlvn,$(tipshkaf:6)=2,Внешние панели,$(matGlvn:3)=1,,,,,,,,$(_primocaricamento)=1
+T,matGl,,,Материал перегородок,$(matGl:3)=1,,,,,,,,$(_primocaricamento)=1
+T,mat,,,Материал ЛДСП,$(mat:1)=$(matGl:1),,,,,,9
+T,_colkarkas,,,Цвет внутренних панелей,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1,,,,,,2
+T,mat,matVn,,Внешние панели,#IF $(tipshkaf:6)=2\n   $(matvn:1)=$(matGLvn:1)\n#ELSE\n   $(matvn:1)=$(mat:1)\n#ENDIF,,,,,,9,,$(tipshkaf:6)=2 & $[datecompare;$(dataordine);06.06.2019]>=0
+M,matVnL,,,Внешние панели слева,,,,,,,,,0
+M,matVnR,,,Внешние панели справа,,,,,,,,,0
+T,_colkarkas,_colkarkas_vn,$(tipshkaf:6)=2 & $[datecompare;$(dataordine);16.01.2019]>=0,Цвет внешних панелей,#IF $[datecompare;$(dataordine);06.06.2019]>=0\n   $(matvn:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:1)!!024 & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1\n#ELSE\n   $(mat:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:1)!!024 & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1\n#ENDIF,,,,,,8
+T,_matFiaSx,,$(tipshkaf:6)=1,Материал стены ЛВ,$(_matFiaSx:3)[1;2]
+T,_matFiaDx,,$(tipshkaf:6)=1,Материал стены ПР,$(_matFiaDx:3)[1;2]
+T,_matPensili,,$(tipshkaf:6)=1,Материал потолка,$(_matPensili:3)[1;2;3]
+T,_matBack,,$(tipshkaf:6)=1,Материал задней стены,$(_matBack:3)[1;2]
+M,pripuskPolSx,,$(tipshkaf:6)=1,Припуск полок слева,,,,0,100,,3,,$(pBokL:1)!2 | $(bokL:1)=9
+M,pripuskPolDx,,$(tipshkaf:6)=1,Припуск полок справа,,,,0,100,,3,,$(pBokR:1)!2 | $(bokR:1)=9
+M,pripuskPolZad,,$(tipshkaf:6)=1,Припуск полок сзади,,,,0,100,,3
+T,mat_backwall,,$(tipshkaf:6)=2,Материал задней стенки
+T,_colkarkas,_colkarkasback,$(tipshkaf:6)=2,Цвет задней стенки,$(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1
+C,noZoc,,$(tipshkaf:6)=2 & $(matVn:1)=22 & $(tipshkaf:7)[0;1;3],Без цоколя
+M,hzoc,,$(tipshkaf:6)=2,Высота цоколя,,,60,0,100,,,,$(noZoc:0)!1 & $(hzoc:0)!0
+T,_prist,,$(tipshkaf:7)=1,,#IF $(sk_sys:0)=1\n   $(_prist:1)=0\n#ELSE\n   $(_prist:1)[0;1;2]\n#ENDIF,,,,,,4,,$(sk_sys:0)!1
+M,profPrist,,$(tipshkaf:7)=1 & $(_prist:1)!0,Глубина пристыковки,,,600,,,,4
+T,_prist1,,,,,,,,,,,,0
+T,matL,,,,,,,,,,,,0
+T,matR,,,,,,,,,,,,0
+T,matDn,,,,,,,,,,,,0
+T,matUp,,,,,,,,,,,,0
+M,krepStena,,$(tipshkaf:6)=2,Крепление к стене,,,2,1,2,,,,$(tipshkaf:7)=2
+T,_dekPie,,$(tipshkaf:6)=2 & $(tipshkaf:7)=2 & $(tipRaspshkaf:1)=3
+C,virovnit,,$(TIPSHKAF:7)=2,Выровнить с ШК,,,,,,,4
+M,new_prof,,$(virovnit:0)=1,Глубина ШК,,,600,,,,4
+-,VNESH,,,Обклад
+C,nerovnL,,$(tipshkaf:6)=1,Неровная стена ЛВ
+M,LVID,,$(tipshkaf:6)=1 & $(nerovnL:0)=1,Видимая ширина короба ЛВ,,,,65,200,,3
+M,pripuskKorL,,$(tipshkaf:6)=1 & $(nerovnL:0)=1,Припуск короба ЛВ,,,,0,50,,3
+C,nerovnR,,$(tipshkaf:6)=1,Неровная стена ПР
+M,RVID,,$(tipshkaf:6)=1 & $(nerovnR:0)=1,Видимая ширина короба ПР,,,,65,200,,3
+M,pripuskKorR,,$(tipshkaf:6)=1 & $(nerovnR:0)=1,Припуск короба ПР,,,,0,50,,3
+C,nerovnD,,$(tipshkaf:6)=1,Неровный пол
+M,DVID,,$(tipshkaf:6)=1 & $(nerovnD:0)=1,Видимая ширина короба Низ,,,,65,200,,3
+M,pripuskKorD,,$(tipshkaf:6)=1 & $(nerovnD:0)=1,Припуск короба НИЗ,,,,0,100,,3
+C,nerovnUp,,$(tipshkaf:6)=1,Неровный потолок
+M,UVID,,$(tipshkaf:6)=1 & $(nerovnUp:0)=1,Видимая ширина короба Верх,,,,65,200,,3
+M,pripuskKorU,,$(tipshkaf:6)=1 & $(nerovnUp:0)=1,Припуск короба ВЕРХ,,,,0,300,,3
+T,mat,mat_kor,$(tipshkaf:6)=1,Материал обклада,$(mat_kor:1)[16;22],,,,,,2
+T,_colkarkas,_colkarkas_kor,$(tipshkaf:6)=1,Цвет материала обклада,$(mat_kor:1)[$(_colkarkas_kor:5)] & $(_colkarkas_kor:1)!!024 & $(_colkarkas_kor:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_kor:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_kor:23)]=-1,,,,,,2
+T,bokL,,$(tipshkaf:6)=1,,$(bokL:3)=$(nerovnL:0)
+T,pbokL,,$(tipshkaf:6)=1,Глубина ЛВ бок,,,,,,,,,$(bokL:1)!9
+T,bokR,,$(tipshkaf:6)=1,,$(bokR:3)=$(nerovnR:0)
+T,pbokR,,$(tipshkaf:6)=1,Глубина ПР бок,,,,,,,,,$(bokR:1)!9
+T,dno,,$(tipshkaf:6)=1,,$(dno:3)=$(nerovnD:0)
+T,pdno,,$(tipshkaf:6)=1,Глубина ниж планки ,#IF $(nerovnD:0)!1 & $(mat_kor:1)=16\n   $(pdno:1)=1\n#ELSE\n   $(pdno)\n#ENDIF,,,,,,,,$(dno:1)!9
+T,verh,,$(tipshkaf:6)=1,,$(verh:3)=$(nerovnUp:0)
+T,pup,,$(tipshkaf:6)=1,Глубина верх планки,#IF $(_matPensili:3)=3\n   $(pup:1)=2\n#ELSE\n   $(pup)\n#ENDIF,,,,,,,,$(verh:1)!9
+-,doors,,,Двери,,,,,,,,,$(tipshkaf:7)[1;3]
+T,tipsystem_pr,,,,#IF $(tipshkaf:7)=3\n   $(tipsystem_pr:18)==AR1\n#ELSE\n   $(tipsystem_pr:1)\n#ENDIF,,,,,,,,$(_primocaricamento)=1
+T,tipsystem,,,,$(tipsystem:1)=$(tipsystem_pr:1)
+C,sk_sys,,($(tipshkaf:6)=2 & $(tipsystem:18)==ar2) | ($(tipshkaf:6)=1 & $(tipsystem:18)==ar2),Скрытая система,,,,,,,8
+T,mat,mat_kor1,$(tipshkaf:6)=1 & $(sk_sys:0)=1,Подкладки под скрытую систему,$(mat_kor1:1)=16,,,,,,,,0
+T,_colkarkas,_colkarkas_kor1,$(tipshkaf:6)=1 & $(sk_sys:0)=1,Подкладки под скрытую систему,#IF $(mat_kor:1)=16\n   $(_colkarkas_kor1:1)=$(_colkarkas_kor:1)\n#ELSE\n   $(_colkarkas_kor1:1)=$(_colkarkas_kor:19)\n#ENDIF,,,,,,,,0
+T,tipruch,,,,$(tipsystem:18)==$(tipruch:7)
+T,katcol,,,,#IF $(tipshkaf:7)=3\n   $(katcol:8)==an\n#ELSE\n   $(tipruch:22)[$(katcol:9)]\n#ENDIF
+T,col_system,,,,#IF $(tipshkaf:7)=3\n   $(col_system:9)=1 & $[datecompare;$(dataordine);$(col_system:10)]=-1\n#ELSE\n   $(katcol:8)[$(col_system:3)] & $(tipruch:22)[$(col_system:7)] & $[datecompare;$(dataordine);$(col_system:10)]=-1\n#ENDIF
+T,ndoors,,$(tipshkaf:7)=1,,##LDOORS\n#IF $(tipshkaf:6)=1\n   #LET otsLPr=$(otsL:0)\n   #LET otsRPr=$(otsR:0)\n#ELSE\n   #LET otsLPr=$(matVn:1)\n   #LET otsRPr=$(matVn:1)\n#ENDIF\n#LET Lpr=$L-($(otsLPr)+$(otsRPr))\n#IF ($(Lpr)+$(tipsystem:5)*4)/($(tipsystem:6)+$(tipsystem:19)*2)>=5\n   #IF ($(Lpr)+$(tipsystem:5)*3)/($(tipsystem:7)+$(tipsystem:19)*2)>4\n      $(ndoors:3)<=5 & $(ndoors:3)>4\n   #ELSEIF ($(Lpr)+$(tipsystem:5)*2)/($(tipsystem:7)+$(tipsystem:19)*2)>3\n      $(ndoors:3)<=5 & $(ndoors:3)>3\n   #ELSEIF ($(Lpr)+$(tipsystem:5))/($(tipsystem:7)+$(tipsystem:19)*2)>2\n      $(ndoors:3)<=5 & $(ndoors:3)>2\n   #ELSE\n      $(ndoors:3)<=5\n   #ENDIF\n#ELSEIF ($(Lpr)+$(tipsystem:5)*3)/($(tipsystem:6)+$(tipsystem:19)*2)>=4\n   #IF ($(Lpr)+$(tipsystem:5)*2)/($(tipsystem:7)+$(tipsystem:19)*2)>3\n      $(ndoors:3)<=4 & $(ndoors:3)>3\n   #ELSEIF ($(Lpr)+$(tipsystem:5))/($(tipsystem:7)+$(tipsystem:19)*2)>2\n      $(ndoors:3)<=4 & $(ndoors:3)>2\n   #ELSE\n      #IF $(Lpr)<($(tipsystem:6)*4-$(tipsystem:19)*6)\n         $(ndoors:3)<=4 & $(ndoors:1)!5\n      #ELSE\n         $(ndoors:3)<=4\n      #ENDIF\n   #ENDIF\n#ELSEIF ($(Lpr)+$(tipsystem:5)*2)/($(tipsystem:6)+$(tipsystem:19)*2)>=3\n   #IF ($(Lpr)+$(tipsystem:5))/($(tipsystem:7)+$(tipsystem:19)*2)>2\n      $(ndoors:3)<=3 & $(ndoors:3)>2\n   #ELSE\n      $(ndoors:3)<=3\n   #ENDIF\n#ELSEIF ($(Lpr)+$(tipsystem:5))/($(tipsystem:6)+$(tipsystem:19)*2)>=2\n   $(ndoors:3)=2\n#ENDIF
+T,shleg,,,,,,,,,,,,0
+C,show_per,,$(tipshkaf:7)!3,Скрыть зоны перекрытия
+T,NODOORS
+T,size_per,,$(tipshkaf:7)!3
+T,DD,DD_S,$[datecompare;$(dataordine);01.04.2019]>=0 & $(tipshkaf:7)!3,Доводчики дверей,,,,,,,8
+T,_doorsRasp,_doorsRasp_ar1,$(tipshkaf:7)[3],,#IF ($l<300+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2] & $(tipshkaf:6)=2) | ($l<300+$(^otsL:0)+$(^otsR:0)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2] & $(tipshkaf:6)=1)\n   $(_doorsRasp_ar1:1)[1]\n#ELSEIF ($l>500+$(matvn:1)*2+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2] & $(tipshkaf:6)=2) | ($l>500+$(^otsL:0)+$(^otsR:0)+$[ex;$(TIPRUCH:26);:;1]+$[ex;$(TIPRUCH:26);:;2] & $(tipshkaf:6)=1)\n   $(_doorsRasp_ar1:1)[2]\n#ELSE\n   $(_doorsRasp_ar1:1)[1;2]\n#ENDIF
+-,vnutr,,,Ниша,,,,,,,,,0
+T,bokVnutrL,,($(nerovnL:0)=0 & $(pbokL:0)=1) | $(bokL:0)=9
+T,bokVnutrR,,($(nerovnR:0)=0 & $(pbokR:0)=1) | $(bokR:0)=9
+T,dnoVnutr,,($(nerovnD:0)=0 & $(pdno:0)=1) | $(dno:0)=9
+T,verhVnutr,,($(nerovnUp:0)=0 & $(pup:0)=1) | $(verh:0)=9
++,ADDNAP,,0,,,,,,,,,,0
+-,doorsRasp,,$(tipshkaf:7)[2],Двери распашные
+T,_doorsRasp,,$(tipshkaf:7)[2],,##KOLDOORSRASP\n#LET SxFiaLarg=$(mat:1)\n#LET DxFiaLarg=$(mat:1)\n#LET PnFiaLarg=$(mat:1)\n#LET StFiaLarg=$(mat:1)\n#IF $(tipshkaf:6)=1\n   #LET SxFiaLarg=$(mat_kor:1)\n   #LET DxFiaLarg=$(mat_kor:1)\n   #LET StFiaLarg=$(mat_kor:1)\n   #LET PnFiaLarg=$(mat_kor:1)\n   #IF $(lvid:0)= #LET lvid=65\n   #IF $(rvid:0)= #LET rvid=65\n   #IF $(dvid:0)= #LET dvid=65\n   #IF $(uvid:0)= #LET uvid=65\n   #IF $(nerovnL:0)=1 #LET SxFiaLarg=$(lvid:0)\n   #IF $(nerovnR:0)=1 #LET DxFiaLarg=$(rvid:0)\n   #IF $(nerovnD:0)=1 #LET StFiaLarg=$(DVID:0)\n   #IF $(nerovnUp:0)=1 #LET PnFiaLarg=$(UVID:0)\n#ENDIF\n#LET LantProem=($l-($(SxFiaLarg)+$(DxFiaLarg)))+28\n#LET AltProem=($a-($(StFiaLarg)+$(PnFiaLarg)))+28\n#IF $(tipRaspshkaf:3)=1 #LET AltProem=($a-($(SxFiaLarg)+$(DxFiaLarg))-$(hzoc:0))+28\n$(_doorsRasp:4)<=$(AltProem) & $(_doorsRasp:5)<=$(LantProem) & $(_doorsRasp:6)>=$(AltProem) & $(_doorsRasp:7)>=$(LantProem)
+T,_FiaApertoAnta,,$(_doorsRasp:1)[1;3],,,,,,,,4
+T,_VdVisDoor
+T,NODOORSRASP
+M,LargSxStD,,$(_doorsRasp:1)[2;4],Ширина нижней левой двери,,,,,,,2
+M,AltSxStD,,$(_doorsRasp:1)[3;4],Высота нижней левой двери,,,,,,,3
+M,LargDxStD,,$(_doorsRasp:1)[2;4],Ширина нижней правой двери,,,,,,,2
+M,AltDxStD,,$(_doorsRasp:1)[4],Высота нижней правой двери,,,,,,,3
+M,LargSxPnD,,$(_doorsRasp:1)[4],Ширина верхней левой двери,,,,,,,2
+M,AltSxPnD,,$(_doorsRasp:1)[3;4],Высота верхней левой двери,,,,,,,3
+M,LargDxPnD,,$(_doorsRasp:1)[4],Ширина верхней правой двери,,,,,,,2
+M,AltDxPnD,,$(_doorsRasp:1)[4],Высота верхней правой двери,,,,,,,3
+M,LOldSt,,,,,,,,,,,,0
+M,LOldPn,,,,,,,,,,,,0
+M,AOldSx,,,,,,,,,,,,0
+M,AOldDx,,,,,,,,,,,,0
+-,dekorat,,,Декор
+T,_ModDoorRasp,,,,$(_ModDoorRasp:1)[s08],,,,,,,,0
+C,dekor,,(($(tipshkaf:6)=2 & $(tipshkaf:7)=1) | ($(tipshkaf:6)=2 & $(tipshkaf:7)=2 & $(tipRaspshkaf:1)[1;2])) & $(tipsystem:18)==ar1,Декор
+T,matvstav,matvstavDek,$(dekor:0)=1,Модель декора,$(matvstavDek:5)==$(_ModDoorRasp:1),,,,,,,,0
+T,cvetvstav,cvetvstavDek, ,Цвет декора,$(matvstavDek:5)[$(cvetvstavDek:3)] & $(matvstavDek:6)[$(cvetvstavDek:8)],,,,,,2,,$(matvstavDek:13)
+T,TxtVst,TxtVstDek,$(cvetvstavDek:11)=1 & (($(tipshkaf:6)=2 & $(tipshkaf:7)=1) | ($(tipshkaf:6)=2 & $(tipshkaf:7)=2 & $(tipRaspshkaf:1)[1;2])) & $(tipsystem:18)==ar1 ,,#IF $(matvstavDek:5)==s08\n   $(TxtVstDek:1)=1\n#ELSE\n   $(TxtVstDek:1)[0;1]\n#ENDIF,,,,,,,,$(matvstavDek:5)!!s08
+T,_patina,_patinaDek,,,#IF $(cvetvstavDek:14)=1\n   $(cvetvstavDek:1)[$(_patinaDek:4)]\n#ELSE\n   $(_patinaDek:5)=60251733\n#ENDIF,,,,,,,,$(cvetvstavDek:14)=1
+C,bokSx,,$(dekor:0)=1,Декор. бок. слева
+M,AltBokFasSx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokSx:0)=1,Высота нижней левой дек. бок.,,,,,,,3
+C,dekKolSx,,$(dekor:0)=1,Декор. колон. слева,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)=2
+C,bokDx,,$(dekor:0)=1,Декор. бок. справа
+M,AltBokFasDx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokDx:0)=1,Высота нижней правой дек. бок.,,,,,,,3
+C,dekKolDx,,$(dekor:0)=1,Декор. колон. справа,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)=2
+C,dekVst,,$(dekor:0)=1 & ($(tipshkaf:6)=2 & $(tipshkaf:7)=1) | ($(tipshkaf:6)=2 & $(tipshkaf:7)=2 & $(tipRaspshkaf:1)[2]),Декоративная вставка
+C,cornic,,$(dekor:0)=1,Карниз,,,,,,,2
+T,mat,matKn,,Материал ЛДСП,$(matKn:1)=16,,,,,,9,,0
+T,_colkarkas,_colkarkasKn,,Цвет внутренних панелей,#IF $(matVn:1)=16\n   $(_colkarkasKn:1)=$(_colkarkas_Vn:1)\n#ELSE\n   $(_colkarkasKn:1)=$(_colkarkas_Vn:19)\n#ENDIF,,,,,,9,,0
+
+[GRAFICA]
+_shkaf
+// _provObr
+//_dekor
+// finalescript
+// _calcul_back_krep
+//TIPOLOGI
+//ADDNAP
+//VOLUME
+//_DOOR
+//_MODUL
+//_AGG_KREP
+//NAPR
+//INITSHKAF
+//_PASPORT
+//VNESHNIE
+//NALOG
+//_KREPLENIE_NAPRAV
+//_old_place
+//_NEW_PLACE
+//NUMDET
+//PROVERKA
+//DOORS
+// DOORSRASP
+//_DOORRASP
+//KORPSHKAF
+//NUMDET
+//VOLUME
+//NAPDOOR
+//303
+//304
+//040
+//010
+//100
+//102
+//027
+//VSTAV
+//_OLD_PLACE
+//_NEW_PLACE
+//MACRODOOR
+//_DOOR
+//PEREMICH
+//_DOOR
+//_DATABOX
+//108
+//_PETLJA
+
+[EXTRA]
+!WALLDATA nomevar

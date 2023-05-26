@@ -1,0 +1,37 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=polkavk.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=u3
+SPEC=
+DIVIDER=
+TRADFLAGS=
+
+
+[gene]
+T,MODELLO
+T,mat
+T,_colkarkas,,,,$[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1
+
+[GRAFICA]
+#LET PVNUTR=$P
+#IF $L<=800
+   NUMDETPL,SL=$L/2,SA=$A
+   016,C1=1|$(.percorso)\foto\struttura\$(_colkarkas$(_ctx):3)  //Полка вкладная
+#ELSE
+   019
+   025,COD= / /Ошибка превышен макс размер!!!,SL=$L/2-200,L=400  //Номер детали
+#ENDIF

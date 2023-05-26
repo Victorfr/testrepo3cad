@@ -1,0 +1,49 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=DergOdegSL.erg
+COMMENTI=
+CODICE=
+POSMODE=19
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 556, 50, 500
+DIM.MASSIMA= 556, 50, 500
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=28
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+
+[GRAFICA]
+
+!SETCODICE x
+
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+//***************************************************************************************************
+_DATABOX
+#LETS cod_pan=999DergOdegSL
+#LETS 3ds=Derzh_bruki.3ds
+
+
+001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Держатель для одежды /#l-1,C1=11,FACC=100,X4=$(3ds)  //Test
+
+
+// ****************************************************** размер по высоте ***********************************************************************
+#LETS zone_prov=$(locp_bx3)
+#IF $[estrai;$(locp_bx3);|;5]=1
+   .. 023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+#ENDIF
+// ***********************************************************************************************************************************************

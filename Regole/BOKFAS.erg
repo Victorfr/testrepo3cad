@@ -1,0 +1,73 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=BOKFAS.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,_ModDoorRasp,,,,$(_ModDoorRasp:1)[s08],,,,,,,,0
+T,matvstav,,,Модель декора,$(matvstav:5)==$(_ModDoorRasp:1),,,,,,,,0
+T,cvetvstav,, ,Цвет,$(matvstav:5)[$(cvetvstav:3)] & $(matvstav:6)[$(cvetvstav:8)],,,,,,2,,$(matvstav:13)
+T,TxtVst,,$(cvetvstav:11)=1,,#IF $(matvstav:5)==s08\n   $(TxtVst:1)=1\n#ELSE\n   $(TxtVst:1)[0;1]\n#ENDIF,,,,,,,,$(matvstav:5)!!s08
+T,_patina,,,,#IF $(cvetvstav:14)=1\n   $(cvetvstav:1)[$(_patina:4)]\n#ELSE\n   $(_patina:5)=60251733\n#ENDIF,,,,,,,,$(cvetvstav:14)=1
+M,altFas,,,Высота
+M,lantFas,,,Ширина
+M,PantFas,,,,,,,,,,,,0
+
+[GRAFICA]
+!SETCODICE X
+#IF $(_PRIMOCARICAMENTO)=1
+   #LETV altFas=$a
+   #LETV lantFas=$L
+   #LETV PantFas=$(_ModDoorRasp:5)
+#ENDIF
+#LET l=$(PantFas:0)
+#LET P=$(lantFas:0)
+#LET a=$(altFas:0)
+#IF ($(altFas:0)>=356 & $(altFas:0)<=2280) & ($(lantFas:0)>=296 & $(lantFas:0)<=1196)
+#ELSE
+   #MSG некорректный размер фасада!
+   #LETV lantFas=450
+   #LETV altFas=720
+   #LETV p=450
+   #LETV a=720
+#ENDIF
+#IF $(TxtVst:1)==0
+   #LETS nt=5723737
+#ELSEIF $(TxtVst:1)==1
+   #LETS nt=5723736
+#ELSE
+   #LETS nt=11726799
+#ENDIF
+#LET rot_txt=0
+#IF $(TxtVst:1)=1 #LET rot_txt=90
+#LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
+#IF ($(matvstav:5)[s08] & $(cvetvstav:11)=1) #LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|{90-$(rot_txt)}
+#LETS vid_vis=n // параметр прозрачности типологии 303
+#LETV _wr=$(_ModDoorRasp:1)FASAD
+#LETV _MNP=$(_ModDoorRasp:1)FASAD
+#IF $(cvetvstav:14)=1 & $(_patina:5)!60251733
+   #LETV _wr=$(_ModDoorRasp:1)FASADPT
+   #LETV _MNP=$(_ModDoorRasp:1)FASADPT
+#ENDIF
+#LETS draw=404904557
+#LETS 3ds=classicbok.3ds
+303,COD= / / /#l-1,SL=$l,L=$p,P=$l,AY=-90,MAN=0  //Боковина фасадная

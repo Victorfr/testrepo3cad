@@ -1,0 +1,28 @@
+
+[INFO]
+Versione = 100
+Tipo=000
+Descrizione=Regola di prova
+Commenti=
+Codice=
+Foto=
+Var.Obb.=
+Link=000
+LinkPrec=
+LinkSucc=
+Tab.Dim.=L,A,P,SA,DA,SL,DL
+Icona=
+Dim.Minima= 1, 1, 1
+Dim.Massima= 5000, 5000, 5000
+Dim.Default= 0, 0, 0
+Dim.Blocca=0,0,0
+Dim.Speciali=0,0,0
+ModoAdd=
+Link3=,
+Spec=
+NuovoBox=
+[GENE]
+T,MODELLO
+G,BASE
+[GRAFICA]
+001  // Test

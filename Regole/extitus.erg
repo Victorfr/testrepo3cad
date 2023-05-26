@@ -1,0 +1,45 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 1950, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+M,count_st,,,Количество,,,,1
+T,_colkarkas,,,Заглушка под цвет,16[$(_colkarkas:5)] & $(_colkarkas:5)!25 & $(_colkarkas:1)!!017 & $(_colkarkas:1)!!023 & $(_colkarkas:1)!!021 & $(_colkarkas:1)!!022 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#LET l=450,a=45,p=2
+#LETV _WR=999DFEX
+001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3) /$(_WR:2) ($(_colkarkas:21)) /#l-1  //Tes
+#FOR $1:$(count_st:0)
+   001,LATO=6,COD=999EXVB /FPL=N,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=$(_colkarkas:12) /FPL=N,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999DUBVB /FPL=N,L=1,A=1,P=1  //Test
+#ENDFOR

@@ -1,0 +1,25 @@
+X
+[INFO]
+Versione = 100
+Tipo=000
+Descrizione=Generale
+Commenti=
+Codice=
+Foto=
+Var.Obb.=
+Link=000
+LinkPrec=
+LinkSucc=
+Tab.Dim.=L,A,P,SA,DA,SL,DL
+Icona=
+Dim.Minima= 0, 0, 0
+Dim.Massima= 3000, 3000, 3000
+Dim.Default= 0, 0, 0
+Dim.Blocca=0,0,0
+Dim.Speciali=0,0,0
+ModoAdd=
+Link3=,
+Spec=
+NuovoBox=
+[GENE]
+T,Modello

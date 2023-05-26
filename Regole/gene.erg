@@ -1,0 +1,37 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=Generale
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 0, 0, 0
+DIM.MASSIMA= 3000, 3000, 3000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=
+
+
+[gene]
+T,Modello
+T,t_i,,,,$(t_i:1)=1,,,,,,,,0
+T,_idcat,,,,$(_idcat:3)=300,,,,,,,,0
+S,dataordine,,,,,,,,,,,,0
+T,gruppo,,,,#IF $(.username)==salavat | $(.username)==v-sitnikov | $(.username)==e-bliznikova | $(.username)==ek-volkova | $(.username)==i-tataryan | $(.username)==m-sinko | $(.username)==i-kurmanaliev | $(.username)==e-bulgakova\n   $(gruppo:1)=2\n#ELSE\n   $(gruppo:1)=1\n#ENDIF,,,,,,,,0
+T,_ModDoorRasp,,,Модель распашных дверей,,,,,,,9,,0
+T,mat,,,,$(_ModDoorRasp:1)[$(mat:8)],,,,,,,,0
+T,_colkarkas,,,Цвет распашных дверей,$(mat:1)[$(_colkarkas:5)] & $(_ModDoorRasp:1)[$(_colkarkas:17)] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1,,,,,,9,,0
+T,_man,,,,,,,,,,9,,0
+
+[GRAFICA]
+#LETS .GLOBALE1=$(gruppo:3)
+_dataordine

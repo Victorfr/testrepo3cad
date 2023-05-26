@@ -1,0 +1,54 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 2001, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=u6
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+
+[GRAFICA]
+!SAGOMA cir c30,20,20,20
+
+!SETCODICE x
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+//***************************************************************************************************
+001,LATO=19,COD=999SHTANG1 /FPL=$(FPL) /Штанга овальная /#l-1,C1=10,DIS=$(cir)  //Test
+
+
+
+001,LATO=6,COD=999SHTANGderg /FPL=$(FPL) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
+001,LATO=6,COD=999SHTANGderg /FPL=$(FPL) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
+
+#FOR $1:6
+   001,LATO=6,COD=999sh4x16pot /FPL=$(FPL) / /#l-1,L=10,A=10,P=10  //Test
+#ENDFOR
+
+
+#IF $l>2000
+   #MSG штанга не может быть длиной больше 2 м!
+#ENDIF
+// ****************************************************** размер по высоте ***********************************************************************
+#LETS zone_prov=$(locp_bx3)
+#IF $[estrai;$(zone_prov);|;5]=1
+   023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=210,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+#ENDIF
+//*************************************************************************************************

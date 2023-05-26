@@ -1,0 +1,65 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=20
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 750, 744, 168
+DIM.MASSIMA= 1266, 744, 681
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=9
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,_color_univer_rip,,,,#IF $(_PRIMOCARICAMENTO)=1\n   $(_color_univer_rip:1)==0002\n#ELSE\n   $(_color_univer_rip)\n#ENDIF\n
+C,rasshir,,,Расширитель
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+
+[GRAFICA]
+
+!SETCODICE x
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+//***************************************************************************************************
+_DATABOX
+#IF $(_color_univer_rip:1)[0001] // белый
+   #LETS cod_pan=999pant750_1250W
+   #LETS cod_rasshir=999rasshirW
+   #LETS 3ds=Pantograf1.3ds
+#ELSE // серый
+   #LETS cod_pan=999pant750_1250s
+   #LETS cod_rasshir=999rasshirS
+   #LETS 3ds=Pantograf2.3ds
+#ENDIF
+
+001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Пантограф /#l-1,C1=11,FACC=100,X4=$(3ds)  //Test
+
+// *********************************************** расширитель *****************************************************
+#IF $l>1250
+   #LETV rasshir=1
+#ENDIF
+#IF $(rasshir:0)=1
+   001,LATO=6,COD=$(cod_rasshir) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Расширитель /#l-1,L=1,A=1,P=1  //Test
+#ENDIF
+// *******************************************************************************************************************
+
+// ****************************************************** размер по высоте ***********************************************************************
+#LETS zone_prov=$(locp_bx3)
+#IF $[estrai;$(locp_bx3);|;5]=1
+   // 023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+   023,COD= / /{rnd($(posa))},SL=280,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+#ENDIF
+// *************************************************************************************************************************************************

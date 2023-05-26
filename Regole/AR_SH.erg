@@ -1,0 +1,46 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHTANGA.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 1950, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+M,Prof_sh,,,Длина
+T,katcol
+T,col_system,,,,$(katcol:8)[$(col_system:3)] & $[datecompare;$(dataordine);$(col_system:10)]=-1
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#IF $(Prof_sh:0)=0
+   #LETV Prof_sh=600
+#ENDIF
+#LET l=350,a=45,p=2
+#LETV _WR=999DFSH
+
+001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3) /$(_WR:2) /#l-1  //Tes
+029,LATO=6,COD=999SHLEGEL /WR=382205416;CHA=$(col_system:8);FPL=N /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_sh:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/s/$(col_system:8)/n  //Профиль рельс верхний

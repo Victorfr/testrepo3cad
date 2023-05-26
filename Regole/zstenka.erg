@@ -1,0 +1,35 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=zstenka.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=
+
+
+[gene]
+T,MODELLO
+T,mat
+
+[GRAFICA]
+010,P=$p,sa=$(mat:1)  // Áîê ËÂ ÄÑÏ
+011,P=$p,sa=$(mat:1)
+012,P=$p,sl=0,l=$l
+
+//010,P=$p
+//011,P=$p
+//012,P=$p
