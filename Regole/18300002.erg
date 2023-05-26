@@ -10,8 +10,8 @@ LINK=000
 LINKPREC=
 LINKSUCC=
 TAB.DIM.=L,A,P,SA,DA,SL,DL
-DIM.MINIMA= 770, 850, 140
-DIM.MASSIMA= 1200, 850, 140
+DIM.MINIMA= 600, 850, 140
+DIM.MASSIMA= 1000, 850, 140
 DIM.DEFAULT= 0, 0, 0
 DIM.BLOCCA=0,0,0
 DIM.SPECIALI0,0,0
@@ -27,6 +27,7 @@ C,krepDx,,,Крепление к боковине,,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 C,AddMan,,,Накладная ручка
+C,prostav,,,Проставка
 
 [GRAFICA]
 
@@ -43,6 +44,9 @@ _DATABOX
 
 #IF $(AddMan:0)=1
    001,LATO=6,COD=99918300117 /FPL=$(FPL) /Накладная ручка /#l-1,X4=$(3ds)  //Test
+#ENDIF
+#IF $(prostav:0)=1
+   001,LATO=6,COD=99918300008 /FPL=$(FPL) /Проставка /#l-1  //Test
 #ENDIF
 // #FOR $1:2
 // 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test

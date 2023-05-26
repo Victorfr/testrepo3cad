@@ -1,0 +1,84 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=UGOLSTDG.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+M,count_ug,,,Количество,,,,1
+S,PRODUCTLINE,,,,,,,,,,,,0
+C,krepShkaf,,,Крепление к шкафу,,,,,,,2
+M,kolKrepShkaf,,$(krepShkaf:0)=1,Количество креплений,,,,1,1
+C,krepDsp,,,Крепление к ДСП,,,,,,,2
+M,kolKrepDsp,,$(krepDsp:0)=1,Количество креплений,,,,1,1
+C,krepGips,,,Крепление к гипсокартону,,,,,,,2
+M,kolKrepGips,,$(krepGips:0)=1,Количество креплений,,,,1,1
+C,krepBeton,,,Крепление к бетону/кирпичу,,,,,,,2
+M,kolKrepBeton,,$(krepBeton:0)=1,Количество креплений,,,,1,1
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#LET l=450,a=45,p=2
+#LETV _WR=999dfuggk
+001,LATO=9,COD=999dfuggrand /WR=$(_WR:3);FPL=N /Уголок стальной 20х20 мм /#l-1  //Tes
+001,LATO=6,COD=999grandUg / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+//001,LATO=6,COD=999dub_driva / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+//001,LATO=6,COD=999sh3_5x30 / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+//001,LATO=6,COD=999SH4X16POT / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+
+
+/////крепеж для полок
+
+#IF $(krepDsp:0)=1
+   #FOR $1:$(kolKrepDsp:0)
+      //001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF
+#IF $(krepGips:0)=1
+   #FOR $1:$(kolKrepGips:0)
+      // 001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh3_5x30,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999dub_driva,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF
+#IF $(krepBeton:0)=1
+   #FOR $1:$(kolKrepBeton:0)
+      //001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh3_5x30,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999dub6x30,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF
+#IF $(krepShkaf:0)=1
+   #FOR $1:$(kolKrepShkaf:0)
+      001,LATO=6,COD=999sh4x30,L=1,A=1,P=1  //Test
+   #ENDFOR
+#ENDIF

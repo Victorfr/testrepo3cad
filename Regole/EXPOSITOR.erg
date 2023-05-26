@@ -31,30 +31,35 @@ S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 S,PRODUCTLINE,,,,,,,,,,,,0
 T,MNP,,,,,,,,,,,,0
+T,SHPR,,,,,,,,,,,,0
 T,WR,,,,,,,,,,,,0
 T,TSH,,,,,,,,,,,,0
+C,hideNums,,,Скрыть номера деталей
 T,size,,,Размеры шкафа
 T,in_size,,,Внутренние размеры
+M,sizemsht,,,Масштаб номеров,,,,1,10
 C,show_verh,,,Скрыть крышку
 M,otstniz,,,,,,,,,,,,0
 M,otstverh,,,,,,,,,,,,0
 T,tipshkaf,,,Тип,$(tipshkaf:1)[2],,,,,,,,$(_primocaricamento)=1
+S,furNabor,,,,,,,,,,,,0
+T,varParamSkaf,,,,,,,,,,,,0
 Z,nisha,,0,Показать нишу
 M,pZast,,$(tipshkaf:0)[1;3;4],Глубина наполнения
 T,matGl,matGlvn,$(tipshkaf:6)=2,Внешние панели,$(matGlvn:1)[16;22],,,,,,,,$(_primocaricamento)=1
 T,mat,matVn,,Внешние панели,$(matvn:1)=$(matGLvn:1),,,,,,9,,$(tipshkaf:6)=2 & $[datecompare;$(dataordine);06.06.2019]>=0
-T,_colkarkas,_colkarkas_vn,$(tipshkaf:6)=2 & $[datecompare;$(dataordine);16.01.2019]>=0,Цвет внешних панелей,#IF $[datecompare;$(dataordine);06.06.2019]>=0\n   #IF $(matvn:1)[16]\n      $(matvn:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1\n   #ELSEIF $(matvn:1)[22]\n      $(matvn:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:17)[S04] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1\n   #ENDIF\n#ELSE\n   #IF $(mat:1)[16]\n      $(mat:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1\n   #ELSEIF $(mat:1)[22]\n      $(mat:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:17)[S04] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1\n   #ENDIF\n#ENDIF\n\n,,,,,,8
+T,_colkarkas,_colkarkas_vn,$(tipshkaf:6)=2 & $[datecompare;$(dataordine);16.01.2019]>=0,Цвет внешних панелей,#IF $[DATECOMPARE ;$(dataordine);27.07.2020]>=0\n   $(matvn:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1 & $(productline:0)[$(_colkarkas_vn:24)]\n#ELSE\n   #IF $[datecompare;$(dataordine);06.06.2019]>=0\n      #IF $(matvn:1)[16]\n         $(matvn:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1  & $(PRODUCTLINE:0)[$(_colkarkas_vn:24)]\n      #ELSEIF $(matvn:1)[22]\n         $(matvn:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:17)[S04] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas_vn:24)]\n      #ENDIF\n   #ELSE\n      #IF $(mat:1)[16]\n         $(mat:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas_vn:24)]\n      #ELSEIF $(mat:1)[22]\n         $(mat:1)[$(_colkarkas_vn:5)] & $(_colkarkas_vn:17)[S04] & $(_colkarkas_vn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_vn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_vn:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas_vn:24)]\n      #ENDIF\n   #ENDIF\n#ENDIF,,,,,,8
 T,matGl,,,Материал перегородок,$(matGl:1)[16;22],,,,,,,,$(_primocaricamento)=1
 T,mat,,,Материал ЛДСП,$(mat:1)=$(matGl:1),,,,,,9
-T,_colkarkas,,,Цвет внутренних панелей,#IF $(mat:1)[16]\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1\n#ELSEIF $(mat:1)[22]\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:17)[S04] & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1\n#ENDIF,,,,,,2
+T,_colkarkas,,,Цвет внутренних панелей,#IF $[DATECOMPARE ;$(dataordine);27.07.2020]>=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(productline:0)[$(_colkarkas:24)]\n#ELSE\n   #IF $(mat:1)[16]\n      $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n   #ELSEIF $(mat:1)[22]\n      $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:17)[S04] & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n   #ENDIF\n#ENDIF,,,,,,2
 T,_matFia,_matFiaSx,$(tipshkaf:0)[1;3;4],Материал стены ЛВ,$(_matFiaSx:3)[1;2]
 T,_matFia,_matFiaDx,$(tipshkaf:0)[1;3;4],Материал стены ПР,$(_matFiaDx:3)[1;2]
 T,_matFia,_matPensili,$(tipshkaf:0)[1;3;4],Материал потолка,$(_matPensili:3)[1;2;3]
 M,pripuskPolSx,,$(tipshkaf:0)[1;3;4],Припуск полок слева,,,30,0,100,,3,,$(pBokL:1)!2
 M,pripuskPolDx,,$(tipshkaf:0)[1;3;4],Припуск полок справа,,,30,0,100,,3,,$(pBokR:1)!2
 M,pripuskPolZad,,$(tipshkaf:0)[1;3;4],Припуск полок сзади,,,,0,100,,3
-T,mat_backwall,,$(tipshkaf:1)[2],Материал задней стенки,$(mat_backwall:1)[01;03]
-T,_colkarkas,_colkarkasback,$(tipshkaf:1)[2],Цвет задней стенки,$(mat_backwall:3)[$(_colkarkasback:5)] & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1
+T,mat_backwall,,$(tipshkaf:1)[2],Материал задней стенки,#IF $[DATECOMPARE;$(DATAORDINE);27.07.2020]>=0\n   $(productline:0)[$(mat_backwall:7)]\n#ELSE\n   $(mat_backwall:1)[01;03]\n#ENDIF
+T,_colkarkas,_colkarkasback,$(tipshkaf:1)[2],Цвет задней стенки,$(mat_backwall:3)[$(_colkarkasback:5)] & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkasback:24)]
 M,hzoc,,$(tipshkaf:1)[2],Высота цоколя,,,60,45,100
 T,matL,,,,,,,,,,,,0
 T,matR,,,,,,,,,,,,0
@@ -74,7 +79,7 @@ C,nerovnUp,,$(tipshkaf:0)[1;3;4],Неровный потолок
 M,UVID,,$(tipshkaf:0)[1;3;4] & $(nerovnUp:0)=1,Видимая ширина короба Верх,,,,65,200
 M,pripuskKorU,,$(tipshkaf:0)[1;3;4] & $(nerovnUp:0)=1,Припуск короба ВЕРХ,,,,0,300,,3
 T,mat,mat_kor,$(tipshkaf:0)[1],Материал обклада,$(mat_kor:1)[16;22],,,,,,2
-T,_colkarkas,_colkarkas_kor,$(tipshkaf:0)[1],Цвет материала обклада,$(mat_kor:1)[$(_colkarkas_kor:5)] & $(_colkarkas_kor:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_kor:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_kor:23)]=-1,,,,,,2
+T,_colkarkas,_colkarkas_kor,$(tipshkaf:0)[1],Цвет материала обклада,$(mat_kor:1)[$(_colkarkas_kor:5)] & $(_colkarkas_kor:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_kor:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_kor:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas_kor:24)],,,,,,2
 T,bokL,,$(tipshkaf:0)[1;3;4],,$(bokL:3)=$(nerovnL:0)
 T,pbokL,,$(tipshkaf:0)[1;3;4],Глубина ЛВ бок,,,,,,,,,$(bokL:1)!9
 T,bokR,,$(tipshkaf:0)[1;3;4],,$(bokR:3)=$(nerovnR:0)
@@ -84,11 +89,12 @@ T,pdno,,$(tipshkaf:0)[1;3;4],Глубина ниж планки ,#IF $(nerovnD:0)!1 & $(mat_kor:
 T,verh,,$(tipshkaf:0)[1;3;4],,$(verh:3)=$(nerovnUp:0)
 T,pup,,$(tipshkaf:0)[1;3;4],Глубина верх планки,#IF $(_matPensili:3)=3\n   $(pup:1)=2\n#ELSE\n   $(pup)\n#ENDIF,,,,,,,,$(verh:1)!9
 -,doors,,,Двери
-T,tipsystem,,,,$(tipsystem:18)==AR1
-T,tipruch,,,,$(tipsystem:18)==$(tipruch:7),,,,,,,,0
+T,tipsystem,,,,$(tipsystem:18)[AR1;AR3]
+T,tipruch,,,,$(tipsystem:18)[$(tipruch:7)]
 T,DD,DD_S,$[datecompare;$(dataordine);01.04.2019]>=0,Доводчики дверей,,,,,,,8
-T,katcol,,,Категор. цвета 1,$(tipruch:22)[$(katcol:9)]
-T,col_system,,,Цвет системы 1,$(katcol:8)[$(col_system:3)] & $(tipruch:22)[$(col_system:7)] & $[datecompare;$(dataordine);$(col_system:10)]=-1
+T,katcol,,,,#IF $(tipshkaf_VV:7)=3\n   $(katcol:8)[an]\n#ELSE\n   $(tipruch:22)[$(katcol:9)] & $(tipsystem:18)[$(katcol:10)]\n#ENDIF,,,,,,,,$(tipshkaf:1)!11
+T,col_system,,$(tipsystem:18)!!ar3,,#IF $(tipshkaf:7)=3\n   $(col_system:9)=1 & $[datecompare;$(dataordine);$(col_system:10)]=-1\n#ELSE\n   $(katcol:8)[$(col_system:3)] & $(tipruch:22)[$(col_system:7)] & $[datecompare;$(dataordine);$(col_system:10)]=-1\n#ENDIF,,,,,,,,$(tipshkaf:1)!11
+T,cvetvstav,cvetvstavprof,$(tipsystem:18)==ar3,Цвет профиля,S26[$(cvetvstavprof:3)] & $[datecompare;$(dataordine);$(cvetvstavprof:15)]>=0 & $[datecompare;$(dataordine);$(cvetvstavprof:16)]=-1 & $(cvetvstavprof:1)!!2357 & $(cvetvstavprof:1)!!2358
 T,ndoors,,,,$(ndoors:4)=1,,,,,,,,0
 T,shleg,,,,,,,,,,,,0
 C,show_per,,,Скрыть зоны перекрытия,,,,,,,,,0
@@ -119,7 +125,7 @@ T,verhVnutr,,($(nerovnUp:0)=0 & $(pup:0)=1) | $(verh:0)=9
 [GRAFICA]
 _expositor
 
-
+//10
 //TIPOLOGI
 //ADDNAP
 //VOLUME
@@ -127,6 +133,7 @@ _expositor
 //_MODUL
 //_AGG_KREP
 //NAPR
+//NUMDET
 //INITSHKAF
 //VNESHNIE
 //NALOG

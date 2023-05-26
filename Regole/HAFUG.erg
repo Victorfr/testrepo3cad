@@ -1,0 +1,55 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=HAFUG.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,_databox,,,,,,,,,,,,0
+S,dataordine,,,,,,,,,,,,0
+M,count_st,,,Количество,,,,1
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#LET l=350,a=45,p=2
+
+//_ADDNAVES
+
+//#LETS navCodL=$[ex;$(navesLiving:4);|;1]
+//#LETS navCodR=$[ex;$(navesLiving:4);|;2]
+//#LETS navZagL=$[ex;$(navesColor:4);|;1]
+//#LETS navZagR=$[ex;$(navesColor:4);|;2]
+//#LETS navShina=$(navesLiving:7)
+
+001,LATO=9,COD=999HAFUG /WR=417701157;FPL=N /HAFELE 264.25.929 Уголок крепежный 50х25 для столешниц сталь оцинк /#l-1  //Tes
+//уголок
+001,LATO=6,COD=999UgKrep50x25 / / /#Q$(count_st:0)  // Test
+//Заглушка
+001,LATO=6,COD=999ZagUgKrep50x25 / / /#Q$(count_st:0)  // Test
+// шуруп 4х16 потай бел цинк
+001,LATO=6,COD=999sh4x16pot / / /#Q{$(count_st:0)*2}  // Test
+//Дюбель универсальный с бортом 8х52 + Шуруп 5x60
+001,LATO=6,COD=999Dub8x52Sh5x60 / / /#Q$(count_st:0)  // Test

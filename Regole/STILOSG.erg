@@ -1,0 +1,194 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=STILOSG.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 10000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=VolumeStil,ADDNapStil,,,$(profStW),$(profStW),$(matUm:3),$(profStW),,6;16;22;25
+TRADFLAGS=*,*,*,*
+
+
+[gene]
+-,SPStilos,,,Система
+T,tipshkaf,,,Для расчета стекл. полок,$(tipshkaf:1)=9,,,,,,,,0
+S,oldUnico,,,,,,,,,,,,0
+M,pasp_count,,,,,,,,,,,,0
+S,maxStekloL,,,,,,,,,,,,0
+S,stekloCount,,,количество полок в шкафу,,,,,,,,,0
+S,stekloCountScene,,,количество полок в сцене,,,,,,,,,0
+S,stekloSize,,,макс размер стекла,,,X,,,,,,0
+S,steklosizemax,,,итог макс стекла,,,X,,,,,,0
+T,MNP,,,,,,,,,,,,0
+T,WR,,,,,,,,,,,,0
+T,SHPR,,,,,,,,,,,,0
+T,TSH,,,,,,,,,,,,0
+T,stTypeKrep,,,Тип крепления
+T,colsysSt,,,Цвет системы
+Z,showZone,,,Показать/скрыть обьем
+T,in_size,,,Внутренние размеры
+T,size,,,Показать габариты
++,VolumeStil
++,AddNapStil
+-,sepPolk,,,Полки
+T,matUm,,,Полка по умолчанию
+T,mat,mat16,,Материал перегородок,$(mat16:1)=16,,,,,,,,0
+T,_colkarkas,_colkarkas16,,Цвет полок 16 мм,$(mat16:1)[$(_colkarkas16:5)] & $(_colkarkas16:1)!!024 & $(_colkarkas16:20)[1] & $[datecompare;$(dataordine);$(_colkarkas16:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas16:23)]=-1 & $(productline:0)[$(_colkarkas16:24)]
+T,mat,mat22,,Материал перегородок,$(mat22:1)=22,,,,,,,,0
+T,_colkarkas,_colkarkas22,,Цвет полок 22 мм,$(mat22:1)[$(_colkarkas22:5)] & $(_colkarkas22:1)!!024 & $(_colkarkas22:20)[1] & $[datecompare;$(dataordine);$(_colkarkas22:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas22:23)]=-1 & $(productline:0)[$(_colkarkas22:24)]
+T,mat,mat25,,Материал перегородок,$(mat25:1)=25,,,,,,,,0
+T,_colkarkas,_colkarkas25,,Цвет полок 25 мм,$(mat25:1)[$(_colkarkas25:5)] & $(_colkarkas25:1)!!024 & $(_colkarkas25:20)[1] & $[datecompare;$(dataordine);$(_colkarkas25:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas25:23)]=-1 & $(productline:0)[$(_colkarkas25:24)]
+
+[GRAFICA]
+#LETV _MNP=0
+#LETV MNP=$(_MNP:3)
+#LETV _WR=999STILOSG
+#LETV WR=$(_WR:3)
+#LETV TSH=544188568//$(tipshkaf:5)
+#LETV _krepeg=1
+#LETV varParamSkaf=//$(TIPSHKAF:7)
+#LETV SHPR={$(curbox)+1}
+
+!COMMENTO $(_wr:2)
+
+// ********************* паспорт, шильдик, ноборы фурнитуры ************************
+#LETV pasp_count=1
+
+#IF $(pasp_count)=0
+   #LETV AllCount_pasp=0
+#ENDIF
+#LETS cod_pasport=
+#IF $(productLine)==MARIA_SHKAF
+   // ********************* шильдик *********************************
+   001,LATO=6,COD=999shildM,L=1,A=1,P=1  // Test
+   // ***************************************************************
+   #LETS cod_pasport=999pasport_sh
+#ELSEIF $(productLine)==ELDOR_SHKAF
+   #LETS cod_pasport=999pasport_sh_el
+#ELSEIF $(productLine)==EDDOM_SHKAF
+   #LETS cod_pasport=999pasport_sh_ed
+#ELSEIF $(productLine)==TVDOM_SHKAF
+   #LETS cod_pasport=999pasport_sh_td
+#ENDIF
+#IF $(AllCount_pasp)>0
+   001,LATO=6,COD=$(cod_pasport),L=1,A=1,P=1  // Test
+#ENDIF
+// ***************************************************************
+
+
+#LET aKorp=$a
+#LET lKorp=$l
+
+///ограничения размеров
+_misuraStilus
+//////
+//размеры профиля
+#LET profStW=30
+#LET profStP=55
+//обнуление числа уголков и опор
+#LET stilosOpCount=0
+#LET stilosUgCount=0
+#LET stilosDerVCount=0
+#LET stilosDerNCount=0
+#LET vertStCount=0 //количетво вертикальных профилей
+#LET gorStCount=0 // количество горизонтальных профилей
+#LET shtangCount=0
+///обнуление параметров для упаковки стекол
+#LETV maxStekloL=
+#LETS stekloParams=
+#LETV steklosize=X
+#LETV varParamSkaf=$(TIPSHKAF:7)
+#LET polkaStekloCount=0
+#LETS last_param=
+///обуление нумерации деталей
+#LET NDET=0
+////////////////////////////////////////////////////////////////
+
+#LET errorSt=0
+
+
+/////положение модулей и подсчет количества модулей
+
+!PLACERVAR modulPars 1
+#LET modulCount=0
+#LET shtangCount=0
+#FOR $(modulPars)
+   #LETS modType=$[ex;$i;|;4
+   #IF $(modType)==M
+      #LET modulCount=$(modulCount)+1
+   #ENDIF
+   #IF $(modType)==SH
+      #LET shtangCount=$(shtangCount)+1
+   #ENDIF
+#ENDFOR
+#LET stilosDerNCount=$(stilosDerNCount)+$(modulCount)
+#LET stilosDerVCount=$(stilosDerVCount)+$(modulCount)
+/////////////////////////////////////
+//ADDNAP
+
+
+///Зона обьема
+#IF $(showZone:0)=1
+   034,l=$L,a=$a,p=$p
+#ENDIF
+
+///переменные для отрисовки профилей
+#LETS color=1|$(.percorso)\foto\col_system\$(colsysSt:3)|$(colsysSt:4)|90
+
+#IF $(colsysSt:1)[1]
+   #LETS profCod=999AI541L3000AL
+   #LETS profOpCod=999StlOpAl
+   #LETS profUgCod=999StlUgKrAl
+   #LETS dergNizCod=999SlimPlkNAl
+   #LETS dergVCod=999SlimPlkVAl
+   #LETS dergShtCod=999SlmDerStAl
+#ELSE
+   #LETS profCod=999AI541L3000Сan
+   #LETS profOpCod=999StlOpAn
+   #LETS profUgCod=999StlUgKrAn
+   #LETS dergNizCod=999SlimPlkNAn
+   #LETS dergVCod=999SlimPlkVAn
+   #LETS dergShtCod=999SlmDerStAn
+#ENDIF
+#LETS prof3ds=$(.percorso)\3ds\stilos\prof.3ds
+#LETS profOp3ds=$(.percorso)\3ds\stilos\Opora.3ds
+#LETS profUg3ds=$(.percorso)\3ds\stilos\Angle.3ds
+#LETS profZag3ds=$(.percorso)\3ds\stilos\Bok.3ds
+///профиль стилос
+_profStilos
+_profStilos,sl=$l-$(profStW)
+///////////
+
+//400
+///////////////////////////////размерные линии/////////////////////////////////////////////
+#IF $(size:0)=1
+   023,COD= / /$L,SL=0,SA=$A,SP=-50,L=$L,A=-100,P=1,X1=2  //Размер корпуса
+   023,COD= / /$P,SL=-50,SP=0,L=$P,P=$P,AY=90,X1=2  //Глубина корпуса
+   023,COD= / /$A,SL=0,SA=$A,SP=0,L=$A,A=130,P=0,AZ=90,X1=2  //Высота корпуса
+#ENDIF
+///////////////////////////////////////////////////////////////////////////////////////////
+#LETS LOC_BX0=||||1 // передача данных потомку дверям // пятое значение для определения нахождения плейсера в padre
+#LET zona=0
+#LETS param_shkaf=$l|0|0|0|0|{$p-25-2}
+#LETS LOC_BX3=$(param_shkaf) // передача данных потомку модулю
+#LET _PLACERRIVFIGLI=1 // принудительный пересчет потомка при изменении родителя
+
+#LETS _macrofinale=finaleStilos
+//finaleStilos
+//_stil_place
+//макросы делителя
+//VolumeStil
+//_polkStil
+//ADDNapStil

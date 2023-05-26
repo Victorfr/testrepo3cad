@@ -1,0 +1,63 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=_3ds_agg.erg
+COMMENTI=Добавление объекта 3d
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO,,,,,,,,,,,,0
+T,_3ds_agg,,,Объект 3d
+C,edit_col,,$(_3ds_agg:1)!52,Изменить цвет
+C,edit_mis,,$(_3ds_agg:1)!52,Изменить раз-ры
+M,l_3d,,$(edit_mis:0)=1,Ширина
+M,a_3d,,$(edit_mis:0)=1,Высота
+M,p_3d,,$(edit_mis:0)=1,Глубина
+G,STRUTTURANB
++,ADDCOLOR
+
+[GRAFICA]
+!SETCODICE
+
+
+#IF $(edit_mis:0)=1
+   #LET l=$(l_3d:0)  // INT($(_3ds_agg:5))
+   #LET a=$(a_3d:0) // INT($(_3ds_agg:6))
+   #LET p=$(p_3d:0) // INT($(_3ds_agg:7))
+#ELSE
+   #LET l=INT($(_3ds_agg:5))
+   #LET a=INT($(_3ds_agg:6))
+   #LET p=INT($(_3ds_agg:7))
+   #LETV l_3d=INT($(_3ds_agg:5))
+   #LETV a_3d=INT($(_3ds_agg:6))
+   #LETV p_3d=INT($(_3ds_agg:7))
+#ENDIF
+
+//#LETS 3ds=$(_3ds_agg:3)
+//010,L=$l,A=$a,P=$p,C1=7|$(texture:0)|$(colrgb:0)|0,C2=7|$(texture:0)|$(colrgb:0)|270,FACC=106,x7=$(edit_col:0) // ,c1=  // Объект 3ds
+
+//.3ds_path,x7=$(_3ds_agg:8)/$(_3ds_agg:9)/$(_3ds_agg:10)/$(_3ds_agg:11)/$(_3ds_agg:12),x8=$(_3ds_agg:3),x9=Accessori\
+
+//_agg3ds - ВАРИАНТ С ПРИМЕРОМ ЗАПОЛЕННИЯ ЦВЕТОВ
+//_CAPPE
+#LETS color_params=
+
+#LETS _macrofinale=load_3ds
+//load_3ds
+//ADDCOLOR

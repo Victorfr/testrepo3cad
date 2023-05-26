@@ -38,19 +38,23 @@ _DATABOX
 #LETS 3ds=DVDO2.3ds
 
 
-001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SA=$a-82,A=82,C1=6,FACC=100,X4=$(3ds)  //Test
-001,SL=($l-540)/2,SP=20,L=540,A=$a-30,P=$p-50,FACC=100,X4=DVDO_k2.3ds  //Test
+#IF $[datecompare;$(dataordine);13.07.2022]>=0
+   #MSG товар не доступен к заказу с 13.07.2022!
+   001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
+#ELSE
+   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SA=$a-82,A=82,C1=6,FACC=100,X4=$(3ds)  //Test
+   001,SL=($l-540)/2,SP=20,L=540,A=$a-30,P=$p-50,FACC=100,X4=DVDO_k2.3ds  //Test
 
-// #FOR $1:2
-// 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
-// #ENDFOR
+   // #FOR $1:2
+   // 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
+   // #ENDFOR
 
-// ****************************************************** размер по высоте ***********************************************************************
-#LETS zone_prov=$(locp_bx3)
-#IF $[estrai;$(locp_bx3);|;5]=1
-   //023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
-   023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+   // ****************************************************** размер по высоте ***********************************************************************
+   #LETS zone_prov=$(locp_bx3)
+   #IF $[estrai;$(locp_bx3);|;5]=1
+      //023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+      023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+   #ENDIF
+   // ***********************************************************************************************************************************************
 #ENDIF
-// ***********************************************************************************************************************************************
-
-//_OLD_PLACE
+   //_OLD_PLACE

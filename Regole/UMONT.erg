@@ -37,7 +37,5 @@ _RECLAMATION
 // **********************************************************************************************************
 #LET l=350,a=45,p=2
 
-001,LATO=9,COD=999montPL /WR=417701157 /Монтаж. пл. $(_montPL:2) /#l-1  //Tes
-#FOR $1:$(count_st:0)
-   001,LATO=6,COD=$(_montPL:3) /FPL=N,L=1,A=1,P=1  //Test
-#ENDFOR
+001,LATO=9,COD=999montPL /WR=417701157;FPL=N /Монтаж. пл. $(_montPL:2) /#l-1  //Tes
+001,LATO=6,COD=$(_montPL:3) / / /#q$(count_st:0),L=1,A=1,P=1  //Test

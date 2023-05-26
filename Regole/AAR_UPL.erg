@@ -42,4 +42,4 @@ _RECLAMATION
 001,LATO=6,COD=$(tipsystem:18)KOMPLNAPR /WR=365778300;FPL=N /Уплотнитель для нижней направляющей дверей /#l-1,L=$(prof_upl:0),A=10,P=100  //Test
 #LETV _WR=999UPL_NIZNAPR
 #LETV _MNP=999UPL_NIZNAPR
-029,LATO=6,COD=$(_wr:1) /MNP=$(_mnp:3);WR=$(_wr:3);FPL=N /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_upl:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/u/0/n  //Профиль рельс верхний
+029,LATO=6,COD=$(_wr:1) /MNP=$(_mnp:3);WR=$(_wr:3) /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_upl:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/u/0/n  //Профиль рельс верхний

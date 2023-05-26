@@ -1,0 +1,62 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=ALPROFST.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,colsysSt,,,Под цвет системы
+M,lprofSt,,,,,,500
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#IF $(colsysSt:1)[1]
+   #LETS profCod=999AI541L3000AL
+   #LETS profOpCod=999StlOpAl
+   #LETS profUgCod=999StlUgKrAl
+   #LETS dergNizCod=999SlimPlkNAl
+   #LETS dergVCod=999SlimPlkVAl
+   #LETS dergShtCod=999SlmDerStAl
+#ELSE
+   #LETS profCod=999AI541L3000Сan
+   #LETS profOpCod=999StlOpAn
+   #LETS profUgCod=999StlUgKrAn
+   #LETS dergNizCod=999SlimPlkNAn
+   #LETS dergVCod=999SlimPlkVAn
+   #LETS dergShtCod=999SlmDerStAn
+#ENDIF
+#IF $(lprofSt:0)>3000
+   #LETV lprofSt=3000
+#ENDIF
+_FLAG_PLASER
+#LET l=$(lprofSt:0),a=45,p=33
+001,LATO=9,COD= / /Алюминиевый профиль Stilos  //Test
+
+#LETV _wr=ST1PROFKOMPL
+#LETS paramFur=STILOSPROF
+400,COD=ST1PROFKOMPL$(colsysSt:5) /WR=$(_WR:3) ;FPL=$(FPL) /Алюминиевый профиль Stilos /#l-1#Q1,L=33,A=$(l),P=55,X4=$(paramFur),X5=$(profCod)  //профиль стилос

@@ -1,0 +1,54 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=petl18090.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+M,count_st,,,Количество,,,,1
+T,_color_petl
+
+[GRAFICA]
+
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#LET l=450,a=45,p=2
+001,LATO=9,COD=999DFNABPETL /WR=417701537;FPL=N /Петля корпус 180 угол открывания 95 градусов /#l-1  //Tes
+#IF $(_color_petl:1)=1
+   001,LATO=6,COD=999zaglPetAl / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999zaglPetInt / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999montPldist / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999petlNak95180 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999nab_sh4x16 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999ogrpetl9585 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+#ELSEIF $(_color_petl:1)=2
+   001,LATO=6,COD=999zaglPetBl / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999montPldist/ / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999petlNak95180bl / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999nab_sh4x16 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999ogrpetl9585 / / /#q$(count_st:0),L=1,A=1,P=1  //Test 
+#ENDIF

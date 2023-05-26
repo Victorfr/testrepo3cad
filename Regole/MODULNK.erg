@@ -1,0 +1,819 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=MODULNK.erg
+COMMENTI=
+CODICE=
+POSMODE=20
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=98
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,Отк.
+
+
+[gene]
+T,MODELLO
+S,lOld,,,,,,,,,,,,0
+S,tmpLAP,,,,,,,,,,,,0
+S,provobr,,,,,,,,,,,,0
+S,fasPOld,,,,,,,,,,,,0
+S,oldNumbMet,,,,,,,,,,,,0
+S,oldAltBox,,,,,,,,,,,,0
+T,MNP,,,,,,,,,,,,0
+T,_doorPolog,,,,$(_doorPolog:1)=3,,,,,,,,0
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,_dataNewMet,,,,,,,,,,,,0
+T,WR,,,,,,,,,,,,0
+T,_TipDoorRasp,_TipDoorRaspFas,$(_ModDoorRasp:3)!0,,$(_TipDoorRaspFas:3)[G]
+M,altMetBox,,$(FPL)!!N,Высота модуля,#IF $(FPL)==N\n   #LETV altMetbox=$a\n#ENDIF
+T,mat,,,Материал модуля,$(mat:3)=1 & $(mat:1)!25
+T,_colkarkas,,,Цвет модуля,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]
+Z,rip_sot,,,Полка снизу,,,,,,,,,0
+T,falsh_sx,,,Фальш-фасад слева,,,,,,,7
+T,falsh_pol_sx,,$(falsh_sx:1)=1,Положение
+M,largFalshL,,$(falsh_pol_sx:1)=0 & $(falsh_Sx:1)=1,Ширина фальшфасада L,,,,70,250
+C,_GJPL,,$(falsh_pol_sx:1)=0 & $(falsh_Sx:1)=1 & $(_ModDoorRasp:1)[s01],Фасад GJP
+T,gjpCountLine,gjpCountLineL,$(_gjpl:0)=1,Количество полос,$(largFalshL:0)>=$(gjpCountLinel:3) & $(largFalshL:0)<=$(gjpCountLinel:4)
+T,falsh_dx,,,Фальш-фасад справа,,,,,,,7
+T,falsh_pol_dx,,$(falsh_dx:1)=1,Положение
+M,largFalshR,,$(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1,Ширина фальшфасада R,,,,70,250
+C,_GJPR,,$(falsh_pol_dx:1)=0 & $(falsh_dx:1)=1 & $(_ModDoorRasp:1)[s01],Фасад GJP
+T,gjpCountLine,gjpCountLineR,$(_gjpr:0)=1,Количество полос,$(largFalshr:0)>=$(gjpCountLiner:3) & $(largFalshR:0)<=$(gjpCountLineR:4)
+T,mat,mat_falsh,$(falsh_sx:1)=1 | $(falsh_dx:1)=1,Материал фасада,$(mat_falsh:3)=1,,,,,,7,,0
+T,_colkarkas,_col_falsh,$(falsh_sx:1)=1 | $(falsh_dx:1)=1,Цвет фасада,$(mat_falsh:1)[$(_col_falsh:5)] & $(_col_falsh:1)!!024 & $(_col_falsh:20)[1] & $[datecompare;$(dataordine);$(_col_falsh:22)]>=0 & $[datecompare;$(dataordine);$(_col_falsh:23)]=-1 & $(PRODUCTLINE:0)[$(_col_falsh:24)],,,,,,7,,0
+G,METKORP
+T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
+
+[GRAFICA]
+//037
+//010
+//303
+//_SHKAF
+//_KORPVID
+//_FASVID
+//_KARKASFAS
+#LET ssposta=0
+#LETV _krepeg=1
+#LETS ndet=
+#LETS cod=999MODUL
+#LETV _MNP=$(cod)
+#LETV _WR=$(cod)
+#LETV petlObr=0
+#LETV _doorPolog=3
+#LET det_mod=1
+#LET obrabotki=1
+#LET _spostal=0
+#LET _spostaa=0
+#LET sl_falsh_fasad=2,sa_falsh_fasad=2
+#LET falshLargPlank=70
+#LETS LPBR=
+#LET SxSpostaLRaspD=2.5 // левый зазор
+#LET DxSpostaLRaspD=2.5 // правый зазор
+#LET SpostaPRaspD=2.5 // зазор по глубине между боковиной и фасадом
+#LET zazorDoors=2.5  // половина зазора между дверьми
+#LET PnSpostaARaspD=2.5 // верхний зазор
+#LET StSpostaARaspD=2.5 // нижний зазор
+#LET prip=4
+#IF $(_primocaricamento)=1
+   #LET lotst=0
+   #LET potst=0
+   #LETV altmetbox=$a
+   #IF $(falsh_pol_sx:1)=0 // фасад передом
+      #IF $(falsh_pol_sx:1)=0
+         #LET sl_per=$(largFalshL:0)+$(sl_falsh_fasad)*2
+         #LET lOtst=$(sl_per)
+      #ELSE
+         #LET lOtst=$(mat:1)
+      #ENDIF
+   #ENDIF
+   #IF $(falsh_dx:1)=1 //если стоит фальш фасад справа
+      #IF $(falsh_pol_dx:1)=0
+         #LET slPotst=$l-$(largFalshR:0)-$(mat:1)-$(sl_falsh_fasad)*2
+         #LET potst=$l-$(slPotst)-$(mat:1)
+      #ELSE
+         #LET pOtst=$(mat:1)
+      #ENDIF
+   #ENDIF
+   
+   #IF $(mat_vd:1)[16]
+      #LETV _col_vd=046
+   #ENDIF
+   #IF $(mat:1)[16]
+      #LETV _colkarkas=046
+   #ENDIF
+   
+   
+#ENDIF
+//001,COD=test /ERROR=1; / /#L+1  //,C1=15,C2=5,FACC=0  //Дверь распашная G (301 было)
+//100  // Планка ЛВ
+#LETV _krepeg=1
+//301
+//_SHKAF
+//010
+//_FASVID
+//_KARKASFAS
+//011
+//_PROVPLACNAPOL
+//_DRAWKOLONKA
+//013
+//012
+//_FASVID
+//_KORPVID
+//_KARKASFAS
+//038
+//_ADD_USIL
+//VSTAV
+//039
+//041
+//301
+//012
+///параметры для плейсера
+// **************************************************проверка пересечения ящика с любой из зон **********************************************************************
+#LETS zone_prov=$(locp_bx3)
+#LETS zoneparams=
+#LET flag_ust=1
+#LETS zones=$[estrai;$(zone_prov);|;2]
+#LETS zone_param=$[estrai;$(zone_prov);|;1]
+#LETS profanditaPlaser=$[estrai;$(zone_prov);|;6]
+#LET shkafType=
+
+//_OLD_PLACE
+//*********************расчет количества пересечений с зонами перекрытия дверей*************
+#LETS zoneparams=$[estrai;$(zone_prov);|;7]
+
+_DATABOX
+!SETCODICE x
+_flag_plaser
+//===========================================================================================================================================================
+#IF $(flag_ust)=1
+   001,LATO=6,COD=$(cod) /MNP=$(_MNP:3);WR=$(_WR:3);FPL=$(FPL);_DATABOX=$(_databox) /Модуль с выдвижными ящиками /#L-1  //Test
+#ELSE
+   001,LATO=6,COD=$(cod) /ERROR=1 /Модуль с выдвижными ящиками /#L-1  //Test
+#ENDIF
+
+//010
+_provObr
+//NALOG
+//_KORPVID
+//конструктив не переносить в макрос, потому что не работают метки!!!
+//017
+//_FASVID
+//301
+//_OLD_PLACE
+
+//_SHKAF
+//_MODUL
+#IF $(FPL)!!N
+   !PLACERPAR placerparams,5
+   #LET placerL=$(placerparams:0)
+   
+   #IF $(placerL)=0 #LET flag_ust=6
+   #IF $l!$(PlacerL) & $(placerL)!0 //при изменении ширины ниши
+      #LETV L=$(placerL)
+   #ENDIF
+   #LET p=$(profanditaPlaser)
+   
+   #IF $(profanditaPlaser)>600 #LET p=600
+   // ***************************** определение касания стены помещения плейсером *************************************
+   801
+   801,SL=$l-10  // Определения касания стены помещения (типология стены)
+   // *****************************************************************************************************************
+   #IF $(altMETbox:0)=0
+      #LETV altMETbox=$a
+   #ENDIF
+   
+   #LET a=$(altMetBox)
+   
+   #LET spostaL=$(placerparams:1)
+   #LETS LOC_BX1=$(_ppa)|$A|$(spostaL)|M // передача данных от потомка (модуля) родителю (шкафу)
+   
+   #LET shkafType=$(placerParams:3)
+   #LET zastP=$(placerParams:4)
+   #LET shkafP=$(placerParams:5)
+   
+   
+#ENDIF
+
+
+
+
+
+
+
+_proverkaPlacer ///зоны пересечения с петлями
+
+//**********************************************************************************************************************
+
+#IF $(flag_prof_mod)=1 & $(FPL)!!N
+   #IF $(shkafType)[7]
+      #IF $(zastP)>$(shkafP)-100
+         #LET p=$p-100
+      #ENDIF
+   #ELSE
+      #LET p=$(p)-100
+   #ENDIF
+#ENDIF
+
+//_OLD_PLACE
+//_FASVID
+
+
+//_MODUL
+//_KOMODLIVING
+///параметры для конфигурирования
+
+#LET fasP=$(mat_falsh:1)
+
+#IF $(_tipFasMat:1)=0
+   #LET profAdd=$(mat_fasVD:1)+3
+#ELSE
+   #LET profAdd=$(_ModDoorRasp:5)+1+2
+#ENDIF
+#IF $(pto:1)=1
+   #LET profAdd=$(profAdd)+2
+#ENDIF
+#IF $(_tipfasmat:1)=1
+   ///данные для обработки наборов ремкомплектов красок
+   #IF $(_MODDOORRASP:1)[S26;S01;S08]
+      #LETV curkrasid=$(cvetvstav_door:9)
+      #IF $(_PATINA:1)!!999
+         #LETV curpatid=$(_PATINA:5)
+      #ENDIF
+   #ENDIF
+   
+#ENDIF
+
+
+///*************************************ограниечения по габаритам*******************************
+#IF $a>1636
+   #MSG Максимальная высота модуля 1636 мм!
+   #LETV a=1636
+#ENDIF
+#IF $a<200
+   #MSG Минимальная высота модуля 200 мм!
+   #LETV a=200
+   #LETV altMetBox=200
+#ENDIF
+#IF $p>600
+   #LETV p=600
+   #MSG глубина модуля не может быть больше 600 мм!
+#ENDIF
+#IF $p<300
+   #LETV p=300
+   #MSG глубина модуля не может быть меньше 300 мм!
+#ENDIF
+#LET minLnap=300//400
+#IF $(lOld)!$L
+   //#MSG change L
+   #LETV lOld=$L
+   #LET lprov=$l-($(lOtst)+$(pOtst))
+   #IF $(lprov)<$(minLnap)
+      #MSG Ширина наполнения не может быть меньше $(minLnap)мм!
+      #LET l=$(minLnap)+$(lotst)+$(potst)
+   #ENDIF
+   #IF $(lprov)>1200
+      #MSG Ширина модуля не может быть больше 1200мм!
+      #IF $(flp)!!N
+         #LET flag_ust=6
+      #ELSE
+         #LET l=1200+($(lotst)+$(potst))
+      #ENDIF
+   #ENDIF
+#ENDIF
+
+#IF 0
+   #IF $(fasPOld)!$(fasP) & $(FLP)==N
+      //#MSG change P
+      #LET lprov=$l+$(mat:1)*2-($(lOtst)+$(pOtst))
+      #LETV fasPOld=$(fasP)
+      #IF $(lprov)<400
+         #MSG Ширина наполнения не может быть меньше 400мм!
+         #LET l=400+$(lotst)+$(potst)
+      #ENDIF
+   #ENDIF
+#ENDIF
+
+//*********************************************************************************************
+#LETS strLAP=$l$A$P
+#IF $(tmpLAP)!!$(strLAP)
+   #LETV tmpLAP=$(strLAP)
+   #LET _PLACERRIVPADRE=1 // принудительный пересчет родителя при изменении потомка
+#ENDIF
+///********************************************************************************************
+///конструктив коробки
+# RASCHETL //raschetL
+# RASCHETR //пересчет
+
+#LET lbokSL=0
+#LET pbokSl=$l-$(mat:1)
+#LET lbokSa=0
+#LET pbokSa=0
+#LET dnoLarg=$(l)-$(mat:1)*2
+#LET dnoSl=$(mat:1)
+#LET lOtst=0 //отступ слева для расчета ширины наполнения
+#LET pOtst=0 //отступ справа для расчета ширины наполнения
+#LET pBok=$p
+#IF $(_MAN:1)!!999
+   #LET pBok=$p-10
+#ENDIF
+#LET dnoProf=$(pBok)
+
+#IF $(rip_sot:0)=1
+   #LET dnoLarg=$l
+   #LET dnoSl=0
+   #LET lbokSa=$(mat:1)
+   #LET pbokSa=$(mat:1)
+   #LET dnoProf=$p+$(profAdd)
+#ENDIF
+//_MISURALIM\
+//_PARAMANTASTR
+//301
+//*******************************левый фальш фасад********************************
+#IF $(falsh_sx:1)=1
+   #IF $(falsh_dx:1)=1 //если стоит фальш фасад справа
+      #IF $(falsh_pol_dx:1)=0
+         #LET slPotst=$l-$(largFalshR:0)-$(mat:1)-$(sl_falsh_fasad)*2
+         #LET potst=$l-$(slPotst)-$(mat:1)
+      #ELSE
+         #LET pOtst=$(mat:1)
+      #ENDIF
+   #ENDIF
+   
+   
+   
+   #IF $(falsh_pol_sx:1)=0 // фасад передом
+      // ******************* Перегородка ДСП ************************************
+      #LETV _wr=999V_KARKASPERVERTmod
+      #LETV _MNP=999V_KARKASPERVERTmod
+      //#LETS sk=$(_colkarkas:10),wk=378917905,nk=$(_colkarkas:10),ek=378917905
+      #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+      
+      #LET sl_per=$(largFalshL:0)+$(sl_falsh_fasad)*2
+      #LET lOtst=$(sl_per)
+      #IF $(lotstOld)!$(lotst)
+         #LET lprov=$l-($(lOtst)+$(potst))
+         #LET lotstOld=$(lotst)
+         #IF $(Lprov)<400
+            #LETV largfalshL={$(largFalshL)-(400-$(Lprov))}
+            #IF $(largFalshL)<70
+               #MSG Фальш-фасад меньше допустимой ширины! Увеличьте ширину модуля для установки фальш-фасада.
+               //#LETV falsh_sx=0
+               #LETV falsh_pol_sx=1
+               #LET lotst=0
+               #GOTO raschetL
+            #ELSE
+               #MSG Ширина выдвижного не может быть меньше 400мм!
+               #GOTO raschetL
+            #ENDIF
+         #ENDIF
+      #ENDIF
+      014,SL=$(sl_per),SA=$(mat:1),A=$A-$(mat:1)*2,P=$(pBok),X6=$(sk)/$(wk)/$(nk)/$(ek)/0  //Перегородка
+      _AGG_KREP_mod,p=$(pBok),multiCount=2
+      // ************************************************************************
+      // ******************* Фасад ************************************
+      //_DOORRASP
+      #LET a_falsh_fasad=$a-$(sa_falsh_fasad)*2-$(mat:1)-$(lbokSA),sp_falsh_fasad=$(p)
+      #IF $(_tipFasMat)=1
+         _FASVID,SL=$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(lBokSa),SP=$(pBok),L=$(largFalshL:0),A=$(a_falsh_fasad),MAN=0,p=$(_MODDOORRASP:5)),_COLKARKAS=$(_COLKARKASFAS),show_num=6,_man=0,detMod=1,petlObr=0,gjpCountLine=$(gjpCountLineL),_gjp=$(_gjpL),\
+         _TipDoorRasp=$(_TipDoorRaspFas),_manIntX=,_manIntY=
+      #ELSE
+         _karkasfas,SL=$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(lBokSa),SP=$(pBok),L=$(largFalshL:0),A=$(a_falsh_fasad),_COLKARKAS=$(_col_fasVD),mat=$(mat_fasVD),petlObr=0,detMod=1,_man=0
+      #ENDIF
+      //_VIDMODULNK
+      // ************************************************************************
+   #ELSE //фасад торцом
+      #LET lbokSl=$(mat:1)//$(fasP)
+      #LET dnoSl=$(mat:1)*2//+$(fasP)
+      #LET dnoLarg=$l-$(mat:1)*3//*2-$(fasP)
+      #IF $(rip_sot:1)=1
+         #LET dnoSl=0
+         #LET dnoLarg=$l
+      #ENDIF
+      //**********************************************************************
+      #LET lOtst=$(mat:1)//$(fasp)
+      #IF $(lotstOld)!$(lotst)
+         #LET lprov=$l-($(lOtst)+$(potst))
+         #LET lotstOld=$(lotst)
+         #IF $(Lprov)<400
+            #LETV falsh_sx=0
+            #LETV mat_falsh=16
+            #MSG Ширина выдвижного не может быть меньше 400мм!
+            #GOTO raschetL
+         #ENDIF
+      #ENDIF
+      //***********************************************************************
+      // ******************* Фасад ************************************
+      #LET sa_falsh_fasad=0
+      #LET a_falsh_fasad=$a-$(mat:1),sp_falsh_fasad=$(p)
+      #LETV _wr=999v_karkasBokmod
+      #LETV _MNP=999v_karkasBokmod
+      #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+      //100,SL=0,SA=$(sa_falsh_fasad)+$(lbokSA),SP=$(sp_falsh_fasad)+$(profAdd),L=$(falshLargPlank),P=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),Ay=90,x4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0,MAN=0  //Фасад
+      //100,SL=0,SA=$(sa_falsh_fasad)+$(lBokSA),SP=$(falshLargPlank),L=$(falshLargPlank),P=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),Ay=90,x4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0,MAN=0  //Фасад
+      //010,sl=$(lbokSl),p=$(pBok),a=$a-$(mat:0)-$(lbokSA),sa=$(lbokSa)
+      //038
+      #LETS paramsAnta=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK)
+      #IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>1
+         #LETS paramsAnta=$(paramsAnta);SDR={$(falshLargPlank)-1};DDR={$(a_falsh_fasad)-$(lBokSA)}
+      #ENDIF
+      100,COD= /$(paramsAnta),SA=$(sa_falsh_fasad)+$(lbokSA),SP=$(sp_falsh_fasad)+$(profAdd)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      100,COD= /$(paramsAnta),SA=$(sa_falsh_fasad)+$(lBokSA),SP=$(falshLargPlank)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      
+      
+      // ************************************************************************
+   #ENDIF
+#ELSE
+   #LET lotstOld=0
+#ENDIF
+//*******************************правый фальш фасад********************************
+//_PARAMANTASTR
+//_FASVID
+#IF $(falsh_dx:1)=1
+   #IF $(falsh_pol_dx:1)=0
+      // ******************* Перегородка ДСП ************************************
+      #LETV _wr=999V_KARKASPERVERTmod
+      #LETV _MNP=999V_KARKASPERVERTmod
+      //#LETS sk=$(_colkarkas:10),wk=378917905,nk=$(_colkarkas:10),ek=378917905
+      #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+      
+      #LET sl_per=$l-$(largFalshR:0)-$(mat:1)-$(sl_falsh_fasad)*2
+      #LET potst=$l-$(sl_per)-$(mat:1)
+      #IF $(potstOld)!$(potst)
+         #LET lprov=$l-($(lOtst)+$(pOtst))
+         #LET potstOld=$(potst)
+         #IF $(Lprov)<400
+            #LETV largfalshR={$(largFalshR)-(400-$(Lprov))}
+            #IF $(largFalshR)<70
+               #MSG Фальш-фасад меньше допустимой ширины! Увеличьте ширину модуля для установки фальш-фасада.
+               #LETV falsh_pol_dx=1
+               #LET potst=0
+               #GOTO raschetR
+            #ELSE
+               #MSG Ширина выдвижного не может быть меньше 400мм!
+               #GOTO raschetR
+            #ENDIF
+            
+         #ENDIF
+      #ENDIF
+      014,SL=$(sl_per),SA=$(mat:1),A=$A-$(mat:1)*2,P=$(pBok),X6=$(sk)/$(wk)/$(nk)/$(ek)/0  //Перегородка
+      _AGG_KREP_mod,p=$(pBok),multiCount=2
+      // ************************************************************************
+      // ******************* Фасад ************************************
+      //_FASVID
+      #LET a_falsh_fasad=$a-$(sa_falsh_fasad)*2-$(mat:1)-$(pBokSa),sp_falsh_fasad=$(pBok)
+      #IF $(_tipFasMat)=1
+         _FASVID,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,p=$(_MODDOORRASP:5)),_COLKARKAS=$(_COLKARKASFAS),show_num=6,_man=0,detMod=1,gjpCountLine=$(gjpCountLineR),_gjp=$(_gjpR),\
+         _TipDoorRasp=$(_TipDoorRaspFas),_manIntX=,_manIntY=
+      #ELSE
+         _karkasfas,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,_COLKARKAS=$(_col_fasVD),mat=$(mat_fasVD),petlObr=0,detMod=1,_man=0
+      #ENDIF
+      // ************************************************************************
+   #ELSE //фасад торцом
+      #LET pbokSl=$l-$(mat:1)*2
+      #LET dnoLarg=$l-$(mat:1)*3-$(lboksl)
+      #LET potst=$(pbokSl)
+      #IF $(rip_Sot:1)=1
+         #LET dnoLarg=$l
+      #ENDIF
+      //**********************************************************************
+      #LET pOtst=$(mat:1)
+      #IF $(potstOld)!$(potst)
+         #LET lprov=$l-($(lOtst)+$(potst))
+         #LET potstOld=$(potst)
+         #IF $(Lprov)<400
+            #LETV falsh_dx=0
+            #LETV mat_falsh=16
+            #MSG Ширина выдвижного не может быть меньше 400мм!
+            #GOTO raschetR
+         #ENDIF
+      #ENDIF
+      //***********************************************************************
+      // ******************* планка сбоку ************************************
+      #LET sa_falsh_fasad=0
+      #LET a_falsh_fasad=$a-$(mat:1),sp_falsh_fasad=$(p)
+      #LETV _wr=999v_karkasBokmod
+      #LETV _MNP=999v_karkasBokmod
+      #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+      //100,SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(sp_falsh_fasad)+$(profAdd),L=$(falshLargPlank),A=$(a_falsh_fasad)-$(pBokSA),p=$(mat:1),AY=90,x4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0,MAN=0  //Фасад
+      //100,SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(falshLargPlank),L=$(falshLargPlank),A=$(a_falsh_fasad)-$(pBokSA),p=$(mat:1),Ay=90,x4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0,MAN=0  //Фасад
+      #LETS paramsAnta=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK)
+      #IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>1
+         #LETS paramsAnta=$(paramsAnta);SDR={$(falshLargPlank)-1};DDR={$(a_falsh_fasad)-$(lBokSA)}
+      #ENDIF
+      100,COD= /$(paramsAnta),SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(sp_falsh_fasad)+$(profAdd)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(pBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      100,COD= /$(paramsAnta),SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(falshLargPlank)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(pBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      
+      // ************************************************************************
+   #ENDIF
+#ELSE
+   #LET potstOld=0
+#ENDIF
+
+//_NICOLECLASSIC3DS
+//_DOORRASP
+///********************************************************************************************************************************
+
+////***********************************************проверки для плейсера***********************************************
+#LET falshL=$(lotst)
+#LET falshR=$(potst)
+#IF $(zones)[1;2]
+   
+   !PLACERPAR placerparams,5
+   #LET spostaL=$(placerparams:1)
+   
+   #VB
+      params=V("zoneparams")
+      V("zoneparams")=Replace(params,":",";")
+   #ENDVB
+   
+   #FOR $(zoneparams)
+      #LET zoneSL=$[ex;$(i);X;1]
+      
+      #LET zoneW=$[ex;$(i);X;2]
+      
+      #LET x1=$(spostaL)+$(falshL)
+      #LET x2=$(x1)+$(l)-($(falshL)+$(falshR))
+      #IF $(x1)<$(zoneSL) & $(x2)>$(zoneSL)
+         #LET flag_ust=0
+      #ENDIF
+      #IF $(x1)>$(soneSL) & {$(zoneSl)+$(zoneW)}>$(x1) & $(x2)>{$(zoneSl)+$(zoneW)}
+         #LET flag_ust=0
+      #ENDIF
+      #IF $(x1>$(zoneSL) & $(x2)<{$(zoneSL)+$(zoneW)}
+         #LET flag_ust=0
+      #ENDIF
+   #ENDFOR
+   
+#ENDIF
+
+
+#IF $(zones)=3
+   
+   !PLACERPAR placerparams,5
+   #LET spostaL=$(placerparams:1)
+   #VB
+      params=V("zoneparams")
+      V("zoneparams")=Replace(params,":",";")
+   #ENDVB
+   
+   #LET count_peres=0
+   #LET zoneCount=0
+   
+   #FOR $(zoneparams)
+      #LET zoneSL=$[ex;$(i);X;1]
+      #LET zoneW=$[ex;$(i);X;2]
+      #LET x1=$(spostaL)+$(falshL)
+      #LET x2=$(x1)+$(l)-($(falshL)+$(falshR))
+      
+      #IF $(x1)<$(zoneSL) & $(x2)>$(zoneSL)
+         #LET zoneCount=$(zoneCount)+1
+      #ENDIF
+      #IF $(x1>$(zoneSL) & $(x2)<$(zoneSL)+$(zoneW)
+         #LET zoneCount=$(zoneCount)+1
+      #ENDIF
+   #ENDFOR
+#ENDIF
+//********************расчет для 5 дверей*****************************
+#IF $(zones)=4
+   !PLACERPAR placerparams,5
+   #LET spostaL=$(placerparams:1)
+   #LET x1=$(spostaL)+$(falshL)
+   #LET x2=$(x1)+$(l)-($(falshL)+$(falshR))
+   #VB
+      params=V("zoneparams")
+      V("zoneparams")=Replace(params,":",",")
+   #ENDVB
+   #LETS zonex1=$[ex;$(zoneparams:0);X;1]
+   #LETS zonew1=$[ex;$(zoneparams:0);X;2]
+   #LETS zonex2=$[ex;$(zoneparams:1);X;1]
+   #LETS zonew2=$[ex;$(zoneparams:1);X;2]
+   #LETS zonex3=$[ex;$(zoneparams:2);X;1]
+   #LETS zonew3=$[ex;$(zoneparams:2);X;2]
+   #LETS zonex4=$[ex;$(zoneparams:3);X;1]
+   #LETS zonew4=$[ex;$(zoneparams:3);X;2]
+   #LETS zonex5=$[ex;$(zoneparams:4);X;1]
+   #LETS zonew5=$[ex;$(zoneparams:4);X;2]
+   #LETS zonex6=$[ex;$(zoneparams:5);X;1]
+   #LETS zonew6=$[ex;$(zoneparams:5);X;2]
+   
+   #IF $(x1)<$(zonex2)
+      #IF $(x2)>$(zonex2)
+         #LET flag_ust=0
+      #ENDIF
+   #ENDIF
+   
+   #IF $(x1)>=$(zonex1) & $(x1)<$(zonex1)+$(zonew1)
+      #LET flag_ust=0
+   #ENDIF
+   
+   #IF $(x1)>=$(zonex1)+$(zonew1) & $(x1)<$(zonex2)
+      #IF $(x2)>$(zonex4)
+         #LET flag_ust=0
+      #ENDIF
+   #ENDIF
+   
+   #IF $(x1)>=$(zonex2) & $(x1)<$(zonex3)
+      #IF $(x2)>$(zonex4)
+         #LET flag_ust=0
+      #ENDIF
+   #ENDIF
+   
+   #IF $(x1)>=$(zonex3) & $(x1)<$(zonex3)+$(zonew3)
+      #LET flag_ust=0
+   #ENDIF
+   
+   #IF $(x1)>=$(zonex3)+$(zonew3) & $(x1)<$(zonex5)
+      #IF $(x2)>$(zonex6)
+         #LET flag_ust=0
+      #ENDIF
+   #ENDIF
+   
+   #IF  $(x1)>$(zonex5) & $(x1)<=$(zonex5)+$(zonew5)
+      #LET flag_ust=0
+   #ENDIF
+   
+#ENDIF
+//301
+//_FASVID
+//******************************************************************
+#IF $(zones)=3
+   #IF $(zoneCount)>=2
+      #LET flag_ust=0
+   #ENDIF
+#ENDIF
+//_AGG_KREP
+//************************************каркас*******************************************
+#IF $(flag_ust)=1
+   
+   
+   
+   #LETV _wr=999v_karkasBokmod
+   #LETV _MNP=999v_karkasBokmod
+   //#LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=378917905
+   #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+   
+   010,sl=$(lbokSl),p=$(pBok),a=$a-$(mat:0)-$(lbokSA),sa=$(lbokSa)
+   011,sl=$(pbokSl),p=$(pBok),a=$a-$(mat:0)-$(pbokSa),sa=$(pbokSa)
+   
+   #LETV _wr=999k_karkasKrmod
+   #LETV _MNP=999k_karkasKrmod
+   #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+   013,sa=$a-$(mat:0),p=$p+$(profAdd),sl=0,l=$L
+   _AGG_KREP_mod,p=$(p),multiCount=2
+   
+   #LETV _wr=999k_karkasDnmod
+   #LETV _MNP=999k_karkasDnmod
+   //#LETS sk=$(_colkarkas:10),wk=378917905,nk=$(_colkarkas:10),ek=378917905
+   #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+   
+   012,sl=$(mat:0),p=$(dnoProf),l=$(dnoLarg),sl=$(dnoSl)
+   //_agg_krep_mod,p=$(p),detMod=1
+   _AGG_KREP_mod,p=$(p),multiCount=2
+   
+   //109
+   
+   // ************************************************************************************************************
+   #IF $A>350
+      #LETV _wr=999T_KARKASTRPLmod
+      #LETV _MNP=999T_KARKASTRPLmod
+      #LETS sk=378917905,wk=378917905,nk=378917905,ek=378917905
+      046,lato=1  // Транспортировочная царга ДСП без графики
+      // #FOR $1:4
+      001,LATO=6,COD=999evrik / / /#Q4,L=1,A=1,P=1  //Test
+      //#ENDFOR
+   #ENDIF
+   //*******************************************************************************************************************
+   
+   
+#ELSE
+   //volume
+   001,COD=999 /ERROR=1,P=$p+20  //Test
+   #IF $(flag_ust)=2
+      025,COD= / /Полка мешает установке,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=3
+      025,COD= / /Модуль мешает установке,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=4
+      025,COD= / /Увеличьте ширину ниши,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=5
+      025,COD= / /Петля мешает установке,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=6
+      025,COD= / /Ошибка размещения,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=7
+      025,COD= / /Двери мешают выдвижению \nнеобходимо установить фальшфасады по сторонам!,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+      
+   #ELSE
+      025,COD= / /Перекрытие дверей блокирует выдвижные,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ENDIF
+   
+   
+   
+#ENDIF
+// *********************************** шурупы для крепления модуля в шкафу *************************************************
+#IF $(_matFia:3)=1
+   001,LATO=6,COD=999sh3_5x30 /TD=536 / /#Q5,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999dub_driva /TD=536 / /#Q5,L=1,A=1,P=1  //Test
+#ELSEIF $(_matFia:3)=2
+   001,LATO=6,COD=999sh3_5x30 /TD=536 / /#Q5,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999dub6x30 /TD=536 / /#Q5,L=1,A=1,P=1  //Test
+#ENDIF
+#IF $(mat:1)>18
+   001,LATO=6,COD=999sh4x35 /TD=536 / /#Q8,L=1,A=1,P=1  //Test
+#ELSE
+   001,LATO=6,COD=999nabor_sh4x30 /TD=536,L=1,A=1,P=1  //Test
+#ENDIF
+// *********************************************************************************************************************************
+//_MODUL
+//_KARKASFAS
+//_KOMODLIVING
+//301
+//303
+//_FASVID
+//_KORPVID
+//_PARAMANTASTR
+//_MISURALIM
+//_VIDMODULNK
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////выдвижные новые
+#LET deltaManA=0
+#IF $(_man:1)[999] & $(pto:0)=0
+   //#LET deltaManA=$(mat:1)
+#ENDIF
+#IF $(flag_ust)=1
+   #LETS oldKrep=$(_krepeg)
+   #LETV _krepeg=2
+   #IF $(rip_sot:1)=1
+      #LET sposta_macro=$(mat:1)
+   #ELSE
+      #LET sposta_macro=0
+   #ENDIF
+   _vidModulNK,sa=$(sposta_macro),a={$a-($(deltaManA))-$(mat:1)}-$(sposta_macro),sp=0,l=$L-{$(Lotst)+$(potst)},sl=$(lotst),lshkaf=$(l),NAVESLIVING=0,_tipFasMat=$(_tipFasMat:1),p=$(pBok)
+   #LETV _krepeg=$(oldKrep)
+#ENDIF
+//_KORPVID
+//301
+//_FASVID
+// *********************************** размер смещения по высоте ************************************
+#IF $[estrai;$(zone_prov);|;5]=1
+   023,COD= / /{rnd($(posa))},SL=140,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+#ENDIF
+//******************************************************************************************
+_upakovka_modul
+// ******************************************** эта сточка товара должна быть последней в правиле!!!!!!!!!!!!! ************************************************
+#IF $(flag_ust)=1
+   #IF $(kover_barhat:0)=1
+      001,LATO=6,COD=999KOVRIK /FPL=$(FPL) /Коврик бархатный /#L-1#Q$(count_kover:0),A=2  //Test
+   #ENDIF
+#ENDIF
+//продублировал макрос
+
+#IF $(_MODDOORRASP:1)[s01;s08;s26]
+   #IF 0
+      
+      #IF $(naborkras)!!X
+         
+         //001,LATO=6,COD=999NABREMKRAS /OCF=$(naborkras) /Комплект для ремонта крашеных фасадов /#L-1,L=1,A=1,P=1  //Test
+         #LETV _WR=999remfas
+         #LETV _MNP=999remfas
+         //псевдотовар для маршрута и типа товара
+         001,LATO=6,COD=999remfas /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(naborkras);FPL=$(FPL) /$(_wr:2) /#L-1,L=1,A=1,P=1  //Test
+         //товар в мр3
+         001,LATO=6,COD=999kompremfas /CFK=$(naborkras),L=1,A=1,P=1  //Test
+         001,LATO=6,COD=999gofrYashF,L=1,A=1,P=1  //Test
+         
+      #ENDIF
+      #IF $(naborpat)!!X
+         #LETV _WR=999remfaspat
+         #LETV _MNP=999remfaspat
+         //псевдотовар для маршрута и типа товара
+         001,LATO=6,COD=999remfaspat /MNP=$(_MNP:3);WR=$(_wr:3);PTN=$(naborpat);FPL=$(FPL) /$(_wr:2) /#L-1,L=1,A=1,P=1  //Test
+         001,LATO=6,COD=999komprempat /PTN=$(naborpat),L=1,A=1,P=1  //Test
+         001,LATO=6,COD=999gofrYashF,L=1,A=1,P=1  //Test
+         
+      #ENDIF
+   #ENDIF
+#ENDIF
+
+
+/////////////////////////////
+//_DOORRASP
+//_FASVID
+//_FINALELIVING
+//_GABARITLIMIT
+//_KORPVID
+//_MODUL
+//_PELLY
+/////////////////////////////
+
+
+// ************************************************************************************************************************************************************

@@ -26,7 +26,8 @@ T,MODELLO
 S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 M,count_st,,,Количество,,,,1
-T,_colkarkas,,,Заглушка под цвет,$(_colkarkas:5)!4 & $(_colkarkas:5)!25 & $(_colkarkas:1)!!017 & $(_colkarkas:1)!!023 & $(_colkarkas:1)!!021 & $(_colkarkas:1)!!022 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1
+S,PRODUCTLINE,,,,,,,,,,,,0
+T,_colkarkas,,,Заглушка под цвет,$(_colkarkas:5)!4 & $(_colkarkas:5)!25 & $(_colkarkas:5)!10 & $(_colkarkas:1)!!017 & $(_colkarkas:1)!!023 & $(_colkarkas:1)!!021 & $(_colkarkas:1)!!022 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]
 
 [GRAFICA]
 !SETCODICE x
@@ -37,11 +38,9 @@ _RECLAMATION
 // **********************************************************************************************************
 #LET l=450,a=45,p=2
 #LETV _WR=999DFSAM
-001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3) /$(_WR:2) ($(_colkarkas:21)) /#l-1  //Tes
-#FOR $1:$(count_st:0)
-   #IF $(_colkarkas:14)==999sam
-      001,LATO=6,COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15);FPL=N,L=1,A=1,P=1  //Test
-   #ELSE
-      001,LATO=6,COD=$(_colkarkas:14) /FPL=N,L=1,A=1,P=1  //Test
-   #ENDIF
-#ENDFOR
+001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3);FPL=N /$(_WR:2) ($(_colkarkas:21)) /#l-1  //Tes
+#IF $(_colkarkas:14)==999sam
+   001,LATO=6,COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#q$(count_st:0),L=1,A=1,P=1  //Test
+#ELSE
+   001,LATO=6,COD=$(_colkarkas:14) / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+#ENDIF

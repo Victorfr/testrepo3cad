@@ -1,0 +1,9 @@
+[info]
+Tipo = 1
+Descrizione=testreg.erg
+Tab.Dim.=L,A,P,SA,DA,SL,DL
+Dim.Minima= 1, 1, 1
+Dim.Massima= 5000, 5000, 5000
+
+[gene]
+T,MODELLO

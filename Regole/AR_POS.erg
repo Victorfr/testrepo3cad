@@ -36,7 +36,5 @@ _RECLAMATION
 // **********************************************************************************************************
 #LET l=350,a=45,p=2
 #LETV _WR=999DFPOS
-001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3) /$(_WR:2) /#l-1  //Tes
-#FOR $1:$(count_st:0)
-   001,LATO=6,COD=999sh_pos /FPL=N,L=1,A=1,P=1  //Test
-#ENDFOR
+001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3);FPL=N /$(_WR:2) /#l-1  //Tes
+   001,LATO=6,COD=999sh_pos / / /#q$(count_st:0),L=1,A=1,P=1  //Test

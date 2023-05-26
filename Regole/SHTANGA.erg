@@ -35,17 +35,21 @@ _flag_plaser
 _DATABOX
 #LETS cod_shtang=999SHTANG
 #IF $l>1000 #LETS cod_shtang=999SHTANG1
-001,LATO=19,COD=$(cod_shtang) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга овальная /#l-1,C1=10,DIS=$(cir)  //Test
+#LET maxL=1500 //1950
 
-001,LATO=6,COD=999SHTANGderg /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
-001,LATO=6,COD=999SHTANGderg /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
-
-#FOR $1:6
-   001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
-#ENDFOR
-
-#IF $l>1950
-   #MSG штанга не может быть длиной больше 1950 мм!
+#IF $l>$(maxL)
+   #MSG штанга не может быть длиной больше $(maxL) мм!
+   001,LATO=19,COD=999 /ERROR=1 /Штанга овальная /#l-1,DIS=$(cir)  //Test
+   
+#ELSE
+   001,LATO=19,COD=$(cod_shtang) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга овальная /#l-1,C1=10,DIS=$(cir)  //Test
+   
+   001,LATO=6,COD=999SHTANGderg /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
+   001,LATO=6,COD=999SHTANGderg /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
+   
+   //#FOR $1:6
+   001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1#Q6,L=10,A=10,P=10  //Test
+   //#ENDFOR
 #ENDIF
 
 // ****************************************************** размер по высоте ***********************************************************************
@@ -55,3 +59,6 @@ _DATABOX
    // 023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=210,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
 #ENDIF
 //*************************************************************************************************
+#IF $(FPL)!!N
+   #LETS LOC_BX1=$(_ppa)|$A|$(spostaL)|SH
+#ENDIF

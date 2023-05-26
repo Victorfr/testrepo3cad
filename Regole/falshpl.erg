@@ -1,0 +1,89 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=falshpl.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,mat,,,,$(mat:1)[16;22]
+T,_colkarkas,,,,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)] 
+
+[GRAFICA]
+
+!SETCODICE x
+_DATABOX
+
+
+#IF $(_PRIMOCARICAMENTO)=1
+   // #MSG После распила необходимой ширины деталь вместе с обрезком упаковывается в одну упаковку и доставляется клиенту. Это связано с тем что у узкой детали велик брак при транспортировке. В итоге клиент получит две детали с незакромленной стороной в месте распила.
+#ENDIF
+
+
+
+
+#LET det_mod=0
+#LET l=$(mat:1)
+#LET ndet=
+#LET _spostal=0
+#LET _spostaa=0
+#IF $a>2750
+   #LET a=2750
+   #MSG Фальш панель не может быть высотой более 2750 мм!
+#ENDIF
+#IF $P>80
+   #LET p=80
+   #MSG Фальш панель не может быть шириной более 80 мм!
+#ENDIF
+#IF $a<360
+   #LETV a=360
+   #MSG Фальш панель не может быть высотой меньше 360 мм!
+#ENDIF
+#IF $p<30
+   #LETV p=30
+   #MSG Фальш панель не может быть шираной меньше 30 мм!
+#ENDIF
+#LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+#LET flagCorrector=0
+
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+#LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+#LET sdr=
+#LET ddr=
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
+   #LET DDR=$a
+   #LET sdr={$p-1}
+#ENDIF
+
+051,COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);FPL=N;SDR=$(SDR);DDR=$(DDR) /Фальш-планка /#L-1,L=$L,A=$(a)  //планки
+//110
+//010
+//109,COD= /MNP=$(_MNP:3);WR=$(_WR:3);_CKD=$(_COLKARKAS:6);_CKK=$(_COLKARKAS:7);NDS=$(NDET);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);FPL=N / /#L-1,P=$p  // Вертикальная перегородка
+
+
+
+
+// ********************** размеры перегородки ****************************************
+023,COD= / /$P,SL=0,SP=0,L=$P,P=$P,AY=90,X1=2  //Глубина корпуса
+023,COD= / /$A,SL=0,SA=$A,SP=0,L=$A,A=0,P=0,AZ=90,X1=2  //Высота корпуса
+// ***********************************************************************************

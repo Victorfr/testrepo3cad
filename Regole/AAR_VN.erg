@@ -49,4 +49,4 @@ _RECLAMATION
 001,LATO=6,COD=$(tipsystem:18)KOMPLNAPR /WR=365778300;_CPROF=$(col_system:6);FPL=N /Верхняя направляющая для дверей /#l-1,L=$(prof_vn:0),A=10,P=100  //Test
 #LETV _WR=$(tipsystem:18)napr_v
 #LETV _MNP=$(tipsystem:18)napr_v
-029,LATO=6,COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);_CPROF=$(col_system:6);FPL=N /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_vn:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/v/0/n  //Профиль рельс верхний
+029,LATO=6,COD=$(_wr:1) /MNP=$(_MNP:3);WR=$(_wr:3);_CPROF=$(col_system:6) /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_vn:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/v/0/n  //Профиль рельс верхний

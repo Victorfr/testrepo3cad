@@ -35,6 +35,19 @@ T,_databox,,,,,,,,,,,,0
 _flag_plaser
 //***************************************************************************************************
 _DATABOX
+//принимаем глубину от плейсера шкафа
+#LET placerP=0
+#IF $(fpl)!!N
+   !PLACERPAR placerP,5
+   
+   #IF $(_tip_krep_rip:1)=2 & $(placerP)<330
+      #MSG При данной глубине нельзя установить крепеж под полку! Минимальная глубина должна быть больше 330 мм.
+      #LETV _tip_krep_rip=1
+   #ENDIF
+#ENDIF
+//_PASTEPLACER
+
+
 #IF $(_color_univer_rip:1)[0001] // белый
    #LETS cod_rip=999polUn1000x300WT
    #LETS cod_krep=999koplKrepWt
@@ -45,19 +58,17 @@ _DATABOX
    #LETS cod_krep1=999kr_univer_rip_sil
 #ENDIF
 #LETS 3ds=$(.percorso)\3ds\Polka_Setka_S.3DS
+
+
+
 001,COD=$(cod_rip) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Универсальная сетчатая полка /#l-1,C1=2,GL=$(3ds)  //Test
 #IF $(_tip_krep_rip:1)=1
-   #FOR $1:2
-      001,LATO=6,COD=$(cod_krep) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект креплений для одной полки /#l-1,L=1,A=1,P=1  //Test
-   #ENDFOR
+   001,LATO=6,COD=$(cod_krep) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект креплений для одной полки /#l-1#Q2,L=1,A=1,P=1  //Test
 #ELSE
-   #FOR $1:2
-      001,LATO=6,COD=$(cod_krep1) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект креплений для одной полки /#l-1,L=1,A=1,P=1  //Test
-   #ENDFOR
+   001,LATO=6,COD=$(cod_krep1) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект креплений для одной полки /#l-1#Q2,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999tascaSil /FPL=$(FPL);_DATABOX=$(_DATABOX) /000 ФПС 086-23КСМ Карман малый для сетчатой полки /#l-1#Q6,L=1,A=1,P=1  //Test
 #ENDIF
-#FOR $1:8
-   001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=1,A=1,P=1  //Test
-#ENDFOR
+001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1#Q8,L=1,A=1,P=1  //Test
 
 // ****************************************************** размер по высоте ***********************************************************************
 #LETS zone_prov=$(locp_bx3)
@@ -66,3 +77,4 @@ _DATABOX
    023,COD= / /{rnd($(posa))},SL=280,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
 #ENDIF
 // *******************************************************************************************************************************************************
+//_OLD_PLACE

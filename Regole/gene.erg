@@ -26,7 +26,8 @@ T,Modello
 T,t_i,,,,$(t_i:1)=1,,,,,,,,0
 T,_idcat,,,,$(_idcat:3)=300,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
-T,gruppo,,,,#IF $(.username)==salavat | $(.username)==v-sitnikov | $(.username)==e-bliznikova | $(.username)==ek-volkova | $(.username)==i-tataryan | $(.username)==m-sinko | $(.username)==i-kurmanaliev | $(.username)==e-bulgakova\n   $(gruppo:1)=2\n#ELSE\n   $(gruppo:1)=1\n#ENDIF,,,,,,,,0
+S,PRODUCTLINE,,,,,,,,,,,,0
+T,gruppo,,,,#IF $(.username)==salavat | $(.username)==v-sitnikov | $(.username)==e-bliznikova | $(.username)==ek-volkova | $(.username)==i-tataryan | $(.username)==m-sinko | $(.username)==i-kurmanaliev | $(.username)==e-bulgakova | $(.username)==v-gluhov | $(.username)==a-fedorova | $(.username)==N-SOLOVYEVA | $(.username)==R-KASCHENKO | $(.username)==VYA-STESHIN | $(.username)==G-IRGASHEV| $(.username)==AL-BELYAKOV | $(.username)==E-GAYVORONSKAYA  | $(.username)==E-AGEYKINA | $(.username)==N-KOMISSAROV | $(.username)==K-RUDOY | $(.username)==I-SPIRIDONOVA | $(.username)==E-MAMYSHEVA | $(.username)==A-BURLAKOV\n   $(gruppo:1)=2\n#ELSE\n   $(gruppo:1)=1\n#ENDIF,,,,,,,,0
 T,_ModDoorRasp,,,Модель распашных дверей,,,,,,,9,,0
 T,mat,,,,$(_ModDoorRasp:1)[$(mat:8)],,,,,,,,0
 T,_colkarkas,,,Цвет распашных дверей,$(mat:1)[$(_colkarkas:5)] & $(_ModDoorRasp:1)[$(_colkarkas:17)] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1,,,,,,9,,0

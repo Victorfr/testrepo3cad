@@ -1,0 +1,61 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=LEGS.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO,,,,,,,,,,,,0
+T,dekopory,,,Тип опоры
+T,colordekopory,,,Цвет
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+
+
+//_ADDNAVES
+
+//#LETS navCodL=$[ex;$(navesLiving:4);|;1]
+//#LETS navCodR=$[ex;$(navesLiving:4);|;2]
+//#LETS navZagL=$[ex;$(navesColor:4);|;1]
+//#LETS navZagR=$[ex;$(navesColor:4);|;2]
+//#LETS navShina=$(navesLiving:7)
+
+//001,LATO=9,COD=999DEKOP688890165 /WR=417701157;FPL=N / /#l-1  //Tes Опора 50*50*16мм черная (RAL 9005)
+
+//001,LATO=6,COD=999opora_al50x50bl / / /#Q$(count_st:0)  //Test
+
+
+
+
+#LET L=$(dekopory:5)
+#LET A=$(dekopory:6)
+#LET P=$(dekopory:7)
+
+#LETS color=9|$(.percorso)\FOTO\vstavka\ral1.jpg|$(colordekopory:6)|
+//001,COD=999$(dekopory:8) /FPL=N;_COK=$(colordekopory:7);WR=410074072;SKP=1 /$(dekopory:2) /#L-1,C1=$(color),FACC=100,X4=$(dekopory:3)  //Test
+001,COD=999$(dekopory:8) /FPL=N;_COK=$(colordekopory:7);WR=410074072;SKP=1;USB=1 /$(dekopory:2) /#L-1,C1=$(color),FACC=100,X4=$(dekopory:3)  //Test
+
+//001,LATO=6,COD=999$(dekopory:8) / /$(colordekopory:2) /#Q$(count_st:0),C1=1,C2=2  //Test

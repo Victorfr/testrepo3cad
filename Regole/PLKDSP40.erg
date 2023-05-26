@@ -1,0 +1,292 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=PLKDSP40.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,sidecol,,,Тип полки
+T,dspcolorkat,,,Категория цвета
+T,olddspcolor,,,,,,,,,,,,0
+T,dspcolor,,,Цвет,$(dspcolor:6)[$(dspcolorkat:3)] & $[datecompare;$(dataordine);$(dspcolor:10)]>=0 & $[datecompare;$(dataordine);$(dspcolor:11)]=-1
+T,dspcolor,dspcolorkrom,,Цвет кромки,$(dspcolorkrom:6)[$(dspcolorkat:3)] & $[datecompare;$(dataordine);$(dspcolorkrom:10)]>=0 & $[datecompare;$(dataordine);$(dspcolorkrom:11)]=-1
+C,vertpos,,,Столешница вертикально
+C,krepShkaf,,0,Крепление к шкафу,,,,,,,2
+M,kolKrepShkaf,,$(krepShkaf:0)=1,Количество креплений,,,,1
+C,krepDsp,,0,Крепление к ДСП,,,,,,,2
+M,kolKrepDsp,,$(krepDsp:0)=1,Количество креплений,,,,1
+C,krepGips,,0,Крепление к гипсокартону,,,,,,,2
+M,kolKrepGips,,$(krepGips:0)=1,Количество креплений,,,,1
+C,krepBeton,,0,Крепление к бетону/кирпичу,,,,,,,2
+M,kolKrepBeton,,$(krepBeton:0)=1,Количество креплений,,,,1
+C,hiddedmensolo,,,Крепление на скрытом менсолодержателе,,,,,,,,,0
+G,SCOSGRUPP
+
+[GRAFICA]
+
+!SETCODICE x
+//_AGG_KREP
+_DATABOX
+#LET a=40
+#LET ndet=
+#LET _spostal=0
+#LET _spostaa=0
+
+#LET minl=100
+#LET maxL=3500
+#LET minP=100
+#LET maxP=1200
+#IF $(dspcolor:1)[24]
+   #LET maxL=4100
+#ENDIF
+
+#IF $(olddspcolor)!!$(dspcolor)
+   #LETV dspcolorkrom=$(dspcolor:1)
+   #LETV olddspcolor=$(dspcolor)
+   #LETS dspcolorkrom=$(dspcolor)
+#ENDIF
+
+#IF $(_primocaricamento)=1
+   #IF $(RAD1:0)<100
+      #LETV RAD1=100
+   #ENDIF
+   #IF $(RAD1LD:0)<100
+      #LETV RAD1LD=100
+   #ENDIF
+   #IF $(RAD1RU:0)<100
+      #LETV RAD1RU=100
+   #ENDIF
+   #IF $(RAD1RD:0)<100
+      #LETV RAD1RD=100
+   #ENDIF
+   
+#ENDIF
+
+
+#IF $(hiddedmensolo:0)=1
+   #LET minl=200
+   #LET maxL=1000
+   #LET minP=150
+   #LET maxP=300
+   
+   
+#ENDIF
+
+
+
+
+///проверка габаритов
+#IF $(ugolL_Up:0)=1 | $(ugolR_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Down:0)=1
+   #LET minL=200
+   #LET maxL=1000
+   #LET minP=150
+   #LET maxP=1000
+   #IF $[ex;$(_COLKARKAS:9);|;3]>=2 & $(_COLKARKAS:27)=0
+      
+      
+   #ENDIF
+#ENDIF
+
+#IF $l>$(maxL)
+   #LET l=$(maxL)
+   #MSG полка не может быть шириной более $(maxL) мм!
+#ENDIF
+#IF $P>$(maxP)
+   #LET p=$(maxP)
+   #MSG полка не может быть глубиной более $(maxP) мм!
+#ENDIF
+// #IF $l>700 & $p>700
+// #LET p=700
+// #MSG один из размеров полки не может быть больше 700 мм!
+// #ENDIF
+#IF $l<$(minL)
+   #LETV l=$(minL)
+   #MSG полка не может быть шириной меньше $(minL) мм!
+#ENDIF
+#IF $p<$(minP)
+   #LETV p=$(minP)
+   #MSG полка не может быть глубиной меньше $(minP) мм!
+#ENDIF
+#LETS ido=
+#LETS idd=
+
+#IF $(ugolL_Up:0)=1 | $(ugolR_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Down:0)=1
+   #IF $l<300
+      #IF $p<400
+         #LETV p=400
+         #MSG При добавлении скоса или радиуса  и ширине меньше 300мм  минимальная глубина 400ммм
+      #ENDIF
+   #ENDIF
+   #IF $p<300
+      #IF $L<400
+         #LETV l=400
+         #MSG При добавлении скоса или радиуса  и глубине меньше 300мм  минимальная ширина 400ммм
+      #ENDIF
+   #ENDIF
+#ENDIF
+
+
+
+
+#LETV _wr=999K_KARKASPL
+#LETV _MNP=999K_KARKASPL
+
+#LETS cod=$(sidecol:4)
+
+#IF $(ugolL_Up:0)=1 | $(ugolR_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Down:0)=1
+   #LETS ido=1
+   #IF $(_typRipL_UP:1)[1] | $(_typRipR_UP:1)[1] | $(_typRipL_DOWN:1)[1] | $(_typRipR_DOWN:1)[1]
+      #LETS cod=$(cod)RD
+   #ELSE
+      #LETS cod=$(cod)SK
+   #ENDIF
+#ENDIF
+#LETV _wr=$(cod)
+#LETV _mnp=$(cod)
+
+#IF $(RAD1:0)<100
+   #MSG Радиус не может быть меньше 100мм!
+   #LETV RAD1=100
+#ENDIF
+#IF $(RAD1LD:0)<100
+   #MSG Радиус не может быть меньше 100мм!
+   #LETV RAD1LD=100
+#ENDIF
+#IF $(RAD1RU:0)<100
+   #MSG Радиус не может быть меньше 100мм!
+   #LETV RAD1RU=100
+#ENDIF
+#IF $(RAD1RD:0)<100
+   #MSG Радиус не может быть меньше 100мм!
+   #LETV RAD1RD=100
+   
+#ENDIF
+//коды айди пиломатериалов кромок
+#LETS sk=$(dspcolorkrom:8),wk=$(dspcolorkrom:8),nk=$(dspcolorkrom:8),ek=$(dspcolorkrom:8)
+//015,COD= / / /#l-1,SP=0,P=$p  //Полка на стяжках, зазор надо будет установить взависимости от толщины кромки
+//графическая часть
+
+//100
+
+///
+
+//VOLUME
+//301
+//110,COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);FPL=N / /#l-1,SP=0,P=$p  // Полка на стяжках ДСП
+
+//////////////////////////////////макрос создания профиля для полки
+////ограничения по габаритам
+_polkMisur
+//проверка количества обработок на углах (не больше 2х)
+_polkProvUgl
+///метка для пересчетаа при изменении профиля после проверки
+#RECALK
+#LET recalculate=0
+//формирование строки с обработками
+_polkObrStr
+//создание профиля
+_sagomaPolk
+//проверка профиля
+#LET profilError=0
+_sagomaPolkProv
+
+#IF $(recalculate)=1
+   // #GOTO recalk
+#ENDIF
+#IF $(mat:1)=25
+   #IF $(ugolL_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Up:0)=1 | $(ugolR_Down:0)=1
+     // #LET profilError=2
+   #ENDIF
+#ENDIF
+
+!SAGOMA polkadsp $(leftUp),$(leftDown),$(rightDown),$(rightUp)
+//_KORPVID
+
+#LET DDR=$(L)
+#LET SDR=$(P)
+///////////////////////////////////////////////////////////////////
+
+#LETS colorPolk=1|$(.percorso)\foto\struttura\$(dspcolor:3)|$(dspcolor:4)
+#LETS colorPolkkrom=1|$(.percorso)\foto\struttura\$(dspcolorkrom:3)|$(dspcolorkrom:4)
+#LETS paramsX4=$(_krepeg:3)/$(dspcolorkrom:5)/$(dspcolorkrom:9)/$(sidecol:3)/$(dspcolorkrom:7)/KLEI/$(obrabotki)/$(tipshkaf:6)/$(WK)|$(NK)|$(EK)|$(SK)/$(_colkarkas:27)
+#IF $(profilError)=0
+   
+   #LET angZ=0
+   #LET sapos=0
+   #IF $(vertpos:0)=1
+      #LET angz=90
+      #LET saPos=$l
+      #LET ua=$L-40
+      #LET ul=-$l+40
+   #ELSE
+      #IF $(ua)!0
+         #LET ua=0
+         #LET ul=0
+      #ENDIF
+   #ENDIF
+   _drawdsp40
+   110,COD= /MNP=$(_MNP:3);WR=$(_wr:3);_OCS=$(dspcolor:5);_OCKS=$(dspcolorkrom:9);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=N / /#l-1,SP=0,A=40,az=$(angZ),sa=$(sapos),P=$p,C1=$(colorPolkkrom),C2=$(colorPolk),DIS=$(polkadsp),X4=$(paramsX4),X9=$(polkObrStr)  //Полка на стяжках ДСП
+   
+   
+   //027
+#ELSE
+   110,COD= /ERROR=1 / /#l-1,SP=0,P=$p,DIS=$(polkadsp),X9=$(polkObrStr),lato=6  //Полка на стяжках ДСП
+   001
+   #IF $(profilError)=1
+      025,COD= / /Ошибка в параметрах обработок \nизмените габариты или параметры!,SL=0,SP=$p,L=$l  //сообщение об ошибке
+   #ELSEIF $(profilError)=2
+      025,COD= / /На материале толщиной 25 мм \nнельзя выполнить обработки!,SL=0,SP=$p,L=$l  //сообщение об ошибке
+      
+   #ENDIF
+   
+#ENDIF
+
+/////крепеж для полок
+
+#IF $(krepDsp:0)=1
+   001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1#Q$(kolKrepDsp:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepDsp:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepDsp:0),L=1,A=1,P=1  //Test
+#ENDIF
+#IF $(krepGips:0)=1
+   001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999sh3_5x30 / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999dub_driva / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
+#ENDIF
+#IF $(krepBeton:0)=1
+   001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999sh3_5x30 / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999dub6x30 / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
+#ENDIF
+#IF $(krepShkaf:0)=1
+   001,LATO=6,COD=999sh4x30 / / /#l-1#Q$(kolKrepShkaf:0),L=1,A=1,P=1  //Test
+#ENDIF
+// ********************** размеры полки ****************************************
+023,COD= / /$P,SL=0,SA=$a,SP=0,L=$P,P=$P,AY=90  //Глубина корпуса
+#IF $(vertpos:0)=1
+   023,COD= / /$L,SL=40,SA=0,SP=0,L=$L,A=0,P=1,X1=2,az=-90  //Размер корпуса
+   
+#ELSE
+   023,COD= / /$L,SL=0,SA=$A,SP=0,L=$L,A=0,P=1,X1=2  //Размер корпуса
+#ENDIF
+// ***********************************************************************************

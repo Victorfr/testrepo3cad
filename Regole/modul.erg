@@ -26,8 +26,15 @@ T,MODELLO
 G,MODUL
 
 [GRAFICA]
-_modul
-
+#IF $[datecompare;$(dataordine);05.03.2020]>=0
+   _DATABOX
+   #MSG товар не доступен к заказу с 05.03.2020!
+   001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
+#ELSE
+   _modul
+#ENDIF
+//_PETLJA
+//_SHKAF
 //TIPOLOGI
 //_VDBOX
 //_AGG_KREP_MOD
@@ -39,3 +46,7 @@ _modul
 //026
 //028
 // 010
+//300
+//041
+//#MSG $(_placer)
+//_ZERKALO

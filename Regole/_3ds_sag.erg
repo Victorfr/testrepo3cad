@@ -1,0 +1,44 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=_3ds_sag.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+M,_idunico_sag,,,,,,,,,,,,0
+T,mat_sag,,,Материал,$(mat_sag:4)[1]
+C,edit_col,,,Изменить цвет,,,,,,,2
+K,colrgb,,$(edit_col:0)=1,Цвет RGB,,,,,,,2
+F,texture,,$(edit_col:0)=1,Текстура,,,,,,,9
+M,angle_tex,,$[LEN;$(texture:0)]>0,Поворот тек-ры,,,,-360,360,,9
+C,scale_tex,,$[LEN;$(texture:0)]>0,Масштаб тек-ры (изм.стрелками),,,,,,,9
+C,lato21,,,Тело вращения,,,,,,,1
+M,kol_segm,,$(lato21:0)=1,Кол-во сегм-тов,,,,0,100,,1
+T,npr_sag,,,Направление профиля,,,,,,,,,$(dsagoma_$(idformat))==
+S,npr_sag_info,,$(dsagoma_$(idformat))!!,Направление профиля
+D,profc,,,Профиль,,complementi.crea.EDISAGSINGOLA|$p;$l;$a;$(_idunico_sag:0);$(npr_sag:1)
+D,tutorial_cadsagome,,,Инструкция,,!tutorial_cadsagome.html,Нажми сюда,,,,9
+-,SEP2D,,,2D
+T,Descrizione
+-,sep2dati,,,Dump,,,,,,,,,0
+
+[GRAFICA]
+!COMMENTO $[TOCRLF;|; _1. Выбрать направление профиля |_2. Изменить профиль]
+_figura

@@ -98,6 +98,20 @@ altrimenti i prezzi non vengono fuori!
 
 [COMANDI_GENERALE]
 
+#VB
+   dim a,NIC1,Nic,StrIP,catalog
+   set a=Ambiente.GetObject("AAMAIN")
+   Set NIC1 = GetObject("winmgmts:").InstancesOf("Win32_NetworkAdapterConfiguration")
+   For Each Nic in NIC1
+      if Nic.IPEnabled then
+         StrIP = Nic.IPAddress(i)
+      end if
+   next
+   catalog=vbtab & v(".percorso")
+   a.caption="3Cad " & v(".versione") & "  (" & Ucase(v(".username")) & ") IP:" & StrIP & "  " & catalog & " ¹ " &  a.tnumero
+#ENDVB
+
+
 #LETS path=$(.curdir)/
 #LETS filename=DAUNETCADSAGOME.DLL
 #LETS filenamezip=AGG_NETCADSAGOME.ZIP

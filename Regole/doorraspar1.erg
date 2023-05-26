@@ -28,6 +28,7 @@ G,DOORS
 
 [GRAFICA]
 _door
+
 //_rolikDovdNova
 //TIPOLOGI
 //VSTAV
@@ -35,6 +36,7 @@ _door
 // 040
 //303
 //304
+//302
 //PEREMICH
 // _PlankiVstavki
 //_DEKOR
@@ -44,6 +46,7 @@ _door
 //_VDBOX
 //ADDNAP
 //DOORS
+
 //INITSHKAF
 //KORPSHKAF
 //MACRODOOR
@@ -56,10 +59,11 @@ _door
 //PEREMICH
 //PROVERKA
 //TESTPOLKA
+//_ZERKALO
 //TIPOLOGI
 //VNESHNIE
 //VOLUME
 //_MODUL
-
+//_MODFASAD
 // 021
 //VSTAV

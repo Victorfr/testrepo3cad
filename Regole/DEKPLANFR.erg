@@ -23,11 +23,12 @@ TRADFLAGS=*,*,*,*,*
 
 [gene]
 T,MODELLO
-T,_ModDoorRasp,,,,$(_ModDoorRasp:1)[s08],,,,,,,,0
+T,_ModDoorRasp,,,Модель,$(_ModDoorRasp:1)[s08;S26]
 T,matvstav,,,Модель декора,$(matvstav:5)==$(_ModDoorRasp:1),,,,,,,,0
 T,cvetvstav,, ,Цвет,$(matvstav:5)[$(cvetvstav:3)] & $(matvstav:6)[$(cvetvstav:8)],,,,,,2,,$(matvstav:13)
 T,TxtVst,,$(cvetvstav:11)=1,,#IF $(matvstav:5)==s08\n   $(TxtVst:1)=1\n#ELSE\n   $(TxtVst:1)[0;1]\n#ENDIF,,,,,,,,$(matvstav:5)!!s08
-T,_patina,,,,#IF $(cvetvstav:14)=1\n   $(cvetvstav:1)[$(_patina:4)]\n#ELSE\n   $(_patina:5)=60251733\n#ENDIF,,,,,,,,$(cvetvstav:14)=1
+T,_patina,,,,##PATINACHECK\n#LET indexloop=0\n#LETS testpatina=$(cvetvstav:17)\n#LETS modelvstav=$(matvstav:5)\n#LETS patinamodel=\n#DO\n   #LET indexloop=$(indexloop)+1\n   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]\n   #IF $[LEN;$(teststr)]>0\n      #IF $[INSTR;$(teststr);$(modelvstav)]>0\n         #LETS patinamodel=$(teststr)\n      #ENDIF\n   #ELSE\n      #BREAK 1\n   #ENDIF\n#LOOP  $(teststr)==\n#IF $[len;$(patinamodel)]>0\n   $[INSTR;$(patinamodel);$(_patina:1)]>0 | $(_patina:1)[999]\n#ELSE\n   #IF ($(matvstav:5)[$(cvetvstav:14)])\n      $(_patina:1)[$(cvetvstav:17)] | $(_patina:1)[999]\n   #ELSE\n      $(_patina:5)=60251733\n   #ENDIF\n#ENDIF,,,,,,,,$(matvstav:5)[$(cvetvstav:14)]
+T,_factura,,$(_ModDoorRasp:1)[S26],,#IF $(_ModDoorRasp:1)[S26] & $(_patina:5)!60251733\n   $(_ModDoorRasp:1)[$(_factura:6)] & $(_factura:4)!511193732\n#ELSE\n   $(_ModDoorRasp:1)[$(_factura:6)]\n#ENDIF
 M,altFas,,,Высота
 M,lantFas,,,Ширина
 M,PantFas,,,,,,,,,,,,0
@@ -58,18 +59,40 @@ M,PantFas,,,,,,,,,,,,0
    #LETS nt=11726799
 #ENDIF
 #LET rot_txt=0
+
+#LET IDO=2
+#IF ($(_MODDOORRASP:1)[$(CVETVSTAV:14)] & $(_patina:5)!60251733)
+   #LETS IDO=
+#ENDIF
+#LETV petlObr=0
+#LET flagCorrector=0
 #IF $(TxtVst:1)=1 #LET rot_txt=90
 #LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
 #IF ($(matvstav:5)[s08] & $(cvetvstav:11)=1) #LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|{90-$(rot_txt)}
 #LETS vid_vis=n // параметр прозрачности типологии 303
-#LETV _wr=$(_ModDoorRasp:1)DEKELM
-#LETV _MNP=$(_ModDoorRasp:1)DEKELM
-#IF $(cvetvstav:14)=1 & $(_patina:5)!60251733
-   #LETV _wr=$(_ModDoorRasp:1)DEKELMPT
-   #LETV _MNP=$(_ModDoorRasp:1)DEKELMPT
-#ENDIF
+//#LETV _wr=$(_ModDoorRasp:1)DEKELM
+//#LETV _MNP=$(_ModDoorRasp:1)DEKELM
+//#IF $(cvetvstav:14)=1 & $(_patina:5)!60251733
+//#LETV _wr=$(_ModDoorRasp:1)DEKELMPT
+//#LETV _MNP=$(_ModDoorRasp:1)DEKELMPT
+//#ENDIF
+_DEKELEMCODE,_nameParam=DEKELM,_facturaDek=$(_factura)
 #LETS 3ds=dek3.3ds
 #LETS draw=404879765
-303,COD= / / /#l-1,L=$a,A=$l,AZ=90,sa=$a,MAN=0  //Боковина фасадная
-
+#IF $(_ModDoorRasp:1)[s26]
+   #LETS draw=463208906 //0033_000
+#ENDIF
+///выборка имени детали по номеру программы обработки и имени чертежа
+_getDekoreName
+#LETS namedet=$(dekDES)
+/////////////////////////////////////////////////////////////////////
+//!!!!!!!!!!!!!Замена маршрута на патинирование для декора!!!!!!!!!!!
+#IF $(_ModDoorRasp:1)[s08] & $(_patina:5)!60251733
+   #LETS _MNP:3=480680448
+#ENDIF
+#IF $(_ModDoorRasp:1)[s26]
+   303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);FPL=N /$(namedet) /#l-1,SA=$a,L=$a,A=$l,AZ=90,MAN=0  //Боковина фасадная
+#ELSE
+   303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);IDO=$(IDO);FPL=N;PRIP=$(PRIP) /$(namedet) /#l-1,SA=$a,L=$a,A=$l,AZ=90,MAN=0  //Боковина фасадная
+#ENDIF
 //_DEKOR

@@ -1,0 +1,82 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=NAVES.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,_databox,,,,,,,,,,,,0
+S,dataordine,,,,,,,,,,,,0
+T,navesLiving,,,,$(navesLiving:1)[1;2]
+T,navesColor,,$(navesLiving:1)!0,,$(navesLiving:1)[$(navesColor:3)] 
+T,navesSide,,,Сторона
+M,count_st,,,Количество,,,,1
+
+[GRAFICA]
+
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#LET l=350,a=45,p=2
+
+//_ADDNAVES
+
+//#LETS navCodL=$[ex;$(navesLiving:4);|;1]
+//#LETS navCodR=$[ex;$(navesLiving:4);|;2]
+//#LETS navZagL=$[ex;$(navesColor:4);|;1]
+//#LETS navZagR=$[ex;$(navesColor:4);|;2]
+//#LETS navShina=$(navesLiving:7)
+#LETS navDub=Dub8x52Sh5x60
+
+#IF $(navesSide:1)[1]
+   #LETS latoStr=Левый
+   #LETS addLatoStr=L
+#ELSE
+   #LETS latoStr=Правый
+   #LETS addLatoStr=R
+#ENDIF
+#IF $(navesliving:1)[1]  //CAH130
+   #LET dubCount=2*$(count_st:0)
+   #LETS addLatoStr=SAH$(addLatoStr)
+#ELSE
+   #LET dubCount=4*$(count_st:0)
+   #LETS addLatoStr=CAM$(addLatoStr)
+#ENDIF
+
+001,LATO=9,COD=999CAMNAV$(addlatostr) /WR=417701157;FPL=N /Навес $(navesLiving:2) $(latoStr) /#l-1  //Tes
+
+#LETS navesCod=$[ex;$(navesLiving:4);|;$(navesSide:3)]
+#LETS navZagCod=$[ex;$(navesColor:4);|;$(navesSide:3)]
+// Цена
+// навес
+001,LATO=6,COD=999$(navesCod) / / /#Q$(count_st:0)  // Test
+// Дюбель
+001,LATO=6,COD=999$(navDub) / / /#Q$(dubCount) // Test
+// заглушка лев
+001,LATO=6,COD=999$(navZagCod) / / /#Q$(count_st:0)  // Test
+#IF $(navesLiving:1)=1
+   001,LATO=6,COD=999TypB / / /#Q$(count_st:0)  // Test
+#ELSE
+   001,LATO=6,COD=999navcamKr / / /#Q$(count_st:0)  // Test
+#ENDIF

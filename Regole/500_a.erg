@@ -35,14 +35,14 @@ C,PodPet,,,Подставка под петли
 _flag_plaser
 //***************************************************************************************************
 _DATABOX
-#LETS cod_pan=999500_А
+#LETS cod_pan=999500_A
 #LETS 3ds=Pantograf8.3ds
 
 
 001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,FACC=100,X4=$(3ds)  //Test
 
 #IF $(PodPet:0)=1
-   001,LATO=6,COD=999501_А /FPL=$(FPL) /Подставка под петли /#l-1,X4=$(3ds)  //Test
+   001,LATO=6,COD=999501_A /FPL=$(FPL) /Подставка под петли /#l-1,X4=$(3ds)  //Test
 #ENDIF
 
 // #FOR $1:2

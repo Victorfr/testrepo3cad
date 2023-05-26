@@ -1,0 +1,181 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=POLKOB.erg
+COMMENTI=
+CODICE=
+POSMODE=20
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=116
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,mat,,,,$(mat:1)=25
+T,_colkarkas,,,,#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n#ELSE\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1\n#ENDIF
+C,ugolPolk,,,Под углом
+T,in_size,,$(FPL)!!N,Размеры
+S,polkprofSizeMx,,,Общий размер полок,,,,,,,,,0
+
+[GRAFICA]
+
+!SETCODICE x
+//_AGG_KREP
+_DATABOX
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+//***************************************************************************************************
+#LET a=$(mat:1)
+#LET ndet=
+#LET _spostal=0
+#LET _spostaa=0
+#LETV _krepeg=1
+#LETV _wr=999K_POLKOB
+#LETV _MNP=999K_POLKOB
+#LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+
+
+#LETS zone_prov=$(locp_bx3)
+#LETS zoneparams=
+#LET flag_ust=1
+#LETS zones=$[estrai;$(zone_prov);|;2]
+#LETS zone_param=$[estrai;$(zone_prov);|;1]
+//глубина шкафа
+#LETS profanditaPlaser=$[estrai;$(zone_prov);|;7]
+
+#IF $(FPL)!!N
+   //если полка в шкафу
+   #LET p={$(profanditaPlaser)-10-10}
+   
+#ENDIF
+
+
+
+#LET a=$(mat:1)
+#LET ndet=
+////описание ограничений размеров
+#LET lmin=550
+#LET lmax=1200
+#IF $l<$(lmin)
+   #LETV l=$(lmin)
+#ENDIF
+#IF $L>$(lmax)
+   #LETV l=$(lmax)
+#ENDIF
+#LET pmin=530
+#LET pmax=650
+#IF $p<$(pmin)
+   #LETV p=$(pmin)
+#ENDIF
+#IF $p>$(pmax)
+   #LETV p=$(pmax)
+#ENDIF
+
+
+
+//064
+//010
+
+////пока для теста
+#LET polkUgol=0
+#LET lpolk=$p-2
+#LET polkSa=0
+#LET _spostaA=0
+#LET placerSpostaA=0
+#IF $(ugolPolk:0)=1
+   #LET polkUgol=-30
+   #LET lpolk=$p/cos(30)-45*tan(30)-2
+   #LET polkSa=$(lpolk)*sin(30)
+#ENDIF
+#IF $(FPL)!!N
+   !PLACERPAR placerparams,5
+   #LET placerL=$(placerparams:0)
+   #LET placerSpostaA=$(placerparams:2)
+   #LET _spostaA=rnd($(placerSpostaA)+$(_ppa))
+   #LET spostaPar=$(_spostaA)
+#ENDIF
+//если плейсер установлен в шк
+#IF $(FPL)!!N
+   _PROVERKAPLMX
+#ENDIF
+//#MSG $(_spostaA)
+
+
+#LET IDD=
+#LET IDO=
+#LET sdr=
+#LET DDR=
+#IF $[ex;$(_COLKARKAS:9);|;3]>=2 & $(_COLKARKAS:27)=0
+   #LET SDR={$(lpolk)}-2}
+   #LET ddr={$(l)}-2}
+#ENDIF
+
+
+
+///полки с профилем ШК MIXAL
+#IF $(flag_ust)=1
+   ///перенес в макрофинале
+   //_polkaprofil,ax=$(polkUgol),sa=$(polkSa),p=$(lpolk),_spostaa=$(spostaPar)
+   
+#ELSE
+   001,COD=999 /ERROR=1,P=$p+20  //Test
+   #IF $(flag_ust)=2
+      025,COD= / /Полка мешает установке,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7,sp=$p+100  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=3
+      025,COD= / /Модуль мешает установке,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7,sp=$p+100  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=4
+      025,COD= / /Увеличьте ширину ниши,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7,sp=$p+100  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=5
+      025,COD= / /Петля мешает установке,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7,sp=$p+100  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=6
+      025,COD= / /Ошибка размещения,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7,sp=$p+100  //сообщение об ошибке
+   #ELSEIF $(flag_ust)=7
+      025,COD= / /Двери мешают выдвижению \nнеобходимо установить фальшфасады по сторонам!,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+      
+   #ELSE
+      025,COD= / /Перекрытие дверей блокирует выдвижные,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ENDIF
+#ENDIF
+//*
+//#LET spUgStag1=100*cos(30)+12.5*cos(60)
+//#LET saUgStag1=100*sin(30)-12.5*sin(60)
+//#LET spUgStag2=($(lpolk)-100)*cos(30)+12.5*cos(60)
+//#LET saUgStag2=($(lpolk)-100)*sin(30)-12.5*sin(60)
+//001,l=5,a=5,p=5,sp=$(spUgStag1),sa=$(polksa)-$(saUgStag1)
+//001,l=5,a=5,p=5,sp=$(spUgStag2),sa=$(polksa)-$(saUgStag2)
+//001,l=5,a=5,p=5,sp=-5,sa=$(polksa)-$(saUgStag1)
+//001,l=5,a=5,p=5,sp=0,sa=$(polksa)-$(saUgStag2)
+//*/
+
+//064
+
+
+
+//_POLKAPROFIL
+//размеры от низа
+#LET rasmerALt=rnd($(_ppa))
+
+#IF $(in_size:0)=1 // размеры ниш
+   //023,COD= / /$(RazmerLarg),SL=$(spostsLRaz),SA=60,SP=0,L=$(RazmerLarg),A=10,P=0  // ширина нишы
+   023,COD= / /$(rasmerALt),SL=$l/3,SA=0,SP=0,L=$(rasmerAlt),A=10,P=0,az=90  //Высота нишы
+#ENDIF
+//110,COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=N / /#l-1,SP=0,P=$(lpolk),ax=$(polkUgol),sa=$(polkSa)  //Полка на стяжках ДСП
+
+#LETS _macroFinale=polkProfMacro
+//polkProfMacro
+
+//301

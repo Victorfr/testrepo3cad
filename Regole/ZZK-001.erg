@@ -1,0 +1,50 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=KrukPovor.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 0, 0, 0
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=1,1,1
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+M,lk,,,,,,,,,,,,0
+M,ak,,,,,,,,,,,,0
+M,pk,,,,,,,,,,,,0
+
+[GRAFICA]
+
+
+_DATABOX
+_FLAG_PLASER
+//!NEUTRO codKor
+//!SETCODICE 999$(codKor)
+!SETCODICE X
+#IF $(_primocaricamento)=1
+   #LETV lk=$l
+   #LETV ak=$a
+   #LETV pk=$p
+#ENDIF
+#LET l=$(lk), a=$(ak), p=$(pk)
+#LETS codKor=zzk-001
+#IF $l=450 #LETS codKor=zzk-002
+#IF $l=350 #LETS codKor=zzk-003
+#LETS 3ds=fetr.3ds
+001,COD=999$(codKor) /FPL=N;_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,FACC=100,X4=$(3ds)  //Test

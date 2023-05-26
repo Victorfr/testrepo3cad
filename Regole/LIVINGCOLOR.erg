@@ -1,0 +1,55 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=LIVINGCOLOR.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=VOLUMecol,ADDNAPcol,16,16,16,16,16,16,,16,,,4
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,matvstav,,,Модель декора,$(matvstav:1)==49,,,,,,,,0
+T,cvetvstav,cvetvstav,,Цвет,$(matvstav:5)[$(cvetvstav:3)] & $(matvstav:6)[$(cvetvstav:8)] & $[datecompare;$(dataordine);$(cvetvstav:15)]>=0 & $[datecompare;$(dataordine);$(cvetvstav:16)]=-1,,,,,,2
+C,hideNums,,,Скрыть номера деталей
+T,_patina,,,,##PATINACHECK\n#LET indexloop=0\n#LETS testpatina=$(cvetvstav_Door:17)\n#LETS modelvstav=$(matvstav_Door:5)\n#LETS patinamodel=\n#DO\n   #LET indexloop=$(indexloop)+1\n   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]\n   #IF $[LEN;$(teststr)]>0\n      #IF $[INSTR;$(teststr);$(modelvstav)]>0\n         #LETS patinamodel=$(teststr)\n      #ENDIF\n   #ELSE\n      #BREAK 1\n   #ENDIF\n#LOOP  $(teststr)==\n#IF $[len;$(patinamodel)]>0\n   $[INSTR;$(patinamodel);$(_patina:1)]>0 | $(_patina:1)[999]\n#ELSE\n   #IF ($(matvstav_Door:5)[$(cvetvstav_Door:14)])\n      $(_patina:1)[$(cvetvstav_Door:17)] | $(_patina:1)[999]\n   #ELSE\n      $(_patina:5)=60251733\n   #ENDIF\n#ENDIF,,,,,,,,$[len;$(cvetvstav_door:14)]>0
+T,_factura,,,,$(_factura:7)[FK]
+T,_databox,,,,,,,,,,,,0
+T,WR,,,,,,,,,,,,0
+T,MNP,,,,,,,,,,,,0
+T,TSH,,,,,,,,,,,,0
+T,SHPR,,,,,,,,,,,,0
++,ADDNAPcol,,,макрос ниш,,,,,,,,,0
++,VOLUMEcol,,,,,,,,,,,,0
+
+[GRAFICA]
+_livingcolor
+//addnapcol
+//volumecol
+//ADDNAPLIVING
+//_KOROBLIVING
+//_korpcolor
+//_MERGEBACKWALL
+//_LVCLIMIT
+//600
+//601
+//010
+//602
+//603
+//604
+//605
+//010

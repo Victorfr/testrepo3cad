@@ -23,11 +23,12 @@ TRADFLAGS=*,*,Карниз,*,*
 
 [gene]
 T,MODELLO
-T,_ModDoorRasp,,,,$(_ModDoorRasp:1)[s08],,,,,,,,0
+T,_ModDoorRasp,,,Модель,$(_ModDoorRasp:1)[s08;S26]
 T,matvstav,,,Модель декора,$(matvstav:5)==$(_ModDoorRasp:1),,,,,,,,0
 T,cvetvstav,, ,Цвет,$(matvstav:5)[$(cvetvstav:3)] & $(matvstav:6)[$(cvetvstav:8)],,,,,,2,,$(matvstav:13)
 T,TxtVst,,$(cvetvstav:11)=1,,#IF $(matvstav:5)==s08\n   $(TxtVst:1)=1\n#ELSE\n   $(TxtVst:1)[0;1]\n#ENDIF,,,,,,,,$(matvstav:5)!!s08
-T,_patina,,,,#IF $(cvetvstav:14)=1\n   $(cvetvstav:1)[$(_patina:4)]\n#ELSE\n   $(_patina:5)=60251733\n#ENDIF,,,,,,,,$(cvetvstav:14)=1
+T,_patina,,,,##PATINACHECK\n#LET indexloop=0\n#LETS testpatina=$(cvetvstav:17)\n#LETS modelvstav=$(matvstav:5)\n#LETS patinamodel=\n#DO\n   #LET indexloop=$(indexloop)+1\n   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]\n   #IF $[LEN;$(teststr)]>0\n      #IF $[INSTR;$(teststr);$(modelvstav)]>0\n         #LETS patinamodel=$(teststr)\n      #ENDIF\n   #ELSE\n      #BREAK 1\n   #ENDIF\n#LOOP  $(teststr)==\n#IF $[len;$(patinamodel)]>0\n   $[INSTR;$(patinamodel);$(_patina:1)]>0 | $(_patina:1)[999]\n#ELSE\n   #IF ($(matvstav:5)[$(cvetvstav:14)])\n      $(_patina:1)[$(cvetvstav:17)] | $(_patina:1)[999]\n   #ELSE\n      $(_patina:5)=60251733\n   #ENDIF\n#ENDIF,,,,,,,,$(matvstav:5)[$(cvetvstav:14)]
+T,_factura,,$(_ModDoorRasp:1)[S26],,#IF $(_ModDoorRasp:1)[S26] & $(_patina:5)!60251733\n   $(_ModDoorRasp:1)[$(_factura:6)] & $(_factura:4)!511193732\n#ELSE\n   $(_ModDoorRasp:1)[$(_factura:6)]\n#ENDIF
 M,lantcor,,,Ширина
 M,profSx,,$(latobSx:0),Глубина слева,,,500
 M,profDx,,$(latobDx:0),Глубина справа,,,500
@@ -50,6 +51,11 @@ M,profDx,,$(latobDx:0),Глубина справа,,,500
    #LETS nt=11726799
 #ENDIF
 #LET rot_txt=0
+#LETS IDD=
+#LETS IDO=
+#IF ($(_MODDOORRASP:1)[$(CVETVSTAV:14)] & $(_patina:5)!60251733)
+   #LETS IDO=
+#ENDIF
 #IF $(TxtVst:1)=1 #LET rot_txt=90
 #LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
 #IF ($(matvstav:5)[s08] & $(cvetvstav:11)=1) #LETS col1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|{90-$(rot_txt)}
@@ -58,18 +64,52 @@ M,profDx,,$(latobDx:0),Глубина справа,,,500
 #IF $(latobSx:0)=1 #LETS tmpSxcor=0,-$(profSx:0),0,0
 #IF $(latobDx:0)=1 #LETS tmpDxcor=$l,0,$l,-$(profDx:0)
 !SAGOMA tmp_cor $(tmpSxcor),$(tmpDxcor)
-#LETV _wr=$(_ModDoorRasp:1)COR
-#LETV _MNP=$(_ModDoorRasp:1)COR
-#IF $(cvetvstav:14)=1 & $(_patina:5)!60251733
-   #LETV _wr=$(_ModDoorRasp:1)CORPT
-   #LETV _MNP=$(_ModDoorRasp:1)CORPT
+#IF 0
+   #LETV _wr=$(_ModDoorRasp:1)COR
+   #LETV _MNP=$(_ModDoorRasp:1)COR
+   #IF $(cvetvstav:14)=1 & $(_patina:5)!60251733
+      #LETV _wr=$(_ModDoorRasp:1)CORPT
+      #LETV _MNP=$(_ModDoorRasp:1)CORPT
+   #ENDIF
 #ENDIF
+///////////////////////////////////////
+_dekElemCode,_nameParam=COR,_facturaDek=$(_Factura)
+///////////////////////////////////////
+
 #LETS draw=404879825
 #LET pripSx=0
+#LET flagCorrector=0
+
 #IF $(latobSx:0)=1 #LET pripSx=200
 #IF $(latobDx:0)=1 #LET pripDx=200
-#LET count_cor=int(($(lantcor:0)+$(profSx:0)+$(profDx:0)+$(pripSx)+$(pripDx))/2450)
-#IF $(count_cor)<($(lantcor:0)+$(profSx:0)+$(profDx:0)+$(pripSx)+$(pripDx))/2450 #LET count_cor=$(count_cor)+1
-#FOR $1:$(count_cor)
-   304,COD= / / /#l-1,SP=32,L=75,A=2450,p=100,DIS=cor_adele,X1=$(tmp_cor)  //Карниз
-#ENDFOR
+#LET sumLenght=$(lantcor:0)+$(profSx:0)+$(profDx:0)+$(pripSx)+$(pripDx)
+#LET count_cor=rnd($(sumLenght)/2450)
+#IF  $(sumLenght)>{2450*$(count_cor)} #LET count_cor=$(count_cor)+1
+//#IF $(count_cor)<($(lantcor:0)+$(profSx:0)+$(profDx:0)+$(pripSx)+$(pripDx))/2450 #LET count_cor=$(count_cor)+1
+//#FOR $1:$(count_cor)
+//   304,COD= / / /#l-1,SP=32,L=75,A=2450,p=100,DIS=cor_adele,X1=$(tmp_cor)  //Карниз
+//#ENDFOR
+//!!!!!!!!!!!!!Замена маршрута на патинирование для декора!!!!!!!!!!!
+#IF $(_ModDoorRasp:1)[s08] & $(_patina:5)!60251733
+   #LETS _MNP:3=480680448
+#ENDIF
+
+
+#IF $(_ModDoorRasp:1)[s26]
+   304,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);FPL=N / /#l-1#Q1,SP=32,L=75,A=2450,P=100,DIS=cor_adele,X1=$(tmp_cor)  //Карниз
+   #IF $(count_cor)>1
+      #LET count_cor=$(count_cor)-1
+      #FOR $1:$(count_cor)
+         304,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);FPL=N / /#l-1#Q1,SP=32,L=75,A=2450,P=100,lato=6  //Карниз
+      #ENDFOR
+   #ENDIF
+#ELSE
+   304,COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);IDO=$(IDO);FPL=N / /#l-1#Q1,SP=32,L=75,A=2450,P=100,DIS=cor_adele,X1=$(tmp_cor)  //Карниз
+   #IF $(count_cor)>1
+      #LET count_cor=$(count_cor)-1
+      #FOR $1:$(count_cor)
+         304,LATO=6,COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);IDO=$(IDO);FPL=N / /#l-1#Q1,SP=32,L=75,A=2450,P=100  //Карниз
+      #ENDFOR
+   #ENDIF
+#ENDIF
+//_DEKOR

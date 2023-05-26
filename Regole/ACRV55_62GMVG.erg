@@ -36,13 +36,18 @@ _flag_plaser
 _DATABOX
 #LETS cod_pan=999ACRV55_62GMVG
 #LETS 3ds=Yashik550.3ds
+//#IF $[datecompare;$(dataordine);26.12.2019]>=0
+// #MSG товар не доступен к заказу с 26.12.2019!
+//001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
 
-
+//#ELSE
+//_SHKAF
 001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,FACC=100,X4=$(3ds)  //Test
 
 #IF $(rassh:0)
    001,LATO=6,COD=999AD25VGF /FPL=$(FPL) /Расширитель /#l-1,X4=$(3ds)  //Test
 #ENDIF
+//#ENDIF
 // #FOR $1:2
 // 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
 // #ENDFOR

@@ -37,7 +37,6 @@ _RECLAMATION
 // **********************************************************************************************************
 #LET l=350,a=45,p=2
 
-001,LATO=9,COD=999DFDOV_DX_NOVA /WR=365779181 /Доводчик правой двери Aristo Nova /#l-1  //Tes
-#FOR $1:$(count_st:0)
-   001,LATO=6,COD=999dovodDxNv /FPL=N,L=1,A=1,P=1  //Test
-#ENDFOR
+//001,LATO=9,COD=999DFDOV_DX_NOVA /WR=365779181 /Доводчик правой двери Aristo Nova /#l-1  //Tes
+001,LATO=9,COD= / /Доводчик правой двери Aristo Nova  //Tes
+   001,LATO=6,COD=999dovodDxNv /FPL=N / /#l-1#q$(count_st:0),L=1,A=1,P=1  //Test

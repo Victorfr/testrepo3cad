@@ -43,12 +43,11 @@ _DATABOX
 #ENDIF
 #LETS 3ds=$(.percorso)\3ds\Polka_Setka_S.3DS
 001,COD=$(cod_rip) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Универсальная сетчатая полка для белья /#l-1,C1=2,GL=$(3ds)  //Test
-#FOR $1:2
-   001,LATO=6,COD=$(cod_krep) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект креплений для одной полки /#l-1,L=1,A=1,P=1  //Test
-#ENDFOR
-#FOR $1:8
-   001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=1,A=1,P=1  //Test
-#ENDFOR
+
+001,LATO=6,COD=$(cod_krep) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Комплект креплений для одной полки /#l-1#Q2,L=1,A=1,P=1  //Test
+001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1#Q8,L=1,A=1,P=1  //Test
+
+001,LATO=6,COD=999tascaSil /FPL=$(FPL);_DATABOX=$(_DATABOX) /000 ФПС 086-23КСМ Карман малый для сетчатой полки /#l-1#Q6,L=1,A=1,P=1  //Test
 
 // ****************************************************** размер по высоте ***********************************************************************
 #LETS zone_prov=$(locp_bx3)

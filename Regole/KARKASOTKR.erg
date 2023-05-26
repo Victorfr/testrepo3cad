@@ -25,19 +25,22 @@ TRADFLAGS=
 T,MODELLO
 T,WR,,,,,,,,,,,,0
 T,TSH,,,,,,,,,,,,0
+T,SHPR,,,,,,,,,,,,0
 S,dataordine,,,,  ,,,,,,,,0
 S,PRODUCTLINE,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 T,matGl,,,Материал боковин,$(matGl:1)[16;22],,,,,,,,$(_primocaricamento)=1
 T,matGl,matRip,,Материал полок,$(matRip:1)[16;22],,,,,,,,$(_primocaricamento)=1
 T,mat,mat_bok,,Материал боковин,$(mat_bok:1)==$(matGl:1)
-T,_colkarkas,,,Цвет боковин,$(mat_bok:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1,,,,,,2
+T,_colkarkas,,,Цвет боковин,$(mat_bok:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)],,,,,,2
 T,mat,mat_rip,,Материал полок,$(mat_rip:1)==$(matRip:1)
-T,_colkarkas,_colkarkas_rip,,Цвет полок,$(mat_rip:1)[$(_colkarkas_rip:5)] & $(_colkarkas_rip:1)!!024 & $(_colkarkas_rip:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_rip:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_rip:23)]=-1,,,,,,2
+T,_colkarkas,_colkarkas_rip,,Цвет полок,$(mat_rip:1)[$(_colkarkas_rip:5)] & $(_colkarkas_rip:1)!!024 & $(_colkarkas_rip:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_rip:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_rip:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas_rip:24)],,,,,,2
 +,AGGANGBOX,,0
 T,latoBox
 T,_typRip,,,,$(_typRip:1)!2
+C,hideNums,,,Скрыть номера деталей
 T,in_size,,,,$(in_size:1)=1,,,,,,,,0
+M,sizemsht,,,Масштаб номеров,,,,1,10
 M,RAD1,,$(_typRip:1)=1,R1,,,100,50,250
 M,RAD2,,$(_typRip:1)=2,R3,,,100,80,250
 M,lScos,,$(_typRip:1)=3,A (ширина),,,150,150
@@ -48,4 +51,8 @@ _angbox
 //STRANGBOX
 //AGGANGBOX
 //_SHKAF
+//NUMDET
 //TIPOLOGI
+//108
+//106
+//107

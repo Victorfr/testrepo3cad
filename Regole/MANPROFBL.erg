@@ -1,0 +1,51 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=MANPROFBL.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+T,_manProfAlt,,,Размер ручки-профиль
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+
+[GRAFICA]
+//ручка профиль каре
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#LET l=$(_manProfAlt:3)
+#LET a=30
+#LET p=1
+
+//графика ручки
+001,C1=101,lato=$(show_door)
+
+
+
+
+///цена ручки
+001,LATO=6,COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1,L=$(_manProfAlt:3),A=1,P=1  //Test
+001,LATO=6,COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1,L=$(_manProfAlt:3),A=1,P=1  //Test
+001,LATO=6,COD=999pulsManBl / / /#l+3,L=$(_manProfAlt:3),A=1,P=1  // Test

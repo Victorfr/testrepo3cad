@@ -36,6 +36,11 @@ _DATABOX
 #LETS cod_pan=999kor368x494x175
 #LETS 3ds=Pelly_korzina4.3ds
 
+
+#IF $[datecompare;$(dataordine);28.06.2022]>=0
+   #MSG товар не доступен к заказу с 28.06.2022!
+   001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
+#ELSE
 001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Корзина выдвижная для одежды /#l-1,C1=11,FACC=100,X4=$(3ds)  //Test
 
 #FOR $1:4
@@ -49,3 +54,4 @@ _DATABOX
    023,COD= / /{rnd($(posa))},SL=280,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
 #ENDIF
 // ***********************************************************************************************************************************************
+#ENDIF

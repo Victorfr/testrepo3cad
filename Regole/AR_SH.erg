@@ -26,8 +26,9 @@ T,MODELLO
 S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 M,Prof_sh,,,Длина
-T,katcol
-T,col_system,,,,$(katcol:8)[$(col_system:3)] & $[datecompare;$(dataordine);$(col_system:10)]=-1
+T,katcol,,,,,,,,,,,,0
+T,col_system,,,,$(katcol:8)[$(col_system:3)] & $[datecompare;$(dataordine);$(col_system:10)]=-1,,,,,,,,0
+T,cvetshleg,,,Цвет шлегеля
 
 [GRAFICA]
 !SETCODICE x
@@ -40,7 +41,14 @@ _RECLAMATION
    #LETV Prof_sh=600
 #ENDIF
 #LET l=350,a=45,p=2
+//gluhov
+#LET l=2760,a=45,p=2
+#LETV prof_sh=2760
 #LETV _WR=999DFSH
 
-001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3) /$(_WR:2) /#l-1  //Tes
-029,LATO=6,COD=999SHLEGEL /WR=382205416;CHA=$(col_system:8);FPL=N /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_sh:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/s/$(col_system:8)/n  //Профиль рельс верхний
+//001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3);FPL=N /$(_WR:2) /#l-1  //Tes
+//029,LATO=6,COD=999SHLEGEL /WR=382205416;MNP=425937316;CHA=$(col_system:8) /$(_wr:2),SA=0,SP=0,L=1,A=$(prof_sh:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/s/$(col_system:8)/n  //Профиль рельс верхний
+
+001,LATO=9,COD= / /$(_WR:2)  //Tes
+//029,LATO=6,COD=999SHLEGEL /WR=403912114;MNP=425937316;FPL=N;CHA=$(col_system:8) /$(_wr:2) /#L-1,SA=0,SP=0,L=1,A=$(prof_sh:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(col_system:6)/s/$(col_system:8)/n  //Профиль рельс верхний
+029,LATO=6,COD=999SHLEGEL /WR=403912114;MNP=425937316;FPL=N;CHA=$(cvetshleg:3) /$(_wr:2) /#L-1,SA=0,SP=0,L=1,A=$(prof_sh:0),P=1,DIS=0,X4=$(tipsystem:18)/$(katcol:3)/$(katcol:4)/$(cvetshleg:3)/s/$(cvetshleg:3)/n  //Профиль рельс верхний

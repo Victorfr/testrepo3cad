@@ -1,0 +1,50 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=BELAPOSTCOM.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+T,BOXTYPE
+
+[GRAFICA]
+////наполнение BELAPOST
+!SETCODICE x
+
+_DATABOX
+
+
+#LET l=$[ex;$(BOXTYPE:5);x;1]
+#LET a=$[ex;$(BOXTYPE:5);x;2]
+#LET p=$[ex;$(BOXTYPE:5);x;3]
+
+
+
+
+#LETS nome3ds=$(.percorso)/3ds/mixal/$(boxtype:4)
+
+#LETS nome3ds=$(boxtype:4)
+
+#LETS colorec1=1
+#LETS colorec2=105
+001,COD=$(BOXTYPE:6) /FPL=N /$(BOXTYPE:2) /#L-1,FACC=100,X4=$(nome3ds)  //Test

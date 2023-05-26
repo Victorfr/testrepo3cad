@@ -1,0 +1,66 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=_agg3ds.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO,,,,,,,,,,,,0
+T,_tpscocca,,,,,,,,,,,,0
+T,flagg3ds,,,,,,,,,,,,0
+T,_agg3ds,,,Объект 3d,#IF $(flagg3ds:3)[bag]\n   $(_agg3ds:1)>=01 & $(_agg3ds:1)<02\n#ELSEIF $(flagg3ds:3)[vaz]\n   $(_agg3ds:1)>=02 & $(_agg3ds:1)<03\n#ELSEIF $(flagg3ds:3)[van]\n   $(_agg3ds:1)>=03 & $(_agg3ds:1)<04\n#ELSEIF $(flagg3ds:3)[dek]\n   $(_agg3ds:1)>=04 & $(_agg3ds:1)<05\n#ELSEIF $(flagg3ds:3)[div]\n   $(_agg3ds:1)>=05 & $(_agg3ds:1)<06\n#ELSEIF $(flagg3ds:3)[kom]\n   $(_agg3ds:1)>=06 & $(_agg3ds:1)<07\n#ELSEIF $(flagg3ds:3)[kro]\n   $(_agg3ds:1)>=07 & $(_agg3ds:1)<08\n#ELSEIF $(flagg3ds:3)[osv]\n   $(_agg3ds:1)>=08 & $(_agg3ds:1)<09\n#ELSEIF $(flagg3ds:3)[ras]\n   $(_agg3ds:1)>=09 & $(_agg3ds:1)<10\n#ELSEIF $(flagg3ds:3)[sto]\n   $(_agg3ds:1)>=10 & $(_agg3ds:1)<11\n#ELSEIF $(flagg3ds:3)[stu]\n   $(_agg3ds:1)>=11 & $(_agg3ds:1)<12\n#ELSEIF $(flagg3ds:3)[lud]\n   $(_agg3ds:1)>=12 & $(_agg3ds:1)<13\n#ELSEIF $(flagg3ds:3)[veg]\n   $(_agg3ds:1)>=13\n#ELSE\n   $(_agg3ds)\n#ENDIF
+C,_razmer3ds,,,Показать размер
+
+[GRAFICA]
+!SETCODICE
+#IF $(_PRIMOCARICAMENTO)=1
+   #LET l=INT($(_agg3ds:5))
+   #LET a=INT($(_agg3ds:6))
+   #LET p=INT($(_agg3ds:7))
+   #LET size_agg3ds$(_idunico)=$l
+   #LETS type_agg3ds$(_idunico)=$(_agg3ds:1)
+   #LET flsize$(_idunico)=$(size_agg3ds$(_idunico))
+#ENDIF
+
+#IF $(type_agg3ds$(_idunico))!!$(_agg3ds:1)
+   #LET l=INT($(_agg3ds:5))
+   #LET a=INT($(_agg3ds:6))
+   #LET p=INT($(_agg3ds:7))
+   #LET size_agg3ds$(_idunico)=$l
+   #LETS type_agg3ds$(_idunico)=$(_agg3ds:1)
+   #LET flsize$(_idunico)=$(size_agg3ds$(_idunico))
+#ENDIF
+
+#IF $(size_agg3ds$(_idunico))!$(flsize$(_idunico))
+   #LET kf=rn3($(size_agg3ds$(_idunico))/$l)
+   #LET l=rnd($l*$(kf))
+   #LET a=rnd($a*$(kf))
+   #LET p=rnd($p*$(kf))
+   #LET flsize$(_idunico)=$(size_agg3ds$(_idunico))
+#ELSE
+   #LET size_agg3ds$(_idunico)=$l
+#ENDIF
+
+210,SL=$l,SA=$a+50,SP=$p/2,L=$(size_agg3ds$(_idunico)), A=1, X1=5, X3=Масштаб;size_agg3ds$(_idunico);0,  X4=1,  X5=12
+
+#IF $(_razmer3ds:0)=1
+   997,COD= / /$l,SA=$a+50,SP=50,L=$l,A=0,P=0,X1=2
+#ENDIF
+.3ds,x7=$(_agg3ds:8)/$(_agg3ds:9)/$(_agg3ds:10)/$(_agg3ds:11)/$(_agg3ds:12),x8=$(_agg3ds:3)
