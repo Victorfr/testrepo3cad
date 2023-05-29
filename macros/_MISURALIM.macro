@@ -1,6 +1,7 @@
 !parametri flagKol=0
 #LET flag_door=1
 #LETV flagCorrector=0
+#MSG $(_ModDoorRasp:1)
 #IF $(_ModDoorRasp:1)==s02 // ограничения по модели Mix 22
    #IF $(_TipDoorRasp:3)==S
       #IF ($A>=297 & $A<=716) & ($L>=296 & $L<=1196)
@@ -113,7 +114,7 @@
       #ENDIF
       ///
    #ELSE
-      #LET maxACor=3000//2500
+      #LET maxACor=2500
       #LET maxlCor=596
       ///ограничения изменились с 20.01.2021
       #IF $[datecompare;$(dataordine);20.01.2021]>=0 & $(_MODDOORRASP:1)[s26]
@@ -121,20 +122,6 @@
             #LET maxLCor=600
          #ELSE
             #LET maxLcor=900
-         #ENDIF
-      #ENDIF
-      #IF $(_ModDoorRasp:1)[s26]
-         #IF $a>2500
-            #LET maxLcor=800
-         #ENDIF
-         #IF $a>2600
-            #LET maxLcor=700
-         #ENDIF
-         #IF $a>2700
-            #LET maxLcor=600
-         #ENDIF
-         #IF $a>2800
-            #LET maxLcor=400
          #ENDIF
       #ENDIF
       //_shkaf
