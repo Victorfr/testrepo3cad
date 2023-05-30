@@ -2,7 +2,7 @@
 [info]
 Versione = 100
 TIPO=000
-DESCRIZIONE=EVRIKFUR.erg
+DESCRIZIONE=SHDER.erg
 COMMENTI=
 CODICE=
 POSMODE=0
@@ -23,9 +23,10 @@ TRADFLAGS=*,*,*,*,*
 
 [gene]
 T,MODELLO
-T,_databox,,,,,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
-M,count_st,,,Количество,,,,1
+T,_databox
+T,shdercol,,,Цвет
+M,count_sh,,,Количество,,,,1
 
 [GRAFICA]
 !SETCODICE x
@@ -34,17 +35,11 @@ _DATABOX
 // ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
 _RECLAMATION
 // **********************************************************************************************************
-#LET l=350,a=45,p=2
+#LET l=450,a=45,p=2
+#LETV _WR=999dfuggk
+001,LATO=9,COD= /WR=$(_WR:3);FPL=N /Крепление к полке для штанг $(shdercol:2) /#l-1  //Tes
+001,LATO=6,COD=999$(shdercol:4) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Крепление к полке для штанг $(shdercol:2) /#l-1#Q$(count_sh:0),C1=2,DIS=$(cir)  //Test  999SHTANGderg
 
-//_ADDNAVES
-
-//#LETS navCodL=$[ex;$(navesLiving:4);|;1]
-//#LETS navCodR=$[ex;$(navesLiving:4);|;2]
-//#LETS navZagL=$[ex;$(navesColor:4);|;1]
-//#LETS navZagR=$[ex;$(navesColor:4);|;2]
-//#LETS navShina=$(navesLiving:7)
-
-001,LATO=9,COD=999EVRIK /FPL=N /HETTICH 1005119 Евровинт 7x50 под шестигранник цинк /#l-1  //Tes
-//001,LATO=9,COD=999EVRIK /WR=417701157;FPL=N /HETTICH 1005119 Евровинт 7x50 под шестигранник цинк /#l-1  //Tes
-
-001,LATO=6,COD=999evrik / / /#Q$(count_st:0)  // Test
+//001,LATO=6,COD=999dub_driva / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+//001,LATO=6,COD=999sh3_5x30 / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+//001,LATO=6,COD=999SH4X16POT / / /#q$(count_ug:0),L=1,A=1,P=1  //Test

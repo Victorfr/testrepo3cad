@@ -150,8 +150,8 @@ _getDekoreName
 #IF $(_MODDOORRASP:1)[s27]
    #LETS 3ds=iceG.3ds
    #LETS draw=404879828 //0016_001
-   #LETS IDO=1_2
-   #IF $(petlObr:0)!1 #LETS IDO=2
+   #LETS IDO=1
+   #IF $(petlObr:0)!1 #LETS IDO=
 #ENDIF
 #IF $(_MODDOORRASP:1)[s01] //Jazz
    #LETS draw=464423351//0017_001

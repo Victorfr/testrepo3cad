@@ -34,12 +34,16 @@ T,_doorPolog,,,,$(_doorPolog:1)=3,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 T,_dataNewMet,,,,,,,,,,,,0
+C,shMantera,,,Модуль для Mantera,,,,,,,8
 T,WR,,,,,,,,,,,,0
 T,_TipDoorRasp,_TipDoorRaspFas,$(_ModDoorRasp:3)!0,,$(_TipDoorRaspFas:3)[G]
 M,altMetBox,,$(FPL)!!N,Высота модуля,#IF $(FPL)==N\n   #LETV altMetbox=$a\n#ENDIF
-T,mat,,,Материал модуля,$(mat:3)=1 & $(mat:1)!25
-T,_colkarkas,,,Цвет модуля,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]
+T,mat,,,Материал модуля,#IF $(shMantera:1)=0\n   $(mat:3)=1 & $(mat:1)!25\n#ELSE\n   $(mat:1)[16;18]\n#ENDIF
+T,_colkarkas,,,Цвет модуля,#IF $(shMantera:1)=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n#ELSE\n   #IF $(mat:1)[16]\n      $(_colkarkas:1)[133]\n   #ELSE\n      $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n   #ENDIF\n#ENDIF
 Z,rip_sot,,,Полка снизу,,,,,,,,,0
+C,changeMat,,0,Обклад18мм
+T,mat,mat_krdn,$(changeMat:1)=1,Материал модуля,$(mat_krdn:1)[18]
+T,_colkarkas,_colkarkas_krdn,$(changeMat:1)=1,Цвет модуля,$(mat_krdn:1)[$(_colkarkas_krdn:5)] & $(_colkarkas_krdn:1)!!024 & $(_colkarkas_krdn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_krdn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_krdn:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas_krdn:24)]
 T,falsh_sx,,,Фальш-фасад слева,,,,,,,7
 T,falsh_pol_sx,,$(falsh_sx:1)=1,Положение
 M,largFalshL,,$(falsh_pol_sx:1)=0 & $(falsh_Sx:1)=1,Ширина фальшфасада L,,,,70,250
@@ -57,11 +61,11 @@ T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
 
 [GRAFICA]
 //037
-//010
 //303
 //_SHKAF
 //_KORPVID
 //_FASVID
+//test
 //_KARKASFAS
 #LET ssposta=0
 #LETV _krepeg=1
@@ -118,14 +122,14 @@ T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
 //001,COD=test /ERROR=1; / /#L+1  //,C1=15,C2=5,FACC=0  //Дверь распашная G (301 было)
 //100  // Планка ЛВ
 #LETV _krepeg=1
+//300
 //301
-
-#MSG Привет из 3када!!
 //_SHKAF
 //010
+
 //_FASVID
 //_KARKASFAS
-//011
+//014
 //_PROVPLACNAPOL
 //_DRAWKOLONKA
 //013
@@ -171,7 +175,7 @@ _provObr
 //конструктив не переносить в макрос, потому что не работают метки!!!
 //017
 //_FASVID
-//301
+//300
 //_OLD_PLACE
 
 //_SHKAF
@@ -275,14 +279,13 @@ _proverkaPlacer ///зоны пересечения с петлями
    #LETV p=300
    #MSG глубина модуля не может быть меньше 300 мм!
 #ENDIF
-#LET minLnap=300//400
 #IF $(lOld)!$L
    //#MSG change L
    #LETV lOld=$L
    #LET lprov=$l-($(lOtst)+$(pOtst))
-   #IF $(lprov)<$(minLnap)
-      #MSG Ширина наполнения не может быть меньше $(minLnap)мм!
-      #LET l=$(minLnap)+$(lotst)+$(potst)
+   #IF $(lprov)<400
+      #MSG Ширина наполнения не может быть меньше 400мм!
+      #LET l=400+$(lotst)+$(potst)
    #ENDIF
    #IF $(lprov)>1200
       #MSG Ширина модуля не может быть больше 1200мм!
@@ -313,6 +316,16 @@ _proverkaPlacer ///зоны пересечения с петлями
    #LET _PLACERRIVPADRE=1 // принудительный пересчет родителя при изменении потомка
 #ENDIF
 ///********************************************************************************************
+
+
+
+#IF $(shMantera:1)=1
+   
+   //_bokPlanMod,P=$(p),sl=-$(mat_krdn:1),sp=-$P,mat=$(mat_krdn),_colkarkas=$(_COLKARKAS_krdn)
+   
+#ENDIF
+
+
 ///конструктив коробки
 # RASCHETL //raschetL
 # RASCHETR //пересчет
@@ -337,6 +350,11 @@ _proverkaPlacer ///зоны пересечения с петлями
    #LET lbokSa=$(mat:1)
    #LET pbokSa=$(mat:1)
    #LET dnoProf=$p+$(profAdd)
+#ENDIF
+
+#IF $(changeMat:1)=1
+   #LET lbokSa=$(lbokSa)+($(mat_krdn:1)-$(mat:1))
+   #LET pbokSa=$(pbokSa)+($(mat_krdn:1)-$(mat:1))
 #ENDIF
 //_MISURALIM\
 //_PARAMANTASTR
@@ -380,12 +398,22 @@ _proverkaPlacer ///зоны пересечения с петлями
             #ENDIF
          #ENDIF
       #ENDIF
-      014,SL=$(sl_per),SA=$(mat:1),A=$A-$(mat:1)*2,P=$(pBok),X6=$(sk)/$(wk)/$(nk)/$(ek)/0  //Перегородка
-      _AGG_KREP_mod,p=$(pBok),multiCount=2
+      #LET saPer=$(mat:1)
+      #LET altPer=$A-$(mat:1)*2
+      #IF $(changeMat:1)
+         #LET saPer=$(mat_krdn:1)
+         #LET altPer=$A-$(mat_krdn:1)*2
+      #ENDIF
+      014,SL=$(sl_per),SA=$(saPer),A=$(altPer),P=$(pBok),X6=$(sk)/$(wk)/$(nk)/$(ek)/0  //Перегородка
+      _AGG_KREP_mod,p=$(p),multiCount=2
+      
       // ************************************************************************
       // ******************* Фасад ************************************
       //_DOORRASP
       #LET a_falsh_fasad=$a-$(sa_falsh_fasad)*2-$(mat:1)-$(lbokSA),sp_falsh_fasad=$(p)
+      #IF $(changeMat:1)=1
+         #LET a_falsh_fasad=$a-$(sa_falsh_fasad)*2-$(mat_krdn:1)-$(lbokSA)
+      #ENDIF
       #IF $(_tipFasMat)=1
          _FASVID,SL=$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(lBokSa),SP=$(pBok),L=$(largFalshL:0),A=$(a_falsh_fasad),MAN=0,p=$(_MODDOORRASP:5)),_COLKARKAS=$(_COLKARKASFAS),show_num=6,_man=0,detMod=1,petlObr=0,gjpCountLine=$(gjpCountLineL),_gjp=$(_gjpL),\
          _TipDoorRasp=$(_TipDoorRaspFas),_manIntX=,_manIntY=
@@ -418,6 +446,9 @@ _proverkaPlacer ///зоны пересечения с петлями
       // ******************* Фасад ************************************
       #LET sa_falsh_fasad=0
       #LET a_falsh_fasad=$a-$(mat:1),sp_falsh_fasad=$(p)
+      #IF $(changeMat:1)=1
+         #LET a_falsh_fasad=$a-$(mat_krdn:1)
+      #ENDIF
       #LETV _wr=999v_karkasBokmod
       #LETV _MNP=999v_karkasBokmod
       #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
@@ -468,15 +499,25 @@ _proverkaPlacer ///зоны пересечения с петлями
             
          #ENDIF
       #ENDIF
-      014,SL=$(sl_per),SA=$(mat:1),A=$A-$(mat:1)*2,P=$(pBok),X6=$(sk)/$(wk)/$(nk)/$(ek)/0  //Перегородка
-      _AGG_KREP_mod,p=$(pBok),multiCount=2
+      #LET saPer=$(mat:1)
+      #LET altPer=$A-$(mat:1)*2
+      #IF $(changeMat:1)
+         #LET saPer=$(mat_krdn:1)
+         #LET altPer=$A-$(mat_krdn:1)*2
+      #ENDIF
+      014,SL=$(sl_per),SA=$(saPer),A=$(altPer),P=$(pBok),X6=$(sk)/$(wk)/$(nk)/$(ek)/0  //Перегородка
+      _AGG_KREP_mod,p=$(p),multiCount=2
+      
       // ************************************************************************
       // ******************* Фасад ************************************
       //_FASVID
       #LET a_falsh_fasad=$a-$(sa_falsh_fasad)*2-$(mat:1)-$(pBokSa),sp_falsh_fasad=$(pBok)
+      #IF $(changeMat:1)=1
+         #LET a_falsh_fasad=$a-$(sa_falsh_fasad)*2-$(mat_krdn:1)-$(lbokSA)
+      #ENDIF
       #IF $(_tipFasMat)=1
-         _FASVID,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,p=$(_MODDOORRASP:5)),_COLKARKAS=$(_COLKARKASFAS),show_num=6,_man=0,detMod=1,gjpCountLine=$(gjpCountLineR),_gjp=$(_gjpR),\
-         _TipDoorRasp=$(_TipDoorRaspFas),_manIntX=,_manIntY=
+         _FASVID,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,p=$(_MODDOORRASP:5)),_COLKARKAS=$(_COLKARKASFAS),show_num=6,_man=0,detMod=1,gjpCountLine=$(gjpCountLineR),_gjp=$(_gjpR),_TipDoorRasp=$(_TipDoorRaspFas)\
+         ,_manIntX=,_manIntY=
       #ELSE
          _karkasfas,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,_COLKARKAS=$(_col_fasVD),mat=$(mat_fasVD),petlObr=0,detMod=1,_man=0
       #ENDIF
@@ -504,6 +545,9 @@ _proverkaPlacer ///зоны пересечения с петлями
       // ******************* планка сбоку ************************************
       #LET sa_falsh_fasad=0
       #LET a_falsh_fasad=$a-$(mat:1),sp_falsh_fasad=$(p)
+      #IF $(changeMat:1)=1
+         #LET a_falsh_fasad=$a-$(mat_krdn:1)
+      #ENDIF
       #LETV _wr=999v_karkasBokmod
       #LETV _MNP=999v_karkasBokmod
       #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
@@ -664,24 +708,40 @@ _proverkaPlacer ///зоны пересечения с петлями
    #LETV _MNP=999v_karkasBokmod
    //#LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=378917905
    #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+   #LET altBokl=$a-$(mat:0)-$(lbokSA)
+   #LET altBokR=$a-$(mat:0)-$(pbokSA)
+   #IF $(changeMat:1)=1
+      
+      #LET altBokl=$a-$(mat_krdn:0)-$(lbokSA)
+      #LET altBokR=$a-$(mat_krdn:0)-$(pbokSA)
+      
+   #ENDIF
+   010,sl=$(lbokSl),p=$(pBok),a=$(altBokl),sa=$(lbokSa)
+   011,sl=$(pbokSl),p=$(pBok),a=$(altBokR),sa=$(pbokSa)
+   #IF $(changeMat:1)=1
+      _krMod,mat=$(mat_krdn),_colkarkas=$(_COLKARKAS_krdn)
+      _dnMod,mat=$(mat_krdn),_colkarkas=$(_COLKARKAS_krdn)
+   #ELSE
+      _krMod
+      _dnMod
+   #ENDIF
    
-   010,sl=$(lbokSl),p=$(pBok),a=$a-$(mat:0)-$(lbokSA),sa=$(lbokSa)
-   011,sl=$(pbokSl),p=$(pBok),a=$a-$(mat:0)-$(pbokSa),sa=$(pbokSa)
    
-   #LETV _wr=999k_karkasKrmod
-   #LETV _MNP=999k_karkasKrmod
-   #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
-   013,sa=$a-$(mat:0),p=$p+$(profAdd),sl=0,l=$L
-   _AGG_KREP_mod,p=$(p),multiCount=2
-   
-   #LETV _wr=999k_karkasDnmod
-   #LETV _MNP=999k_karkasDnmod
-   //#LETS sk=$(_colkarkas:10),wk=378917905,nk=$(_colkarkas:10),ek=378917905
-   #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
-   
-   012,sl=$(mat:0),p=$(dnoProf),l=$(dnoLarg),sl=$(dnoSl)
-   //_agg_krep_mod,p=$(p),detMod=1
-   _AGG_KREP_mod,p=$(p),multiCount=2
+   #IF 0
+      #LETV _wr=999k_karkasKrmod
+      #LETV _MNP=999k_karkasKrmod
+      #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+      013,sa=$a-$(mat:0),p=$p+$(profAdd),sl=0,l=$L
+      _AGG_KREP_mod,p=$(p),multiCount=2
+      
+      #LETV _wr=999k_karkasDnmod
+      #LETV _MNP=999k_karkasDnmod
+      //#LETS sk=$(_colkarkas:10),wk=378917905,nk=$(_colkarkas:10),ek=378917905
+      #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
+      
+      012,sl=$(mat:0),p=$(dnoProf),l=$(dnoLarg),sl=$(dnoSl)
+      _AGG_KREP_mod,p=$(p),multiCount=2
+   #ENDIF
    
    //109
    
@@ -756,10 +816,18 @@ _proverkaPlacer ///зоны пересечения с петлями
    #LETV _krepeg=2
    #IF $(rip_sot:1)=1
       #LET sposta_macro=$(mat:1)
+      #IF $(changeMat:1)=1
+         #LET sposta_macro=$(mat_krdn:1)
+      #ENDIF
    #ELSE
       #LET sposta_macro=0
    #ENDIF
-   _vidModulNK,sa=$(sposta_macro),a={$a-($(deltaManA))-$(mat:1)}-$(sposta_macro),sp=0,l=$L-{$(Lotst)+$(potst)},sl=$(lotst),lshkaf=$(l),NAVESLIVING=0,_tipFasMat=$(_tipFasMat:1),p=$(pBok)
+   #LET altNapol={$a-($(deltaManA))-$(mat:1)}-$(sposta_macro)
+   #IF $(changeMat:1)=1
+      #LET altNapol={$a-($(deltaManA))-$(mat_krdn:1)}-$(sposta_macro)
+      
+   #ENDIF
+   _vidModulNK,sa=$(sposta_macro),a=$(altNapol),sp=0,l=$L-{$(Lotst)+$(potst)},sl=$(lotst),lshkaf=$(l),NAVESLIVING=0,_tipFasMat=$(_tipFasMat:1),p=$(pBok)
    #LETV _krepeg=$(oldKrep)
 #ENDIF
 //_KORPVID
@@ -780,30 +848,28 @@ _upakovka_modul
 //продублировал макрос
 
 #IF $(_MODDOORRASP:1)[s01;s08;s26]
-   #IF 0
+   #IF $(naborkras)!!X
       
-      #IF $(naborkras)!!X
-         
-         //001,LATO=6,COD=999NABREMKRAS /OCF=$(naborkras) /Комплект для ремонта крашеных фасадов /#L-1,L=1,A=1,P=1  //Test
-         #LETV _WR=999remfas
-         #LETV _MNP=999remfas
-         //псевдотовар для маршрута и типа товара
-         001,LATO=6,COD=999remfas /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(naborkras);FPL=$(FPL) /$(_wr:2) /#L-1,L=1,A=1,P=1  //Test
-         //товар в мр3
-         001,LATO=6,COD=999kompremfas /CFK=$(naborkras),L=1,A=1,P=1  //Test
-         001,LATO=6,COD=999gofrYashF,L=1,A=1,P=1  //Test
-         
-      #ENDIF
-      #IF $(naborpat)!!X
-         #LETV _WR=999remfaspat
-         #LETV _MNP=999remfaspat
-         //псевдотовар для маршрута и типа товара
-         001,LATO=6,COD=999remfaspat /MNP=$(_MNP:3);WR=$(_wr:3);PTN=$(naborpat);FPL=$(FPL) /$(_wr:2) /#L-1,L=1,A=1,P=1  //Test
-         001,LATO=6,COD=999komprempat /PTN=$(naborpat),L=1,A=1,P=1  //Test
-         001,LATO=6,COD=999gofrYashF,L=1,A=1,P=1  //Test
-         
-      #ENDIF
+      //001,LATO=6,COD=999NABREMKRAS /OCF=$(naborkras) /Комплект для ремонта крашеных фасадов /#L-1,L=1,A=1,P=1  //Test
+      #LETV _WR=999remfas
+      #LETV _MNP=999remfas
+      //псевдотовар для маршрута и типа товара
+      001,LATO=6,COD=999remfas /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(naborkras);FPL=$(FPL) /$(_wr:2) /#L-1,L=1,A=1,P=1  //Test
+      //товар в мр3
+      001,LATO=6,COD=999kompremfas /CFK=$(naborkras),L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999gofrYashF,L=1,A=1,P=1  //Test
+      
    #ENDIF
+   #IF $(naborpat)!!X
+      #LETV _WR=999remfaspat
+      #LETV _MNP=999remfaspat
+      //псевдотовар для маршрута и типа товара
+      001,LATO=6,COD=999remfaspat /MNP=$(_MNP:3);WR=$(_wr:3);PTN=$(naborpat);FPL=$(FPL) /$(_wr:2) /#L-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999komprempat /PTN=$(naborpat),L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999gofrYashF,L=1,A=1,P=1  //Test
+      
+   #ENDIF
+   
 #ENDIF
 
 

@@ -1,7 +1,8 @@
 !parametri flagKol=0
 #LET flag_door=1
-#LETV flagCorrector=0
+#LETV flagCorrector=0 
 #MSG $(_ModDoorRasp:1)
+#MSG $(_ModDoorRasp:2)
 #IF $(_ModDoorRasp:1)==s02 // ограничения по модели Mix 22
    #IF $(_TipDoorRasp:3)==S
       #IF ($A>=297 & $A<=716) & ($L>=296 & $L<=1196)

@@ -102,22 +102,17 @@ C,plvert,,,Вертикальная планка
 ///добавить добавление глянц. мат. к коду для модели Classic эмаль
 #IF $(_ModDoorRasp:1)[S26]
    #IF $(_factura:1)[1]//глянц
-      #LETS codWR=$(codWR)GL
-      #LETS codMNP=$(codMNP)GL
+      //#LETS codWR=$(codWR)GL
+      //#LETS codMNP=$(codMNP)GL
+   #ELSE
+      //#LETS codWR=$(codWR)MT
+      //#LETS codMNP=$(codMNP)MT
    #ENDIF
-   #IF $(_factura:1)[2]
-      #LETS codWR=$(codWR)MT
-      #LETS codMNP=$(codMNP)MT
-   #ENDIF
-   #IF $(_factura:1)[3]
-      #LETS codWR=$(codWR)ST
-      #LETS codMNP=$(codMNP)ST
-   #ENDIF
-
+   #LETS codWR=$(codWR)$(_factura:7)
+   #LETS codMNP=$(codMNP)$(_factura:7)
    #IF $p<=100
       #LETS codMNP=$(_ModDoorRasp:1)COR$(_factura:7)
    #ENDIF
-
 #ENDIF
 #LETV petlObr=0
 #LET IDD=0
@@ -159,6 +154,6 @@ _getDekoreName
    #IF $(plvert:0)=1
       303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);IDO=$(IDO);FPL=N /$(namedet) /#l-1,SL=$l,L=$p,P=$l,AZ=90,AY=-90,AX=-90,MAN=0  //Боковина фасадная
    #ELSE
-      303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CPL=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);IDO=$(IDO);FPL=N /$(namedet) /#l-1,L=$p,A=$l,P=$a,AZ=90,AY=-90,MAN=0  //Боковина фасадная
+      303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CPL=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);IDO=$(IDO);FPL=N) /$(namedet) /#l-1,L=$p,A=$l,P=$a,AZ=90,AY=-90,MAN=0  //Боковина фасадная
    #ENDIF
 #ENDIF

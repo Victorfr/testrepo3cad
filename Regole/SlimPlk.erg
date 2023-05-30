@@ -54,6 +54,6 @@ _RECLAMATION
 001,LATO=9,COD= / /Комплект полкодержателей верх д. ящика и ст. полки, цвет алюминийв  //Test
 #LETV _wr=ST1DOPFUR
 
-001,LATO=6,COD=ST1DOPFURPV$(colsysSt:5) /WR=$(_wr:3);FPL=N /Комплект полкодержателей верх д. ящика и ст. полки $(colsysSt:2) /#l-1,L=1,A=1,P=1  //Test
+001,LATO=6,COD=ST1DOPFURPV$(colsysSt:5) /WR=$(_wr:3);FPL=N /Комплект полкодержателей верх д. ящика и ст. полки /#l-1,L=1,A=1,P=1  //Test
 
 001,LATO=6,COD=$(dergVCod),L=1,A=1,P=1  //Test

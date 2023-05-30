@@ -23,7 +23,6 @@ TRADFLAGS=*,*,*,*,*
 
 [gene]
 T,MODELLO
-S,flagcorrector,,,,,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 T,MNP,,,,,,,,,,,,0
@@ -52,8 +51,6 @@ T,_man_orient,,$(_man:7)[skoba]
 T,tipshkaf,,,,$(tipshkaf:1)=8,,,,,,,,0
 
 [GRAFICA]
-#LETS FPL=n
-#LET show_door=0
 _zerkalo
 //305
 //040
