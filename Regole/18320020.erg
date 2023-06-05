@@ -1,0 +1,61 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=18320020.erg
+COMMENTI=
+CODICE=
+POSMODE=20
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 455, 115, 350
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=124
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+C,krepDx,,,Крепление справа
+S,dataordine,,,,,,,,,,,,0
+T,_databox,,,,,,,,,,,,0
+
+[GRAFICA]
+
+!SETCODICE x
+// *****************************параметр определяющий что элемент является плейсером****************
+_flag_plaser
+//***************************************************************************************************
+_DATABOX
+#LETS cod_pan=99918320020
+#LETS 3ds=18320020.3ds
+
+//#IF $[datecompare;$(dataordine);28.07.2020]>=0
+// #MSG товар не доступен к заказу с 28.07.2020!
+//  001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
+//#ELSE
+#IF $(krepDx)
+   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$L-455,L=455,C1=2,FACC=100,X4=$(3ds)  //Test
+#ELSE
+   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=455,SP=$P,L=455,AY=180,C1=2,FACC=100,X4=$(3ds)  //Test
+#ENDIF
+// #FOR $1:2
+// 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
+// #ENDFOR
+
+// ****************************************************** размер по высоте ***********************************************************************
+#LETS zone_prov=$(locp_bx3)
+#IF $[estrai;$(locp_bx3);|;5]=1
+   //023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+   023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+#ENDIF
+// ***********************************************************************************************************************************************
+//#ENDIF
+//_OLD_PLACE
