@@ -29,8 +29,7 @@ T,mat,,,,$(mat:1)=25
 T,_colkarkas,,,,#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n#ELSE\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1\n#ENDIF
 C,ugolPolk,,,Под углом
 T,in_size,,$(FPL)!!N,Размеры
-T,in_size,,$(FPL)!!N,Размеры
-S,polkprofSizeMx,,,Общий размер полок
+S,polkprofSizeMx,,,Общий размер полок,,,,,,,,,0
 
 [GRAFICA]
 
@@ -65,7 +64,7 @@ _flag_plaser
 #ENDIF
 
 
-//064
+
 #LET a=$(mat:1)
 #LET ndet=
 ////описание ограничений размеров
@@ -127,7 +126,6 @@ _flag_plaser
 
 
 
-
 ///полки с профилем ШК MIXAL
 #IF $(flag_ust)=1
    ///перенес в макрофинале
@@ -167,7 +165,7 @@ _flag_plaser
 
 
 
-
+//_POLKAPROFIL
 //размеры от низа
 #LET rasmerALt=rnd($(_ppa))
 

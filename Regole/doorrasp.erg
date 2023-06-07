@@ -23,32 +23,33 @@ TRADFLAGS=*,*,*,*,*
 
 [gene]
 T,MODELLO
-S,flagcorrector,,,,,,,,,,,,0
 S,correctorcheck,,,,,,,,,,,,0
 S,correctorType,,,,,,,,,,,,0
+S,flagcorrector,,,,,,,,,,,,0
 S,correctorCount,,,,,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 T,MNP,,,,,,,,,,,,0
 T,WR,,,,,,,,,,,,0
-T,_ModDoorRasp,,,,##DOORRASP\n#VB\n   v("addednumber")=Ambiente.tnumero\n#ENDVB\n#VB\n   set g=Ambiente.GetObject("GLOBAL")\n   V("PercorsoOrdini")=g.PercorsoOrdini\n#ENDVB\n#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml\n#LETS filetest=$[dir;$(strPathname)]\n#IF $(filetest)[1]\n   #VB\n      Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")\n      xmlDoc.load (V("strpathname"))\n      strSearch = "ProjectMetadata"\n      Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)\n      for each node in currNode\n         strLine="PRODUCT_LINE"\n         Dim PRODUCT_LINE: set PRODUCT_LINE=node.getElementsByTagName(strLine)\n         for each el in PRODUCT_LINE\n            V("PRODUCTLINE")=el.text\n         next\n      next\n   #ENDVB\n   #LETS PRODUCTLINE=$(PRODUCTLINE)\n#ELSE\n   #LETS PRODUCTLINE=MARIA_SHKAF\n#ENDIF\n#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   #IF $(.username)==v-gluhov | $(.username)==nata.mavrina | $(.username)==l-volina | $(.username)==l.krasnova | $(.username)==MANAG1\n      ($(PRODUCTLINE:0)[$(_ModDoorRasp:8)] & $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1 & $(_ModDoorRasp:7)!!ZERK) | $(_ModDoorRasp:1)[S27]\n   #ELSEIF $(.username)==M-SHULKO | $(.username)==m-varenik  | $(.username)==MA.KAPKANETS | $(.username)==YULIA | $(.username)==USER | $(.username)==vya-steshin | $(.username)==e-udalova\n      ($(PRODUCTLINE:0)[$(_ModDoorRasp:8)] & $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1 & $(_ModDoorRasp:7)!!ZERK) | $(_ModDoorRasp:1)[S28;S29]\n   #ELSE\n      $(PRODUCTLINE:0)[$(_ModDoorRasp:8)] & $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1 & $(_ModDoorRasp:7)!!ZERK\n   #ENDIF\n#ELSE\n   $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1\n#ENDIF
+T,_ModDoorRasp,,,,##DOORRASP\n#VB\n   v("addednumber")=Ambiente.tnumero\n#ENDVB\n#VB\n   set g=Ambiente.GetObject("GLOBAL")\n   V("PercorsoOrdini")=g.PercorsoOrdini\n#ENDVB\n#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml\n#LETS filetest=$[dir;$(strPathname)]\n#IF $(filetest)[1]\n   #VB\n      Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")\n      xmlDoc.load (V("strpathname"))\n      strSearch = "ProjectMetadata"\n      Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)\n      for each node in currNode\n         strLine="PRODUCT_LINE"\n         Dim PRODUCT_LINE: set PRODUCT_LINE=node.getElementsByTagName(strLine)\n         for each el in PRODUCT_LINE\n            V("PRODUCTLINE")=el.text\n         next\n      next\n   #ENDVB\n   #LETS PRODUCTLINE=$(PRODUCTLINE)\n#ELSE\n   #LETS PRODUCTLINE=MARIA_SHKAF\n#ENDIF\n#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   #IF $(.username)==v-gluhov | $(.username)==nata.mavrina | $(.username)==l-volina | $(.username)==l.krasnova | $(.username)==MANAG1 | $(.username)==ADMIN\n      ($(PRODUCTLINE:0)[$(_ModDoorRasp:8)] & $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1 & $(_ModDoorRasp:7)!!ZERK) | $(_ModDoorRasp:1)[S27]\n   #ELSEIF $(.username)==M-SHULKO | $(.username)==m-varenik  | $(.username)==MA.KAPKANETS | $(.username)==YULIA | $(.username)==USER | $(.username)==vya-steshin | $(.username)==e-udalova\n      ($(PRODUCTLINE:0)[$(_ModDoorRasp:8)] & $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1 & $(_ModDoorRasp:7)!!ZERK) | $(_ModDoorRasp:1)[S28;S29]\n   #ELSE\n      $(PRODUCTLINE:0)[$(_ModDoorRasp:8)] & $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1 & $(_ModDoorRasp:7)!!ZERK\n   #ENDIF\n#ELSE\n   $[datecompare;$(dataordine);$(_ModDoorRasp:9)]>=0 & $[datecompare;$(dataordine);$(_ModDoorRasp:10)]=-1\n#ENDIF
 T,_TipDoorRasp,,,,$(_TipDoorRasp:3)[$(_ModDoorRasp:11)]
 T,_s_d,,$(_ModDoorRasp:1)[S08;S26] & $(_TipDoorRasp:3)==s,,#IF $a[475;476] & $l[295;296;395;396;445;446;595;596]\n   $(_s_d:1)=1\n#ELSEIF $a[595;596] & $l[295;296;395;396;445;446;595;596]\n   $(_s_d:1)=2\n#ELSEIF $a[715;716] & $l[295;296;329;330;377;378;395;396;445;446;595;596]\n   $(_s_d:1)=3\n#ELSEIF $a[955;956] & $l[295;296;329;330;377;378;395;396;445;446;595;596]\n   $(_s_d:1)=4\n#ELSEIF $a[1315;1316] & $l[395;396;445;446;595;596]\n   $(_s_d:1)=5\n#ELSE\n   $(_s_d:1)=0\n#ENDIF,,,,,,,,0
 C,S_D,,$(_s_d:1)!0 & $(_GSD_EN:0)!1 & $[datecompare;$(dataordine);20.04.2020]=-1,Дверь SD
 C,_gsd_en,,0,Дверь GSD,#IF $(_gsd:1)=1\n   #LETV _gsd_en=0\n#ENDIF
 C,_gjp,,$(_ModDoorRasp:1)[S01] & $(_TipDoorRasp:3)==g,Дверь GJP
 T,gjpCountLine,,$(_gjp:0)=1,Количество полос,$L>=$(gjpCountLine:3) & $L<=$(gjpCountLine:4)
-T,_GSD,,$[datecompare;$(dataordine);20.04.2020]>=0 & $(_ModDoorRasp:1)[S08;S26;S27;S01;S29] & $(_TipDoorRasp:3)==s,Тип фрезеровки,#IF $[ex;$(LOCP_BX0);|;5]=1\n   #IF $a>=1495\n      ($(_gsd:5)[param] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2]) | $(_gsd:1)=1\n   #ELSE\n      (    (( ($a[$(_gsd:3)] | {$a+1}[$(_gsd:3)]) & ($l[$(_gsd:4)] | {$l+1}[$(_gsd:4)])) | ( $(_gsd:5)[paramsize] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2])) & $(_ModDoorRasp:1)[$(_gsd:8)]) ) | $(_gsd:1)=1\n   #ENDIF\n#ELSE\n   #IF $a>=1495\n      ($(_gsd:5)[param] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2]) | $(_gsd:1)=1\n   #ELSE\n      ((( ( $(_gsd:5)[paramsize] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2]) | ($a[$(_gsd:3)] & $l[$(_gsd:4)])) & $(_ModDoorRasp:1)[$(_gsd:8)])) | $(_gsd:1)=1\n   #ENDIF\n#ENDIF,,,,,,2
+T,_GSD,,$[datecompare;$(dataordine);20.04.2020]>=0 & $(_ModDoorRasp:1)[S08;S26;S27;S01;S29] & $(_TipDoorRasp:3)==s,Тип фрезеровки,#IF $[ex;$(LOCP_BX0);|;5]=1\n   #IF $a>=1495\n    (  $(_gsd:5)[param] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2])| $(_gsd:1)=1\n   #ELSE\n      (    (( ($a[$(_gsd:3)] | {$a+1}[$(_gsd:3)]) & ($l[$(_gsd:4)] | {$l+1}[$(_gsd:4)])) | ( $(_gsd:5)[paramsize] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2])) & $(_ModDoorRasp:1)[$(_gsd:8)]) ) | $(_gsd:1)=1\n   #ENDIF\n#ELSE\n   #IF $a>=1495\n     ( $(_gsd:5)[param] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2])| $(_gsd:1)=1\n   #ELSE\n      ((( ( $(_gsd:5)[paramsize] & $a>=$[ex;$(_gsd:3);|;1] & $a<=$[ex;$(_gsd:3);|;2] & $l>=$[ex;$(_gsd:4);|;1] & $l<=$[ex;$(_gsd:4);|;2]) | ($a[$(_gsd:3)] & $l[$(_gsd:4)])) & $(_ModDoorRasp:1)[$(_gsd:8)])) | $(_gsd:1)=1\n   #ENDIF\n#ENDIF,,,,,,2
 T,_GSD_colum_num,,,Соответствие ширины фасада и столбца,$L=$(_GSD_colum_num:3),,,,,,,,0
 T,_gsd_vst,,$(_gsd:1)[35;36;37;38],Положение,$(_gsd:1)[$(_gsd_vst:3)]
 T,mat,,$(_ModDoorRasp:7)==DSP | $(_ModDoorRasp:7)==LMDF,,$(_ModDoorRasp:1)[$(mat:8)],,,,,,,,0
-T,_petl,,,,##DOORPETL\n#VB\n   v("addednumber")=Ambiente.tnumero\n#ENDVB\n#VB\n   set g=Ambiente.GetObject("GLOBAL")\n   V("PercorsoOrdini")=g.PercorsoOrdini\n#ENDVB\n#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml\n#LETS filetest=$[dir;$(strPathname)]\n#IF $(filetest)[1]\n   #VB\n      Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")\n      xmlDoc.load (V("strpathname"))\n      strSearch = "ProjectMetadata"\n      Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)\n      for each node in currNode\n         strLine="PRODUCT_LINE"\n         Dim PRODUCT_LINE: set PRODUCT_LINE=node.getElementsByTagName(strLine)\n         for each el in PRODUCT_LINE\n            V("PRODUCTLINE")=el.text\n         next\n      next\n   #ENDVB\n   #LETS PRODUCTLINE=$(PRODUCTLINE)\n#ELSE\n   #LETS PRODUCTLINE=MARIA_SHKAF\n#ENDIF\n\n#IF $[ex;$(LOCP_BX0);|;5]==1\n   #IF $[datecompare;$(dataordine);22.10.2021]<0\n      #IF $[ex;$(LOCP_BX0);|;9]>16 & $[ex;$(LOCP_BX0);|;8]=0\n         $(_petl:1)[1] & $(productline:0)[$(_petl:6)]\n      #ELSE\n         $(_ModDoorRasp:1)[$(_petl:3)] & ($(_petl:5)={$[ex;$(LOCP_BX0);|;8]} | $(_petl:1)==999) & $(productline:0)[$(_petl:6)]\n      #ENDIF\n   #ELSE\n      #IF $[ex;$(LOCP_BX0);|;9][1;2]\n         #IF $[ex;$(LOCP_BX0);|;9]<25\n            ($(_ModDoorRasp:1)[$(_petl:3)] & $(_petl:5)={$[ex;$(LOCP_BX0);|;8]} & $(productline:0)[$(_petl:6)] ) | $(_petl:1)==999 | $(_petl:1)==6\n         #ELSE\n            $(_petl:1)[3;999]\n         #ENDIF\n      #ELSE\n         #IF $[ex;$(LOCP_BX0);|;9]<25\n            ($(_ModDoorRasp:1)[$(_petl:3)] & $(_petl:5)={$[ex;$(LOCP_BX0);|;8]} & $(productline:0)[$(_petl:6)] ) | $(_petl:1)==999| $(_petl:1)==6\n         #ELSE\n            $(_petl:1)[3;999]\n         #ENDIF\n      #ENDIF\n   #ENDIF\n#ELSE\n   #IF $(petlObr:1)=1\n      #IF $(doorNalog)[1;2]\n         #IF $(karkasLarge:1)<25\n            ($(_ModDoorRasp:1)[$(_petl:3)] & $(_petl:5)={$[ex;$(LOCP_BX0);|;8]} & $(productline:0)[$(_petl:6)] ) | $(_petl:1)==999 | $(_petl:1)==6\n         #ELSE\n            $(_petl:1)[3;999]\n         #ENDIF\n      #ELSE\n         #IF $(karkasLarge:1)<25\n            ($(_ModDoorRasp:1)[$(_petl:3)] & $(_petl:5)={$[ex;$(LOCP_BX0);|;8]} & $(productline:0)[$(_petl:6)] ) | $(_petl:1)==999| $(_petl:1)==6\n         #ELSE\n            $(_petl:1)[3;999]\n         #ENDIF\n      #ENDIF\n   #ELSE\n      $(_ModDoorRasp:1)[$(_petl:3)] & $(productline:0)[$(_petl:6)]\n   #ENDIF\n#ENDIF
+S,_oldPetl,,,,,,,,,,,,0
+T,_petl,,,,##DOORPETL\n#VB\n   v("addednumber")=Ambiente.tnumero\n#ENDVB\n#VB\n   set g=Ambiente.GetObject("GLOBAL")\n   V("PercorsoOrdini")=g.PercorsoOrdini\n#ENDVB\n#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml\n#LETS filetest=$[dir;$(strPathname)]\n#IF $(filetest)[1]\n   #VB\n      Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")\n      xmlDoc.load (V("strpathname"))\n      strSearch = "ProjectMetadata"\n      Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)\n      for each node in currNode\n         strLine="PRODUCT_LINE"\n         Dim PRODUCT_LINE: set PRODUCT_LINE=node.getElementsByTagName(strLine)\n         for each el in PRODUCT_LINE\n            V("PRODUCTLINE")=el.text\n         next\n      next\n   #ENDVB\n   #LETS PRODUCTLINE=$(PRODUCTLINE)\n#ELSE\n   #LETS PRODUCTLINE=MARIA_SHKAF\n#ENDIF\n\n#IF $[ex;$(LOCP_BX0);|;5]==1\n   #IF $[datecompare;$(dataordine);22.10.2021]<0\n      #IF $[ex;$(LOCP_BX0);|;9]>16 & $[ex;$(LOCP_BX0);|;8]=0\n         $(_petl:1)[1] & $(productline:0)[$(_petl:6)]\n      #ELSE\n         $(_ModDoorRasp:1)[$(_petl:3)] & ($(_petl:5)={$[ex;$(LOCP_BX0);|;8]} | $(_petl:1)==999) & $(productline:0)[$(_petl:6)]\n      #ENDIF\n   #ELSE\n      #IF $[ex;$(LOCP_BX0);|;11][1;2]\n         #IF $[ex;$(LOCP_BX0);|;9]<25\n            ($(_ModDoorRasp:1)[$(_petl:3)] & $(_petl:5)={$[ex;$(LOCP_BX0);|;8]} & $(productline:0)[$(_petl:6)] ) | $(_petl:1)==999 | $(_petl:1)==6\n         #ELSE\n            $(_petl:1)[3;6;999]\n         #ENDIF\n      #ELSE\n         #IF $[ex;$(LOCP_BX0);|;9]<25\n            ($(_ModDoorRasp:1)[$(_petl:3)] & $(_petl:5)={$[ex;$(LOCP_BX0);|;8]} & $(productline:0)[$(_petl:6)] ) | $(_petl:1)==999\n         #ELSE\n            #IF $[ex;$(LOCP_BX0);|;10][2;4]\n               $(_petl:1)[5;999]\n            #ELSE\n               $(_petl:1)[3;999]\n            #ENDIF\n         #ENDIF\n      #ENDIF\n   #ENDIF\n#ELSE\n   $(_ModDoorRasp:1)[$(_petl:3)] & $(productline:0)[$(_petl:6)]\n#ENDIF
 T,_color_petl,,$(_petl:4)=1,,,,,,,,,,($(PRODUCTLINE)[MARIA_SHKAF] & $[datecompare;$(dataordine);15.11.2019]>=0) | $[datecompare;$(dataordine);15.11.2019]=-1
-T,_FiaApertoAnta,,$(_petl:1)!!999,,,,,,,,,,$[ex;$(LOCP_BX0);|;5]!!1
+T,_FiaApertoAnta,,$(_petl:1)!!999
 T,_colkarkas,,$(_ModDoorRasp:7)==DSP | $(_ModDoorRasp:7)==LMDF,Цвет,$(mat:1)[$(_colkarkas:5)] & $(_ModDoorRasp:1)[$(_colkarkas:17)] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)],,,,,,2
 T,_colSide,,$(_ModDoorRasp:1)[s28],Задняя сторона,$(_colkarkas:1)[$(_colSide:3)]
 C,kromLaser,,$(_ModDoorRasp:1)[s02] & $(_colkarkas:26)=1,Кромка лазер
-T,_colkrom,,$(_ModDoorRasp:1)[S12;E02;D02;S29] | ($(kromLaser:1)=1 & $(_ModDoorRasp:1)[s02]),,#IF $(kromLaser:1)=0\n   $[datecompare;$(dataordine);$(_colkrom:9)]>=0 & $[datecompare;$(dataordine);$(_colkrom:10)]=-1 & $(_ModDoorRasp:1)[$(_colkrom:11)]\n#ELSE\n   $(_colKarkas:1)[$(_colkrom:12)]\n#ENDIF,,,,,,2,,$(_ModDoorRasp:1)[S12;E02;D02;S02]
+T,_colkrom,,$(_ModDoorRasp:1)[S12;E02;D02;S29] | ($(kromLaser:1)=1 & $(_ModDoorRasp:1)[s02]),,#IF $(kromLaser:1)=0\n$[datecompare;$(dataordine);$(_colkrom:9)]>=0 & $[datecompare;$(dataordine);$(_colkrom:10)]=-1 & $(_ModDoorRasp:1)[$(_colkrom:11)]\n#ELSE\n$(_colKarkas:1)[$(_colkrom:12)]\n#ENDIF,,,,,,2,,$(_ModDoorRasp:1)[S12;E02;D02;S02]
 T,matvstav,matvstav_door,$(_ModDoorRasp:7)==MDF,Модель декора,$(matvstav_door:5)==$(_ModDoorRasp:1),,,,,,,,0
 T,cvetvstav,cvetvstav_door,$(_ModDoorRasp:7)==MDF,Цвет,#IF $[datecompare;$(dataordine);15.06.2020]>=0\n   $(matvstav_door:5)[$(cvetvstav_door:3)] & $(matvstav_door:6)[$(cvetvstav_door:8)] & $[datecompare;$(dataordine);$(cvetvstav_door:15)]>=0 & $[datecompare;$(dataordine);$(cvetvstav_door:16)]=-1\n#ELSE\n   $(matvstav_door:5)[$(cvetvstav_door:3)] & $(matvstav_door:6)[$(cvetvstav_door:8)]\n#ENDIF,,,,,,2
 T,_patina,,,,##PATINACHECK\n#LET indexloop=0\n#LETS testpatina=$(cvetvstav_Door:17)\n#LETS modelvstav=$(matvstav_Door:5)\n#LETS patinamodel=\n#DO\n   #LET indexloop=$(indexloop)+1\n   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]\n   #IF $[LEN;$(teststr)]>0\n      #IF $[INSTR;$(teststr);$(modelvstav)]>0\n         #LETS patinamodel=$(teststr)\n      #ENDIF\n   #ELSE\n      #BREAK 1\n   #ENDIF\n#LOOP  $(teststr)==\n#IF $[len;$(patinamodel)]>0\n   $[INSTR;$(patinamodel);$(_patina:1)]>0 | $(_patina:1)[999]\n#ELSE\n   #IF ($(matvstav_Door:5)[$(cvetvstav_Door:14)])\n      $(_patina:1)[$(cvetvstav_Door:17)] | $(_patina:1)[999]\n   #ELSE\n      $(_patina:5)=60251733\n   #ENDIF\n#ENDIF,,,,,,,,$[len;$(cvetvstav_door:14)]>0
@@ -57,65 +58,66 @@ T,TxtVst,,$(cvetvstav_door:11)=1 | $(_colkarkas:18)=1,,#IF $(matvstav_door:5)==s
 T,matvstav,,$(_TipDoorRasp:3)[s] | $(_ModDoorRasp:1)==s24 | $(_ModDoorRasp:1)==s30,,#IF $(_ModDoorRasp:1)[s24]\n   $(matvstav:5)[s03]\n#ELSEIF $(_ModDoorRasp:1)[s30]\n   $(matvstav:12)=1 & $(_ModDoorRasp:1)[$(matvstav:15)] & $[datecompare;$(dataordine);$(matvstav:19)]>=0 & $[datecompare;$(dataordine);$(matvstav:20)]=-1\n#ELSE\n   $(matvstav:12)=1 & $(_ModDoorRasp:1)[$(matvstav:15)] & $[datecompare;$(dataordine);$(matvstav:19)]>=0 & $[datecompare;$(dataordine);$(matvstav:20)]=-1\n#ENDIF,,,,,,2
 T,cvetvstav,,$(_TipDoorRasp:3)[s] | $(_ModDoorRasp:1)==s24 | $(_ModDoorRasp:1)==s30,,$(matvstav:5)[$(cvetvstav:3)] & $(matvstav:6)[$(cvetvstav:8)],,,,,,2,,$(matvstav:13)
 S,firstLoad,,,,,,,,,,,,0
-T,_man,,,,#IF $(_ModDoorRasp:1)[s24;s30]\n   $(_man:1)[03.01.01;999]\n#ELSE\n   $[datecompare;$(dataordine);$(_man:15)]>=0 & $[datecompare;$(dataordine);$(_man:16)]=-1 & not($(_man:17)[2])\n#ENDIF
+T,_man,,,,#IF $(_ModDoorRasp:1)[s24;s30]\n   $(_man:1)[03.01.01;999]\n#ELSE\n   $[datecompare;$(dataordine);$(_man:15)]>=0 & $[datecompare;$(dataordine);$(_man:16)]=-1  & not($(_man:17)[2])\n#ENDIF
 T,_man_pos,,$(_man:1)!!999,,#IF $(_petl:1)!!999\n   $(_man_pos:3)!0 & $(_FiaApertoAnta:1)[$(_man_pos:5)] & (not($(_man:7)[verhniztorec]) | $(_man_pos:3)[2;8])\n#ELSE\n   $(_man_pos:3)!0 & (not($(_man:7)[verhniztorec]) | $(_man_pos:3)[2;8])\n#ENDIF
-Z,_manProf,,$(_ModDoorRasp:1)[S02;S04;S28;S29;S30;S01;S27;S12;E02;D02],Ручка профиль,,,,,,,,,$(_ModDoorRasp:1)[S02;S04;S28;S29;S30;S01;S27;S12;E02;D02] & $(_man:1)=999
+Z,_manProf,,$(_ModDoorRasp:1)[S02;S04;S28;S29;S30;S01;S27;S12;E02;D02;S31],Ручка профиль,,,,,,,,,$(_ModDoorRasp:1)[S02;S04;S28;S29;S30;S01;S27;S12;E02;D02;S31] & $(_man:1)=999
 T,_manProfColor,,$(_manProf:0)=1,Цвет
-C,_manProfBl,,$(_manProf:0)!1 & $(_ModDoorRasp:1)[S30]&($[DATECOMPARE;$(dataordine);04.04.2022]<0) & $a>=1200 & ($(.username)==v-gluhov | $(.username)==vya-steshin | $(.username)==M-ZAHAROVA | $(.username)==J-RUNOVA |$(.username)==A-POPOV | $(.username)==A-OLHOVIK | $(.username)==m-rabenok),Ручка-профиль черная,,,,,,,,,0
+C,_manProfBl,,0,Ручка-профиль черная,,,,,,,,,$(_ModDoorRasp:1)[S30]
 T,_manProfAlt,,$(_manProfBl:0)=1,Размер ручки-профиль
 T,_man_orient,,$(_man:7)[skoba]
 S,oldManInt,,,,,,,,,,,,0
-T,_manIntegrato,,$(_TipDoorRasp:3)[GW] & $(_ModDoorRasp:1)==s32,Положение ручки,$(_FiaApertoAnta:1)[$(_manIntegrato:8)]
+T,_manIntegrato,,$(_TipDoorRasp:3)[GW] & $(_ModDoorRasp:1)==s32,Положение ручки,#IF $(_petl:1)[999]\n   $(_manIntegrato:1)\n#ELSE\n   $(_FiaApertoAnta:1)[$(_manIntegrato:8)]\n#ENDIF
 S,oldAlt,,,,,,,,,,,,0
 S,oldLarg,,,,,,,,,,,,0
 S,oldManX,,,,,,,,,,,,0
 S,oldManY,,,,,,,,,,,,0
-M,_manIntX,,$(_manIntegrato:5)[1],Длина ручки (XF),,,,200
-M,_manIntY,,$(_manIntegrato:5)[2],Смещение ручки (X),,,,30
+M,_manIntX,,$(_manIntegrato:5)[1],Длина ручки,,,,200
+M,_manIntY,,$(_manIntegrato:5)[2],Смещение ручки,,,,30
 T,tipshkaf,,,,$(tipshkaf:1)=8,,,,,,,,0
 Z,petlObr,,$(_petl:1)!999,Фрезеровка под петли
-T,karkasLarge,,$(petlObr:1)=1 & $[ex;$(LOCP_BX0);|;5]=0,Толщина каркаса
-Z,petlSize,,$(petlObr:1)=1 & $[ex;$(LOCP_BX0);|;5]=0,Показать размеры
-S,curkrasid,,,Текущее значение краски,,,,,,,,,0
-S,curpatid,,,Текущее значение патины,,,,,,,,,0
-S,naborkras,,,ремкомплект для красок,,,,,,,,,0
-S,naborpat,,,ремкомплект для патины,,,,,,,,,0
-C,disablecor,,,Отключить корректор
+C,disablecor,,,Убрать выпрямитель
 S,showmsgcor,,,,,,,,,,,,0
 
 [GRAFICA]
 _DOORRASP
-
-
 //_finaleRasp
+//_MODFASAD
+//_FASVID
+//_PRISTUGOLRASP
 //_MISURALIM
+//_PARAMANTASTR
 //040
 //010
 //DOORS
-//_PRISTUGOLRASP
+
 //_PETLI
 //_PETLJA
+//_DOORRASP
+//KORPSHKAF
 //_SHKAF
 //305
-
-//303
-//301
-//_FASVID
-//_MODFASAD
-//_PETLIOBR
+//_DEKELEMCODE
+//_DEKOR
+//_DEKORE303
 //302
+//301
+//_PETLIOBR
+
+//302
+//040
 //303
 //010
 //#MSG {$[ex;$(LOCP_BX0);|;7]}>16 & {$[ex;$(LOCP_BX0);|;8]}=0
-//_NICOLECLASSIC3DS
-//_PETLIOBR
+//VOLUME
+//401
 //040
+//_NICOLECLASSIC3DS
 //_INTEGRATOPROFILE
 //105
 //_FASVID
 //_DEKOR
+//_NICOLECLASSIC3DS
 //_MISURALIM
-//_PARAMANTASTR
 //_MODFASAD
 //_SHKAF
 //#MSG $(a) $(l) $(_ppa) $(_ppl)
@@ -127,21 +129,21 @@ _DOORRASP
 //_MISURALIM
 //_MODFASAD
 //_PLACERDOORS
+//_KOROBLIVING
 //_GABARITLIMIT
 //DOORSRASP
 //_MODFASAD
 //_paramantastr
 //_FINALELIVING
 //_paramFasad
-//_PARAMANTASTR
 //305 мдф со стеклом
 //303
-
 //302
-// _drawMiddlaManInt
+//VSTAV
 //301  // Дверь распашная G
 //_upakovka_door
 //305
 //040
 //_PETLI
 //_PETLJA
+//_PETLIOBR

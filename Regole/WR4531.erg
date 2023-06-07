@@ -36,10 +36,10 @@ _flag_plaser
 _DATABOX
 #LETS cod_pan=999WR4531
 #LETS 3ds=Kryk21.3ds
-#IF $[datecompare;$(dataordine);28.07.2020]>=0
-   #MSG товар не доступен к заказу с 28.07.2020!
-   001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
-#ELSE
+//#IF $[datecompare;$(dataordine);28.07.2020]>=0
+  // #MSG товар не доступен к заказу с 28.07.2020!
+  // 001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
+//#ELSE
    #IF $(krepDx:0)=1
       001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,FACC=100,X4=$(3ds)  //Test
    #ELSE
@@ -57,5 +57,5 @@ _DATABOX
       023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
    #ENDIF
    // ***********************************************************************************************************************************************
-#ENDIF
+//#ENDIF
 //_OLD_PLACE

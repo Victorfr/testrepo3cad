@@ -39,16 +39,13 @@ _RECLAMATION
 #LET a=30
 #LET p=1
 
+//графика ручки
+001,C1=101,lato=$(show_door)
 
-#IF   $[DATECOMPARE;$(dataordine);04.04.2022]>=0
-   #MSG товар не доступен к заказу!
-   001,COD=999 /ERROR=1 / /#l-1,c1=5  //Test
-   #ELSE////417701537
-   
-   //графика ручки
-   001,C1=101,lato=$(show_door)
-   ///цена ручки
-   001,LATO=6,COD=999manPROFBL /WR=124079459;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1,L=$(_manProfAlt:3),A=1,P=1  //Test
-   001,LATO=6,COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1,L=$(_manProfAlt:3),A=1,P=1  //Test
-   001,LATO=6,COD=999pulsManBl / / /#l+3,L=$(_manProfAlt:3),A=1,P=1  // Test
-#ENDIF
+
+
+
+///цена ручки
+001,LATO=6,COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1,L=$(_manProfAlt:3),A=1,P=1  //Test
+001,LATO=6,COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1,L=$(_manProfAlt:3),A=1,P=1  //Test
+001,LATO=6,COD=999pulsManBl / / /#l+3,L=$(_manProfAlt:3),A=1,P=1  // Test

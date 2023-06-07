@@ -37,4 +37,4 @@ _RECLAMATION
 
 #LET l=1200,a=45,p=2
 001,LATO=9,COD=999manprofb2b /MNP=509518356;WR=124079459;FPL=N /Ручка 444 BOYARD Ручка-профиль 1200 В2В /#l-1  //Test
-001,LATO=6,COD=999manprofb2b1200 / / /#Q$(count_st:0),l=$a,a=1000//$l  //Test
+001,LATO=6,COD=999manprofb2b1200 / / /#Q$(count_st:0),l=$a,a=1000  //Test

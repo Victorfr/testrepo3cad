@@ -55,6 +55,7 @@ _RECLAMATION
 #LET P=$(dekopory:7)
 
 #LETS color=9|$(.percorso)\FOTO\vstavka\ral1.jpg|$(colordekopory:6)|
+//001,COD=999$(dekopory:8) /FPL=N;_COK=$(colordekopory:7);WR=410074072;SKP=1 /$(dekopory:2) /#L-1,C1=$(color),FACC=100,X4=$(dekopory:3)  //Test
 001,COD=999$(dekopory:8) /FPL=N;_COK=$(colordekopory:7);WR=410074072;SKP=1;USB=1 /$(dekopory:2) /#L-1,C1=$(color),FACC=100,X4=$(dekopory:3)  //Test
 
 //001,LATO=6,COD=999$(dekopory:8) / /$(colordekopory:2) /#Q$(count_st:0),C1=1,C2=2  //Test

@@ -23,6 +23,7 @@ TRADFLAGS=*,*,*,*,*
 
 [gene]
 T,MODELLO
+T,_dekpie,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
 M,count_st,,,Количество,,,,1
@@ -44,13 +45,13 @@ _RECLAMATION
 //#LETS navZagR=$[ex;$(navesColor:4);|;2]
 //#LETS navShina=$(navesLiving:7)
 
-#IF $[datecompare;$(dataordine);04.08.2022]<0
+#IF $[datecompare;$(dataordine);$(_dekpie:8)]<0
    001,LATO=9,COD=999DEKOPHR /WR=417701157;FPL=N /МДМ Опора декоративная Н16+18мм хром ADJ9.016.CR /#l-1,X1=1  //Tes
    
    001,LATO=6,COD=999opora_ch / / /#Q$(count_st:0)  // Test
    
    
 #ELSE
-   #MSG товар не доступен к заказу с 04.08.2022!
+   #MSG товар не доступен к заказу с $(_dekpie:8)!
    001,COD=999DEKOPHR /ERROR=1 / /#l-1,c1=5  //Test
 #ENDIF

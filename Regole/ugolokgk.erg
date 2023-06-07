@@ -43,3 +43,5 @@ _RECLAMATION
 001,LATO=6,COD=999dub_driva / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
 001,LATO=6,COD=999sh3_5x30 / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
 001,LATO=6,COD=999SH4X16POT / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+
+001,LATO=6,COD=999grandUg / / /#q$(count_ug:0),L=1,A=1,P=1  //Test

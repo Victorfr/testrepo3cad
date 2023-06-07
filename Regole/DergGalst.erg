@@ -37,7 +37,7 @@ _DATABOX
 #LETS 3ds=derzh_Galstuk.3ds
 
 #IF $[datecompare;$(dataordine);28.06.2022]>=0
-   #MSG товар не доступен к заказу с 28.07.2022!
+   #MSG товар не доступен к заказу с 28.06.2022!
    001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
 #ELSE
 001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Держатель для галстуков /#l-1,C1=11,FACC=100,X4=$(3ds)  //Test

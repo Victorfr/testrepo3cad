@@ -50,5 +50,5 @@ _RECLAMATION
    001,LATO=6,COD=999montPldist/ / /#q$(count_st:0),L=1,A=1,P=1  //Test
    001,LATO=6,COD=999petlNak95180bl / / /#q$(count_st:0),L=1,A=1,P=1  //Test
    001,LATO=6,COD=999nab_sh4x16 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999ogrpetl9585 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999ogrpetl9585 / / /#q$(count_st:0),L=1,A=1,P=1  //Test 
 #ENDIF

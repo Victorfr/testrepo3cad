@@ -39,7 +39,6 @@ T,stTypeKrep,,,Тип крепления
 T,colsysSt,,,Цвет системы
 Z,showZone,,,Показать/скрыть обьем
 T,in_size,,,Внутренние размеры
-M,sizemsht,,,Масштаб номеров,,,,1,10
 T,size,,,Показать габариты
 +,VolumeStil
 +,AddNapStil

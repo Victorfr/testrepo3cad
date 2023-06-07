@@ -54,21 +54,18 @@ _DATABOX
    #IF $l<100 #LET l=100
    #MSG высота или ширина задней стенки не может меньше 100 мм!
 #ENDIF
-#IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020]
-   #LETS mat_backwall:4=DSPLN8|CVET_VST
-#ENDIF
 #IF $(_colkarkasback:1)[050;058;061;211] & $a>2440
    #LET a =2440
    #MSG Для данного цвета максимальная высота задней стенки 2440 мм!
 #ENDIF
-
-
-
 #LETV _wr=999KARKASZST
 #LETV _MNP=999KARKASZST
+#IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020]
+   #LETS mat_backwall:4=DSPLN8|CVET_VST
+#ENDIF
 #LETS backPar=$(mat_backwall:4)
 #LETS parName=$[estrai;$(backPar);|;2]
-
+#LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
 018,COD= /MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet);FPL=N / /#l-1,SL=0,SA=0,SP=0  //Задняя стенка
 #LET count_krep_back=8
 #IF $l>1000 #LET count_krep_back=8+(int($l/1000))*2
@@ -78,11 +75,11 @@ _DATABOX
    #LET countPak=$(countPak)+1
 #ENDIF
 #LET countPak=int($(countPak))
-//#FOR $1:$(countPak)
-001,LATO=6,COD=999pack_shPG3.5x16 / / /#l-1#Q$(countPak,L=1,A=1,P=1  //Test
+#FOR $1:$(countPak)
+   001,LATO=6,COD=999pack_shPG3.5x16 / / /#l-1,L=1,A=1,P=1  //Test
+   
+#ENDFOR
 001,LATO=6,COD=999KrZstPak / / /#l-1#Q$(countPak),L=1,A=1,P=1  //Test
-
-//#ENDFOR
 // ********************** размеры перегородки ****************************************
 023,COD= / /$l,SL=0,SP=0,sa=$a+20,L=$l,P=0,X1=2  //Глубина корпуса
 023,COD= / /$A,SL=-20,SA=$A,SP=0,L=$A,A=0,P=0,AZ=90,X1=2  //Высота корпуса
@@ -91,3 +88,7 @@ _DATABOX
 #LETV hdfsize=$lX$a
 #LETS _macrofinale= _finaleHdf
 //_FINALELIVING
+//_NICOLECLASSIC3DS
+//_MERGEBACKWALL
+//ADDNAP
+//FINALESCRIPT

@@ -28,6 +28,35 @@ T,_databox,,,,,,,,,,,,0
 T,colsysSt,,,Под цвет системы
 
 [GRAFICA]
+//!SETCODICE x
+
+//_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+//_RECLAMATION
+// **********************************************************************************************************
+#IF $(colsysSt:1)[1]
+   #LETS profCod=999AI541L3000AL
+   #LETS profOpCod=999StlOpAl
+   #LETS profUgCod=999StlUgKrAl
+   #LETS dergNizCod=999SlimPlkNAl
+   #LETS dergVCod=999SlimPlkVAl
+   #LETS dergShtCod=999SlmDerStAl
+#ELSE
+   #LETS profCod=999AI541L3000Сan
+   #LETS profOpCod=999StlOpAn
+   #LETS profUgCod=999StlUgKrAn
+   #LETS dergNizCod=999SlimPlkNAn
+   #LETS dergVCod=999SlimPlkVAn
+   #LETS dergShtCod=999SlmDerStAn
+#ENDIF
+
+//#LET l=500,a=45,p=2
+//001,LATO=9,COD= / /Комплект держателей для полок низ д. ящика и ст. полки  //Test
+//#LETV _wr=ST1DOPFUR
+
+//001,LATO=6,COD=ST1DOPFUROP$(colsysSt:5) /WR=$(_wr:3);FPL=N /Комплект держателей для полок низ д. ящика и ст. полки $(colsysSt:2) /#l-1,L=1,A=1,P=1  //Test
+
+//001,LATO=6,COD=$(profOpCod),L=1,A=1,P=1  //Test
 !SETCODICE x
 
 _DATABOX
@@ -51,9 +80,9 @@ _RECLAMATION
 #ENDIF
 
 #LET l=500,a=45,p=2
-001,LATO=9,COD= / /Комплект держателей для полок низ д. ящика и ст. полки  //Test
+001,LATO=9,COD= / /Опора Stilos //Test
 #LETV _wr=ST1DOPFUR
 
-001,LATO=6,COD=ST1DOPFUROP$(colsysSt:5) /WR=$(_wr:3);FPL=N /Комплект держателей для полок низ д. ящика и ст. полки /#l-1,L=1,A=1,P=1  //Test
+001,LATO=6,COD=ST1DOPFUROP$(colsysSt:5) /WR=$(_wr:3);FPL=N /Опора Stilos /#l-1,L=1,A=1,P=1  //Test
 
 001,LATO=6,COD=$(profOpCod),L=1,A=1,P=1  //Test

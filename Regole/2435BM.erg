@@ -36,23 +36,28 @@ _flag_plaser
 _DATABOX
 #LETS cod_pan=9992435BM
 #LETS 3ds=Kryk6.3ds
-
-#IF $(krepDx:0)=1
-   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,FACC=100,X4=$(3ds)  //Test
+#LETS dataOld=29.04.2022
+#IF $[datecompare;$(dataordine);$(dataOld)]>=0
+   
+   #MSG товар не доступен к заказу с $(dataOld)!
+   001,COD=999 /ERROR=1 / /#l-1,c1=5  //Test
 #ELSE
-   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,FACC=100,X4=$(3ds)  //Test
+   #IF $(krepDx:0)=1
+      001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,FACC=100,X4=$(3ds)  //Test
+   #ELSE
+      001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,FACC=100,X4=$(3ds)  //Test
+   #ENDIF
+   
+   // #FOR $1:2
+   // 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
+   // #ENDFOR
+   
+   // ****************************************************** размер по высоте ***********************************************************************
+   #LETS zone_prov=$(locp_bx3)
+   #IF $[estrai;$(locp_bx3);|;5]=1
+      //023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+      023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+   #ENDIF
+   // ***********************************************************************************************************************************************
 #ENDIF
-
-// #FOR $1:2
-// 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
-// #ENDFOR
-
-// ****************************************************** размер по высоте ***********************************************************************
-#LETS zone_prov=$(locp_bx3)
-#IF $[estrai;$(locp_bx3);|;5]=1
-   //023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
-   023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
-#ENDIF
-// ***********************************************************************************************************************************************
-
 //_OLD_PLACE

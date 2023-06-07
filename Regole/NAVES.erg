@@ -27,7 +27,7 @@ T,_databox,,,,,,,,,,,,0
 S,dataordine,,,,,,,,,,,,0
 T,navesLiving,,,,$(navesLiving:1)[1;2]
 T,navesColor,,$(navesLiving:1)!0,,$(navesLiving:1)[$(navesColor:3)] 
-T,navesSide
+T,navesSide,,,Сторона
 M,count_st,,,Количество,,,,1
 
 [GRAFICA]

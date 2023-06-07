@@ -37,10 +37,15 @@ _DATABOX
 #LETS cod_pan=9992433HRG
 #LETS 3ds=Kryk10.3ds
 
-#IF $(krepDx:0)=1
-   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,C1=6,FACC=100,X4=$(3ds)  //Test
+#IF $[datecompare;$(dataordine);08.06.2022]>=0
+   #MSG товар снят с производства!
+   001,l=100,a=100,p=20//Test
 #ELSE
-   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,C1=6,FACC=100,X4=$(3ds)  //Test
+   #IF $(krepDx:0)=1
+      001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,C1=6,FACC=100,X4=$(3ds)  //Test
+   #ELSE
+      001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,C1=6,FACC=100,X4=$(3ds)  //Test
+   #ENDIF
 #ENDIF
 
 // #FOR $1:2
