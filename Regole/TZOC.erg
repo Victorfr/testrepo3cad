@@ -1,0 +1,58 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=TZOC.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+S,shMantera,,,Для мантеры
+T,_databox,,,,,,,,,,,,0
+T,mat,,,Материал,#IF $(shMantera)[1]\n   $(mat:1)[18]\n#ELSE\n   $(mat:3)[1]\n#ENDIF
+T,_colkarkas,,,Цвет ,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(productline:0)[$(_colkarkas:24)]
+M,hzoc,,,Высота цоколя,,,,40,150
+
+[GRAFICA]
+!SETCODICE x
+#IF $l>2700 #LETV l=2750
+#IF $L<300 #LETV L=300
+
+_DATABOX
+#LET a=$(hzoc:0)
+
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+#LETS sk=$(_colkarkas:10),wk=378917905,nk=378917905,ek=378917905
+//////
+#LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);FPL=N
+
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
+   #LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
+#ENDIF
+///////
+017,COD= /$(paramsZoc) /$(_WR:2) /#L-1,SL=0,SP=0,L=$L  //Цоколь ДСП
+
+
+
+// ********************** размеры полки ****************************************
+023,COD= / /$A,SL=-20,SA=$a,SP=-$a,L=$A,P=$A,AZ=90  //Глубина корпуса
+023,COD= / /$L,SL=0,SA=$A,SP=0,L=$L,A=0,P=1,X1=2  //Размер корпуса
+// ***********************************************************************************
