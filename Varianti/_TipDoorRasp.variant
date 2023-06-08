@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "_TipDoorRasp",
+    "Des": "Тип двери",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010тип\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_TIPDOORRASP",
+      "Codopz": "1",
+      "Des": "G (глухая дверь)",
+      "Memo": "G",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPDOORRASP",
+      "Codopz": "2",
+      "Des": "S (дверь со стеклянной вставкой)",
+      "Memo": "S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPDOORRASP",
+      "Codopz": "3",
+      "Des": "GW",
+      "Memo": "GW",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

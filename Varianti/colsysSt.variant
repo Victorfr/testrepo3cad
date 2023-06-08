@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "colsysSt",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\u0010\u0010 1200\u0010перфикс цвета\u0010 1845\u0010art ug\u0010 1200\u0010art nog\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "COLSYSST",
+      "Codopz": "1",
+      "Des": "Аллюминий",
+      "Memo": "ral1.jpg\t189;193;196\tAL\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COLSYSST",
+      "Codopz": "2",
+      "Des": "Чёрный",
+      "Memo": "ral1.jpg\t3;5;10\tBL\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

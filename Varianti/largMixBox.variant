@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "largMixBox",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010ширина шкафа\u0010 1950\u0010mixbox45\u0010 2625\u0010mixbox100\u0010 2040\u0010mixbox200\u0010 2295\u0010размер box\u0010 2070\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "LARGMIXBOX",
+      "Codopz": "1",
+      "Des": "Под ширину каркаса 451",
+      "Memo": "451\t999mixbox45x34x49\t999mixbox100x34x49\t999mixbox200x34x49\t288x434",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGMIXBOX",
+      "Codopz": "2",
+      "Des": "Под ширину каркаса 501",
+      "Memo": "501\t999mixbox45x39x49\t999mixbox100x39x49\t999mixbox200x39x49\t338x434",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGMIXBOX",
+      "Codopz": "3",
+      "Des": "Под ширину каркаса 601",
+      "Memo": "601\t999mixbox45x49x49\t999mixbox100x49x49\t999mixbox200x49x49\t438x434",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGMIXBOX",
+      "Codopz": "4",
+      "Des": "Под ширину каркаса 899",
+      "Memo": "899\t999mixbox45x79x49\t999mixbox100x79x49\t999mixbox200x79x49\t736x434",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGMIXBOX",
+      "Codopz": "5",
+      "Des": "Под ширину каркаса 999",
+      "Memo": "999\t999mixbox45x89x49\t999mixbox100x89x49\t999mixbox200x89x49\t836x434",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGMIXBOX",
+      "Codopz": "6",
+      "Des": "Под ширину каркаса 1199",
+      "Memo": "1199\t999mixbox45x109x49\t999mixbox100x109x49\t999mixbox200x109x49\t1036x434",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

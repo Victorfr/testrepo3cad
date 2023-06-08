@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "_s_d",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 1680\u0010ds\u0010 1485\u0010A\u0010 1200\u0010draw\u0010 1200\u0010draw npD\u0010 1200\u0010draw emal\u0010 1200\r0\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_S_D",
+      "Codopz": "0",
+      "Des": "SD не возможен",
+      "Memo": "ClassicS.3ds\t\t52722857\t477444484\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_S_D",
+      "Codopz": "1",
+      "Des": "SD возможен",
+      "Memo": "ClassicSD1.3ds\t476\t485729070\t477444485\t485729075",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_S_D",
+      "Codopz": "2",
+      "Des": "SD возможен",
+      "Memo": "ClassicSD1.3ds\t596\t485729072\t477444486\t485729076",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_S_D",
+      "Codopz": "3",
+      "Des": "SD возможен",
+      "Memo": "ClassicSD2.3ds\t716\t463207334\t477444487\t485729077",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_S_D",
+      "Codopz": "4",
+      "Des": "SD возможен",
+      "Memo": "ClassicSD3.3ds\t956\t485729073\t477444488\t485729078",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_S_D",
+      "Codopz": "5",
+      "Des": "SD возможен",
+      "Memo": "ClassicSD4.3ds\t1316\t485729074\t477444489\t485729079",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

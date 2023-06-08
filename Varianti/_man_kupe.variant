@@ -1,0 +1,66 @@
+{
+  "MainVar": {
+    "Cod": "_man_kupe",
+    "Des": "Ручка",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\u0010параметр POR\u0010 2505\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MAN_KUPE",
+      "Codopz": "0",
+      "Des": "Без ручки",
+      "Memo": "0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_KUPE",
+      "Codopz": "1",
+      "Des": "Ручка слева",
+      "Memo": "1\t34353774",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_KUPE",
+      "Codopz": "2",
+      "Des": "Ручка по центру",
+      "Memo": "2\t34353775",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_KUPE",
+      "Codopz": "3",
+      "Des": "Ручка справа",
+      "Memo": "3\t34353776",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_KUPE",
+      "Codopz": "4",
+      "Des": "Ручка слева и справа",
+      "Memo": "4\t482715330",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "dnoType",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "DNOTYPE",
+      "Codopz": "1",
+      "Des": "Стекло",
+      "Memo": "4",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DNOTYPE",
+      "Codopz": "2",
+      "Des": "ЛДСП 10мм",
+      "Memo": "10",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DNOTYPE",
+      "Codopz": "3",
+      "Des": "ЛДСП 8мм",
+      "Memo": "8",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "MainVar": {
+    "Cod": "dspcolor",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1980\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1860\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;4;170;170;3;#FOTO\\struttura\\;2;2;1;;1",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "1",
+      "Des": "Дуб Рене бежевый (LC783)",
+      "Memo": "dub_rene.jpg\t\t256627853\tstandart\tkrdoll45x15|_ckdl\t235247233\t256628766\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "10",
+      "Des": "Вяз капский белый (H3760)",
+      "Memo": "wjaz_kaps_H3760.jpg\t\t316199390\t\tkrdoll45x15|_ckdl\t235247233\t\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "11",
+      "Des": "Светлый дуб (4393EM)",
+      "Memo": "4393EM.jpg\t\t267213618\t\tkrdoll45x15|_ckdl\t235247233\t\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "12",
+      "Des": "Альгамбра (F0627 AR+)",
+      "Memo": "AR_527.jpg\t\t215404561\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t139358574\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "13",
+      "Des": "Античный мрамор (LC 5566 lucido)",
+      "Memo": "Anticny_mramor.jpg\t\t285525855\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463179\t24.02.2022\t20.04.2023",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "14",
+      "Des": "Бежевый щербет (6044 Wraky)",
+      "Memo": "6044.jpg\t\t215404564\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t52207227\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "15",
+      "Des": "Белый глянец (F3091 AR+)",
+      "Memo": "AR_534.jpg\t\t215404877\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t96068221\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "16",
+      "Des": "Вайт кашмир глянец (F5219 AR+)",
+      "Memo": "AR_530.jpg\t\t215404879\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t103405988\t24.02.2022\t20.04.2023",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "17",
+      "Des": "Выбеленный бетон (LC 5561 plamky)",
+      "Memo": "Vibelenny_beton.jpg\t\t285525852\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463177\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "18",
+      "Des": "Вяз Капский белый (H3760 ST10)",
+      "Memo": "wjaz_kaps_H3760.jpg\t\t316199390\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t302065179\t24.02.2022\t20.04.2023",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "19",
+      "Des": "Горный известняк (3377 Luna)",
+      "Memo": "3377.jpg\t\t202784132\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t174788600\t24.02.2022\t20.04.2023",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "2",
+      "Des": "Мрамор Фиорито кремовый (LC6051)",
+      "Memo": "mramor_fiorito.jpg\t\t256627877\tstandart\tkrdoll45x15|_ckdl\t235247233\t256628770\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "20",
+      "Des": "Дуб Крафт Белый (KR K001 PW)",
+      "Memo": "db_kr_wh.jpg\t\t456182141\tstandartplus\tabs42x15|_40CKABS\t444851574\t736219020\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "21",
+      "Des": "Дуб Крафт Золотой (KR K003 PW)",
+      "Memo": "db_kr_gld.jpg\t\t456182145\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t456182887\t24.02.2022\t26.04.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "22",
+      "Des": "Дуб Крафт Серый (KR K002 PW)",
+      "Memo": "db_kr_ser.jpg\t\t456182143\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t456182890\t24.02.2022\t26.04.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "23",
+      "Des": "Дуб натуральный (S060 Top Matrix)",
+      "Memo": "s060.jpg\t\t215405748\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t190107417\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "24",
+      "Des": "Дуб угольный (AR 4517 larix)",
+      "Memo": "Dub_ugolny.jpg\t\t285525861\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463185\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "25",
+      "Des": "Дуб Чарльстон темно-коричневый (H3154 ST36)",
+      "Memo": "Dub_CHarl_temn_kor.jpg\t\t516019772\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t516044303\t24.02.2022\t15.04.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "26",
+      "Des": "Дубовая роща (4575 Larix)",
+      "Memo": "4575.jpg\t\t215405900\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t174788599\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "27",
+      "Des": "Италико глянец (F6242 AR+)",
+      "Memo": "AR_528.jpg\t\t215405903\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t100411709\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "28",
+      "Des": "Итальянский мрамор (LC 5563 lucido)",
+      "Memo": "Ital_mramor.jpg\t\t285525856\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463180\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "29",
+      "Des": "Каменное дерево (LC 5565 lucido)",
+      "Memo": "kamennoe_derevo.jpg\t\t285525857\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463181\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "3",
+      "Des": "Штукатурка Дувр белая (LC5567)",
+      "Memo": "shtukatur_duvr.jpg\t\t256627873\tstandart\tkrdoll45x15|_ckdl\t235247233\t256628768\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "30",
+      "Des": "Камень Пьетра черный (F206 ST9)",
+      "Memo": "Kamen_Pt_cher.jpg\t\t516019779\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t516044323\t24.02.2022\t26.04.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "31",
+      "Des": "Клиф Бианка (CLIFF 0001)",
+      "Memo": "cliff_0001.jpg\t\t215405905\tstandartplus\tabs42x15|_40CKABS\t629593710\t748358207\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "32",
+      "Des": "Лиственница горная антрацит (H3406 ST38)",
+      "Memo": "List_gorn_antracit.jpg\t\t516019775\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t516044307\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "33",
+      "Des": "Лиственница горная белая (H3403 ST38)",
+      "Memo": "List_gorn_bel.jpg\t\t516019774\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t516044305\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "34",
+      "Des": "Лиственница горная коричневая (H3404 ST38)",
+      "Memo": "List_gorn_kor.jpg\t\t516019773\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t516044304\t24.02.2022\t28.10.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "35",
+      "Des": "Меджик Браун (F3450 RAD)",
+      "Memo": "f3450_rad.jpg\t\t202784137\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t74853660\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "36",
+      "Des": "Мрамор Каррара белый (F204 ST9)",
+      "Memo": "Mr_Kar_bel.jpg\t\t516019777\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t516044311\t24.02.2022\t26.04.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "37",
+      "Des": "Ракушечник светлый (AR 3378 mika)",
+      "Memo": "rakushecnik_svettly.jpg\t\t285525860\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463184\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "38",
+      "Des": "Ракушечник темный (AR 3379 mika)",
+      "Memo": "rakushecnik_temny.jpg\t\t285525859\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463183\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "39",
+      "Des": "Светлый дуб (4393EM)",
+      "Memo": "4393EM.jpg\t\t267213618\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t31725476\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "4",
+      "Des": "Штукатурка Сансия серая (LC5568)",
+      "Memo": "shtukatur_sansia.jpg\t\t256626319\tstandart\tkrdoll45x15|_ckdl\t235247233\t256628763\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "40",
+      "Des": "Тополь серебристый (LC 5556 plamky)",
+      "Memo": "Topol_serebr.jpg\t\t285525854\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t284463178\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "41",
+      "Des": "Фабрик Металл антрацит (F461 ST10)",
+      "Memo": "Fab_Met_antr.jpg\t\t516019770\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t516044302\t24.02.2022\t17.05.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "42",
+      "Des": "Шампань (F6218)",
+      "Memo": "F6218.JPG\t\t215406390\tstandartplus\tabs42x15|_40CKABS\t629593710\t700486441\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "43",
+      "Des": "Штукатурка серо-бежевая (5559 Plamky)",
+      "Memo": "5559.jpg\t\t215406391\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t174788598\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "44",
+      "Des": "Текстиль светло-серый (CL FC47 Nadir)",
+      "Memo": "tex_svser_fc47.jpg\t\t500463806\tpremium\tkromabs45x1|_22CKKS\t232658656\t461293937\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "45",
+      "Des": "Дюна сахара (CL FC06 Concreta)",
+      "Memo": "duna_sahara_fc06.jpg\t\t500463801\tpremium\tkromabs45x1|_22CKKS\t232658656\t461105230\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "46",
+      "Des": "Дюна базальт (CL FC14 Concreta)",
+      "Memo": "duna_bazalt_fc14.jpg\t\t500463802\tpremium\tkromabs45x1|_22CKKS\t232658656\t461105232\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "47",
+      "Des": "Дюна терра (CL FC05 Concreta)",
+      "Memo": "duna_terra_fc05.jpg\t\t500463789\tpremium\tkromabs45x1|_22CKKS\t232658656\t461105229\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "48",
+      "Des": "Текстиль бежевый (CL FC45 Nadir)",
+      "Memo": "tex_bezh_fc45.jpg\t\t500463805\tpremium\tkromabs45x1|_22CKKS\t232658656\t461293936\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "49",
+      "Des": "Дуб Чарльстон темно-коричневый (H3154 ST36)",
+      "Memo": "Dub_CHarl_temn_kor.jpg\t\t516019772\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t677176769\t15.04.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "5",
+      "Des": "Клиф Бианка (AR CLIFF 0001)",
+      "Memo": "cliff_0001.jpg\t\t215405905\t\tkrdoll45x15|_ckdl\t235247233\t\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "50",
+      "Des": "Дуб Крафт Золотой (KR K003 PW)",
+      "Memo": "db_kr_gld.jpg\t\t456182145\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t677945155\t26.04.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "51",
+      "Des": "Дуб Крафт Серый (KR K002 PW)",
+      "Memo": "db_kr_ser.jpg\t\t456182143\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t677945157\t26.04.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "52",
+      "Des": "Камень Пьетра черный (F206 ST9)",
+      "Memo": "Kamen_Pt_cher.jpg\t\t516019779\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t677176774\t26.04.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "53",
+      "Des": "Мрамор Каррара белый (F204 ST9)",
+      "Memo": "Mr_Kar_bel.jpg\t\t516019777\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t677176776\t26.04.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "54",
+      "Des": "Лиственница горная коричневая (H3404 ST38)",
+      "Memo": "List_gorn_kor.jpg\t\t516019773\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t682956209\t17.05.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "55",
+      "Des": "Фабрик Металл антрацит (F461 ST10)",
+      "Memo": "Fab_Met_antr.jpg\t\t516019770\tstandartplus\tkrdes43x2|_ckrhd\t444851574\t682956213\t17.05.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "56",
+      "Des": "Античный мрамор (LC 5566)",
+      "Memo": "Anticny_mramor.jpg\t\t285525855\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t749653227\t20.04.2023\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "57",
+      "Des": "Вайт кашмир глянец (F5219 AR+)",
+      "Memo": "AR_530.jpg\t\t215404879\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t749653232\t20.04.2023\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "58",
+      "Des": "Горный известняк (3377 Luna)",
+      "Memo": "3377.jpg\t\t202784132\tstandartplus\tkrompvh43x15|_ckrhd\t10533636\t749653233\t20.04.2023\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "59",
+      "Des": "Вяз Капский белый (H3760 ST10)",
+      "Memo": "wjaz_kaps_H3760.jpg\t\t316199390\tstandartplus\tabs42x15|_40CKABS\t629593710\t761606172\t20.04.2023\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "6",
+      "Des": "Дуб Ривьера (LC 804)",
+      "Memo": "Dub_riviera_LC804.jpg\t\t285594773\tstandart\tkrdoll45x15|_ckdl\t235247233\t285595058\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "7",
+      "Des": "Мрамор Арабика (LC6074 lucida)",
+      "Memo": "Mramor_arabika_LC6074.JPG\t\t285594770\tstandart\tkrdoll45x15|_ckdl\t235247233\t285595056\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "8",
+      "Des": "Мрамор Криолит (LC6075 lucida)",
+      "Memo": "Mramor_kriolit_LC6075.JPG\t\t285594772\tstandart\tkrdoll45x15|_ckdl\t235247233\t285595057\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DSPCOLOR",
+      "Codopz": "9",
+      "Des": "Дуб Кантри (LC788 wood)",
+      "Memo": "dub_kantri.jpg\t\t286939588\tstandart\tkrdoll45x15|_ckdl\t235247233\t286939843\t24.02.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

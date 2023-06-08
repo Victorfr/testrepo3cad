@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "tipsten",
+    "Des": "Тип стенки",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5256\r\r\r\u0011\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TIPSTEN",
+      "Codopz": "1",
+      "Des": "Вкладная ЛДСП 16 мм",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSTEN",
+      "Codopz": "2",
+      "Des": "Вкладная ЛДСП 10 мм",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSTEN",
+      "Codopz": "3",
+      "Des": "ХДФ 3.2 мм + царги",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

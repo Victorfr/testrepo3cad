@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "stTypeKrep",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010jpg\u0010 1515\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^2;3;150;150;3;#FOTO\\stilospred\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "STTYPEKREP",
+      "Codopz": "1",
+      "Des": "Пол-потолок",
+      "Memo": "polpotol.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "STTYPEKREP",
+      "Codopz": "2",
+      "Des": "Пол-стена",
+      "Memo": "stenapol.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "STTYPEKREP",
+      "Codopz": "3",
+      "Des": "Стена-стена",
+      "Memo": "stenastena.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

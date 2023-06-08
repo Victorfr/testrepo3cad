@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "navesLiving",
+    "Des": "Навесы",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010jpg\u0010 1305\u0010артикул L R\u0010 2610\u0010макс глубина\u0010 1200\u0010габариты L A P\u0010 1890\u0010артикул шины\u0010 1200\u0010MNP\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;2;370;200;3,4;#foto\\struttura\\living\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "NAVESLIVING",
+      "Codopz": "1",
+      "Des": "SAH 130",
+      "Memo": "SAH130.jpg\t1066278|1066279R\t400\t18|34|60\tTypB\t452966142",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESLIVING",
+      "Codopz": "2",
+      "Des": "CAMAR 807",
+      "Memo": "CAMAR807.jpg\tnavCamL|navCamR\t700\t9|77|60\tnavcamKr\t452966142",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESLIVING",
+      "Codopz": "999",
+      "Des": "Без навеса",
+      "Memo": "navesBez.jpg\t\t100000\t\t\t365528472",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

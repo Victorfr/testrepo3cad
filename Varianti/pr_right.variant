@@ -1,0 +1,15 @@
+{
+  "MainVar": {
+    "Cod": "pr_right",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010Значение припуска\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "pr_left",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": []
+}

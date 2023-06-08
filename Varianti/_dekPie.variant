@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "_dekPie",
+    "Des": "Декоративные опоры",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 555\u0010Описание\u0010 1575\u0010jpg\u0010 1380\u0010L\u0010 1200\u0010A\u0010 1200\u0010P\u0010 1200\u0010Артикул\u0010 1320\u0010дата вывода\u0010 1200\u0010код прототипа\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^2;3;250;250;3;#foto\\accessori\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_DEKPIE",
+      "Codopz": "1",
+      "Des": "Хром",
+      "Memo": "opora_ch.jpg\t60\t20\t60\t999opora_ch\t04.08.2022\tDEKOP",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_DEKPIE",
+      "Codopz": "2",
+      "Des": "Алюминий",
+      "Memo": "opora_al.jpg\t60\t20\t60\t999opora_al\t04.08.2022\tDEKOPHR",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_DEKPIE",
+      "Codopz": "3",
+      "Des": "Опора 50*50*16мм. алюминий (RAL 9006)",
+      "Memo": "opora_al50x50.jpg\t50\t16\t50\t999opora_al50x50\t01.01.2100\tDEKOP50X50AL",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_DEKPIE",
+      "Codopz": "4",
+      "Des": "Опора 50*50*16мм. черная (RAL 9005)",
+      "Memo": "opora_al50x50bl.jpg\t50\t16\t50\t999opora_al50x50bl\t01.01.2100\tDEKOP50X50BL",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "typeKarkas",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010картинка предпросмотра\u0010 2775\u0010цоколь\u0010 1200\u0010сторона крепежа\u0010 2700\r\r\r\u0011\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;2;370;200;3,4;#foto\\struttura\\living\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TYPEKARKAS",
+      "Codopz": "1",
+      "Des": "Крепеж внутри",
+      "Memo": "livingkorp1.jpg\t2\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPEKARKAS",
+      "Codopz": "2",
+      "Des": "Крепеж снаружи",
+      "Memo": "livingkorp2.jpg\t2\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPEKARKAS",
+      "Codopz": "3",
+      "Des": "Крепеж вниз",
+      "Memo": "livingkorp3.jpg\t1;2\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPEKARKAS",
+      "Codopz": "4",
+      "Des": "Крепеж вверх",
+      "Memo": "livingkorp4.jpg\t1;2\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "_color_univer_rip",
+    "Des": "Цвет",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 1380\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_COLOR_UNIVER_RIP",
+      "Codopz": "0001",
+      "Des": "Белый",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_COLOR_UNIVER_RIP",
+      "Codopz": "0002",
+      "Des": "Серый",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

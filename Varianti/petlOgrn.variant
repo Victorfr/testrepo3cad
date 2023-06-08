@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "petlOgrn",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "PETLOGRN",
+      "Codopz": "1",
+      "Des": "Ограничитель для петли с углом открывания 95 и 110",
+      "Memo": "OgrUgOtkr",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PETLOGRN",
+      "Codopz": "2",
+      "Des": "Ограничитель для петли с углом открывания 165",
+      "Memo": "OgrUg165Otkr",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PETLOGRN",
+      "Codopz": "3",
+      "Des": "Ограничитель для петли с углом корпуса 180",
+      "Memo": "ogrpetl9585",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PETLOGRN",
+      "Codopz": "4",
+      "Des": "Огран. для Петли вкладной с углом открывания 110",
+      "Memo": "OgrUg11Otkr",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

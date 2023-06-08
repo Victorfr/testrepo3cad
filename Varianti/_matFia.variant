@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "_matFia",
+    "Des": "Материал стен",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r999\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MATFIA",
+      "Codopz": "1",
+      "Des": "Гипсокартон",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATFIA",
+      "Codopz": "2",
+      "Des": "Бетон. кирпич",
+      "Memo": "2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATFIA",
+      "Codopz": "3",
+      "Des": "Натяжной",
+      "Memo": "3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATFIA",
+      "Codopz": "999",
+      "Des": "Нет",
+      "Memo": "999",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,566 @@
+{
+  "MainVar": {
+    "Cod": "matvstav",
+    "Des": "Тип вставки",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 2880\u0010Толщина\u0010 1245\u0010Вычет\u0010 1785\u0010модель вставки в дверь купе\u0010 630\u0010артикул пиломатериала\u0010 1695\u0010Материал из таблицы материалов для вставок\u0010 1200\u0010Прибавка к видимой части вставки\u0010 1200\u0010вставка G\u0010 570\u0010вставка S\u0010 1140\u0010разрешение вставки купе\u0010 1230\u0010разрешение вставки распашной\u0010 3600\u0010VideoVisible для цвета вставки в распашную дверь\u0010 495\u0010ID ПР модели для моделей с патиной\u0010 5520\u0010Фильтр по моделям распашных\u0010 4335\u0010Фильтр по моделям систем купе\u0010 690\u0010Название комм. моделей в mr.3\u0010 4140\u0010сеть\u0010 6720\u0010дата ввода\u0010 1200\u0010дата вывода\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "1",
+      "Des": "Зеркало серебро 4 мм",
+      "Memo": "4\t$(tipruch:17)\tS03\tZERK4\t6\t$(tipruch:23)\tn\tn\t1\t1\t0\t\tS08;S12;D02;E02;S26;S27;S01;s29;S31;$[iif;$[DATECOMPARE;$(dataordine);20.01.2022]<0;S02;];$[iif;$[DATECOMPARE;$(dataordine);20.01.2022]<0;S28;];$[iif;$[DATECOMPARE;$(dataordine);20.01.2022]<0;S04;]\tAR1;AR3\tЗеркало (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "10",
+      "Des": "Крашеное стекло Lacobel",
+      "Memo": "4\t$(tipruch:17)\tS09\tvet_list_kr\t9\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR1;AR3\tКрашенное стекло Lacobel (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "11",
+      "Des": "Стекло Stopsol бронза",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetStopBr\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "12",
+      "Des": "Стекло Stopsol серый",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetStopSl\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "13",
+      "Des": "Стекло Глория бесцветное",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetGlorNc\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S12;D02;E02;S26;S27;S01\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "14",
+      "Des": "Стекло Глория бронза",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetGlorBr\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S12;D02;E02;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t16.05.2022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "15",
+      "Des": "Стекло Квадро",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetKvad\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "16",
+      "Des": "Стекло Кризет",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetKriz\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "17",
+      "Des": "Стекло Марлевка",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetMarl\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "18",
+      "Des": "Стекло Матовое сатин",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetMatSat\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S12;D02;E02;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "19",
+      "Des": "Стекло Прозрачное",
+      "Memo": "4\t$(tipruch:17)\tS11\tvet_proz4\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "2",
+      "Des": "Зеркало бронза 4 мм",
+      "Memo": "4\t$(tipruch:17)\tS03\tZERKbr4\t7\t$(tipruch:23)\tn\tn\t1\t1\t0\t\tS08;S12;D02;E02;S26;S27;S01;s29;S31;$[iif;$[DATECOMPARE;$(dataordine);20.01.2022]<0;S02;];$[iif;$[DATECOMPARE;$(dataordine);20.01.2022]<0;S28;];$[iif;$[DATECOMPARE;$(dataordine);20.01.2022]<0;S04;]\tAR1;AR3\tЗеркало (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "20",
+      "Des": "Стекло Пунто",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetPunto\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "21",
+      "Des": "Стекло Тонированое",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetTonir\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S12;D02;E02;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "22",
+      "Des": "Стекло Шанель",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetShan\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "23",
+      "Des": "Стекло Artista",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetArtis\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "24",
+      "Des": "Стекло Кафедрал",
+      "Memo": "4\t$(tipruch:17)\tS11\tvetkaf\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS12;D02;E02;S08;S26;S02;S04;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "25",
+      "Des": "Mix 16 мм",
+      "Memo": "16\t$(tipruch:17)\tS22\tLDSP16\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tMIX (ШК Nova 16 мм)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t03.10.2019",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "26",
+      "Des": "Mix 10 мм",
+      "Memo": "16\t$(tipruch:17)\tS14\tLDSP10\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tMIX (ШК Nova 10 мм)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "27",
+      "Des": "Jazz",
+      "Memo": "16\t$(tipruch:17)\tS13\tLMDF16\t$(_factura:3)\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tJazz (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "28",
+      "Des": "Spark",
+      "Memo": "16\t$(tipruch:17)\tS15\tLDSP8\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tSpark (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "29",
+      "Des": "Thermoplastic",
+      "Memo": "16\t$(tipruch:17)\tS16\tLMDF16WF\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tThermoplastic (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "3",
+      "Des": "Зеркало антрацит 4 мм",
+      "Memo": "4\t$(tipruch:17)\tS03\tZERKant4\t8\t$(tipruch:23)\tn\tn\t1\t1\t0\t\tS02;S04;S08;S12;D02;E02;S26;S27;S01;S28;s29;s31\tAR1;AR3\tЗеркало (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "30",
+      "Des": "Wood Color",
+      "Memo": "16\t$(tipruch:17)\tS17\tMDF16SH\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tWood Color (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "31",
+      "Des": "Зеркало серебро",
+      "Memo": "16\t$(tipruch:17)\tS18\tZERK4\t6\t$(tipruch:23)\tn\tn\t1\t0\t0\t\t\tAR2\tЗеркало (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "32",
+      "Des": "Зеркало бронза",
+      "Memo": "16\t$(tipruch:17)\tS18\tZERKbr4\t7\t$(tipruch:23)\tn\tn\t1\t0\t0\t\t\tAR2\tЗеркало (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "33",
+      "Des": "Зеркало антрацит",
+      "Memo": "16\t$(tipruch:17)\tS18\tZERKant4\t8\t$(tipruch:23)\tn\tn\t1\t0\t0\t\t\tAR2\tЗеркало (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "34",
+      "Des": "Крашенное стекло",
+      "Memo": "16\t$(tipruch:17)\tS19\tvet_him_osv4\t9\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tКрашенное стекло (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "35",
+      "Des": "Крашенное стекло Lacobel",
+      "Memo": "16\t$(tipruch:17)\tS20\tvet_list_kr\t9\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tКрашенное стекло Lacobel (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "36",
+      "Des": "Фотопечать Color",
+      "Memo": "16\t$(tipruch:17)\tS21\tLDSP16\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tФотопечать Color (ШК Nova)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "37",
+      "Des": "Energy 10 мм",
+      "Memo": "10\t$(tipruch:19)\tL01\tLDSP10\t4\t$(tipruch:25)\tn\tn\t1\t0\t1\t\t\tAR1;AR3\tEnergy (ШК 10 мм)\tELDOR_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "38",
+      "Des": "Time 10 мм",
+      "Memo": "10\t$(tipruch:19)\tD01\tLDSP10\t4\t$(tipruch:25)\tn\tn\t1\t0\t1\t\t\tAR1;AR3\tTime (ШК 10 мм)\tTVDOM_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "39",
+      "Des": "Tokyo 10 мм",
+      "Memo": "10\t$(tipruch:19)\tE01\tLDSP10\t4\t$(tipruch:25)\tn\tn\t1\t0\t1\t\t\tAR1;AR3\tTokyo (ШК 10 мм)\tEDDOM_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "4",
+      "Des": "Фотопечать Lux 4 мм",
+      "Memo": "4\t$(tipruch:17)\tS06\tvet_him_osv4\t9\t$(tipruch:23)\tn\tn\t1\t1\t1\t\tS08;S26\tAR1;AR3\tФотопечать LUX 4мм (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "40",
+      "Des": "Energy 16 мм",
+      "Memo": "16\t$(tipruch:17)\tL03\tLDSPN16\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tEnergy (ШК Nova 16 мм)\tELDOR_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "41",
+      "Des": "Energy 10 мм",
+      "Memo": "16\t$(tipruch:17)\tL02\tLDSP10\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tEnergy (ШК Nova 10 мм)\tELDOR_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "42",
+      "Des": "Time 16 мм",
+      "Memo": "16\t$(tipruch:17)\tD04\tLDSPN16\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tTime (ШК Nova 16 мм)\tTVDOM_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "43",
+      "Des": "Time 10 мм",
+      "Memo": "16\t$(tipruch:17)\tD03\tLDSP10\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tTime (ШК Nova 10 мм)\tTVDOM_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "44",
+      "Des": "Tokyo 16 мм",
+      "Memo": "16\t$(tipruch:17)\tE04\tLDSPN16\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tTokyo (ШК Nova 16 мм)\tEDDOM_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "45",
+      "Des": "Tokyo 10 мм",
+      "Memo": "16\t$(tipruch:17)\tE03\tLDSP10\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tTokyo (ШК Nova 10 мм)\tEDDOM_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "46",
+      "Des": "Mix 16 мм",
+      "Memo": "16\t$(tipruch:17)\tS22\tLDSPN16\t4\t$(tipruch:23)\tn\tn\t1\t0\t1\t\t\tAR2\tMIX (ШК Nova 16 мм)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t03.10.2019\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "47",
+      "Des": "Classic эмаль",
+      "Memo": "8\t$(tipruch:18)\tS26\tLMDF19\t$(_factura:3)\t$(tipruch:24)\tClassic8_G.3DS\tClassic8_S.3DS\t1\t0\t1\t404009474\t\tAR1;AR3\tClassic (эмаль ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "48",
+      "Des": "Ice ШК",
+      "Memo": "19\t$(tipruch:18)\tS27\tLMDF19SH\t4\t$(tipruch:24)\tn\tn\t1\t0\t1\t\t\t\tIce (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "49",
+      "Des": "Jazz ШК",
+      "Memo": "19\t$(tipruch:18)\tS01\tLMDF19\t$(_factura:3)\t$(tipruch:24)\tn\tn\t1\t0\t1\t\t\t\tJazz (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "5",
+      "Des": "Фотопечать Optima 4 мм",
+      "Memo": "4\t$(tipruch:17)\tS07\tvet_proz4\t10\t$(tipruch:23)\tn\tn\t1\t1\t1\t\tS08;S26\tAR1;AR3\tФотопечать OPTIMA 4 мм (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "50",
+      "Des": "Зеркало серебро 4 мм",
+      "Memo": "4\t$(tipruch:17)\tZEVR\tZERK4_evr_sil\t6\t$(tipruch:23)\tn\tn\t1\t1\t0\t\tS30\tAR1;AR3\tЗеркало (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "51",
+      "Des": "Зеркало бронза 4 мм",
+      "Memo": "4\t$(tipruch:17)\tZEVR\tZERK4_evr_br\t7\t$(tipruch:23)\tn\tn\t1\t1\t0\t\tS30\tAR1;AR3\tЗеркало (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.05.2021",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "52",
+      "Des": "Зеркало антрацит 4 мм",
+      "Memo": "4\t$(tipruch:17)\tZEVR\tZERK4_evr_ant\t8\t$(tipruch:23)\tn\tn\t1\t1\t0\t\tS30\tAR1;AR3\tЗеркало (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.05.2021",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "53",
+      "Des": "Vector акрил",
+      "Memo": "20\t\tS29\tVMDF20\t4\t\tт\tт\t1\t1\t0\t\t\t\tVector акрил (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "54",
+      "Des": "Integrato ШК",
+      "Memo": "22\t$(tipruch:18)\tS32\tLMDF22SH\t$(_factura:3)\t$(tipruch:24)\tn\tn\t1\t1\t0\t\t\t\tIntegrato (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t17.05.2022\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "55",
+      "Des": "Стекло Ribbed Glass",
+      "Memo": "4\t$(tipruch:17)\tS11\tribbglass\t3\t$(tipruch:23)\t0\t0\t0\t1\t0\t\tS12;D02;E02;S08;S26;S02;S04;S27;S01;S28;s29;s31\t\tСтекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "6",
+      "Des": "Крашеное стекло 4 мм",
+      "Memo": "4\t$(tipruch:17)\tS05\tvet_him_osv4\t9\t$(tipruch:23)\tn\tn\t1\t1\t1\t\tS02;S04;S08;S26;S27;S01;S28;s29;s31\tAR1;AR3\tКрашенное стекло (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "7",
+      "Des": "Spark 8 мм",
+      "Memo": "8\t$(tipruch:18)\tS04\tLDSP8\t4\t$(tipruch:24)\tn\tn\t1\t0\t1\t\t\tAR1;AR3\tSpark (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "8",
+      "Des": "Mix 10 мм",
+      "Memo": "10\t$(tipruch:19)\tS02\tLDSP10\t4\t$(tipruch:25)\tn\tn\t1\t0\t1\t\t\tAR1;AR3\tMIX (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATVSTAV",
+      "Codopz": "9",
+      "Des": "Classic",
+      "Memo": "8\t$(tipruch:18)\tS08\tLMDF19SH\t4\t$(tipruch:24)\t$[IIF;$[DATECOMPARE;$(dataordine);$(_DataNewVst:3)]>=0;Classic8_G.3DS;Classic8_GG.3DS]\tClassic8_S.3DS\t1\t0\t1\t396846319\t\tAR1;AR3\tClassic (ШК)\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t01.01.2018\t01.01.2100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

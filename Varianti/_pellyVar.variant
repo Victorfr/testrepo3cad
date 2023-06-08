@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "_pellyVar",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 8520\u0010L\u0010 1200\u0010A\u0010 1200\u0010P\u0010 1200\u0010cod\u0010 1200\u00103ds\u0010 1725\u0010tex\u0010 1200\u0010планка\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_PELLYVAR",
+      "Codopz": "1",
+      "Des": "PELLY 2566.00.81.02 Корзина сетчатая  Bac Mesh Rol",
+      "Memo": "536\t494\t160\tpelly536sil\tpellycor546sil.3ds\t\tpelRolSil",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PELLYVAR",
+      "Codopz": "2",
+      "Des": "PELLY 2566.00.81.02 Корзина сетчатая  Bac Mesh Rol",
+      "Memo": "536\t494\t160\tpelly536ant\tpellycor546ant.3ds\t\tpelRolAnt",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PELLYVAR",
+      "Codopz": "3",
+      "Des": "PELLY 2556.00.81.02 Корзина сетчатая  Bac Mesh Rol",
+      "Memo": "436\t494\t160\tpelly436sil\tpellycor446sil.3ds\t\tpelRolSil",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PELLYVAR",
+      "Codopz": "4",
+      "Des": "PELLY 2556.00.81.02 Корзина сетчатая  Bac Mesh Rol",
+      "Memo": "436\t494\t160\tpelly436ant\tpellycor446ant.3ds\t\tpelRolAnt",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PELLYVAR",
+      "Codopz": "5",
+      "Des": "PELLY 2546.00.81.02 Корзина сетчатая  Bac Mesh Rol",
+      "Memo": "336\t494\t160\tpelly336sil\tpellycor346sil.3ds\t\tpelRolSil",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PELLYVAR",
+      "Codopz": "6",
+      "Des": "PELLY 2546.00.81.02 Корзина сетчатая  Bac Mesh Rol",
+      "Memo": "336\t494\t160\tpelly336ant\tpellycor346ant.3ds\t\tpelRolAnt",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

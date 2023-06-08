@@ -1,0 +1,166 @@
+{
+  "MainVar": {
+    "Cod": "pegs",
+    "Des": "Крючки",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010id\u0010 1200\u0010ш\u0010 1200\u0010в\u0010 1200\u0010г\u0010 1200\u0010img\u0010 1200\u00103ds\u0010 1200\u0010код товара\u0010 1200\u0010дата ввода\u0010 1200\u0010дата вывода\u0010 1200\u0010резерв\u0010 1200\u0010текстура1\u0010 1200\u0010текстура2\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "PEGS",
+      "Codopz": "001",
+      "Des": "Крючок мебельный 397 двухрожковый замак черный",
+      "Memo": "697009279\t27\t54\t77\tRZ397Z.002BL.BL.jpg\tRZ397Z.002.3ds\tRZ397Z.002BL.BL\t20.07.2022\t01.01.2100\t\tblack.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "002",
+      "Des": "Крючок мебельный JET 511 трехрожковый замак хром",
+      "Memo": "697009284\t75\t127\t50\tRLG511Z.003CP.jpg\tRLG511Z.003.3ds\tRLG511Z.003CP\t20.07.2022\t01.01.2100\t\txrom.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "003",
+      "Des": "Крючок мебельный 591 однорожковый замак черный мат",
+      "Memo": "697009285\t40\t40\t12\tCM591Z.001BL.jpg\tCM591Z.001.3ds\tCM591Z.001BL\t20.07.2022\t01.01.2100\t\tblack.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "004",
+      "Des": "Крючок мебельный JET 511 трехрожковый замак алюмин",
+      "Memo": "697009283\t75\t127\t50\tRLG511Z.003SC.jpg\tRLG511Z.003.3ds\tRLG511Z.003SC\t20.07.2022\t01.01.2100\t\talum.JPG\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "005",
+      "Des": "Крючок мебельный JET 511 трехрожковый замак черный",
+      "Memo": "697009282\t75\t127\t50\tRLG511Z.003BL.jpg\tRLG511Z.003.3ds\tRLG511Z.003BL\t20.07.2022\t01.01.2100\t\tblack.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "006",
+      "Des": "Крючок мебельный 590 двухрожковый замак хром",
+      "Memo": "697009281\t40\t40\t52\tCM590Z.002CP.jpg\tCM590Z.002.3ds\tCM590Z.002CP\t20.07.2022\t01.01.2100\t\txrom.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "007",
+      "Des": "Крючок мебельный 591 однорожковый замак хром",
+      "Memo": "697009286\t40\t40\t12\tCM591Z.001CP.jpg\tCM591Z.001.3ds\tCM591Z.001CP\t20.07.2022\t01.01.2100\t\txrom.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "008",
+      "Des": "Крючок мебельный 397 двухрожковый замак жемчужный",
+      "Memo": "697009288\t27\t54\t77\tRZ397Z.002PG.NN.jpg\tRZ397Z.002.3ds\tRZ397Z.002PG.NN\t20.07.2022\t01.01.2100\t\tperl_grey.JPG\tnikel.JPG",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "009",
+      "Des": "Крючок мебельный 397 трехрожковый замак хром браш.",
+      "Memo": "697009291\t64\t144\t77\tRZ397Z.003CP.NN.jpg\tRZ397Z.003.3ds\tRZ397Z.003CP.NN\t20.07.2022\t01.01.2100\t\txrom.jpg\tnikel.JPG",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "010",
+      "Des": "Крючок мебельный 397 трехрожковый замак хром черны",
+      "Memo": "697009287\t64\t144\t77\tRZ397Z.003CP.BL.jpg\tRZ397Z.003.3ds\tRZ397Z.003CP.BL\t20.07.2022\t01.01.2100\t\txrom.jpg\tblack.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "011",
+      "Des": "Крючок мебельный 397 трехрожковый замак черный",
+      "Memo": "697009290\t64\t144\t77\tRZ397Z.003BL.BL.jpg\tRZ397Z.003.3ds\tRZ397Z.003BL.BL\t20.07.2022\t01.01.2100\t\tblack.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "012",
+      "Des": "Крючок мебельный 397 двухрожковый замак хром черны",
+      "Memo": "697009289\t27\t54\t77\tRZ397Z.002CP.BL.jpg\tRZ397Z.002.3ds\tRZ397Z.002CP.BL\t20.07.2022\t01.01.2100\t\txrom.jpg\tblack.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "013",
+      "Des": "Крючок мебельный 590 двухрожковый замак черный мат",
+      "Memo": "697009280\t40\t40\t52\tCM590Z.002BL.jpg\tCM590Z.002.3ds\tCM590Z.002BL\t20.07.2022\t01.01.2100\t\tblack.jpg\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "014",
+      "Des": "Крючок мебельный 397 трехрожковый замак жемчужный",
+      "Memo": "697009292\t64\t144\t77\tRZ397Z.003PG.NN.jpg\tRZ397Z.003.3ds\tRZ397Z.003PG.NN\t20.07.2022\t01.01.2100\t\tperl_grey.JPG\tnikel.JPG",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PEGS",
+      "Codopz": "015",
+      "Des": "Крючок мебельный 397 двухрожковый замак хром браш.",
+      "Memo": "697009293\t27\t54\t77\tRZ397Z.002CP.NN.jpg\tRZ397Z.002.3ds\tRZ397Z.002CP.NN\t20.07.2022\t01.01.2100\t\txrom.jpg\tNickel.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "BOXTYPE",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5220\u0010jpg\u0010 1200\u00103ds\u0010 3345\u0010размеры\u0010 1200\u0010cod\u0010 1530\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "BOXTYPE",
+      "Codopz": "1",
+      "Des": "Лоток многофункциональный большой",
+      "Memo": "\tSatin_007.3ds\t365x50x432\t999mxLotF43x36",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "BOXTYPE",
+      "Codopz": "2",
+      "Des": "Лоток для хранения ювелирных украшений",
+      "Memo": "\tSatin_001.3ds\t150x50x432\t999mxlotUv43x15",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "BOXTYPE",
+      "Codopz": "3",
+      "Des": "Лоток многофункциональный",
+      "Memo": "\tSatin_002.3ds\t150x50x432\t999mxLotF43x15",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "BOXTYPE",
+      "Codopz": "4",
+      "Des": "Лоток для хранения часов",
+      "Memo": "\tSatin_004.3ds\t150x50x432\t999mxLotT43x15",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

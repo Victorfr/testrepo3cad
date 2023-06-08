@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "dekopory",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010art\u0010 1200\u0010pref\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;3;200;200;4;#HTML\\fotocat\\agg3ds\\;2;2;1",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "DEKOPORY",
+      "Codopz": "01",
+      "Des": "опоры",
+      "Memo": "\tlegs_pokonar\\Опора Мадрид фото.JPG\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DEKOPORY",
+      "Codopz": "01.01",
+      "Des": "ПОКОНАР",
+      "Memo": "\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DEKOPORY",
+      "Codopz": "01.01.01",
+      "Des": "ПОКОНАР Опора ШК Фиджи 720х595 (OP.24.720)",
+      "Memo": "Fidji.3ds\tlegs_pokonar\\Опора Фиджи фото.JPG\t110\t720\t595\tfid720x595\tfid",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DEKOPORY",
+      "Codopz": "01.01.04",
+      "Des": "ПОКОНАР Опора ШК Мадрид 720х595 (ОП8-75R)",
+      "Memo": "Madrid.3ds\tlegs_pokonar\\Опора Мадрид фото.JPG\t200\t720\t595\tmad720x595\tmad",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DEKOPORY",
+      "Codopz": "01.01.07",
+      "Des": "ПОКОНАР Опора ШК АРГО 720х595 (ОР.27.720)",
+      "Memo": "Argo.3ds\tlegs_pokonar\\Опора Арго фото.JPG\t224\t720\t595\targ720x595\targ",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DEKOPORY",
+      "Codopz": "01.01.10",
+      "Des": "ПОКОНАР Опора Лиссабон-Т 720х550 (ОП10Т-72R).",
+      "Memo": "LIS.3DS\tlegs_pokonar\\lisabon720.jpg\t100\t720\t550\tlis720x550\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

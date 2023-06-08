@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "sidecol",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1485\u0010\u0010 1875\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "SIDECOL",
+      "Codopz": "1",
+      "Des": "Облицованная с 1 стороны",
+      "Memo": "DSPL401|_40ck\t999K_KARKASDSP40",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "SIDECOL",
+      "Codopz": "2",
+      "Des": "Облицованная с 2х сторон",
+      "Memo": "DSPL402|_40ck\t999K_KARKASDSP402",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "leftVirCount",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "LEFTVIRCOUNT",
+      "Codopz": "1",
+      "Des": "1 вырез",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LEFTVIRCOUNT",
+      "Codopz": "2",
+      "Des": "2 выреза",
+      "Memo": "1;2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "tipRaspshkaf",
+    "Des": "Тип распашного шкафа",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010цоколь\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TIPRASPSHKAF",
+      "Codopz": "1",
+      "Des": "Шкаф распашной (антресоль)",
+      "Memo": "0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPRASPSHKAF",
+      "Codopz": "2",
+      "Des": "Шкаф распашной с цоколем",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPRASPSHKAF",
+      "Codopz": "3",
+      "Des": "Шкаф распашной с декоративными опорами",
+      "Memo": "0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

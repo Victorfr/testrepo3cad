@@ -1,0 +1,66 @@
+{
+  "MainVar": {
+    "Cod": "ndoors",
+    "Des": "Кол-во дверей",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010количество дверей\u0010 1245\u0010Кол-во перекрытий\u0010 2235\u0010JPG\u0010 1245\u0010константа для расчёта ширины Aristo Stand/Fusion/Flat/Nova\u0010 6780\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^2;3;300;300;5;#FOTO\\Kupe\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "NDOORS",
+      "Codopz": "2",
+      "Des": "2 двери",
+      "Memo": "2\t1\t2doors.jpg\t15z29.5z35z12",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NDOORS",
+      "Codopz": "3",
+      "Des": "3 двери",
+      "Memo": "3\t2\t3doors.jpg\t40z69z80z24",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NDOORS",
+      "Codopz": "4",
+      "Des": "4 двери попеременно",
+      "Memo": "4\t3\t4doors1.jpg\t65z108.5z125z36",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NDOORS",
+      "Codopz": "5",
+      "Des": "4 двери симметрично",
+      "Memo": "4\t2\t4doors2.jpg\t30z59z70z24",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NDOORS",
+      "Codopz": "6",
+      "Des": "5 дверей",
+      "Memo": "5\t4\t5doors.jpg\t90z148z170z48",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "altShMixal",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010Высота\u0010 2100\u0010высота двери\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "ALTSHMIXAL",
+      "Codopz": "1",
+      "Des": "Шкаф высотой 2420 мм",
+      "Memo": "2420\t2400",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "ALTSHMIXAL",
+      "Codopz": "2",
+      "Des": "Шкаф высотой 2620 мм",
+      "Memo": "2620\t2600",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

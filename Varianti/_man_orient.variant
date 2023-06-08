@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "_man_orient",
+    "Des": "Ориентация ручки",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MAN_ORIENT",
+      "Codopz": "0",
+      "Des": "Горизонтально",
+      "Memo": "0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_ORIENT",
+      "Codopz": "1",
+      "Des": "Вертикально",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

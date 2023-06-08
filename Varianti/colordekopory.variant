@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "colordekopory",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010id\u0010 1200\u0010pref\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "COLORDEKOPORY",
+      "Codopz": "01",
+      "Des": "Чёрный бархат мат (9005)",
+      "Memo": "Madrid.3ds\tFidji.3ds\tArgo.3ds\t50;50;50\t233957587\tbl",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COLORDEKOPORY",
+      "Codopz": "02",
+      "Des": "Серебро бриллиант (0393)",
+      "Memo": "Madrid.3ds\tFidji.3ds\tArgo.3ds\t197;201;199\t233957590\tsl",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COLORDEKOPORY",
+      "Codopz": "03",
+      "Des": "Белый бархат мат (9016)",
+      "Memo": "Madrid.3ds\tFidji.3ds\tArgo.3ds\t255;255;255\t233957589\tblm",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

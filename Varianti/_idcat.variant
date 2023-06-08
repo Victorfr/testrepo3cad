@@ -1,0 +1,366 @@
+{
+  "MainVar": {
+    "Cod": "_idcat",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "105496122",
+      "Des": "Каталог Коммерческий",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "105496126",
+      "Des": "Каталог OBI",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "112623055",
+      "Des": "Каталог Мария",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "137555452",
+      "Des": "Каталог Hoff",
+      "Memo": "2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "138010264",
+      "Des": "Каталог Ванные комнаты",
+      "Memo": "100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "139862872",
+      "Des": "Каталог Реклама",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "139862883",
+      "Des": "Каталог Услуги",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "140868779",
+      "Des": "Каталог Дисконт-центра",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "145040212",
+      "Des": "Каталог Компоненты с ценами Кухни",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "148778014",
+      "Des": "Каталог Выставочная стойка Кухни",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "154831383",
+      "Des": "Каталог Выставочная стойка ВК",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "160065014",
+      "Des": "Каталог Обеспечение",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "162127843",
+      "Des": "Каталог Hoff Ванные комнаты",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "170323847",
+      "Des": "Каталог Реклама для менеджеров ТД",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "175761553",
+      "Des": "Каталог Едим Дома",
+      "Memo": "4",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "179012278",
+      "Des": "Каталог Concept Store",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "191838289",
+      "Des": "Каталог Компоненты с ценами ВК",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "202718522",
+      "Des": "Каталог Эльдорадо",
+      "Memo": "3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "203938528",
+      "Des": "Каталог Офисная мебель Едим Дома",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "203938569",
+      "Des": "Каталог Реклама Едим Дома",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "205976569",
+      "Des": "Каталог Мотивация дизайнеров",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "206128762",
+      "Des": "Каталог Реэкспорт",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "207207232",
+      "Des": "Каталог Офисная мебель Эльдорадо",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "208754480",
+      "Des": "Каталог Hoff Modern Line",
+      "Memo": "5",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "208754640",
+      "Des": "Каталог OBI 2015",
+      "Memo": "6",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "214177003",
+      "Des": "Каталог Твой Дом",
+      "Memo": "7",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "214177037",
+      "Des": "Каталог Твой Дом Мебель в магазин",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "214177071",
+      "Des": "Каталог Твой Дом Выставочная стойка",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "214177141",
+      "Des": "Каталог Твой Дом Реклама",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "214177259",
+      "Des": "Каталог Интернет-магазин",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "224668414",
+      "Des": "Каталог Офисная мебель Hoff Modern Line",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "230607242",
+      "Des": "Каталог Едим Дома Выставочная стойка",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "237493758",
+      "Des": "Каталог Эльдорадо Выставочная стойка",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "245007434",
+      "Des": "Каталог Мaрия Лайт",
+      "Memo": "8",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_IDCAT",
+      "Codopz": "355811022",
+      "Des": "Каталог Шкафы-купе Мария",
+      "Memo": "300",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

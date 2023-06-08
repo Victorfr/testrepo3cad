@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "_gsd_vst",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010типы GSD\u0010 1455\u0010положение в строке с 3ds\u0010 2220\u0010параметр\u0010 3000\u0010наименование\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_GSD_VST",
+      "Codopz": "1",
+      "Des": "Слева",
+      "Memo": "35;36\t1\t493423640\tСлева",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_VST",
+      "Codopz": "2",
+      "Des": "Справа",
+      "Memo": "35;36\t2\t493423637\tСправа",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_VST",
+      "Codopz": "3",
+      "Des": "Сверху",
+      "Memo": "37;38\t2\t493423639\tСверху",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_VST",
+      "Codopz": "4",
+      "Des": "Снизу",
+      "Memo": "37;38\t1\t493423636\tСнизу",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

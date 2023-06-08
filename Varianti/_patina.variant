@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "_patina",
+    "Des": "Патина",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010jpg\u0010 1200\u0010фильтр для цвета\u0010 8835\u0010id патины\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_PATINA",
+      "Codopz": "100",
+      "Des": "Патина орех",
+      "Memo": "federica_p.jpg\t281\t60248306",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PATINA",
+      "Codopz": "200",
+      "Des": "Патина золото",
+      "Memo": "zoloto_p.jpg\t\t60248303",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PATINA",
+      "Codopz": "300",
+      "Des": "Патина шампань",
+      "Memo": "p93ahm.jpg\t\t258087395",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PATINA",
+      "Codopz": "400",
+      "Des": "Патина серебро",
+      "Memo": "serebro.jpg\t\t60248305",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PATINA",
+      "Codopz": "500",
+      "Des": "Патина черная",
+      "Memo": "blackpat.jpg\t\t60248304",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PATINA",
+      "Codopz": "999",
+      "Des": "Без патины",
+      "Memo": "NP\t281\t60251733",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}
