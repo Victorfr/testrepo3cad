@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "COLORE",
+    "Des": "Цвет",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010Цвет\u0010 1140\r001\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "COLORE",
+      "Codopz": "000",
+      "Des": "Ошибка",
+      "Memo": "0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COLORE",
+      "Codopz": "001",
+      "Des": "Белый",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COLORE",
+      "Codopz": "002",
+      "Des": "Сталь",
+      "Memo": "2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COLORE",
+      "Codopz": "003",
+      "Des": "Стекло",
+      "Memo": "3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

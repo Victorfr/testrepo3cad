@@ -1,0 +1,66 @@
+{
+  "MainVar": {
+    "Cod": "col_sysst",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010pref\u0010 1200\u0010n stolb\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "COL_SYSST",
+      "Codopz": "1",
+      "Des": "Stand",
+      "Memo": "Aristo_ST_\t11",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSST",
+      "Codopz": "2",
+      "Des": "Fusion",
+      "Memo": "Aristo_FS_\t12",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSST",
+      "Codopz": "3",
+      "Des": "Flat",
+      "Memo": "Aristo_FL_\t13",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSST",
+      "Codopz": "4",
+      "Des": "Nova",
+      "Memo": "Aristo_NV_\t14",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSST",
+      "Codopz": "999",
+      "Des": "",
+      "Memo": "\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

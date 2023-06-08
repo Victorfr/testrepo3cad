@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "_doorPolog",
+    "Des": "Положение дверей",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010тип каркаса разрешенный\u0010 3675\u0010накладная дверь\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_DOORPOLOG",
+      "Codopz": "1",
+      "Des": "Накладные",
+      "Memo": "1;2;3;4\t0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_DOORPOLOG",
+      "Codopz": "2",
+      "Des": "Вкладные",
+      "Memo": "1;2;3;4\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_DOORPOLOG",
+      "Codopz": "3",
+      "Des": "Полувкладные по горизонтали",
+      "Memo": "1;2\t0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_DOORPOLOG",
+      "Codopz": "4",
+      "Des": "Полувкладные по вертикали",
+      "Memo": "3;4\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

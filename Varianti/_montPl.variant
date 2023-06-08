@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "_montPl",
+    "Des": "Монтажная планка",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 6105\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MONTPL",
+      "Codopz": "01",
+      "Des": "HETTICH 9091805 SENSYS INTERMAT дист. 3 (черный)",
+      "Memo": "999montPlBl",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MONTPL",
+      "Codopz": "02",
+      "Des": "HETTICH 9071627 SENSYS дист 3 с винтами H3.0 (У)",
+      "Memo": "999montPlSen",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

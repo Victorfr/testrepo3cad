@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "mat_backwall",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 1560\u0010толщина\u0010 1200\u0010артикул пиломатериала задней стенки\u0010 3150\u0010MNP\u0010 1200\u0010Максимальный габарит\u0010 2505\u0010сеть\u0010 5370\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "MAT_BACKWALL",
+      "Codopz": "01",
+      "Des": "4 мм ХДФ",
+      "Memo": "4\tHDF4|_CKH\t365528472\t2750m1200\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MAT_BACKWALL",
+      "Codopz": "02",
+      "Des": "10 мм MIX",
+      "Memo": "10\tLDSP10|CVET_VST\t399111796\t2750m1200\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MAT_BACKWALL",
+      "Codopz": "03",
+      "Des": "8 мм Spark",
+      "Memo": "8\tLDSP8|CFSP\t399111805\t2750m1200\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MAT_BACKWALL",
+      "Codopz": "04",
+      "Des": "TSS",
+      "Memo": "\tTSSDSPL8|CFSP\t399111805\t2750m1200\tMONDERO",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

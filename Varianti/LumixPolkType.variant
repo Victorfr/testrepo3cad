@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "LumixPolkType",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010столбец с кодом\u0010 2310\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "LUMIXPOLKTYPE",
+      "Codopz": "1",
+      "Des": "Обычная",
+      "Memo": "5",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLKTYPE",
+      "Codopz": "2",
+      "Des": "С вешалом",
+      "Memo": "6",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLKTYPE",
+      "Codopz": "3",
+      "Des": "С подсветкой",
+      "Memo": "7",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLKTYPE",
+      "Codopz": "4",
+      "Des": "С вешалом и подстветкой",
+      "Memo": "9",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

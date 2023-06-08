@@ -1,0 +1,15 @@
+{
+  "MainVar": {
+    "Cod": "matDn",
+    "Des": "Толщина дна",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5256\u0010Выбор\u0010 1248\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "mat",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": []
+}

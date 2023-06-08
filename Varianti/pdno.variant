@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "pdno",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5256\u0010P\u0010 1248\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "PDNO",
+      "Codopz": "1",
+      "Des": "100 мм",
+      "Memo": "100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PDNO",
+      "Codopz": "2",
+      "Des": "На всю глубину",
+      "Memo": "$P",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "MainVar": {
+    "Cod": "_GSD",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 1680\u0010A\u0010 1200\u0010L\u0010 3300\u00103ds\u0010 8205\u0010NPO\u0010 2730\u0010высоты\u0010 3630\u0010modeli\u0010 1200\u0010NPO Classic\u0010 5325\u0010jpg\u0010 1950\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^2;6;100;189;10;#FOTO\\fasadtype\\;2;;;;1",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_GSD",
+      "Codopz": "1",
+      "Des": "Обычный S",
+      "Memo": "0\t0\t\t\t\t\t\tS.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "10",
+      "Des": "SD Тип 1",
+      "Memo": "716\t396;446;596\tx|x|x|Nicolle_407_716x396_SD.3ds|Nicolle_407_716x446_SD.3ds|Nicolle_409_716x596_SD.3ds\tx|x|x|485689270|485689270|485689272\t2|230x291\tS08;S26\tx|x|x|485689261|485689261|485689263\ttp_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "11",
+      "Des": "SD Тип 1",
+      "Memo": "956\t396;446;596\tx|x|x|Nicolle_407_956x396_SD.3ds|Nicolle_407_956x446_SD.3ds|Nicolle_409_956x596_SD.3ds\tx|x|x|485689270|485689270|485689272\t2|230x531\tS08;S26\tx|x|x|485689261|485689261|485689263\ttp_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "12",
+      "Des": "SD Тип 1",
+      "Memo": "1316\t396;446;596\tx|x|x|Nicolle_407_1316x396_SD.3ds|Nicolle_407_1316x446_SD.3ds|Nicolle_409_1316x596_SD.3ds\tx|x|x|485689270|485689270|485689272\t2|230x891\tS08;S26\tx|x|x|485689261|485689261|485689263\ttp_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "13",
+      "Des": "SD Тип 2",
+      "Memo": "356\t396;446;596;896\tx|x|x|Nicolle_410_356x396_SD.3ds|Nicolle_410_356x446_SD.3ds|Nicolle_410_356x596_SD.3ds|Nicolle_410_356x896_SD.3ds\tx|x|x|485689273|485689273|485689273|485689273\t1|226\tS08;S26\tx|x|x|485689264|485689264|485689264|485689264\ttp_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "14",
+      "Des": "SD Тип 2",
+      "Memo": "476\t396;446;596\tx|x|x|Nicolle_410_476x396_SD.3ds|Nicolle_410_476x446_SD.3ds|Nicolle_410_476x596_SD.3ds\tx|x|x|485689273|485689273|485689273|485689273\t1|346\tS08;S26\tx|x|x|485689264|485689264|485689264|485689264\ttp_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "15",
+      "Des": "SD Тип 2",
+      "Memo": "596\t396;446;596\tx|x|x|Nicolle_410_596x396_SD.3ds|Nicolle_410_596x446_SD.3ds|Nicolle_410_596x596_SD.3ds\tx|x|x|485689273|485689273|485689273|485689273\t1|466\tS08;S26\tx|x|x|485689264|485689264|485689264|485689264\ttp_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "16",
+      "Des": "SD Тип 2",
+      "Memo": "716\t396;446;596\tx|x|x|Nicolle_410_716x396_SD.3ds|Nicolle_410_716x446_SD.3ds|Nicolle_410_716x596_SD.3ds\tx|x|x|485689273|485689273|485689273|485689273\t1|586\tS08;S26\tx|x|x|485689264|485689264|485689264|485689264\ttp_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "17",
+      "Des": "SD Тип 2",
+      "Memo": "956\t396;446;596\tx|x|x|Nicolle_410_956x396_SD.3ds|Nicolle_410_956x446_SD.3ds|Nicolle_410_956x596_SD.3ds\tx|x|x|485689273|485689273|485689273|485689273\t1|826\tS08;S26\tx|x|x|485689264|485689264|485689264|485689264\ttp_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "18",
+      "Des": "SD Тип 2",
+      "Memo": "1316\t396;446;596\tx|x|x|Nicolle_410_1316x396_SD.3ds|Nicolle_410_1316x446_SD.3ds|Nicolle_410_1316x596_SD.3ds\tx|x|x|485689273|485689273|485689273|485689273\t1|1186\tS08;S26\tx|x|x|485689264|485689264|485689264|485689264\ttp_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "19",
+      "Des": "SD Тип 4",
+      "Memo": "356\t396;446;596;896\tx|x|x|Nicolle_413_356x396_SD.3ds|Nicolle_413_356x446_SD.3ds|Nicolle_413_356x596_SD.3ds|Nicolle_413_356x896_SD.3ds\tx|x|x|485689274|485689274|485689274|485689274\t1|226\tS26\t\ttp_4.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "2",
+      "Des": "GSD Тип 3_1",
+      "Memo": "716\t446;596\tx|x|x|x|Nicolle_503_716x446_GSD.3ds|Nicolle_505_716x596_GSD.3ds\tx|x|x|x|484251462|484251464\t1|295\tS26\t\tGSD_tp_3_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "20",
+      "Des": "SD Тип 4",
+      "Memo": "476\t396;446;596\tx|x|x|Nicolle_413_476x396_SD.3ds|Nicolle_413_476x446_SD.3ds|Nicolle_413_476x596_SD.3ds\tx|x|x|485689274|485689274|485689274|485689274\t1|346\tS26\t\ttp_4.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "21",
+      "Des": "SD Тип 4",
+      "Memo": "596\t396;446;596\tx|x|x|Nicolle_413_596x396_SD.3ds|Nicolle_413_596x446_SD.3ds|Nicolle_413_596x596_SD.3ds\tx|x|x|485689274|485689274|485689274|485689274\t1|466\tS26\t\ttp_4.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "22",
+      "Des": "SD Тип 4",
+      "Memo": "716\t396;446;596\tx|x|x|Nicolle_413_716x396_SD.3ds|Nicolle_413_716x446_SD.3ds|Nicolle_413_716x596_SD.3ds\tx|x|x|485689274|485689274|485689274|485689274\t1|586\tS26\t\ttp_4.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "23",
+      "Des": "SD Тип 4",
+      "Memo": "956\t396;446;596\tx|x|x|Nicolle_413_956x396_SD.3ds|Nicolle_413_956x446_SD.3ds|Nicolle_413_956x596_SD.3ds\tx|x|x|485689274|485689274|485689274|485689274\t1|826\tS26\t\ttp_4.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "24",
+      "Des": "SD Тип 4",
+      "Memo": "1316\t396;446;596\tx|x|x|Nicolle_413_1316x396_SD.3ds|Nicolle_413_1316x446_SD.3ds|Nicolle_413_1316x596_SD.3ds\tx|x|x|485689274|485689274|485689274|485689274\t1|1186\tS26\t\ttp_4.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "25",
+      "Des": "SD Тип 3_1",
+      "Memo": "716\t446;596\tx|x|x|x|Nicolle_411_716x446_SD.3ds|Nicolle_414_716x596_SD.3ds\tx|x|x|x|485689275|485689277\t2|295x226\tS26\t\ttp_3_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "26",
+      "Des": "SD Тип 3_1",
+      "Memo": "956\t446;596\tx|x|x|x|Nicolle_411_956x446_SD.3ds|Nicolle_414_956x596_SD.3ds\tx|x|x|x|485689275|485689277\t2|295x466\tS26\t\ttp_3_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "27",
+      "Des": "SD Тип 3_1",
+      "Memo": "1316\t446;596\tx|x|x|x|Nicolle_411_1316x446_SD.3ds|Nicolle_414_1316x596_SD.3ds\tx|x|x|x|485689275|485689277\t2|295x826\tS26\t\ttp_3_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "28",
+      "Des": "SD Тип 3_2",
+      "Memo": "1316\t446;596\tx|x|x|x|Nicolle_412_1316x446_SD.3ds|Nicolle_415_1316x596_SD.3ds\tx|x|x|x|485689276|485689278\t3|295x295x466\tS26\t\ttp_3_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "29",
+      "Des": "SD Тип 5",
+      "Memo": "476\t296;396;446;596;\tnicolle_401_446k_sd.3ds|x|x|nicolle_401_446k_sd.3ds|nicolle_401_446k_sd.3ds|nicolle_401_446k_sd.3ds\t485729075|x|x|485729075|485729075|485729075|\t1|346\tS08;S26\t485729070|485729070|485729070|485729070|485729070|485729070\ttp_5.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "3",
+      "Des": "GSD Тип 3_1",
+      "Memo": "956\t446;596\tx|x|x|x|Nicolle_503_956x446_GSD.3ds|Nicolle_505_956x596_GSD.3ds\tx|x|x|x|484251462|484251464\t1|295x316|295x466\tS26\t\tGSD_tp_3_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "30",
+      "Des": "SD Тип 5",
+      "Memo": "596\t296;396;446;596;\tnicolle_401_446k_sd.3ds|x|x|nicolle_401_446k_sd.3ds|nicolle_401_446k_sd.3ds|nicolle_401_446k_sd.3ds\t485729076|x|x|485729076|485729076|485729076|\t1|466\tS08;S26\t485729072|485729072|485729072|485729072|485729072|485729072\ttp_5.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "31",
+      "Des": "SD Тип 5",
+      "Memo": "716\t296;330;378;396;446;596\tnicolle_403_446k_sd.3ds|nicolle_403_446k_sd.3ds|nicolle_403_446k_sd.3ds|nicolle_403_446k_sd.3ds|nicolle_403_446k_sd.3ds|nicolle_403_446k_sd.3ds|\t485729077|485729077|485729077|485729077|485729077|485729077|\t1|586\tS08;S26\t463207334|463207334|463207334|463207334|463207334|463207334|\ttp_5.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "32",
+      "Des": "SD Тип 5",
+      "Memo": "956\t296;330;378;396;446;596\tnicolle_404_446k_sd.3ds|nicolle_404_446k_sd.3ds|nicolle_404_446k_sd.3ds|nicolle_404_446k_sd.3ds|nicolle_404_446k_sd.3ds|nicolle_404_446k_sd.3ds|\t485729078|485729078|485729078|485729078|485729078|485729078|\t1|826\tS08;S26\t485729073|485729073|485729073|485729073|485729073|485729073|\ttp_5.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "33",
+      "Des": "SD Тип 5",
+      "Memo": "1316\t396;446;596\tx|x|x|nicolle_405_446k_sd.3ds|nicolle_405_446k_sd.3ds|nicolle_405_446k_sd.3ds|\tx|x|x|485729079|485729079|485729079|\t1|1186\tS08;S26\tx|x|x|485729074|485729074|485729074|\ttp_5.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "34",
+      "Des": "SD парам",
+      "Memo": "1495|2035\t295|595\tPARAM\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "35",
+      "Des": "SU",
+      "Memo": "356|716\t296|896\tPARAMSIZE\t490904006\tsu_l.3ds|su_r.3ds\tS01\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "36",
+      "Des": "SU",
+      "Memo": "717|1316\t296|596\tPARAMSIZE\t490904006\tsu_l.3ds|su_r.3ds\tS01\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "37",
+      "Des": "SH",
+      "Memo": "356|716\t296|896\tPARAMSIZE\t490904006\tsh_n.3ds|sh_v.3ds\tS01\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "38",
+      "Des": "SH",
+      "Memo": "717|1316\t296|596\tPARAMSIZE\t490904006\tsh_n.3ds|sh_v.3ds\tS01\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "4",
+      "Des": "GSD Тип 3_1",
+      "Memo": "1316\t446;596\tx|x|x|x|Nicolle_503_1316x446_GSD.3ds|Nicolle_505_1316x596_GSD.3ds\tx|x|x|x|484251462|484251464\t1|295x316|295x466\tS26\t\tGSD_tp_3_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "5",
+      "Des": "GSD Тип 3_2",
+      "Memo": "1316\t446;596\tx|x|x|x|Nicolle_504_1316x446_GSD.3ds|Nicolle_506_1316x596_GSD.3ds\tx|x|x|x|484251463|484251465\t2|295x295\tS26\t\tGSD_tp_3_2.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "6",
+      "Des": "GSD Тип 1",
+      "Memo": "716\t396;446;596\tx|x|x|Nicolle_501_716x396_GSD.3ds|Nicolle_501_716x446_GSD.3ds|Nicolle_502_716x596_GSD.3ds\tx|x|x|485689267|485689267|485689268\t1|230\tS08;S26\tx|x|x|485689265|485689265|485689266\tGSD_tp_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "7",
+      "Des": "GSD Тип 1",
+      "Memo": "956\t396;446;596\tx|x|x|Nicolle_501_956x396_GSD.3ds|Nicolle_501_956x446_GSD.3ds|Nicolle_502_956x596_GSD.3ds\tx|x|x|485689267|485689267|485689268\t1|230\tS08;S26\tx|x|x|485689265|485689265|485689266\tGSD_tp_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "8",
+      "Des": "GSD Тип 1",
+      "Memo": "1316\t396;446;596\tx|x|x|Nicolle_501_1316x396_GSD.3ds|Nicolle_501_1316x446_GSD.3ds|Nicolle_502_1316x596_GSD.3ds\tx|x|x|485689267|485689267|485689268\t1|230\tS08;S26\tx|x|x|485689265|485689265|485689266\tGSD_tp_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD",
+      "Codopz": "9",
+      "Des": "SD Тип 1",
+      "Memo": "356\t396;446;596;896\tx|x|x|Nicolle_406_356x396_SD.3ds|Nicolle_406_356x446_SD.3ds|Nicolle_408_356x596_SD.3ds|Nicolle_408_356x896_SD.3ds\tx|x|x|485689269|485689269|485689271|485689271\t1|226\tS08;S26\tx|x|x|485689260|485689260|485689262|485689262\ttp_1.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

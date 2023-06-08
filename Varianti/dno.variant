@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "dno",
+    "Des": "Крепление низ",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5256\u0010выбор\u0010 1248\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "DNO",
+      "Codopz": "1",
+      "Des": "Планка (100 мм по умолч)",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DNO",
+      "Codopz": "2",
+      "Des": "Короб (100 мм по умолч)",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DNO",
+      "Codopz": "3",
+      "Des": "Короб 100 мм + дно",
+      "Memo": "2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DNO",
+      "Codopz": "9",
+      "Des": "Нет",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

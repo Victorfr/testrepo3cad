@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "DD",
+    "Des": "Доводчик двери",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "#M",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "DD",
+      "Codopz": "406299877",
+      "Des": "Без доводчика",
+      "Memo": "0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "DD",
+      "Codopz": "406299878",
+      "Des": "С доводчиком",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

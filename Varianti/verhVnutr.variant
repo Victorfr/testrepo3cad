@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "verhVnutr",
+    "Des": "Крышка внутр",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5256\r\r\r\u0011\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "#M",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "VERHVNUTR",
+      "Codopz": "0",
+      "Des": "Нет",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "VERHVNUTR",
+      "Codopz": "1",
+      "Des": "Да",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

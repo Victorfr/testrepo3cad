@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "tipshkafliving",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010наличие цоколя\u0010 1200\u0010\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TIPSHKAFLIVING",
+      "Codopz": "1",
+      "Des": "С цоколем",
+      "Memo": "1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAFLIVING",
+      "Codopz": "2",
+      "Des": "Без цоколя/Опоры",
+      "Memo": "0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

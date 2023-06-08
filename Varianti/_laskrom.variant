@@ -1,0 +1,96 @@
+{
+  "MainVar": {
+    "Cod": "_laskrom",
+    "Des": "Цвет кромки",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 2835\u0010jpg\u0010 2295\u0010rgb\u0010 1230\u0010id цвета кромки\u0010 1725\u0010артикул пиломатерила кромки код параметра цвета\u0010 5190\u0010id пиломат. кромки\u0010 2070\u0010Артикул клея для кромки\u0010 2610\u0010дата ввода\u0010 1200\u0010дата вывода\u0010 1200\u0010модели с кромкой\u0010 3060\u0010соотв кракс\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;4;170;170;3,4;#foto\\struttura\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "014",
+      "Des": "Белый Премиум (W1000 ST9)",
+      "Memo": "ral1.jpg\t255;255;255\t175319253\tkromka25las|_22LCKK\t233442962\t\t01.01.2021\t01.01.2100\tS02\t014",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "020",
+      "Des": "Кашемир (U 702 ST9)",
+      "Memo": "ral1.jpg\t200;193;185\t185077967\tkromka25las|_22LCKK\t233442962\t\t01.01.2018\t01.01.2100\tS02\t020",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "054",
+      "Des": "Слоновая кость (0514 PE)",
+      "Memo": "ral1.jpg\t254;248;224\t461011229\tkromka25las|_22LCKK\t233442962\t\t01.01.2021\t01.01.2100\tS02\t054",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "068",
+      "Des": "Сатин (7045 PE)",
+      "Memo": "ral1.jpg\t217;204;188\t461011227\tkromka25las|_22LCKK\t233442962\t\t01.01.2018\t01.01.2100\tS02\t068",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "074",
+      "Des": "Глиняный Серый (K096 PE)",
+      "Memo": "ral1.jpg\t160;145;134\t461011219\tkromka25las|_22LCKK\t233442962\t\t01.01.2021\t01.01.2100\tS02\t074",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "075",
+      "Des": "Океан Зеленый (8996 PE)",
+      "Memo": "ral1.jpg\t176;181;91\t461011225\tkromka25las|_22LCKK\t233442962\t\t01.01.2018\t01.01.2100\tS02\t075",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "077",
+      "Des": "Сумеречный Голубой (K097 PE)",
+      "Memo": "ral1.jpg\t111;142;137\t461011231\tkromka25las|_22LCKK\t233442962\t\t01.01.2018\t01.01.2100\tS02\t077",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_LASKROM",
+      "Codopz": "104",
+      "Des": "Кобальт Серый (6299 PE)",
+      "Memo": "ral1.jpg\t93;88;84\t461011223\tkromka25las|_22LCKK\t233442962\t\t01.01.2018\t01.01.2100\tS02\t104",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

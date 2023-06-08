@@ -1,0 +1,176 @@
+{
+  "MainVar": {
+    "Cod": "_manIntegrato",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010petl\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^4;4;180;180;3;#foto\\maniglie\\integrato\\;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "01",
+      "Des": "Слева",
+      "Memo": "left.jpg\t738774758\t\t\t0036_050\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "02",
+      "Des": "Справа",
+      "Memo": "right.jpg\t738774778\t\t\t0036_051\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "03",
+      "Des": "Сверху",
+      "Memo": "top.jpg\t738774638\t\t\t0036_048\t1;2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "04",
+      "Des": "Снизу",
+      "Memo": "bottom.jpg\t738774654\t\t\t0036_049\t1;2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "05",
+      "Des": "Слева снизу",
+      "Memo": "leftdown.jpg\t738775372\t1\t\t0036_061\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "06",
+      "Des": "Справа снизу",
+      "Memo": "rightdown.jpg\t738775724\t1\t\t0036_063\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "07",
+      "Des": "Слева сверху",
+      "Memo": "leftup.jpg\t738775307\t1\t\t0036_060\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "08",
+      "Des": "Справа сверху",
+      "Memo": "rightup.jpg\t738775689\t1\t\t0036_062\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "09",
+      "Des": "Сверху слева",
+      "Memo": "upleft.jpg\t738774875\t1\t\t0036_056\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "10",
+      "Des": "Сверху справа",
+      "Memo": "upright.jpg\t738775164\t1\t\t0036_057\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "11",
+      "Des": "Снизу слева",
+      "Memo": "downleft.jpg\t738775202\t1\t\t0036_058\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "12",
+      "Des": "Снизу справа",
+      "Memo": "downright.jpg\t738775238\t1\t\t0036_059\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "13",
+      "Des": "Слева по центру",
+      "Memo": "midleft.jpg\t738774861\t1;2\t\t0036_054\t2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "14",
+      "Des": "Справа по центру",
+      "Memo": "midright.jpg\t738774867\t1;2\t\t0036_055\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "15",
+      "Des": "Сверху по центру",
+      "Memo": "midtop.jpg\t738774786\t1;2\t\t0036_052\t1;2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MANINTEGRATO",
+      "Codopz": "16",
+      "Des": "Снизу по центру",
+      "Memo": "midbot.jpg\t738774835\t1;2\t\t0036_053\t1;2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

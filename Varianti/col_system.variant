@@ -1,0 +1,386 @@
+{
+  "MainVar": {
+    "Cod": "col_system",
+    "Des": "Цвет системы",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010Фильтрация по категориям цветов\u0010 3510\u0010jpg\u0010 3345\u0010RGB\u0010 1200\u0010Id цвета\u0010 1200\u0010фильтрация по типу ручки\u0010 4530\u0010Цвет шлегеля\u0010 2070\u0010Цвета направляющей для распашных\u0010 825\u0010Дата ЯССП\u0010 2580\u0010stand\u0010 1200\u0010fusion\u0010 1200\u0010flat\u0010 1200\u0010Nova\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;6;160;160;4,5;#foto\\col_system\\;2;4;;;1",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0001",
+      "Des": "Антрацит",
+      "Memo": "pr\tral1.jpg\t60;61;58\t366245132\tAristo_ST_;Aristo_FL_\t401105852\t\t01.01.2100\t8.6\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0002",
+      "Des": "Белый дуб",
+      "Memo": "dr\tdub_wt.jpg\t\t366245119\tAristo_ST_;Aristo_FS_;Aristo_FL_\t366236804\t\t01.01.2100\t8.7\t17.3\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0003",
+      "Des": "Блестящая бронза",
+      "Memo": "an\tral1.jpg\t62;53;33\t366245117\tAristo_ST_\t366236808\t1\t01.01.2100\t8.5\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0004",
+      "Des": "Блестящая шампань",
+      "Memo": "an\tral1.jpg\t107;106;81\t366245115\tAristo_ST_\t366236807\t1\t01.01.2100\t8.5\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0005",
+      "Des": "Венге",
+      "Memo": "dr\tvenge.jpg\t\t366245123\tAristo_ST_\t366236806\t\t02.09.2019\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0006",
+      "Des": "Венге темный",
+      "Memo": "dr\tveng_tem.jpg\t\t366245120\tAristo_ST_;Aristo_FS_;Aristo_FL_\t366236806\t\t01.01.2100\t8.7\t17.3\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0007",
+      "Des": "Дуб дымчатый",
+      "Memo": "dr\tdub_dimchat.jpg\t\t366245121\tAristo_ST_;Aristo_FL_\t366236805\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0008",
+      "Des": "Дуб кантри",
+      "Memo": "dr\tdub_kantry.jpg\t\t366245122\tAristo_ST_;Aristo_FL_\t366236805\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0009",
+      "Des": "Дуб неаполь",
+      "Memo": "dr\tdub_neapol.jpg\t\t366245124\tAristo_ST_;Aristo_FL_\t366236807\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0010",
+      "Des": "Дуб черный",
+      "Memo": "pr\tdub_black.jpg\t\t366245133\tAristo_ST_;Aristo_FL_\t401105852\t\t01.01.2100\t8.6\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0011",
+      "Des": "Космос",
+      "Memo": "pr\tkosmos.jpg\t\t366245135\tAristo_ST_;Aristo_FL_\t366236807\t\t01.03.2020\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0012",
+      "Des": "Матовая шампань",
+      "Memo": "an\tral1.jpg\t102;102;80\t366245116\tAristo_ST_;Aristo_FL_\t366236807\t1\t01.01.2100\t8.5\t\t8.1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0013",
+      "Des": "Матовое золото",
+      "Memo": "an\tral1.jpg\t204;179;124\t366245118\tAristo_ST_;Aristo_FL_\t366236809\t1\t01.01.2100\t8.5\t\t8.1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0014",
+      "Des": "Матовый хром",
+      "Memo": "an\tral1.jpg\t189;193;196\t366245114\tAristo_ST_;Aristo_FS_;Aristo_NV_;Aristo_FL_\t366236807\t1\t01.01.2100\t8.5\t17.1\t8.1\t17",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0015",
+      "Des": "Орех благородный",
+      "Memo": "dr\torech_blagorod.jpg\t\t366245128\tAristo_ST_;Aristo_FL_\t366236805\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0016",
+      "Des": "Орех итальянский",
+      "Memo": "dr\torech_italia.jpg\t\t366245127\tAristo_ST_\t366236806\t\t02.09.2019\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0017",
+      "Des": "Орех французский",
+      "Memo": "dr\torech_franz.jpg\t\t366245126\tAristo_ST_\t366236806\t\t02.09.2019\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0018",
+      "Des": "Розовый жемчуг",
+      "Memo": "pr\tsilv_pink.jpg\t\t366245129\tAristo_ST_;Aristo_FL_\t366236805\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0019",
+      "Des": "Серый дуб",
+      "Memo": "dr\tdub_silv.jpg\t\t366245125\tAristo_ST_;Aristo_FL_\t401105852\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0020",
+      "Des": "Серый жемчуг",
+      "Memo": "pr\tsilv_gemchug.jpg\t\t366245130\tAristo_ST_;Aristo_FL_\t366236807\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0021",
+      "Des": "Снежная сосна",
+      "Memo": "pr\tsnegn_sosna.jpg\t\t366245131\tAristo_ST_;Aristo_FL_\t366236804\t\t01.01.2021\t8.7\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0022",
+      "Des": "Холст",
+      "Memo": "pr\tcholst.jpg\t\t366245134\tAristo_ST_;Aristo_FL_\t366236805\t\t01.01.2021\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0023",
+      "Des": "Античная медь",
+      "Memo": "pr\tantich_med.jpg\t\t403972850\tAristo_ST_;Aristo_FL_\t366236806\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0024",
+      "Des": "ЭССП Бронзовый кварц",
+      "Memo": "pr\tbronz_kvarz.jpg\t\t403972851\tAristo_ST_;Aristo_FL_\t366236808\t\t01.01.2100\t8.6\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0025",
+      "Des": "Вороненая сталь",
+      "Memo": "pr\tvoron_steel.jpg\t\t403972852\tAristo_ST_;Aristo_FL_\t366236807\t\t01.01.2100\t8.6\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0026",
+      "Des": "Карельская береза",
+      "Memo": "pr\tkarel_berez.jpg\t\t403972848\tAristo_ST_;Aristo_FL_\t366236804\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0027",
+      "Des": "ЭССП Китайский шелк",
+      "Memo": "pr\tshina_shelk.jpg\t\t403972849\tAristo_ST_;Aristo_FL_\t366236807\t\t01.01.2100\t8.6\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0028",
+      "Des": "Черный матовый",
+      "Memo": "an\tral1.jpg\t3;5;10\t411532085\tAristo_NV_;Aristo_FS_;\t401105852\t\t01.01.2100\t\t17.1\t\t17",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0029",
+      "Des": "Белый глянец",
+      "Memo": "an\tral1.jpg\t255;255;255\t411532084\tAristo_NV_\t366236804\t1\t01.01.2100\t\t\t\t17",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0030",
+      "Des": "Матовая бронза",
+      "Memo": "an\tral1.jpg\t124;91;50\t411532380\t\t\t1\t01.01.2100\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0031",
+      "Des": "Белый Aristo",
+      "Memo": "pr\tral1.jpg\t254;254;254\t444721750\tAristo_FL_;Aristo_ST_\t366236804\t\t01.01.2100\t8.6\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0032",
+      "Des": "Слоновая кость Aristo",
+      "Memo": "pr\tral1.jpg\t251;248;233\t444721751\tAristo_FL_;Aristo_ST_\t366236804\t\t01.01.2100\t8.7\t\t8.3\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0033",
+      "Des": "ЭССП Серый Ясень Aristo",
+      "Memo": "pr\tyasen_ser.jpg\t\t447290553\tAristo_FL_\t366236807\t\t01.01.2100\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0034",
+      "Des": "Белый Ясень Aristo",
+      "Memo": "pr\tyasen_bel.jpg\t\t447290555\tAristo_FL_\t366236804\t\t01.01.2100\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0035",
+      "Des": "Бежевый Ясень Aristo",
+      "Memo": "pr\tyasen_beg.jpg\t\t447290554\tAristo_FL_\t366236805\t\t01.01.2100\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0036",
+      "Des": "ЭССП Дуб Крафт золотой Aristo",
+      "Memo": "pr\tdb_kr_gld.jpg\t\t475533595\tAristo_FL_;Aristo_ST_\t366236805\t\t01.01.2100\t8.7\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "COL_SYSTEM",
+      "Codopz": "0037",
+      "Des": "Крашеный",
+      "Memo": "col\t\t\t\tAristo_ST_;Aristo_FS_;Aristo_FL_\t\t\t01.01.2100\t8.7\t17\t8\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

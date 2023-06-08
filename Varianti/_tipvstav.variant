@@ -1,0 +1,786 @@
+{
+  "MainVar": {
+    "Cod": "_tipvstav",
+    "Des": "Варианты вставок",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 765\u0010Descrizione\u0010 1815\u0010jpg\u0010 915\u0010номер чертежа\u0010 1770\u0010для макроса вставок\u0010 2040\u0010Минимальня ВхШ\u0010 2025\u0010Максимальная ВхШ\u0010 2220\u0010ID NPO (номер чертежа)\u0010 1200\u0010ID типа вставки\u0010 1200\u0010фильтр видимости\u0010 1875\u0010draw NPD\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^2;6;143;200;3;#FOTO\\classic008\\;2;;;;1",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "100",
+      "Des": "Nicolle",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "100.10",
+      "Des": "G",
+      "Memo": "001.jpg\t0032_001\tNICwG\t356:396\t2280:1150\t404879766\t404199963\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "100.11",
+      "Des": "S",
+      "Memo": "010.jpg\t0032_010\tNICwS\t356:396\t2280:1150\t404879768\t404199963\tS08\t477444484",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "100.12",
+      "Des": "G",
+      "Memo": "001.jpg\t0033_001\tNICwG\t\t\t463208903\t404199963\tS26\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "100.13",
+      "Des": "S",
+      "Memo": "010.jpg\t0033_010\tNICwS\t\t\t463208904\t404199963\tS26\t477444490",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105",
+      "Des": "Deline 1",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.10",
+      "Des": "G",
+      "Memo": "301.jpg\t0032_301\tDEL1wG\t816:396\t2280:1150\t404879769\t404199962\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.11",
+      "Des": "S1",
+      "Memo": "401.jpg\t0032_401\tDEL1wS1\t816:396\t2280:1150\t404879777\t404199962\tS08\t477444485",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.12",
+      "Des": "S2",
+      "Memo": "501.jpg\t0032_501\tDEL1wS2\t816:396\t2280:1150\t404879792\t404199962\tS08\t477455446",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.13",
+      "Des": "S3",
+      "Memo": "502.jpg\t0032_502\tDEL1wS3\t816:396\t2280:1150\t404879793\t404199962\tS08\t477455448",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.14",
+      "Des": "DS1",
+      "Memo": "503.jpg\t0032_503\tDEL1wDS1\t816:596\t2280:1150\t404879794\t404199962\tS08\t477455449",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.15",
+      "Des": "DS2",
+      "Memo": "504.jpg\t0032_504\tDEL1wDS2\t816:596\t2280:1150\t404879795\t404199962\tS08\t477455450",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.16",
+      "Des": "S1",
+      "Memo": "0033_401.jpg\t0033_401\tSD401\t590:450\t1320:1163\t463203662\t404199962\tS26\t477444491",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.17",
+      "Des": "S2",
+      "Memo": "0033_403.jpg\t0033_403\tSD403\t910:450\t1320:1163\t463203664\t404199962\tS26\t477444493",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "105.18",
+      "Des": "S3",
+      "Memo": "0033_404.jpg\t0033_404\tSD404\t1150:450\t1320:1163\t463203665\t404199962\tS26\t477444494",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "106",
+      "Des": "Deline 2",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "106.10",
+      "Des": "G",
+      "Memo": "302.jpg\t0032_302\tDEL2wG\t816:396\t2280:1150\t404888400\t404199967\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "106.11",
+      "Des": "S1",
+      "Memo": "402.jpg\t0032_402\tDEL2wS1\t816:396\t2280:1150\t404879778\t404199967\tS08\t477444486",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "106.12",
+      "Des": "S2",
+      "Memo": "505.jpg\t0032_505\tDEL2wS2\t816:396\t2280:1150\t404879796\t404199967\tS08\t477455451",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "106.13",
+      "Des": "S3",
+      "Memo": "506.jpg\t0032_506\tDEL2wS3\t816:396\t2280:1150\t404879797\t404199967\tS08\t477455453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "106.14",
+      "Des": "DS1",
+      "Memo": "507.jpg\t0032_507\tDEL2wDS1\t816:596\t2280:1150\t404879798\t404199967\tS08\t477455454",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "106.15",
+      "Des": "DS2",
+      "Memo": "508.jpg\t0032_508\tDEL2wDS2\t816:596\t2280:1150\t404879799\t404199967\tS08\t477455455",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "107",
+      "Des": "Deline 3",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "107.10",
+      "Des": "G",
+      "Memo": "303.jpg\t0032_303\tDEL3wG\t816:396\t2280:1200\t404879770\t404199968\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "107.11",
+      "Des": "S1",
+      "Memo": "403.jpg\t0032_403\tDEL3wS1\t816:396\t2280:1150\t404879779\t404199968\tS08\t477444487",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "107.12",
+      "Des": "S2",
+      "Memo": "509.jpg\t0032_509\tDEL3wS2\t816:396\t2280:1150\t404879800\t404199968\tS08\t477455456",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "107.13",
+      "Des": "S3",
+      "Memo": "509_.jpg\t0032_509\tDEL3wS3\t816:396\t2280:1150\t404879800\t404199968\tS08\t477455456",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "107.14",
+      "Des": "DS1",
+      "Memo": "404.jpg\t0032_404\tDEL3wDS1\t816:596\t2280:1150\t404879780\t404199968\tS08\t477444488",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "107.15",
+      "Des": "DS2",
+      "Memo": "510.jpg\t0032_510\tDEL3wDS2\t816:596\t2280:1150\t404888401\t404199968\tS08\t477455457",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108",
+      "Des": "Arin 1",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.10",
+      "Des": "G",
+      "Memo": "304.jpg\t0032_304\tARI1wG\t816:396\t2280:1150\t404879771\t404199964\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.11",
+      "Des": "S1",
+      "Memo": "405.jpg\t0032_405\tARI1wS1\t816:396\t2280:1150\t404879781\t404199964\tS08\t477444489",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.12",
+      "Des": "S2",
+      "Memo": "511.jpg\t0032_511\tARI1wS2\t816:396\t2280:1150\t404879801\t404199964\tS08\t477455458",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.13",
+      "Des": "S3",
+      "Memo": "512.jpg\t0032_512\tARI1wS3\t816:396\t2280:1150\t404879813\t404199964\tS08\t477455459",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.14",
+      "Des": "S4",
+      "Memo": "513.jpg\t0032_513\tARI1wS4\t816:396\t2280:1150\t404879802\t404199964\tS08\t477455460",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.15",
+      "Des": "DS1",
+      "Memo": "514.jpg\t0032_514\tARI1wDS1\t816:596\t2280:1150\t404879803\t404199964\tS08\t477455461",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.16",
+      "Des": "DS2",
+      "Memo": "406.jpg\t0032_406\tARI1wDS2\t816:596\t2280:1150\t404879782\t404199964\tS08\t477455436",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.17",
+      "Des": "DS3",
+      "Memo": "515.jpg\t0032_515\tARI1wDS3\t816:596\t2280:1150\t404879804\t404199964\tS08\t477455462",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "108.18",
+      "Des": "S1",
+      "Memo": "0033_402.jpg\t0033_402\tSD402\t390:500\t960:1163\t463203663\t404199964\tS26\t477444492",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109",
+      "Des": "Arin 2",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.10",
+      "Des": "G",
+      "Memo": "305.jpg\t0032_305\tARI2wG\t816:396\t2280:1150\t404879772\t404199969\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.11",
+      "Des": "S1",
+      "Memo": "407.jpg\t0032_407\tARI2wS1\t816:396\t2280:1200\t404879783\t404199969\tS08\t477455437",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.12",
+      "Des": "S2",
+      "Memo": "516.jpg\t0032_516\tARI2wS2\t816:396\t2280:1200\t404879805\t404199969\tS08\t477455463",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.13",
+      "Des": "S3",
+      "Memo": "517.jpg\t0032_517\tARI2wS3\t816:396\t2280:1150\t404879806\t404199969\tS08\t477455464",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.14",
+      "Des": "S4",
+      "Memo": "518.jpg\t0032_518\tARI2wS4\t816:396\t2280:1150\t404879807\t404199969\tS08\t477455465",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.15",
+      "Des": "DS1",
+      "Memo": "519.jpg\t0032_519\tARI2wDS1\t816:596\t2280:1150\t404879808\t404199969\tS08\t477455466",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.16",
+      "Des": "DS2",
+      "Memo": "408.jpg\t0032_408\tARI2wDS2\t816:596\t2280:1150\t404879784\t404199969\tS08\t477455438",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "109.17",
+      "Des": "DS3",
+      "Memo": "520.jpg\t0032_520\tARI2wDS3\t816:596\t2280:1150\t404879809\t404199969\tS08\t477455467",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110",
+      "Des": "Arin 3",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.10",
+      "Des": "G",
+      "Memo": "306.jpg\t0032_306\tARI3wG\t816:396\t2280:1150\t404879773\t404199970\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.11",
+      "Des": "S1",
+      "Memo": "409.jpg\t0032_409\tARI3wS1\t816:396\t2280:1150\t404879785\t404199970\tS08\t477455439",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.12",
+      "Des": "S2",
+      "Memo": "522.jpg\t0032_522\tARI3wS2\t816:396\t2280:1150\t404879810\t404199970\tS08\t477455469",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.13",
+      "Des": "S3",
+      "Memo": "521.jpg\t0032_521\tARI3wS3\t816:396\t2280:1150\t404888402\t404199970\tS08\t477455468",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.14",
+      "Des": "S4",
+      "Memo": "523.jpg\t0032_523\tARI3wS4\t816:396\t2280:1150\t404879811\t404199970\tS08\t477455470",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.15",
+      "Des": "DS1",
+      "Memo": "524.jpg\t0032_524\tARI3wDS1\t816:396\t2280:1150\t404879812\t404199970\tS08\t477455471",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.16",
+      "Des": "DS2",
+      "Memo": "410.jpg\t0032_410\tARI3wDS2\t816:596\t2280:1150\t404879786\t404199970\tS08\t477455440",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "110.17",
+      "Des": "DS3",
+      "Memo": "525.jpg\t0032_525\tARI3wDS3\t816:596\t2280:1150\t404879814\t404199970\tS08\t477455472",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "111",
+      "Des": "Claribel 1",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "111.10",
+      "Des": "G",
+      "Memo": "307.jpg\t0032_307\tCLA1wG\t1320:396\t2280:1150\t404879774\t404199965\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "111.11",
+      "Des": "S1",
+      "Memo": "411.jpg\t0032_411\tCLA1wS1\t1320:396\t2280:1150\t404879787\t404199965\tS08\t477455441",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "111.12",
+      "Des": "S2",
+      "Memo": "526.jpg\t0032_526\tCLA1wS2\t1320:396\t2280:1150\t404879815\t404199965\tS08\t477455473",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "111.13",
+      "Des": "S3",
+      "Memo": "527.jpg\t0032_527\tCLA1wS3\t1320:396\t2280:1150\t404879816\t404199965\tS08\t477455474",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "111.14",
+      "Des": "S4",
+      "Memo": "528.jpg\t0032_528\tCLA1wS4\t1320:396\t2280:1150\t404879817\t404199965\tS08\t477455475",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "111.15",
+      "Des": "S5",
+      "Memo": "528_.jpg\t0032_528\tCLA1wS5\t1320:396\t2280:1150\t404879817\t404199965\tS08\t477455475",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112",
+      "Des": "Desiree 1",
+      "Memo": "\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.10",
+      "Des": "G",
+      "Memo": "308.jpg\t0032_308\tDES1wG\t816:396\t2280:1150\t404879775\t404199966\tS08\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.11",
+      "Des": "S1",
+      "Memo": "412.jpg\t0032_412\tDES1wS1\t816:396\t2280:1150\t404879788\t404199966\tS08\t477455442",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.12",
+      "Des": "S2",
+      "Memo": "529.jpg\t0032_529\tDES1wS2\t816:396\t2280:1150\t404879818\t404199966\tS08\t477455476",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.13",
+      "Des": "S3",
+      "Memo": "530.jpg\t0032_530\tDES1wS3\t816:396\t2280:1150\t404879819\t404199966\tS08\t477455477",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.14",
+      "Des": "DS1",
+      "Memo": "531.jpg\t0032_531\tDES1wDS1\t1700:700\t2280:1150\t404879820\t404199966\tS08\t477455478",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.15",
+      "Des": "DS2",
+      "Memo": "531_.jpg\t0032_531\tDES1wDS2\t1700:700\t2280:1150\t404879820\t404199966\tS08\t477455478",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.16",
+      "Des": "DS3",
+      "Memo": "532.jpg\t0032_532\tDES1wDS3\t1700:700\t2280:1150\t404879821\t404199966\tS08\t477455479",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.17",
+      "Des": "DS4",
+      "Memo": "533.jpg\t0032_533\tDES1wDS4\t1700:700\t2280:1150\t404879822\t404199966\tS08\t477455480",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.18",
+      "Des": "DS5",
+      "Memo": "413.jpg\t0032_413\tDES1wDS5\t1700:700\t2280:1150\t404879789\t404199966\tS08\t477455443",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.19",
+      "Des": "DS6",
+      "Memo": "414.jpg\t0032_414\tDES1wDS6\t1700:700\t2280:1150\t404879790\t404199966\tS08\t477455444",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.20",
+      "Des": "DS7",
+      "Memo": "415.jpg\t0032_415\tDES1wDS7\t1700:700\t2280:1150\t404879791\t404199966\tS08\t477455445",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPVSTAV",
+      "Codopz": "112.21",
+      "Des": "S1",
+      "Memo": "0033_405.jpg\t0033_405\tSD405\t550:450\t1320:1163\t463203666\t404199966\tS26\t477444495",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

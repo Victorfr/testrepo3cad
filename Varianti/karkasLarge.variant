@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "karkasLarge",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\r\r\r\u0011\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "KARKASLARGE",
+      "Codopz": "16",
+      "Des": "Под каркас 16 мм",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "KARKASLARGE",
+      "Codopz": "22",
+      "Des": "Под каркас 22 мм",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "KARKASLARGE",
+      "Codopz": "25",
+      "Des": "Под каркас 25 мм",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

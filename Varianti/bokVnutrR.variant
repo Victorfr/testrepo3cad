@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "bokVnutrR",
+    "Des": "Боковина внутр ПР",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5256\u0010\u0010 1248\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "#M",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "BOKVNUTRR",
+      "Codopz": "0",
+      "Des": "Нет",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "BOKVNUTRR",
+      "Codopz": "1",
+      "Des": "Да",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

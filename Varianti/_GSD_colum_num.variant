@@ -1,0 +1,86 @@
+{
+  "MainVar": {
+    "Cod": "_GSD_colum_num",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 3675\u0010Descrizione\u0010 5250\u0010L\u0010 3825\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_GSD_COLUM_NUM",
+      "Codopz": "1",
+      "Des": "",
+      "Memo": "296",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_COLUM_NUM",
+      "Codopz": "2",
+      "Des": "",
+      "Memo": "330",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_COLUM_NUM",
+      "Codopz": "3",
+      "Des": "",
+      "Memo": "378",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_COLUM_NUM",
+      "Codopz": "4",
+      "Des": "",
+      "Memo": "396",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_COLUM_NUM",
+      "Codopz": "5",
+      "Des": "",
+      "Memo": "446",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_COLUM_NUM",
+      "Codopz": "6",
+      "Des": "",
+      "Memo": "596",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_GSD_COLUM_NUM",
+      "Codopz": "7",
+      "Des": "",
+      "Memo": "896",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

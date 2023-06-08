@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "modShkaf",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 3495\u0010бренд\u0010 1665\u0010сеть\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "MODSHKAF",
+      "Codopz": "1",
+      "Des": "MIA",
+      "Memo": "EDDOM_SHKAF\tMIA",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MODSHKAF",
+      "Codopz": "2",
+      "Des": "MIA",
+      "Memo": "TVDOM_SHKAF\tMIA",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MODSHKAF",
+      "Codopz": "3",
+      "Des": "MR",
+      "Memo": "MARIA_SHKAF\tMR",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MODSHKAF",
+      "Codopz": "4",
+      "Des": "MIA",
+      "Memo": "ELDOR_SHKAF\tMIA",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

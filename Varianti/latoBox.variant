@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "latoBox",
+    "Des": "Ориентация",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "#m",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "LATOBOX",
+      "Codopz": "1",
+      "Des": "Левая секция",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LATOBOX",
+      "Codopz": "2",
+      "Des": "Правая секция",
+      "Memo": "2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

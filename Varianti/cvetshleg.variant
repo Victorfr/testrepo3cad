@@ -1,0 +1,86 @@
+{
+  "MainVar": {
+    "Cod": "cvetshleg",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "CVETSHLEG",
+      "Codopz": "1",
+      "Des": "Белый",
+      "Memo": "366236804",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "CVETSHLEG",
+      "Codopz": "2",
+      "Des": "Бронза",
+      "Memo": "366236808",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "CVETSHLEG",
+      "Codopz": "3",
+      "Des": "Золото",
+      "Memo": "366236809",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "CVETSHLEG",
+      "Codopz": "4",
+      "Des": "Коричневый",
+      "Memo": "366236806",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "CVETSHLEG",
+      "Codopz": "5",
+      "Des": "Светло-бежевый",
+      "Memo": "366236805",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "CVETSHLEG",
+      "Codopz": "6",
+      "Des": "Серый",
+      "Memo": "366236807",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "CVETSHLEG",
+      "Codopz": "7",
+      "Des": "Черный",
+      "Memo": "401105852",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

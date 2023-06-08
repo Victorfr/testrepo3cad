@@ -1,0 +1,6116 @@
+{
+  "MainVar": {
+    "Cod": "_MNP",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 2190\u0010Описание\u0010 7005\u0010id маршрута\u0010 4005\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999COLDETFR",
+      "Des": "Заготовка фрез. под покраску МДФ 16 мм 2 стр",
+      "Memo": "701603802",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999COLDETRP",
+      "Des": "Заготовка МДФ 16мм 2стр",
+      "Memo": "701603175",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999COLORKLEY",
+      "Des": "Крашеный шкаф Living",
+      "Memo": "701605613",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999DEKPROF",
+      "Des": "Декоративный профиль для колонки",
+      "Memo": "686062467",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999DEKPROFKR",
+      "Des": "Декоративный профиль для колонки краш.",
+      "Memo": "686419692",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999FRAMKA",
+      "Des": "Рамка для вставки S без патины",
+      "Memo": "445135944",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_DNOMET",
+      "Des": "Каркасное дно выдвижного ящика",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_DNOMETMOD",
+      "Des": "Каркасное дно выдвижного ящика",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDN",
+      "Des": "Каркасное дно",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDNMOD",
+      "Des": "Каркасное дно",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDSP40",
+      "Des": "Полка ДСП 40 мм односторонняя прямая",
+      "Memo": "662602995",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDSP402",
+      "Des": "Полка ДСП 40 мм двухсторонняя прямая",
+      "Memo": "662606805",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDSP402RD",
+      "Des": "Полка ДСП 40 мм двухсторонняя с радиусом",
+      "Memo": "662609416",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDSP402SK",
+      "Des": "Полка ДСП 40 мм двухсторонняя со скосом",
+      "Memo": "662609546",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDSP40RD",
+      "Des": "Полка ДСП 40 мм односторонняя с радиусом",
+      "Memo": "662609151",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASDSP40SK",
+      "Des": "Полка ДСП 40 мм односторонняя со скосом",
+      "Memo": "662609514",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASKR",
+      "Des": "Каркасная крышка",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASKRMOD",
+      "Des": "Каркасная крышка",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_KARKASPL",
+      "Des": "Каркасная полка",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_POLKOB",
+      "Des": "Полка с профилем под обувь",
+      "Memo": "563030636",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_POLKOBZ",
+      "Des": "Заготовка для установки профиля полки под обувь",
+      "Memo": "563036217",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_VETROMX4",
+      "Des": "Стеклянная полка",
+      "Memo": "561438161",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_VETROMX6",
+      "Des": "Стеклянная полка",
+      "Memo": "561438161",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999K_VETRORIP6",
+      "Des": "Стеклянная полка",
+      "Memo": "452963473",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999KARKAS",
+      "Des": "Комплектующие шкафа",
+      "Memo": "365529385",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999KARKASZST",
+      "Des": "Задняя стенка",
+      "Memo": "$(mat_backwall:5)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999KARKASZSTC",
+      "Des": "Каркасная задняя стенка(царга)",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999KOLPRST",
+      "Des": "Колонка пристыковки",
+      "Memo": "634280880",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999LIVINGCOL",
+      "Des": "Living шкаф крашеный",
+      "Memo": "701605613",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999MODUL",
+      "Des": "Модуль для выдвижных",
+      "Memo": "444215063",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999NABOR_SH",
+      "Des": "Набор шурупов на сборку",
+      "Memo": "365529385",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999PODLZST",
+      "Des": "Подложка для задней стенки",
+      "Memo": "426187441",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999PODZERK",
+      "Des": "Подложка под зеркало",
+      "Memo": "452964417",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999PODZERKNAV",
+      "Des": "Подложка под зеркало",
+      "Memo": "489187962",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999PROFPOLKDER",
+      "Des": "Профиль под обувь без установки",
+      "Memo": "563029288",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999PROFPOLKOB",
+      "Des": "Профиль под обувь с установкой",
+      "Memo": "563030047",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999PTO",
+      "Des": "Штанга для синхронизации PTO",
+      "Memo": "408861605",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999RAMKZERK",
+      "Des": "Рамка для зеркала",
+      "Memo": "452961291",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999REBROUPAK",
+      "Des": "Ребро",
+      "Memo": "406205328",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999REMFAS",
+      "Des": "Комплект для ремонта крашеных фасадов",
+      "Memo": "7619269",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999REMFASPAT",
+      "Des": "Комплект для ремонта фасадов - патина",
+      "Memo": "396852592",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999SHLEGEL",
+      "Des": "Шлегель",
+      "Memo": "365502170",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999STILOSG",
+      "Des": "Гардеробная алюминиевая система",
+      "Memo": "365529385",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_FASFALSH",
+      "Des": "Фальш-фасад",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_FASMET",
+      "Des": "Фасад выдвижного ящика",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_FASMETMOD",
+      "Des": "Фасад выдвижного ящика",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASBOKVD",
+      "Des": "Каркасная боковина выдвижного ящика",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASBOKVDMOD",
+      "Des": "Каркасная боковина выдвижного ящика",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASPER",
+      "Des": "Каркасная перемычка",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASTRPL",
+      "Des": "Каркасная транспортировочная планка",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASTRPLMOD",
+      "Des": "Каркасная транспортировочная планка",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASZOC",
+      "Des": "Каркасный цоколь",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASZSTCM",
+      "Des": "Каркасная задняя стенка выдвижного ящика",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999T_KARKASZSTCMMOD",
+      "Des": "Каркасная задняя стенка выдвижного ящика",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999UPAKSHKAF",
+      "Des": "Упаковка шкафа",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999UPL_NIZNAPR",
+      "Des": "Уплотнитель для нижней направляющей",
+      "Memo": "365502627",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999V_KARKASBOK",
+      "Des": "Каркасная боковина",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999V_KARKASBOKMOD",
+      "Des": "Каркасная боковина",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999V_KARKASPERVERT",
+      "Des": "Перегородка вертикальная каркасная",
+      "Memo": "$(mat:4)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999V_KARKASPERVERTMOD",
+      "Des": "Перегородка вертикальная каркасная",
+      "Memo": "$(mat:11)",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999V_KOLBOK",
+      "Des": "Каркасная боковина колонки",
+      "Memo": "634278008",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999V_KOLBOK18",
+      "Des": "Каркасная боковина колонки",
+      "Memo": "634278794",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999VDBOX",
+      "Des": "Выдвижной ящик",
+      "Memo": "444215063",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCOR",
+      "Des": "Заготовка для карниза C008_001_2",
+      "Memo": "404415811",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORC",
+      "Des": "Заготовка для карниза C012_001_1",
+      "Memo": "404415613",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORCKR",
+      "Des": "Заготовка для карниза C012_001_1 кр.",
+      "Memo": "464707917",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORKR",
+      "Des": "Заготовка для карниза C008_001_2 кр.",
+      "Memo": "464707791",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORNC",
+      "Des": "Заготовка для карниза NC002_001_2",
+      "Memo": "404456758",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORNCKR",
+      "Des": "Заготовка для карниза NC002_001_2 кр.",
+      "Memo": "464708017",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGDSP10",
+      "Des": "Заготовка ДСП 10 мм для вставки Mix 10 мм",
+      "Memo": "421151663",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGDSP8",
+      "Des": "Заготовка ДСП 8 мм для вставки Spark 8 мм",
+      "Memo": "420534772",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19DALR",
+      "Des": "Заготовка фрез. GJP под покраску МДФ 19мм 2стр дек",
+      "Memo": "686421541",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19DEK",
+      "Des": "Заготовка фрез. G под покраску МДФ 19мм 2стр дек.",
+      "Memo": "464661116",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19GALR",
+      "Des": "Заготовка фрез. G под покраску МДФ 19мм 2стр GJP",
+      "Memo": "686060083",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19GKR",
+      "Des": "Заготовка фрез. G под покраску МДФ 19мм 2стр",
+      "Memo": "445006028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19GKRD",
+      "Des": "Заготовка фрез. G под покраску МДФ 19мм 2стр",
+      "Memo": "445135662",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19GPG",
+      "Des": "Заготовка фрез. G под покраску МДФ 19мм 2стр пр уг",
+      "Memo": "610651352",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19GTH",
+      "Des": "Заготовка фрез. G под покраску МДФ 19мм 2стр Тшки",
+      "Memo": "642532333",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF19SKR",
+      "Des": "Заготовка фрез. S под покраску МДФ 19мм 2стр",
+      "Memo": "445006178",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF22GKGW",
+      "Des": "Заготовка GW фрез. под покраску МДФ 22 мм 2 стр",
+      "Memo": "732716572",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFRMDF22GKRD",
+      "Des": "Заготовка фрез. под покраску МДФ 22 мм 2 стр",
+      "Memo": "732718193",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFTVETVS",
+      "Des": "Заготовка для вставки стекло фотопечать",
+      "Memo": "378264225",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGFTVSTN",
+      "Des": "Заготовка ДСПЛ 16 мм для фотопечати",
+      "Memo": "421156202",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGKRMDF16",
+      "Des": "Заготовка для вставки крашеное МДФ16",
+      "Memo": "420543447",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGKRVETLAC",
+      "Des": "Заготовка для вставки Крашеное стекло Lacobel",
+      "Memo": "399295233",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGKRVETLACN",
+      "Des": "Заготовка для вставки Крашеное стекло Lacobel",
+      "Memo": "420560970",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGKRVETVS",
+      "Des": "Заготовка крашеная для вставки крашеное стекло",
+      "Memo": "378262176",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGKRVETVSN",
+      "Des": "Заготовка для крашеного стекла 4 мм",
+      "Memo": "420561410",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSP10",
+      "Des": "Заготовка ДСП 10 мм белый премиум",
+      "Memo": "420541781",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSP14616",
+      "Des": "Заготовка 146 мм",
+      "Memo": "563652945",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSP14618",
+      "Des": "Заготовка 146 мм",
+      "Memo": "750283801",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSP14622",
+      "Des": "Заготовка 146 мм",
+      "Memo": "562896752",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSP16",
+      "Des": "Заготовка под сверление",
+      "Memo": "563653291",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSP18",
+      "Des": "Заготовка под сверление",
+      "Memo": "750283945",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSP22",
+      "Des": "Заготовка под сверление",
+      "Memo": "562899900",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSPSK16",
+      "Des": "Заготовка Rover [НЕ КРОМИМ]",
+      "Memo": "563653237",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSPSK18",
+      "Des": "Заготовка Rover [НЕ КРОМИМ]",
+      "Memo": "562897204",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSPSK22",
+      "Des": "Заготовка Rover [НЕ КРОМИМ]",
+      "Memo": "562897204",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSPTR16",
+      "Des": "Заготовка Rover [НЕ КРОМИМ]",
+      "Memo": "563653237",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSPUP16",
+      "Des": "Заготовка УПИЛ",
+      "Memo": "563653369",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSPUP18",
+      "Des": "Заготовка УПИЛ",
+      "Memo": "750284023",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLDSPUP22",
+      "Des": "Заготовка УПИЛ",
+      "Memo": "562899918",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLMDF16WF",
+      "Des": "Заготовка МДФ 16 мм",
+      "Memo": "420545741",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLMDF19KR",
+      "Des": "Заготовка МДФ 19 мм 2 стороны",
+      "Memo": "445006574",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLMDF19SH",
+      "Des": "Заготовка МДФ 19 мм",
+      "Memo": "453574905",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLMDF22KR",
+      "Des": "Заготовка МДФ 22 мм 2 стр",
+      "Memo": "732715430",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLMDF8",
+      "Des": "Заготовка МДФ 8 мм для вставки Spark 8 мм",
+      "Memo": "420536858",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGLSDSP",
+      "Des": "Заготовка из неламинированного ДСП",
+      "Memo": "452962974",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGMDF16SH",
+      "Des": "Заготовка МДФ 16 шпон",
+      "Memo": "420562636",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGMDF6",
+      "Des": "Заготовка МДФ 6 мм для вставки Mix 10 мм",
+      "Memo": "421152424",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGMDF6LAM",
+      "Des": "Заготовка МДФ 6 ламин. мм для вставки Mix 10 мм",
+      "Memo": "421153376",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGNKRVETVS",
+      "Des": "Заготовка не крашеная для вставки крашеное стекло",
+      "Memo": "378247685",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGNKRVETVSN",
+      "Des": "Заготовка для не крашеного стекла 4 мм",
+      "Memo": "420561271",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGRAZKR",
+      "Des": "Разделитель для карниза верхнего кр.",
+      "Memo": "464708312",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGSBRKR",
+      "Des": "Сборка карниз верхний кр.",
+      "Memo": "464708112",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGUPAK",
+      "Des": "Заглушка",
+      "Memo": "365504194",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGVLP22",
+      "Des": "Заготовка из алюминиевого профиля",
+      "Memo": "452961291",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGZAG",
+      "Des": "Заготовка для заготовки для карниза",
+      "Memo": "248016030",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGZERNOV",
+      "Des": "Заготовка зеркало 4 мм",
+      "Memo": "420541470",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZSHLEG",
+      "Des": "Шлегель",
+      "Memo": "425937316",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORKUPE1",
+      "Des": "Дверная створка купе 1 вставка",
+      "Memo": "365502854",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORKUPE10",
+      "Des": "Дверная створка купе 10-ть и более вставок",
+      "Memo": "480240542",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORKUPE2",
+      "Des": "Дверная створка купе 2 вставки",
+      "Memo": "365503036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORKUPE3",
+      "Des": "Дверная створка купе 3 вставки",
+      "Memo": "365503038",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORKUPE4",
+      "Des": "Дверная створка купе 4 вставки",
+      "Memo": "365503040",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORKUPE5",
+      "Des": "Дверная створка купе 5 вставок",
+      "Memo": "365503041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORKUPE6",
+      "Des": "Дверная створка купе 6-ть и более вставок",
+      "Memo": "386957305",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORRASP1",
+      "Des": "Створка дверная распашная 1 вставка",
+      "Memo": "365502854",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORRASP2",
+      "Des": "Створка дверная распашная 2 вставки",
+      "Memo": "365503036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORRASP3",
+      "Des": "Створка дверная распашная 3 вставки",
+      "Memo": "365503038",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORRASP4",
+      "Des": "Створка дверная распашная 4 вставки",
+      "Memo": "365503040",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORRASP5",
+      "Des": "Створка дверная распашная 5 вставок",
+      "Memo": "365503041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1DOORRASP6",
+      "Des": "Створка дверная распашная 6-ть и более вставок",
+      "Memo": "386957305",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1GOR_NPR",
+      "Des": "Горизонтальный нижний профиль",
+      "Memo": "365502378",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1GOR_SPR",
+      "Des": "Горизонтальный разделитель",
+      "Memo": "365502378",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1GOR_VPR",
+      "Des": "Горизонтальный верхний профиль",
+      "Memo": "365502378",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1KOMPLNAPR",
+      "Des": "Комплект направляющих для дверей",
+      "Memo": "365529385",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1NAPR_N",
+      "Des": "Нижняя направляющая",
+      "Memo": "365502627",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1NAPR_NR",
+      "Des": "Направляющая для распашных дверей",
+      "Memo": "365502627",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1NAPR_V",
+      "Des": "Верхняя направляющая",
+      "Memo": "365502627",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1NAPRUPL",
+      "Des": "Комплект профилей с уплотнителем",
+      "Memo": "652059409",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR1VERT_PROF",
+      "Des": "Вертикальный профиль",
+      "Memo": "365502170",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2DOORKUPE1",
+      "Des": "Дверная створка купе 1 вставка",
+      "Memo": "420527859",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2DOORKUPE10",
+      "Des": "Дверная створка купе 10-ть и более вставок",
+      "Memo": "480240555",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2DOORKUPE2",
+      "Des": "Дверная створка купе 2 вставки",
+      "Memo": "420527924",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2DOORKUPE3",
+      "Des": "Дверная створка купе 3 вставки",
+      "Memo": "420527953",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2DOORKUPE4",
+      "Des": "Дверная створка купе 4 вставки",
+      "Memo": "420527963",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2DOORKUPE5",
+      "Des": "Дверная створка купе 5 вставок",
+      "Memo": "420527977",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2DOORKUPE6",
+      "Des": "Дверная створка купе 6-ть и более вставок",
+      "Memo": "420527993",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2GOR_NPR",
+      "Des": "Рамка горизонтальная узкая",
+      "Memo": "420484392",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2GOR_ZAKR",
+      "Des": "Рамка средняя закрытая",
+      "Memo": "420484481",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2KOMPLNAPR",
+      "Des": "Комплект направляющих для дверей",
+      "Memo": "365529385",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2NAPR_N",
+      "Des": "Нижняя направляющая",
+      "Memo": "365502627",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2NAPR_V",
+      "Des": "Верхняя направляющая",
+      "Memo": "365502627",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2NAPRUPL",
+      "Des": "Комплект профилей с уплотнителем",
+      "Memo": "652059409",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2PROF_US",
+      "Des": "Профиль усиливающий",
+      "Memo": "420513394",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2VERT_PROF",
+      "Des": "Вертикальный профиль",
+      "Memo": "420477062",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR2VERT_USIL",
+      "Des": "Вертикальный усилитель",
+      "Memo": "517478761",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3DOORKUPE1",
+      "Des": "Дверная створка купе 1 вставка",
+      "Memo": "365502854",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3DOORKUPE10",
+      "Des": "Дверная створка купе 10-ть и более вставок",
+      "Memo": "480240542",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3DOORKUPE2",
+      "Des": "Дверная створка купе 2 вставки",
+      "Memo": "365503036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3DOORKUPE3",
+      "Des": "Дверная створка купе 3 вставки",
+      "Memo": "365503038",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3DOORKUPE4",
+      "Des": "Дверная створка купе 4 вставки",
+      "Memo": "365503040",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3DOORKUPE5",
+      "Des": "Дверная створка купе 5 вставок",
+      "Memo": "365503041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3DOORKUPE6",
+      "Des": "Дверная створка купе 6-ть и более вставок",
+      "Memo": "386957305",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3GOR_NPR",
+      "Des": "Горизонтальный нижний профиль (для покраски)",
+      "Memo": "753760028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3GOR_SPR",
+      "Des": "Горизонтальный разделитель (для покраски)",
+      "Memo": "753760028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3GOR_VPR",
+      "Des": "Горизонтальный верхний профиль (для покраски)",
+      "Memo": "753760028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3KOMPLNAPR",
+      "Des": "Комплект направляющих для дверей",
+      "Memo": "365529385",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3NAPR_N",
+      "Des": "Нижняя направляющая",
+      "Memo": "753760349",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3NAPR_NR",
+      "Des": "Направляющая для распашных дверей",
+      "Memo": "753760349",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3NAPR_V",
+      "Des": "Верхняя направляющая",
+      "Memo": "753760349",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3NAPRUPL",
+      "Des": "Комплект профилей с уплотнителем",
+      "Memo": "652059409",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR1",
+      "Des": "Покраска профиля Aristo с одной стороны",
+      "Memo": "627785017",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR1N",
+      "Des": "Направляющая нижняя Aristo крашеный",
+      "Memo": "627785017",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR1V",
+      "Des": "Направляющая верхняя Aristo крашеный",
+      "Memo": "627785017",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR2",
+      "Des": "Покраска профиля Aristo с двух сторон",
+      "Memo": "627785113",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR2N",
+      "Des": "Профиль горизонтальный нижний Aristo крашеный",
+      "Memo": "627785113",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR2S",
+      "Des": "Разделитель горизонтальный Aristo крашеный",
+      "Memo": "627785113",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR2V",
+      "Des": "Профиль горизонтальный верхний Aristo крашеный",
+      "Memo": "627785113",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3PROFKR2VERT",
+      "Des": "Профиль вертикальный Aristo крашеный",
+      "Memo": "627785113",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "AR3VERT_PROF",
+      "Des": "Вертикальный профиль (для покраски)",
+      "Memo": "753759791",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D01VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "365499079",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "416034060",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "518620041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636590664",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02DOORSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636590868",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASAD",
+      "Des": "Фасад",
+      "Memo": "416034060",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "518620041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636590664",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASADSTAG",
+      "Des": "Фасад",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636590868",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "416034146",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "416034141",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "416034164",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D02ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "416034135",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D03VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "421153995",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "D04VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420533264",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E01VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "365499079",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "416034060",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "518620041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636590664",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02DOORSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636590868",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASAD",
+      "Des": "Фасад",
+      "Memo": "416034060",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "518620041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636590664",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASADSTAG",
+      "Des": "Фасад",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636590868",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "416034146",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "416034141",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "416034164",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E02ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "416034135",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E03VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "421153995",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "E04VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420533264",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "L01VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "365499079",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "L02VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "421153995",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "L03VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420533264",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "MX1DOORRASP",
+      "Des": "Дверь распашная Mixal",
+      "Memo": "561436475",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DEKELMGL",
+      "Des": "Декоративный элемент без патины гл.",
+      "Memo": "686423294",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DEKELMMT",
+      "Des": "Декоративный элемент без патины мат.",
+      "Memo": "686423350",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DEKELMST",
+      "Des": "Декоративный элемент  Ультрамат.",
+      "Memo": "686423530",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORGL",
+      "Des": "$(tipshkaf:8) G",
+      "Memo": "489351763",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORGLALR",
+      "Des": "$(tipshkaf:8) GJP",
+      "Memo": "686060890",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORGLALRSTAG",
+      "Des": "Дверь распашная GJP",
+      "Memo": "686060890",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORGLSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "489351763",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORMT",
+      "Des": "$(tipshkaf:8) G",
+      "Memo": "489354661",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORMTALR",
+      "Des": "$(tipshkaf:8) GJP",
+      "Memo": "686061338",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORMTALRSTAG",
+      "Des": "Дверь распашная GJP",
+      "Memo": "686061338",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORMTSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "489354661",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORPLLZ",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636586500",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORST",
+      "Des": "$(tipshkaf:8) G",
+      "Memo": "573139629",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORSTALR",
+      "Des": "$(tipshkaf:8) GJP",
+      "Memo": "686061568",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORSTALRSTAG",
+      "Des": "Дверь распашная GJP",
+      "Memo": "686061568",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORSTSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "573139629",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "453574358",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01FASADGL",
+      "Des": "Фасад без патины гл.",
+      "Memo": "489351763",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01FASADGLALR",
+      "Des": "Фасад без патины гл.",
+      "Memo": "686060890",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01FASADMT",
+      "Des": "Фасад без патины мат.",
+      "Memo": "489354661",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01FASADMTALR",
+      "Des": "Фасад без патины мат.",
+      "Memo": "686061338",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01FASADST",
+      "Des": "Фасад ультрамат. G",
+      "Memo": "573139629",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01FASADSTALR",
+      "Des": "Фасад ультрамат. G",
+      "Memo": "686061568",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01RAMKAGL",
+      "Des": "Рамка S глянц.",
+      "Memo": "489352822",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01RAMKAMT",
+      "Des": "Рамка S глянц.",
+      "Memo": "489355337",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01RAMKASGL",
+      "Des": "Рамка S без патины глянц.",
+      "Memo": "489352822",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01RAMKASMT",
+      "Des": "Рамка S без патины глянц.",
+      "Memo": "489355337",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S01RAMKASST",
+      "Des": "Рамка S без патины ультрамат",
+      "Memo": "573139837",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "403638630",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "518617389",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORBIGLZ",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "548283367",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORLZ",
+      "Des": "Дверь распашная",
+      "Memo": "548283685",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORLZSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORLZUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636586723",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636587587",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORPLLZ",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636586500",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636587798",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORVIDLZ",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "548297093",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORVIDLZM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "548297762",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02DOORVLZ",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASAD",
+      "Des": "Фасад",
+      "Memo": "403638630",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "518617389",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADBIGLZ",
+      "Des": "Фасад G под стяжки",
+      "Memo": "548283367",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADLZ",
+      "Des": "Фасад",
+      "Memo": "548283685",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADLZSTAG",
+      "Des": "Фасад",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADLZUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636586723",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636587587",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADPLLZ",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636586500",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADSTAG",
+      "Des": "Фасад",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636587798",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADVIDLZ",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "548297093",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADVIDLZM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "548297762",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASADVLZ",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02FASVIDLZ",
+      "Des": "Заготовка для фасада Выдвижного ящика",
+      "Memo": "548293603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "403643208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02PLANKAGLZ",
+      "Des": "Планка горизонтальная",
+      "Memo": "548279936",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "403642945",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02PLANKAVLZ",
+      "Des": "Планка вертикальная",
+      "Memo": "548278586",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "403643419",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02RAMDOORVLZ",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "548283175",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "365499079",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "403642588",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S02ZAGGORPLLZ",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "548281635",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S03VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "365501478",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S03VSTAVKARASP",
+      "Des": "Вставка",
+      "Memo": "459497411",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S03ZAGZERVS",
+      "Des": "Заготовка для вставки зеркало",
+      "Memo": "365501271",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "403656790",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "518619290",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636588850",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04DOORSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636589658",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASAD",
+      "Des": "Фасад",
+      "Memo": "403656790",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "518619290",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636588850",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASADSTAG",
+      "Des": "Фасад",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636589658",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "403658591",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "403658124",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "403658861",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "378246677",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S04ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "403657578",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S05VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "385546852",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S06VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "378264959",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S07VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "378264959",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08COR",
+      "Des": "Карниз без патины",
+      "Memo": "404416244",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08CORPT",
+      "Des": "Карниз с патиной",
+      "Memo": "480680448",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08CORRAZ",
+      "Des": "Разделитель карниза с без патины",
+      "Memo": "404416531",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08CORRAZPT",
+      "Des": "Разделитель карниза с патиной",
+      "Memo": "404380455",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DEKELM",
+      "Des": "Декоративный элемент без патины",
+      "Memo": "404415203",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DEKELMPT",
+      "Des": "Декоративный элемент с патиной",
+      "Memo": "480680448",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DEKKOL",
+      "Des": "Декоративная колонка без патины",
+      "Memo": "404415203",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DEKKOLPT",
+      "Des": "Декоративная колонка с патиной",
+      "Memo": "480680448",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOOR",
+      "Des": "Дверь распашная без патины",
+      "Memo": "404406410",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636598063",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORPT",
+      "Des": "Дверь распашная с патиной",
+      "Memo": "404380455",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORPTST",
+      "Des": "Дверь распашная с патиной",
+      "Memo": "404406410",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORPTSTAG",
+      "Des": "Дверь распашная с патиной",
+      "Memo": "404380455",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORSTAG",
+      "Des": "Дверь распашная без патины",
+      "Memo": "404406410",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "642531984",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636634490",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORV",
+      "Des": "Дверь распашная со вставкой без патины",
+      "Memo": "410189704",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORVPT",
+      "Des": "Дверь распашная со вставкой с патиной",
+      "Memo": "404408082",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORVPTRET",
+      "Des": "Дверь распашная со вставкой с патиной",
+      "Memo": "672071289",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08DOORVRET",
+      "Des": "Дверь распашная со вставкой без патины",
+      "Memo": "672070953",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08FASAD",
+      "Des": "Фасад без патины",
+      "Memo": "404406410",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08FASADPT",
+      "Des": "Фасад с патиной",
+      "Memo": "404380455",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08FRAMKA",
+      "Des": "Рамка для вставки S без патины",
+      "Memo": "404407336",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08FRAMKATYL",
+      "Des": "Рамка для вставки S без патины (фрез. тыл)",
+      "Memo": "595663088",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08RAMKA",
+      "Des": "Рамка для вставки S без патины",
+      "Memo": "398891837",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08RAMKAPT",
+      "Des": "Рамка для вставки S с патиной",
+      "Memo": "404380455",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08VSTAVKA",
+      "Des": "Вставка без патины",
+      "Memo": "398291144",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08VSTAVKA_S",
+      "Des": "Вставка S без патины",
+      "Memo": "398894571",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08VSTAVKA_SPT",
+      "Des": "Вставка S с патиной",
+      "Memo": "404448398",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08VSTAVKAPT",
+      "Des": "Вставка с патиной",
+      "Memo": "404380455",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08ZERK",
+      "Des": "Зеркало подвесное",
+      "Memo": "410189704",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08ZERKPT",
+      "Des": "Зеркало подвесное с патиной",
+      "Memo": "404408082",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08ZERKPTRET",
+      "Des": "Зеркало подвесное с патиной",
+      "Memo": "672071289",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S08ZERKRET",
+      "Des": "Зеркало подвесное",
+      "Memo": "672070953",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S09VSTAVKA",
+      "Des": "Вставка Крашеное стекло Lacobel",
+      "Memo": "385546852",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S11VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "403663178",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "416034060",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "518620041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636590664",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12DOORSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636590868",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASAD",
+      "Des": "Фасад",
+      "Memo": "416034060",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "518620041",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636590664",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASADSTAG",
+      "Des": "Фасад",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636590868",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "416034146",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "416034141",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "416034164",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S12ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "416034135",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S13VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "маршрут в дистинте",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S14VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "421153995",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S15VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420537967",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S16VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420558952",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S17VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "маршрут в дистинте",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S18VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420542759",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S19VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420542759",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S20VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420542759",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S21VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "421156827",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S22VSTAVKA",
+      "Des": "Вставка",
+      "Memo": "420533264",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S24DOOR",
+      "Des": "$(tipshkaf:8)",
+      "Memo": "452965744",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S24FASAD",
+      "Des": "Фасад",
+      "Memo": "452965744",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S25ZERK",
+      "Des": "Зеркало подвесное",
+      "Memo": "452962457",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORGL",
+      "Des": "Карниз без патины глян.",
+      "Memo": "464660950",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORMT",
+      "Des": "Карниз без патины мат.",
+      "Memo": "464661000",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORPTGL",
+      "Des": "Карниз с патиной глян.",
+      "Memo": "464660934",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORPTMT",
+      "Des": "Карниз с патиной мат.",
+      "Memo": "464660947",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORPTST",
+      "Des": "Карниз с патиной Ультрамат.",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORRAZGL",
+      "Des": "Разделитель карниза с без патины глян.",
+      "Memo": "464660950",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORRAZMT",
+      "Des": "Разделитель карниза с без патины мат.",
+      "Memo": "464661000",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORRAZPTGL",
+      "Des": "Разделитель карниза с патиной глян.",
+      "Memo": "464660934",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORRAZPTMT",
+      "Des": "Разделитель карниза с патиной мат.",
+      "Memo": "464660947",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORRAZPTST",
+      "Des": "Разделитель карниза с патиной Ультрамат.",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORRAZST",
+      "Des": "Разделитель карниза с без Ультрамат.",
+      "Memo": "610651087",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26CORST",
+      "Des": "Карниз без патины Ультрамат.",
+      "Memo": "610651087",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMALRGL",
+      "Des": "Декоративный элемент гл.",
+      "Memo": "686423294",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMALRMT",
+      "Des": "Декоративный элемент мат.",
+      "Memo": "686423350",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMALRST",
+      "Des": "Декоративный элемент  ультрамат.",
+      "Memo": "686423530",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMGL",
+      "Des": "Декоративный элемент без патины гл.",
+      "Memo": "464660950",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMMT",
+      "Des": "Декоративный элемент без патины мат.",
+      "Memo": "464661000",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMPROF",
+      "Des": "Декоративная колонка с профилем",
+      "Memo": "686426652",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMPTGL",
+      "Des": "Декоративный элемент с патиной гл.",
+      "Memo": "464660934",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMPTMT",
+      "Des": "Декоративный элемент с патиной мат.",
+      "Memo": "464660947",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMPTST",
+      "Des": "Декоративный элемент с патиной Ультрамат.",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKELMST",
+      "Des": "Декоративный элемент  Ультрамат.",
+      "Memo": "610651087",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKKOLALRGL",
+      "Des": "Декоративная колонка без профиля",
+      "Memo": "686423294",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKKOLALRMT",
+      "Des": "Декоративная колонка без профиля",
+      "Memo": "686423350",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DEKKOLALRST",
+      "Des": "Декоративная колонка без профиля",
+      "Memo": "686423530",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORGL",
+      "Des": "$(tipshkaf:8) без патины G",
+      "Memo": "445138640",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORGLPT",
+      "Des": "$(tipshkaf:8) с патиной G",
+      "Memo": "445139774",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORGLSTAG",
+      "Des": "$(tipshkaf:8) без патины G",
+      "Memo": "445138640",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORGLSTAGPT",
+      "Des": "$(tipshkaf:8) с патиной G",
+      "Memo": "445139774",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORMT",
+      "Des": "$(tipshkaf:8) без патины G",
+      "Memo": "445138726",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORMTPT",
+      "Des": "$(tipshkaf:8) с патиной G",
+      "Memo": "445139912",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORMTSTAG",
+      "Des": "$(tipshkaf:8) без патины G",
+      "Memo": "445138726",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORMTSTAGPT",
+      "Des": "$(tipshkaf:8) с патиной G",
+      "Memo": "445139912",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORST",
+      "Des": "$(tipshkaf:8) без патины G",
+      "Memo": "610652576",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORSTPT",
+      "Des": "$(tipshkaf:8) с патиной G",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORSTSTAG",
+      "Des": "$(tipshkaf:8) без патины G",
+      "Memo": "610652576",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "453574358",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADGL",
+      "Des": "Фасад без патины гл.",
+      "Memo": "445138640",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADGLPT",
+      "Des": "Фасад с патиной G",
+      "Memo": "445139774",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADGLSTAG",
+      "Des": "Фасад без патины G",
+      "Memo": "445138640",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADGLSTAGPT",
+      "Des": "Фасад с патиной G",
+      "Memo": "445139774",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADMT",
+      "Des": "Фасад без патины мат.",
+      "Memo": "445138726",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADMTPT",
+      "Des": "Фасад с патиной G",
+      "Memo": "445139912",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADMTSTAG",
+      "Des": "Фасад без патины G",
+      "Memo": "445138726",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADMTSTAGPT",
+      "Des": "Фасад с патиной G",
+      "Memo": "445139912",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADPTGL",
+      "Des": "Фасад с патиной гл.",
+      "Memo": "445139774",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADPTMT",
+      "Des": "Фасад с патиной мат.",
+      "Memo": "445139912",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADPTST",
+      "Des": "Фасад с патиной Ультрамат.",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADST",
+      "Des": "Фасад без патины Ультрамат.",
+      "Memo": "610652576",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADSTPT",
+      "Des": "Фасад с патиной G",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADSTSTAG",
+      "Des": "Фасад без патины G",
+      "Memo": "610652576",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "453574358",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26FRAMKA",
+      "Des": "Рамка для вставки S без патины",
+      "Memo": "445135944",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKAGL",
+      "Des": "Рамка S без патины глянц.",
+      "Memo": "444998493",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKAGLPT",
+      "Des": "Рамка S с патиной глянц.",
+      "Memo": "444998852",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKAMT",
+      "Des": "Рамка S без патины мат.",
+      "Memo": "444998505",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKAMTPT",
+      "Des": "Рамка S с патиной мат.",
+      "Memo": "444998893",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKASGL",
+      "Des": "Рамка S без патины глянц.",
+      "Memo": "445138851",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKASGLPT",
+      "Des": "Рамка S с патиной глянц.",
+      "Memo": "445139952",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKASMT",
+      "Des": "Рамка S без патины мат.",
+      "Memo": "445138884",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKASMTPT",
+      "Des": "Рамка S с патиной мат.",
+      "Memo": "445139995",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKASST",
+      "Des": "Рамка S без патины Ультрамат.",
+      "Memo": "610652773",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKAST",
+      "Des": "Рамка S без патины Ультрамат.",
+      "Memo": "610650292",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26RAMKASTPT",
+      "Des": "Рамка S с патиной Ультрамат.",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26VSTAVKA_S",
+      "Des": "Вставка S без патины",
+      "Memo": "445021684",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26VSTAVKAGL",
+      "Des": "Вставка без патины",
+      "Memo": "444996454",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26VSTAVKAGLPT",
+      "Des": "Вставка G с патиной глянц.",
+      "Memo": "444998770",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26VSTAVKAMT",
+      "Des": "Вставка без патины",
+      "Memo": "444996520",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26VSTAVKAMTPT",
+      "Des": "Вставка G с патиной мат.",
+      "Memo": "444998784",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26VSTAVKAST",
+      "Des": "Вставка без патины Ультрамат.",
+      "Memo": "610649876",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26VSTAVKASTPT",
+      "Des": "Вставка G с патиной Ультрамат.",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S26ZERK",
+      "Des": "Зеркало подвесное",
+      "Memo": "453574358",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "490682876",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636592960",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27DOORSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "490682876",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27DOORTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "642531365",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636597438",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27DOORV",
+      "Des": "Дверь распашная",
+      "Memo": "410189704",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27DOORVRET",
+      "Des": "Дверь распашная",
+      "Memo": "672070953",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASAD",
+      "Des": "Фасад G",
+      "Memo": "490682876",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636592960",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASADSTAG",
+      "Des": "Фасад",
+      "Memo": "490682876",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASADTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "642531365",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636597438",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASADV",
+      "Des": "Фасад",
+      "Memo": "410189704",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASADVRET",
+      "Des": "Фасад",
+      "Memo": "672070953",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FRAMKA",
+      "Des": "Рамка для вставки S",
+      "Memo": "490683441",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S27FRAMKATYL",
+      "Des": "Рамка для вставки S(фрез. тыл)",
+      "Memo": "595662739",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "473912495",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "518620254",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636583349",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORSTAG",
+      "Des": "Дверь распашная",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636584151",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORVID",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517140879",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28DOORVIDM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517140931",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASAD",
+      "Des": "Фасад",
+      "Memo": "473912495",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "518620254",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636583349",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADSTAG",
+      "Des": "Фасад",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636584151",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADVID",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517140879",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASADVIDM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517140931",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28FASVID",
+      "Des": "Заготовка для фасада Выдвижного ящика",
+      "Memo": "517139484",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "473922292",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "473921737",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "473923012",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S28ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "473921959",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "473913249",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "518620421",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636584521",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636584885",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORVID",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517141641",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29DOORVIDM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517141663",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASAD",
+      "Des": "Фасад",
+      "Memo": "473913249",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "518620421",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636584521",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADSTAG",
+      "Des": "Фасад  G",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636584885",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADVID",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517141641",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASADVIDM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "517141663",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29FASVID",
+      "Des": "Заготовка для фасада Выдвижного ящика",
+      "Memo": "517139556",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "489349892",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "473949798",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "489350077",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S29ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "489349825",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S30DOOR",
+      "Des": "$(tipshkaf:8)",
+      "Memo": "452965744",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S30FASAD",
+      "Des": "Фасад",
+      "Memo": "452965744",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S30ZERK",
+      "Des": "Зеркало подвесное",
+      "Memo": "693811477",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOOR",
+      "Des": "Дверь распашная",
+      "Memo": "607554131",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORBIG",
+      "Des": "Распашной фасад G под стяжки",
+      "Memo": "607554517",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORPETL",
+      "Des": "Дверь распашная",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORPL",
+      "Des": "Распашной фасад G 146 мм",
+      "Memo": "636585130",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORUP",
+      "Des": "Распашной фасад G УПИЛ",
+      "Memo": "636586157",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORV",
+      "Des": "Дверь распашная со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORVID",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "607553505",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31DOORVIDM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "607548292",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASAD",
+      "Des": "Фасад",
+      "Memo": "607554131",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADBIG",
+      "Des": "Фасад G под стяжки",
+      "Memo": "607554517",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADPETL",
+      "Des": "Фасад",
+      "Memo": "408885930",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADPL",
+      "Des": "Фасад G 146 мм",
+      "Memo": "636585130",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADSTAG",
+      "Des": "Фасад  G",
+      "Memo": "518619015",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADUP",
+      "Des": "Фасад G УПИЛ",
+      "Memo": "636586157",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADV",
+      "Des": "Фасад  со вставкой",
+      "Memo": "403643603",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADVID",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "607553505",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASADVIDM",
+      "Des": "Фасад выдвижного ящика G",
+      "Memo": "607548292",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASTH",
+      "Des": "Фасад под \"Ответки\" для т-шки",
+      "Memo": "634159453",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31FASVID",
+      "Des": "Заготовка для фасада Выдвижного ящика",
+      "Memo": "607547020",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31PLANKAG",
+      "Des": "Планка горизонтальная",
+      "Memo": "607561933",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31PLANKAV",
+      "Des": "Планка вертикальная",
+      "Memo": "607561261",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31RAMDOORV",
+      "Des": "Рамка для двери распашной со вставкой",
+      "Memo": "607562660",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S31ZAGGORPL",
+      "Des": "Заготовка для горизонтальной планки",
+      "Memo": "607560686",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORFK",
+      "Des": "$(tipshkaf:8) G",
+      "Memo": "732721036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORFKGW",
+      "Des": "$(tipshkaf:8) GW",
+      "Memo": "732720820",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORFKGWSTAG",
+      "Des": "Дверь распашная GW",
+      "Memo": "732721036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORFKSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "732721036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORGL",
+      "Des": "$(tipshkaf:8) G",
+      "Memo": "732721009",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORGLGW",
+      "Des": "$(tipshkaf:8) GW",
+      "Memo": "732720720",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORGLGWSTAG",
+      "Des": "Дверь распашная GW",
+      "Memo": "732721009",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORGLSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "732721009",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORMT",
+      "Des": "$(tipshkaf:8) G",
+      "Memo": "732721016",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORMTGW",
+      "Des": "$(tipshkaf:8) GW",
+      "Memo": "732720769",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORMTGWSTAG",
+      "Des": "Дверь распашная GW",
+      "Memo": "732721016",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORMTSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "732721016",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORST",
+      "Des": "$(tipshkaf:8) G",
+      "Memo": "732721028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORSTGW",
+      "Des": "$(tipshkaf:8) GW",
+      "Memo": "732720786",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORSTGWSTAG",
+      "Des": "Дверь распашная GW",
+      "Memo": "732721028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32DOORSTSTAG",
+      "Des": "Дверь распашная G",
+      "Memo": "732721028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADFK",
+      "Des": "Фасад G",
+      "Memo": "732721036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADFKGW",
+      "Des": "Фасад GW",
+      "Memo": "732720820",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADFKGWSTAG",
+      "Des": "Фасад  GW",
+      "Memo": "732721036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADFKSTAG",
+      "Des": "Фасад  G",
+      "Memo": "732721036",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADGL",
+      "Des": "Фасад G",
+      "Memo": "732721009",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADGLGW",
+      "Des": "Фасад GW",
+      "Memo": "732720720",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADGLGWSTAG",
+      "Des": "Фасад  GW",
+      "Memo": "732721009",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADGLSTAG",
+      "Des": "Фасад  G",
+      "Memo": "732721009",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADMT",
+      "Des": "Фасад G",
+      "Memo": "732721016",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADMTGW",
+      "Des": "Фасад GW",
+      "Memo": "732720769",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADMTGWSTAG",
+      "Des": "Фасад  GW",
+      "Memo": "732721016",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADMTSTAG",
+      "Des": "Фасад  G",
+      "Memo": "732721016",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADST",
+      "Des": "Фасад G",
+      "Memo": "732721028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADSTGW",
+      "Des": "Фасад GW",
+      "Memo": "732720786",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADSTGWSTAG",
+      "Des": "Фасад  GW",
+      "Memo": "732721028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S32FASADSTSTAG",
+      "Des": "Фасад  G",
+      "Memo": "732721028",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33K_DNOCOLFK",
+      "Des": "Дно крашеное фактурн.",
+      "Memo": "701605427",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33K_DNOCOLGL",
+      "Des": "Дно крашеное глянц.",
+      "Memo": "701605208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33K_KRCOLFK",
+      "Des": "Крышка крашеная фактурн.",
+      "Memo": "701605427",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33K_KRCOLGL",
+      "Des": "Крышка крашеная глянц.",
+      "Memo": "701605208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33K_POLKCOLFK",
+      "Des": "Полка крашеная фактур.",
+      "Memo": "701605427",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33K_POLKCOLGL",
+      "Des": "Полка крашеная глянц.",
+      "Memo": "701605208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33T_ZADCOLFK",
+      "Des": "Задняя стенка крашеная фактурн.",
+      "Memo": "701605427",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33T_ZADCOLGL",
+      "Des": "Задняя стенка крашеная глянц.",
+      "Memo": "701605208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33V_BOKCOLFK",
+      "Des": "Боковина крашеная фактурн.",
+      "Memo": "701605427",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33V_BOKCOLGL",
+      "Des": "Боковина крашеная глянц.",
+      "Memo": "701605208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33V_VERTCOLFK",
+      "Des": "Перегородка крашеная фактурн.",
+      "Memo": "701605427",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33V_VERTCOLGL",
+      "Des": "Перегородка крашеная глянц.",
+      "Memo": "701605208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33ZADCOLFK",
+      "Des": "Задняя стенка крашеная фактурн.",
+      "Memo": "701605427",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "S33ZADCOLGL",
+      "Des": "Задняя стенка крашеная глянц.",
+      "Memo": "701605208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "ST1PROF",
+      "Des": "Профиль Stilos",
+      "Memo": "541525727",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "TL1KOMPLNAPR",
+      "Des": "Комплект направляющих для дверей",
+      "Memo": "526724583",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "TL1NAPRPR",
+      "Des": "Комплект направляющих Top Line",
+      "Memo": "526724583",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

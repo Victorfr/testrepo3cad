@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "_matBack",
+    "Des": "",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r2\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MATBACK",
+      "Codopz": "1",
+      "Des": "Задняя стена гипсокартон",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATBACK",
+      "Codopz": "2",
+      "Des": "Задняя стена бетон \\ кирпич",
+      "Memo": "2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATBACK",
+      "Codopz": "3",
+      "Des": "Натяжной",
+      "Memo": "3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATBACK",
+      "Codopz": "999",
+      "Des": "Нет",
+      "Memo": "999",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "_prist",
+    "Des": "Пристыковочный шкаф",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010тип встраиваемого шкафа\u0010 1200\u0010тип отдельностоящего шкафа\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_PRIST",
+      "Codopz": "0",
+      "Des": "Нет",
+      "Memo": "358405829\t358405830",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PRIST",
+      "Codopz": "1",
+      "Des": "Левый",
+      "Memo": "417841023\t417841022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PRIST",
+      "Codopz": "2",
+      "Des": "Правый",
+      "Memo": "417841023\t417841022",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

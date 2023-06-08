@@ -1,0 +1,2306 @@
+{
+  "MainVar": {
+    "Cod": "NPOMACRO",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "001",
+      "Des": "001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879765",
+      "Des": "0032_000",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879766",
+      "Des": "0032_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879767",
+      "Des": "0032_008",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879768",
+      "Des": "0032_010",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879769",
+      "Des": "0032_301",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879770",
+      "Des": "0032_303",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879771",
+      "Des": "0032_304",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879772",
+      "Des": "0032_305",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879773",
+      "Des": "0032_306",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879774",
+      "Des": "0032_307",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879775",
+      "Des": "0032_308",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879776",
+      "Des": "0032_327",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879777",
+      "Des": "0032_401",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879778",
+      "Des": "0032_402",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879779",
+      "Des": "0032_403",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879780",
+      "Des": "0032_404",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879781",
+      "Des": "0032_405",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879782",
+      "Des": "0032_406",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879783",
+      "Des": "0032_407",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879784",
+      "Des": "0032_408",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879785",
+      "Des": "0032_409",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879786",
+      "Des": "0032_410",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879787",
+      "Des": "0032_411",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879788",
+      "Des": "0032_412",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879789",
+      "Des": "0032_413",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879790",
+      "Des": "0032_414",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879791",
+      "Des": "0032_415",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879792",
+      "Des": "0032_501",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879793",
+      "Des": "0032_502",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879794",
+      "Des": "0032_503",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879795",
+      "Des": "0032_504",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879796",
+      "Des": "0032_505",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879797",
+      "Des": "0032_506",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879798",
+      "Des": "0032_507",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879799",
+      "Des": "0032_508",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879800",
+      "Des": "0032_509",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879801",
+      "Des": "0032_511",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879802",
+      "Des": "0032_513",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879803",
+      "Des": "0032_514",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879804",
+      "Des": "0032_515",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879805",
+      "Des": "0032_516",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879806",
+      "Des": "0032_517",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879807",
+      "Des": "0032_518",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879808",
+      "Des": "0032_519",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879809",
+      "Des": "0032_520",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879810",
+      "Des": "0032_522",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879811",
+      "Des": "0032_523",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879812",
+      "Des": "0032_524",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879813",
+      "Des": "0032_512",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879814",
+      "Des": "0032_525",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879815",
+      "Des": "0032_526",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879816",
+      "Des": "0032_527",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879817",
+      "Des": "0032_528",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879818",
+      "Des": "0032_529",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879819",
+      "Des": "0032_530",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879820",
+      "Des": "0032_531",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879821",
+      "Des": "0032_532",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879822",
+      "Des": "0032_533",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879823",
+      "Des": "NC001_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879824",
+      "Des": "NC001_001_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879825",
+      "Des": "C012_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879826",
+      "Des": "C012_001_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879827",
+      "Des": "C008_001_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404879828",
+      "Des": "0016_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404888400",
+      "Des": "0032_302",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404888401",
+      "Des": "0032_510",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404888402",
+      "Des": "0032_521",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "404904557",
+      "Des": "0020_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "411723619",
+      "Des": "0019_010_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "411723648",
+      "Des": "0019_010_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "411723653",
+      "Des": "0024_010_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "411723655",
+      "Des": "0024_010_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "416305726",
+      "Des": "0004_010_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "416305727",
+      "Des": "0004_010_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "455591711",
+      "Des": "0020_003",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "455591722",
+      "Des": "0020_002",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463203661",
+      "Des": "0020_010",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463203662",
+      "Des": "0033_401",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463203663",
+      "Des": "0033_402",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463203664",
+      "Des": "0033_403",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463203665",
+      "Des": "0033_404",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463203666",
+      "Des": "0033_405",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463207334",
+      "Des": "0020_403",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463208903",
+      "Des": "0033_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463208904",
+      "Des": "0033_010",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463208905",
+      "Des": "0033_327",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463208906",
+      "Des": "0033_000",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "463208907",
+      "Des": "0033_008",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "464343208",
+      "Des": "0021_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "464343209",
+      "Des": "0021_002",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "464343210",
+      "Des": "0021_003",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "464423351",
+      "Des": "0017_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "473963332",
+      "Des": "0020_000",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "473963372",
+      "Des": "0021_000",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477369131",
+      "Des": "0019_479_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477441807",
+      "Des": "0004_479",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477441808",
+      "Des": "0019_479",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477441809",
+      "Des": "0024_479",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444482",
+      "Des": "0004_479_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444483",
+      "Des": "0024_479_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444484",
+      "Des": "0032_010_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444485",
+      "Des": "0032_401_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444486",
+      "Des": "0032_402_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444487",
+      "Des": "0032_403_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444488",
+      "Des": "0032_404_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444489",
+      "Des": "0032_405_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444490",
+      "Des": "0033_010_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444491",
+      "Des": "0033_401_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444492",
+      "Des": "0033_402_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444493",
+      "Des": "0033_403_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444494",
+      "Des": "0033_404_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477444495",
+      "Des": "0033_405_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455436",
+      "Des": "0032_406_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455437",
+      "Des": "0032_407_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455438",
+      "Des": "0032_408_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455439",
+      "Des": "0032_409_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455440",
+      "Des": "0032_410_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455441",
+      "Des": "0032_411_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455442",
+      "Des": "0032_412_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455443",
+      "Des": "0032_413_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455444",
+      "Des": "0032_414_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455445",
+      "Des": "0032_415_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455446",
+      "Des": "0032_501_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455448",
+      "Des": "0032_502_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455449",
+      "Des": "0032_503_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455450",
+      "Des": "0032_504_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455451",
+      "Des": "0032_505_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455453",
+      "Des": "0032_506_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455454",
+      "Des": "0032_507_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455455",
+      "Des": "0032_508_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455456",
+      "Des": "0032_509_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455457",
+      "Des": "0032_510_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455458",
+      "Des": "0032_511_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455459",
+      "Des": "0032_512_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455460",
+      "Des": "0032_513_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455461",
+      "Des": "0032_514_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455462",
+      "Des": "0032_515_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455463",
+      "Des": "0032_516_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455464",
+      "Des": "0032_517_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455465",
+      "Des": "0032_518_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455466",
+      "Des": "0032_519_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455467",
+      "Des": "0032_520_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455468",
+      "Des": "0032_521_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455469",
+      "Des": "0032_522_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455470",
+      "Des": "0032_523_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455471",
+      "Des": "0032_524_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455472",
+      "Des": "0032_525_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455473",
+      "Des": "0032_526_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455474",
+      "Des": "0032_527_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455475",
+      "Des": "0032_528_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455476",
+      "Des": "0032_529_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455477",
+      "Des": "0032_530_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455478",
+      "Des": "0032_531_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455479",
+      "Des": "0032_532_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "477455480",
+      "Des": "0032_533_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "484251462",
+      "Des": "0021_503",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "484251463",
+      "Des": "0021_504",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "484251464",
+      "Des": "0021_505",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "484251465",
+      "Des": "0021_506",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689260",
+      "Des": "0020_406",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689261",
+      "Des": "0020_407",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689262",
+      "Des": "0020_408",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689263",
+      "Des": "0020_409",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689264",
+      "Des": "0020_410",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689265",
+      "Des": "0020_501",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689266",
+      "Des": "0020_502",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689267",
+      "Des": "0021_501",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689268",
+      "Des": "0021_502",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689269",
+      "Des": "0021_406",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689270",
+      "Des": "0021_407",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689271",
+      "Des": "0021_408",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689272",
+      "Des": "0021_409",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689273",
+      "Des": "0021_410",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689274",
+      "Des": "0021_413",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689275",
+      "Des": "0021_411",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689276",
+      "Des": "0021_412",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689277",
+      "Des": "0021_414",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485689278",
+      "Des": "0021_415",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485706208",
+      "Des": "0021_010",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729070",
+      "Des": "0020_401",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729072",
+      "Des": "0020_402",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729073",
+      "Des": "0020_404",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729074",
+      "Des": "0020_405",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729075",
+      "Des": "0021_401",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729076",
+      "Des": "0021_402",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729077",
+      "Des": "0021_403",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729078",
+      "Des": "0021_404",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "485729079",
+      "Des": "0021_405",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "487633161",
+      "Des": "0020_413",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "487633162",
+      "Des": "0020_414",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "487633163",
+      "Des": "0021_418",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "487633164",
+      "Des": "0021_419",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490741110",
+      "Des": "0030_010_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490741165",
+      "Des": "0030_010_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490741388",
+      "Des": "0030_479",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490741601",
+      "Des": "0030_479_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490743244",
+      "Des": "0016_010",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490743245",
+      "Des": "0017_010",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490743246",
+      "Des": "0030_479",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490743247",
+      "Des": "0030_010_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490743248",
+      "Des": "0030_010_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490904006",
+      "Des": "0017_012",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "490904007",
+      "Des": "0017_013",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "607804340",
+      "Des": "0037_010_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "607804558",
+      "Des": "0037_010_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "607804751",
+      "Des": "0037_479",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "607804893",
+      "Des": "0037_479_dop",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "686694492",
+      "Des": "0017_309",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "686842696",
+      "Des": "0017_562",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "686842697",
+      "Des": "0017_563",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "734543886",
+      "Des": "konturMDF",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774638",
+      "Des": "0036_048",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774654",
+      "Des": "0036_049",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774758",
+      "Des": "0036_050",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774778",
+      "Des": "0036_051",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774786",
+      "Des": "0036_052",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774835",
+      "Des": "0036_053",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774861",
+      "Des": "0036_054",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774867",
+      "Des": "0036_055",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738774875",
+      "Des": "0036_056",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738775164",
+      "Des": "0036_057",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738775202",
+      "Des": "0036_058",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738775238",
+      "Des": "0036_059",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738775307",
+      "Des": "0036_060",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738775372",
+      "Des": "0036_061",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738775689",
+      "Des": "0036_062",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "738775724",
+      "Des": "0036_063",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "739533252",
+      "Des": "0036_001",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

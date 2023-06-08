@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "largDoorMx",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\u0010код гор профиля\u0010 2865\u0010длина гор профиля\u0010 2430\u0010размер стекла по ширине\u0010 3915\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "LARGDOORMX",
+      "Codopz": "443",
+      "Des": "",
+      "Memo": "443\t999mxalGorPr427\t427\t422",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGDOORMX",
+      "Codopz": "493",
+      "Des": "",
+      "Memo": "493\t999mxalGorPr477\t477\t472",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGDOORMX",
+      "Codopz": "593",
+      "Des": "",
+      "Memo": "593\t999mxalGorPr577\t577\t572",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

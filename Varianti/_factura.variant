@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "_factura",
+    "Des": "Фактура",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010материал\u0010 1200\u0010id значения\u0010 1200\u0010id маршрута вставка Nova\u0010 2940\u0010model\u0010 1200\u0010pr\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_FACTURA",
+      "Codopz": "1",
+      "Des": "Глянцевая",
+      "Memo": "9\t44562456\t420544398\tS26;S01;S13;S32\tGL",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_FACTURA",
+      "Codopz": "2",
+      "Des": "Матовая",
+      "Memo": "4\t44562434\t420544854\tS26;S01;S13;S32\tMT",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_FACTURA",
+      "Codopz": "3",
+      "Des": "Ультраматовый SoftTouch",
+      "Memo": "4\t511193732\t573103188\tS01;S13;S26;S32\tST",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_FACTURA",
+      "Codopz": "4",
+      "Des": "Фактурный",
+      "Memo": "4\t132474530\t\tS32\tFK",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}
