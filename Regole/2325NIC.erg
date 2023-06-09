@@ -38,7 +38,7 @@ _DATABOX
 #LETS 3ds=Kryk17.3ds
 
 #IF $[datecompare;$(dataordine);28.06.2022]>=0
-   #MSG товар не доступен к заказу с 28.06.2022!
+   #MSG товар не доступен к заказу с 28.07.2022!
    001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
 #ELSE
 #IF $(krepDx:0)=1

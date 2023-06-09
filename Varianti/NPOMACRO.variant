@@ -2301,6 +2301,26 @@
       "Ordinamento": 0,
       "Extra": "",
       "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "782449708",
+      "Des": "NC001_001_1",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "782449709",
+      "Des": "C012_001_2",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
     }
   ]
 }

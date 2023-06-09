@@ -37,12 +37,7 @@ _DATABOX
 #LETS cod_pan=99918300094
 #LETS 3ds=DDO1.3ds
 
-#LETS dataOld=27.04.2022
-#IF $[datecompare;$(dataordine);$(dataOld)]>=0
-   
-   #MSG товар не доступен к заказу с $(dataOld)!
-   001,COD=999 /ERROR=1 / /#l-1,c1=5  //Test
-#ELSE
+
 001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,C1=6,FACC=100,X4=$(3ds)  //Test
 
 
@@ -57,5 +52,5 @@ _DATABOX
    023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
 #ENDIF
 // ***********************************************************************************************************************************************
-#ENDIF
+
 //_OLD_PLACE

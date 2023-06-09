@@ -924,7 +924,47 @@
     },
     {
       "Codvar": "_WR",
+      "Codopz": "999ZAGCORCKRN",
+      "Des": "Заготовка для карниза",
+      "Memo": "124079459",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_WR",
+      "Codopz": "999ZAGCORCN",
+      "Des": "Заготовка для карниза",
+      "Memo": "124079459",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_WR",
       "Codopz": "999ZAGCORKR",
+      "Des": "Заготовка для карниза",
+      "Memo": "124079459",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_WR",
+      "Codopz": "999ZAGCORKRN",
+      "Des": "Заготовка для карниза",
+      "Memo": "124079459",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_WR",
+      "Codopz": "999ZAGCORN",
       "Des": "Заготовка для карниза",
       "Memo": "124079459",
       "Ges": "",
@@ -945,6 +985,26 @@
     {
       "Codvar": "_WR",
       "Codopz": "999ZAGCORNCKR",
+      "Des": "Заготовка для карниза",
+      "Memo": "124079459",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_WR",
+      "Codopz": "999ZAGCORNCKRN",
+      "Des": "Заготовка для карниза",
+      "Memo": "124079459",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_WR",
+      "Codopz": "999ZAGCORNCN",
       "Des": "Заготовка для карниза",
       "Memo": "124079459",
       "Ges": "",

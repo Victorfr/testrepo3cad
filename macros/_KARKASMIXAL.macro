@@ -13,54 +13,52 @@
 #LET pkorp=$p
 ///////////////////////////////////////////////////
 #IF $(tipshkafliving:1)=1 //шкаф с цоколем
-   #IF $(hzoc:0)<45
-      //#LETV hzoc=45
-   #ENDIF
+#IF $(hzoc:0)<45
+//#LETV hzoc=45
+#ENDIF
 #ELSE
-   //#IF $(shMantera)=0
-   //  #LETV hzoc=0
-   // #ELSE
-   //#LETV addNogMixal=0
-   #IF $(addzoc:1)=1
-      #LETV addNogMixal=0
-      #IF $(hzoc:0)<40
-         #LETV hzoc=40
-      #ENDIF
-   #ELSE
-      #IF $(addNogMixal:0)=0
-         #LETV addNogMixal=1
-      #ENDIF
-   #ENDIF
-   //#ENDIF
+//#IF $(shMantera)=0
+//  #LETV hzoc=0
+// #ELSE
+//#LETV addNogMixal=0
+#IF $(addzoc:1)=1
+#LETV addNogMixal=0
+#IF $(hzoc:0)<40
+#LETV hzoc=40
+#ENDIF
+#ELSE
+#IF $(addNogMixal:0)=0
+#LETV addNogMixal=1
+#ENDIF
+#ENDIF
+//#ENDIF
 #ENDIF
 #IF $(addNogMixal:0)=1
-   
-   #LETV ua=11
-   #LET karkasSA=11
-   !SAGOMA cir C30	0	0	10
-   //#IF $(shMantera)=0
-   
-   060	SL=$(mat:1)/2	SP=70	L=10	A=11	DIS=$(cir)	c1=1  //Test
-   060	SL=$(mat:1)/2	SP=$p-70	L=10	A=11	DIS=$(cir)	c1=1  //Test
-   060	SL=$l-$(mat:1)/2	SP=70	L=10	A=11	DIS=$(cir)	c1=1  //Test
-   060	SL=$l-$(mat:1)/2	SP=$p-70	L=10	A=11	DIS=$(cir)	c1=1  //Test
-   // #ENDIF
-   #IF $(_colkarkas:14)==999sam
-      001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
-   #ELSE
-      001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
-   #ENDIF
-   //#IF $(shMantera)=0
-   //опора регулируемая
-   001	LATO=6	COD=999nogPI05 / / /#Q4	L=1	A=1	P=1  //Test
-   //гайка для опоры
-   001	LATO=6	COD=999gnogBP01 / / /#Q4	L=1	A=1	P=1  //Test
-   //#ENDIF
+#LETV ua=11
+#LET karkasSA=11
+!SAGOMA cir C30	0	0	10
+//#IF $(shMantera)=0
+060	SL=$(mat:1)/2	SP=70	L=10	A=11	DIS=$(cir)	c1=1  //Test
+060	SL=$(mat:1)/2	SP=$p-70	L=10	A=11	DIS=$(cir)	c1=1  //Test
+060	SL=$l-$(mat:1)/2	SP=70	L=10	A=11	DIS=$(cir)	c1=1  //Test
+060	SL=$l-$(mat:1)/2	SP=$p-70	L=10	A=11	DIS=$(cir)	c1=1  //Test
+// #ENDIF
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
 #ELSE
-   #IF $(ua)!0
-      #LETV ua=0
-   #ENDIF
-   // #LET karkassa=$(hzoc:0)
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
+#ENDIF
+//#IF $(shMantera)=0
+//опора регулируемая
+001	LATO=6	COD=999nogPI05 / / /#Q4	L=1	A=1	P=1  //Test
+//гайка для опоры
+001	LATO=6	COD=999gnogBP01 / / /#Q4	L=1	A=1	P=1  //Test
+//#ENDIF
+#ELSE
+#IF $(ua)!0
+#LETV ua=0
+#ENDIF
+// #LET karkassa=$(hzoc:0)
 #ENDIF
 //ADDNAPMIXAL
 //VOLUMEMIXAL

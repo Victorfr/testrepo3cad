@@ -2241,6 +2241,16 @@
       "Ordinamento": 0,
       "Extra": "",
       "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "227",
+      "Des": "ЯССП B2B Pembroke S128/Maloja",
+      "Memo": "Pembroke_S128.jpg\t\t18;TSS\t781889906\t781890577\t781889906\tkrclef23*1|_22CKKS|1\t749273976\tKLEI\t999ZAGVBdbfr\t999grugzagVen\t999sam_db_gd\t\tTSSDSPL18|CFSP\t\t\t\t1\t\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
     }
   ]
 }

@@ -684,9 +684,49 @@
     },
     {
       "Codvar": "_MNP",
+      "Codopz": "999ZAGCORCKRN",
+      "Des": "Заготовка для карниза C012_001_1 кр.",
+      "Memo": "464707917",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORCN",
+      "Des": "Заготовка для карниза C012_001_1",
+      "Memo": "404415613",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
       "Codopz": "999ZAGCORKR",
       "Des": "Заготовка для карниза C008_001_2 кр.",
       "Memo": "464707791",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORKRN",
+      "Des": "Заготовка для карниза C012_001_2 кр.",
+      "Memo": "781356311",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORN",
+      "Des": "Заготовка для карниза C012_001_2",
+      "Memo": "781357512",
       "Ges": "",
       "Ordinamento": 0,
       "Extra": "",
@@ -707,6 +747,26 @@
       "Codopz": "999ZAGCORNCKR",
       "Des": "Заготовка для карниза NC002_001_2 кр.",
       "Memo": "464708017",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORNCKRN",
+      "Des": "Заготовка для карниза NC001_001_1 кр.",
+      "Memo": "781364368",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
+      "Codopz": "999ZAGCORNCN",
+      "Des": "Заготовка для карниза NC001_001_1",
+      "Memo": "781364302",
       "Ges": "",
       "Ordinamento": 0,
       "Extra": "",

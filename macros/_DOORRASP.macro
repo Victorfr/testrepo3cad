@@ -1,56 +1,56 @@
 !parametri flagCorrector=0	bokFas=0	flagbok=
 #IF $(_ModDoorRasp:1)[S12;D02;E02]
-   #IF $(oldcolor$(_idunico))=
-      #LETS oldcolor$(_idunico)=$(_colkarkas:1)
-   #ENDIF
-   #IF $(oldcolor$(_idunico))!!$(_colkarkas:1)
-      #LETS oldcolor$(_idunico)=$(_colkarkas:1)
-      #LETV _colkrom=$(_colkarkas:1)
-   #ENDIF
+#IF $(oldcolor$(_idunico))=
+#LETS oldcolor$(_idunico)=$(_colkarkas:1)
+#ENDIF
+#IF $(oldcolor$(_idunico))!!$(_colkarkas:1)
+#LETS oldcolor$(_idunico)=$(_colkarkas:1)
+#LETV _colkrom=$(_colkarkas:1)
+#ENDIF
 #ENDIF
 #IF $(_ModDoorRasp:1)[s29]
-   #IF $(oldcolor$(_idunico))=
-      #LETS oldcolor$(_idunico)=$(cvetvstav_door:1)
-      #IF $(_MODDOORRASP:1)[s29] //для вектор акрил
-         #LETV _colkrom=$(cvetvstav_door:1)
-      #ENDIF
-   #ENDIF
-   #IF $(oldcolor$(_idunico))!!$(cvetvstav_door:1)
-      #LETS oldcolor$(_idunico)=$(cvetvstav_door:1)
-      #IF $(_MODDOORRASP:1)[s29] //для вектор акрил
-         #LETV _colkrom=$(cvetvstav_door:1)
-      #ENDIF
-   #ENDIF
+#IF $(oldcolor$(_idunico))=
+#LETS oldcolor$(_idunico)=$(cvetvstav_door:1)
+#IF $(_MODDOORRASP:1)[s29] //для вектор акрил
+#LETV _colkrom=$(cvetvstav_door:1)
+#ENDIF
+#ENDIF
+#IF $(oldcolor$(_idunico))!!$(cvetvstav_door:1)
+#LETS oldcolor$(_idunico)=$(cvetvstav_door:1)
+#IF $(_MODDOORRASP:1)[s29] //для вектор акрил
+#LETV _colkrom=$(cvetvstav_door:1)
+#ENDIF
+#ENDIF
 #ENDIF
 //если кромка лазер для микса
 #IF $(_MODDOORRASP:1)[S02] & $(kromLaser:1)=1
 #ENDIF
 ///данные для обработки наборов ремкомплектов красок
 #IF $(_MODDOORRASP:1)[S26;S01;S08]
-   #LETV curkrasid=$(cvetvstav_door:9)
-   #IF $(_PATINA:1)!!999
-      #LETV curpatid=$(_PATINA:5)
-   #ENDIF
+#LETV curkrasid=$(cvetvstav_door:9)
+#IF $(_PATINA:1)!!999
+#LETV curpatid=$(_PATINA:5)
+#ENDIF
 #ENDIF
 //ограничение размеров
 //если дверь купе топлайн
 #IF $(flagCorrector)[2]
-   _MISURALIMTL
-   #IF $(disablecor:1)=1
-      #LETV flagCorrector=3
-      #LETV correctorType=0
-   #ENDIF
+_MISURALIMTL
+#IF $(disablecor:1)=1
+#LETV flagCorrector=3
+#LETV correctorType=0
+#ENDIF
 #ELSE
-   _misuraLim
-   #IF $(flagCorrector)=1
-      #LETV correctorType=1
-   #ELSE
-      #LETV correctorType=0
-   #ENDIF
-   #IF $(disablecor:1)=1
-      #LETV flagCorrector=0
-      #LETV correctorType=0
-   #ENDIF
+_misuraLim
+#IF $(flagCorrector)=1
+#LETV correctorType=1
+#ELSE
+#LETV correctorType=0
+#ENDIF
+#IF $(disablecor:1)=1
+#LETV flagCorrector=0
+#LETV correctorType=0
+#ENDIF
 #ENDIF
 //_MISURALIMTL
 //_FINALERASP
@@ -58,94 +58,94 @@
 //301
 #LETS cod=$(_ModDoorRasp:1)DOOR
 #IF $(bokFas)=1
-   // #LETS cod=$(_ModDoorRasp:1)FASAD
+// #LETS cod=$(_ModDoorRasp:1)FASAD
 #ENDIF
 #LETS codPetl=$(cod)PETL
 #IF $(_TipDoorRasp:3)==S #LETS cod=$(_ModDoorRasp:1)DOORV
 #IF $(flagbok)==on
-   #LETS cod=$(_ModDoorRasp:1)FASAD
-   #IF $(_TipDoorRasp:3)==S #LETS cod=$(_ModDoorRasp:1)FASADV
+#LETS cod=$(_ModDoorRasp:1)FASAD
+#IF $(_TipDoorRasp:3)==S #LETS cod=$(_ModDoorRasp:1)FASADV
 #ENDIF
 /////умолчания для ручки профиль
 #IF $(_MODDOORRASP:1)[s30]
-   #IF $(firstLoad)!!X
-      #LETV _man=999
-      #LETV firstLoad=X
-   #ENDIF
+#IF $(firstLoad)!!X
+#LETV _man=999
+#LETV firstLoad=X
+#ENDIF
 #ELSE
-   #IF $(firstLoad)!!X
-      #LETV _manProf=0
-      #LETV firstLoad=X
-   #ENDIF
+#IF $(firstLoad)!!X
+#LETV _manProf=0
+#LETV firstLoad=X
+#ENDIF
 #ENDIF
 #IF $(_MODDOORRASP:1)[s01] & ($(_TipDoorRasp:3)[gjp] | $(_gjp:0)=1)
-   #LETV _man=999
+#LETV _man=999
 #ENDIF
 //////////
 //для jazz и классик эмаль добавляется определение для фактуры в код
 #IF $(_ModDoorRasp:1)[s26;S01;S32] & $(_TipDoorRasp:3)!!S
-   #IF $(_FACTURA:1)[1]
-      #LETS cod=$(cod)GL
-   #ELSEIF $(_FACTURA:1)[2]
-      #LETS cod=$(cod)MT
-   #ELSEIF $(_FACTURA:1)[3]
-      #LETS cod=$(cod)ST
-   #ELSEIF $(_FACTURA:1)[4]
-      #LETS cod=$(cod)FK
-   #ENDIF
-   #IF $(_TipDoorRasp:3)[gjp] | $(_gjp:1)=1
-      #LETS cod=$(cod)ALR
-   #ENDIF
-   #IF $(_TipDoorRasp:3)[GW]
-      #LETS cod=$(cod)GW
-   #ENDIF
-   #IF $(flagCorrector)=1 //для дверей с  корректором меняется маршрут и тип товара
-      #LETS cod=$(cod)STAG
-      #LETV _MNP=$(cod)
-      #LETV _WR=$(cod)
-      #LETV MNP=$(_MNP:3)
-      #LETV WR=$(_WR:3)
-   #ENDIF
+#IF $(_FACTURA:1)[1]
+#LETS cod=$(cod)GL
+#ELSEIF $(_FACTURA:1)[2]
+#LETS cod=$(cod)MT
+#ELSEIF $(_FACTURA:1)[3]
+#LETS cod=$(cod)ST
+#ELSEIF $(_FACTURA:1)[4]
+#LETS cod=$(cod)FK
+#ENDIF
+#IF $(_TipDoorRasp:3)[gjp] | $(_gjp:1)=1
+#LETS cod=$(cod)ALR
+#ENDIF
+#IF $(_TipDoorRasp:3)[GW]
+#LETS cod=$(cod)GW
+#ENDIF
+#IF $(flagCorrector)=1 //для дверей с  корректором меняется маршрут и тип товара
+#LETS cod=$(cod)STAG
+#LETV _MNP=$(cod)
+#LETV _WR=$(cod)
+#LETV MNP=$(_MNP:3)
+#LETV WR=$(_WR:3)
+#ENDIF
 #ENDIF
 //припуск для передачи параметра фрезеровки для пленочных моделеей
 #LET prip=4
 //_KOMODLIVING
 //добавление патины в код для пленочной модели
 #IF ($(_ModDoorRasp:1)[$(cvetvstav_door:14)] & $(_patina:5)!60251733) & $(_ModDoorRasp:1)[s08] & not(($(a)<146 | $l<146))
-   #LETS cod=$(cod)pt
-   #LET PRIP=
+#LETS cod=$(cod)pt
+#LET PRIP=
 #ENDIF
 #IF ($(_ModDoorRasp:1)[$(cvetvstav_door:14)] & $(_patina:5)!60251733) & $(_ModDoorRasp:1)[s26]& $(_TipDoorRasp:3)!!S
-   #LETS cod=$(cod)pt
-   #LET prip=
+#LETS cod=$(cod)pt
+#LET prip=
 #ENDIF
 #IF $(_MODDOORRASP:1)[s02] & $(kromLaser:1)=1 & $(flagCorrector)=0
-   #LETS cod=$(cod)LZ
-   #LETV _MNP=$(cod)
-   #LETV _WR=$(cod)
-   #LETV MNP=$(_MNP:3)
-   #LETV WR=$(_WR:3)
+#LETS cod=$(cod)LZ
+#LETV _MNP=$(cod)
+#LETV _WR=$(cod)
+#LETV MNP=$(_MNP:3)
+#LETV WR=$(_WR:3)
 #ENDIF
 //фасад упил для планки для пристыковки
 #IF ($(a)<146 | $l<146) & $(_MODDOORRASP:1)[S02;S04;S28;S29;S31;E02;D02;S12]
-   #LETS cod=$(cod)UP
+#LETS cod=$(cod)UP
 #ENDIF
 #IF $(_MODDOORRASP:1)[s08;S27]
-   #IF $(flagCorrector)[1;2;3]
-      #LETS cod=$(cod)STAG
-   #ENDIF
+#IF $(flagCorrector)[1;2;3]
+#LETS cod=$(cod)STAG
+#ENDIF
 #ENDIF
 #IF $(_ModDoorRasp:1)[s29] & $(petlObr:1)=1 & $(_TipDoorRasp:3)!!S
-   #LETS cod=$(cod)PETL
+#LETS cod=$(cod)PETL
 #ENDIF
 #IF $(MATVSTAV:6)[ZERK4;ZERKbr4;ZERK4_evr_sil;ZERK4_evr_br;vetStopBr;vetStopSl]
-   #IF $(_MODDOORRASP:1)[S08;S27]
-      #LETS cod=$(cod)RET
-      #LETV _MNP=$(cod)
-      #LETV _WR=$(cod)
-      #LETV MNP=$(_MNP:3)
-      #LETV WR=$(_WR:3)
-   #ENDIF
+#IF $(_MODDOORRASP:1)[S08;S27]
+#LETS cod=$(cod)RET
+#LETV _MNP=$(cod)
+#LETV _WR=$(cod)
+#LETV MNP=$(_MNP:3)
+#LETV WR=$(_WR:3)
+#ENDIF
 #ENDIF
 //_MODFASAD
 //_dekor#
@@ -155,7 +155,7 @@
 #LETV _WR=$(cod)
 #LETV WR=$(_WR:3)
 #IF $(bokFas)=1
-   #LETS _wr:2=Фасад глухой
+#LETS _wr:2=Фасад глухой
 #ENDIF
 !COMMENTO $(_WR:2)
 #LET p=$(_ModDoorRasp:5)
@@ -166,7 +166,7 @@
 #LETV correctorCheck=X
 //_MISURALIM
 #IF $(flagCorrector)=2
-   #LETV correctorCheck=1
+#LETV correctorCheck=1
 #ENDIF
 // _MODFASAD
 //_FASVID
@@ -176,163 +176,163 @@
 #LETS LOC_BX2=$p|y
 #LETS FPL=N
 #IF $(_PRIMOCARICAMENTO)=1 & $(_FiaApertoAnta:1)=1
-   #LETV _man_pos=09
+#LETV _man_pos=09
 #ENDIF
 #LET opendoor=$[ex;$(LOCP_BX0);|;1]
 #LET show_door=6
 #LET show_num=6
 #LET show_vst=6
 #IF $(opendoor)=0
-   #LET show_door=0
-   #LET show_vst=0
-   #LET show_num=9
+#LET show_door=0
+#LET show_vst=0
+#LET show_num=9
 #ENDIF
 _dataBox
 //_SHKAF
 ///толщина боковины корпуса
 ///от ошибок с датой
 #IF $[datecompare;$(dataordine);20.04.2020]=-1
-   #IF $(_gsd:1)!1
-      #LETV _gsd=1
-   #ENDIF
+#IF $(_gsd:1)!1
+#LETV _gsd=1
+#ENDIF
 #ELSE
-   #IF $(_s_d:0)=1
-      #LETV _s_d=0
-   #ENDIF
+#IF $(_s_d:0)=1
+#LETV _s_d=0
+#ENDIF
 #ENDIF
 //_SHKAF
 /////
 #IF $[ex;$(LOCP_BX0);|;5]=1
-   //если фасад СД то добавляется 1 мм к размеру двери( так как стандартные размеры)
-   !PLACERPAR placerParLA	5
-   #LET naklDoor=$[ex;$(LOCP_BX0);|;8]
-   #IF $(S_D:0)=1
-      #IF ($a[476;596] & $l[296;396;446;596]) | ($a[716;956] & $l[296;330;378;396;446;596]) | ($a[1316] & $l[396;446;596])
-      #ELSE
-         #LET l=$[ex;$(placerParLA);x;1]+1
-         #LET a=$[ex;$(placerParLA);x;2]+1
-      #ENDIF
-      #IF not($a[476;596;716;956;1316])
-      #ENDIF
-   #ENDIF
-   #IF $(_gsd:1)!1 & $(_ModDoorRasp:1)[S08;S26] & $(_TipDoorRasp:3)==s & $(_gsd:5)!!PARAM
-      #IF not($a[356;476;596;716;956;1316])
-         #LET a=$[ex;$(placerParLA);x;2]+1
-      #ENDIF
-      #IF not($l[296;330;378;396;446;596;896])
-         #LET l=$[ex;$(placerParLA);x;1]+1
-      #ENDIF
-   #ENDIF
-   !PLACERPAR placerParams	6
-   #LET shkafPrist=$[ex;$(LOCP_BX0);|;11]
-   #LETS FPL=  // параметр определяющий что элемент является плейсером
-   //принимаем значение вариантов плейсера	 если дверь топлайн
-   #IF $(flagCorrector)=2
-      !PLACERPAR varPar	5
-      #IF $(varPar)!3
-         #LETV _manProfPol=$(varPar)
-      #ENDIF
-   #ENDIF
-   /////
-   //_SHKAF
-   !PLACERPAR pripustParams	7
-   #LET varPrip=$(pripustParams:0)
-   #LET misPrip=$(pripustParams:1)
-   #IF $[ex;$(LOCP_BX0);|;3][1;3]// & $(shkaFprist)[1;2]
-      #LETS stor_pet=$[ex;$(LOCP_BX0);|;2]
-      #LETV _FiaApertoAnta=$(stor_pet)
-      #IF $(_FiaApertoAnta:1)=1
-         // #LETV _petl=6
-      #ENDIF
-      #IF $(placerParams)==LR
-         #IF $(_FiaApertoAnta:1)=1
-            #IF $(shkaFprist)[1]
-               #IF $(_petl:1)!6
-                  #LETV oldPetl=$(_petl:1)
-                  #LETV _petl=6
-               #ENDIF
-            #ELSE
-               #IF $(_petl:1)=6
-                  #LETV _petl=$(oldPetl)
-               #ENDIF
-            #ENDIF
-         #ELSE
-            #IF $(shkaFprist)[2]
-               #IF $(_petl:1)!6
-                  #LETV oldPetl=$(_petl:1)
-                  #LETV _petl=6
-               #ENDIF
-            #ELSE
-               #IF $(_petl:1)=6
-                  #LETV _petl=$(oldPetl)
-               #ENDIF
-            #ENDIF
-         #ENDIF
-      #ENDIF
-   #ELSE
-      #LETV _FiaApertoAnta=1
-      #IF $(posl)>100
-         #LETV _FiaApertoAnta=2
-      #ENDIF
-      //передача данных из плейсеров
-      #IF $(placerParams)[L]
-         #LETV _FiaApertoAnta=1
-         #IF $(shkaFprist)[1]
-            #IF $(_petl:1)!6
-               #LETV oldPetl=$(_petl:1)
-               #LETV _petl=6
-            #ENDIF
-         #ENDIF
-      #ENDIF
-      #IF $(placerParams)[R]
-         #LETV _FiaApertoAnta=2
-         #IF $(shkaFprist)[2]
-            #LETV _petl=6
-         #ENDIF
-      #ENDIF
-      #IF $(placerParams)==LR
-         #IF $(_FiaApertoAnta:1)=1
-            #IF $(shkaFprist)[1]
-               #LETV _petl=6
-            #ENDIF
-         #ELSE
-            #IF $(shkaFprist)[2]
-               #LETV _petl=6
-            #ENDIF
-         #ENDIF
-      #ENDIF
-   #ENDIF
-   #IF $(_PRIMOCARICAMENTO)=1
-      #IF $(_FiaApertoAnta:1)=1
-         #IF $(posa)<250 & $a>1500
-            #LETV _man_pos=06
-         #ELSEIF $(posa)<250
-            #LETV _man_pos=03
-         #ELSE
-            #LETV _man_pos=09
-         #ENDIF
-      #ELSEIF $(_FiaApertoAnta:1)=2
-         #IF $(posa)<250 & $a>1500
-            #LETV _man_pos=04
-         #ELSEIF $(posa)<250
-            #LETV _man_pos=01
-         #ELSE
-            #LETV _man_pos=07
-         #ENDIF
-      #ENDIF
-   #ENDIF
+//если фасад СД то добавляется 1 мм к размеру двери( так как стандартные размеры)
+!PLACERPAR placerParLA	5
+#LET naklDoor=$[ex;$(LOCP_BX0);|;8]
+#IF $(S_D:0)=1
+#IF ($a[476;596] & $l[296;396;446;596]) | ($a[716;956] & $l[296;330;378;396;446;596]) | ($a[1316] & $l[396;446;596])
 #ELSE
-   // #LETV petlObr=0
-   #IF $(_PRIMOCARICAMENTO)=1
-      #LETV petlObr=0
-      // #MSG При выборе отдельной двери не будет выполнена фрезеровка под петли!!
-   #ENDIF
+#LET l=$[ex;$(placerParLA);x;1]+1
+#LET a=$[ex;$(placerParLA);x;2]+1
+#ENDIF
+#IF not($a[476;596;716;956;1316])
+#ENDIF
+#ENDIF
+#IF $(_gsd:1)!1 & $(_ModDoorRasp:1)[S08;S26] & $(_TipDoorRasp:3)==s & $(_gsd:5)!!PARAM
+#IF not($a[356;476;596;716;956;1316])
+#LET a=$[ex;$(placerParLA);x;2]+1
+#ENDIF
+#IF not($l[296;330;378;396;446;596;896])
+#LET l=$[ex;$(placerParLA);x;1]+1
+#ENDIF
+#ENDIF
+!PLACERPAR placerParams	6
+#LET shkafPrist=$[ex;$(LOCP_BX0);|;11]
+#LETS FPL=  // параметр определяющий что элемент является плейсером
+//принимаем значение вариантов плейсера	 если дверь топлайн
+#IF $(flagCorrector)=2
+!PLACERPAR varPar	5
+#IF $(varPar)!3
+#LETV _manProfPol=$(varPar)
+#ENDIF
+#ENDIF
+/////
+//_SHKAF
+!PLACERPAR pripustParams	7
+#LET varPrip=$(pripustParams:0)
+#LET misPrip=$(pripustParams:1)
+#IF $[ex;$(LOCP_BX0);|;3][1;3]// & $(shkaFprist)[1;2]
+#LETS stor_pet=$[ex;$(LOCP_BX0);|;2]
+#LETV _FiaApertoAnta=$(stor_pet)
+#IF $(_FiaApertoAnta:1)=1
+// #LETV _petl=6
+#ENDIF
+#IF $(placerParams)==LR
+#IF $(_FiaApertoAnta:1)=1
+#IF $(shkaFprist)[1]
+#IF $(_petl:1)!6
+#LETV oldPetl=$(_petl:1)
+#LETV _petl=6
+#ENDIF
+#ELSE
+#IF $(_petl:1)=6
+#LETV _petl=$(oldPetl)
+#ENDIF
+#ENDIF
+#ELSE
+#IF $(shkaFprist)[2]
+#IF $(_petl:1)!6
+#LETV oldPetl=$(_petl:1)
+#LETV _petl=6
+#ENDIF
+#ELSE
+#IF $(_petl:1)=6
+#LETV _petl=$(oldPetl)
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
+#ELSE
+#LETV _FiaApertoAnta=1
+#IF $(posl)>100
+#LETV _FiaApertoAnta=2
+#ENDIF
+//передача данных из плейсеров
+#IF $(placerParams)[L]
+#LETV _FiaApertoAnta=1
+#IF $(shkaFprist)[1]
+#IF $(_petl:1)!6
+#LETV oldPetl=$(_petl:1)
+#LETV _petl=6
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(placerParams)[R]
+#LETV _FiaApertoAnta=2
+#IF $(shkaFprist)[2]
+#LETV _petl=6
+#ENDIF
+#ENDIF
+#IF $(placerParams)==LR
+#IF $(_FiaApertoAnta:1)=1
+#IF $(shkaFprist)[1]
+#LETV _petl=6
+#ENDIF
+#ELSE
+#IF $(shkaFprist)[2]
+#LETV _petl=6
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
+#IF $(_PRIMOCARICAMENTO)=1
+#IF $(_FiaApertoAnta:1)=1
+#IF $(posa)<250 & $a>1500
+#LETV _man_pos=06
+#ELSEIF $(posa)<250
+#LETV _man_pos=03
+#ELSE
+#LETV _man_pos=09
+#ENDIF
+#ELSEIF $(_FiaApertoAnta:1)=2
+#IF $(posa)<250 & $a>1500
+#LETV _man_pos=04
+#ELSEIF $(posa)<250
+#LETV _man_pos=01
+#ELSE
+#LETV _man_pos=07
+#ENDIF
+#ENDIF
+#ENDIF
+#ELSE
+// #LETV petlObr=0
+#IF $(_PRIMOCARICAMENTO)=1
+#LETV petlObr=0
+// #MSG При выборе отдельной двери не будет выполнена фрезеровка под петли!!
+#ENDIF
 #ENDIF
 #IF $(disablecor:1)=1
-   #IF $(showmsgcor)=0
-      #MSG Внимание! Без выпрямителя возможно искривление фасада. что не будет являться гарантийным случаем.
-      #LETV showmsgcor=1
-   #ENDIF
+#IF $(showmsgcor)=0
+#MSG Внимание! Без выпрямителя возможно искривление фасада. что не будет являться гарантийным случаем.
+#LETV showmsgcor=1
+#ENDIF
 #ENDIF
 #ENDIF
 //LPBR параметр указывающий сторону двери
@@ -342,9 +342,9 @@ _dataBox
 #LET doorNalog=$[ex;$(LOCP_BX0);|;10]
 //если дверь не в шк
 #IF $[ex;$(LOCP_BX0);|;5]=0
-   #LET lfiaKorp={$(karkasLarge:1)}
-   //пока что только для накладных
-   #LET doorNalog=1
+#LET lfiaKorp={$(karkasLarge:1)}
+//пока что только для накладных
+#LET doorNalog=1
 #ENDIF
 // ****************************** петли ************************
 #LET spostaLPetli = $[ex;$(LOCP_BX0);|;6]
@@ -363,50 +363,50 @@ _petliObr
 //305
 //#MSG $(_fiaApertoAnta)
 #IF $(_ModDoorRasp:7)[DSP;LMDF]
-   #IF $(_colkarkas:18)=1
-      #IF $(TxtVst:1)=1
-         #LET rot_txt=90
-         #LETS nt=5723736 // вертик
-      #ELSE
-         #LET rot_txt=0
-         #LETS nt=5723737  // гориз
-      #ENDIF
-   #ELSE
-      #LETS nt=11726799
-   #ENDIF
-   #IF $[ex;$(LOCP_BX0);|;4]=1
-      #LETS color_door1=12	 color_door2=12
-      #LETS matvstav:7=12
-   #ELSE
-      #LETS color_door1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)|$(rot_txt:0)	 color_door2=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)|90
-      #IF $(_ModDoorRasp:1)[S12;D02;E02]
-         #LETS color_door2=1|$(.percorso)\foto\struttura\$(_colkrom:3)|$(_colkrom:4)|90
-      #ENDIF
-   #ENDIF
+#IF $(_colkarkas:18)=1
+#IF $(TxtVst:1)=1
+#LET rot_txt=90
+#LETS nt=5723736 // вертик
+#ELSE
+#LET rot_txt=0
+#LETS nt=5723737  // гориз
+#ENDIF
+#ELSE
+#LETS nt=11726799
+#ENDIF
+#IF $[ex;$(LOCP_BX0);|;4]=1
+#LETS color_door1=12	 color_door2=12
+#LETS matvstav:7=12
+#ELSE
+#LETS color_door1=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)|$(rot_txt:0)	 color_door2=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)|90
+#IF $(_ModDoorRasp:1)[S12;D02;E02]
+#LETS color_door2=1|$(.percorso)\foto\struttura\$(_colkrom:3)|$(_colkrom:4)|90
+#ENDIF
+#ENDIF
 #ELSEIF $(_ModDoorRasp:7)==MDF
-   //#MSG $(color_door1)
-   #IF $(TxtVst:1)==0
-      #LETS nt=5723737
-   #ELSEIF $(TxtVst:1)==1
-      #LETS nt=5723736
-   #ELSE
-      #LETS nt=11726799
-   #ENDIF
-   #LET rot_txt=0
-   #IF $(TxtVst:1)=1 #LET rot_txt=90
-   #LETS matvstav_old=$(matvstav)	 cvetvstav_old=$(cvetvstav)
-   #LETS matvstav=$(matvstav_door)	 cvetvstav=$(cvetvstav_door)
-   #IF $[ex;$(LOCP_BX0);|;4]=1
-      #LETS color_door1=12
-      #LETS matvstav:7=12
-      #LETS vid_vis=y
-      #LET show_vst=6
-   #ELSE
-      #LETS color_door1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
-      //изменения поворота текстуры для отрисовки в пленочных моделях
-      #IF ($(matvstav:5)[s08;s27] & $(cvetvstav:11)=1) #LETS color_door1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|{90-$(rot_txt)}
-      #LETS vid_vis=n
-   #ENDIF
+//#MSG $(color_door1)
+#IF $(TxtVst:1)==0
+#LETS nt=5723737
+#ELSEIF $(TxtVst:1)==1
+#LETS nt=5723736
+#ELSE
+#LETS nt=11726799
+#ENDIF
+#LET rot_txt=0
+#IF $(TxtVst:1)=1 #LET rot_txt=90
+#LETS matvstav_old=$(matvstav)	 cvetvstav_old=$(cvetvstav)
+#LETS matvstav=$(matvstav_door)	 cvetvstav=$(cvetvstav_door)
+#IF $[ex;$(LOCP_BX0);|;4]=1
+#LETS color_door1=12
+#LETS matvstav:7=12
+#LETS vid_vis=y
+#LET show_vst=6
+#ELSE
+#LETS color_door1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|$(rot_txt)
+//изменения поворота текстуры для отрисовки в пленочных моделях
+#IF ($(matvstav:5)[s08;s27] & $(cvetvstav:11)=1) #LETS color_door1=$(matvstav:7)|$(.percorso)\foto\struttura\$(cvetvstav:5)|$(cvetvstav:6)|{90-$(rot_txt)}
+#LETS vid_vis=n
+#ENDIF
 #ENDIF
 //_PETLJA
 //_ZERKALO
@@ -416,131 +416,131 @@ _petliObr
 //////////////////////////////////////////////////////////////////////
 ///Графика отрисовки ручек - профиль KAPE
 #IF $(_manProfBL:0)=1 & $(_man:1)[999]
-   #IF $(_manprofAlt:3)>$a
-      #MSG Ручка-профиль больше размеров двери
-      /// установим 1200 по умолчанию
-      #LETV _manProfAlt=1
-   #ENDIF
-   #LET largDoor=$l-1
-   #IF $(_FIAAPERTOANTA:1)=1 //петли слева
-      001	SL=$L-1	L=1	P=30	C1=101	lato=$(show_door)	a=$(_manProfAlt:3)	sa=($a-$(_manprofAlt:3))/2  // Test //ручка профиль для графики
-   #ENDIF
-   #IF $(_FIAAPERTOANTA:1)=2 //петли справа
-      001	SL=0	L=1	P=30	C1=101	lato=$(show_door)	a=$(_manProfAlt:3)	sa=($a-$(_manprofAlt:3))/2  // Test //ручка профиль для графики
-      #LET slDoor=1
-   #ENDIF
+#IF $(_manprofAlt:3)>$a
+#MSG Ручка-профиль больше размеров двери
+/// установим 1200 по умолчанию
+#LETV _manProfAlt=1
+#ENDIF
+#LET largDoor=$l-1
+#IF $(_FIAAPERTOANTA:1)=1 //петли слева
+001	SL=$L-1	L=1	P=30	C1=101	lato=$(show_door)	a=$(_manProfAlt:3)	sa=($a-$(_manprofAlt:3))/2  // Test //ручка профиль для графики
+#ENDIF
+#IF $(_FIAAPERTOANTA:1)=2 //петли справа
+001	SL=0	L=1	P=30	C1=101	lato=$(show_door)	a=$(_manProfAlt:3)	sa=($a-$(_manprofAlt:3))/2  // Test //ручка профиль для графики
+#LET slDoor=1
+#ENDIF
 #ENDIF
 ////////////////////////////////////////////////////////////////////////////////////////////
 ///Графика отрисовки ручек - профиль обычных
 #IF $(_manProf:0)=1 & $(_man:1)[999]
-   #LETS colorManProf=1
-   #IF $(_manProfColor:1)[2]
-      #LETS colorManProf=101
-   #ENDIF
-   #IF $(flagCorrector)!2 //для обычных распашных
-      #LET largDoor=$l-1
-      #IF $(_FIAAPERTOANTA:1)=1 //петли слева
-         001	SL=$L-17	sp=-2	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=manprofdis   // Test //ручка профиль для графики
-      #ENDIF
-      #IF $(_FIAAPERTOANTA:1)=2 //петли справа
-         !SAGMIRROR mandis	manprofdis	x
-         001	SL=0	L=17	sl=17	sp=-2	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=$(mandis)  // Test //ручка профиль для графики
-         #LET slDoor=1
-      #ENDIF
-   #ENDIF
-   #IF $(flagCorrector)[2;3] //для дверей топлайн
-      #IF $(_manProfPol:1)[1;2] //1-left 2-right
-         #LET largDoor=$l-1
-         #IF $(_manProfPol:1)[2]
-            //001	SL=$L-1	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
-            001	SL=$L-17	sp=-2	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=manprofdis
-         #ELSE
-            //001	SL=0	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
-            !SAGMIRROR mandis	manprofdis	x
-            001	SL=0	L=17	sl=17	sp=-2	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=$(mandis)
-            #LET slDoor=1
-         #ENDIF
-      #ENDIF
-      #IF $(_manProfPol:1)[3]
-         #LET largDoor=$L-2
-         //001	SL=0	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
-         //001	SL=$L-1	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
-         001	SL=$L-17	sp=-2	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=manprofdis
-         001	SL=0	L=17	sl=17	sp=-2	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=$(mandis)
-         #LET slDoor=1
-      #ENDIF
-   #ENDIF
+#LETS colorManProf=1
+#IF $(_manProfColor:1)[2]
+#LETS colorManProf=101
+#ENDIF
+#IF $(flagCorrector)!2 //для обычных распашных
+#LET largDoor=$l-1
+#IF $(_FIAAPERTOANTA:1)=1 //петли слева
+001	SL=$L-17	sp=-2	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=manprofdis   // Test //ручка профиль для графики
+#ENDIF
+#IF $(_FIAAPERTOANTA:1)=2 //петли справа
+!SAGMIRROR mandis	manprofdis	x
+001	SL=0	L=17	sl=17	sp=-2	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=$(mandis)  // Test //ручка профиль для графики
+#LET slDoor=1
+#ENDIF
+#ENDIF
+#IF $(flagCorrector)[2;3] //для дверей топлайн
+#IF $(_manProfPol:1)[1;2] //1-left 2-right
+#LET largDoor=$l-1
+#IF $(_manProfPol:1)[2]
+//001	SL=$L-1	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
+001	SL=$L-17	sp=-2	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=manprofdis
+#ELSE
+//001	SL=0	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
+!SAGMIRROR mandis	manprofdis	x
+001	SL=0	L=17	sl=17	sp=-2	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=$(mandis)
+#LET slDoor=1
+#ENDIF
+#ENDIF
+#IF $(_manProfPol:1)[3]
+#LET largDoor=$L-2
+//001	SL=0	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
+//001	SL=$L-1	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)  // Test //ручка профиль для графики
+001	SL=$L-17	sp=-2	L=1	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=manprofdis
+001	SL=0	L=17	sl=17	sp=-2	P=30	C1=$(colorManProf)	lato=$(show_door)	dis=$(mandis)
+#LET slDoor=1
+#ENDIF
+#ENDIF
 #ENDIF
 /////////////////////////////////////////////////////////////////////////////////////////////////
 #IF $(flag_door)=1
-   _modFasad	sl=$(slDoor)	l=$(largDoor)
+_modFasad	sl=$(slDoor)	l=$(largDoor)
 #ELSEIF $(flag_door)=22
-   //301	COD= /ERROR=1 / /#L-1	C1=15	C2=5	FACC=0  //Дверь распашная G
-   001	COD=999 /ERROR=1 / /#L-1	FACC=0  //Дверь распашная G
-   #LET larg_msg=$l-4
-   #IF $(larg_msg)<200 #LET larg_msg=200
-   025	COD= / /Некорректный размер двери!\nПревышена максимальная масса двери!	SL=0	SA=$a/2	L=$(larg_msg)	sp=$p  //сообщение об ошибке
+//301	COD= /ERROR=1 / /#L-1	C1=15	C2=5	FACC=0  //Дверь распашная G
+001	COD=999 /ERROR=1 / /#L-1	FACC=0  //Дверь распашная G
+#LET larg_msg=$l-4
+#IF $(larg_msg)<200 #LET larg_msg=200
+025	COD= / /Некорректный размер двери!\nПревышена максимальная масса двери!	SL=0	SA=$a/2	L=$(larg_msg)	sp=$p  //сообщение об ошибке
 #ELSE
-   //301	COD= /ERROR=1 / /#L-1	C1=15	C2=5	FACC=0  //Дверь распашная G
-   001	COD=999 /ERROR=1 / /#L-1	FACC=0  //Дверь распашная G
-   #LET larg_msg=$l-4
-   #IF $(larg_msg)<200 #LET larg_msg=200
-   025	COD= / /Некорректный размер двери!	SL=0	SA=$a/2	L=$(larg_msg)	sp=$p  //сообщение об ошибке
+//301	COD= /ERROR=1 / /#L-1	C1=15	C2=5	FACC=0  //Дверь распашная G
+001	COD=999 /ERROR=1 / /#L-1	FACC=0  //Дверь распашная G
+#LET larg_msg=$l-4
+#IF $(larg_msg)<200 #LET larg_msg=200
+025	COD= / /Некорректный размер двери!	SL=0	SA=$a/2	L=$(larg_msg)	sp=$p  //сообщение об ошибке
 #ENDIF
 // ********************************* ручка *********************
 #IF $(_man:1)!!999
-   001	LATO=6	COD=$(_man:12) /FPL=N / /#L-1	L=1	A=1	P=1  //Test
-   #FOR $1:$(_man:14)
-      001	LATO=6	COD=$(_man:13) /FPL=N / /#L-1	L=1	A=1	P=1  //Test
-   #ENDFOR
+001	LATO=6	COD=$(_man:12) /FPL=N / /#L-1	L=1	A=1	P=1  //Test
+#FOR $1:$(_man:14)
+001	LATO=6	COD=$(_man:13) /FPL=N / /#L-1	L=1	A=1	P=1  //Test
+#ENDFOR
 #ENDIF
 // *************************************************************
 _petli	altDoor=$a
 ///графика для корректора
 #IF $(flagCorrector)=1
-   #LET slCorr=$l-100-7
-   #IF $(_FiaApertoAnta:1)=2
-      #LET slCorr=100-7
-   #ENDIF
-   001	l=14	p=5	a=$a-200	sa=100	sl=$(slCorr)	sp=-5	C1=1	lato=$(show_door)
+#LET slCorr=$l-100-7
+#IF $(_FiaApertoAnta:1)=2
+#LET slCorr=100-7
+#ENDIF
+001	l=14	p=5	a=$a-200	sa=100	sl=$(slCorr)	sp=-5	C1=1	lato=$(show_door)
 #ENDIF
 #IF $(flagCorrector)=2
-   #LET slCorr=150
-   001	l=14	p=5	a=1990	sa=($a-1990)/2	sl=$(slCorr)-7	sp=-5	C1=1	lato=$(show_door)
-   001	l=14	p=5	a=1990	sa=($a-1990)/2	sl=$l-$(slCorr)-7	sp=-5	C1=1	lato=$(show_door)
+#LET slCorr=150
+001	l=14	p=5	a=1990	sa=($a-1990)/2	sl=$(slCorr)-7	sp=-5	C1=1	lato=$(show_door)
+001	l=14	p=5	a=1990	sa=($a-1990)/2	sl=$l-$(slCorr)-7	sp=-5	C1=1	lato=$(show_door)
 #ENDIF
 #IF $(_manProfBl:0)=1
-   ///отключаем обычную ручку профиль. если есть
-   #IF $(_manProf:0)=1 & $(_man:1)[999]
-      #LETV _manProf=0
-   #ENDIF
-   001	LATO=6	COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$(_manProfAlt:3)	A=1	P=1  //Test
-   001	LATO=6	COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1	L=$(_manProfAlt:3)	A=1	P=1  //Test
-   001	LATO=6	COD=999pulsManBl / / /#l+3	L=$(_manProfAlt:3)	A=1	P=1  // Test
+///отключаем обычную ручку профиль. если есть
+#IF $(_manProf:0)=1 & $(_man:1)[999]
+#LETV _manProf=0
+#ENDIF
+001	LATO=6	COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$(_manProfAlt:3)	A=1	P=1  //Test
+001	LATO=6	COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1	L=$(_manProfAlt:3)	A=1	P=1  //Test
+001	LATO=6	COD=999pulsManBl / / /#l+3	L=$(_manProfAlt:3)	A=1	P=1  // Test
 #ENDIF
 #IF $(_manProf:0)=1 & $(_man:1)[999] //цена ручки
-   #IF $(_manProfColor:1)[1]
-      001	LATO=6	COD=999manPROF /WR=124079459;MNP=509518356;FPL=N /Ручка-профиль /#l-1	L=$a	A=1	P=1  //Test
-      001	LATO=6	COD=999manProfSlv / / /#l+1	L=$a	A=1	P=1  // Test
-      #IF $(flagCorrector)[2;3] & $(_manProfPol:1)=3
-         001	LATO=6	COD=999manPROF /WR=124079459;MNP=509518356;FPL=N /Ручка-профиль /#l-1	L=$a	A=1	P=1  //Test
-         001	LATO=6	COD=999manProfSlv / / /#l+1	L=$a	A=1	P=1  // Test   #ENDIF
-      #ENDIF
-   #ENDIF
-   #IF $(_manProfColor:1)[2]
-      //001	LATO=6	COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
-      //001	LATO=6	COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1	L=$a	A=1	P=1  //Test
-      //001	LATO=6	COD=999pulsManBl / / /#l+3	L=$a	A=1	P=1  // Test
-      001	LATO=6	COD=999manPROFBL /WR=124079459;MNP=509518356;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
-      001	LATO=6	COD=999pulsManBl / / /#l+1	L=$(_manProfAlt:3)	L=$a	A=1	P=1  // Test
-      #IF $(flagCorrector)[2;3] & $(_manProfPol:1)=3
-         //001	LATO=6	COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
-         //001	LATO=6	COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1	L=$a	A=1	P=1  //Test
-         //001	LATO=6	COD=999pulsManBl / / /#l+3	L=$a	A=1	P=1  // Test
-         001	LATO=6	COD=999manPROFBL /WR=124079459;MNP=509518356;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
-         001	LATO=6	COD=999pulsManBl / / /#l+1	L=$(_manProfAlt:3)	L=$a	A=1	P=1  // Test
-      #ENDIF
-   #ENDIF
+#IF $(_manProfColor:1)[1]
+001	LATO=6	COD=999manPROF /WR=124079459;MNP=509518356;FPL=N /Ручка-профиль /#l-1	L=$a	A=1	P=1  //Test
+001	LATO=6	COD=999manProfSlv / / /#l+1	L=$a	A=1	P=1  // Test
+#IF $(flagCorrector)[2;3] & $(_manProfPol:1)=3
+001	LATO=6	COD=999manPROF /WR=124079459;MNP=509518356;FPL=N /Ручка-профиль /#l-1	L=$a	A=1	P=1  //Test
+001	LATO=6	COD=999manProfSlv / / /#l+1	L=$a	A=1	P=1  // Test   #ENDIF
+#ENDIF
+#ENDIF
+#IF $(_manProfColor:1)[2]
+//001	LATO=6	COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
+//001	LATO=6	COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1	L=$a	A=1	P=1  //Test
+//001	LATO=6	COD=999pulsManBl / / /#l+3	L=$a	A=1	P=1  // Test
+001	LATO=6	COD=999manPROFBL /WR=124079459;MNP=509518356;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
+001	LATO=6	COD=999pulsManBl / / /#l+1	L=$(_manProfAlt:3)	L=$a	A=1	P=1  // Test
+#IF $(flagCorrector)[2;3] & $(_manProfPol:1)=3
+//001	LATO=6	COD=999manPROFBL /WR=417701537;MNP=587175631;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
+//001	LATO=6	COD=999manPROFras /WR=124079459;MNP=267503923 /Алюминиевый профиль для покраски /#l+1	L=$a	A=1	P=1  //Test
+//001	LATO=6	COD=999pulsManBl / / /#l+3	L=$a	A=1	P=1  // Test
+001	LATO=6	COD=999manPROFBL /WR=124079459;MNP=509518356;FPL=N;CFK=38385509 /Ручка-профиль алюминий КАРЕ /#l-1	L=$a	A=1	P=1  //Test
+001	LATO=6	COD=999pulsManBl / / /#l+1	L=$(_manProfAlt:3)	L=$a	A=1	P=1  // Test
+#ENDIF
+#ENDIF
 #ENDIF
 #LETS _macrofinale = _finaleRasp
 //_finaleRasp

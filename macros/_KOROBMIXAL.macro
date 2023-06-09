@@ -4,314 +4,311 @@
 //_KOROBLIVING
 #SELECT $(typeKarkas:1)//выборка по типу строения шкафа
 #CASE 1:2
-   NUMDET	SL=0	SA=$A/2
-   #LETV _wr=999v_karkasBok
-   #LETV _MNP=999v_karkasBok
-   //#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
-   #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
-   010	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2
-   NUMDET	SL=$l-$(mat:1)	SA=$A/2
-   011	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2
-   #IF $(typeKarkas:1)=1
-      _DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)
-      _DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=$L-$(mat:0)*2-2
-   #ENDIF
-   #IF $(typeKarkas:1)=2
-      _DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=-$(mat:0)-2
-      _DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=$L-$(mat:1)
-   #ENDIF
-   //   KORPSHKAF
-   NUMDET	SL=$l/2	SA=$(mat:1)+$(hzoc:0)/2
-   #LETV _wr=999K_KARKASDN
-   #LETV _MNP=999K_KARKASDN
-   #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
-   012	SL=0	L=$l	P=$(horDet)  //Дно ДСП
-   _agg_krep	p=$(horDet)
-   #LETV _wr=999K_KARKASKR
-   #LETV _MNP=999K_KARKASKR
-   //#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
-   NUMDET	SL=$l/2	SA=$A-$(mat:1)
-   013	SA=$a-$(mat:1)	L=$l	P=$(horDet)	SL=0  //Крышка ДСП
-   _agg_krep	p=$(horDet)
+NUMDET	SL=0	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+010	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2
+NUMDET	SL=$l-$(mat:1)	SA=$A/2
+011	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2
+#IF $(typeKarkas:1)=1
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=$L-$(mat:0)*2-2
+#ENDIF
+#IF $(typeKarkas:1)=2
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=-$(mat:0)-2
+_DRAWSTAG	P=$(vertDet)	sa=$(mat:1)	a=$a-$(mat:1)*2	orienta=1	l=$(mat:0)	sl=$L-$(mat:1)
+#ENDIF
+//   KORPSHKAF
+NUMDET	SL=$l/2	SA=$(mat:1)+$(hzoc:0)/2
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+012	SL=0	L=$l	P=$(horDet)  //Дно ДСП
+_agg_krep	p=$(horDet)
+#LETV _wr=999K_KARKASKR
+#LETV _MNP=999K_KARKASKR
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+NUMDET	SL=$l/2	SA=$A-$(mat:1)
+013	SA=$a-$(mat:1)	L=$l	P=$(horDet)	SL=0  //Крышка ДСП
+_agg_krep	p=$(horDet)
 #CASE 3:4
-   #LET saStag=0
-   #IF $(typeKarkas:1)=4
-      #LET saStag=$(mat:1)+2
-   #ENDIF
-   NUMDET	SL=0	SA=$A/2
-   #LETV _wr=999v_karkasBok
-   #LETV _MNP=999v_karkasBok
-   #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
-   #LETS paramBok=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
-   #IF $(shMantera)=1
-      //  #LETS paramBok= MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
-   #ENDIF
-   #LET latoLeftBok=0
-   #IF $(leftbok:0)=1
-      #LET latoLeftBok=6
-      #LETS sagColor=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
-      ///проверки
-      #LET minProfVir=50
-      #IF $(lamp:0)=1
-         #LET minProfVir=150
-      #ENDIF
-      !SAGOMA leftsag  0	0	0	$P	$a	$p	$a	0
-      ///===================проверка ограничений==================================
-      #IF $(oldleftVirBack)!$(leftVirBack:0)
-         #IF $(leftVirDepth:0)+$(leftVirBack:0)>$(vertDet)-$(minProfVir)
-            #LETV leftVirBack={$(vertDet)-$(minProfVir)-$(leftVirDepth:0)}
-         #ENDIF
-         #LETV oldleftVirBack=$(leftVirBack:0)
-      #ENDIF
-      #IF $(oldleftVirDepth)!$(leftVirDepth:0)
-         #IF $(leftVirDepth:0)+$(leftVirBack:0)>$(vertDet)-$(minProfVir)
-            #LETV leftVirDepth={$(vertDet)-$(minProfVir)-$(leftVirBack:0)}
-         #ENDIF
-         #LETV oldleftVirDepth={$(leftVirDepth:0)}
-      #ENDIF
-      #IF $(oldleftVirBottom)!$(leftVirBottom:0)
-         #IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
-            #LETV leftVirBottom={$a-50-$(leftVirHeight:0)}
-         #ENDIF
-         #LETV oldleftVirBottom={$(leftVirBottom:0)}
-      #ENDIF
-      #IF $(oldleftVirHeight)!$(leftVirHeight:0)
-         #IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
-            #LETV leftVirHeight=$a-50-$(leftVirBottom:0)
-         #ENDIF
-         #LETV oldleftVirHeight={$(leftVirHeight:0)}
-      #ENDIF
-      //=========================================================================
-      //!SAGOMA innerOne 0	0	0	$(leftVirDepth:0)	$(leftVirHeight:0)	$(leftVirDepth:0)	$(leftVirHeight:0)	0
-      //!SAGSPOSTA innerone	 $(innerone)	-$(leftVirBottom:0)	-$(leftVirBack:0)
-      //!SAGDIFF leftsag	 $(leftsag)	$(innerone)
-      #LETS virPar=$(leftVirBack:0)|$(leftVirBottom:0)|$(leftVirDepth:0)|$(leftVirHeight:0)
-      _diffVIres	nameMainSag=leftSag	mainSag=$(leftSag)	viresBack=$(leftVirBack:0)	viresBottom=$(leftVirBottom:0)	viresWidth=$(leftVirDepth:0)	viresHeight=$(leftVirHeight:0)
-      #IF $(leftVirCount:1)=2
-         ///===================проверка ограничений==================================
-         #IF $(oldleftVirBack1)!$(leftVirBack1:0)
-            #IF $(leftVirDepth1:0)+$(leftVirBack1:0)>$(vertDet)-$(minProfVir)
-               #LETV leftVirBack1={$(vertDet)-$(minProfVir)-$(leftVirDepth1:0)}
-            #ENDIF
-            #LETV oldleftVirBack1=$(leftVirBack1:0)
-         #ENDIF
-         #IF $(oldleftVirDepth1)!$(leftVirDepth1:0)
-            #IF $(leftVirDepth1:0)+$(leftVirBack1:0)>$(vertDet)-$(minProfVir)
-               #LETV leftVirDepth1={$(vertDet)-$(minProfVir)-$(leftVirBack1:0)}
-            #ENDIF
-            #LETV oldleftVirDepth1={$(leftVirDepth1:0)}
-         #ENDIF
-         #IF $(oldleftVirBottom)!$(leftVirBottom:0)
-            #IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
-               #LETV leftVirBottom={$a-50-$(leftVirHeight:0)}
-            #ENDIF
-            #LETV oldleftVirBottom={$(leftVirBottom:0)}
-         #ENDIF
-         #IF $(oldleftVirHeight)!$(leftVirHeight:0)
-            #IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
-               #LETV leftVirHeight=$a-50-$(leftVirBottom:0)
-            #ENDIF
-            #LETV oldleftVirHeight={$(leftVirHeight:0)}
-         #ENDIF
-         //=========================================================================
-         _diffVIres	nameMainSag=leftSag	mainSag=$(leftSag)	viresBack=$(leftVirBack1:0)	viresBottom=$(leftVirBottom1:0)	viresWidth=$(leftVirDepth1:0)	viresHeight=$(leftVirHeight1:0)
-         #LETS virPar=$(virPar);$(leftVirBack1:0)|$(leftVirBottom1:0)|$(leftVirDepth1:0)|$(leftVirHeight1:0)
-      #ENDIF
-      ///
-      001	dis=$(leftSag)	c1=$(sagColor)	a=18	az=-90	sl=18
-      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	x9=$(virPar)  // Бок ЛВ ДСП
-   #ELSE
-      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)  // Бок ЛВ ДСП
-   #ENDIF
-   NUMDET	SL=$l-$(mat:0)	SA=$A/2
-   #LET latoRightBok=0
-   #IF $(rightbok:0)=1
-      #LET latorightBok=6
-      #LETS sagColor=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
-      ///проверки
-      #LET minProfVir=50
-      #IF $(lamp:0)=1
-         #LET minProfVir=150
-      #ENDIF
-      !SAGOMA rightsag  0	0	0	$P	$a	$p	$a	0
-      ///===================???????? ???????????==================================
-      #IF $(oldrightVirBack)!$(rightVirBack:0)
-         #IF $(rightVirDepth:0)+$(rightVirBack:0)>$(vertDet)-$(minProfVir)
-            #LETV rightVirBack={$(vertDet)-$(minProfVir)-$(rightVirDepth:0)}
-         #ENDIF
-         #LETV oldrightVirBack=$(rightVirBack:0)
-      #ENDIF
-      #IF $(oldrightVirDepth)!$(rightVirDepth:0)
-         #IF $(rightVirDepth:0)+$(rightVirBack:0)>$(vertDet)-$(minProfVir)
-            #LETV rightVirDepth={$(vertDet)-$(minProfVir)-$(rightVirBack:0)}
-         #ENDIF
-         #LETV oldrightVirDepth={$(rightVirDepth:0)}
-      #ENDIF
-      #IF $(oldrightVirBottom)!$(rightVirBottom:0)
-         #IF $(rightVirHeight:0)+$(rightVirBottom:0)>$A-50
-            #LETV rightVirBottom={$a-50-$(rightVirHeight:0)}
-         #ENDIF
-         #LETV oldrightVirBottom={$(rightVirBottom:0)}
-      #ENDIF
-      #IF $(oldrightVirHeight)!$(rightVirHeight:0)
-         #IF $(rightVirHeight:0)+$(rightVirBottom:0)>$A-50
-            #LETV rightVirHeight=$a-50-$(rightVirBottom:0)
-         #ENDIF
-         #LETV oldrightVirHeight={$(rightVirHeight:0)}
-      #ENDIF
-      //=========================================================================
-      //!SAGOMA innerOne 0	0	0	$(leftVirDepth:0)	$(leftVirHeight:0)	$(leftVirDepth:0)	$(leftVirHeight:0)	0
-      //!SAGSPOSTA innerone	 $(innerone)	-$(leftVirBottom:0)	-$(leftVirBack:0)
-      //!SAGDIFF leftsag	 $(leftsag)	$(innerone)
-      #LETS virPar=$(rightVirBack:0)|$(rightVirBottom:0)|$(rightVirDepth:0)|$(rightVirHeight:0)
-      _diffVIres	nameMainSag=rightSag	mainSag=$(rightSag)	viresBack=$(rightVirBack:0)	viresBottom=$(rightVirBottom:0)	viresWidth=$(rightVirDepth:0)	viresHeight=$(rightVirHeight:0)
-      #IF $(rightVirCount:1)=2
-         ///===================???????? ???????????==================================
-         #IF $(oldrightVirBack1)!$(rightVirBack1:0)
-            #IF $(rightVirDepth1:0)+$(rightVirBack1:0)>$(vertDet)-$(minProfVir)
-               #LETV rightVirBack1={$(vertDet)-$(minProfVir)-$(rightVirDepth1:0)}
-            #ENDIF
-            #LETV oldrightVirBack1=$(rightVirBack1:0)
-         #ENDIF
-         #IF $(oldrightVirDepth1)!$(rightVirDepth1:0)
-            #IF $(rightVirDepth1:0)+$(rightVirBack1:0)>$(vertDet)-$(minProfVir)
-               #LETV rightVirDepth1={$(vertDet)-$(minProfVir)-$(rightVirBack1:0)}
-            #ENDIF
-            #LETV oldrightVirDepth1={$(rightVirDepth1:0)}
-         #ENDIF
-         #IF $(oldrightVirBottom1)!$(rightVirBottom1:0)
-            #IF $(rightVirHeight1:0)+$(rightVirBottom1:0)>$A-50
-               #LETV rightVirBottom1={$a-50-$(rightVirHeight1:0)}
-            #ENDIF
-            #LETV oldrightVirBottom1={$(rightVirBottom1:0)}
-         #ENDIF
-         #IF $(oldrightVirHeight1)!$(rightVirHeight1:0)
-            #IF $(rightVirHeight1:0)+$(rightVirBottom1:0)>$A-50
-               #LETV rightVirHeight1=$a-50-$(rightVirBottom1:0)
-            #ENDIF
-            #LETV oldrightVirHeight1={$(rightVirHeight1:0)}
-         #ENDIF
-         //=========================================================================
-         _diffVIres	nameMainSag=rightSag	mainSag=$(rightSag)	viresBack=$(rightVirBack1:0)	viresBottom=$(rightVirBottom1:0)	viresWidth=$(rightVirDepth1:0)	viresHeight=$(rightVirHeight1:0)
-         #LETS virPar=$(virPar);$(rightVirBack1:0)|$(rightVirBottom1:0)|$(rightVirDepth1:0)|$(rightVirHeight1:0)
-      #ENDIF
-      ///
-      001	dis=$(rightSag)	c1=$(sagColor)	a=18	az=-90	sl=$l
-      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	x9=$(virPar)  // Бок ПР ДСП
-   #ELSE
-      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)  // Бок ПР ДСП
-   #ENDIF
-   #LET dnoSa=0
-   #IF $(addzoc)=1
-      //если скрытие цоколя не выбрано
-      #IF $(hidezoctop:0)=0
-         NUMDET	SL=$(mat:0)+35	SA=0
-         #LETV _wr=999T_KARKASZOC
-         #LETV _MNP=999T_KARKASZOC
-         #LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
-         //////
-         #LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SHPR=$(SHPR);NSE=$(SHPR)
-         #IF $(shMantera)=1
-            //  #LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SHPR=$(SHPR);NSE=$(SHPR)
-         #ENDIF
-         #IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
-            #LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
-         #ENDIF
-         ///////
-         
-         017	COD= /$(paramsZoc)	SP=$(spzoc)  //Цоколь ДСП
-         NUMDET	SL=$(mat:0)+35	SA=0	sp=20
-         017	COD= /$(paramsZoc)	SP= 20  // Цоколь ДСП
-      #ENDIF
-      #IF $(addzoctop:0)=1 & $(hidezoctop:0)=0
-         NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
-         017	COD= /$(paramsZoc)	SP= $(spzoc)	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
-
-         NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
-         017	COD= /$(paramsZoc)	SP= 20	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
-
-      #ENDIF
-      #LET spPie=$(horDet)-100
-      #IF $(p)>=400
-         047	COD= /TD=536  //Ножка регулировочная
-         047	COD= /TD=536	SP=$(spPie)  //Ножка регулировочная
-         047	COD= /TD=536	SL=$l-$(mat:1)-20  //Ножка регулировочная
-         047	COD= /TD=536	SL=$l-$(mat:1)-20	SP=$(spPie)  //Ножка регулировочная
-         #IF $l>900
-            047	COD= /TD=536	SL=($l)/2  //Ножка регулировочная
-            047	COD= /TD=536	SL=($l)/2	SP=$(spPie)  //Ножка регулировочная
-         #ENDIF
-      #ELSE
-         001	COD=999nog_reg /TD=536 / /#Q4	L=30	A=30	P=30  //Test
-         #IF $l>900
-            001	COD=999nog_reg /TD=536 / /#Q2	L=30	A=30	P=30  //Test
-         #ENDIF
-      #ENDIF
-      // ****************** самоклейки **************************
-      #IF $(_colkarkas:14)==999sam
-         001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
-      #ELSE
-         001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
-      #ENDIF
-      // ***********************************************************
-      // ******************* уголки **************************
-      001	LATO=6	COD=999ug24x24x15 / / /#Q6	L=1	A=1	P=1  //Test
-      // ****************************************************
-      // ****************** пакет шурупов 20 шт.***************
-      001	LATO=6	COD=999nab_sh4x16	L=1	A=1	P=1  // Test
-      // ********************************************************
-      #LET dnoSa=$(hzoc:0)
-   #ENDIF
-   #LETV _wr=999K_KARKASDN
-   #LETV _MNP=999K_KARKASDN
-   //#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
-   #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
-   #LETS paramDn=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
-   #IF $(shMantera)=1
-      //     #LETS paramDn= MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
-   #ENDIF
-   NUMDET	SL=$l/2	SA=$(mat:1)
-   012	COD= /$(paramDn)	SA=$(dnoSa)	P=$(horDet)  //Дно ДСП
-   _agg_krep	p=$(horDet)
-   _DRAWSTAG	SL=$(mat:0)	L=$l-$(mat:0)*2	P=$(horDet)	sa=$(saStag)+$(dnoSa)	orienta=0
-   #LETV _wr=999K_KARKASKR
-   #LETV _MNP=999K_KARKASKR
-   //  #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
-   NUMDET	SL=$l/2	SA=$A-$(mat:1)
-   //если крышка под люк
-   #LET saTop=$a-$(mat:1)
-   #IF $(addzoctop:1)=1 //цоколь сверху для мантеры
-      #LET saTop=$(a)-$(mat:1)-$(hzoctop:0)
-   #ENDIF
-   #IF $(verhLuk:0)=1
-      013	COD= /$(paramDn)	SA=$(saTop)	P={$(horDet)-10}	sp=10	x6=$(shMantera)//$(mat_backwall:3)  //Крышка ДСП
-      //_FINALEMIXAL
-   #ELSE
-      013	COD= /$(paramDn)	SA=$(saTop)	P=$(horDet)	X6=$(shMantera)  //Крышка ДСП
-   #ENDIF
-   _agg_krep	p=$(horDet)
-   _DRAWSTAG	SA=$a-$(mat:1)+$(saStag)	L=$l-$(mat:0)*2	P=$(horDet)	SL=$(mat:0)	orienta=0
-   // *********************************************************
+#LET saStag=0
+#IF $(typeKarkas:1)=4
+#LET saStag=$(mat:1)+2
+#ENDIF
+NUMDET	SL=0	SA=$A/2
+#LETV _wr=999v_karkasBok
+#LETV _MNP=999v_karkasBok
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LETS paramBok=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
+#IF $(shMantera)=1
+//  #LETS paramBok= MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
+#ENDIF
+#LET latoLeftBok=0
+#IF $(leftbok:0)=1
+#LET latoLeftBok=6
+#LETS sagColor=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
+///проверки
+#LET minProfVir=50
+#IF $(lamp:0)=1
+#LET minProfVir=150
+#ENDIF
+!SAGOMA leftsag  0	0	0	$P	$a	$p	$a	0
+///===================проверка ограничений==================================
+#IF $(oldleftVirBack)!$(leftVirBack:0)
+#IF $(leftVirDepth:0)+$(leftVirBack:0)>$(vertDet)-$(minProfVir)
+#LETV leftVirBack={$(vertDet)-$(minProfVir)-$(leftVirDepth:0)}
+#ENDIF
+#LETV oldleftVirBack=$(leftVirBack:0)
+#ENDIF
+#IF $(oldleftVirDepth)!$(leftVirDepth:0)
+#IF $(leftVirDepth:0)+$(leftVirBack:0)>$(vertDet)-$(minProfVir)
+#LETV leftVirDepth={$(vertDet)-$(minProfVir)-$(leftVirBack:0)}
+#ENDIF
+#LETV oldleftVirDepth={$(leftVirDepth:0)}
+#ENDIF
+#IF $(oldleftVirBottom)!$(leftVirBottom:0)
+#IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
+#LETV leftVirBottom={$a-50-$(leftVirHeight:0)}
+#ENDIF
+#LETV oldleftVirBottom={$(leftVirBottom:0)}
+#ENDIF
+#IF $(oldleftVirHeight)!$(leftVirHeight:0)
+#IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
+#LETV leftVirHeight=$a-50-$(leftVirBottom:0)
+#ENDIF
+#LETV oldleftVirHeight={$(leftVirHeight:0)}
+#ENDIF
+//=========================================================================
+//!SAGOMA innerOne 0	0	0	$(leftVirDepth:0)	$(leftVirHeight:0)	$(leftVirDepth:0)	$(leftVirHeight:0)	0
+//!SAGSPOSTA innerone	 $(innerone)	-$(leftVirBottom:0)	-$(leftVirBack:0)
+//!SAGDIFF leftsag	 $(leftsag)	$(innerone)
+#LETS virPar=$(leftVirBack:0)|$(leftVirBottom:0)|$(leftVirDepth:0)|$(leftVirHeight:0)
+_diffVIres	nameMainSag=leftSag	mainSag=$(leftSag)	viresBack=$(leftVirBack:0)	viresBottom=$(leftVirBottom:0)	viresWidth=$(leftVirDepth:0)	viresHeight=$(leftVirHeight:0)
+#IF $(leftVirCount:1)=2
+///===================проверка ограничений==================================
+#IF $(oldleftVirBack1)!$(leftVirBack1:0)
+#IF $(leftVirDepth1:0)+$(leftVirBack1:0)>$(vertDet)-$(minProfVir)
+#LETV leftVirBack1={$(vertDet)-$(minProfVir)-$(leftVirDepth1:0)}
+#ENDIF
+#LETV oldleftVirBack1=$(leftVirBack1:0)
+#ENDIF
+#IF $(oldleftVirDepth1)!$(leftVirDepth1:0)
+#IF $(leftVirDepth1:0)+$(leftVirBack1:0)>$(vertDet)-$(minProfVir)
+#LETV leftVirDepth1={$(vertDet)-$(minProfVir)-$(leftVirBack1:0)}
+#ENDIF
+#LETV oldleftVirDepth1={$(leftVirDepth1:0)}
+#ENDIF
+#IF $(oldleftVirBottom)!$(leftVirBottom:0)
+#IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
+#LETV leftVirBottom={$a-50-$(leftVirHeight:0)}
+#ENDIF
+#LETV oldleftVirBottom={$(leftVirBottom:0)}
+#ENDIF
+#IF $(oldleftVirHeight)!$(leftVirHeight:0)
+#IF $(leftVirHeight:0)+$(leftVirBottom:0)>$A-50
+#LETV leftVirHeight=$a-50-$(leftVirBottom:0)
+#ENDIF
+#LETV oldleftVirHeight={$(leftVirHeight:0)}
+#ENDIF
+//=========================================================================
+_diffVIres	nameMainSag=leftSag	mainSag=$(leftSag)	viresBack=$(leftVirBack1:0)	viresBottom=$(leftVirBottom1:0)	viresWidth=$(leftVirDepth1:0)	viresHeight=$(leftVirHeight1:0)
+#LETS virPar=$(virPar);$(leftVirBack1:0)|$(leftVirBottom1:0)|$(leftVirDepth1:0)|$(leftVirHeight1:0)
+#ENDIF
+///
+001	dis=$(leftSag)	c1=$(sagColor)	a=18	az=-90	sl=18
+010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	x9=$(virPar)  // Бок ЛВ ДСП
+#ELSE
+010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)  // Бок ЛВ ДСП
+#ENDIF
+NUMDET	SL=$l-$(mat:0)	SA=$A/2
+#LET latoRightBok=0
+#IF $(rightbok:0)=1
+#LET latorightBok=6
+#LETS sagColor=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
+///проверки
+#LET minProfVir=50
+#IF $(lamp:0)=1
+#LET minProfVir=150
+#ENDIF
+!SAGOMA rightsag  0	0	0	$P	$a	$p	$a	0
+///===================???????? ???????????==================================
+#IF $(oldrightVirBack)!$(rightVirBack:0)
+#IF $(rightVirDepth:0)+$(rightVirBack:0)>$(vertDet)-$(minProfVir)
+#LETV rightVirBack={$(vertDet)-$(minProfVir)-$(rightVirDepth:0)}
+#ENDIF
+#LETV oldrightVirBack=$(rightVirBack:0)
+#ENDIF
+#IF $(oldrightVirDepth)!$(rightVirDepth:0)
+#IF $(rightVirDepth:0)+$(rightVirBack:0)>$(vertDet)-$(minProfVir)
+#LETV rightVirDepth={$(vertDet)-$(minProfVir)-$(rightVirBack:0)}
+#ENDIF
+#LETV oldrightVirDepth={$(rightVirDepth:0)}
+#ENDIF
+#IF $(oldrightVirBottom)!$(rightVirBottom:0)
+#IF $(rightVirHeight:0)+$(rightVirBottom:0)>$A-50
+#LETV rightVirBottom={$a-50-$(rightVirHeight:0)}
+#ENDIF
+#LETV oldrightVirBottom={$(rightVirBottom:0)}
+#ENDIF
+#IF $(oldrightVirHeight)!$(rightVirHeight:0)
+#IF $(rightVirHeight:0)+$(rightVirBottom:0)>$A-50
+#LETV rightVirHeight=$a-50-$(rightVirBottom:0)
+#ENDIF
+#LETV oldrightVirHeight={$(rightVirHeight:0)}
+#ENDIF
+//=========================================================================
+//!SAGOMA innerOne 0	0	0	$(leftVirDepth:0)	$(leftVirHeight:0)	$(leftVirDepth:0)	$(leftVirHeight:0)	0
+//!SAGSPOSTA innerone	 $(innerone)	-$(leftVirBottom:0)	-$(leftVirBack:0)
+//!SAGDIFF leftsag	 $(leftsag)	$(innerone)
+#LETS virPar=$(rightVirBack:0)|$(rightVirBottom:0)|$(rightVirDepth:0)|$(rightVirHeight:0)
+_diffVIres	nameMainSag=rightSag	mainSag=$(rightSag)	viresBack=$(rightVirBack:0)	viresBottom=$(rightVirBottom:0)	viresWidth=$(rightVirDepth:0)	viresHeight=$(rightVirHeight:0)
+#IF $(rightVirCount:1)=2
+///===================???????? ???????????==================================
+#IF $(oldrightVirBack1)!$(rightVirBack1:0)
+#IF $(rightVirDepth1:0)+$(rightVirBack1:0)>$(vertDet)-$(minProfVir)
+#LETV rightVirBack1={$(vertDet)-$(minProfVir)-$(rightVirDepth1:0)}
+#ENDIF
+#LETV oldrightVirBack1=$(rightVirBack1:0)
+#ENDIF
+#IF $(oldrightVirDepth1)!$(rightVirDepth1:0)
+#IF $(rightVirDepth1:0)+$(rightVirBack1:0)>$(vertDet)-$(minProfVir)
+#LETV rightVirDepth1={$(vertDet)-$(minProfVir)-$(rightVirBack1:0)}
+#ENDIF
+#LETV oldrightVirDepth1={$(rightVirDepth1:0)}
+#ENDIF
+#IF $(oldrightVirBottom1)!$(rightVirBottom1:0)
+#IF $(rightVirHeight1:0)+$(rightVirBottom1:0)>$A-50
+#LETV rightVirBottom1={$a-50-$(rightVirHeight1:0)}
+#ENDIF
+#LETV oldrightVirBottom1={$(rightVirBottom1:0)}
+#ENDIF
+#IF $(oldrightVirHeight1)!$(rightVirHeight1:0)
+#IF $(rightVirHeight1:0)+$(rightVirBottom1:0)>$A-50
+#LETV rightVirHeight1=$a-50-$(rightVirBottom1:0)
+#ENDIF
+#LETV oldrightVirHeight1={$(rightVirHeight1:0)}
+#ENDIF
+//=========================================================================
+_diffVIres	nameMainSag=rightSag	mainSag=$(rightSag)	viresBack=$(rightVirBack1:0)	viresBottom=$(rightVirBottom1:0)	viresWidth=$(rightVirDepth1:0)	viresHeight=$(rightVirHeight1:0)
+#LETS virPar=$(virPar);$(rightVirBack1:0)|$(rightVirBottom1:0)|$(rightVirDepth1:0)|$(rightVirHeight1:0)
+#ENDIF
+///
+001	dis=$(rightSag)	c1=$(sagColor)	a=18	az=-90	sl=$l
+011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	x9=$(virPar)  // Бок ПР ДСП
+#ELSE
+011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)  // Бок ПР ДСП
+#ENDIF
+#LET dnoSa=0
+#IF $(addzoc)=1
+//если скрытие цоколя не выбрано
+#IF $(hidezoctop:0)=0
+NUMDET	SL=$(mat:0)+35	SA=0
+#LETV _wr=999T_KARKASZOC
+#LETV _MNP=999T_KARKASZOC
+#LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
+//////
+#LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SHPR=$(SHPR);NSE=$(SHPR)
+#IF $(shMantera)=1
+//  #LETS paramsZoc=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SHPR=$(SHPR);NSE=$(SHPR)
+#ENDIF
+#IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>=2
+#LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
+#ENDIF
+///////
+017	COD= /$(paramsZoc)	SP=$(spzoc)  //Цоколь ДСП
+NUMDET	SL=$(mat:0)+35	SA=0	sp=20
+017	COD= /$(paramsZoc)	SP= 20  // Цоколь ДСП
+#ENDIF
+#IF $(addzoctop:0)=1 & $(hidezoctop:0)=0
+NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
+017	COD= /$(paramsZoc)	SP= $(spzoc)	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
+NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
+017	COD= /$(paramsZoc)	SP= 20	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
+#ENDIF
+#LET spPie=$(horDet)-100
+#IF $(p)>=400
+047	COD= /TD=536  //Ножка регулировочная
+047	COD= /TD=536	SP=$(spPie)  //Ножка регулировочная
+047	COD= /TD=536	SL=$l-$(mat:1)-20  //Ножка регулировочная
+047	COD= /TD=536	SL=$l-$(mat:1)-20	SP=$(spPie)  //Ножка регулировочная
+#IF $l>900
+047	COD= /TD=536	SL=($l)/2  //Ножка регулировочная
+047	COD= /TD=536	SL=($l)/2	SP=$(spPie)  //Ножка регулировочная
+#ENDIF
+#ELSE
+001	COD=999nog_reg /TD=536 / /#Q4	L=30	A=30	P=30  //Test
+#IF $l>900
+001	COD=999nog_reg /TD=536 / /#Q2	L=30	A=30	P=30  //Test
+#ENDIF
+#ENDIF
+// ****************** самоклейки **************************
+#IF $(_colkarkas:14)==999sam
+001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q4	L=1	A=1	P=1  //Test
+#ELSE
+001	LATO=6	COD=$(_colkarkas:14) / / /#Q4	L=1	A=1	P=1  //Test
+#ENDIF
+// ***********************************************************
+// ******************* уголки **************************
+001	LATO=6	COD=999ug24x24x15 / / /#Q6	L=1	A=1	P=1  //Test
+// ****************************************************
+// ****************** пакет шурупов 20 шт.***************
+001	LATO=6	COD=999nab_sh4x16	L=1	A=1	P=1  // Test
+// ********************************************************
+#LET dnoSa=$(hzoc:0)
+#ENDIF
+#LETV _wr=999K_KARKASDN
+#LETV _MNP=999K_KARKASDN
+//#LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+#LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+#LETS paramDn=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
+#IF $(shMantera)=1
+//     #LETS paramDn= MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
+#ENDIF
+NUMDET	SL=$l/2	SA=$(mat:1)
+012	COD= /$(paramDn)	SA=$(dnoSa)	P=$(horDet)  //Дно ДСП
+_agg_krep	p=$(horDet)
+_DRAWSTAG	SL=$(mat:0)	L=$l-$(mat:0)*2	P=$(horDet)	sa=$(saStag)+$(dnoSa)	orienta=0
+#LETV _wr=999K_KARKASKR
+#LETV _MNP=999K_KARKASKR
+//  #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905
+NUMDET	SL=$l/2	SA=$A-$(mat:1)
+//если крышка под люк
+#LET saTop=$a-$(mat:1)
+#IF $(addzoctop:1)=1 //цоколь сверху для мантеры
+#LET saTop=$(a)-$(mat:1)-$(hzoctop:0)
+#ENDIF
+#IF $(verhLuk:0)=1
+013	COD= /$(paramDn)	SA=$(saTop)	P={$(horDet)-10}	sp=10	x6=$(shMantera)//$(mat_backwall:3)  //Крышка ДСП
+//_FINALEMIXAL
+#ELSE
+013	COD= /$(paramDn)	SA=$(saTop)	P=$(horDet)	X6=$(shMantera)  //Крышка ДСП
+#ENDIF
+_agg_krep	p=$(horDet)
+_DRAWSTAG	SA=$a-$(mat:1)+$(saStag)	L=$l-$(mat:0)*2	P=$(horDet)	SL=$(mat:0)	orienta=0
+// *********************************************************
 #DEFAULT
-   #MSG Ошибка в выборе варианта!
+#MSG Ошибка в выборе варианта!
 #ENDSELECT
 ///создание обработок под петли если есть двери
 #LETS petlZoneParams=
 #FOR $(doorsParams)
-   #LETS doorAperto=$[ex;$(i);|;6]
-   ///взависимости от того с какой стороны в двери выбраны петли	 создаются обработки под петли
-   #LETS colorPetl=105
-   #IF $(doorAperto)[R]
-      061	sa=100-26/2+10	sl=$l-($(mat:1)+5)	sp=$p-51	c1=$(colorPetl)
-      061	sa=$a-100-26/2-10	sl=$l-($(mat:1)+5)	sp=$p-51	c1=$(colorPetl)
-   #ENDIF
-   #IF $(doorAperto)[L]
-      061	sa=100-26/2+10	sl=($(mat:1))	sp=$p-51	c1=$(colorPetl)
-      061	sa=$a-100-26/2-10	sl=($(mat:1))	sp=$p-51	c1=$(colorPetl)
-   #ENDIF
-   ///передача параметров петель
-   //_SHKAF
-   #LETS petlZoneParams=MIXAL|$(doorAperto)
+#LETS doorAperto=$[ex;$(i);|;6]
+///взависимости от того с какой стороны в двери выбраны петли	 создаются обработки под петли
+#LETS colorPetl=105
+#IF $(doorAperto)[R]
+061	sa=100-26/2+10	sl=$l-($(mat:1)+5)	sp=$p-51	c1=$(colorPetl)
+061	sa=$a-100-26/2-10	sl=$l-($(mat:1)+5)	sp=$p-51	c1=$(colorPetl)
+#ENDIF
+#IF $(doorAperto)[L]
+061	sa=100-26/2+10	sl=($(mat:1))	sp=$p-51	c1=$(colorPetl)
+061	sa=$a-100-26/2-10	sl=($(mat:1))	sp=$p-51	c1=$(colorPetl)
+#ENDIF
+///передача параметров петель
+//_SHKAF
+#LETS petlZoneParams=MIXAL|$(doorAperto)
 #ENDFOR
 #LETS LOC_BX5=$(petlZoneParams)
 ////////

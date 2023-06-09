@@ -27,7 +27,9 @@
 #ENDFOR
 #LET shMantera=0
 #IF $(matvn:1)[18]
-   #LETV shMantera=1
+   #IF $(_COLKARKAS:1)[221]
+      // #LETV shMantera=1
+   #ENDIF
    #LETV _krepeg=1
    // #LETV addzoc=1
    #LET .globale1=1
@@ -51,10 +53,11 @@
    //#LETV pbokr=2
    //#LETV pup=2
    #LETS msg_lim_kol=0
-#IF $(shMantera)=0
-   #LETV hzoc=0
-   #LETV addzoc=0
-#ENDIF
+   #IF $(shMantera)=0
+      #LETV hzoc=0
+      #LETV addzoc=0
+   #ENDIF
+   #LETV lampoffset=228
 #ENDIF
 ///обнуление параметров для упаковки стекол
 #LETV maxStekloL=
@@ -140,8 +143,8 @@ _DATABOX
    001	LATO=6	COD=999alumDrDat / /Датчик открывания двери для ШК	L=1	A=1	P=1  // Test
 #ENDIF
 #LET otstupLamp=228
-#IF $(shMantera)=1
-   #LET utstupLamp=$(lampoffset:0)
-#ENDIF
+//#IF $(shMantera)=1
+#LET utstupLamp=$(lampoffset:0)
+//#ENDIF
 _lamp	matvnL=$(mat)	matvnR=$(mat)	otstupLamp=$(utstupLamp)	leftlamp=$(lampleft:0)	rightlamp=$(lampright:0)	shMantera=$(shMantera)
 #LETS _macrofinale= _finaleMixal

@@ -31,8 +31,8 @@ S,stekloCount,,,количество полок в шкафу,,,,,,,,,0
 S,stekloCountScene,,,количество полок в сцене,,,,,,,,,0
 S,stekloSize,,,макс размер стекла,,,X,,,,,,0
 S,steklosizemax,,,итог макс стекла,,,X,,,,,,0
-S,hdfsizemax,,,макс размер хдф,,,,,,,,,0
-S,hdfsize,,,размер хдф,,,,,,,,,0
+S,hdfsizemax,,,макс размер хдф
+S,hdfsize,,,размер хдф
 +,ADDNAPLIVING,,,макрос ниш
 +,VOLUMELIVING
 S,provobr,,,,,,,,,,,,0
@@ -58,7 +58,7 @@ T,mat,matvn,,Материал перегородок,$(matvn:1)=$(matGlvn:1)
 T,_colkarkas,_colkarkasvn,,Цвет перегородок,$(matvn:1)[$(_colkarkasvn:5)] & $(_colkarkasvn:1)!!024 & $(_colkarkasvn:20)[1] & $[datecompare;$(dataordine);$(_colkarkasvn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasvn:23)]=-1 & $(productline:0)[$(_colkarkasvn:24)],,,,,,2
 T,_ugolColor,,,Цвет уголка,$(_ugolColor:3)[$(_colkarkasvn:13)],,,,,,,,0
 T,tipshkaf,,,Тип,$(tipshkaf:3)=2,,,,,,,,0
-S,furNabor,,,,,,,,,,,,0
+S,furnabor,,,,,,,,,,,,0
 T,varParamSkaf,,,,,,,,,,,,0
 T,typeliving,,,,,,,,,,,,0
 T,tipshkafliving,,,Тип
@@ -75,7 +75,7 @@ T,_colkarkas,_colkarkasPL,,соединительная планка,$(_colkarkaspl:1)[046],,,,,,9,,
 T,_prist,,,,,,,,,,,,0
 -,doorsRasp,,,Двери распашные
 T,_doorPolog,,,,#IF $(mat:1)[25]\n   $(_doorPolog:1)=2\n#ELSE\n   $(typeKarkas:1)[$(_doorPolog:3)]\n#ENDIF
-T,_doorsRasp,,,,##KOLDOORSRASP\n#LET SxFiaLarg=$(mat:1)\n#LET DxFiaLarg=$(mat:1)\n#LET PnFiaLarg=$(mat:1)\n#LET StFiaLarg=$(mat:1)\n#LET spostaAnt=($(mat:1)-2.5)*2\n#LET LantProem=($l-($(SxFiaLarg)+$(DxFiaLarg)))+$(spostaAnt)\n#LET AltProem=($a-($(StFiaLarg)+$(PnFiaLarg)))+$(spostaAnt)-{$(hzoc:0)}\n#LET doorPripusk=($(matvn:1)-2.5)*2\n#IF $(_doorPolog:1)[1;4]\n   #LET doorPripusk=($(mat:1)-2.5)*2\n#ELSE\n   #LET doorPripusk=-2.5*2\n#ENDIF\n$(_doorsRasp:4)<=$(AltProem) & $(_doorsRasp:5)<=$(LantProem) & $(_doorsRasp:6)>=$(AltProem) & $(_doorsRasp:7)>=$(LantProem)
+T,_doorsRasp,,,,##KOLDOORSRASP\n#LET SxFiaLarg=$(mat:1)\n#LET DxFiaLarg=$(mat:1)\n#LET PnFiaLarg=$(mat:1)\n#LET StFiaLarg=$(mat:1)\n#LET spostaAnt=($(mat:1)-2.5)*2\n#LET LantProem=($l-($(SxFiaLarg)+$(DxFiaLarg)))+$(spostaAnt)\n#LET AltProem=($a-($(StFiaLarg)+$(PnFiaLarg)))+$(spostaAnt)\n#LET doorPripusk=($(matvn:1)-2.5)*2\n#IF $(_doorPolog:1)[1;4]\n   #LET doorPripusk=($(mat:1)-2.5)*2\n#ELSE\n   #LET doorPripusk=-2.5*2\n#ENDIF\n#IF $(tipRaspshkaf:3)=1 #LET AltProem=($a-($(SxFiaLarg)+$(DxFiaLarg))-$(hzoc:0))+$(doorPripusk)\n$(_doorsRasp:4)<=$(AltProem) & $(_doorsRasp:5)<=$(LantProem) & $(_doorsRasp:6)>=$(AltProem) & $(_doorsRasp:7)>=$(LantProem)\n
 T,_FiaApertoAnta,,$(_doorsRasp:1)[1;3],,,,,,,,4
 T,_VdVisDoor
 T,NODOORSRASP
@@ -98,23 +98,20 @@ M,AOldDx,,,,,,,,,,,,0
 C,dekor,,$(tipshkafliving:1)=1 & $(_doorPolog:4)!1,Декор
 T,_ModDoorRasp,,$(dekor:0)=1,,$(_ModDoorRasp:1)[s08;S26]
 T,matvstav,matvstavDek,$(dekor:0)=1,Модель декора,$(matvstavDek:5)==$(_ModDoorRasp:1),,,,,,,,0
-T,cvetvstav,cvetvstavDek, ,Цвет декора,$(matvstavDek:5)[$(cvetvstavDek:3)] & $(matvstavDek:6)[$(cvetvstavDek:8)] & $[datecompare;$(dataordine);$(cvetvstavDek:15)]>=0 & $[datecompare;$(dataordine);$(cvetvstavDek:16)]=-1 ,,,,,,2,,$(matvstavDek:13)
-T,TxtVst,TxtVstDek,$(cvetvstavDek:11)=1,,#IF $(matvstavDek:5)==s08\n   $(TxtVstDek:1)[1]\n#ELSE\n   $(TxtVstDek:1)[0;1]\n#ENDIF,,,,,,,,$(matvstavDek:5)!!s08
+T,cvetvstav,cvetvstavDek, ,Цвет декора,$(matvstavDek:5)[$(cvetvstavDek:3)] & $(matvstavDek:6)[$(cvetvstavDek:8)],,,,,,2,,$(matvstavDek:13)
+T,TxtVst,TxtVstDek,$(cvetvstavDek:11)=1 & (($(tipshkaf:6)=2 & $(tipshkaf:7)=1) | ($(tipshkaf:6)=2 & $(tipshkaf:7)=2 & $(tipRaspshkaf:1)[1;2])),,#IF $(matvstavDek:5)==s08\n   $(TxtVstDek:1)=1\n#ELSE\n   $(TxtVstDek:1)[0;1]\n#ENDIF,,,,,,,,$(matvstavDek:5)!!s08
 T,_patina,_patinaDek,$(dekor:0)=1,,##PATINACHECK\n#LET indexloop=0\n#LETS testpatina=$(cvetvstavDek:17)\n#LETS modelvstav=$(matvstavDek:5)\n#LETS patinamodel=\n#DO\n   #LET indexloop=$(indexloop)+1\n   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]\n   #IF $[LEN;$(teststr)]>0\n      #IF $[INSTR;$(teststr);$(modelvstav)]>0\n         #LETS patinamodel=$(teststr)\n      #ENDIF\n   #ELSE\n      #BREAK 1\n   #ENDIF\n#LOOP  $(teststr)==\n#IF $[len;$(patinamodel)]>0\n   $[INSTR;$(patinamodel);$(_patinaDek:1)]>0 | $(_patinaDek:1)[999]\n#ELSE\n   #IF ($(matvstavDek:5)[$(cvetvstavDek:14)])\n      $(_patinaDek:1)[$(cvetvstavDek:17)] | $(_patinaDek:1)[999]\n   #ELSE\n      $(_patinaDek:5)=60251733\n   #ENDIF\n#ENDIF,,,,,,,,$(matvstavDek:5)[$(cvetvstavDek:14)]
 T,_factura,_facturaDek,$(_ModDoorRasp:1)[S26] & $(dekor:0)=1,,#IF $(_ModDoorRasp:1)[S26] & $(_patinaDek:5)!60251733\n   $(_ModDoorRasp:1)[$(_facturaDek:6)] & $(_facturaDek:4)!511193732\n#ELSE\n   $(_ModDoorRasp:1)[$(_facturaDek:6)]\n#ENDIF
-Z,dekKolSxDx,,$(dekor:0)=1,Декор. колонки,,,,,,,2,,$(tipshkaf:7)=1
+Z,bokSx,,$(dekor:0)=1,Декор. бок. слева
+M,AltBokFasSx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokSx:0)=1,Высота нижней левой дек. бок.,,,,,,,3
 Z,dekKolSx,,$(dekor:0)=1,Декор. колон. слева,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)=2
-Z,bokSx,,$(dekor:0)=1,Декор. бок. слева,,,,,,,,,$(dekKolSxDx:0) & $(dekKolSx:0) & $(_prist:0)!=1
-M,AltBokFasSx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokSx:0)=1,Высота нижней левой дек. бок.
+Z,bokDx,,$(dekor:0)=1,Декор. бок. справа
+M,AltBokFasDx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokDx:0)=1,Высота нижней правой дек. бок.,,,,,,,3
 Z,dekKolDx,,$(dekor:0)=1,Декор. колон. справа,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)=2
-Z,bokDx,,$(dekor:0)=1,Декор. бок. справа,,,,,,,,,$(dekKolSxDx:0) & $(dekKolDx:0) & $(_prist:0)!=2
-M,AltBokFasDx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokDx:0)=1,Высота нижней правой дек. бок.
-C,dekallure,,$(dekor:0)=1 & $(_ModDoorRasp:1)[S26],Кололнка Allure,,,,,,,3
-T,dkallvar,,$(dekallure:0)=1,Тип колонки,,,,,,,3
+C,dekallure,,$(dekor:0)=1 & $(_ModDoorRasp:1)[S26],Кололнка Allure
+T,dkallvar,,$(dekallure:0)=1,Тип колонки
 C,dekVst,,$(dekor:0)=1 & ($(tipshkaf:6)=2 & $(tipshkaf:7)=1) | ($(tipshkaf:6)=2 & $(tipshkaf:7)=2),Декоративная вставка
-C,cornic,,$(dekor:0)=1,Карниз,,,,,,,2
-C,cornicSx,,$(dekor:0)=1 & $(cornic:0) & (not($(dekKolSxDx:0)) | not($(dekKolSx:0))) & $(_prist:0)!=1,Карниз слева
-C,cornicDx,,$(dekor:0)=1 & $(cornic:0) & (not($(dekKolSxDx:0)) | not($(dekKolDx:0))) & $(_prist:0)!=2,Карниз справа
+Z,cornic,,$(dekor:0)=1,Карниз,,,,,,,2
 T,mat,matKn,,Материал ЛДСП,$(matKn:1)=16,,,,,,9,,0
 T,_colkarkas,_colkarkasKn,,Цвет каркаса колонки,#IF $(mat:1)=16\n   $(_colkarkasKn:1)=$(_colkarkas:1)\n#ELSE\n   #IF $[datecompare;$(dataordine);21.10.2021]<0\n      $(_colkarkasKn:1)=$(_colkarkas:19)\n   #ELSE\n      $(matkn:1)[$(_colkarkaskn:5)] & $(_colkarkaskn:1)!!024 & $(_colkarkaskn:20)[1] & $[datecompare;$(dataordine);$(_colkarkaskn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkaskn:23)]=-1 & $(productline:0)[$(_colkarkaskn:24)]\n   #ENDIF\n#ENDIF,,,,,,9,,$(dekor:0)=1
 
@@ -124,24 +121,26 @@ _shkafLiving
 //DOORSRASP
 //_PLACERDOORS
 //010
+//_KOROBLIVING
+//_KARKASLIVING
+//_PASPORT
 //_MODUL
 //_PETLI
 //_PETLIOBR
 //_DEKOR
 //_DEKORE303
 //_PLANKATRANS
-//_KOROBLIVING
 //303
 //301
+//NUMDET
 //_PETLIOBR
 //_PETLJA
 //010
+//_DEKORE303
 //_ADDNAVES
-//NUMDET
- 
-
 //011
 //012
+//_PLANKATRANS
 //017
 //12
 //056
@@ -156,6 +155,7 @@ _shkafLiving
 //DOORSRASP
 //_PARAMANTASTR
 //ADDNAP
+//ADDNAPLIVING
 //VOLUME
 //_SHKAF
 //_LAMP

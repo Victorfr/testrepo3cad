@@ -36,12 +36,6 @@ _flag_plaser
 _DATABOX
 #LETS cod_pan=9992434
 #LETS 3ds=Kryk7.3ds
-#LETS dataOld=29.04.2022
-#IF $[datecompare;$(dataordine);$(dataOld)]>=0
-   
-   #MSG товар не доступен к заказу с $(dataOld)!
-   001,COD=999 /ERROR=1 / /#l-1,c1=5  //Test
-#ELSE
 
 #IF $(krepDx:0)=1
    001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,FACC=100,X4=$(3ds)  //Test
@@ -62,4 +56,3 @@ _DATABOX
 // ***********************************************************************************************************************************************
 #LETS LOC_BX4=$L
 //_OLD_PLACE
-#ENDIF

@@ -13,7 +13,7 @@
   },
   "Options": [
     {
-      "Codvar": "MAT_BACKWALL",
+      "Codvar": "mat_backwall",
       "Codopz": "01",
       "Des": "4 мм ХДФ",
       "Memo": "4\tHDF4|_CKH\t365528472\t2750m1200\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
@@ -23,7 +23,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "MAT_BACKWALL",
+      "Codvar": "mat_backwall",
       "Codopz": "02",
       "Des": "10 мм MIX",
       "Memo": "10\tLDSP10|CVET_VST\t399111796\t2750m1200\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
@@ -33,7 +33,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "MAT_BACKWALL",
+      "Codvar": "mat_backwall",
       "Codopz": "03",
       "Des": "8 мм Spark",
       "Memo": "8\tLDSP8|CFSP\t399111805\t2750m1200\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
@@ -43,10 +43,10 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "MAT_BACKWALL",
+      "Codvar": "mat_backwall",
       "Codopz": "04",
       "Des": "TSS",
-      "Memo": "\tTSSDSPL8|CFSP\t399111805\t2750m1200\tMONDERO",
+      "Memo": "TSS\tTSSDSPL8|CFSP\t399111805\t2750m1200\tMONDERO",
       "Ges": "",
       "Ordinamento": 0,
       "Extra": "",

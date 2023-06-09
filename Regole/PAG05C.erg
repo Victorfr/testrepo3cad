@@ -28,6 +28,7 @@ S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
 
 [GRAFICA]
+
 !SETCODICE x
 // *****************************параметр определяющий что элемент является плейсером****************
 _flag_plaser
@@ -35,10 +36,6 @@ _flag_plaser
 _DATABOX
 #LETS cod_pan=999PAG05C
 #LETS 3ds=veshalka5.3ds
-//#IF $[datecompare;$(dataordine);17.10.2022]>=0
-// #MSG товар не доступен к заказу с 13.10.2022!
-//001,COD=$(cod_pan) /ERROR=1 / /#l-1,c1=5  //Test
-//#ELSE
 
 #IF $(krepDx:0)=1
    001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,SL=$l,SP=$p,AY=180,c1=6,FACC=100,X4=$(3ds)  //Test
@@ -57,4 +54,3 @@ _DATABOX
    023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
 #ENDIF
 // ***********************************************************************************************************************************************
-//#ENDIF

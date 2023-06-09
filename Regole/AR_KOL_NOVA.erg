@@ -39,6 +39,9 @@ _RECLAMATION
 
 001,LATO=9,COD=999DFKOL_NOVA /WR=417701537;FPL=N /Комплект роликов + крепеж для створок купе Aristo Nova /#l-1  //Tes
 #FOR $1:$(count_st:0)
-   001,LATO=6,COD=999complRolNv,L=1,A=1,P=1  //Test
-      001,LATO=6,COD=9993_9x9_5 / / /#Q16,L=1,A=1,P=1  //Test
+   //001,LATO=6,COD=999complRolNv,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999complRolN / / /#q1,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999complRolV / / /#q1,L=1,A=1,P=1  //Test
+   
+   001,LATO=6,COD=9993_9x9_5 / / /#Q16,L=1,A=1,P=1  //Test
 #ENDFOR
