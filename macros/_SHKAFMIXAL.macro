@@ -29,9 +29,9 @@
 #IF $(matvn:1)[18]
    #IF $(_COLKARKAS:1)[221]
       // #LETV shMantera=1
-   #ENDIF
+   #ENDIF 
    #LETV _krepeg=1
-   // #LETV addzoc=1
+   // #LETV addzoc=1 
    #LET .globale1=1
 #ELSE
    #LETV shMantera=0
