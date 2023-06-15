@@ -44,7 +44,6 @@ _RECLAMATION
 //#LETS navZagR=$[ex;$(navesColor:4);|;2]
 //#LETS navShina=$(navesLiving:7)
 
-001,LATO=9,COD=999EVRIK /FPL=N /HETTICH 1005119 Евровинт 7x50 под шестигранник цинк /#l-1  //Tes
-//001,LATO=9,COD=999EVRIK /WR=417701157;FPL=N /HETTICH 1005119 Евровинт 7x50 под шестигранник цинк /#l-1  //Tes
+001,LATO=9,COD=999EVRIK /WR=417701157;FPL=N /HETTICH 1005119 Евровинт 7x50 под шестигранник цинк /#l-1  //Tes
 
 001,LATO=6,COD=999evrik / / /#Q$(count_st:0)  // Test

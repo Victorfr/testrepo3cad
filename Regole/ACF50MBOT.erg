@@ -38,25 +38,32 @@ _DATABOX
 
 #LET flag_ust=1
 
-_PROVERKAPLACER
-#IF $(flag_ust)=1
-   001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,C1=6,FACC=100,X4=$(3ds)  //Test
-#ELSEIF $(flag_ust)=5
-   001,COD= /ERROR=1  //Test
-   025,COD= / /Перекрытие дверей блокирует выдвижные,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+#IF $[DATECOMPARE;$(dataordine);14.02.2123]>=0
+   001
+   025,COD= / /Товар не доступен к заказу с 14.02.2023,SA=$a/2,SP=$p,l=300,sl=$L/2-150  // Номер детали
+   ///товар выведен
+#ELSE
+   
+   _PROVERKAPLACER
+   #IF $(flag_ust)=1
+      001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,C1=6,FACC=100,X4=$(3ds)  //Test
+   #ELSEIF $(flag_ust)=5
+      001,COD= /ERROR=1  //Test
+      025,COD= / /Перекрытие дверей блокирует выдвижные,SL=$l/2-$l*0.7/2,SA=$(mat:0),L=$l*0.7  //сообщение об ошибке
+   #ENDIF
+   
+   // #FOR $1:2
+   // 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
+   // #ENDFOR
+   
+   // ****************************************************** размер по высоте ***********************************************************************
+   #LETS zone_prov=$(locp_bx3)
+   #IF $[estrai;$(locp_bx3);|;5]=1
+      //023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
+      023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
+   #ENDIF
+   // ***********************************************************************************************************************************************
+   //_PROVERKAPLACER
+   //_OLD_PLACE
+   //_MODUL
 #ENDIF
-
-// #FOR $1:2
-// 001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=10,A=10,P=10  //Test
-// #ENDFOR
-
-// ****************************************************** размер по высоте ***********************************************************************
-#LETS zone_prov=$(locp_bx3)
-#IF $[estrai;$(locp_bx3);|;5]=1
-   //023,COD= / /{rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},SL=280,SA=0,SP=0,L={rnd($(posa))-$[estrai;$(zone_prov);|;3]-$[estrai;$(zone_prov);|;4]},A=10,P=0,AZ=90  //Высота корпуса
-   023,COD= / /{rnd($(posa))},SL=$l,SA=0,SP=0,L={rnd($(posa))},A=10,P=0,AZ=90  //Высота корпуса
-#ENDIF
-// ***********************************************************************************************************************************************
-//_PROVERKAPLACER
-//_OLD_PLACE
-//_MODUL

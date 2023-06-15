@@ -62,7 +62,7 @@ T,mat,matvn,,Материал полок,#IF $(matGl:1)[18]\n   $(matvn:1)[18]\n#ELSE\n   $(m
 T,_colkarkas,_colkarkasvn,,Цвет полок,$(matvn:1)[$(_colkarkasvn:5)] & $(_colkarkasvn:1)!!024 & $(_colkarkasvn:20)[1] & $[datecompare;$(dataordine);$(_colkarkasvn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasvn:23)]=-1 & $(productline:0)[$(_colkarkasvn:24)],,,,,,2
 T,tipshkaf,,,Тип,,,,,,,,,0
 T,varParamSkaf,,,,,,,,,,,,0
-Z,addzoc,,,Цоколь
+Z,addzoc,, $(shrusal)=1,Цоколь
 M,hzoc,,$(addzoc:1)=1,Высота цоколя,,,,40,150
 C,addzoctop,,$(shMantera)=1,Цоколь сверху
 C,hidezoctop,,$(shMantera)=1 & $(addzoctop:1)=1,Убрать цоколь
@@ -86,37 +86,26 @@ T,NODOORSRASP
 [GRAFICA]
 _shkafmixal
 //_FINALELIVING
-//_FINALEMIXAL
-//_BACKWALLMIXAL
-//010
 //ADDNAP
-//_DOOR
 //VOLUME
-//NUMDET
 //addnapmixal
 //volumemixal
-//_lamp
 //VOLUMELIVING
 //ADDNAPLIVING
 //_karkasMixal
 //_KARKASMIXAL
-//_PETLJA
-//12
+//10
+//_MERGEBACKWALL
 //_KARKASLIVING
 //_KOROBMIXAL
+//_BACKWALLMIXAL
+//_KARKASMIXAL
 //_placerDoorMx
 //DOORSRASP
+//_FINALEMIXAL
 //_placerMixal
 //_PASTEPLACER
 //_OLD_PLACE
+//_DOOR
 //_SHKAF
 //064
-//013
-//010
-//018
-//0171111
-//_MERGEBACKWALL
-//_PROVPLACNAPOL
-//_KOROBMIXAL
-//_DRAWSTAG
-//_LAMP

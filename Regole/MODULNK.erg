@@ -279,13 +279,14 @@ _proverkaPlacer ///зоны пересечени€ с петл€ми
    #LETV p=300
    #MSG глубина модул€ не может быть меньше 300 мм!
 #ENDIF
+#LET minLnap=300//400
 #IF $(lOld)!$L
    //#MSG change L
    #LETV lOld=$L
    #LET lprov=$l-($(lOtst)+$(pOtst))
-   #IF $(lprov)<400
-      #MSG Ўирина наполнени€ не может быть меньше 400мм!
-      #LET l=400+$(lotst)+$(potst)
+   #IF $(lprov)<$(minLnap)
+      #MSG Ўирина наполнени€ не может быть меньше $(minLnap)мм!
+      #LET l=$(minLnap)+$(lotst)+$(potst)
    #ENDIF
    #IF $(lprov)>1200
       #MSG Ўирина модул€ не может быть больше 1200мм!
@@ -516,8 +517,8 @@ _proverkaPlacer ///зоны пересечени€ с петл€ми
          #LET a_falsh_fasad=$a-$(sa_falsh_fasad)*2-$(mat_krdn:1)-$(lbokSA)
       #ENDIF
       #IF $(_tipFasMat)=1
-         _FASVID,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,p=$(_MODDOORRASP:5)),_COLKARKAS=$(_COLKARKASFAS),show_num=6,_man=0,detMod=1,gjpCountLine=$(gjpCountLineR),_gjp=$(_gjpR),_TipDoorRasp=$(_TipDoorRaspFas)\
-         ,_manIntX=,_manIntY=
+         _FASVID,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,p=$(_MODDOORRASP:5)),_COLKARKAS=$(_COLKARKASFAS),show_num=6,_man=0,detMod=1,gjpCountLine=$(gjpCountLineR),_gjp=$(_gjpR),\
+         _TipDoorRasp=$(_TipDoorRaspFas),_manIntX=,_manIntY=
       #ELSE
          _karkasfas,SL=$l-$(largFalshR:0)-$(sl_falsh_fasad),SA=$(sa_falsh_fasad)+$(pbokSA),SP=$(sp_falsh_fasad),L=$(largFalshR:0),A=$(a_falsh_fasad),MAN=0,_COLKARKAS=$(_col_fasVD),mat=$(mat_fasVD),petlObr=0,detMod=1,_man=0
       #ENDIF
