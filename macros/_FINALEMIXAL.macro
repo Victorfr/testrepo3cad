@@ -2,135 +2,135 @@
 #LETS virParBack=
 #LET latoBackWall=0
 #IF $(shMantera)=1
-#IF $(backBok:0)=1
-#LET latoBackWall=6
-#LETS sagColor=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
-///проверки
-#LET minProfVir=50
-#IF $(lamp:0)=1
-#LET minProfVir=150
+   #IF $(backBok:0)=1
+      #LET latoBackWall=6
+      #LETS sagColor=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
+      ///проверки
+      #LET minProfVir=50
+      #IF $(lamp:0)=1
+         #LET minProfVir=150
+      #ENDIF
+      #LET slBackWall=7//$(matvn:1)-9
+      #LET lBackWall=$(lkorp)-14
+      #LET altBackWall=$(akorp)-{$(hzoc:0)}-14
+      ##OTSTUPP
+      #LET bottomOts=$(backVirBottom:0)-7-$(hzoc:0)
+      #IF $(bottomOts)<50
+         #LETV backVirBottom=50+7+$(hzoc:0)
+         #GOTO otstupp
+      #ENDIF
+      ##LEFTUPP
+      #LET leftOts=$(backVirBack:0)-7
+      #IF $(leftOts)<50
+         #LETV backVirBack=50+7
+         #GOTO leftupp
+      #ENDIF
+      !SAGOMA leftsag  0	0	0	$(lBackWall)	$(altBackWall)	$(lBackWall)	$(altBackWall)	0
+      ///===================???????? ???????????==================================
+      ///===================???????? ???????????==================================
+      #IF $(oldbackVirBack)!$(backVirBack:0)
+         #IF $(backVirDepth:0)+$(leftOts)>$(lBackWall)-50
+            #LETV backVirBack={$(lBackWall)-50-$(backVirDepth:0)+7}
+         #ENDIF
+         #LETV oldbackVirBack={$(backVirBack:0)}
+      #ENDIF
+      #IF $(oldbackVirDepth)!$(backVirDepth:0)
+         #IF $(backVirDepth:0)+$(leftOts)>$(lBackWall)-50
+            #LETV backVirDepth={$(lBackWall)-50-$(leftOts)}
+         #ENDIF
+         #LETV oldbackVirDepth={$(backVirDepth:0)}
+      #ENDIF
+      #IF $(oldbackVirBottom)!$(backVirBottom:0)
+         #IF $(backVirHeight:0)+$(bottomOts)>$(altBackWall)-50
+            #LETV backVirBottom={$(altBackWall)-50-$(backVirHeight:0)}+7+$(hzoc:0)
+         #ENDIF
+         #LETV oldbackVirBottom={$(backVirBottom:0)}
+      #ENDIF
+      #IF $(oldbackVirHeight)!$(backVirHeight:0)
+         #IF $(backVirHeight:0)+$(bottomOts)>$(altBackWall)-50
+            #LETV backVirHeight=$(altBackWall)-50-$(bottomOts)
+         #ENDIF
+         #LETV oldbackVirHeight={$(backVirHeight:0)}
+      #ENDIF
+      //=========================================================================
+      #IF $(backVirDepth:0)+$(leftOts)>$(lBackWall)-$(minProfVir)
+         // #LETV backVirDepth=$(lBackWall)-$(minProfVir)-$(leftOts)
+      #ENDIF
+      #IF $(backVirHeight:0)+$(bottomOts)>$(altBackWall)-50
+         // #LETV backVirHeight=$(altBackWall)-50-$(bottomOts)
+      #ENDIF
+      #LETS virParBack=$(leftOts)|$(bottomOts)|$(backVirDepth:0)|$(backVirHeight:0)
+      _diffVIres	nameMainSag=leftSag	mainSag=$(leftSag)	viresBack=$(leftOts)	viresBottom=$(bottomOts)	viresWidth=$(backVirDepth:0)	viresHeight=$(backVirHeight:0)
+      ///
+      001	dis=$(leftSag)	c1=$(sagColor)	a=$(mat_backwall:3)	az=-90	sl=7	ax=-90	sa=$(hzoc:0)+7
+   #ENDIF
 #ENDIF
-#LET slBackWall=7//$(matvn:1)-9
-#LET lBackWall=$(lkorp)-14
-#LET altBackWall=$(akorp)-{$(hzoc:0)}-14
-##OTSTUPP
-#LET bottomOts=$(backVirBottom:0)-7-$(hzoc:0)
-#IF $(bottomOts)<50
-#LETV backVirBottom=50+7+$(hzoc:0)
-#GOTO otstupp
-#ENDIF
-##LEFTUPP
-#LET leftOts=$(backVirBack:0)-7
-#IF $(leftOts)<50
-#LETV backVirBack=50+7
-#GOTO leftupp
-#ENDIF
-!SAGOMA leftsag  0	0	0	$(lBackWall)	$(altBackWall)	$(lBackWall)	$(altBackWall)	0
-///===================???????? ???????????==================================
-///===================???????? ???????????==================================
-#IF $(oldbackVirBack)!$(backVirBack:0)
-#IF $(backVirDepth:0)+$(leftOts)>$(lBackWall)-50
-#LETV backVirBack={$(lBackWall)-50-$(backVirDepth:0)+7}
-#ENDIF
-#LETV oldbackVirBack={$(backVirBack:0)}
-#ENDIF
-#IF $(oldbackVirDepth)!$(backVirDepth:0)
-#IF $(backVirDepth:0)+$(leftOts)>$(lBackWall)-50
-#LETV backVirDepth={$(lBackWall)-50-$(leftOts)}
-#ENDIF
-#LETV oldbackVirDepth={$(backVirDepth:0)}
-#ENDIF
-#IF $(oldbackVirBottom)!$(backVirBottom:0)
-#IF $(backVirHeight:0)+$(bottomOts)>$(altBackWall)-50
-#LETV backVirBottom={$(altBackWall)-50-$(backVirHeight:0)}+7+$(hzoc:0)
-#ENDIF
-#LETV oldbackVirBottom={$(backVirBottom:0)}
-#ENDIF
-#IF $(oldbackVirHeight)!$(backVirHeight:0)
-#IF $(backVirHeight:0)+$(bottomOts)>$(altBackWall)-50
-#LETV backVirHeight=$(altBackWall)-50-$(bottomOts)
-#ENDIF
-#LETV oldbackVirHeight={$(backVirHeight:0)}
-#ENDIF
-//=========================================================================
-#IF $(backVirDepth:0)+$(leftOts)>$(lBackWall)-$(minProfVir)
-// #LETV backVirDepth=$(lBackWall)-$(minProfVir)-$(leftOts)
-#ENDIF
-#IF $(backVirHeight:0)+$(bottomOts)>$(altBackWall)-50
-// #LETV backVirHeight=$(altBackWall)-50-$(bottomOts)
-#ENDIF
-#LETS virParBack=$(leftOts)|$(bottomOts)|$(backVirDepth:0)|$(backVirHeight:0)
-_diffVIres	nameMainSag=leftSag	mainSag=$(leftSag)	viresBack=$(leftOts)	viresBottom=$(bottomOts)	viresWidth=$(backVirDepth:0)	viresHeight=$(backVirHeight:0)
-///
-001	dis=$(leftSag)	c1=$(sagColor)	a=$(mat_backwall:3)	az=-90	sl=7	ax=-90	sa=$(hzoc:0)+7
-#ENDIF
-#ENDIF
-_MERGEBACKWALL	latoBackWall=$(latoBackWall)	addzoctop=$(addzoctop:1)
+_MERGEBACKWALL	latoBackWall=$(latoBackWall)	addzoctop=$(addzoctop:1)	shRusal=$(shRusal:1)
 //расчет упаковки для хдф
 #IF $(hdfsizemax)!!TEST
-//  #LET sizeL=$[EX;$(hdfsizemax);:;1]
-//  #LET sizeA=$[EX;$(hdfsizemax);:;2]
-//  #MSG $(hdfsizemax)
-//001	COD=999HDFUPAKZAG /TD=505	L=$(sizeL)	A=$(sizeA)	P=4	lato=6  //Test
-//упаковка
-_calculate_size	mis_zst=$(hdfsizemax)
-#LET sizeL=$(LargLDsp)
-#LET sizeA=$(AltLDsp)
-///было
-//#LETV _wr=999PODLZST
-//по письму марии насчет упаковок 16.01.2020
-#LETV _wr=999ZAGHDFUPAK
-001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(NAVESLIVING:8);WR=$(_wr:3);TD=505 /Упаковка для задней стенки /#L+1	L=$(sizeL)	A=$(sizeA)	P=16  //Test
-//распил дсп
-#LETV _MNP=999PODLZST
-#LETV _wr=999PODLZST
-105	COD= / / /#L+3	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
+   //  #LET sizeL=$[EX;$(hdfsizemax);:;1]
+   //  #LET sizeA=$[EX;$(hdfsizemax);:;2]
+   //  #MSG $(hdfsizemax)
+   //001	COD=999HDFUPAKZAG /TD=505	L=$(sizeL)	A=$(sizeA)	P=4	lato=6  //Test
+   //упаковка
+   _calculate_size	mis_zst=$(hdfsizemax)
+   #LET sizeL=$(LargLDsp)
+   #LET sizeA=$(AltLDsp)
+   ///было
+   //#LETV _wr=999PODLZST
+   //по письму марии насчет упаковок 16.01.2020
+   #LETV _wr=999ZAGHDFUPAK
+   001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(NAVESLIVING:8);WR=$(_wr:3);TD=505 /Упаковка для задней стенки /#L+1	L=$(sizeL)	A=$(sizeA)	P=16  //Test
+   //распил дсп
+   #LETV _MNP=999PODLZST
+   #LETV _wr=999PODLZST
+   105	COD= / / /#L+3	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
 #ENDIF
 /////
 //расчет упаковки для стеклянных полок
 #IF $(steklosizemax)!!X
-//#MSG $(polkaStekloCount)
-//  #LET sizeL=$[EX;$(hdfsizemax);:;1]
-//  #LET sizeA=$[EX;$(hdfsizemax);:;2]
-//  #MSG $(hdfsizemax)
-//упаковка
-#LET upakCount1=int($(stekloCountScene)/10)
-#LET upakCount2=FRC($(stekloCountScene)/10)
-#IF $(upakCount2)>0 #LET upakCount2=1
-#LET upakCount=$(upakCount1)+$(upakCount2)
-//#MSG $(upakCount1) xx $(upakCount2)
-//   #IF $(upakCount)<=0 #LET upakCount=1
-_calculate_size	mis_zst=$(steklosizemax)
-#LET sizeLfinish=$(LargLDsp)
-#LET sizeAfinish=$(AltLDsp)
-////////////////подбор стандартных размеров упаковок/////////////
-_checkSizeStandart	testL=$(LargLDsp)	testA=$(AltLDsp)
-//#MSG $(sizeLfinish) x $(sizeAfinish)
-#LET sumA=$(sizeLfinish)+$(sizeAfinish)
-#LET finishLa=$(sizeLfinish)
-#LET finishAa=$(sizeAfinish)
-_checkSizeStandart	testL=$(AltLDsp)	testA=$(LargLDsp)
-//#MSG $(sizeLfinish) x $(sizeAfinish)
-#LET sumB=$(sizeLfinish)+$(sizeAfinish)
-#LET finishLb=$(sizeLfinish)
-#LET finishAb=$(sizeAfinish)
-#IF $(sumA)>$(sumB)
-#LET sizeL=$(finishLb)
-#LET sizeA=$(finishAb)
-#ELSE
-#LET sizeL=$(finishLa)
-#LET sizeA=$(finishAa)
-#ENDIF
-//#LET sizeL=$(sizeLfinish)
-//#LET sizeA=$(sizeAfinish)
-/////////////////////////////////////////////////////////////////
-#LETV _wr=999PODLZST
-// #LETV _MNP=999ZAGLSDSP
-#LETV _MNP=999K_VETRORIP6
-001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(_MNP:3);WR=$(_wr:3);TD=505 /Упаковка для стеклянных полок /#L+1#Q$(upakCount)	L=$(sizeL)	A=$(sizeA)	P=16  //Test
-//распил дсп
-#LETV _MNP=999ZAGLSDSP
-//   #MSG $(_wr)
-105	COD= / /Подложка для стеклянных полок /#L+3#Q2	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
+   //#MSG $(polkaStekloCount)
+   //  #LET sizeL=$[EX;$(hdfsizemax);:;1]
+   //  #LET sizeA=$[EX;$(hdfsizemax);:;2]
+   //  #MSG $(hdfsizemax)
+   //упаковка
+   #LET upakCount1=int($(stekloCountScene)/10)
+   #LET upakCount2=FRC($(stekloCountScene)/10)
+   #IF $(upakCount2)>0 #LET upakCount2=1
+   #LET upakCount=$(upakCount1)+$(upakCount2)
+   //#MSG $(upakCount1) xx $(upakCount2)
+   //   #IF $(upakCount)<=0 #LET upakCount=1
+   _calculate_size	mis_zst=$(steklosizemax)
+   #LET sizeLfinish=$(LargLDsp)
+   #LET sizeAfinish=$(AltLDsp)
+   ////////////////подбор стандартных размеров упаковок/////////////
+   _checkSizeStandart	testL=$(LargLDsp)	testA=$(AltLDsp)
+   //#MSG $(sizeLfinish) x $(sizeAfinish)
+   #LET sumA=$(sizeLfinish)+$(sizeAfinish)
+   #LET finishLa=$(sizeLfinish)
+   #LET finishAa=$(sizeAfinish)
+   _checkSizeStandart	testL=$(AltLDsp)	testA=$(LargLDsp)
+   //#MSG $(sizeLfinish) x $(sizeAfinish)
+   #LET sumB=$(sizeLfinish)+$(sizeAfinish)
+   #LET finishLb=$(sizeLfinish)
+   #LET finishAb=$(sizeAfinish)
+   #IF $(sumA)>$(sumB)
+      #LET sizeL=$(finishLb)
+      #LET sizeA=$(finishAb)
+   #ELSE
+      #LET sizeL=$(finishLa)
+      #LET sizeA=$(finishAa)
+   #ENDIF
+   //#LET sizeL=$(sizeLfinish)
+   //#LET sizeA=$(sizeAfinish)
+   /////////////////////////////////////////////////////////////////
+   #LETV _wr=999PODLZST
+   // #LETV _MNP=999ZAGLSDSP
+   #LETV _MNP=999K_VETRORIP6
+   001	LATO=6	COD=999ZAGHDFUPAK /MNP=$(_MNP:3);WR=$(_wr:3);TD=505 /Упаковка для стеклянных полок /#L+1#Q$(upakCount)	L=$(sizeL)	A=$(sizeA)	P=16  //Test
+   //распил дсп
+   #LETV _MNP=999ZAGLSDSP
+   //   #MSG $(_wr)
+   105	COD= / /Подложка для стеклянных полок /#L+3#Q2	L=$(sizeL)	A=$(sizeA)  //Детали для упаковки
 #ENDIF
 /////

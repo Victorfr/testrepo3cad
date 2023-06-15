@@ -28,12 +28,12 @@ G,DOORS
 
 [GRAFICA]
 _door
-//MACRODOOR
+
+//_ADD_USIL
 //_FLAG_PLASER
 //_rolikDovdNova
 //TIPOLOGI
 //VSTAV
-//_ADDPROFNOVA
 //_krepnova
 // 040
 //303
@@ -41,11 +41,12 @@ _door
 //_ADDPROFNOVA
 //014
 //024
-//065
+//067
+//021
 //020
-
-//065
+//MACRODOOR
 //PEREMICH
+//NAPDOOR
 //_UPAKOVKA_DOOR
 // _PlankiVstavki
 //_DEKOR
@@ -53,8 +54,6 @@ _door
 //_MODUL
 //020
 //_SHKAF
-//_ADDPROFNOVA
-//_ADD_USIL
 //_VDBOX
 //ADDNAP
 //DOORS
@@ -74,10 +73,7 @@ _door
 //TIPOLOGI
 //VNESHNIE
 //105
-//VOLUME
-//_ADD_USIL
 //021
-//066
 //022
 //_MODUL
 //_KREPNOVA

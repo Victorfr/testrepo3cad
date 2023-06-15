@@ -17,7 +17,7 @@ DIM.BLOCCA=0,0,0
 DIM.SPECIALI0,0,0
 MODOADD=
 SPEC=
-DIVIDER=VOLUMEmixal,ADDNAPmixal,$(mat:1)-$(ua),$(mat:1)+$(ua)+$(hzoc:0),$(mat:1),$(mat:1) ,$(matvn:1),$(matvn:1),,$(matvn1),,,4
+DIVIDER=VOLUMEmixal,ADDNAPmixal,$(mat:1)-$(ua),$(mat:1)+$(ua),$(mat:1),$(mat:1) ,$(matvn:1),$(matvn:1),,$(matvn1),,,4
 TRADFLAGS=*,*,*,*,*
 
 
