@@ -1,0 +1,82 @@
+#LETS _ckd=$(x4:1)
+#LETS _ckk=$(x4:2)
+#LETS idtip=$(x5:0)
+#LETS cod_mat=$[ex;$(x4:3);|;1]
+#LETS cod_krom=$[ex;$(x4:4);|;1]
+#LETS name_param_mat=$[ex;$(x4:3);|;2]
+#LETS name_param_krom=$[ex;$(x4:4);|;2]
+#LETS kromSize=$[ex;$(x4:4);|;3]
+#LETS cod_klei=$(x4:5)
+
+
+
+///новые наряды на каркасные детали из фасадного материала
+#LETS soedMat=
+#LET flagNarad=0
+#LETS soedZagstr=_
+#IF $(x7)!! & (($(dp)[16] & {$(x4:8)}=0) | $(dp)[22])
+   //#IF $(da)<=146 #LET da=146
+   #LETS kromParams=$(x4:7)
+   #LETS WK=$[estrai;$(kromParams);|;1]
+   #LETS NK=$[estrai;$(kromParams);|;2]
+   #LETS EK=$[estrai;$(kromParams);|;3]
+   #LETS SK=$[estrai;$(kromParams);|;4]
+   #IF $(da)<=146
+      #IF $(dp)=16
+         #LETS codZag=ZAGLDSP14616
+         #LETS codZagUp=ZAGLDSPUP16
+         
+      #ENDIF
+      #IF $(dp)=22
+         #LETS codZag=ZAGLDSP14622
+         #LETS codZagUp=ZAGLDSPUP22
+         
+      #ENDIF
+      
+      #M MnpWrNamedet,cod=999$(codZagUp)
+      #LETS codZagUp=999T_$(codZagUP)
+      #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek)
+      #IF $(kromSIze)>1 & $(x4:8)=0
+         #LETS params=$(params);SDR={$(da)-1};DDR={$(dl)}
+      #ENDIF
+      $(codZagUP),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)$(soedZagstr)1
+      #LETS soedZagstr=_1.
+      #LET da=146
+      ///макрос определяющий параметры каркасных деталей
+      
+      #M MnpWrNamedet,cod=999$(codZag)
+      #LETS codZag=999T_$(codZag)
+      #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek)
+      #IF $(kromSIze)>1 & $(x4:8)=0
+         #LETS params=$(params);SDR={$(da)-2};DDR={$(dl)-2}
+      #ENDIF
+      $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)$(soedZagstr)1
+      #LETS soedMat=1.1.
+      //если заготовка меньше 146 мм по высоте то учитывается еще кромление по 1 стороне распила заготовки 146мм
+      
+      999$(cod_krom),rn3(($(dl)+30)/1000),$(name_param_krom)=$(_ckk),($(dl)+30),,,,,,,,,$(mat)_1.2
+      #IF $(cod_klei)!!NO
+         999$(cod_klei),rn3(($(dl))/1000*0.016*0.25),,,,,,,,,,,$(mat)_1.3
+      #ENDIF
+   #ELSE ///высота больше 146
+      #IF $(dp)=16
+         #LETS codZag=999ZAGLDSP16
+      #ENDIF
+      #IF $(dp)=22
+         #LETS codZag=999ZAGLDSP22
+      #ENDIF
+      ///макрос определяющий параметры каркасных деталей
+      
+      #M MnpWrNamedet,cod=$(codZag)
+      #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek);ZDD=1
+      #IF $(kromSIze)>1 & {$(x4:8)}=0
+         #LETS params=$(params);SDR={$(da)-2};DDR={$(dl)-2}
+      #ENDIF
+      $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)_1
+      #LETS soedMat=1.
+   #ENDIF
+   //#LET flagNarad=1
+#ENDIF
+#M list_dsp,larg_zag=$(dl),prof_zag=$(dp),alte_zag=$(da),tip_det=zad,kol_stor_krom=zoc1,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat),soed_str=_$(soedMat),flagNarad=$(flagNarad)
+
+#M jobobr,obr=$(x7),mat_add=$(mat),soed_str=_

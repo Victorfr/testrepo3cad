@@ -1,0 +1,145 @@
+#LETS _ckd=$(x4:1)
+#LETS _ckk=$(x4:2)
+#LETS cod_mat=$[ex;$(x4:3);|;1]
+#LETS cod_krom=$[ex;$(x4:4);|;1]
+#LETS name_param_mat=$[ex;$(x4:3);|;2]
+#LETS name_param_krom=$[ex;$(x4:4);|;2]
+#LETS cod_klei=$(x4:5)
+#LETS dataordine=$(x5:0)
+#LETS dataNewMet=$(x5:1)
+
+#LET detMOd=$(x4:8)
+
+
+///новые наряды на каркасные детали из фасадного материала
+#LETS soedMat=_
+#LET flagNarad=0
+#LETS soedZagstr=_
+//каркасная планка в модуле
+
+   
+#IF $(detMod)[1] & $(dp)[18] & $(dl)<=146
+   #LETS kromParams=$(x4:7)
+   #LETS WK=$[estrai;$(kromParams);|;1]
+   #LETS NK=$[estrai;$(kromParams);|;2]
+   #LETS EK=$[estrai;$(kromParams);|;3]
+   #LETS SK=$[estrai;$(kromParams);|;4]
+   #LETS codzag=ZAGLDSP14618
+   #LET dl=146
+   #M MnpWrNamedet,cod=999$(codZag)
+   #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek);ZDD=1
+   
+   #LETS codZag=999T_$(codZag)
+   $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)_1
+  
+   //если заготовка меньше 146 мм по высоте то учитывается еще кромление по 1 стороне распила заготовки 146мм
+   999$(cod_krom),rn3(($(da)+30)/1000),$(name_param_krom)=$(_ckk),($(da)+30),,,,,,,,,$(mat)_2
+   #IF $(cod_klei)!!NO
+      999$(cod_klei),rn3(($(da))/1000*0.016*0.25),,,,,,,,,,,$(mat)_3
+   #ENDIF
+ #LETS soedMat=_1.
+#ENDIF
+
+
+#IF $(dp)[18] & $(detMod)!1
+   #LETS kromParams=$(x4:7)
+   #LETS WK=$[estrai;$(kromParams);|;1]
+   #LETS NK=$[estrai;$(kromParams);|;2]
+   #LETS EK=$[estrai;$(kromParams);|;3]
+   #LETS SK=$[estrai;$(kromParams);|;4]
+   #LETS soedMat=_1.
+   #IF $(dl)=16
+      //#LETS codZag=ZAGLDSP16
+   #ENDIF
+   #IF $(dp)=18
+      #LETS codZag=ZAGLDSP18
+   #ENDIF
+   #IF $(dl)=22
+      // #LETS codZag=ZAGLDSP22
+   #ENDIF
+   
+   #IF $(da)<=146
+      //#LET da=146
+      #LETS codZag=ZAGLDSP14618
+      #LETS codZagUp=ZAGLDSPUp18
+      
+      #M MnpWrNamedet,cod=999$(codZagUp)
+      #LETS codZagUp=999T_$(codZagUP)
+      #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek)
+      #IF $(nt)!!
+         //#LETS params=$(params);NT=$(NT)
+      #ENDIF
+      $(codZagUP),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)$(soedZagstr)1
+      #LETS soedZagstr=_1.
+      #LET da=146
+      #LETS soedMat=$(soedZagstr)1.
+      
+      //если заготовка меньше 146 мм по высоте то учитывается еще кромление по 1 стороне распила заготовки 146мм
+      999$(cod_krom),rn3(($(dl)+30)/1000),$(name_param_krom)=$(_ckk),($(dl)+30),,,,,,,,,$(mat)_2
+      #IF $(cod_klei)!!NO
+         999$(cod_klei),rn3(($(dl))/1000*0.016*0.25),,,,,,,,,,,$(mat)_3
+      #ENDIF
+   #ENDIF
+   
+   ///макрос определяющий параметры каркасных деталей
+   
+   #M MnpWrNamedet,cod=999$(codZag)
+   
+   #LETS codZag=999T_$(codZag)
+   ///тк фасад мантера то наряд идет для него
+   #LETS MNP=750283945
+   #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek);ZDD=1
+   ///для шк мантера
+   #IF $(dl)=18
+      //    #LETS params=WR=$(WR);MNP=$(MNP);OCF=$(_ckd);CK=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek);ZDD=1
+   #ENDIF
+   #IF $(kromSIze)>1 & {$(x4:8)}=0
+      #LETS params=$(params);SDR={$(dp)-2};DDR={$(da)-2}
+   #ENDIF
+   
+   
+   $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)$(soedZagstr)1
+   
+#ENDIF
+
+
+
+
+
+
+
+
+
+#M list_dsp,larg_zag=$(dl),prof_zag=$(dp),alte_zag=$(da),tip_det=zad,kol_stor_krom=zad4,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat),soed_str=$(soedMat),flagNarad=$(flagNarad)
+
+#IF 0
+   #LETS mat_modul=$(x5:5)
+   #IF $(dl)>=296
+      #IF $[datecompare;$(dataordine);$(dataNewMet)]>=0
+         #LET sl_otv=116, l_napr=5
+      #ELSE
+         #LET sl_otv=86, l_napr=8
+      #ENDIF
+      !{
+      obrabotka,,,,,,{2};D5G13;x={$(mat_modul)-2+8+$(l_napr)};y={50}
+      obrabotka,,,,,,{2};D5G13;x={$(dl)-($(mat_modul)-2+8+$(l_napr))};y={50}
+      obrabotka,,,,,,{2};D5G13;x={$(dl)-($(sl_otv)+$(mat_modul)-2+$(l_napr))};y={$(da)-($(mat_modul)+35)}
+      obrabotka,,,,,,{2};D5G13;x={$(sl_otv)+$(mat_modul)-2+$(l_napr)};y={$(da)-($(mat_modul)+35)}
+      #IF $(da)>={$(mat_modul)+227}
+         obrabotka,,,,,,{2};D5G13;x={$(mat_modul)-2+8+$(l_napr)};y={$(da)-($(mat_modul)+67)}
+         obrabotka,,,,,,{2};D5G13;x={$(dl)-($(mat_modul)-2+8+$(l_napr))};y={$(da)-($(mat_modul)+67)}
+      #ENDIF
+      #IF $(dl)>{$(mat_modul)*2+644}
+         obrabotka,,,,,,{2};D5G13;x={$(dl)/2};y={$(da)-($(mat_modul)+35)}
+      #ENDIF
+      !}
+   #ENDIF
+#ENDIF
+
+#IF $(x7:1)[4]
+   #LETS mat_modul=$(x7:0)
+   #LET macroSposta={$(x7:2)}
+   #LET macroSpostaL={$(x7:3)}
+   #LET deltaAkorpVid={$(x7:4)}
+   #M livmodobrfas,idopar=1,detYash=1
+#ENDIF

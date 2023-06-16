@@ -1,0 +1,5 @@
+#IF $(x4:0)==999REBROUPAK
+   999MDF6,rn3($(da)*$(dl)/1000000),,$(dl),$(da),$(dp),,,,,,,$(mat)_1
+#ELSE
+   999NLDSP16,rn3($(da)*$(dl)/1000000),,$(dl),$(da),$(dp),,,,,,,$(mat)_1
+#ENDIF
