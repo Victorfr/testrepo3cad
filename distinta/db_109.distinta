@@ -64,6 +64,7 @@
    #IF $(dl)=16
       #LETS codZag=ZAGLDSPSK16
    #ENDIF
+  
    #IF $(dl)=22
       #LETS codZag=ZAGLDSPSK22
    #ENDIF
@@ -74,6 +75,10 @@
          #IF $(dl)=16
             #LETS codZag=ZAGLDSP14616
             #LETS codZagUp=ZAGLDSPUP16
+         #ENDIF
+       #IF $(dl)=18
+            #LETS codZag=ZAGLDSP14618
+            #LETS codZagUp=ZAGLDSPUP18
          #ENDIF
          #IF $(dl)=22
             #LETS codZag=ZAGLDSP14622

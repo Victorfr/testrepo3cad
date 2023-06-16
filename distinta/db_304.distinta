@@ -46,12 +46,12 @@
    !}
    999KLEI_PL,rn3((2450*92/1000000)*0.2),,,,,,,,,,,$(mat)_$(matNum)2
    999$(art_pl),rn3((92+55)*(2450+55)/1000000),,{2450+55},{96+55},,,,,,,,$(mat)_$(matNum)3
-   #LETS cod=999ZAGCOR
+   #LETS cod=999ZAGCORN
    #M MnpWrNamedet,cod=$(cod)
-   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=404879827;IDO=2,{45+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)4
+   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=782449709;IDO=2,{45+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)4
    //======================================
    //добавляем макрос для обработки рисунка
-   #M NPOMACRO,NPO=404879827
+   #M NPOMACRO,NPO=782449709
    //#MSG $(draw) x $(NPOMACRONAME)
    obrabotka,,,,,,1;$(NPOMACRONAME);IDO=2,,,,,,
    //======================================
@@ -92,12 +92,12 @@
    !}
    !}
    
-   #LETS cod=999ZAGCORKR
+   #LETS cod=999ZAGCORKRN
    #M MnpWrNamedet,cod=$(cod)
-   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=404879827;IDO=2,{45},{2450},19,,,,,,$(namedet),$(mat)_$(matNum)1.2
+   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=782449709;IDO=2,{45},{2450},19,,,,,,$(namedet),$(mat)_$(matNum)1.2
    //======================================
    //добавляем макрос для обработки рисунка
-   #M NPOMACRO,NPO=404879827
+   #M NPOMACRO,NPO=782449709
    //#MSG $(draw) x $(NPOMACRONAME)
    obrabotka,,,,,,1;$(NPOMACRONAME);IDO=2,,,,,,
    //======================================
