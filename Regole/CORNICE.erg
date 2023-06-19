@@ -94,7 +94,7 @@ _dekElemCode,_nameParam=COR,_facturaDek=$(_Factura)
    #LETS _MNP:3=480680448
 #ENDIF
 
-
+//010
 #IF $(_ModDoorRasp:1)[s26]
    304,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);FPL=N / /#l-1#Q1,SP=32,L=75,A=2450,P=100,DIS=cor_adele,X1=$(tmp_cor)  //Карниз
    #IF $(count_cor)>1
