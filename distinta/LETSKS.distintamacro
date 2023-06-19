@@ -1,0 +1,45 @@
+!parametri profLenght=0
+#LETS sks=
+#LET count_sh=0
+#LETS ksv=
+#IF $(profLenght)!0
+#IF $(profLenght)<200
+#LETS ksv={5+35}|{5+$(profLenght)-35}|$(ksv)
+#LET count_sh=4+$(count_sh)
+#ELSEIF $(profLenght)<350
+///когда попадает ручка профиль A=204 мм сверловок нет
+#IF  $(vertmannov$(_ctx):1)!1
+#LETS ksv={5+50}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=4+$(count_sh)
+#ENDIF
+#ELSEIF $a<600
+#LETS ksv={5+50}|{5+int($(profLenght)/2)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=6+$(count_sh)
+#ELSEIF $a<850
+#LETS ksv={5+50}|{$(spostaa)+int($(profLenght)/3)}|{5+int($(profLenght)*2/3)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=8+$(count_sh)
+#ELSEIF $a<1100
+#LETS ksv={5+50}|{5+int($(profLenght)/4)}|{5+int($(profLenght)*2/4)}|{5+int($(profLenght)*3/4)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=10+$(count_sh)
+#ELSEIF $a<1350
+#LETS ksv={5+50}|{5+int($(profLenght)/5)}|{5+int($(profLenght)*2/5)}|{5+int($(profLenght)*3/5)}|{5+int($(profLenght)*4/5)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=12+$(count_sh)
+#ELSEIF $a<1600
+#LETS ksv={5+50}|{5+int($(profLenght)/6)}|{5+int($(profLenght)*2/6)}|{5+int($(profLenght)*3/6)}|{5+int($(profLenght)*4/6)}|{5+int($(profLenght)*5/6)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=14+$(count_sh)
+#ELSEIF $a<1850
+#LETS ksv={5+50}|{5+int($(profLenght)/7)}|{5+int($(profLenght)*2/7)}|{5+int($(profLenght)*3/7)}|{5+int($(profLenght)*4/7)}|{5+int($(profLenght)*5/7)}|{5+int($a*6/7)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=16+$(count_sh)
+#ELSEIF $a<2100
+#LETS ksv={5+50}|{5+int($(profLenght)/8)}|{5)+int($(profLenght)*2/8)}|{5+int($(profLenght)*3/8)}|{5+int($(profLenght)*4/8)}|{5+int($(profLenght)*5/8)}|{5+int($(profLenght)*6/8)}|{5+int($(profLenght)*7/8)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=18+$(count_sh)
+#ELSEIF $a<2350
+#LETS ksv={5+50}|{5+int($(profLenght)/9)}|{5+int($(profLenght)*2/9)}|{5+int($(profLenght)*3/9)}|{5+int($(profLenght)*4/9)}|{5+int($(profLenght)*5/9)}|{5+int($(profLenght)*6/9)}|{5+int($(profLenght)*7/9)}|{5+int($(profLenght)*8/9)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=20+$(count_sh)
+#ELSEIF $a<2700
+#LETS ksv={5+50}|{5+int($(profLenght)/10)}|{5+int($(profLenght)*2/10)}|{5+int($(profLenght)*3/10)}|{5+int($(profLenght)*4/10)}|{5+int($(profLenght)*5/10)}|{5+int($(profLenght)*6/10)}|{5+int($(profLenght)*7/10)}|{5+int($(profLenght)*8/10)}|{5+int($(profLenght)*9/10)}|{5+$(profLenght)-50}|$(ksv)
+#LET count_sh=22+$(count_sh)
+#ENDIF
+#LETS dlinStr=$[len;$(ksv)]
+#LETS sks=$[mid;$(ksv);1;{$(dlinStr)-1}]
+#ENDIF

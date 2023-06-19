@@ -1,0 +1,54 @@
+!parametri idopar=999	detYash=0
+#IF $(dl)>=296
+#LETS parNameX=x
+#LETS parNameY=y
+#IF $(detYash)=1
+#LETS parNameX=y
+#LETS parNameY=x
+#ENDIF
+#IF $[datecompare;$(dataordine);$(dataNewMet)]>=0
+#LET sl_otv=116	 l_napr=5
+#ELSE
+#LET sl_otv=86	 l_napr=8
+#ENDIF
+#IF $[DATECOMPARE ; $(dataordine);05.07.2021]>0
+#LET slAddK=1
+#LET l_napr=4
+#ELSE
+#LET slAddK=0
+#ENDIF
+#LET bokmodA={$(da)-($(mat_modul)*2+16+10)+$(deltaAkorpVid)}
+#IF $(idopar)!!999
+obrabotka						{2};D5G13;$(parNameY)={$(macroSpostaL)+8+$(l_napr)};$(parNameX)={$(da)+40-$(bokmodA)-$(macroSposta)};IDO=$(idopar) // под боковину
+obrabotka						{2};D5G13;$(parNameY)={$(dl)-($(macroSpostaL)+8+$(l_napr))};$(parNameX)={$(da)+40-$(bokmodA)-$(macroSposta)};IDO=$(idopar) //под боковину
+//=====ответки под дно===================
+#IF $(flagFasadNoDnoObr)!1
+obrabotka						{2};D5G13;$(parNameY)={$(dl)-($(sl_otv) +$(l_napr)+ $(macroSpostaL))};$(parNameX)={$(da)-($(macroSposta)+21)};IDO=$(idopar) // под дно
+obrabotka						{2};D5G13;$(parNameY)={$(sl_otv) +$(l_napr)+ $(macroSpostaL)};$(parNameX)={$(da)-($(macroSposta)+21)};IDO=$(idopar) // под дно
+#IF $(dl)>{$(mat_modul)*2+644}
+obrabotka						{2};D5G13;$(parNameY)={$(dl)/2};$(parNameX)={$(da)-($(macroSposta)+21)};IDO=$(idopar) // под дно
+#ENDIF
+#ENDIF
+//=======================================
+#IF $(bokmodA)>=213 // $(da)>={$(mat_modul)+227}
+obrabotka						{2};D5G13;$(parNameY)={$(macroSpostaL)+8+$(l_napr)};$(parNameX)={$(da)-53-$(macroSposta)};IDO=$(idopar)
+obrabotka						{2};D5G13;$(parNameY)={$(dl)-($(macroSpostaL)+8+$(l_napr))};$(parNameX)={$(da)-53-$(macroSposta)};IDO=$(idopar)
+#ENDIF
+#ELSE
+obrabotka						{2};D5G13;$(parNameY)={$(macroSpostaL)+8+$(l_napr)};$(parNameX)={$(da)+40-$(bokmodA)-$(macroSposta)} // под боковину
+obrabotka						{2};D5G13;$(parNameY)={$(dl)-($(macroSpostaL)+8+$(l_napr))};$(parNameX)={$(da)+40-$(bokmodA)-$(macroSposta)} //под боковину
+//=====ответки под дно===================
+#IF $(flagFasadNoDnoObr)!1
+obrabotka						{2};D5G13;$(parNameY)={$(dl)-($(sl_otv) +$(l_napr)+ $(macroSpostaL))};$(parNameX)={$(da)-($(macroSposta)+21)} // под дно
+obrabotka						{2};D5G13;$(parNameY)={$(sl_otv) +$(l_napr)+ $(macroSpostaL)};$(parNameX)={$(da)-($(macroSposta)+21)} // под дно
+#IF $(dl)>{$(mat_modul)*2+644}
+obrabotka						{2};D5G13;$(parNameY)={$(dl)/2};$(parNameX)={$(da)-($(macroSposta)+21)} // под дно
+#ENDIF
+#ENDIF
+//=======================================
+#IF $(da)>={$(mat_modul)+227}
+obrabotka						{2};D5G13;$(parNameY)={$(macroSpostaL)+8+$(l_napr)};$(parNameX)={$(da)-53-$(macroSposta)}
+obrabotka						{2};D5G13;$(parNameY)={$(dl)-($(macroSpostaL)+8+$(l_napr))};$(parNameX)={$(da)-53-$(macroSposta)}
+#ENDIF
+#ENDIF
+#ENDIF

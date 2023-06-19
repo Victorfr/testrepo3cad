@@ -1,0 +1,36 @@
+//////обьявление констант//////
+#LET x=$(ldet)
+#LET ldet=$(x)
+//#MSG $(x5:0) --- $(ldet)
+#LET Lmin_sr=42
+#LET Lstag=32
+#LET Lmin1=70
+#LET Lmax1=83.9
+#LET Lmin2=84
+//#LET Lmax2=450
+//#LET Lmin3=450.1
+#LET Lmax2=429
+#LET Lmin3=429.1
+#LET Lmax3=600
+#LET Lmin4=600.1
+#LET Lmax4=750
+#LET Lmin5=750.1
+#LET Lmax5=2040//1000
+#LET Nst=0	Lotv=0	Lstep=0
+//#LET Ldet=800
+#LET Nst= $[iif;$(Lmin1)<=$(Ldet) & $(Ldet)<=$(Lmax1);1;0]+$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);2;0]+$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);3;0]\
++$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);4;0]\
++$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);5;0]
+#LET Lotv=$(Ldet)/2*$[iif;$(Lmin1)<=$(Ldet)&$(Ldet)<=$(Lmax1);1;0]+($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/32)*32)/2*$[iif;$(Lmin2)<=$(Ldet)&$(Ldet)<=$(Lmax2);1;0]\
++($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/2/32)*32*2)/2*$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);1;0]\
++($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*3)/2*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
++($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*4)/2*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
+#LET Lstep=int(($(Ldet)-$(Lmin_sr)*2)/32)*32*$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);1;0]\
++int(($(Ldet)-$(Lmin_sr)*2)/2/32)*32*$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);1;0]\
++int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
++int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
+#IF $(ldet)<=125
+#LET Nst=2
+#LET lotv=25
+#LET lstep=$(ldet)-50
+#ENDIF
