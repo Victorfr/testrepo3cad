@@ -1,0 +1,12 @@
+!parametri ldet=$(dp)
+#LET lOtv=$(ldet)-100
+#LET countOtv=0
+#LETS paramsOtv=50;{$(ldet)-50}
+#LET stepMax=200
+#IF $(lOtv)>=$(stepMax)
+#LET countOtv=int($(lOtv)/$(stepMax))
+#LET stepOtv=int($(lotv)/($(countOtv)+1))
+#FOR $1:$(countOtv)
+#LETS paramsOtv=$(paramsOtv);{50+$I*$(stepOtv)}
+#ENDFOR
+#ENDIF

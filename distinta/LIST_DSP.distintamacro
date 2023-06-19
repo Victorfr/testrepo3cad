@@ -1,0 +1,87 @@
+#IF $(soed_str)==
+#LETS soed_str=.
+#ENDIF
+#IF $(tip_det)==bok
+999$(cod_mat)	rn3($(alte_zag)*$(prof_zag)/1000000)	$(name_param_mat)=$(_ckd)	$(larg_zag)	$(alte_zag)	$(prof_zag)							$(mat_add)$(soed_str)1
+#ELSEIF $(tip_det)==kr
+999$(cod_mat)	rn3($(larg_zag)*$(prof_zag)/1000000)	$(name_param_mat)=$(_ckd)	$(larg_zag)	$(alte_zag)	$(prof_zag)							$(mat_add)$(soed_str)1
+#ELSEIF $(tip_det)==zad
+999$(cod_mat)	rn3($(larg_zag)*$(alte_zag)/1000000)	$(name_param_mat)=$(_ckd)	$(larg_zag)	$(alte_zag)	$(prof_zag)							$(mat_add)$(soed_str)1
+#ENDIF
+//при измененных нарядах кромки и клей должны менять матрикулярный номер
+#IF $(flagNarad)[1]
+#LETS soed_str=_
+#ENDIF
+#IF $(kol_stor_krom)==bok4
+// кромление по четырем сторонам две высоты и две глубины
+999$(cod_krom)	rn3(($(alte_zag)+30+$(prof_zag)+30)*2/1000)	$(name_param_krom)=$(_ckk)	($(alte_zag)+30+$(prof_zag)+30)*2									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3(($(alte_zag)+$(prof_zag))*2/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==zad1
+// кромление по одной стороне высоты
+999$(cod_krom)	rn3(($(alte_zag)+30)/1000)	$(name_param_krom)=$(_ckk)	$(alte_zag)+30									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3($(alte_zag)/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==zad4
+// кромление по четырем сторонам две высоты и две ширины
+999$(cod_krom)	rn3(($(alte_zag)+30+$(larg_zag)+30)*2/1000)	$(name_param_krom)=$(_ckk)	($(alte_zag)+30+$(larg_zag)+30)*2									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3(($(alte_zag)+$(larg_zag))*2/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==zad3
+// кромление по трем сторонам высота и две ширины
+999$(cod_krom)	rn3(($(alte_zag)+30+($(larg_zag)+30)*2)/1000)	$(name_param_krom)=$(_ckk)	$(alte_zag)+30+($(larg_zag)+30)*2									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3(($(alte_zag)+$(larg_zag)*2)/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==kr4
+// кромление по четырем сторонам две глубины и две ширины
+999$(cod_krom)	rn3(($(prof_zag)+30+$(larg_zag)+30)*2/1000)	$(name_param_krom)=$(_ckk)	($(prof_zag)+30+$(larg_zag)+30)*2									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3(($(prof_zag)+$(larg_zag))*2/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==bok3
+// кромление по трем сторонам две высоты и глубина
+999$(cod_krom)	rn3((($(alte_zag)+30)*2+($(prof_zag)+15))/1000)	$(name_param_krom)=$(_ckk)	($(alte_zag)+30)*2+($(prof_zag)+15)									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3((($(alte_zag)+30)*2+($(prof_zag)+15))/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==bok3_1
+// кромление по трем сторонам две глубины и высота
+999$(cod_krom)	rn3((($(alte_zag)+30)+($(prof_zag)+15)*2)/1000)	$(name_param_krom)=$(_ckk)	($(alte_zag)+30)+($(prof_zag)+15)*2									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3((($(alte_zag)+30)+($(prof_zag)+15)*2)/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==kr2
+// кромление по двум сторонам ширины
+999$(cod_krom)	rn3(($(larg_zag)+30)*2/1000)	$(name_param_krom)=$(_ckk)	($(larg_zag)+30)*2									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3($(larg_zag)*2/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==per2
+// кромление по двум сторонам высоты
+999$(cod_krom)	rn3(($(alte_zag)+30)*2/1000)	$(name_param_krom)=$(_ckk)	($(alte_zag)+30)*2									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3($(alte_zag)*2/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==bok1
+// кромление по одной стороне высоты
+999$(cod_krom)	rn3(($(alte_zag)+30)/1000)	$(name_param_krom)=$(_ckk)	($(alte_zag)+30)									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3($(alte_zag)/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==zoc1
+// кромление по одной стороне ширины
+999$(cod_krom)	rn3(($(larg_zag)+30)/1000)	$(name_param_krom)=$(_ckk)	($(larg_zag)+30)									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3($(larg_zag)/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ELSEIF $(kol_stor_krom)==kr2_1
+// кромление по одной ширине и одной глубине
+999$(cod_krom)	rn3(($(larg_zag)+15+$(prof_zag)+15)/1000)	$(name_param_krom)=$(_ckk)	($(larg_zag)+15+$(prof_zag)+15)									$(mat_add)$(soed_str)2
+#IF $(cod_klei)!!NO
+999$(cod_klei)	rn3(($(larg_zag)+$(prof_zag))/1000*0.016*0.25)											$(mat_add)$(soed_str)3
+#ENDIF
+#ENDIF
