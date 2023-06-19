@@ -1,86 +1,99 @@
-!parametri idopar=999	stagOts=100
+!parametri idopar=999,stagOts=100
 #LETS nameObrPetl=D35G13
 #IF $[DATECOMPARE;$(dataordine);18.04.2021]>0
-#LETS nameObrPetl=D35.2G13
+   #LETS nameObrPetl=D35.2G13
 #ENDIF
 #IF $(petlObr)=1
-#LET countPetl=$[ex;$(petlObrPar);|;1]
-#LETS petlXparams=$[ex;$(petlObrPar);|;3]
-#LET petlY=$[ex;$(petlObrPar);|;2]
-#IF $(fiaApertoAnta)=1
-#LET LPBR=6214833
-#LET petlY=$(dl)-$(petlY)
-#ELSE
-#LET LPBR=6214834
-#ENDIF
-#IF $(idopar)!!999
-//obrabotka						2;SOF;LPBR=$(LPBR)						
-#FOR $1:$(countPetl)
-#LET petlX={$[ex;$(petlXparams);X;$(i)]}
-obrabotka						2;$(nameObrPetl);x={$(petlX)};y={$(petlY)};IDO=$(idopar)						
-#ENDFOR
-#ELSE
-//obrabotka						2;SOF;LPBR=$(LPBR)						
-#FOR $1:$(countPetl)
-#LET petlX={$[ex;$(petlXparams);X;$(i)]}
-obrabotka						2;$(nameObrPetl);x={$(petlX)};y={$(petlY)}						
-#ENDFOR
-#ENDIF
+   #LET countPetl=$[ex;$(petlObrPar);|;1]
+   #LETS petlXparams=$[ex;$(petlObrPar);|;3]
+   #LET petlY=$[ex;$(petlObrPar);|;2]
+   #IF $(fiaApertoAnta)=1
+      #LET LPBR=6214833
+      #LET petlY=$(dl)-$(petlY)
+   #ELSE
+      #LET LPBR=6214834
+   #ENDIF
+   #IF $(idopar)!!999
+      //obrabotka,,,,,,2;SOF;LPBR=$(LPBR),,,,,,
+      #FOR $1:$(countPetl)
+         #LET petlX={$[ex;$(petlXparams);X;$(i)]}
+         obrabotka,,,,,,2;$(nameObrPetl);x={$(petlX)};y={$(petlY)};IDO=$(idopar),,,,,,
+      #ENDFOR
+   #ELSE
+      //obrabotka,,,,,,2;SOF;LPBR=$(LPBR),,,,,,
+      #FOR $1:$(countPetl)
+         #LET petlX={$[ex;$(petlXparams);X;$(i)]}
+         obrabotka,,,,,,2;$(nameObrPetl);x={$(petlX)};y={$(petlY)},,,,,,
+      #ENDFOR
+   #ENDIF
 #ENDIF
 #IF $(flagCOrrector)=1
-#LET nizStag=({$(da)-1990})/2
-#LET stagOts=150
-#IF $(fiaApertoAnta)=1
-obrabotka						2;$(nameObrPetl);x={$(nizStag)};y={$(stagOts)};IDO=$(idopar)						
-obrabotka						2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(stagOts)};IDO=$(idopar)						
-obrabotka						2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(stagOts)+7};IDO=$(idopar)						
-#ELSE
-obrabotka						2;$(nameObrPetl);x={$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar)						
-obrabotka						2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar)						
-obrabotka						2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(dl)-$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(dl)-$(stagOts)+7};IDO=$(idopar)						
+   #LET nizStag=({$(da)-1990})/2
+   #LET stagOts=150
+   #IF $(fiaApertoAnta)=1
+      obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
+      obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
+      obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(stagOts)+7};IDO=$(idopar),,,,,,
+   #ELSE
+      obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar),,,,,,
+      obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar),,,,,,
+      obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(dl)-$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(dl)-$(stagOts)+7};IDO=$(idopar),,,,,,
+   #ENDIF
 #ENDIF
+//обработка под стяжки с двух сторон для топ лайн и шк двери с 2 корректорами (тип 4)
+#IF $(flagCorrector)[2;4]
+   
+   obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(stagOts)+7};IDO=$(idopar),,,,,,
+   obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
+   obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
+   obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(dl)-$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(dl)-$(stagOts)+7};IDO=$(idopar),,,,,,
+   obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar),,,,,,
+   obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar)
+   
+   
+   
 #ENDIF
 #IF $(flagCorrector)[2;3] //Двери топлайн
-#LET nizStag=({$(da)-1990})/2
-#LET stagOts=150
-#IF $(flagCorrector)[2]
-obrabotka						2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(stagOts)+7};IDO=$(idopar)						
-obrabotka						2;$(nameObrPetl);x={$(nizStag)};y={$(stagOts)};IDO=$(idopar)						
-obrabotka						2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(stagOts)};IDO=$(idopar)						
-obrabotka						2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(dl)-$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(dl)-$(stagOts)+7};IDO=$(idopar)						
-obrabotka						2;$(nameObrPetl);x={$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar)						
-obrabotka						2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar)
-#ENDIF
-///отверстия нижние
-obrabotka						2;D5G13;x=23;y=97;IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;X={23+32};y=97;IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x=23;y={97+64};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={23+32};y={97+64};IDO=$(idopar)						$(mat_add_obr)
-///////////////////////////////////////////////////////////////////////
-obrabotka						2;D5G13;x=23;y={$(dl)-97};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={23+32};y={$(dl)-97};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x=23;y={$(dl)-97-64};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={23+32};y={$(dl)-97-64};IDO=$(idopar)						$(mat_add_obr)
-///////////////////////////////////////////////////////////////////////
-//отверстия верхние
-///////////////////////////////////////////////////////////////////////
-obrabotka						2;D8G13;x={$(da)-23};y=65;IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D8G13;x={$(da)-23};y={65+32+64+32};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16};y=65;IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16};y={65+32+64+32};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y=65;IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y={65+32};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y={65+32+64};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y={65+32+64+32};IDO=$(idopar)						$(mat_add_obr)
-///////////////////////////////////////////////////////////////////////////////
-obrabotka						2;D8G13;x={$(da)-23};y={$(dl)-65};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D8G13;x={$(da)-23};y={$(dl)-(65+32+64+32)};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16};y={$(dl)-65};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16};y={$(dl)-(65+32+64+32)};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y={$(dl)-65};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y={$(dl)-(65+32)};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y={$(dl)-(65+32+64)};IDO=$(idopar)						$(mat_add_obr)
-obrabotka						2;D5G13;x={$(da)-23-16-16};y={$(dl)-(65+32+64+32)};IDO=$(idopar)						$(mat_add_obr)
-///////////////////////////////////////////////////////////////////////////////
-///
+   #LET nizStag=({$(da)-1990})/2
+   #LET stagOts=150
+   //#IF $(flagCorrector)[2]
+   // obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(stagOts)+7};IDO=$(idopar),,,,,,
+   //obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
+   //obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
+   //obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(dl)-$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(dl)-$(stagOts)+7};IDO=$(idopar),,,,,,
+   //obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar),,,,,,
+   //obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar)
+   //#ENDIF
+   ///отверстия нижние
+   obrabotka,,,,,,2;D5G13;x=23;y=97;IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;X={23+32};y=97;IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x=23;y={97+64};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={23+32};y={97+64};IDO=$(idopar),,,,,,$(mat_add_obr)
+   ///////////////////////////////////////////////////////////////////////
+   obrabotka,,,,,,2;D5G13;x=23;y={$(dl)-97};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={23+32};y={$(dl)-97};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x=23;y={$(dl)-97-64};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={23+32};y={$(dl)-97-64};IDO=$(idopar),,,,,,$(mat_add_obr)
+   ///////////////////////////////////////////////////////////////////////
+   //отверстия верхние
+   ///////////////////////////////////////////////////////////////////////
+   obrabotka,,,,,,2;D8G13;x={$(da)-23};y=65;IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D8G13;x={$(da)-23};y={65+32+64+32};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16};y=65;IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16};y={65+32+64+32};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y=65;IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y={65+32};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y={65+32+64};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y={65+32+64+32};IDO=$(idopar),,,,,,$(mat_add_obr)
+   ///////////////////////////////////////////////////////////////////////////////
+   obrabotka,,,,,,2;D8G13;x={$(da)-23};y={$(dl)-65};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D8G13;x={$(da)-23};y={$(dl)-(65+32+64+32)};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16};y={$(dl)-65};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16};y={$(dl)-(65+32+64+32)};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y={$(dl)-65};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y={$(dl)-(65+32)};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y={$(dl)-(65+32+64)};IDO=$(idopar),,,,,,$(mat_add_obr)
+   obrabotka,,,,,,2;D5G13;x={$(da)-23-16-16};y={$(dl)-(65+32+64+32)};IDO=$(idopar),,,,,,$(mat_add_obr)
+   ///////////////////////////////////////////////////////////////////////////////
+   ///
 #ENDIF
