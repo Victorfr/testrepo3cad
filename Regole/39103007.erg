@@ -1,12 +1,3 @@
-[info]
-Tipo = 1
-Descrizione=39103007.erg
-Tab.Dim.=L,A,P,SA,DA,SL,DL
-Dim.Minima= 1, 1, 1
-Dim.Massima= 5000, 5000, 5000
-
-[gene]
-T,MODELLO
 
 [info]
 Versione = 100
@@ -19,9 +10,9 @@ LINK=000
 LINKPREC=
 LINKSUCC=
 TAB.DIM.=L,A,P,SA,DA,SL,DL
-DIM.MINIMA= 640,170,487
-DIM.MASSIMA= 1000,170,487
-DIM.DEFAULT= 450,170,487
+DIM.MINIMA= 640, 170, 487
+DIM.MASSIMA= 1000, 170, 487
+DIM.DEFAULT= 450, 170, 487
 DIM.BLOCCA=0,0,0
 DIM.SPECIALI0,0,0
 MODOADD=132
@@ -42,7 +33,7 @@ T,_databox,,,,,,,,,,,,0
 _flag_plaser
 //***************************************************************************************************
 _DATABOX
-#LETS cod_pan=99939103014
+#LETS cod_pan=99939103007
 #LETS 3ds=39103007.3ds
 
 //#IF $[datecompare;$(dataordine);28.07.2020]>=0
