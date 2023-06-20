@@ -42,16 +42,12 @@
 #ENDIF
 //обработка под стяжки с двух сторон для топ лайн и шк двери с 2 корректорами (тип 4)
 #IF $(flagCorrector)[2;4]
-   
    obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(stagOts)+7};IDO=$(idopar),,,,,,
    obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
    obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(stagOts)};IDO=$(idopar),,,,,,
    obrabotka,,,,,,2;UPAZ;H=14;G=13;x={$(nizStag)+12};y={$(dl)-$(stagOts)+7};xf={$(da)-$(nizStag)-12};yf={$(dl)-$(stagOts)+7};IDO=$(idopar),,,,,,
    obrabotka,,,,,,2;$(nameObrPetl);x={$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar),,,,,,
    obrabotka,,,,,,2;$(nameObrPetl);x={$(da)-$(nizStag)};y={$(dl)-$(stagOts)};IDO=$(idopar)
-   
-   
-   
 #ENDIF
 #IF $(flagCorrector)[2;3] //Двери топлайн
    #LET nizStag=({$(da)-1990})/2

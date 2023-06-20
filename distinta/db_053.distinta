@@ -1,9 +1,1 @@
-#LETS flagNova={$(x4:1)}
-#IF $(flagNova)=0
-   999ARINOV_MAN_AN,1,_cprof=$(x4:0),$(dl),,,,,,,,,$(mat)_1
-   9993_9x9_5,2,,,,,,,,,,,$(mat)_2
-#ELSEIF $(flagNova)=1
-   #LETS manCount={$(x4:2)}
-   999ARINOV_MAN_AN,$(manCount),_cprof=$(x4:0),$(dl),,,,,,,,,$(mat)_1
-   9993_9x9_5,{2},,,,,,,,,,,$(mat)_2
-#ENDIF
+#LETS flagNova={$(x4:1)}#IF $(flagNova)=0   999ARINOV_MAN_AN,1,_cprof=$(x4:0),$(dl),,,,,,,,,$(mat)_1   9993_9x9_5,2,,,,,,,,,,,$(mat)_2#ELSEIF $(flagNova)=1   #LETS manCount={$(x4:2)}   999ARINOV_MAN_AN,$(manCount),_cprof=$(x4:0),$(dl),,,,,,,,,$(mat)_1   9993_9x9_5,{2},,,,,,,,,,,$(mat)_2#ENDIF
