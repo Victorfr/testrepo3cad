@@ -1,1 +1,95 @@
-#LETS modprof=$(x4:0)#LETS nizprof=$(x4:1)#LETS verhprof=$(x4:2)#LETS colprof=$(x4:3)#IF $(modprof)[AR1;AR2;AR3]         #LETS cod=$(modprof)NAPRUPL   #LETS mat_add=   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']//для теста#LET WR=365778551   $(cod),1,MNP=$(mnp);WR=$(wr),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1      #IF $(modprof)[ar3]      #LETS cod=AR3PROFKR1N      #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']      #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']      #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']      // #LETS nameDet=Направляющая нижняя Aristo крашеный с одной стороны      $(cod),1,MNP=$(mnp);WR=$(wr);OCF=$(colprof),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.1      #LETS mat_add=.1   #ENDIF      #LETS cod=$(modprof)napr_n   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']      #LETS paramProf=MNP=$(mnp);WR=$(wr)   #LETS paramPilomat=   #IF $(modprof)!!AR3      #LETS paramProf=$(paramProf);_cprof=$(colprof)      #LETS paramPilomat=_cprof=$(colprof)   #ENDIF   #IF $(modprof)!!AR3      $(cod),1,$(paramProf),,$(dl),,,,,,,$(namedet),$(mat)_1.1$(mat_add)   #ELSE      $(cod),1,$(paramProf),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.1$(mat_add)   #ENDIF   !{   999$(nizprof),{$(dl)/1000},$(paramPilomat),,$(dl),,,,,,,,$(mat)_1.1.1$(mat_add)   !}      #LETS mat_add=   #IF $(modprof)[ar3]      #LETS cod=AR3PROFKR1V      #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']      #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']      #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']      // #LETS nameDet=Направляющая верхняя Aristo крашеный с одной стороны      $(cod),1,MNP=$(mnp);WR=$(wr);OCF=$(colprof),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.2      #LETS mat_add=.1   #ENDIF      #LETS cod=$(modprof)napr_v   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']      #LETS paramProf=MNP=$(mnp);WR=$(wr)   #LETS paramPilomat=   #IF $(modprof)!!AR3      #LETS paramProf=$(paramProf);_cprof=$(colprof)      #LETS paramPilomat=_cprof=$(colprof)   #ENDIF      #IF $(modprof)!!AR3      $(cod),1,$(paramProf),,$(dl),,,,,,,$(namedet),$(mat)_1.2$(mat_add)   #ELSE      $(cod),1,$(paramProf),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.2$(mat_add)   #ENDIF   !{   999$(verhprof),{$(dl)/1000},$(paramPilomat),,$(dl),,,,,,,,$(mat)_1.2.1$(mat_add)   !}      // #LETS cod=999UPL_niznapr   // #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']   // #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']   // #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']      // $(cod),1,MNP=$(mnp);WR=$(wr),,$(dl)*2+40,,,,,,,$(namedet),$(mat)_1.3      !{   //убрать на время   999upl_niz_napr,{$(dl)/1000*2+0.04},,,$(dl)*2+40,,,,,,,,$(mat)_1.3   !}#ELSE //TOPLINE   TL1NaprPR,1,WR=365778551;MNP=526724583,,$(da),,,,,,,Комплект направляющих Top Line,$(mat)_1      999$(nizprof),{$(da)/1000},,,$(da),,,,,,,,$(mat)_1.1#ENDIF
+#LETS modprof=$(x4:0)
+#LETS nizprof=$(x4:1)
+#LETS verhprof=$(x4:2)
+#LETS colprof=$(x4:3)
+
+#IF $(modprof)[AR1;AR2;AR3]
+   
+   
+   #LETS cod=$(modprof)NAPRUPL
+   #LETS mat_add=
+   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
+   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']
+//для теста
+#LET WR=365778551
+   $(cod),1,MNP=$(mnp);WR=$(wr),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1
+   
+   #IF $(modprof)[ar3]
+      #LETS cod=AR3PROFKR1N
+      #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+      #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
+      #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']
+      // #LETS nameDet=Направляющая нижняя Aristo крашеный с одной стороны
+      $(cod),1,MNP=$(mnp);WR=$(wr);OCF=$(colprof),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.1
+      #LETS mat_add=.1
+   #ENDIF
+   
+   #LETS cod=$(modprof)napr_n
+   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
+   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']
+   
+   #LETS paramProf=MNP=$(mnp);WR=$(wr)
+   #LETS paramPilomat=
+   #IF $(modprof)!!AR3
+      #LETS paramProf=$(paramProf);_cprof=$(colprof)
+      #LETS paramPilomat=_cprof=$(colprof)
+   #ENDIF
+   #IF $(modprof)!!AR3
+      $(cod),1,$(paramProf),,$(dl),,,,,,,$(namedet),$(mat)_1.1$(mat_add)
+   #ELSE
+      $(cod),1,$(paramProf),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.1$(mat_add)
+   #ENDIF
+   !{
+   999$(nizprof),{$(dl)/1000},$(paramPilomat),,$(dl),,,,,,,,$(mat)_1.1.1$(mat_add)
+   !}
+   
+   #LETS mat_add=
+   #IF $(modprof)[ar3]
+      #LETS cod=AR3PROFKR1V
+      #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+      #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
+      #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']
+      // #LETS nameDet=Направляющая верхняя Aristo крашеный с одной стороны
+      $(cod),1,MNP=$(mnp);WR=$(wr);OCF=$(colprof),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.2
+      #LETS mat_add=.1
+   #ENDIF
+   
+   #LETS cod=$(modprof)napr_v
+   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
+   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']
+   
+   #LETS paramProf=MNP=$(mnp);WR=$(wr)
+   #LETS paramPilomat=
+   #IF $(modprof)!!AR3
+      #LETS paramProf=$(paramProf);_cprof=$(colprof)
+      #LETS paramPilomat=_cprof=$(colprof)
+   #ENDIF
+   
+   #IF $(modprof)!!AR3
+      $(cod),1,$(paramProf),,$(dl),,,,,,,$(namedet),$(mat)_1.2$(mat_add)
+   #ELSE
+      $(cod),1,$(paramProf),$(dp),$(dl),,,,,,,$(namedet),$(mat)_1.2$(mat_add)
+   #ENDIF
+   !{
+   999$(verhprof),{$(dl)/1000},$(paramPilomat),,$(dl),,,,,,,,$(mat)_1.2.1$(mat_add)
+   !}
+   
+   // #LETS cod=999UPL_niznapr
+   // #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+   // #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
+   // #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']
+   
+   // $(cod),1,MNP=$(mnp);WR=$(wr),,$(dl)*2+40,,,,,,,$(namedet),$(mat)_1.3
+   
+   !{
+   //убрать на время
+   999upl_niz_napr,{$(dl)/1000*2+0.04},,,$(dl)*2+40,,,,,,,,$(mat)_1.3
+   !}
+#ELSE //TOPLINE
+   TL1NaprPR,1,WR=365778551;MNP=526724583,,$(da),,,,,,,Комплект направляющих Top Line,$(mat)_1
+   
+   999$(nizprof),{$(da)/1000},,,$(da),,,,,,,,$(mat)_1.1
+#ENDIF

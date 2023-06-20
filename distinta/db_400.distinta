@@ -1,1 +1,88 @@
-#LETS codFur=$(x4:0)#IF $(codFur)[topline2door]      999TLFur2d,1,,,,,,,,,,,$(mat)_1  //Test   //6.3х14   999shur63x14,40,,,,,,,,,,,$(mat)_2  //Test   ///4х16 набор 20 шт   999nab_sh4x16,1,,,,,,,,,,,$(mat)_3  //Test   ///4х16 2 шт   999sh4x16pot,10,,,,,,,,,,,$(mat)_4  //Test   ///Демпфер для 2х дверного шкафа   999TLdem2d,1,,,,,,,,,,,$(mat)_5  //Test#ENDIF#IF $(codFur)[topline3door]   999TLFur3d,1,,,,,,,,,,,$(mat)_1  //Test      //6.3х14   999shur63x14,60,,,,,,,,,,,$(mat)_2  //Test      ///4х16 набор 20 шт   999nab_sh4x16,2,,,,,,,,,,,$(mat)_3  //Test      ///4х16 2 шт   999sh4x16pot,2,,,,,,,,,,,$(mat)_4  //Test      ///Демпфер для 2х дверного шкафа   999TLdem3d,1,,,,,,,,,,,$(mat)_5  //Test   #ENDIF#IF $(codFUR)[STAGCOR]   //001,LATO=6,COD=999stagcor /TD=536 /Корректор для распашных дверей /#Q$(countCor),A=$A-200,P=5  //Test   999stagcor,1,TD=536,,$(da),,,,,,,Корректор для распашных дверей,$(mat)_1  //Test   #ENDIF#IF $(codFUR)[STILOSPROF] //профиль стилос   #LETS profCod=$(x5:0)   #LETS cod=ST1Prof   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']   $(cod),1,MNP=$(mnp);WR=$(wr),,$(da),,,,,,,$(namedet),$(mat)_1   $(profCod),{$(da)/1000},,,$(da),,,,,,,,$(mat)_1.1#ENDIF#IF $(codFUR)[STILOSFUR] //фурнитура стилос   #LETS furCod=$(x5:0)   $(furCod),1,,,,,,,,,,,$(mat)_1   #ENDIF#IF $(codFur)[STILOSFURNAB]   //#LETS furCods=$(profOpCod)|$(profUgCod)|$(dergNizCOd)|$(dergVCod)|$(dergShtCod)   //#LETS furCounts=$(stilosOpCount)|$(stilosUgCount)|$(stilosDerNCount)|$(stilosDerVCount)|$(shtangCount)   //получим коды пиломатериалов   #LETS profOpCod=$[ex;$(x5);|;1]   #LETS profUgCod=$[ex;$(x5);|;2]   #LETS dergNizCOd=$[ex;$(x5);|;3]   #LETS dergVCod=$[ex;$(x5);|;4]   #LETS dergShtCod=$[ex;$(x5);|;5]   //получим количество пиломатериалов   #LET stilosOpCount={$[ex;$(x6);|;1]}   #LET stilosUgCount={$[ex;$(x6);|;2]}   #LET stilosDerNCount={$[ex;$(x6);|;3]}   #LET stilosDerVCount={$[ex;$(x6);|;4]}   #LET shtangCount={$[ex;$(x6);|;5]}   #LET index=1   #IF $(stilosOpCount)>0      $(profOpCod),{$(stilosOpCount)},,,,,,,,,,,$(mat)_$(index)      #LET index=$(index)+1   #ENDIF   #IF $(stilosUgCount)>0      $(profUgCod),{$(stilosUgCount)},,,,,,,,,,,$(mat)_$(index)      #LET index=$(index)+1   #ENDIF   #IF $(stilosDerNCount)>0      $(dergNizCOd),{$(stilosDerNCount)},,,,,,,,,,,$(mat)_$(index)      #LET index=$(index)+1   #ENDIF   #IF $(stilosDerVCount)>0      $(dergVCod),{$(stilosDerVCount)},,,,,,,,,,,$(mat)_$(index)      #LET index=$(index)+1   #ENDIF   #IF $(shtangCount)>0      $(dergShtCod),{$(shtangCount)},,,,,,,,,,,$(mat)_$(index)      #LET index=$(index)+1   #ENDIF   #ENDIF
+#LETS codFur=$(x4:0)
+
+#IF $(codFur)[topline2door]
+   
+   999TLFur2d,1,,,,,,,,,,,$(mat)_1  //Test
+   //6.3х14
+   999shur63x14,40,,,,,,,,,,,$(mat)_2  //Test
+   ///4х16 набор 20 шт
+   999nab_sh4x16,1,,,,,,,,,,,$(mat)_3  //Test
+   ///4х16 2 шт
+   999sh4x16pot,10,,,,,,,,,,,$(mat)_4  //Test
+   ///Демпфер для 2х дверного шкафа
+   999TLdem2d,1,,,,,,,,,,,$(mat)_5  //Test
+#ENDIF
+#IF $(codFur)[topline3door]
+   999TLFur3d,1,,,,,,,,,,,$(mat)_1  //Test
+   
+   //6.3х14
+   999shur63x14,60,,,,,,,,,,,$(mat)_2  //Test
+   
+   ///4х16 набор 20 шт
+   999nab_sh4x16,2,,,,,,,,,,,$(mat)_3  //Test
+   
+   ///4х16 2 шт
+   999sh4x16pot,2,,,,,,,,,,,$(mat)_4  //Test
+   
+   ///Демпфер для 2х дверного шкафа
+   999TLdem3d,1,,,,,,,,,,,$(mat)_5  //Test
+   
+#ENDIF
+#IF $(codFUR)[STAGCOR]
+   //001,LATO=6,COD=999stagcor /TD=536 /Корректор для распашных дверей /#Q$(countCor),A=$A-200,P=5  //Test
+   999stagcor,1,TD=536,,$(da),,,,,,,Корректор для распашных дверей,$(mat)_1  //Test
+   
+#ENDIF
+#IF $(codFUR)[STILOSPROF] //профиль стилос
+   #LETS profCod=$(x5:0)
+   #LETS cod=ST1Prof
+   #LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+   #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
+   #LETS namedet=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']
+   $(cod),1,MNP=$(mnp);WR=$(wr),,$(da),,,,,,,$(namedet),$(mat)_1
+   $(profCod),{$(da)/1000},,,$(da),,,,,,,,$(mat)_1.1
+#ENDIF
+#IF $(codFUR)[STILOSFUR] //фурнитура стилос
+   #LETS furCod=$(x5:0)
+   $(furCod),1,,,,,,,,,,,$(mat)_1
+   
+#ENDIF
+
+#IF $(codFur)[STILOSFURNAB]
+   //#LETS furCods=$(profOpCod)|$(profUgCod)|$(dergNizCOd)|$(dergVCod)|$(dergShtCod)
+   //#LETS furCounts=$(stilosOpCount)|$(stilosUgCount)|$(stilosDerNCount)|$(stilosDerVCount)|$(shtangCount)
+   //получим коды пиломатериалов
+   #LETS profOpCod=$[ex;$(x5);|;1]
+   #LETS profUgCod=$[ex;$(x5);|;2]
+   #LETS dergNizCOd=$[ex;$(x5);|;3]
+   #LETS dergVCod=$[ex;$(x5);|;4]
+   #LETS dergShtCod=$[ex;$(x5);|;5]
+   //получим количество пиломатериалов
+   #LET stilosOpCount={$[ex;$(x6);|;1]}
+   #LET stilosUgCount={$[ex;$(x6);|;2]}
+   #LET stilosDerNCount={$[ex;$(x6);|;3]}
+   #LET stilosDerVCount={$[ex;$(x6);|;4]}
+   #LET shtangCount={$[ex;$(x6);|;5]}
+   #LET index=1
+   #IF $(stilosOpCount)>0
+      $(profOpCod),{$(stilosOpCount)},,,,,,,,,,,$(mat)_$(index)
+      #LET index=$(index)+1
+   #ENDIF
+   #IF $(stilosUgCount)>0
+      $(profUgCod),{$(stilosUgCount)},,,,,,,,,,,$(mat)_$(index)
+      #LET index=$(index)+1
+   #ENDIF
+   #IF $(stilosDerNCount)>0
+      $(dergNizCOd),{$(stilosDerNCount)},,,,,,,,,,,$(mat)_$(index)
+      #LET index=$(index)+1
+   #ENDIF
+   #IF $(stilosDerVCount)>0
+      $(dergVCod),{$(stilosDerVCount)},,,,,,,,,,,$(mat)_$(index)
+      #LET index=$(index)+1
+   #ENDIF
+   #IF $(shtangCount)>0
+      $(dergShtCod),{$(shtangCount)},,,,,,,,,,,$(mat)_$(index)
+      #LET index=$(index)+1
+   #ENDIF
+   
+#ENDIF

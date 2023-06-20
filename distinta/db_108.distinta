@@ -1,1 +1,96 @@
-#LETS _ckd=$(x4:1)#LETS _ckk=$(x4:2)#LETS idtip=$(x5:0)#LETS cod_mat=$[ex;$(x4:3);|;1]#LETS cod_krom=$[ex;$(x4:4);|;1]#LETS name_param_mat=$[ex;$(x4:3);|;2]#LETS name_param_krom=$[ex;$(x4:4);|;2]#LETS cod_klei=$(x4:5)#LETS namelav=$(x6:0)#LETS rad=$(x6:1)#LETS lScos=$(x6:2)#LETS pScos=$(x6:3)///новые наряды на каркасные детали из фасадного материала#LETS soedMat=#LET flagNarad=0#LET largZag=$(dl)#LET profZag=$(dp)#IF $(x7)!! & (($(da)[16] & {$(x4:9)}=0) | $(da)[22])   #LETS kromParams=$(x4:8)   #LETS WK=378917905//$[estrai;$(kromParams);|;1]   #LETS NK=378917905//$[estrai;$(kromParams);|;2]   #LETS EK=378917905//$[estrai;$(kromParams);|;3]   #LETS SK=378917905//$[estrai;$(kromParams);|;4]      #IF $(da)=16      #LETS codZag=ZAGLDSPSK16   #ENDIF   #IF $(da)=22      #LETS codZag=ZAGLDSPSK22   #ENDIF      #IF $(x7)!!      ////если присутствуют обработки      #LET minL=0      #LET minW=0                  #IF $(namelav)==ro01         #IF $(minL)<450            #LET minL=450         #ENDIF         #IF $(minW)<150            #LET minW=150         #ENDIF      #ELSEIF $(namelav)==ug01         #IF $(minL)<560            #LET minL=560         #ENDIF         #IF $(minW)<240            #LET minW=240         #ENDIF      #ENDIF                        #LET usl1=$[IIF;($(dl)<$(minL)|$(dp)<$(minW)));0;1]      #LET usl2=$[IIF;($(dp)<$(minL)|$(dl)<$(minW)));0;1]      #LET proverka=0//$[iif;$(usl1)|$(usl2);0;1]      #IF $(proverka)=1         #IF $(dl)>$(dp)            #LET dl=$(minL)            #IF $(dp)<$(minW) #LET dp=$(minW)         #ELSE            #LET dp=$(minL)            #IF $(dl)<$(minW) #LET dl=$(minW)         #ENDIF      #ENDIF   #ENDIF                        ///макрос определяющий параметры каркасных деталей      #M MnpWrNamedet,cod=999$(codZag)   #LETS codzag=999K_$(codZag)   #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek);ZDD=1   $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)_1   #LETS soedMat=1.   #LET flagNarad=1      #ENDIF#M list_dsp,larg_zag=$(dl),prof_zag=$(dp),alte_zag=$(da),tip_det=kr,kol_stor_krom=kr2_1,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat),soed_str=_$(soedMat),flagNarad=$(flagNarad)#LET dl=$(largZag)#LET dp=$(profZag)#M jobobr,obr=$(x7),mat_add=$(mat),soed_str=_
+#LETS _ckd=$(x4:1)
+#LETS _ckk=$(x4:2)
+#LETS idtip=$(x5:0)
+#LETS cod_mat=$[ex;$(x4:3);|;1]
+#LETS cod_krom=$[ex;$(x4:4);|;1]
+#LETS name_param_mat=$[ex;$(x4:3);|;2]
+#LETS name_param_krom=$[ex;$(x4:4);|;2]
+#LETS cod_klei=$(x4:5)
+#LETS namelav=$(x6:0)
+#LETS rad=$(x6:1)
+#LETS lScos=$(x6:2)
+#LETS pScos=$(x6:3)
+
+
+
+
+
+///новые наряды на каркасные детали из фасадного материала
+#LETS soedMat=
+#LET flagNarad=0
+#LET largZag=$(dl)
+#LET profZag=$(dp)
+#IF $(x7)!! & (($(da)[16] & {$(x4:9)}=0) | $(da)[22])
+   #LETS kromParams=$(x4:8)
+   #LETS WK=378917905//$[estrai;$(kromParams);|;1]
+   #LETS NK=378917905//$[estrai;$(kromParams);|;2]
+   #LETS EK=378917905//$[estrai;$(kromParams);|;3]
+   #LETS SK=378917905//$[estrai;$(kromParams);|;4]
+   
+   #IF $(da)=16
+      #LETS codZag=ZAGLDSPSK16
+   #ENDIF
+   #IF $(da)=22
+      #LETS codZag=ZAGLDSPSK22
+   #ENDIF
+   
+   #IF $(x7)!!
+      ////если присутствуют обработки
+      #LET minL=0
+      #LET minW=0
+      
+      
+      #IF $(namelav)==ro01
+         #IF $(minL)<450
+            #LET minL=450
+         #ENDIF
+         #IF $(minW)<150
+            #LET minW=150
+         #ENDIF
+      #ELSEIF $(namelav)==ug01
+         #IF $(minL)<560
+            #LET minL=560
+         #ENDIF
+         #IF $(minW)<240
+            #LET minW=240
+         #ENDIF
+      #ENDIF
+      
+      
+      
+      #LET usl1=$[IIF;($(dl)<$(minL)|$(dp)<$(minW)));0;1]
+      #LET usl2=$[IIF;($(dp)<$(minL)|$(dl)<$(minW)));0;1]
+      #LET proverka=0//$[iif;$(usl1)|$(usl2);0;1]
+      #IF $(proverka)=1
+         #IF $(dl)>$(dp)
+            #LET dl=$(minL)
+            #IF $(dp)<$(minW) #LET dp=$(minW)
+         #ELSE
+            #LET dp=$(minL)
+            #IF $(dl)<$(minW) #LET dl=$(minW)
+         #ENDIF
+      #ENDIF
+   #ENDIF
+   
+   
+   
+   
+   
+   
+   
+   ///макрос определяющий параметры каркасных деталей
+   
+   #M MnpWrNamedet,cod=999$(codZag)
+   #LETS codzag=999K_$(codZag)
+   #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(sk);wk=$(wk);nk=$(nk);ek=$(ek);ZDD=1
+   $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)_1
+   #LETS soedMat=1.
+   #LET flagNarad=1
+   
+   
+#ENDIF
+#M list_dsp,larg_zag=$(dl),prof_zag=$(dp),alte_zag=$(da),tip_det=kr,kol_stor_krom=kr2_1,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat),soed_str=_$(soedMat),flagNarad=$(flagNarad)
+#LET dl=$(largZag)
+#LET dp=$(profZag)
+
+#M jobobr,obr=$(x7),mat_add=$(mat),soed_str=_

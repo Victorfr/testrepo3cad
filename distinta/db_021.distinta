@@ -1,1 +1,147 @@
-#LETS modprof=$(x4:0)#LETS art=$(x4:1)#LETS MNPDOVOD=$(x4:4)#LETS cod=$(modprof)GOR_NPR#LETS tip_prof=$(x4:5)#LETS type_door=$(x4:6)#LETS count_zak=$(x4:7)#LET countCol={$(x5:0)}#LETS dataordine=$(x4:8)#LETS sks=$(x7:5)#LETS idbrand=$(x7:1)#LETS idname=$(x7:2)#LETS idukp=$(x7:3)#LETS coordY=$(x7:0)#LETS paramsX=$(x7:4)#LETS idoid=$(x7:6)#IF $(idoid)==   #LETS ido=1#ENDIF#IF $(tip_PROF)==Aristo_FS_   #LETS cod_koles=comp_coles_h#ELSE   #LETS cod_koles=comp_coles#ENDIF#LETS mat_add=#IF $(modprof)[Ar3]      #M MnpWrNamedet,cod=AR3PROFKR2N   AR3PROFKR2N,1,OCF=$(x4:2);MNP=$(mnp);WR=$(wr),$(da),$(dl),,,,,,,$(namedet),$(mat)_1   #LETS mat_add=.1#ENDIF#M MnpWrNamedet,cod=$(cod)#LETS paramProf=MNP=$(mnp);WR=$(wr)#LETS paramPilomat=#IF $(modprof)!!AR3   #LETS paramProf=_cprof=$(x4:2);$(paramProf)   #LETS paramPilomat=_cprof=$(x4:2)#ENDIF//рамка горизонтальная узкая#IF $(modprof)[ar2]// & $(art_polufab)[GOR_NPR]   #M letsks,profLenght=$(dl)   #LETS jobName=D3   #LETS paramProf=$(paramProf);BRD=$(idbrand);PRF=$(idname);UKP=689985695;IDO=$(idoid)   #LET parGLU={$[estrai;$(paramsX);|;3]}   #LET parY={$(coordY)}      #VB      stringSKS=V("sks")      stringSKS=Replace(stringSKS,"|",";")      V("strSks")=stringSKS   #ENDVB   #IF $(strSKS)!!      #FOR $(strSKS)         #LET parX={$(I)}         obrabotka,,,,,,{6};$(jobName);X=$(parX);Y=5.9;GLU=7;IDO=$(idoid)      #ENDFOR   #ENDIF#ENDIF#IF $(modprof)[AR1]   $(cod),1,$(paramProf),$(dl),,,,,,,,$(namedet),$(mat)_1$(mat_add)#ELSEIF $(modprof)!!AR3   $(cod),1,$(paramProf),$(da),$(dl),$(dp),,,,,,$(namedet),$(mat)_1$(mat_add)#ELSE   $(cod),1,$(paramProf),$(dl),$(da),,,,,,,$(namedet),$(mat)_1$(mat_add)#ENDIF!{999$(art),{$(dl)/1000},$(paramPilomat),$(dl),,,,,,,,,$(mat)_1.1$(mat_add)!}// ******************************** доводчик по новому *********************************************************************#IF $[datecompare;$(dataordine);04.10.2019]>=0      #IF $(modprof)[ar1;ar3]      999sh_vint,4,,,,,,,,,,,$(mat)_2      #IF $(type_door)=1 // двери купэ         999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_3         #IF $(count_zak)<1            //999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_3            999sh_pos,1,,,,,,,,,,,$(mat)_4         #ELSE            #LET colmat=3            #FOR $1:$(count_zak)               // 999pf_zaklad,1,WR=395648817;MNP=$(MNPDOVOD),,,,,,,,,Закладная,$(mat)_3               // !{               // 999zakladnaja,1,,,,,,,,,,,$(mat)_3.1               // !}               999zakladnaja,1,,,,,,,,,,,$(mat)_4               #LET colmat=4            #ENDFOR            #IF $(countCol)>=1               //999$(cod_koles),$(countCol),,,,,,,,,,Комплект колес,$(mat)_$(colmat)                              999sh_pos,$(countCol),,,,,,,,,,,$(mat)_{$(colmat)+1}//                           #ENDIF         #ENDIF      #ELSE         999mehRasp,2,,,,,,,,,,Механизм распашной,$(mat)_3         999zMagVoz,1,,,,,,,,,,Защелка магнитная возвратная,$(mat)_4         999podstMagZ,1,,,,,,,,,,Подставка под магнитную защелку,$(mat)_5      #ENDIF   #ELSEIF $(modprof)==ar2      // 999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_2      9992_9x19,{(rnd($(dl)/100))*2},,,,,,,,,,,$(mat)_3   #ENDIF   // *****************************************************************************************************#ELSE   // *************************************** доводчик по старому ***************************************   #IF $(modprof)[ar1;ar3]      999sh_vint,4,,,,,,,,,,,$(mat)_2      #IF $(type_door)=1         #IF $(x4:3)=0            999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_3            999sh_pos,1,,,,,,,,,,,$(mat)_4         #ELSE            999nab_dovod,1,WR=365779181;MNP=$(MNPDOVOD),,,,,,,,,Доводчик,$(mat)_3            !{            999sh_dovod,1,SKP=0,,,,,,,,,,$(mat)_3.1            !}            #FOR $1:$(count_zak)               // 999pf_zaklad,1,WR=395648817;MNP=$(MNPDOVOD),,,,,,,,,Закладная,$(mat)_3               // !{               // 999zakladnaja,1,,,,,,,,,,,$(mat)_3.1               // !}               #LET mat_zak=3+$(i)               999zakladnaja,1,,,,,,,,,,,$(mat)_$(mat_zak)            #ENDFOR         #ENDIF      #ELSE         999mehRasp,2,,,,,,,,,,Механизм распашной,$(mat)_3         999zMagVoz,1,,,,,,,,,,Защелка магнитная возвратная,$(mat)_4         999podstMagZ,1,,,,,,,,,,Подставка под магнитную защелку,$(mat)_5      #ENDIF   #ELSEIF $(modprof)==ar2      9992_9x19,{(rnd($(dl)/300+1))*2},,,,,,,,,,,$(mat)_2   #ENDIF#ENDIF// *****************************************************************************************************
+#LETS modprof=$(x4:0)
+#LETS art=$(x4:1)
+#LETS MNPDOVOD=$(x4:4)
+#LETS cod=$(modprof)GOR_NPR
+#LETS tip_prof=$(x4:5)
+#LETS type_door=$(x4:6)
+#LETS count_zak=$(x4:7)
+#LET countCol={$(x5:0)}
+#LETS dataordine=$(x4:8)
+
+#LETS sks=$(x7:5)
+#LETS idbrand=$(x7:1)
+#LETS idname=$(x7:2)
+#LETS idukp=$(x7:3)
+#LETS coordY=$(x7:0)
+#LETS paramsX=$(x7:4)
+#LETS idoid=$(x7:6)
+#IF $(idoid)==
+   #LETS ido=1
+#ENDIF
+
+
+
+
+
+
+#IF $(tip_PROF)==Aristo_FS_
+   #LETS cod_koles=comp_coles_h
+#ELSE
+   #LETS cod_koles=comp_coles
+#ENDIF
+#LETS mat_add=
+#IF $(modprof)[Ar3]
+   
+   #M MnpWrNamedet,cod=AR3PROFKR2N
+   AR3PROFKR2N,1,OCF=$(x4:2);MNP=$(mnp);WR=$(wr),$(da),$(dl),,,,,,,$(namedet),$(mat)_1
+   #LETS mat_add=.1
+#ENDIF
+#M MnpWrNamedet,cod=$(cod)
+#LETS paramProf=MNP=$(mnp);WR=$(wr)
+#LETS paramPilomat=
+#IF $(modprof)!!AR3
+   #LETS paramProf=_cprof=$(x4:2);$(paramProf)
+   #LETS paramPilomat=_cprof=$(x4:2)
+#ENDIF
+//рамка горизонтальная узкая
+#IF $(modprof)[ar2]// & $(art_polufab)[GOR_NPR]
+   #M letsks,profLenght=$(dl)
+   #LETS jobName=D3
+   #LETS paramProf=$(paramProf);BRD=$(idbrand);PRF=$(idname);UKP=689985695;IDO=$(idoid)
+   #LET parGLU={$[estrai;$(paramsX);|;3]}
+   #LET parY={$(coordY)}
+   
+   #VB
+      stringSKS=V("sks")
+      stringSKS=Replace(stringSKS,"|",";")
+      V("strSks")=stringSKS
+   #ENDVB
+   #IF $(strSKS)!!
+      #FOR $(strSKS)
+         #LET parX={$(I)}
+         obrabotka,,,,,,{6};$(jobName);X=$(parX);Y=5.9;GLU=7;IDO=$(idoid)
+      #ENDFOR
+   #ENDIF
+#ENDIF
+
+
+
+#IF $(modprof)[AR1]
+   $(cod),1,$(paramProf),$(dl),,,,,,,,$(namedet),$(mat)_1$(mat_add)
+#ELSEIF $(modprof)!!AR3
+   $(cod),1,$(paramProf),$(da),$(dl),$(dp),,,,,,$(namedet),$(mat)_1$(mat_add)
+#ELSE
+   $(cod),1,$(paramProf),$(dl),$(da),,,,,,,$(namedet),$(mat)_1$(mat_add)
+#ENDIF
+!{
+999$(art),{$(dl)/1000},$(paramPilomat),$(dl),,,,,,,,,$(mat)_1.1$(mat_add)
+!}
+// ******************************** доводчик по новому *********************************************************************
+#IF $[datecompare;$(dataordine);04.10.2019]>=0
+   
+   #IF $(modprof)[ar1;ar3]
+      999sh_vint,4,,,,,,,,,,,$(mat)_2
+      #IF $(type_door)=1 // двери купэ
+         999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_3
+         #IF $(count_zak)<1
+            //999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_3
+            999sh_pos,1,,,,,,,,,,,$(mat)_4
+         #ELSE
+            #LET colmat=3
+            #FOR $1:$(count_zak)
+               // 999pf_zaklad,1,WR=395648817;MNP=$(MNPDOVOD),,,,,,,,,Закладная,$(mat)_3
+               // !{
+               // 999zakladnaja,1,,,,,,,,,,,$(mat)_3.1
+               // !}
+               999zakladnaja,1,,,,,,,,,,,$(mat)_4
+               #LET colmat=4
+            #ENDFOR
+            #IF $(countCol)>=1
+               //999$(cod_koles),$(countCol),,,,,,,,,,Комплект колес,$(mat)_$(colmat)
+               
+               999sh_pos,$(countCol),,,,,,,,,,,$(mat)_{$(colmat)+1}//
+               
+            #ENDIF
+         #ENDIF
+      #ELSE
+         999mehRasp,2,,,,,,,,,,Механизм распашной,$(mat)_3
+         999zMagVoz,1,,,,,,,,,,Защелка магнитная возвратная,$(mat)_4
+         999podstMagZ,1,,,,,,,,,,Подставка под магнитную защелку,$(mat)_5
+      #ENDIF
+   #ELSEIF $(modprof)==ar2
+      // 999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_2
+      9992_9x19,{(rnd($(dl)/100))*2},,,,,,,,,,,$(mat)_3
+   #ENDIF
+   // *****************************************************************************************************
+#ELSE
+   // *************************************** доводчик по старому ***************************************
+   #IF $(modprof)[ar1;ar3]
+      999sh_vint,4,,,,,,,,,,,$(mat)_2
+      #IF $(type_door)=1
+         #IF $(x4:3)=0
+            999$(cod_koles),1,,,,,,,,,,Комплект колес,$(mat)_3
+            999sh_pos,1,,,,,,,,,,,$(mat)_4
+         #ELSE
+            999nab_dovod,1,WR=365779181;MNP=$(MNPDOVOD),,,,,,,,,Доводчик,$(mat)_3
+            !{
+            999sh_dovod,1,SKP=0,,,,,,,,,,$(mat)_3.1
+            !}
+            #FOR $1:$(count_zak)
+               // 999pf_zaklad,1,WR=395648817;MNP=$(MNPDOVOD),,,,,,,,,Закладная,$(mat)_3
+               // !{
+               // 999zakladnaja,1,,,,,,,,,,,$(mat)_3.1
+               // !}
+               #LET mat_zak=3+$(i)
+               999zakladnaja,1,,,,,,,,,,,$(mat)_$(mat_zak)
+            #ENDFOR
+         #ENDIF
+      #ELSE
+         999mehRasp,2,,,,,,,,,,Механизм распашной,$(mat)_3
+         999zMagVoz,1,,,,,,,,,,Защелка магнитная возвратная,$(mat)_4
+         999podstMagZ,1,,,,,,,,,,Подставка под магнитную защелку,$(mat)_5
+      #ENDIF
+   #ELSEIF $(modprof)==ar2
+      9992_9x19,{(rnd($(dl)/300+1))*2},,,,,,,,,,,$(mat)_2
+   #ENDIF
+#ENDIF
+// *****************************************************************************************************

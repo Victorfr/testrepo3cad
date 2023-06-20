@@ -1,1 +1,10 @@
-#LETS cod=999PODLZST#M MnpWrNamedet,cod=$(cod)999PODZST,1,WR=$(WR);MNP=$(MNP),$(dl),$(da),16,,,,,,$(namEDET),$(mat)_1!{#IF $(x4:0)==999REBROUPAK   999MDF6,rn3($(da)*$(dl)/1000000),,$(dl),$(da),$(dp),,,,,,,$(mat)_1.1#ELSE   999NLDSP16,rn3($(da)*$(dl)/1000000),,$(dl),$(da),$(dp),,,,,,,$(mat)_1.1#ENDIF!}
+#LETS cod=999PODLZST
+#M MnpWrNamedet,cod=$(cod)
+999PODZST,1,WR=$(WR);MNP=$(MNP),$(dl),$(da),16,,,,,,$(namEDET),$(mat)_1
+!{
+#IF $(x4:0)==999REBROUPAK
+   999MDF6,rn3($(da)*$(dl)/1000000),,$(dl),$(da),$(dp),,,,,,,$(mat)_1.1
+#ELSE
+   999NLDSP16,rn3($(da)*$(dl)/1000000),,$(dl),$(da),$(dp),,,,,,,$(mat)_1.1
+#ENDIF
+!}
