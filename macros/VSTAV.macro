@@ -1,37 +1,37 @@
 #LET vichetL=$[EX;$(matvstav:4);:;1]
 // salavat 09.09.2021
-#LETS changedcolor=2377;2378;2379;2380;2504;008;2486;2485;2490;2362
+#LETS changedcolor=2377;2378;2379;2380;2504;008;2486;2485;2490;2362;2484
 #IF $(matvstav$(_ctx):5)[S02] & $(cvetvstav$(_ctx):1)[$(changedcolor)]
-#LET vichetL=$(vichetL)-1
+   #LET vichetL=$(vichetL)-1
 #ENDIF
 // salavat 09.09.2021
 #LET vichetH=$[EX;$(matvstav:4);:;2]
 #LET flag_vstavka=1
 #IF $(_PRIMOCARICAMENTO)=1 & $(tipsystem:18)==ar2
-#LETV matvstav$(_ctx)=25
-#LETV cvetvstav$(_ctx)=337
+   #LETV matvstav$(_ctx)=25
+   #LETV cvetvstav$(_ctx)=337
 #ENDIF
 #LET indexloop=0
 #LETS  testpatina=$(cvetvstav$(_ctx):17)
 #LETS modelvstav=$(matvstav$(_ctx):5)
 #LETS patinamodel=
 #DO
-#LET indexloop=$(indexloop)+1
-#LETS teststr= $[ex;$(testpatina);|;$(indexloop)]
-#IF $[LEN;$(teststr)]>0 //проверка если строка не пустая
-#IF $[INSTR;$(teststr);$(modelvstav)]>0
-#LETS patinamodel=$(teststr) /// итоговая строка
-#ENDIF
-#ELSE
-#BREAK
-#ENDIF
-#BREAK $(indexloop)>10 //выход если бесконечный цикл
+   #LET indexloop=$(indexloop)+1
+   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]
+   #IF $[LEN;$(teststr)]>0 //проверка если строка не пустая
+      #IF $[INSTR;$(teststr);$(modelvstav)]>0
+         #LETS patinamodel=$(teststr) /// итоговая строка
+      #ENDIF
+   #ELSE
+      #BREAK
+   #ENDIF
+   #BREAK $(indexloop)>10 //выход если бесконечный цикл
 #LOOP  $(teststr)== //выход если пустая строка
 ////по письму бурлакова сделаем подмену материала для некоторых цветов
 #IF $(matvstav$(_ctx):5)[s14;s02]
-#IF $(cvetvstav$(_ctx):1)[$(changedcolor)]//[2377;2378;2379;2380;2489;2504;008;2486;2485;2490;2362]
-#LETS matvstav:6=DSPLN8
-#ENDIF
+   #IF $(cvetvstav$(_ctx):1)[$(changedcolor)]//[2377;2378;2379;2380;2489;2504;008;2486;2485;2490;2362]
+      #LETS matvstav:6=DSPLN8
+   #ENDIF
 #ENDIF
 // ************************************* для подбора уплотнителя *************************************
 #LETS tip_door=cupe
@@ -43,33 +43,33 @@
 // *********************************************************************************************************
 // **************************************** поправки от производства 15.11.2018 ********************************************************************
 #IF 0
-#LET popravka=0
-#IF $(matvstav$(_ctx):3)=4
-#LET popravka=3
-#ELSEIF $(matvstav$(_ctx):3)=10
-#LET popravka=1
-#ENDIF
+   #LET popravka=0
+   #IF $(matvstav$(_ctx):3)=4
+      #LET popravka=3
+   #ELSEIF $(matvstav$(_ctx):3)=10
+      #LET popravka=1
+   #ENDIF
 #ENDIF
 // *************************************************************************************************************************************************
 // **************************************** поправки от производства 17.12.2018 ********************************************************************
 #IF 0
-#LET popravka=0
-#IF $(matvstav$(_ctx):3)=4
-#LET popravka=3
-#ELSEIF $(matvstav$(_ctx):3)=10
-#LET popravka=1
-#ENDIF
+   #LET popravka=0
+   #IF $(matvstav$(_ctx):3)=4
+      #LET popravka=3
+   #ELSEIF $(matvstav$(_ctx):3)=10
+      #LET popravka=1
+   #ENDIF
 #ENDIF
 //#MSG $(matvstav$(_ctx):5)
 // *************************************************************************************************************************************************
 // **************************************** поправки от производства 14.01.2019 ********************************************************************
 #LET popravka=0
 #IF $(matvstav$(_ctx):3)=4
-#LET popravka=0
+   #LET popravka=0
 #ELSEIF $(matvstav$(_ctx):3)=8 | ($(matvstav$(_ctx):5)[S02] & $(cvetvstav$(_ctx):1)[$(changedcolor)]//[2377;2378;2379;2380;2504;008;2486;2485;2490;2362]) // salavat 09.09.2021
-#LET popravka=3
+   #LET popravka=3
 #ELSEIF $(matvstav$(_ctx):3)=10
-#LET popravka=1
+   #LET popravka=1
 #ENDIF
 //#MSG $a
 // ****************************************************** размеры высот вставок *******************************************************************************************
@@ -77,74 +77,74 @@
 #LET pribavka_k_vstavke_s_delitelem=$[EX;$(matvstav:8);:;2]
 ///tetst
 #IF $(alt_door)=$a+$(tipruch:10)+$(tipruch:12) // когда одна вставка во всю высоту
-#LET alt_vst=($a+$(pribavka_k_vstavke)*2)-$(popravka)
+   #LET alt_vst=($a+$(pribavka_k_vstavke)*2)-$(popravka)
 #ELSEIF $(spostaa)!$(tipruch:10) & $(spostaa)+$a+$(tipruch:12)!$(alt_door) // средняя вставка
-#LET alt_vst=($a+$(pribavka_k_vstavke_s_delitelem)*2)-$(popravka)
-//#MSG  ($a+$(pribavka_k_vstavke_s_delitelem)*2)-$(popravka)
+   #LET alt_vst=($a+$(pribavka_k_vstavke_s_delitelem)*2)-$(popravka)
+   //#MSG  ($a+$(pribavka_k_vstavke_s_delitelem)*2)-$(popravka)
 #ELSE // нижняя и верхняя вставки
-#LET alt_vst=($a+$(pribavka_k_vstavke)+$(pribavka_k_vstavke_s_delitelem))-$(popravka)
+   #LET alt_vst=($a+$(pribavka_k_vstavke)+$(pribavka_k_vstavke_s_delitelem))-$(popravka)
 #ENDIF
 // ***************************************** ограничения по вставкам ***********************************************
 //Ограничения для высоких дверей
 #LET maxAltDoorBig=2750
 #IF $(alt_vst)>2750 &  $(matvstav$(_ctx):1)[7;8]
-#LET maxAltDoorBig=2750
+   #LET maxAltDoorBig=2750
 #ENDIF
 #IF $(matvstav$(_ctx):1)[1]
-#LET maxAltDoorBig=2700
+   #LET maxAltDoorBig=2700
 #ENDIF
 #IF $(alt_vst)>$(maxAltDoorBig) & $(matvstav$(_ctx):1)[1;7;8]
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более $(maxAltDoorBig) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более $(maxAltDoorBig) мм!
+   #IF $(show_msg_vst$(_idunico))=0
+      #MSG вставка не может быть высотой более $(maxAltDoorBig) мм!
+   #ENDIF
+   #LET flag_vstavka=0
+   #LET show_msg_vst$(_idunico)=1
+   #LETS Msg_vst_error=высота вставки более $(maxAltDoorBig) мм!
 #ENDIF
 /////////////////////////////////
 #IF $(cvetvstav$(_ctx):11)=1 & $(alt_vst)>2040 & $(TxtVst$(_ctx):1)=0 & $(matvstav$(_ctx):5)[s02;S22;E01;E04;D01;D04;L01;L03]
-#LETV TxtVst$(_ctx)=1
-#MSG вставка с горизонтальной текстурой не может быть высотой более 2040 мм!
+   #LETV TxtVst$(_ctx)=1
+   #MSG вставка с горизонтальной текстурой не может быть высотой более 2040 мм!
 #ENDIF
 #IF $(cvetvstav$(_ctx):11)=1 & $(alt_vst)>2040 & $(TxtVst$(_ctx):1)=0 & $(matvstav$(_ctx):5)[s04]
-#LETV TxtVst$(_ctx)=1
-#MSG вставка с горизонтальной текстурой не может быть высотой более 2040 мм!
+   #LETV TxtVst$(_ctx)=1
+   #MSG вставка с горизонтальной текстурой не может быть высотой более 2040 мм!
 #ENDIF
 #IF $(alt_vst)<100
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой менее 100 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки менее 100 мм!
+   #IF $(show_msg_vst$(_idunico))=0
+      #MSG вставка не может быть высотой менее 100 мм!
+   #ENDIF
+   #LET flag_vstavka=0
+   #LET show_msg_vst$(_idunico)=1
+   #LETS Msg_vst_error=высота вставки менее 100 мм!
 #ENDIF
 #IF $[datecompare;$(dataordine);11.12.2020]>=0
-#IF $(matvstav$(_ctx):1)[2;3;5] & $(alt_vst)>2500
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 2500 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 2500 мм!
-#ENDIF
-///для фотопечать lux отдельные условия
-#IF $(matvstav$(_ctx):1)[4] & $(alt_vst)>2200
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 2200 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 2200 мм!
-#ENDIF
+   #IF $(matvstav$(_ctx):1)[2;3;5] & $(alt_vst)>2500
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть высотой более 2500 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=высота вставки более 2500 мм!
+   #ENDIF
+   ///для фотопечать lux отдельные условия
+   #IF $(matvstav$(_ctx):1)[4] & $(alt_vst)>2200
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть высотой более 2200 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=высота вставки более 2200 мм!
+   #ENDIF
 #ELSE
-#IF $(matvstav$(_ctx):1)[2;3;4;5] & $(alt_vst)>2500
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 2500 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 2500 мм!
-#ENDIF
+   #IF $(matvstav$(_ctx):1)[2;3;4;5] & $(alt_vst)>2500
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть высотой более 2500 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=высота вставки более 2500 мм!
+   #ENDIF
 #ENDIF
 // #IF $(matvstav$(_ctx):5)[s05] & ((($L+$(tipruch:8)*2-$(vichetL))-$(popravka))*$(alt_vst))/1000000>1.6
 // #IF $(show_msg_vst$(_idunico))=0
@@ -155,336 +155,336 @@
 // #LETS Msg_vst_error=площадь вставки более 1.6 кв.м.!
 // #ENDIF
 #IF $[datecompare;$(dataordine);11.12.2020]>=0
-#LET altMaxSteklo=2200
+   #LET altMaxSteklo=2200
 #ELSE
-#LET altMaxSteklo=2500
+   #LET altMaxSteklo=2500
 #ENDIF
 #IF $[datecompare;$(dataordine);05.02.2019]>=0
-#IF $[datecompare;$(dataordine);$(_dataNewMet:3)]>=0 & $(matvstav$(_ctx):5)[s05;s19]
-#IF ($l+$(tipruch:8)*2-$(tipruch:16))<=600 & $(alt_vst)<=$(altMaxSteklo)
-#ELSEIF ($l+$(tipruch:8)*2-$(tipruch:16))<=$(altMaxSteklo)& $(alt_vst)<=600
-#ELSEIF ($l+$(tipruch:8)*2-$(tipruch:16))<=900 & $(alt_vst)<=1000
-#ELSEIF ($l+$(tipruch:8)*2-$(tipruch:16))<=1000 & $(alt_vst)<=900
+   #IF $[datecompare;$(dataordine);$(_dataNewMet:3)]>=0 & $(matvstav$(_ctx):5)[s05;s19]
+      #IF ($l+$(tipruch:8)*2-$(tipruch:16))<=600 & $(alt_vst)<=$(altMaxSteklo)
+      #ELSEIF ($l+$(tipruch:8)*2-$(tipruch:16))<=$(altMaxSteklo)& $(alt_vst)<=600
+      #ELSEIF ($l+$(tipruch:8)*2-$(tipruch:16))<=900 & $(alt_vst)<=1000
+      #ELSEIF ($l+$(tipruch:8)*2-$(tipruch:16))<=1000 & $(alt_vst)<=900
+      #ELSE
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG максимальный размер вставки 900х1000 мм или 600х$(altMaxSteklo) мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=максимальный размер вставки 900х1000 мм или 600х2200 мм!
+      #ENDIF
+   #ELSEIF $(matvstav$(_ctx):5)[s05;s19]
+      #IF ($l+$(tipruch:8)*2-$(tipruch:16))<=900
+         #IF $a>1000
+            #IF $(show_msg_vst$(_idunico))=0
+               #MSG максимальный размер вставки 900х1000 мм!
+            #ENDIF
+            #LET flag_vstavka=0
+            #LET show_msg_vst$(_idunico)=1
+            #LETS Msg_vst_error=максимальный размер вставки 900х1000 мм!
+         #ENDIF
+      #ENDIF
+      #IF ($l+$(tipruch:8)*2-$(tipruch:16))>900 & ($l+$(tipruch:8)*2-$(tipruch:16))<=1000
+         #IF $a>900
+            #IF $(show_msg_vst$(_idunico))=0
+               #MSG максимальный размер вставки 900х1000 мм!
+            #ENDIF
+            #LET flag_vstavka=0
+            #LET show_msg_vst$(_idunico)=1
+            #LETS Msg_vst_error=максимальный размер вставки 900х1000 мм!
+         #ENDIF
+      #ENDIF
+      #IF ($l+$(tipruch:8)*2-$(tipruch:16))>1000
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG максимальный размер вставки 900х1000 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=максимальный размер вставки 900х1000 мм!
+      #ENDIF
+   #ENDIF
 #ELSE
-#IF $(show_msg_vst$(_idunico))=0
-#MSG максимальный размер вставки 900х1000 мм или 600х$(altMaxSteklo) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=максимальный размер вставки 900х1000 мм или 600х2200 мм!
-#ENDIF
-#ELSEIF $(matvstav$(_ctx):5)[s05;s19]
-#IF ($l+$(tipruch:8)*2-$(tipruch:16))<=900
-#IF $a>1000
-#IF $(show_msg_vst$(_idunico))=0
-#MSG максимальный размер вставки 900х1000 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=максимальный размер вставки 900х1000 мм!
-#ENDIF
-#ENDIF
-#IF ($l+$(tipruch:8)*2-$(tipruch:16))>900 & ($l+$(tipruch:8)*2-$(tipruch:16))<=1000
-#IF $a>900
-#IF $(show_msg_vst$(_idunico))=0
-#MSG максимальный размер вставки 900х1000 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=максимальный размер вставки 900х1000 мм!
-#ENDIF
-#ENDIF
-#IF ($l+$(tipruch:8)*2-$(tipruch:16))>1000
-#IF $(show_msg_vst$(_idunico))=0
-#MSG максимальный размер вставки 900х1000 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=максимальный размер вставки 900х1000 мм!
-#ENDIF
-#ENDIF
-#ELSE
-#IF $(matvstav$(_ctx):5)[s05] & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=600
-#IF $(alt_vst)>2400
-#IF $(show_msg_vst$(_idunico))=0
-#MSG при ширине вставки менее 600 мм вставка не может быть высотой более 2400 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=вставка не может быть высотой более 2400 мм!
-#ENDIF
-#ENDIF
-#IF $(matvstav$(_ctx):5)[s05] & $l>600 //(($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>600
-#IF $a>600 // $(alt_vst)>600
-#IF $(show_msg_vst$(_idunico))=0
-#MSG один из размеров вставки не должен превышать 600 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=один из размеров вставки не должен превышать 600 мм!
-025	COD= / /производственное ограничение	lato=$(show_num)	SL=$l/5.3	SA=$a/2+$l/20	l=$l-$l/2.6	a=200  //Номер детали
-025	COD= / /необходимо увеличить число разделителей	lato=$(show_num)	SL=$l/11	SA=$a/2-$l/20	l=$l-$l/5.5	a=200  //Номер детали
-#ENDIF
-#ENDIF
+   #IF $(matvstav$(_ctx):5)[s05] & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=600
+      #IF $(alt_vst)>2400
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG при ширине вставки менее 600 мм вставка не может быть высотой более 2400 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=вставка не может быть высотой более 2400 мм!
+      #ENDIF
+   #ENDIF
+   #IF $(matvstav$(_ctx):5)[s05] & $l>600 //(($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>600
+      #IF $a>600 // $(alt_vst)>600
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG один из размеров вставки не должен превышать 600 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=один из размеров вставки не должен превышать 600 мм!
+         025	COD= / /производственное ограничение	lato=$(show_num)	SL=$l/5.3	SA=$a/2+$l/20	l=$l-$l/2.6	a=200  //Номер детали
+         025	COD= / /необходимо увеличить число разделителей	lato=$(show_num)	SL=$l/11	SA=$a/2-$l/20	l=$l-$l/5.5	a=200  //Номер детали
+      #ENDIF
+   #ENDIF
 #ENDIF
 #IF $(matvstav$(_ctx):5)[s08]
-#IF $[datecompare;$(dataordine);$(_DataNewVst:3)]=-1 // $[EX;$(_TipVstav$(_ctx):5);w;1][NIC]
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<396
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной менее 396 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки менее 396 мм!
-#ENDIF
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>1196
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной более 1196 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки более 1196 мм!
-#ENDIF
-#IF $(G_S$(_ctx):0)=1 & $(alt_vst)>1376 //  & $[datecompare;$(dataordine);$(_DataNewVst:3)]=-1
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 1376 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 1376 мм!
-#ELSEIF $[ex;$(_tipvstav:5);w;2][s] & $(alt_vst)>1376
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 1376 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 1376 мм!
-#ELSEIF $(alt_vst)>2280
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 2280 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 2280 мм!
-#ELSEIF $(alt_vst)<356
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой менее 356 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки менее 356 мм!
-#ENDIF
-#ELSE
-/////////////////////////////////////////////////////////
-// ********************************** запрет делителя для вставок Classic *************************************
-#IF $(alt_vst)!($a+$(pribavka_k_vstavke)*2)-$(popravka) & $[mid;$(_tipvstav:5)$(_ctx);1;3]!!nic
-#IF $(show_msg_vst$(_idunico))=0
-#MSG В данном варианте вставок нельзя использовать делитель!
-#ENDIF
-// #LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=Нельзя использовать делитель!
-// *************************************************************************************************************
-#ELSE
-#ENDIF
-#IF $(alt_vst)<$[ex;$(_tipvstav$(_ctx):6);:;1]
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
-#ENDIF
-#IF $(alt_vst)>$[ex;$(_tipvstav$(_ctx):7);:;1]
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
-#ENDIF
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<$[ex;$(_tipvstav$(_ctx):6);:;2]
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
-#ENDIF
-//40
-//_dekor
-#LETS MinMisClassPat=$[ex;$(_tipvstav$(_ctx):7);:;2]
-#IF $(matvstav$(_ctx):5)[$(cvetvstav$(_ctx):14)] & $(_PATINA$(_ctx):1)!!999
-#LET MinMisClassPat=900
-#ENDIF
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>$(MinMisClassPat)
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной более $(MinMisClassPat) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки более $(MinMisClassPat) мм!
-#ENDIF
-//#ENDIF
-///////////////////////////////////////////////
-#ENDIF
+   #IF $[datecompare;$(dataordine);$(_DataNewVst:3)]=-1 // $[EX;$(_TipVstav$(_ctx):5);w;1][NIC]
+      #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<396
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной менее 396 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки менее 396 мм!
+      #ENDIF
+      #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>1196
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной более 1196 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки более 1196 мм!
+      #ENDIF
+      #IF $(G_S$(_ctx):0)=1 & $(alt_vst)>1376 //  & $[datecompare;$(dataordine);$(_DataNewVst:3)]=-1
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой более 1376 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки более 1376 мм!
+      #ELSEIF $[ex;$(_tipvstav:5);w;2][s] & $(alt_vst)>1376
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой более 1376 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки более 1376 мм!
+      #ELSEIF $(alt_vst)>2280
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой более 2280 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки более 2280 мм!
+      #ELSEIF $(alt_vst)<356
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой менее 356 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки менее 356 мм!
+      #ENDIF
+   #ELSE
+      /////////////////////////////////////////////////////////
+      // ********************************** запрет делителя для вставок Classic *************************************
+      #IF $(alt_vst)!($a+$(pribavka_k_vstavke)*2)-$(popravka) & $[mid;$(_tipvstav:5)$(_ctx);1;3]!!nic
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG В данном варианте вставок нельзя использовать делитель!
+         #ENDIF
+         // #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=Нельзя использовать делитель!
+         // *************************************************************************************************************
+      #ELSE
+      #ENDIF
+      #IF $(alt_vst)<$[ex;$(_tipvstav$(_ctx):6);:;1]
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
+      #ENDIF
+      #IF $(alt_vst)>$[ex;$(_tipvstav$(_ctx):7);:;1]
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
+      #ENDIF
+      #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<$[ex;$(_tipvstav$(_ctx):6);:;2]
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
+      #ENDIF
+      //40
+      //_dekor
+      #LETS MinMisClassPat=$[ex;$(_tipvstav$(_ctx):7);:;2]
+      #IF $(matvstav$(_ctx):5)[$(cvetvstav$(_ctx):14)] & $(_PATINA$(_ctx):1)!!999
+         #LET MinMisClassPat=900
+      #ENDIF
+      #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>$(MinMisClassPat)
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной более $(MinMisClassPat) мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки более $(MinMisClassPat) мм!
+      #ENDIF
+      //#ENDIF
+      ///////////////////////////////////////////////
+   #ENDIF
 #ENDIF
 #IF $(matvstav$(_ctx):5)[s26]
-#IF $(_tipvstav$(_ctx):5)[NICwG;NICwS]
-#LET l_vst=(($L+$(tipruch:8)*2-$(vichetL))-$(popravka))
-#LET lmin_vst=450
-#IF $(alt_vst)<356
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой менее 356 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки менее 356 мм!
-#ENDIF
-#IF $(alt_vst)>2300
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 2300 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 2300 мм!
-#ENDIF
-#IF $(alt_vst)<=2300 #LET lmax_vst=600
-#IF $(alt_vst)<=2200 #LET lmax_vst=700
-#IF $(alt_vst)<=2100 #LET lmax_vst=800
-#IF $(alt_vst)<=2000 #LET lmax_vst=900
-#IF $(alt_vst)<=1300 #LET lmax_vst=1150
-#IF $(l_vst)<$(lmin_vst)
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной менее $(lmin_vst) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки менее $(lmin_vst) мм!
-#ENDIF
-#IF $(l_vst)>$(lmax_vst)
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной более $(lmax_vst) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки более $(lmax_vst) мм!
-#ENDIF
-#ELSE
-#IF $(alt_vst)<$[ex;$(_tipvstav$(_ctx):6);:;1]
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
-#ENDIF
-#IF $(alt_vst)>$[ex;$(_tipvstav$(_ctx):7);:;1]
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
-#ENDIF
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<$[ex;$(_tipvstav$(_ctx):6);:;2]
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
-#ENDIF
-#LETS MinMisClassPat=$[ex;$(_tipvstav$(_ctx):7);:;2]
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>$(MinMisClassPat)
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной более $(MinMisClassPat) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки более $(MinMisClassPat) мм!
-#ENDIF
-#ENDIF
+   #IF $(_tipvstav$(_ctx):5)[NICwG;NICwS]
+      #LET l_vst=(($L+$(tipruch:8)*2-$(vichetL))-$(popravka))
+      #LET lmin_vst=450
+      #IF $(alt_vst)<356
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой менее 356 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки менее 356 мм!
+      #ENDIF
+      #IF $(alt_vst)>2300
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой более 2300 мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки более 2300 мм!
+      #ENDIF
+      #IF $(alt_vst)<=2300 #LET lmax_vst=600
+      #IF $(alt_vst)<=2200 #LET lmax_vst=700
+      #IF $(alt_vst)<=2100 #LET lmax_vst=800
+      #IF $(alt_vst)<=2000 #LET lmax_vst=900
+      #IF $(alt_vst)<=1300 #LET lmax_vst=1150
+      #IF $(l_vst)<$(lmin_vst)
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной менее $(lmin_vst) мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки менее $(lmin_vst) мм!
+      #ENDIF
+      #IF $(l_vst)>$(lmax_vst)
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной более $(lmax_vst) мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки более $(lmax_vst) мм!
+      #ENDIF
+   #ELSE
+      #IF $(alt_vst)<$[ex;$(_tipvstav$(_ctx):6);:;1]
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки менее $[ex;$(_tipvstav$(_ctx):6);:;1] мм!
+      #ENDIF
+      #IF $(alt_vst)>$[ex;$(_tipvstav$(_ctx):7);:;1]
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть высотой более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=высота вставки более $[ex;$(_tipvstav$(_ctx):7);:;1] мм!
+      #ENDIF
+      #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<$[ex;$(_tipvstav$(_ctx):6);:;2]
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки менее $[ex;$(_tipvstav$(_ctx):6);:;2] мм!
+      #ENDIF
+      #LETS MinMisClassPat=$[ex;$(_tipvstav$(_ctx):7);:;2]
+      #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>$(MinMisClassPat)
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть шириной более $(MinMisClassPat) мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=ширина вставки более $(MinMisClassPat) мм!
+      #ENDIF
+   #ENDIF
 #ENDIF
 #IF $(matvstav$(_ctx):5)[s09]
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>1605
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной более 1605 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки более 1605 мм!
-#ENDIF
-#IF $(alt_vst)>2540
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 2540 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 2540 мм!
-#ENDIF
+   #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>1605
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть шириной более 1605 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=ширина вставки более 1605 мм!
+   #ENDIF
+   #IF $(alt_vst)>2540
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть высотой более 2540 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=высота вставки более 2540 мм!
+   #ENDIF
 #ENDIF
 #IF $(matvstav$(_ctx):5)[S18;S20;S15]
-#IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>1500
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть шириной более 1500 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=ширина вставки более 1500 мм!
-#ENDIF
-#IF $(alt_vst)>1500
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть высотой более 1500 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=высота вставки более 1500 мм!
-#ENDIF
+   #IF (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))>1500
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть шириной более 1500 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=ширина вставки более 1500 мм!
+   #ENDIF
+   #IF $(alt_vst)>1500
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть высотой более 1500 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=высота вставки более 1500 мм!
+   #ENDIF
 #ENDIF
 #IF $(matvstav$(_ctx):5)[S13]
-#IF $(alt_vst)<=2000 & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=900
-#ELSEIF $(alt_vst)<=900 & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=2000
-#ELSE
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть размером более 2000х900 мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=измените размер вставки!
-#ENDIF
+   #IF $(alt_vst)<=2000 & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=900
+   #ELSEIF $(alt_vst)<=900 & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=2000
+   #ELSE
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG вставка не может быть размером более 2000х900 мм!
+      #ENDIF
+      #LET flag_vstavka=0
+      #LET show_msg_vst$(_idunico)=1
+      #LETS Msg_vst_error=измените размер вставки!
+   #ENDIF
 #ENDIF
 #IF $(matvstav$(_ctx):5)[S14;S16;S17;E03;D03;L02]
-#IF $(cvetvstav$(_ctx):11)=0 & not($(matvstav$(_ctx):5)[S17])
-#LET visVst=1500	 shirVst=1300
-#IF $(matvstav$(_ctx):5)[S16] #LET visVst=2280	 shirVst=1200
-#IF $(alt_vst)<=$(visVst) & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=$(shirVst)
-#ELSEIF $(alt_vst)<=$(shirVst) & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=$(visVst)
-#ELSE
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть размером более $(visVst)х$(shirVst) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=измените размер вставки!
-#ENDIF
-#ELSE
-#LET visVst=1300	 shirVst=1500
-#IF $(matvstav$(_ctx):5)[S16] #LET visVst=1200	 shirVst=2280
-#IF $(matvstav$(_ctx):5)[S17] #LET visVst=900	 shirVst=2000
-#IF $(TxtVst$(_ctx):1)=1 #LET visVst=1500	 shirVst=1300
-#IF ($(TxtVst$(_ctx):1)=1 & $(matvstav$(_ctx):5)[S16]) #LET visVst=2280	 shirVst=1200
-#IF ($(TxtVst$(_ctx):1)=1 & $(matvstav$(_ctx):5)[S17]) #LET visVst=2000	 shirVst=900
-#IF $(alt_vst)<=$(visVst) & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=$(shirVst)
-#ELSE
-#IF $(show_msg_vst$(_idunico))=0
-#MSG вставка не может быть размером более $(visVst)х$(shirVst) мм!
-#ENDIF
-#LET flag_vstavka=0
-#LET show_msg_vst$(_idunico)=1
-#LETS Msg_vst_error=измените размер вставки!
-#ENDIF
-#ENDIF
+   #IF $(cvetvstav$(_ctx):11)=0 & not($(matvstav$(_ctx):5)[S17])
+      #LET visVst=1500	 shirVst=1300
+      #IF $(matvstav$(_ctx):5)[S16] #LET visVst=2280	 shirVst=1200
+      #IF $(alt_vst)<=$(visVst) & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=$(shirVst)
+      #ELSEIF $(alt_vst)<=$(shirVst) & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=$(visVst)
+      #ELSE
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть размером более $(visVst)х$(shirVst) мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=измените размер вставки!
+      #ENDIF
+   #ELSE
+      #LET visVst=1300	 shirVst=1500
+      #IF $(matvstav$(_ctx):5)[S16] #LET visVst=1200	 shirVst=2280
+      #IF $(matvstav$(_ctx):5)[S17] #LET visVst=900	 shirVst=2000
+      #IF $(TxtVst$(_ctx):1)=1 #LET visVst=1500	 shirVst=1300
+      #IF ($(TxtVst$(_ctx):1)=1 & $(matvstav$(_ctx):5)[S16]) #LET visVst=2280	 shirVst=1200
+      #IF ($(TxtVst$(_ctx):1)=1 & $(matvstav$(_ctx):5)[S17]) #LET visVst=2000	 shirVst=900
+      #IF $(alt_vst)<=$(visVst) & (($L+$(tipruch:8)*2-$(vichetL))-$(popravka))<=$(shirVst)
+      #ELSE
+         #IF $(show_msg_vst$(_idunico))=0
+            #MSG вставка не может быть размером более $(visVst)х$(shirVst) мм!
+         #ENDIF
+         #LET flag_vstavka=0
+         #LET show_msg_vst$(_idunico)=1
+         #LETS Msg_vst_error=измените размер вставки!
+      #ENDIF
+   #ENDIF
 #ENDIF
 // *********************************************************************************************************************
 #LET rot_txt=0
@@ -495,142 +495,142 @@
 #LET facc_ant=0
 #LETS x6=
 #IF $(matvstav$(_ctx):5)[s17]
-#LET facc_ant=1
-#LETS x6=/$(cvetvstav$(_ctx):6)/$(TxtVst$(_ctx):1)
+   #LET facc_ant=1
+   #LETS x6=/$(cvetvstav$(_ctx):6)/$(TxtVst$(_ctx):1)
 #ENDIF
 #IF $(flag_vstavka)=1
-// ****************************************** номер вставки по новому **************************************
-numvst	SL=$l/2	SA=$a/2
-///////////расчет параметров для ручек
-#LET POR=
-#FOR $1:$(numManNova)
-#LETS manPar= $(parManNova$(i))
-#LET manSa=$[ex;$(manPar);|;1]
-#LET manA=$[ex;$(manPar);|;2]
-#LETS manPOR=$[ex;$(manPar);|;4]
-#IF $(manSa)<$(spostaA) & $(manSa)+$(manA)>=$(spostaa)
-#LETS por=$(manPor)
-#ENDIF
-#ENDFOR
-//PEREMICH
-///////
-/////вставка между двух толстых профилей////
-#LET downFlag=0
-#LET upFlag=0
-#FOR $1:$(countPer)
-#LETS parPer=$(parPer$(i))
-#LET manSa=$[ex;$(parPer);|;1]
-#LET manA=$[ex;$(parPer);|;2]
-#IF $(manSa)<$(spostaA) & $(manSa)+$(manA)>=$(spostaa)
-#LET downFlag=1
-#ENDIF
-#IF $(manSa)=$(spostaA)+$a
-#LET upFlag=1
-#ENDIF
-#ENDFOR
-//сверху и снизу толстый профиль
-#IF $(downFlag)=1 & $(upFlag)=1 & $a=204
-#LETV enablVert$(_ctx)=1
+   // ****************************************** номер вставки по новому **************************************
+   numvst	SL=$l/2	SA=$a/2
+   ///////////расчет параметров для ручек
+   #LET POR=
+   #FOR $1:$(numManNova)
+      #LETS manPar= $(parManNova$(i))
+      #LET manSa=$[ex;$(manPar);|;1]
+      #LET manA=$[ex;$(manPar);|;2]
+      #LETS manPOR=$[ex;$(manPar);|;4]
+      #IF $(manSa)<$(spostaA) & $(manSa)+$(manA)>=$(spostaa)
+         #LETS por=$(manPor)
+      #ENDIF
+   #ENDFOR
+   //PEREMICH
+   ///////
+   /////вставка между двух толстых профилей////
+   #LET downFlag=0
+   #LET upFlag=0
+   #FOR $1:$(countPer)
+      #LETS parPer=$(parPer$(i))
+      #LET manSa=$[ex;$(parPer);|;1]
+      #LET manA=$[ex;$(parPer);|;2]
+      #IF $(manSa)<$(spostaA) & $(manSa)+$(manA)>=$(spostaa)
+         #LET downFlag=1
+      #ENDIF
+      #IF $(manSa)=$(spostaA)+$a
+         #LET upFlag=1
+      #ENDIF
+   #ENDFOR
+   //сверху и снизу толстый профиль
+   #IF $(downFlag)=1 & $(upFlag)=1 & $a=204
+      #LETV enablVert$(_ctx)=1
+   #ELSE
+      #LETV enablVert$(_ctx)=0
+      #IF $(vertmannov$(_ctx):1)=1
+         #LETV vertmannov$(_ctx)=0
+      #ENDIF
+   #ENDIF
+   ////
+   // *********************************************************************************************************
+   // ******************************* определение типа материала вставки для крепления роликов и кронштейнов Nova ******************
+   #IF $(spostaa)<6 #LETS modSottoVst=$(matvstav$(_ctx):5)
+   #IF $(Numvst)=1 #LETS modPensVst=$(matvstav$(_ctx):5)
+   // ******************************************************************************************************************************
+   #IF $(matvstav$(_ctx):9)==n
+      #LET sposta_vstav=0
+      #IF $(TIPSYSTEM:18)==ar2 #LET sposta_vstav=$p-1-$(matvstav$(_ctx):3)
+      // ******************************************************* вставка без 3ds файла *************************************************
+      #LET lVstav=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)
+      #LET slVstav=-($(tipruch:8)*2-$(vichetL))/2
+      #IF $(vertmannov$(_ctx):0)=1
+         #LET lVstav=$(lant_door)-70
+         #LET slVstav=30
+         //добавим верт. профиль сзади
+         //PEREMICH
+         //_PEREMICHPARAM
+         // 024	COD=999USILITEL /WR=382205416	SL=56+17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
+         // 024	COD=999USILITEL /WR=382205416	SL=$l-17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
+         //_ADD_USIL для теста
+         #LETS cod=AR2PROF_US
+         #LETV _WR=$(cod)
+         #LETV _MNP=$(cod)
+         065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=17	SA=8	SP=$(sp_delit)-5	l=6.8	a=170	p=56	lato=$(show_door)	ay=90  //Профиль разделительный
+         065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l-17-56	SA=8	SP=$(sp_delit)-5	l=6.8	a=170	p=56	lato=$(show_door)	ay=90  //Профиль разделительный
+         _add_man_nova	SL=29	SP=$(sp_delit)	sa=2	P=$(tipruch:15)	lato=$(show_door)	az=-90	flagNova=3
+         _add_man_nova	SL=$l	SP=$(sp_delit)	sa=2	P=$(tipruch:15)	lato=$(show_door)	az=-90	flagNova=3
+         //024	COD=999USILITEL /WR=382205416	SL=17	SA=-23	SP=$(sp_delit)-5	L=150	A=56	P=5	lato=$(show_door)  //Профиль разделительный
+         //
+      #ENDIF
+      040	SL=$(slVstav)	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	SP=$(sposta_vstav)	L=$(lVstav)	A=$(alt_vst)	C1=$(col1)	FACC=$(facc_ant)	CX=cvetvstav$(_ctx)	X6=$(x6)	lato=$(show_door)  //Вставка двери
+      // 040	SL=-($(tipruch:8)*2-$(vichetL))/2	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	SP=$(sposta_vstav)	L=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)	A=$(alt_vst)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)  //Вставка двери
+      // *******************************************************************************************************************************
+   #ELSE
+      // ******************************************************* вставка c 3ds файлом *************************************************
+      #LETS TipVst=$(matvstav$(_ctx):9)
+      #IF $(G_S$(_ctx):0)=1 & $[datecompare;$(dataordine);$(_DataNewVst:3)]=-1
+         #LETS TipVst=$(matvstav$(_ctx):10)
+         #LETS matvstav$(_ctx)_old=$(matvstav$(_ctx))	 cvetvstav$(_ctx)_old=$(cvetvstav$(_ctx))
+         #LETS matvstav$(_ctx)=$(matvstavV$(_ctx))	 cvetvstav$(_ctx)=$(cvetvstavV$(_ctx))
+         040	cod=X	SL=(-($(tipruch:8)*2-$(vichetL))/2)+115	SA=(-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2)+95	L=(($L+$(tipruch:8)*2-$(vichetL))-$(popravka))-115*2	A=$(alt_vst)-95*2	C1=$(matvstav$(_ctx):7)|$(.percorso)\foto\struttura\$(cvetvstav$(_ctx):5)|$(cvetvstav$(_ctx):6)	CX=cvetvstav$(_ctx)	X4=/no	lato=$(show_door)  //Вставка двери
+         #LETS matvstav$(_ctx)=$(matvstav$(_ctx)_old)	 cvetvstav$(_ctx)=$(cvetvstav$(_ctx)_old)
+      #ENDIF
+      #IF $(matvstav$(_ctx):5)[s08;s26] & $[datecompare;$(dataordine);$(_DataNewVst:3)]>=0
+         _PlankiVstavki	SL=-($(tipruch:8)*2-$(vichetL))/2	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	L=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)	A=$(alt_vst)	P=19
+      #ENDIF
+      040	SL=-($(tipruch:8)*2-$(vichetL))/2	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	L=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)	A=$(alt_vst)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	lato=$(show_door)  //Вставка двери
+      // ******************************************************************************************************************************
+   #ENDIF
 #ELSE
-#LETV enablVert$(_ctx)=0
-#IF $(vertmannov$(_ctx):1)=1
-#LETV vertmannov$(_ctx)=0
-#ENDIF
-#ENDIF
-////
-// *********************************************************************************************************
-// ******************************* определение типа материала вставки для крепления роликов и кронштейнов Nova ******************
-#IF $(spostaa)<6 #LETS modSottoVst=$(matvstav$(_ctx):5)
-#IF $(Numvst)=1 #LETS modPensVst=$(matvstav$(_ctx):5)
-// ******************************************************************************************************************************
-#IF $(matvstav$(_ctx):9)==n
-#LET sposta_vstav=0
-#IF $(TIPSYSTEM:18)==ar2 #LET sposta_vstav=$p-1-$(matvstav$(_ctx):3)
-// ******************************************************* вставка без 3ds файла *************************************************
-#LET lVstav=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)
-#LET slVstav=-($(tipruch:8)*2-$(vichetL))/2
-#IF $(vertmannov$(_ctx):0)=1
-#LET lVstav=$(lant_door)-70
-#LET slVstav=30
-//добавим верт. профиль сзади
-//PEREMICH
-//_PEREMICHPARAM
-// 024	COD=999USILITEL /WR=382205416	SL=56+17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
-// 024	COD=999USILITEL /WR=382205416	SL=$l-17	SA=8	SP=$(sp_delit)-5	L=170	A=56	az=-90	P=5	lato=$(show_door)  //Профиль разделительный
-//_ADD_USIL для теста
-#LETS cod=AR2PROF_US
-#LETV _WR=$(cod)
-#LETV _MNP=$(cod)
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=17	SA=8	SP=$(sp_delit)-5	l=6.8	a=170	p=56	lato=$(show_door)	ay=90  //Профиль разделительный
-065	COD=$(cod) /WR=365778991;MNP=$(_MNP:3);_cprof=$(col_system:6);BRD=$(idbrand);PRF=$(idname);UKP=689985694;IDO=1	SL=$l-17-56	SA=8	SP=$(sp_delit)-5	l=6.8	a=170	p=56	lato=$(show_door)	ay=90  //Профиль разделительный
-_add_man_nova	SL=29	SP=$(sp_delit)	sa=2	P=$(tipruch:15)	lato=$(show_door)	az=-90	flagNova=3
-_add_man_nova	SL=$l	SP=$(sp_delit)	sa=2	P=$(tipruch:15)	lato=$(show_door)	az=-90	flagNova=3
-//024	COD=999USILITEL /WR=382205416	SL=17	SA=-23	SP=$(sp_delit)-5	L=150	A=56	P=5	lato=$(show_door)  //Профиль разделительный
-//
-#ENDIF
-040	SL=$(slVstav)	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	SP=$(sposta_vstav)	L=$(lVstav)	A=$(alt_vst)	C1=$(col1)	FACC=$(facc_ant)	CX=cvetvstav$(_ctx)	X6=$(x6)	lato=$(show_door)  //Вставка двери
-// 040	SL=-($(tipruch:8)*2-$(vichetL))/2	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	SP=$(sposta_vstav)	L=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)	A=$(alt_vst)	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)  //Вставка двери
-// *******************************************************************************************************************************
-#ELSE
-// ******************************************************* вставка c 3ds файлом *************************************************
-#LETS TipVst=$(matvstav$(_ctx):9)
-#IF $(G_S$(_ctx):0)=1 & $[datecompare;$(dataordine);$(_DataNewVst:3)]=-1
-#LETS TipVst=$(matvstav$(_ctx):10)
-#LETS matvstav$(_ctx)_old=$(matvstav$(_ctx))	 cvetvstav$(_ctx)_old=$(cvetvstav$(_ctx))
-#LETS matvstav$(_ctx)=$(matvstavV$(_ctx))	 cvetvstav$(_ctx)=$(cvetvstavV$(_ctx))
-040	cod=X	SL=(-($(tipruch:8)*2-$(vichetL))/2)+115	SA=(-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2)+95	L=(($L+$(tipruch:8)*2-$(vichetL))-$(popravka))-115*2	A=$(alt_vst)-95*2	C1=$(matvstav$(_ctx):7)|$(.percorso)\foto\struttura\$(cvetvstav$(_ctx):5)|$(cvetvstav$(_ctx):6)	CX=cvetvstav$(_ctx)	X4=/no	lato=$(show_door)  //Вставка двери
-#LETS matvstav$(_ctx)=$(matvstav$(_ctx)_old)	 cvetvstav$(_ctx)=$(cvetvstav$(_ctx)_old)
-#ENDIF
-#IF $(matvstav$(_ctx):5)[s08;s26] & $[datecompare;$(dataordine);$(_DataNewVst:3)]>=0
-_PlankiVstavki	SL=-($(tipruch:8)*2-$(vichetL))/2	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	L=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)	A=$(alt_vst)	P=19
-#ENDIF
-040	SL=-($(tipruch:8)*2-$(vichetL))/2	SA=-($(tipruch:10)+$(tipruch:12)-$(vichetH))/2	L=($L+$(tipruch:8)*2-$(vichetL))-$(popravka)	A=$(alt_vst)	p=19	C1=$(col1)	FACC=1	CX=cvetvstav$(_ctx)	lato=$(show_door)  //Вставка двери
-// ******************************************************************************************************************************
-#ENDIF
-#ELSE
-001
-025	COD= / /$(Msg_vst_error)	lato=$(show_num)	SL=0	SA=$a/2	l=$l	a=200  //Номер детали
+   001
+   025	COD= / /$(Msg_vst_error)	lato=$(show_num)	SL=0	SA=$a/2	l=$l	a=200  //Номер детали
 #ENDIF
 #LET nc=$(nc)+1
 #LET shvst$(nc)=$(spostaa)
 #IF $(nc)=1
-#LET shvst1=$(spostaa)
+   #LET shvst1=$(spostaa)
 #ELSEIF $(nc)<1
-#LET shvst1=9999	shvst2=9999	shvst3=9999	shvst4=9999	shvst5=9999	shvst6=9999
+   #LET shvst1=9999	shvst2=9999	shvst3=9999	shvst4=9999	shvst5=9999	shvst6=9999
 #ENDIF
 #IF $(nc)=2
-#LET shvst2=$(spostaa)
+   #LET shvst2=$(spostaa)
 #ELSEIF $(nc)<2
-#LET shvst2=9999	shvst3=9999	shvst4=9999	shvst5=9999	shvst6=9999
+   #LET shvst2=9999	shvst3=9999	shvst4=9999	shvst5=9999	shvst6=9999
 #ENDIF
 #IF $(nc)=3
-#LET shvst3=$(spostaa)
+   #LET shvst3=$(spostaa)
 #ELSEIF $(nc)<3
-#LET shvst3=9999	shvst4=9999	shvst5=9999	shvst6=9999
+   #LET shvst3=9999	shvst4=9999	shvst5=9999	shvst6=9999
 #ENDIF
 #IF $(nc)=4
-#LET shvst4=$(spostaa)
+   #LET shvst4=$(spostaa)
 #ELSEIF $(nc)<4
-#LET shvst4=9999	shvst5=9999	shvst6=9999
+   #LET shvst4=9999	shvst5=9999	shvst6=9999
 #ENDIF
 #IF $(nc)=5
-#LET shvst5=$(spostaa)
+   #LET shvst5=$(spostaa)
 #ELSEIF $(nc)<5
-#LET shvst5=9999	shvst6=9999
+   #LET shvst5=9999	shvst6=9999
 #ENDIF
 #IF $(nc)=6
-#LET shvst6=$(spostaa)
+   #LET shvst6=$(spostaa)
 #ELSEIF $(nc)<6
-#LET shvst6=9999
+   #LET shvst6=9999
 #ENDIF
 #LET 1vst=2
 #LETS stroka=$(stroka)	$(spostaa)
 #LET nvst=$(nvst)+1
 #LETV numvar=$(nvst)
 #IF $(nvst)>=10
-#LETV numvar=10
+   #LETV numvar=10
 #ELSEIF $(nvst)>=6 & $(nvst)<10
-#LETV numvar=6
+   #LETV numvar=6
 #ENDIF
 #LETS vstavkaParam$(nvst)=$(spostaA)|$(a)
 //#MSG $(numvar)

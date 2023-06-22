@@ -54,7 +54,7 @@ _DATABOX
    #IF $l<100 #LET l=100
    #MSG высота или ширина задней стенки не может меньше 100 мм!
 #ENDIF
-#IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020]
+#IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020;167]
    #LETS mat_backwall:4=DSPLN8|CVET_VST
 #ENDIF
 #IF $(_colkarkasback:1)[050;058;061;211] & $a>2440
@@ -91,3 +91,6 @@ _DATABOX
 #LETV hdfsize=$lX$a
 #LETS _macrofinale= _finaleHdf
 //_FINALELIVING
+//volume
+//ADDNAP
+//_MERGEBACKWALL

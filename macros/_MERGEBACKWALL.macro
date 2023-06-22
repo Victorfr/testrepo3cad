@@ -26,7 +26,7 @@
 #LETV countBigWallFinish=$(countBigWall)
 ///отрисовка задних стенок при обьединении ниш
 #IF $(tipshkaf:6)=2 & $(_backWallDis:1)!1 & $[datecompare;$(dataordine);25.10.2021]>=0
-   #IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020]
+   #IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020;167]
       #LETS mat_backwall:4=DSPLN8|CVET_VST
    #ENDIF
    #LET maxaltBackWall=2750
