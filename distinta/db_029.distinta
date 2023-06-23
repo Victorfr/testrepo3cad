@@ -1,0 +1,34 @@
+#LETS nizprof=$(x4:1)
+#LETS verhprof=$(x4:2)
+#LETS colprof=$(x4:3)
+#LETS cha=$(x4:5)
+#LETS flag_reclam=$(x4:6)
+#IF $(flag_reclam)==y
+   #IF $(x4:4)==n
+      999$(nizprof),{$(da)/1000},_cprof=$(colprof),,$(da),,,,,,,,$(mat)_1
+   #ELSEIF $(x4:4)==u
+      999upl_niz_napr,{$(da)/1000},skp=1,,$(da),,,,,,,,$(mat)_1
+   #ELSEIF $(x4:4)==v
+      999$(verhprof),{$(da)/1000},skp=1;_cprof=$(colprof),,$(da),,,,,,,,$(mat)_1
+   #ELSEIF $(x4:4)==s
+      999shleg,{$(da)/1000},skp=1;cha=$(cha),,$(da),,,,,,,,$(mat)_1
+   #ENDIF
+   #IF $(x4:4)==plardekan
+      999$(nizprof),{$(da)/1000},_cprof=$(colprof),,$(da),,,,,,,,$(mat)_1
+   #ENDIF
+#ELSEIF $(flag_reclam)==n
+   #IF $(x4:4)==n
+      999$(nizprof),{$(da)/1000},_cprof=$(colprof),,$(da),,,,,,,,$(mat)_1
+   #ELSEIF $(x4:4)==u
+      999upl_niz_napr,{$(da)/1000},,,$(da),,,,,,,,$(mat)_1
+   #ELSEIF $(x4:4)==v
+      999$(verhprof),{$(da)/1000},_cprof=$(colprof),,$(da),,,,,,,,$(mat)_1
+   #ELSEIF $(x4:4)==s
+      999shleg,{$(da)/1000},cha=$(cha),,$(da),,,,,,,,$(mat)_1
+   #ELSEIF $(x4:4)==r
+      999napr_rasp_an,{$(da)/1000},_cprof=$(colprof),,$(da),,,,,,,,$(mat)_1
+   #ENDIF
+   #IF $(x4:4)==plardekan
+      999$(nizprof),{$(da)/1000},_cprof=$(colprof),,$(da),,,,,,,,$(mat)_1
+   #ENDIF
+#ENDIF

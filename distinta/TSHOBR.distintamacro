@@ -1,0 +1,18 @@
+#LETS sposts=$(x8)
+#LETS _spostal=$[ex;$(sposts);O;1]
+//#LETS _spostaa=$[ex;$(sposts);O;2]
+//#LETS _spostap=$[ex;$(sposts);O;3]
+#LET posy=8
+#IF $(_spostaL)>0
+#LET posy=$(dl)-8
+#ENDIF
+#LET countOb=int(($(da)-100)/400)
+//обработки к боковине
+#FOR $0:$(countOb)
+obrabotka						2;D5G13;x={100+400*$I};y={8};IDO=1						$(mat_add_obr)
+#ENDFOR
+//обработки крышки и дна
+obrabotka						2;D5G13;x={8};y={100};IDO=1						$(mat_add_obr)
+obrabotka						2;D5G13;x={8};y={$(dl)-100};IDO=1						$(mat_add_obr)
+obrabotka						2;D5G13;x={$(da)-8};y={100};IDO=1						$(mat_add_obr)
+obrabotka						2;D5G13;x={$(da)-8};y={$(dl)-100};IDO=1						$(mat_add_obr)

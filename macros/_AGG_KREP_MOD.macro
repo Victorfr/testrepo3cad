@@ -1,4 +1,4 @@
-!parametri krepPar=	multiCount=1	flagTD=
+!parametri krepPar=$(_krepeg:3)	multiCount=1	flagTD=
 #LET ldet=$p
 #LET Lmin_sr=42
 #LET Lstag=32
@@ -18,12 +18,24 @@
 //#LET Ldet=800
 #LET Nst= $[iif;$(Lmin1)<=$(Ldet) & $(Ldet)<=$(Lmax1);1;0]+$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);2;0]+$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);3;0]\
 +$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);4;0]\
-+$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);5;0]
+                         +$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);5;0]
 #LET st_count=$(Nst)-1
 #LET col_krep=$(NST)*$(multiCount)
 //#FOR $1:$(col_krep)
-001	LATO=6	COD=999DUBVB / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
-001	LATO=6	COD=$(mat:6) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
-#LETS varParVB=//TD=536
-001	LATO=6	COD=$(_colkarkas:12) /$(varParVB) / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#IF $(krepPar)[RASTEX]
+   001	LATO=6	COD=999dub9047974 / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=999ex79462 / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+   //001	LATO=6	COD=$(_colkarkas:12) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+   #IF $(_colkarkas:14)==999sam
+      001	LATO=6	COD=$(_colkarkas:14) /COLSAM=$(_colkarkas:15) / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+   #ELSE
+      001	LATO=6	COD=$(_colkarkas:14) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+   #ENDIF
+#ELSE
+   001	LATO=6	COD=999DUBVB / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=$(mat:6) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+   #LETS varParVB=//TD=536
+   001	LATO=6	COD=$(_colkarkas:12) /$(varParVB) / /#Q$(col_krep)	L=1	A=1	P=1  //Test
+#ENDIF
 //#ENDFOR
+//_AGG_KREP

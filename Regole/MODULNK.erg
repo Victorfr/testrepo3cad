@@ -69,7 +69,8 @@ T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
 //_FASVID
 //_KARKASFAS
 #LET ssposta=0
-#LETV _krepeg=1
+
+
 #LETS ndet=
 #LETS cod=999MODUL
 #LETV _MNP=$(cod)
@@ -122,7 +123,7 @@ T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
 #ENDIF
 //001,COD=test /ERROR=1; / /#L+1  //,C1=15,C2=5,FACC=0  //Дверь распашная G (301 было)
 //100  // Планка ЛВ
-#LETV _krepeg=1
+#LETV _krepeg=2
 //300
 //301
 //_SHKAF
@@ -361,6 +362,7 @@ _proverkaPlacer ///зоны пересечения с петлями
 //_MISURALIM\
 //_PARAMANTASTR
 //301
+#LETV _krepeg=1
 //*******************************левый фальш фасад********************************
 #IF $(falsh_sx:1)=1
    #IF $(falsh_dx:1)=1 //если стоит фальш фасад справа
@@ -567,7 +569,7 @@ _proverkaPlacer ///зоны пересечения с петлями
 #ELSE
    #LET potstOld=0
 #ENDIF
-
+#LETV _krepeg=2
 //_NICOLECLASSIC3DS
 //_DOORRASP
 ///********************************************************************************************************************************
@@ -692,7 +694,8 @@ _proverkaPlacer ///зоны пересечения с петлями
    #ENDIF
    
 #ENDIF
-//301
+//013
+
 //_FASVID
 //******************************************************************
 #IF $(zones)=3
@@ -701,6 +704,7 @@ _proverkaPlacer ///зоны пересечения с петлями
    #ENDIF
 #ENDIF
 //_AGG_KREP
+#LETV _krepeg=2
 //************************************каркас*******************************************
 #IF $(flag_ust)=1
    
@@ -801,6 +805,7 @@ _proverkaPlacer ///зоны пересечения с петлями
 //_KARKASFAS
 //_KOMODLIVING
 //301
+//010
 //303
 //_FASVID
 //_KORPVID

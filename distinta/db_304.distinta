@@ -1,0 +1,123 @@
+#LETS modvstav=$(x4:0)
+#LETS artpilomat=$(x4:1)
+#LETS cvetvstav=$(x4:2)
+#LETS TxtVst=$(x4:4)
+#LETS RotTxtVst=$(x4:5)
+#LETS art_pl=$(x4:7)
+#LETS ptn=$(x4:10)
+#LETS draw=$(x4:11)
+#LETS dlWRT=$[len;$(x4:12)]
+#LETS WRT=$[mid;$(x4:12);1;{$(dlWRT)-2}]
+#LETS _MKR=$(x4:13)
+#IF $(modvstav)==S08 // classic 8 мм
+   #IF $(TxtVst)=1
+      #LETS nt=5723737
+   #ELSE
+      #LETS nt=11726799
+   #ENDIF
+   #LETS matNum=
+   #IF $(ptn)!!60251733
+      #LET cout_lak=rn3(($(da)*$(dl)/1000000) *0.15/25)
+      #IF $(cout_lak)<0.001 #LET cout_lak=0.001
+      999LakFP,$(cout_lak),,,,,,,,,,,$(mat)_2
+      999PatNV,{rn3(($(da)*$(dl)/1000000) *0.1718)},WR=124079459;MNP=399368545;OCF=$(cvetvstav);_MKR=$(_MKR);PTN=$(ptn),,,,,,,,,,$(mat)_3
+      #LETS cod=$(WRT)
+      #M MnpWrNamedet,cod=$(cod)
+      //      $(cod),1,WR=$(wr);MNP=$(mnp);CPL=$(cvetvstav);NT=$(nt);NPO=404879825;PTN=60251733;SKP=0;SHPR=для патинирования,$(dl),$(da),,,,,,,$(namedet),$(mat)_1
+      $(cod),1,WR=$(wr);MNP=$(mnp);OCF=$(cvetvstav);NT=$(nt);NPO=404879825;SKP=0;SHPR=для патинирования,$(dl),$(da),,,,,,,$(namedet),$(mat)_1
+      #LETS matNum=1.
+   #ENDIF
+   #LETS cod=999ZAGCORC
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=404879826;IDO=1,{92+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)1
+   //======================================
+   //добавляем макрос для обработки рисунка
+   #M NPOMACRO,NPO=404879826
+   //#MSG $(draw) x $(NPOMACRONAME)
+   obrabotka,,,,,,1;$(NPOMACRONAME);IDO=1,,,,,,
+   //======================================
+   !{
+   #LETS cod=999ZAGZAG
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp),{92+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)1.1
+   !{
+   999$(artpilomat),rn3({2450+4}*{92+4}/1000000),,{92+4},{2450+4},,,,,,,,$(mat)_$(matNum)1.1.1
+   !}
+   !}
+   999KLEI_PL,rn3((2450*92/1000000)*0.2),,,,,,,,,,,$(mat)_$(matNum)2
+   999$(art_pl),rn3((92+55)*(2450+55)/1000000),,{2450+55},{96+55},,,,,,,,$(mat)_$(matNum)3
+   #LETS cod=999ZAGCORN
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=782449709;IDO=2,{45+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)4
+   //======================================
+   //добавляем макрос для обработки рисунка
+   #M NPOMACRO,NPO=782449709
+   //#MSG $(draw) x $(NPOMACRONAME)
+   obrabotka,,,,,,1;$(NPOMACRONAME);IDO=2,,,,,,
+   //======================================
+   !{
+   #LETS cod=999ZAGZAG
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp),{45+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)4.1
+   !{
+   999$(artpilomat),rn3({2450+4}*{45+4}/1000000),,{45+4},{2450+4},,,,,,,,$(mat)_$(matNum)4.1.1
+   !}
+   !}
+   999KLEI_PL,rn3((2450*45/1000000)*0.2),,,,,,,,,,,$(mat)_$(matNum)5
+   999$(art_pl),rn3((45+55)*(2450+55)/1000000),,{2450+55},{45+55},,,,,,,,$(mat)_$(matNum)6
+   999KleiPVA,0.25,,,,,,,,,,,$(mat)_$(matNum)7
+#ELSEIF $(modvstav)[s26] // classic эмаль мм
+   
+   #LETS matNum=
+   #LETS cod=999ZAGSBRKR
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=$(draw),{92},{2450},,,,,,,$(namedet),$(mat)_$(matNum)1
+   !{
+   
+   #LETS cod=999ZAGCORCKR
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=404879826;IDO=1,{92},{2450},19,,,,,,$(namedet),$(mat)_$(matNum)1.1
+   //======================================
+   //добавляем макрос для обработки рисунка
+   #M NPOMACRO,NPO=404879826
+   //#MSG $(draw) x $(NPOMACRONAME)
+   obrabotka,,,,,,1;$(NPOMACRONAME);IDO=1,,,,,,
+   //======================================
+   !{
+   #LETS cod=999ZAGLMDF19KR
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp),{92+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)1.1.1
+   !{
+   999$(artpilomat),rn3({2450+4}*{92+4}/1000000),,{92+4},{2450+4},,,,,,,,$(mat)_$(matNum)1.1.1.1
+   !}
+   !}
+   
+   #LETS cod=999ZAGCORKRN
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp);NPO=782449709;IDO=2,{45},{2450},19,,,,,,$(namedet),$(mat)_$(matNum)1.2
+   //======================================
+   //добавляем макрос для обработки рисунка
+   #M NPOMACRO,NPO=782449709
+   //#MSG $(draw) x $(NPOMACRONAME)
+   obrabotka,,,,,,1;$(NPOMACRONAME);IDO=2,,,,,,
+   //======================================
+   !{
+   #LETS cod=999ZAGLMDF19KR
+   #M MnpWrNamedet,cod=$(cod)
+   $(cod),1,WR=$(wr);MNP=$(mnp),{45+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)1.2.1
+   !{
+   999$(artpilomat),rn3({2450+4}*{45+4}/1000000),,{45+4},{2450+4},,,,,,,,$(mat)_$(matNum)1.2.1.1
+   !}
+   !}
+   999KleiPVA,0.25,,,,,,,,,,,$(mat)_$(matNum)1.3
+   !}
+   
+   #IF $(ptn)!!60251733 //для патины
+      #LET plPat=rn3(($(da)*$(dl)/1000000) *0.15/25)
+      #IF $(plPat)<0.001 #LET plPat=0.001
+      999LakFP,$(plPat),,,,,,,,,,,$(mat)_$(matNum)2
+      999PatNV,{rn3(($(da)*$(dl)/1000000) *0.1718)},WR=124079459;MNP=399368545;OCF=$(cvetvstav);_MKR=$(_MKR);PTN=$(ptn),,,,,,,,,,$(mat)_$(matNum)3
+   #ENDIF
+   
+#ENDIF
+///тест из компьютера v-gluhov1

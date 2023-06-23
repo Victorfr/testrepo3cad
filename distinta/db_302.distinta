@@ -1,0 +1,170 @@
+#LETS modRam=$(x4:0)
+#LETS _ckd=$(x4:1)
+#LETS _ckk=$(x4:2)
+#LETS cod_mat=$[ex;$(x4:3);|;1]
+#LETS cod_krom=$[ex;$(x4:4);|;1]
+#LETS name_param_mat=$[ex;$(x4:3);|;2]
+#LETS name_param_krom=$[ex;$(x4:4);|;2]
+#LETS cod_klei=$(x4:5)
+#LETS wk=$(x4:6)
+#LETS nk=$(x4:6)
+#LETS ek=$(x4:6)
+#LETS sk=$(x4:6)
+#LETS nt=$(x4:7)
+
+#LETS petlObr=$(x4:20)// делать или нет присадки под петли
+#LETS fiaApertoAnta=$(x4:21) //сторона открывания
+#LETS petlObrPar=$(x4:22)
+#LETS dataOrdine=$(x4:24)
+
+
+//#LETS npo_ram=390734871, npo_plV=411723619, npo_plG=411723648 //mix
+//#IF $(modRam)==S04 #LETS npo_ram=390735067, npo_plV=411723653, npo_plG=411723655 // Spark
+//#IF $(modRam)[S12;E02;D02] #LETS npo_ram=390734392, npo_plV=416305726, npo_plG=416305727 // Comfort
+
+
+#LETS npo_ram=477441808,NPD_ram=477369131, npo_plV=411723619, npo_plG=411723648 //mix
+#IF $(modRam)==S04 #LETS npo_ram=477441809,NPD_ram=477444483, npo_plV=411723653, npo_plG=411723655 // Spark
+#IF $(modRam)[S12;E02;D02] #LETS npo_ram=477441807,NPD_ram=477444482, npo_plV=416305726, npo_plG=416305727 // Comfort
+#IF $(modram)==S28
+   #LETS npo_ram=490741388
+   #LETS npo_PLV=490741110
+   #LETS npo_plG=490741165
+#ENDIF
+#IF $(modram)==S31
+   #LETS npo_ram=607804751
+   #LETS npo_PLV=607804340
+   #LETS npo_plG=607804558
+#ENDIF
+#LETS cod=$(modRam)RAMDOORV
+#IF $(modRam)[s02] & $(name_param_krom)[_22LCKK]
+   #LETS cod=$(cod)LZ
+#ENDIF
+
+#M MnpWrNamedet,cod=$(cod)
+#IF $(modRam)[s02] & $(name_param_krom)[_22LCKK]
+   #LETS cod_klei=NO
+#ENDIF
+
+#IF $(nt)=
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NPO=$(npo_ram)
+#ELSE
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NT=$(NT);NPO=$(npo_ram)
+#ENDIF
+
+#IF $(petlObr)=1
+   #LETS param_ram=$(param_ram);IDO=1_6;IDD=1;pop=470043779
+#ELSE
+   #LETS param_ram=$(param_ram);IDO=6
+#ENDIF
+//======================================
+//добавляем макрос для обработки рисунка
+#M NPOMACRO,NPO=$(npo_ram)
+//#MSG $(draw) x $(NPOMACRONAME)
+//убрал 12.08 по письму березина и сергея
+//obrabotka,,,,,,1;$(NPOMACRONAME);IDO=6,,,,,,
+obrabotka,,,,,,2;$(NPOMACRONAME)_DOP;IDO=6,,,,,,
+
+//======================================
+$(cod),1,$(param_ram),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)_1
+!{
+999shkant8x40,8,,40,8,8,,,,,,,$(mat)_1.1
+#LETS cod=$(modRam)PLANKAV
+#IF $(modRam)[s02] & $(name_param_krom)[_22LCKK]
+   #LETS cod=$(cod)LZ
+#ENDIF
+#M MnpWrNamedet,cod=$(cod)
+#IF $(nt)=
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NPO=$(npo_plV)
+#ELSE
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NT=$(NT);NPO=$(npo_plV)
+#ENDIF
+//======================================
+//добавляем макрос для обработки рисунка
+#M NPOMACRO,NPO=$(npo_plV)
+//#MSG $(draw) x $(NPOMACRONAME)
+obrabotka,,,,,,1;$(NPOMACRONAME);IDO=5,,,,,,
+//======================================
+$(cod),1,$(param_ram);IDO=5,100,($(da)+40),$(dp),,,,,,$(namedet),$(mat)_1.2
+#M list_dsp,larg_zag=100,prof_zag=$(dp),alte_zag=($(da)+40),tip_det=zad,kol_stor_krom=zad1,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat)_1.2,soed_str=
+
+//======================================
+//добавляем макрос для обработки рисунка
+#M NPOMACRO,NPO=$(Npo_plV)
+//#MSG $(draw) x $(NPOMACRONAME)
+obrabotka,,,,,,1;$(NPOMACRONAME);IDO=4,,,,,,
+//======================================
+$(cod),1,$(param_ram);IDO=4,100,($(da)+40),$(dp),,,,,,$(namedet),$(mat)_1.3
+#M list_dsp,larg_zag=100,prof_zag=$(dp),alte_zag=($(da)+40),tip_det=zad,kol_stor_krom=zad1,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat)_1.3,soed_str=
+
+#LETS cod=$(modRam)PLANKAG
+#IF $(modRam)[s02] & $(name_param_krom)[_22LCKK]
+   #LETS cod=$(cod)LZ
+#ENDIF
+#M MnpWrNamedet,cod=$(cod)
+#IF $(nt)=
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NPO=$(npo_plG);IDO=3
+#ELSE
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NT=$(NT);NPO=$(npo_plG);IDO=3
+#ENDIF
+//======================================
+//добавляем макрос для обработки рисунка
+#M NPOMACRO,NPO=$(npo_plG)
+//#MSG $(draw) x $(NPOMACRONAME)
+obrabotka,,,,,,1;$(NPOMACRONAME);IDO=3,,,,,,
+//======================================
+$(cod),1,$(param_ram),(100+20),($(dl)-99-99),$(dp),,,,,,$(namedet),$(mat)_1.4
+!{
+#LETS cod=$(modRam)ZAGGORPL
+#IF $(modRam)[s02] & $(name_param_krom)[_22LCKK]
+   #LETS cod=$(cod)LZ
+#ENDIF
+#M MnpWrNamedet,cod=$(cod)
+#IF $(nt)=
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK)
+#ELSE
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NT=$(NT)
+#ENDIF
+$(cod),0.5,$(param_ram),(400),($(dl)-99-99),$(dp),,,,,,$(namedet),$(mat)_1.4.1
+#M list_dsp,larg_zag=(400),prof_zag=$(dp),alte_zag=($(dl)-99-99),tip_det=zad,kol_stor_krom=zad1,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat)_1.4.1,soed_str=
+!}
+#LETS cod=$(modRam)PLANKAG
+#IF $(modRam)[s02] & $(name_param_krom)[_22LCKK]
+   #LETS cod=$(cod)LZ
+#ENDIF
+#M MnpWrNamedet,cod=$(cod)
+#IF $(nt)=
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NPO=$(npo_plG);IDO=2
+#ELSE
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NT=$(NT);NPO=$(npo_plG);IDO=2
+#ENDIF
+//======================================
+//добавляем макрос для обработки рисунка
+#M NPOMACRO,NPO=$(npo_plG)
+//#MSG $(draw) x $(NPOMACRONAME)
+obrabotka,,,,,,1;$(NPOMACRONAME);IDO=2,,,,,,
+//======================================
+$(cod),1,$(param_ram),(100+20),($(dl)-99-99),$(dp),,,,,,$(namedet),$(mat)_1.5
+!{
+#LETS cod=$(modRam)ZAGGORPL
+#IF $(modRam)[s02] & $(name_param_krom)[_22LCKK]
+   #LETS cod=$(cod)LZ
+#ENDIF
+#M MnpWrNamedet,cod=$(cod)
+#IF $(nt)=
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK)
+#ELSE
+   #LETS param_ram=WR=$(wr);MNP=$(mnp);OCF=$(_ckd);CK=$(_CKK);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);NT=$(NT)
+#ENDIF
+$(cod),0.5,$(param_ram),(400),($(dl)-99-99),$(dp),,,,,,$(namedet),$(mat)_1.5.1
+#M list_dsp,larg_zag=(400),prof_zag=$(dp),alte_zag=($(dl)-99-99),tip_det=zad,kol_stor_krom=zad1,_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat)_1.5.1,soed_str=
+!}
+999$(cod_krom),rn3(($(da)+30+$(dl)+30)*2/1000),$(name_param_krom)=$(_ckk),($(da)+30+$(dl)+30)*2,,,,,,,,,$(mat)_1.6
+#IF $(cod_klei)!!NO
+   999$(cod_klei),rn3(($(da)+$(dl))*2/1000*0.016*0.25),,,,,,,,,,,$(mat)_1.7
+#ENDIF
+!}
+999uplPrVet,rn3(($(da)+$(dl))*2/1000),,rn3(($(da)+$(dl))*2),6,6,,,,,,,$(mat)_2
+
+//для оработок под петли
+#M petliObr,idopar=1

@@ -203,6 +203,13 @@
    #CASE 5:
       #LET maxMassDoor=22
    #ENDSELECT
+   //задача
+   #IF $a>=2180
+      #LETV flagCorrector=1
+      
+      #IF $L>=500 #LETV flagCorrector=4
+      
+   #ENDIF
    // #IF $(massaDoor)>$(maxMassDoor) #LET flag_door=22
 #ELSEIF $(_MODDOORRASP:1)[s27] //ice
    #LET minA=117

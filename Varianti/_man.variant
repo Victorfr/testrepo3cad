@@ -13,7 +13,7 @@
   },
   "Options": [
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01",
       "Des": "Модерн",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -23,7 +23,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01",
       "Des": "Ручка кнопка",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -33,7 +33,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.07",
       "Des": "Ручка 142",
       "Memo": "80\t80\t10\tart142.3DS\tknopka\t999art142\tart142.jpg\t0\t7331053\t999man142\t999VINT5\t2\t01.01.2018\t01.12.2020\t1\t",
@@ -43,7 +43,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.10",
       "Des": "Ручка 182",
       "Memo": "25\t25\t23\tart182.3ds\tknopka\t999art182\tart182.jpg\t0\t7331053\t999man182\t999VINT5\t1\t01.01.2018\t09.01.2020\t\t",
@@ -53,7 +53,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.13",
       "Des": "Ручка 229",
       "Memo": "15\t15\t17\tart229.3ds\tknopka\t999art229\tart229.jpg\t0\t7331053\t999man229\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -63,7 +63,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.14",
       "Des": "Ручка 233",
       "Memo": "21\t20\t36\tart233.3ds\tknopka\t999art233\tart233.jpg\t0\t7331053\t999man233\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -73,7 +73,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.15",
       "Des": "Ручка 245",
       "Memo": "90\t90\t18\tart245.3ds\tknopka\t999art245\tart245.jpg\t0\t7331053\t999man245\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -83,7 +83,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.17",
       "Des": "Ручка 269",
       "Memo": "20\t26\t35\tart269.3ds\tknopka\t999art269\tart269.jpg\t0\t7331053\t999man269\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -93,7 +93,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.18",
       "Des": "Ручка 403",
       "Memo": "18\t18\t28\tart403.3ds\tknopka\t999man403\tart403.jpg\t0\t7331053\t999man403\t999VINT5\t1\t01.05.2021\t01.01.2100\t0\t",
@@ -103,7 +103,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.19",
       "Des": "Ручка 372",
       "Memo": "36\t24\t20\tart372.3ds\tknopka\t000art372\tart372.jpg\t0\t7331053\t999man372\t999VINT5\t1\t21.07.2021\t01.01.2100\t1\t",
@@ -113,7 +113,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.20",
       "Des": "Ручка 400",
       "Memo": "22\t70\t12.5\tart400.3ds\tknopka\t000art400\tart400.jpg\t0\t7331053\t999man400\t999VINT5\t1\t01.09.2021\t01.01.2100\t1\t",
@@ -123,7 +123,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.21",
       "Des": "Ручка 463",
       "Memo": "24\t24\t30\tart463.3ds\tknopka\t999art463\tart463.jpg\t0\t7331053\t999man463\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -133,7 +133,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.22",
       "Des": "Ручка 448",
       "Memo": "20\t20\t25\tart448.3ds\tknopka\t000art448\tart448.jpg\t0\t7331053\t999man448\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\ttitanium.JPG",
@@ -143,7 +143,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.23",
       "Des": "Ручка 475",
       "Memo": "56\t22\t37.5\t475.3ds\tknopka\t999art475\tart475.jpg\t0\t7331053\t999man475\t999VINT5\t2\t17.01.2023\t01.01.2100\t\t",
@@ -153,7 +153,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.24",
       "Des": "Ручка 476",
       "Memo": "56\t22\t37.5\t476.3ds\tknopka\t999art476\tart476.jpg\t0\t7331053\t999man476\t999VINT5\t2\t17.01.2023\t01.01.2100\t\t",
@@ -163,7 +163,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.01.25",
       "Des": "Ручка 477",
       "Memo": "56\t22\t37.5\t477.3ds\tknopka\t999art477\tart477.jpg\t0\t7331053\t999man477\t999VINT5\t2\t17.01.2023\t01.01.2100\t\t",
@@ -203,7 +203,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02",
       "Des": "Ручка скоба",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -213,7 +213,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.02",
       "Des": "Ручка 14",
       "Memo": "155\t10\t29\tart14.3ds\tskoba\t999art14\tart14.jpg\t0\t7331053\t999CITTERIO14\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -223,7 +223,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.04",
       "Des": "Ручка 25",
       "Memo": "170\t28\t31\tart25.3ds\tskoba\t999art25\tart25.jpg\t0\t7331053\t999GEM25\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -233,7 +233,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.05",
       "Des": "Ручка 28",
       "Memo": "140\t21\t28\tart28.3ds\tskoba\t999art28\tart28.jpg\t0\t7331053\t99928\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -243,7 +243,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.06",
       "Des": "Ручка 35",
       "Memo": "170\t12\t30\tart35.3ds\tskoba\t999art35\tart35.jpg\t0\t7331053\t999GEM35\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -253,7 +253,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.07",
       "Des": "Ручка 36",
       "Memo": "210\t12\t30\tart36.3ds\tskoba\t999art36\tart36.jpg\t0\t7331053\t999GEM36\t999VINT5\t2\t01.01.2018\t13.04.2022\t\t",
@@ -263,7 +263,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.08",
       "Des": "Ручка 37",
       "Memo": "274\t12\t30\tart37.3ds\tskoba\t999art37\tart37.jpg\t0\t7331053\t999GEM37\t999VINT5\t2\t01.01.2018\t13.04.2022\t\t",
@@ -273,7 +273,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.100",
       "Des": "Ручка 267",
       "Memo": "184\t18\t34\tart267.3ds\tskoba\t999art267\tart267.jpg\t0\t7331053\t999man267\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -283,7 +283,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.101",
       "Des": "Ручка 268",
       "Memo": "280\t19\t35\tart268.3ds\tskoba\t999art268\tart268.jpg\t0\t7331053\t999man268\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -293,7 +293,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.102",
       "Des": "Ручка 270",
       "Memo": "210\t30\t20\tart270.3ds\tskoba\t999art270\tart270.jpg\t0\t7331053\t999man270\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -303,7 +303,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.103",
       "Des": "Ручка 271",
       "Memo": "210\t30\t20\tart271.3ds\tskoba\t999art271\tart271.jpg\t0\t7331053\t999man271\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -313,7 +313,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.104",
       "Des": "Ручка 278",
       "Memo": "70\t35\t33\tart278.3ds\tskoba\t999art278\tart278.jpg\t0\t7331053\t999man278\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -323,7 +323,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.105",
       "Des": "Ручка 279",
       "Memo": "180\t35\t33\tart279.3ds\tskoba\t999art279\tart279.jpg\t0\t7331053\t999man279\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -333,7 +333,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.106",
       "Des": "Ручка 280",
       "Memo": "340\t35\t33\tart280.3ds\tskoba\t999art280\tart280.jpg\t0\t7331053\t999man280\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -343,7 +343,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.108",
       "Des": "Ручка 297",
       "Memo": "137\t7\t26\tart297.3ds\tskoba\t000art297\tart297.jpg\t0\t7331053\t999man297\t999VINT5\t2\t21.07.2021\t13.07.2022\t\t",
@@ -353,7 +353,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.109",
       "Des": "Ручка 298",
       "Memo": "267\t7\t28\tart298.3ds\tskoba\t000art298\tart298.jpg\t0\t7331053\t999man298\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -363,7 +363,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.114",
       "Des": "Ручка 352",
       "Memo": "400\t12\t32\tart352.3ds\tskoba\t000art352\tart353.jpg\t0\t7331053\t999man352\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -373,7 +373,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.115",
       "Des": "Ручка 353",
       "Memo": "400\t12\t32\tart353.3ds\tskoba\t000art353\tart353.jpg\t0\t7331053\t999man353\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -383,7 +383,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.116",
       "Des": "Ручка 354",
       "Memo": "150\t19\t25\tart354.3ds\tskoba\t000art354\tart354.jpg\t0\t7331053\t999man354\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -393,7 +393,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.117",
       "Des": "Ручка 355",
       "Memo": "150\t19\t25\tart355.3ds\tskoba\t000art355\tart355.jpg\t0\t7331053\t999man355\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -403,7 +403,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.118",
       "Des": "Ручка 340",
       "Memo": "140\t32\t22\tart340.3ds\tskoba\t999art340\tart340.jpg\t0\t7331053\t999man340\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -413,7 +413,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.119",
       "Des": "Ручка 341",
       "Memo": "140\t32\t22\tart341.3ds\tskoba\t999art341\tart341.jpg\t0\t7331053\t999man341\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -423,7 +423,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.120",
       "Des": "Ручка 342",
       "Memo": "174\t8\t25\tart342.3ds\tskoba\t999art342\tart342.jpg\t0\t7331053\t999man342\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -433,7 +433,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.121",
       "Des": "Ручка 343",
       "Memo": "334\t8\t25\tart343.3ds\tskoba\t999art343\tart343.jpg\t0\t7331053\t999man343\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -443,7 +443,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.122",
       "Des": "Ручка 344",
       "Memo": "200\t25\t25\tart344.3ds\tskoba\t999art344\tart344.jpg\t0\t7331053\t999man344\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -453,7 +453,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.123",
       "Des": "Ручка 345",
       "Memo": "200\t25\t25\tart345.3ds\tskoba\t999art345\tart345.jpg\t0\t7331053\t999man345\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -463,7 +463,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.124",
       "Des": "Ручка 346",
       "Memo": "200\t25\t25\tart346.3ds\tskoba\t999art346\tart346.jpg\t0\t7331053\t999man346\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -473,7 +473,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.125",
       "Des": "Ручка 347",
       "Memo": "200\t25\t25\tart347.3ds\tskoba\t999art347\tart347.jpg\t0\t7331053\t999man347\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -483,7 +483,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.126",
       "Des": "Ручка 348",
       "Memo": "144\t13\t33\tart348.3ds\tskoba\t999art348\tart348.jpg\t0\t7331053\t999man348\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -493,7 +493,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.127",
       "Des": "Ручка 349",
       "Memo": "144\t13\t33\tart349.3ds\tskoba\t999art349\tart349.jpg\t0\t7331053\t999man349\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -503,7 +503,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.128",
       "Des": "Ручка 357",
       "Memo": "178\t18\t28\tart357.3ds\tskoba\t000art357\tart357.jpg\t0\t7331053\t999man357\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -513,7 +513,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.129",
       "Des": "Ручка 359",
       "Memo": "183\t28\t28\tart359.3ds\tskoba\t999art359\tart359.jpg\t0\t7331053\t999man359\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -523,7 +523,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.13",
       "Des": "Ручка 54",
       "Memo": "152\t25\t32\tart54.3ds\tskoba\t999art54\tart54.jpg\t0\t7331053\t999GEM54\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -533,7 +533,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.131",
       "Des": "РУЧКА 378 EUREKA",
       "Memo": "1400\t10\t23\teureka1400.3ds\tskoba\t999art378\tman382.jpg\t0\t7331053\t999man378\t999VINT5\t3\t01.01.2018\t01.01.2100\t0\t",
@@ -543,7 +543,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.132",
       "Des": "РУЧКА 384 EUREKA",
       "Memo": "927\t10\t23\teureka927.3ds\tskoba\t999art384\tman382.jpg\t0\t7331053\t999man384\t999VINT5\t3\t01.01.2018\t01.01.2100\t1\t",
@@ -553,7 +553,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.133",
       "Des": "РУЧКА 382 EUREKA",
       "Memo": "340\t10\t23\teureka340.3ds\tskoba\t999art382\tman382.jpg\t0\t7331053\t999man382\t999VINT5\t3\t01.01.2018\t01.01.2100\t1\t",
@@ -563,7 +563,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.134",
       "Des": "РУЧКА 393",
       "Memo": "134\t20\t28\tart393.3ds\tskoba\t999art382\tart393.jpg\t0\t7331053\t999man393\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -573,7 +573,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.136",
       "Des": "РУЧКА 392",
       "Memo": "204\t26\t25\tart392.3ds\tskoba\t999man392\tart392.jpg\t0\t7331053\t999man392\t999VINT5\t2\t01.12.2020\t01.01.2100\t0\t",
@@ -583,7 +583,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.137",
       "Des": "РУЧКА 395",
       "Memo": "1200\t10\t28\tart395.3ds\tskoba\t999man395bl\tart395.jpg\t0\t7331053\t999man395bl\t999VINT5\t4\t01.12.2020\t01.01.2100\t0\t",
@@ -593,7 +593,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.138",
       "Des": "РУЧКА 396",
       "Memo": "1200\t10\t28\tart396.3ds\tskoba\t999man395sl\tart396.jpg\t0\t7331053\t999man395sl\t999VINT5\t2\t01.12.2020\t01.01.2100\t0\t",
@@ -603,7 +603,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.139",
       "Des": "Ручка 402",
       "Memo": "220\t9\t31\tart402.3ds\tskoba\t999man402\tart402.jpg\t0\t7331053\t999man402\t999VINT5\t2\t01.05.2021\t01.01.2100\t0\t",
@@ -613,7 +613,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.140",
       "Des": "Ручка 404",
       "Memo": "380\t9\t31\tart404.3ds\tskoba\t999man404\tart404.jpg\t0\t7331053\t999man404\t999VINT5\t2\t01.05.2021\t01.01.2100\t0\t",
@@ -623,7 +623,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.141",
       "Des": "Ручка 371",
       "Memo": "164\t22\t30\tart371.3ds\tskoba\t000art371\tart371.jpg\t0\t7331053\t999man371\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -633,7 +633,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.142",
       "Des": "Ручка 397",
       "Memo": "232\t10\t30\tart397.3ds\tskoba\t000art397\tart397.jpg\t0\t7331053\t999man397\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -643,7 +643,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.143",
       "Des": "Ручка 398",
       "Memo": "232\t10\t30\tart398.3ds\tskoba\t000art398\tart397.jpg\t0\t7331053\t999man398\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -653,7 +653,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.144",
       "Des": "Ручка 399",
       "Memo": "160\t22\t8\tart399.3ds\tskoba\t000art399\tart399.jpg\t0\t7331053\t999man399\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -663,7 +663,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.145",
       "Des": "Ручка 405",
       "Memo": "50\t25\t21\tart405.3ds\tskoba\t000art405\tart405.jpg\t0\t7331053\t999man405\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -673,7 +673,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.146",
       "Des": "Ручка 406",
       "Memo": "180\t25\t21\tart406.3ds\tskoba\t000art406\tart406.jpg\t0\t7331053\t999man406\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -683,7 +683,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.147",
       "Des": "Ручка 407",
       "Memo": "50\t25\t21\tart407.3ds\tskoba\t000art407\tart407.jpg\t0\t7331053\t999man407\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -693,7 +693,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.148",
       "Des": "Ручка 408",
       "Memo": "180\t25\t21\tart408.3ds\tskoba\t000art408\tart408.jpg\t0\t7331053\t999man408\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -703,7 +703,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.149",
       "Des": "Ручка 409",
       "Memo": "157\t16\t24.2\tart409.3ds\tskoba\t000art409\tart409.jpg\t0\t7331053\t999man409\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -713,7 +713,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.150",
       "Des": "Ручка 410",
       "Memo": "160\t16\t24.2\tart410.3ds\tskoba\t000art410\tart410.jpg\t0\t7331053\t999man410\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -723,7 +723,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.151",
       "Des": "Ручка 411",
       "Memo": "157\t16\t24.2\tart411.3ds\tskoba\t000art411\tart411.jpg\t0\t7331053\t999man411\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -733,7 +733,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.152",
       "Des": "Ручка 412",
       "Memo": "160\t16\t24.2\tart412.3ds\tskoba\t000art412\tart412.jpg\t0\t7331053\t999man412\t999VINT5\t2\t01.09.2021\t01.01.2100\t1\t",
@@ -743,7 +743,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.153",
       "Des": "Ручка 421",
       "Memo": "200\t10\t28.5\tAbaco200.3DS\tskoba\t000art421\tart420.jpg\t0\t7331053\t999man421\t999VINT5\t2\t13.10.2022\t01.01.2100\t1\tshampan.JPG",
@@ -753,7 +753,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.154",
       "Des": "Ручка 422",
       "Memo": "450\t10\t28.5\tAbaco450.3DS\tskoba\t000art422\tart420.jpg\t0\t7331053\t999man422al\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tshampan.JPG",
@@ -763,7 +763,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.155",
       "Des": "Ручка 462",
       "Memo": "168\t12\t30\tart462.3ds\tskoba\t999art462\tart462.jpg\t0\t7331053\t999man462\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -773,7 +773,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.156",
       "Des": "Ручка 423",
       "Memo": "600\t10\t28.5\tAbaco600.3DS\tskoba\t000art423\tart420.jpg\t0\t7331053\t999man423al\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tshampan.JPG",
@@ -783,7 +783,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.157",
       "Des": "Ручка 424",
       "Memo": "800\t10\t28.5\tAbaco800.3DS\tskoba\t000art424\tart420.jpg\t0\t7331053\t999man424al\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tshampan.JPG",
@@ -793,7 +793,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.158",
       "Des": "Ручка 425",
       "Memo": "1050\t10\t28.5\tAbaco1050.3DS\tskoba\t000art425\tart420.jpg\t0\t7331053\t999man425al\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tshampan.JPG",
@@ -803,7 +803,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.159",
       "Des": "Ручка 426",
       "Memo": "1200\t10\t28.5\tAbaco1200.3DS\tskoba\t000art426\tart420.jpg\t0\t7331053\t999man426al\t999VINT5\t4\t13.10.2022\t01.01.2100\t\tshampan.JPG",
@@ -813,7 +813,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.160",
       "Des": "Ручка 427",
       "Memo": "200\t10\t28.5\tAbaco200.3DS\tskoba\t000art427bl\tart395.jpg\t0\t7331053\t999man427bl\t999VINT5\t2\t13.10.2022\t01.01.2100\t1\tblack.jpg",
@@ -823,7 +823,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.161",
       "Des": "Ручка 428",
       "Memo": "450\t10\t28.5\tAbaco450.3DS\tskoba\t000art428\tart395.jpg\t0\t7331053\t999man428bl\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tblack.jpg",
@@ -833,7 +833,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.162",
       "Des": "Ручка 429",
       "Memo": "600\t10\t28.5\tAbaco600.3DS\tskoba\t000art429\tart395.jpg\t0\t7331053\t999man429bl\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tblack.jpg",
@@ -843,7 +843,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.163",
       "Des": "Ручка 430",
       "Memo": "800\t10\t28.5\tAbaco800.3DS\tskoba\t000art430\tart395.jpg\t0\t7331053\t999man430bl\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tblack.jpg",
@@ -853,7 +853,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.164",
       "Des": "Ручка 431",
       "Memo": "1050\t10\t28.5\tAbaco1050.3DS\tskoba\t000art431\tart395.jpg\t0\t7331053\t999man431bl\t999VINT5\t3\t13.10.2022\t01.01.2100\t\tblack.jpg",
@@ -863,7 +863,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.179",
       "Des": "Ручка 417",
       "Memo": "130\t18\t37\tart417.3ds\tverhniztorec\t000art417\tart417.jpg\t0\t7331053\t999man417\t999VINT5\t2\t01.11.2022\t01.01.2100\t1\tblack_mat.jpg",
@@ -873,7 +873,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.180",
       "Des": "Ручка 432",
       "Memo": "94\t16\t20\t432.3ds\tskoba\t000art432\tart432.jpg\t0\t7331053\t999man432\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -883,7 +883,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.181",
       "Des": "Ручка 433",
       "Memo": "94\t16\t20\t433.3ds\tskoba\t000art433\tart433.jpg\t0\t7331053\t999man433\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -893,7 +893,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.182",
       "Des": "Ручка 434",
       "Memo": "190\t16\t20\t434.3ds\tskoba\t000art434\tart434.jpg\t0\t7331053\t999man434\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -903,7 +903,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.183",
       "Des": "Ручка 435",
       "Memo": "190\t16\t20\t435.3ds\tskoba\t000art435\tart435.jpg\t0\t7331053\t999man435\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -913,7 +913,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.184",
       "Des": "Ручка 436",
       "Memo": "350\t16\t20\t436.3ds\tskoba\t000art436\tart436.jpg\t0\t7331053\t999man436\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -923,7 +923,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.185",
       "Des": "Ручка 437",
       "Memo": "350\t16\t20\t437.3ds\tskoba\t000art437\tart437.jpg\t0\t7331053\t999man437\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -933,7 +933,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.186",
       "Des": "Ручка 438",
       "Memo": "180\t16\t20\t438.3ds\tskoba\t000art438\tart438.jpg\t0\t7331053\t999man438\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -943,7 +943,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.187",
       "Des": "Ручка 439",
       "Memo": "180\t16\t20\t439.3ds\tskoba\t000art439\tart439.jpg\t0\t7331053\t999man439\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
@@ -953,7 +953,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.188",
       "Des": "Ручка 455",
       "Memo": "296\t20\t39\t455.3DS\tnaverhniytorec\t000art455\tart455.jpg\t0\t7331053\t999man455\t999VINT5\t2\t26.10.2022\t01.01.2100\t1;2\tbeliy.jpg",
@@ -963,7 +963,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.189",
       "Des": "Ручка 456",
       "Memo": "396\t20\t39\t456.3DS\tnaverhniytorec\t000art456\tart456.jpg\t0\t7331053\t999man456\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tbeliy.jpg",
@@ -973,7 +973,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.190",
       "Des": "Ручка 457",
       "Memo": "446\t20\t39\t457.3DS\tnaverhniytorec\t000art457\tart457.jpg\t0\t7331053\t999man457\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tbeliy.jpg",
@@ -983,7 +983,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.191",
       "Des": "Ручка 458",
       "Memo": "596\t20\t39\t458.3DS\tnaverhniytorec\t000art458\tart458.jpg\t0\t7331053\t999man458\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tbeliy.jpg",
@@ -993,7 +993,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.192",
       "Des": "Ручка 459",
       "Memo": "796\t20\t39\t459.3DS\tnaverhniytorec\t000art459\tart459.jpg\t0\t7331053\t999man459\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tbeliy.jpg",
@@ -1003,7 +1003,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.193",
       "Des": "Ручка 464",
       "Memo": "296\t20\t39\t464.3DS\tnaverhniytorec\t000art464\tart464.jpg\t0\t7331053\t999man464\t999VINT5\t2\t26.10.2022\t01.01.2100\t1;2\tblack.jpg",
@@ -1013,7 +1013,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.194",
       "Des": "Ручка 465",
       "Memo": "396\t20\t39\t465.3DS\tnaverhniytorec\t000art465\tart465.jpg\t0\t7331053\t999man465\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tblack.jpg",
@@ -1023,7 +1023,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.195",
       "Des": "Ручка 466",
       "Memo": "446\t20\t39\t466.3DS\tnaverhniytorec\t000art466\tart466.jpg\t0\t7331053\t999man466\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tblack.jpg",
@@ -1033,7 +1033,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.196",
       "Des": "Ручка 467",
       "Memo": "596\t20\t39\t467.3DS\tnaverhniytorec\t000art467\tart467.jpg\t0\t7331053\t999man467\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tblack.jpg",
@@ -1043,7 +1043,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.197",
       "Des": "Ручка 468",
       "Memo": "796\t20\t39\t468.3DS\tnaverhniytorec\t000art468\tart468.jpg\t0\t7331053\t999man468\t999VINT5\t3\t26.10.2022\t01.01.2100\t1;2\tblack.jpg",
@@ -1053,7 +1053,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.198",
       "Des": "Ручка 500",
       "Memo": "146\t20\t39\t500.3DS\tnaverhniytorec\t000art500\tart500.jpg\t0\t7331053\t999man500\t999VINT5\t2\t26.10.2022\t01.01.2100\t1;2\tbeliy.jpg",
@@ -1063,7 +1063,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.199",
       "Des": "Ручка 501",
       "Memo": "896\t20\t39\t501.3DS\tnaverhniytorec\t000art501\tart501.jpg\t0\t7331053\t999man501\t999VINT5\t4\t26.10.2022\t01.01.2100\t1;2\tbeliy.jpg",
@@ -1073,7 +1073,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.200",
       "Des": "Ручка 502",
       "Memo": "146\t20\t39\t502.3DS\tnaverhniytorec\t000art502\tart502.jpg\t0\t7331053\t999man502\t999VINT5\t2\t26.10.2022\t01.01.2100\t1;2\tblack.jpg",
@@ -1083,7 +1083,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.201",
       "Des": "Ручка 503",
       "Memo": "896\t20\t39\t503.3DS\tnaverhniytorec\t000art503\tart503.jpg\t0\t7331053\t999man503\t999VINT5\t4\t26.10.2022\t01.01.2100\t1;2\tblack.jpg",
@@ -1093,7 +1093,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.202",
       "Des": "Ручка 453",
       "Memo": "334\t8\t30\tart453.3ds\tskoba\t000art503\tart453.jpg\t0\t7331053\t999man453\t999VINT5\t2\t26.10.2022\t01.01.2100\t1\tblack.jpg",
@@ -1103,7 +1103,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.203",
       "Des": "Ручка 454",
       "Memo": "334\t8\t30\tart454.3ds\tskoba\t000art503\tart454.jpg\t0\t7331053\t999man454\t999VINT5\t2\t26.10.2022\t01.01.2100\t1\txrom.jpg",
@@ -1113,7 +1113,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.204",
       "Des": "Ручка 447",
       "Memo": "182\t22\t25\tart447.3ds\tskoba\t000art447\tart447.jpg\t0\t7331053\t999man447\t999VINT5\t2\t26.10.2022\t01.01.2100\t1\ttitanium.JPG",
@@ -1123,7 +1123,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.205",
       "Des": "Ручка 445",
       "Memo": "171\t11\t31\tart445.3ds\tskoba\t000art445\tart445.jpg\t0\t7331053\t999man445\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\ttitanium.JPG",
@@ -1133,7 +1133,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.206",
       "Des": "Ручка 446",
       "Memo": "331\t11\t31\tart446.3ds\tskoba\t000art446\tart446.jpg\t0\t7331053\t999man446\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\ttitanium.JPG",
@@ -1143,7 +1143,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.207",
       "Des": "Ручка 450",
       "Memo": "128\t16\t24\tart450.3ds\tskoba\t000art450\tart450.jpg\t0\t7331053\t999man450\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\tshampan.JPG",
@@ -1153,7 +1153,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.208",
       "Des": "Ручка 451",
       "Memo": "157\t16\t24\tart451.3ds\tskoba\t000art451\tart451.jpg\t0\t7331053\t999man451\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\tshampan.JPG",
@@ -1193,7 +1193,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.23",
       "Des": "Ручка 83",
       "Memo": "111\t25\t25\tart83.3ds\tskoba\t999art83\tart83.jpg\t0\t7331053\t999RUJS83\t999VINT5\t2\t01.01.2018\t28.08.2020\t1\t",
@@ -1203,7 +1203,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.24",
       "Des": "Ручка 84",
       "Memo": "170\t28\t31\tart84.3ds\tskoba\t999art84\tart84.jpg\t0\t7331053\t999GEM84\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1213,7 +1213,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.28",
       "Des": "Ручка 94",
       "Memo": "134\t20\t28\tart94.3ds\tskoba\t999art94\tart94.jpg\t0\t7331053\t999GAMET94\t999VINT5\t2\t01.01.2018\t01.12.2020\t\t",
@@ -1223,7 +1223,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.30",
       "Des": "Ручка 106",
       "Memo": "267\t15\t30\tart106.3ds\tskoba\t999art106\tart106.jpg\t0\t7331053\t999RUJZ106\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1233,7 +1233,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.31",
       "Des": "Ручка 107",
       "Memo": "193\t15\t28\tart107.3ds\tskoba\t999art107\tart107.jpg\t0\t7331053\t999RUJZ107\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1243,7 +1243,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.34",
       "Des": "Ручка 122",
       "Memo": "142\t25\t25\tart122.3ds\tskoba\t999art122\tart122.jpg\t0\t7331053\t999HETTICH122\t999VINT5\t2\t01.01.2018\t01.12.2020\t1\t",
@@ -1253,7 +1253,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.35",
       "Des": "Ручка 124",
       "Memo": "208\t15\t40\tart124.3ds\tskoba\t999art124\tart124.jpg\t0\t7331053\t999HETTICH124\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1263,7 +1263,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.36",
       "Des": "Ручка 125",
       "Memo": "336\t15\t40\tart125.3ds\tskoba\t999art125\tart125.jpg\t0\t7331053\t999HETTICH125\t999VINT5\t2\t01.01.2018\t18.03.2021\t\t",
@@ -1273,7 +1273,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.37",
       "Des": "Ручка 126",
       "Memo": "244\t16\t36\tart126.3ds\tskoba\t999art126\tart126.jpg\t0\t7331053\t999HETTICH126\t999VINT5\t2\t01.01.2018\t09.11.2021\t\t",
@@ -1283,7 +1283,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.38",
       "Des": "Ручка 127",
       "Memo": "344\t16\t36\tart127.3ds\tskoba\t999art127\tart127.jpg\t0\t7331053\t999HETTICH127\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1293,7 +1293,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.39",
       "Des": "Ручка 128",
       "Memo": "544\t16\t36\tart128.3ds\tskoba\t999art128\tart128.jpg\t0\t7331053\t999HETTICH128\t999VINT5\t2\t01.01.2018\t15.01.2020\t\t",
@@ -1303,7 +1303,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.41",
       "Des": "Ручка 136",
       "Memo": "200\t8\t25\tart136.3DS\tskoba\t999art136\tart136.jpg\t0\t7331053\t999man136\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -1313,7 +1313,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.44",
       "Des": "Ручка 143",
       "Memo": "320\t9\t24\tart143.3DS\tskoba\t999art143\tart143.jpg\t0\t7331053\t999man143\t999VINT5\t2\t01.01.2018\t15.01.2020\t\t",
@@ -1323,7 +1323,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.49",
       "Des": "Ручка 159",
       "Memo": "180\t10\t32\tart157.3ds\tskoba\t000art159\tart157.jpg\t0\t7331053\t999man159\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1333,7 +1333,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.51",
       "Des": "Ручка 163",
       "Memo": "172\t18\t30\tart163.3ds\tskoba\t000art163\tart163.jpg\t0\t7331053\t999man163\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1343,7 +1343,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.54",
       "Des": "Ручка 183",
       "Memo": "230\t8.5\t30\tart183.3ds\tskoba\t999art183\tart183.jpg\t0\t7331053\t999man183\t999VINT5\t2\t01.01.2018\t09.01.2020\t\t",
@@ -1353,7 +1353,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.59",
       "Des": "Ручка 190",
       "Memo": "204\t26\t25\tart190.3ds\tskoba\t999art190\tart190.jpg\t0\t7331053\t999man190\t999VINT5\t2\t01.01.2018\t01.12.2020\t\t",
@@ -1363,7 +1363,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.61",
       "Des": "Ручка 196",
       "Memo": "180\t25\t32\tart196.3ds\tskoba\t999art196\tart196.jpg\t0\t7331053\t999man196\t999VINT5\t2\t01.01.2018\t20.09.2022\t\t",
@@ -1373,7 +1373,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.62",
       "Des": "Ручка 197",
       "Memo": "198\t25\t30\tart197.3DS\tskoba\t999art197\tart197.jpg\t0\t7331053\t999man197\t999VINT5\t2\t01.01.2018\t20.09.2022\t\t",
@@ -1383,7 +1383,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.63",
       "Des": "Ручка 198",
       "Memo": "168\t30\t28\tart198.3DS\tskoba\t999art198\tart198.jpg\t0\t7331053\t999man198\t999VINT5\t2\t01.01.2018\t09.06.2022\t\t",
@@ -1393,7 +1393,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.64",
       "Des": "Ручка 199",
       "Memo": "168\t30\t28\tart199.3DS\tskoba\t999art199\tart199.jpg\t0\t7331053\t999man199\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1403,7 +1403,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.65",
       "Des": "Ручка 200",
       "Memo": "223\t23\t22\tart200.3DS\tskoba\t999art200\tart200.jpg\t1\t7331053\t999man200\t999VINT5\t2\t01.01.2018\t15.01.2020\t\t",
@@ -1413,7 +1413,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.66",
       "Des": "Ручка 201",
       "Memo": "127\t23\t22\tart201.3DS\tskoba\t999art201\tart201.jpg\t1\t7331053\t999man201\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -1423,7 +1423,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.73",
       "Des": "Ручка 216",
       "Memo": "213\t29\t21\tart216.3DS\tskoba\t999art216\tart216.jpg\t0\t7331053\t999man216\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1433,7 +1433,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.74",
       "Des": "Ручка 217",
       "Memo": "330\t12\t30\tart217.3DS\tskoba\t999art217\tart217.jpg\t0\t7331053\t999man217\t999VINT5\t2\t01.01.2018\t18.03.2021\t\t",
@@ -1443,7 +1443,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.76",
       "Des": "Ручка Bubi 01",
       "Memo": "148\t12\t37\tart01_bubi.3ds\tskoba\t999art01_bubi\tart01_bubi.jpg\t0\t7331053\t999manB01\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1453,7 +1453,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.77",
       "Des": "Ручка Bubi 02",
       "Memo": "673\t12\t37\tart02_bubi.3ds\tskoba\t999art02_bubi\tart02_bubi.jpg\t0\t7331053\t999manB02\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1463,7 +1463,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.78",
       "Des": "Ручка Bubi 03",
       "Memo": "1273\t12\t37\tart03_bubi.3ds\tskoba\t999art03_bubi\tart03_bubi.jpg\t0\t7331053\t999manB03\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1473,7 +1473,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.79",
       "Des": "Ручка 230",
       "Memo": "320\t10\t26\tart230.3DS\tskoba\t999art230\tart230.jpg\t0\t7331053\t999man230\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1483,7 +1483,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.80",
       "Des": "Ручка 231",
       "Memo": "146\t10\t26\tart231.3DS\tskoba\t999art231\tart231.jpg\t0\t7331053\t999man231\t999VINT5\t2\t01.01.2018\t21.06.2022\t\t",
@@ -1493,7 +1493,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.81",
       "Des": "Ручка 226",
       "Memo": "177\t8\t26\tart226.3DS\tskoba\t999art226\tart226.jpg\t0\t7331053\t999man226\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1503,7 +1503,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.82",
       "Des": "Ручка 227",
       "Memo": "110\t8\t26\tart227.3DS\tskoba\t999art227\tart227.jpg\t0\t7331053\t999man227\t999VINT5\t2\t01.01.2018\t10.01.2020\t\t",
@@ -1513,7 +1513,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.83",
       "Des": "Ручка 232/MO-128",
       "Memo": "138\t22\t25\tart232.3DS\tskoba\t999art232\tart232.jpg\t0\t7331053\t999man232\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -1523,7 +1523,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.84",
       "Des": "Ручка 232/MO-160",
       "Memo": "170\t22\t25\tart232.3DS\tskoba\t999art232-160\tart232.jpg\t0\t7331053\t999man23216\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -1533,7 +1533,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.85",
       "Des": "Ручка 234",
       "Memo": "120\t29\t31\tart234.3DS\tskoba\t999art234\tart234.jpg\t0\t7331053\t999man234\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1543,7 +1543,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.86",
       "Des": "Ручка 235",
       "Memo": "300\t29\t31\tart235.3DS\tskoba\t999art235\tart235.jpg\t0\t7331053\t999man235\t999VINT5\t2\t01.01.2018\t04.05.2021\t\t",
@@ -1553,7 +1553,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.87",
       "Des": "Ручка 246",
       "Memo": "114\t29\t31\tart246.3DS\tskoba\t000art246\tart246.jpg\t0\t7331053\t999man246\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1563,7 +1563,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.88",
       "Des": "Ручка 247",
       "Memo": "264\t21\t24\tart247.3DS\tskoba\t000art247\tart247.jpg\t0\t7331053\t999man247\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1573,7 +1573,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.89",
       "Des": "Ручка 248",
       "Memo": "414\t21\t24\tart248.3DS\tskoba\t000art248\tart248.jpg\t0\t7331053\t999man248\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1583,7 +1583,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.90",
       "Des": "Ручка 249",
       "Memo": "564\t21\t24\tart249.3DS\tskoba\t000art249\tart249.jpg\t0\t7331053\t999man249\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1593,7 +1593,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.91",
       "Des": "Ручка 250",
       "Memo": "640\t21\t24\tart250.3DS\tskoba\t000art250\tart250.jpg\t0\t7331053\t999man250\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1603,7 +1603,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.95",
       "Des": "Ручка 285",
       "Memo": "135\t30\t21\tart285.3ds\tskoba\t000art285\tart285.jpg\t0\t7331053\t999man285\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1613,7 +1613,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.96",
       "Des": "Ручка 287",
       "Memo": "180\t16\t30\tart287.3ds\tskoba\t999art287\tart287.jpg\t0\t7331053\t999man287\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -1623,7 +1623,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.98",
       "Des": "Ручка 289",
       "Memo": "173\t12\t30\tart289.3ds\tskoba\t999art289\tart289.jpg\t0\t7331053\t999man289\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1633,7 +1633,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "01.02.99",
       "Des": "Ручка 290",
       "Memo": "333\t12\t30\tart290.3ds\tskoba\t999art290\tart290.jpg\t0\t7331053\t999man290\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -1643,7 +1643,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02",
       "Des": "Классика",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -1653,7 +1653,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01",
       "Des": "Ручка кнопка",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -1663,7 +1663,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.04",
       "Des": "Ручка 50",
       "Memo": "30\t30\t22\tart50.3ds\tknopka\t999art50\tart50.jpg\t0\t7331053\t999BOSETTI50\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1673,7 +1673,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.08",
       "Des": "Ручка 79",
       "Memo": "37\t37\t29\tart79.3ds\tknopka\t999art79\tart79.jpg\t0\t7331053\t999GEM79\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -1683,7 +1683,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.11",
       "Des": "Ручка 96",
       "Memo": "30\t30\t24\tart96.3ds\tknopka\t999art96\tart96.jpg\t0\t7331053\t999ESTAMP96\t999VINT5\t1\t01.01.2018\t22.08.2022\t1\t",
@@ -1693,7 +1693,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.14",
       "Des": "Ручка 115",
       "Memo": "27\t27\t23\tart115.3ds\tknopka\t999art115\tart115.jpg\t0\t7331053\t999BOSETTI115\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1703,7 +1703,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.15",
       "Des": "Ручка 117",
       "Memo": "50\t23\t19\tart117.3DS\tknopka\t999art117\tart117.jpg\t0\t7331053\t999BOSETTI117\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1713,7 +1713,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.18",
       "Des": "Ручка 147",
       "Memo": "50\t22\t22\tart147.3DS\tknopka\t999art147\tart147.jpg\t0\t7331053\t999man147\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1723,7 +1723,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.19",
       "Des": "Ручка 149",
       "Memo": "35\t35\t25\tart149.3DS\tknopka\t999art149\tart149.jpg\t0\t7331053\t999man149\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1733,7 +1733,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.20",
       "Des": "Ручка 151",
       "Memo": "35\t35\t25\tart151.3DS\tknopka\t999art151\tart151.jpg\t0\t7331053\t999man151\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1743,7 +1743,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.22",
       "Des": "Ручка 168",
       "Memo": "37\t37\t32\tart168.3DS\tknopka\t999art168\tart168.jpg\t0\t7331053\t999man168\t999VINT5\t1\t01.01.2018\t15.01.2020\t\t",
@@ -1753,7 +1753,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.23",
       "Des": "Ручка 169",
       "Memo": "37\t37\t32\tart169.3DS\tknopka\t999art169\tart169.jpg\t0\t7331053\t999man169\t999VINT5\t1\t01.01.2018\t15.01.2020\t\t",
@@ -1763,7 +1763,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.24",
       "Des": "Ручка 170",
       "Memo": "37\t37\t32\tart170.3DS\tknopka\t999art170\tart170.jpg\t0\t7331053\t999man170\t999VINT5\t1\t01.01.2018\t15.01.2020\t\t",
@@ -1773,7 +1773,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.25",
       "Des": "Ручка 171",
       "Memo": "37\t37\t32\tart171.3DS\tknopka\t999art171\tart171.jpg\t0\t7331053\t999man171\t999VINT5\t1\t01.01.2018\t29.10.2021\t1\t",
@@ -1783,7 +1783,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.26",
       "Des": "Ручка 173",
       "Memo": "32\t32\t30\tart173.3DS\tknopka\t999art173\tart173.jpg\t0\t7331053\t999man173\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -1793,7 +1793,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.27",
       "Des": "Ручка 175",
       "Memo": "32\t32\t30\tart175.3DS\tknopka\t999art175\tart175.jpg\t0\t7331053\t999man175\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -1803,7 +1803,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.28",
       "Des": "Ручка 191",
       "Memo": "35\t35\t20\tart191.3ds\tknopka\t999art191\tart191.jpg\t0\t7331053\t999man191\t999VINT5\t1\t01.01.2018\t31.08.2020\t1\t",
@@ -1813,7 +1813,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.29",
       "Des": "Ручка 193",
       "Memo": "26\t26\t20\tart193.3ds\tknopka\t999art193\tart193.jpg\t0\t7331053\t999man193\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1823,7 +1823,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.30",
       "Des": "Ручка 194",
       "Memo": "31\t31\t26\tart194.3ds\tknopka\t999art194\tart194.jpg\t0\t7331053\t999man194\t999VINT5\t1\t01.01.2018\t10.01.2020\t\t",
@@ -1833,7 +1833,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.31",
       "Des": "Ручка 210",
       "Memo": "44\t30\t24\tart210.3DS\tknopka\t999art210\tart210.jpg\t0\t7331053\t999man210\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -1843,7 +1843,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.32",
       "Des": "Ручка 211",
       "Memo": "31\t31\t20\tart211.3DS\tknopka\t999art211\tart211.jpg\t0\t7331053\t999man211\t999VINT5\t1\t01.01.2018\t15.01.2020\t\t",
@@ -1853,7 +1853,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.33",
       "Des": "Ручка 212",
       "Memo": "31\t31\t20\tart212.3DS\tknopka\t999art212\tart212.jpg\t0\t7331053\t999man212\t999VINT5\t1\t01.01.2018\t13.04.2022\t\t",
@@ -1863,7 +1863,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.34",
       "Des": "Ручка 213",
       "Memo": "31\t31\t20\tart213.3DS\tknopka\t999art213\tart213.jpg\t0\t7331053\t999man213\t999VINT5\t1\t01.01.2018\t13.04.2022\t\t",
@@ -1873,7 +1873,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.35",
       "Des": "Ручка 220",
       "Memo": "35\t20\t20\tart220.3DS\tknopka\t999art220\tart220.jpg\t0\t7331053\t999man220\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1883,7 +1883,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.36",
       "Des": "Ручка 222",
       "Memo": "35\t20\t20\tart222.3DS\tknopka\t999art222\tart222.jpg\t0\t7331053\t999man222\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1893,7 +1893,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.37",
       "Des": "Ручка 225",
       "Memo": "44\t44\t30\tart225.3DS\tknopka\t999art225\tart225.jpg\t0\t7331053\t999man225\t999VINT5\t1\t01.01.2018\t01.12.2020\t\t",
@@ -1903,7 +1903,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.39",
       "Des": "Ручка 241",
       "Memo": "20\t20\t25\tart241.3DS\tknopka\t999art241\tart241.jpg\t0\t7331053\t999man241\t999VINT5\t1\t01.01.2018\t01.01.2100\t1\t",
@@ -1913,7 +1913,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.42",
       "Des": "Ручка 273",
       "Memo": "40\t19\t21\tart273.3DS\tknopka\t000art273\tart273.jpg\t0\t7331053\t999man273\t999VINT5\t1\t21.07.2021\t20.09.2022\t\t",
@@ -1923,7 +1923,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.43",
       "Des": "Ручка 275",
       "Memo": "40\t19\t21\tart275.3DS\tknopka\t000art275\tart275.jpg\t0\t7331053\t999man275\t999VINT5\t1\t21.07.2021\t20.09.2022\t\t",
@@ -1933,7 +1933,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.44",
       "Des": "Ручка 282",
       "Memo": "29\t19\t22\tart282.3ds\tknopka\t000art282\tart282.jpg\t0\t7331053\t999man282\t999VINT5\t1\t21.07.2021\t01.01.2100\t\t",
@@ -1943,7 +1943,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.45",
       "Des": "Ручка 284",
       "Memo": "29\t19\t22\tart284.3ds\tknopka\t000art284\tart284.jpg\t0\t7331053\t999man284\t999VINT5\t1\t21.07.2021\t01.01.2100\t\t",
@@ -1953,7 +1953,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.50",
       "Des": "Ручка 300",
       "Memo": "66\t15\t25\tart300.3ds\tskoba\t000art300\tart300.jpg\t0\t7331053\t999man300\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1963,7 +1963,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.51",
       "Des": "Ручка 302",
       "Memo": "66\t15\t25\tart302.3ds\tskoba\t000art302\tart302.jpg\t0\t7331053\t999man302\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -1973,7 +1973,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.52",
       "Des": "Ручка 312",
       "Memo": "30\t30\t26\tart312.3ds\tknopka\t999art312\tart312.jpg\t0\t7331053\t999man312\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -1983,7 +1983,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.57",
       "Des": "Ручка 335",
       "Memo": "50\t20\t40\tart335.3ds\tknopka\t999art335\tart335.jpg\t0\t7331053\t999man335\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -1993,7 +1993,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.58",
       "Des": "Ручка 336",
       "Memo": "64\t36\t35\tart336.3ds\tknopka\t999art336\tart336.jpg\t0\t7331053\t999man336\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -2003,7 +2003,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.59",
       "Des": "Ручка 360",
       "Memo": "35\t31\t35\tart360.3ds\tknopka\t000art360\tart360.jpg\t0\t7331053\t999man360\t999VINT5\t1\t01.01.2018\t29.03.2022\t\t",
@@ -2013,7 +2013,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.60",
       "Des": "Ручка 366",
       "Memo": "82\t17\t40\tart366.3ds\tknopka\t000art366\tart366.jpg\t0\t7331053\t999man366\t999VINT5\t1\t01.01.2018\t01.01.2100\t\t",
@@ -2023,7 +2023,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.61",
       "Des": "Ручка 367",
       "Memo": "30\t30\t22\tart367.3ds\tknopka\t000art367\tart367.jpg\t0\t7331053\t999man367\t999VINT5\t1\t21.07.2021\t14.03.2022\t\t",
@@ -2033,7 +2033,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.62",
       "Des": "Ручка 368",
       "Memo": "30\t30\t22\tart368.3ds\tknopka\t000art368\tart368.jpg\t0\t7331053\t999man368\t999VINT5\t1\t21.07.2021\t27.12.2021\t\t",
@@ -2043,7 +2043,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.01.64",
       "Des": "Ручка 370",
       "Memo": "30\t30\t22\tart370.3ds\tknopka\t000art370\tart370.jpg\t0\t7331053\t999man370\t999VINT5\t1\t21.07.2021\t05.10.2021\t\t",
@@ -2053,7 +2053,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02",
       "Des": "Ручка скоба",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -2063,7 +2063,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.02",
       "Des": "Ручка 51",
       "Memo": "132\t15\t25\tart51.3ds\tskoba\t999art51\tart51.jpg\t0\t7331053\t999BOSETTI51\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2073,7 +2073,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.06",
       "Des": "Ручка 63",
       "Memo": "125\t20\t40\tart63.3ds\tskoba\t999art63\tart63.jpg\t0\t7331053\t999PREMIERE63\t999VINT5\t2\t01.01.2018\t22.06.2022\t\t",
@@ -2083,7 +2083,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.08",
       "Des": "Ручка 78",
       "Memo": "126\t34\t32\tart78.3DS\tskoba\t999art78\tart78.jpg\t0\t7331053\t999GEM78\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2093,7 +2093,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.11",
       "Des": "Ручка 97",
       "Memo": "110\t16\t34\tart97.3DS\tskoba\t999art97\tart97.jpg\t0\t7331053\t999ESTAMP97\t999VINT5\t2\t01.01.2018\t22.08.2022\t\t",
@@ -2103,7 +2103,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.13",
       "Des": "Ручка 102",
       "Memo": "137\t20\t19\tart102.3ds\tskoba\t999art102\tart102.jpg\t0\t7331053\t999332B23\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2113,7 +2113,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.14",
       "Des": "Ручка 103",
       "Memo": "113\t36\t23\tart103.3ds\tskoba\t999art103\tart103.jpg\t0\t7331053\t99933523\t999VINT5\t2\t01.01.2018\t15.01.2020\t\t",
@@ -2123,7 +2123,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.16",
       "Des": "Ручка 114",
       "Memo": "136\t15\t21\tart114.3ds\tskoba\t999art114\tart114.jpg\t0\t7331053\t999BOSETTI114\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2133,7 +2133,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.17",
       "Des": "Ручка 116",
       "Memo": "164\t32\t28\tart116.3DS\tskoba\t999art116\tart116.jpg\t0\t7331053\t999BOSETTI116\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2143,7 +2143,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.19",
       "Des": "Ручка 135",
       "Memo": "145\t18\t17\tart135.3DS\tskoba\t999art135\tart135.jpg\t0\t7331053\t999man135\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2153,7 +2153,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.20",
       "Des": "Ручка 146",
       "Memo": "127\t29\t29\tart146.3DS\tskoba\t999art146\tart146.jpg\t0\t7331053\t999man146\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2163,7 +2163,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.21",
       "Des": "Ручка 148",
       "Memo": "112\t18\t26\tart148.3DS\tskoba\t999art148\tart148.jpg\t0\t7331053\t999man148\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2173,7 +2173,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.22",
       "Des": "Ручка 150",
       "Memo": "112\t18\t26\tart150.3DS\tskoba\t999art150\tart150.jpg\t0\t7331053\t999man150\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2183,7 +2183,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.24",
       "Des": "Ручка 172",
       "Memo": "112\t20\t34\tart172.3DS\tskoba\t999art172\tart172.jpg\t0\t7331053\t999man172\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2193,7 +2193,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.25",
       "Des": "Ручка 174",
       "Memo": "112\t20\t34\tart174.3DS\tskoba\t999art174\tart174.jpg\t0\t7331053\t999man174\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2203,7 +2203,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.26",
       "Des": "Ручка 192",
       "Memo": "130\t30\t25\tart192.3ds\tskoba\t999art192\tart192.jpg\t0\t7331053\t999man192\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2213,7 +2213,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.28",
       "Des": "Ручка 209",
       "Memo": "116\t17\t30\tart209.3DS\tskoba\t999art209\tart209.jpg\t0\t7331053\t999man209\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2223,7 +2223,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.29",
       "Des": "Ручка 219",
       "Memo": "130\t25\t25\tart219.3DS\tskoba\t999art219\tart219.jpg\t0\t7331053\t999man219\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2233,7 +2233,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.30",
       "Des": "Ручка 221",
       "Memo": "130\t25\t25\tart221.3DS\tskoba\t999art221\tart221.jpg\t0\t7331053\t999man221\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2243,7 +2243,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.31",
       "Des": "Ручка 224",
       "Memo": "176\t65\t30\t$(art224:3)\tskoba\t999art224\tart224.jpg\t0\t7331053\t999man224\t999VINT5\t2\t01.01.2018\t01.03.2021\t\t",
@@ -2253,7 +2253,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.32",
       "Des": "Ручка 238",
       "Memo": "145\t15\t30\tart238.3DS\tskoba\t999art238\tart238.jpg\t0\t7331053\t999man238\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2263,7 +2263,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.33",
       "Des": "Ручка 240",
       "Memo": "143\t15\t29\tart240.3DS\tskoba\t999art240\tart240.jpg\t0\t7331053\t999man240\t999VINT5\t2\t01.01.2018\t15.01.2020\t\t",
@@ -2273,7 +2273,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.35",
       "Des": "Ручка 272",
       "Memo": "112\t23\t21\tart272.3DS\tskoba\t000art272\tart272.jpg\t0\t7331053\t999man272\t999VINT5\t2\t21.07.2021\t20.09.2022\t\t",
@@ -2283,7 +2283,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.36",
       "Des": "Ручка 274",
       "Memo": "112\t23\t21\tart274.3DS\tskoba\t000art274\tart274.jpg\t0\t7331053\t999man274\t999VINT5\t2\t21.07.2021\t20.09.2022\t\t",
@@ -2293,7 +2293,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.37",
       "Des": "Ручка 281",
       "Memo": "130\t19\t28\tart281.3ds\tskoba\t000art281\tart281.jpg\t0\t7331053\t999man281\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -2303,7 +2303,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.38",
       "Des": "Ручка 283",
       "Memo": "130\t19\t28\tart283.3ds\tskoba\t000art283\tart283.jpg\t0\t7331053\t999man283\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -2313,7 +2313,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.39",
       "Des": "Ручка 276",
       "Memo": "180\t16\t32\tart276.3ds\tskoba\t999art276\tart276.jpg\t0\t7331053\t999man276\t999VINT5\t2\t01.01.2018\t29.03.2022\t\t",
@@ -2323,7 +2323,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.40",
       "Des": "Ручка 277",
       "Memo": "340\t16\t32\tart277.3ds\tskoba\t999art277\tart277.jpg\t0\t7331053\t999man277\t999VINT5\t2\t01.01.2018\t19.02.2021\t\t",
@@ -2333,7 +2333,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.41",
       "Des": "Ручка 291",
       "Memo": "133\t28\t30\tart291.3ds\tskoba\t000art291\tart291.jpg\t0\t7331053\t999man291\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -2343,7 +2343,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.42",
       "Des": "Ручка 292",
       "Memo": "133\t28\t30\tart292.3ds\tskoba\t000art292\tart292.jpg\t0\t7331053\t999man292\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -2353,7 +2353,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.43",
       "Des": "Ручка 299",
       "Memo": "155\t20\t24\tart299.3ds\tskoba\t000art299\tart299.jpg\t0\t7331053\t999man299\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -2363,7 +2363,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.45",
       "Des": "Ручка 311",
       "Memo": "92\t24\t21\tart311.3ds\tskoba\t999art311\tart311.jpg\t0\t7331053\t999man311\t999VINT5\t2\t01.01.2018\t01.01.2100\t1\t",
@@ -2373,7 +2373,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.50",
       "Des": "Ручка 337",
       "Memo": "191\t27\t31\tart337.3ds\tskoba\t999art337\tart337.jpg\t0\t7331053\t999man337\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2383,7 +2383,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.51",
       "Des": "Ручка 338",
       "Memo": "191\t27\t31\tart338.3ds\tskoba\t999art338\tart338.jpg\t0\t7331053\t999man338\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2393,7 +2393,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.52",
       "Des": "Ручка 339",
       "Memo": "186\t26\t36\tart339.3ds\tskoba\t999art339\tart339.jpg\t0\t7331053\t999man339\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2403,7 +2403,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.53",
       "Des": "Ручка 361",
       "Memo": "220\t14\t36\tart361.3ds\tskoba\t000art361\tart361.jpg\t0\t7331053\t999man361\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2413,7 +2413,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.54",
       "Des": "Ручка 365",
       "Memo": "242\t17\t40\tart365.3ds\tskoba\t000art365\tart365.jpg\t0\t7331053\t999man365\t999VINT5\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2423,7 +2423,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "02.02.55",
       "Des": "Ручка 394",
       "Memo": "155\t20\t24\tart301.3ds\tskoba\t000art394\tart301.jpg\t0\t7331053\t999man394\t999VINT5\t2\t21.07.2021\t01.01.2100\t\t",
@@ -2433,7 +2433,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "03",
       "Des": "Универсальный толкатель",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -2443,7 +2443,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "03.01",
       "Des": "Универсальный толкатель",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -2453,7 +2453,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "03.01.01",
       "Des": "Ручка 99",
       "Memo": "\t\t\t\t\t999art99\tart99.jpg\t0\t\t999man99\t999sh3.5x16pot\t2\t01.01.2018\t01.01.2100\t\t",
@@ -2463,7 +2463,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_man",
+      "Codvar": "_MAN",
       "Codopz": "999",
       "Des": "Без ручки",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t01.01.2018\t01.01.2100\t\t",
