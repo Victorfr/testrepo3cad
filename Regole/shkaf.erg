@@ -82,7 +82,7 @@ M,pripuskPolDx,,$(tipshkaf:6)=1,Припуск полок справа,,,,0,100,,3,,$(pBokR:1)!2 |
 M,pripuskPolZad,,$(tipshkaf:6)=1,Припуск полок сзади,,,,0,100,,3
 T,mat_backwall,,$(tipshkaf:6)=2,Материал задней стенки,#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   $(productline:0)[$(mat_backwall:7)]\n#ELSE\n   $(mat_backwall:1)\n#ENDIF
 T,_colkarkas,_colkarkasback,$(tipshkaf:6)=2,Цвет задней стенки,#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   $(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(productline:0)[$(_colkarkasback:24)]\n#ELSE\n   $(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1\n#ENDIF
-C,noZoc,,$(tipshkaf:6)=2 & $(matVn:1)[22;25] & $(tipshkaf:7)[0;1;3],Без цоколя
+C,noZoc,,$(tipshkaf:6)=2 & $(matVn:1)[16;22;25] & $(tipshkaf:7)[0;1;3],Без цоколя
 M,hzoc,,$(tipshkaf:6)=2,Высота цоколя,,,60,0,150,,,,$(noZoc:0)!1 & $(hzoc:0)!0
 T,_prist,,($(tipshkaf:7)=1 | $(tipshkaf:7)=2) & $(tipshkaf:1)!11,,#IF $(sk_sys:0)=1\n   $(_prist:1)=0\n#ELSE\n   $(_prist:1)[0;1;2]\n#ENDIF,,,,,,4,,$(sk_sys:0)!1
 M,profPrist,,($(tipshkaf:7)=1 | $(tipshkaf:7)=2) & $(_prist:1)!0,Глубина пристыковки,,,600,,,,4

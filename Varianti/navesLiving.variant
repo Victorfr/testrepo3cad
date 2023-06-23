@@ -8,12 +8,12 @@
     "Flmod": "0",
     "FlNoStampa": 0,
     "Codmet": "",
-    "Classe": "^3;2;370;200;3,4;#foto\\struttura\\living\\;2;2",
+    "Classe": "",
     "Flvargest": 0
   },
   "Options": [
     {
-      "Codvar": "NAVESLIVING",
+      "Codvar": "navesLiving",
       "Codopz": "1",
       "Des": "SAH 130",
       "Memo": "SAH130.jpg\t1066278|1066279R\t400\t18|34|60\tTypB\t452966142",
@@ -23,7 +23,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "NAVESLIVING",
+      "Codvar": "navesLiving",
       "Codopz": "2",
       "Des": "CAMAR 807",
       "Memo": "CAMAR807.jpg\tnavCamL|navCamR\t700\t9|77|60\tnavcamKr\t452966142",
@@ -33,7 +33,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "NAVESLIVING",
+      "Codvar": "navesLiving",
       "Codopz": "999",
       "Des": "Без навеса",
       "Memo": "navesBez.jpg\t\t100000\t\t\t365528472",
