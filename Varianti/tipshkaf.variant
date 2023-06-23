@@ -1,0 +1,136 @@
+{
+  "MainVar": {
+    "Cod": "tipshkaf",
+    "Des": "Тип шкафа",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010видимость в правиле\u0010 870\u0010ЯССП Справа\u0010 1650\u0010id типа\u0010 1200\u0010тип шкафа\u0010 1290\u0010тип дверей\u0010 1200\u0010описание для распашных  выдвижных\u0010 3270\u0010mat\u0010 1200\u0010тип системы для установки\u0010 1695\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "1",
+      "Des": "Встраиваемый двери купе",
+      "Memo": "1\t\t$(_prist:3)\t1\t1\t\t16;22;25\tAR1;AR2;AR3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "10",
+      "Des": "Living комод",
+      "Memo": "2\t\t446638907\t2\t4\tФасад выдвижного ящика\t16;22;25\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "11",
+      "Des": "Отдельностоящий шкаф TOP LINE",
+      "Memo": "1\t\t524439124\t2\t1\t\t22;25\tTL1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "12",
+      "Des": "Отдельностоящий MIXAL",
+      "Memo": "2\t\t560866902\t2\t2\tДверь распашная\t16;22;25\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "2",
+      "Des": "Отдельностоящий двери купе",
+      "Memo": "1\t\t$(_prist:4)\t2\t1\t\t16;22;25\tAR1;AR2;AR3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "3",
+      "Des": "Встраиваемый распашные двери Aristo",
+      "Memo": "1\t\t401606657\t1\t3\t\t16;22;25\tAR1;Ar3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "4",
+      "Des": "Отдельностоящий распашные двери Aristo",
+      "Memo": "1\t\t401606837\t2\t3\t\t16;22;25\tAR1;AR3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "5",
+      "Des": "Встраиваемый без дверей",
+      "Memo": "1\t\t388363534\t1\t0\t\t16;22;25\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "6",
+      "Des": "Отдельностоящий без дверей",
+      "Memo": "1\t\t388363556\t2\t0\t\t16;22;25\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "7",
+      "Des": "Встраиваемый распашные двери",
+      "Memo": "1\t\t401606657\t1\t2\tДверь распашная\t16;22;25\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "8",
+      "Des": "Отдельностоящий распашные двери",
+      "Memo": "1\t\t401606837\t2\t2\tДверь распашная\t16;22;25\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSHKAF",
+      "Codopz": "9",
+      "Des": "Living шкаф распашной",
+      "Memo": "2\t\t446638906\t2\t2\tДверь распашная\t16;22;25\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

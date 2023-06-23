@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "_matPensili",
+    "Des": "",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MATPENSILI",
+      "Codopz": "1",
+      "Des": "Потолок гипсокартон",
+      "Memo": "1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATPENSILI",
+      "Codopz": "2",
+      "Des": "Потолок бетон \\ кирпич",
+      "Memo": "2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATPENSILI",
+      "Codopz": "3",
+      "Des": "Потолок натяжной \\ без крепления к потолку",
+      "Memo": "3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MATPENSILI",
+      "Codopz": "999",
+      "Des": "Нет",
+      "Memo": "999",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

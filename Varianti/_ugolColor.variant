@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "_ugolColor",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010cod\u0010 1200\u0010rgb\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_UGOLCOLOR",
+      "Codopz": "1",
+      "Des": "999ZAGUGwt",
+      "Memo": "999ZAGUGwt\t250;250;250",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_UGOLCOLOR",
+      "Codopz": "2",
+      "Des": "999ZAGUGveng",
+      "Memo": "999ZAGUGveng\t20;15;11",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_UGOLCOLOR",
+      "Codopz": "3",
+      "Des": "999ZAGUGsilv",
+      "Memo": "999ZAGUGsilv\t105;105;105",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_UGOLCOLOR",
+      "Codopz": "4",
+      "Des": "999ZAGUGolh",
+      "Memo": "999ZAGUGolh\t91;58;41",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_UGOLCOLOR",
+      "Codopz": "5",
+      "Des": "999ZAGUGbl",
+      "Memo": "999ZAGUGbl\t10;10;10;",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_UGOLCOLOR",
+      "Codopz": "6",
+      "Des": "999ZAGUGbez",
+      "Memo": "999ZAGUGbez\t136;115;89",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

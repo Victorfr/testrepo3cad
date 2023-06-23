@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "LumixPolk",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 6495\u0010Размер полки\u0010 1785\u0010Размер стекла\u0010 1605\u0010Код набора Lumix\u0010 2190\u0010Код набора с вешалом\u0010 2610\u0010код с LED подсветкой\u0010 2715\u0010размер шк\u0010 1920\u0010код с вешалом и подстветкой\u0010 2685\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "LUMIXPOLK",
+      "Codopz": "1",
+      "Des": "MIXAL 406.530 Полка Mixal Lumix",
+      "Memo": "406x530\t395x519\t999mxPolk4x53\t999mxPolkV4x53\t999mxPolkL4x53\t451\t999mxPolkLV4x53",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLK",
+      "Codopz": "2",
+      "Des": "MIXAL 456.530 Полка Mixal Lumix",
+      "Memo": "456x530\t445x519\t999mxPolk45x53\t999mxPolkV45x53\t999mxPolkL45x53\t501\t999mxPolkLV45x53",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLK",
+      "Codopz": "3",
+      "Des": "MIXAL 556.530 Полка Mixal Lumix",
+      "Memo": "556x530\t545x519\t999mxPolk55x53\t999mxPolkV55x53\t999mxPolkL55x53\t601\t999mxPolkLV55x53",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLK",
+      "Codopz": "4",
+      "Des": "MIXAL 854.530 Полка Mixal Lumix",
+      "Memo": "854x530\t843x519\t999mxPolk85x53\t999mxPolkV85x53\t999mxPolkL85x53\t899\t999mxPolkLV85x53",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLK",
+      "Codopz": "5",
+      "Des": "MIXAL 954.530 Полка Mixal Lumix",
+      "Memo": "954x530\t943x519\t999mxPolk95x53\t999mxPolkV95x53\t999mxPolkL95x53\t999\t999mxPolkLV95x53",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LUMIXPOLK",
+      "Codopz": "6",
+      "Des": "MIXAL 1154.530 Полка Mixal Lumix",
+      "Memo": "1154x530\t1143x519\t999mxPolk115x53\t999mxPolkV115x53\t999mxPolkL115x53\t1199\t999mxPolkLV115x53",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

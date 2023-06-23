@@ -1,0 +1,146 @@
+{
+  "MainVar": {
+    "Cod": "flagg3ds",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "1",
+      "Des": "",
+      "Memo": "BAG",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "10",
+      "Des": "",
+      "Memo": "VAN",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "11",
+      "Des": "",
+      "Memo": "VAZ",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "12",
+      "Des": "",
+      "Memo": "LUD",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "13",
+      "Des": "",
+      "Memo": "VEG",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "2",
+      "Des": "",
+      "Memo": "DEK",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "3",
+      "Des": "",
+      "Memo": "DIV",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "4",
+      "Des": "",
+      "Memo": "KOM",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "5",
+      "Des": "",
+      "Memo": "KRO",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "6",
+      "Des": "",
+      "Memo": "OSV",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "7",
+      "Des": "",
+      "Memo": "RAS",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "8",
+      "Des": "",
+      "Memo": "STO",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "FLAGG3DS",
+      "Codopz": "9",
+      "Des": "",
+      "Memo": "STU",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

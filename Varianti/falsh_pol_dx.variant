@@ -1,0 +1,15 @@
+{
+  "MainVar": {
+    "Cod": "falsh_pol_dx",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "falsh_pol_sx",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": []
+}

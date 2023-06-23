@@ -1,0 +1,596 @@
+{
+  "MainVar": {
+    "Cod": "gjpCountLine",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\u0010\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "10",
+      "Des": "",
+      "Memo": "189\t208",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "11",
+      "Des": "",
+      "Memo": "209\t228",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "12",
+      "Des": "",
+      "Memo": "229\t249",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "13",
+      "Des": "",
+      "Memo": "250\t269",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "14",
+      "Des": "",
+      "Memo": "270\t289",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "15",
+      "Des": "",
+      "Memo": "290\t309",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "16",
+      "Des": "",
+      "Memo": "310\t329",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "17",
+      "Des": "",
+      "Memo": "330\t349",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "18",
+      "Des": "",
+      "Memo": "350\t369",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "19",
+      "Des": "",
+      "Memo": "370\t389",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "20",
+      "Des": "",
+      "Memo": "390\t409",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "21",
+      "Des": "",
+      "Memo": "410\t429",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "22",
+      "Des": "",
+      "Memo": "430\t449",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "23",
+      "Des": "",
+      "Memo": "450\t469",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "24",
+      "Des": "",
+      "Memo": "470\t489",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "25",
+      "Des": "",
+      "Memo": "490\t509",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "26",
+      "Des": "",
+      "Memo": "510\t529",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "27",
+      "Des": "",
+      "Memo": "530\t549",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "28",
+      "Des": "",
+      "Memo": "550\t569",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "29",
+      "Des": "",
+      "Memo": "570\t589",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "3",
+      "Des": "",
+      "Memo": "50\t66",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "30",
+      "Des": "",
+      "Memo": "590\t609",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "31",
+      "Des": "",
+      "Memo": "610\t629",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "32",
+      "Des": "",
+      "Memo": "630\t649",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "33",
+      "Des": "",
+      "Memo": "650\t669",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "34",
+      "Des": "",
+      "Memo": "670\t689",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "35",
+      "Des": "",
+      "Memo": "690\t709",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "36",
+      "Des": "",
+      "Memo": "710\t729",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "37",
+      "Des": "",
+      "Memo": "730\t749",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "38",
+      "Des": "",
+      "Memo": "750\t769",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "39",
+      "Des": "",
+      "Memo": "770\t789",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "4",
+      "Des": "",
+      "Memo": "67\t87",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "40",
+      "Des": "",
+      "Memo": "790\t809",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "41",
+      "Des": "",
+      "Memo": "810\t829",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "42",
+      "Des": "",
+      "Memo": "830\t849",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "43",
+      "Des": "",
+      "Memo": "850\t869",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "44",
+      "Des": "",
+      "Memo": "870\t889",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "45",
+      "Des": "",
+      "Memo": "890\t909",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "46",
+      "Des": "",
+      "Memo": "910\t929",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "47",
+      "Des": "",
+      "Memo": "930\t949",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "48",
+      "Des": "",
+      "Memo": "950\t969",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "49",
+      "Des": "",
+      "Memo": "970\t989",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "5",
+      "Des": "",
+      "Memo": "88\t107",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "50",
+      "Des": "",
+      "Memo": "990\t1009",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "51",
+      "Des": "",
+      "Memo": "1010\t1029",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "52",
+      "Des": "",
+      "Memo": "1030\t1049",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "53",
+      "Des": "",
+      "Memo": "1050\t1069",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "54",
+      "Des": "",
+      "Memo": "1070\t1089",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "55",
+      "Des": "",
+      "Memo": "1090\t1109",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "56",
+      "Des": "",
+      "Memo": "1110\t1129",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "57",
+      "Des": "",
+      "Memo": "1130\t1149",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "58",
+      "Des": "",
+      "Memo": "1150\t1169",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "59",
+      "Des": "",
+      "Memo": "1170\t1189",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "6",
+      "Des": "",
+      "Memo": "108\t127",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "60",
+      "Des": "",
+      "Memo": "1190\t1200",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "7",
+      "Des": "",
+      "Memo": "128\t147",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "8",
+      "Des": "",
+      "Memo": "148\t168",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "GJPCOUNTLINE",
+      "Codopz": "9",
+      "Des": "",
+      "Memo": "169\t188",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

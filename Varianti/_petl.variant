@@ -1,0 +1,86 @@
+{
+  "MainVar": {
+    "Cod": "_petl",
+    "Des": "Петли",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010с материалом какой толщины используются\u0010 4410\u0010Изменение цвета петли\u0010 1200\u0010для вкладных\u0010 1635\u0010productline\u0010 9405\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_PETL",
+      "Codopz": "1",
+      "Des": "Петля с углом открывания 95 градусов",
+      "Memo": "S02;S04;S30;E02;S32\t1\t0\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PETL",
+      "Codopz": "2",
+      "Des": "Петля с углом открывания 110 градусов",
+      "Memo": "S08;S26;S27;S01;S29;S31;S28\t1\t0\tMARIA_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PETL",
+      "Codopz": "3",
+      "Des": "Петля с углом открывания 165 градусов",
+      "Memo": "S02;S04;S08;S24;S26;s27;S01;S30;S28;s29;S31;S32\t1\t0\tMARIA_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PETL",
+      "Codopz": "4",
+      "Des": "Петля с углом открывания 110 градусов",
+      "Memo": "S12;E02;D02;S08;S24;S26;s27;S01;S30;S28;s29;s30\t0\t0\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PETL",
+      "Codopz": "5",
+      "Des": "Петля вкладная с углом открывания 110 градусов",
+      "Memo": "S02;S04;S08;S12;E02;D02;S24;S26;s27;S01;S30;S28;s29;S31;S32\t0\t1\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PETL",
+      "Codopz": "6",
+      "Des": "Петля накладная с углом открывания 95 градусов уго",
+      "Memo": "\t1\t0\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_PETL",
+      "Codopz": "999",
+      "Des": "Без петель",
+      "Memo": "S02;S04;S08;S12;E02;D02;S24;S26;s27;S01;S30;S28;s29;S31;S32\t0\t1\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

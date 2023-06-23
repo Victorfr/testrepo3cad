@@ -1,0 +1,176 @@
+{
+  "MainVar": {
+    "Cod": "_ModDoorRasp",
+    "Des": "Модель двери",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 855\u0010Описание\u0010 2940\u0010Рамка для фасадов S\u0010 2460\u0010вычет из вставки S\u0010 2190\u0010Толщина фасада\u0010 2145\u0010ID производственной модели\u0010 2985\u0010Тип пиломатериала\u0010 3225\u0010Фильтр по брендам\u0010 6480\u0010дата ввода\u0010 1200\u0010дата вывода\u0010 1200\u0010fastype\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "D02",
+      "Des": "Time ШК",
+      "Memo": "100\\100\t182:182\t16\t416010828\tDSP\tTVDOM_SHKAF\t03.10.2019\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "E02",
+      "Des": "Tokyo ШК",
+      "Memo": "100\\100\t182:182\t16\t416010828\tDSP\tEDDOM_SHKAF;ELDOR_SHKAF;TVDOM_SHKAF\t03.10.2019\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S01",
+      "Des": "Jazz ШК",
+      "Memo": "170\\170\t124:124\t19\t358403335\tMDF\tMARIA_SHKAF\t23.07.2020\t01.01.2100\tG;S;GJP",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S02",
+      "Des": "Mix ШК",
+      "Memo": "100\\100\t182:182\t22\t358403343\tDSP\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.01.2018\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S04",
+      "Des": "Spark ШК",
+      "Memo": "100\\100\t182:182\t22\t378047317\tDSP\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.01.2018\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S08",
+      "Des": "Classic ШК",
+      "Memo": "1\t130:130\t19\t396846319\tMDF\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.01.2018\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S12",
+      "Des": "Energy ШК",
+      "Memo": "100\\100\t182:182\t16\t416010828\tDSP\tEDDOM_SHKAF;ELDOR_SHKAF;TVDOM_SHKAF\t01.01.2018\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S24",
+      "Des": "Зеркало ШК на ЛДСП",
+      "Memo": "0\t\t20\t453030463\tDSP\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.01.2018\t29.12.2020\tS",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S25",
+      "Des": "Зеркало ШК на профиле",
+      "Memo": "1\t\t25\t453030556\tZERK\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.01.2018\t01.01.2100\tS",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S26",
+      "Des": "Classic эмаль ШК",
+      "Memo": "1\t130:130\t19\t404009474\tMDF\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.01.2018\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S27",
+      "Des": "ICE ШК",
+      "Memo": "170\\170\t123:123\t19\t404009560\tMDF\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.01.2018\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S28",
+      "Des": "Vector ШК",
+      "Memo": "100\\100\t182:182\t20\t404009479\tDSP\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t22.09.2020\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S29",
+      "Des": "Vector акрил ШК",
+      "Memo": "100\\100\t182:182\t20\t490631768\tMDF\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t22.09.2020\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S30",
+      "Des": "Зеркало (ШК на подложке ЛДСП)",
+      "Memo": "1\t\t20\t453030463\tDSP\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t08.10.2020\t01.01.2100\tG",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S31",
+      "Des": "Vector Touch ШК",
+      "Memo": "100\\100\t182:182\t18\t606415974\tLMDF\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t01.09.2021\t01.01.2100\tG;S",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MODDOORRASP",
+      "Codopz": "S32",
+      "Des": "Integrato ШК",
+      "Memo": "100\\100\t182:182\t22\t111111111\tMDF\tEDDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF;TVDOM_SHKAF\t17.05.2022\t01.01.2100\tG;GW",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

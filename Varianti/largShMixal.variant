@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "largShMixal",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010колво дверей\u0010 2235\u0010ширина\u0010 1200\u0010ширина двери\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "LARGSHMIXAL",
+      "Codopz": "1",
+      "Des": "Шкаф шириной 451 мм",
+      "Memo": "1\t451\t443",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGSHMIXAL",
+      "Codopz": "2",
+      "Des": "Шкаф шириной 501 мм",
+      "Memo": "1\t501\t493",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGSHMIXAL",
+      "Codopz": "3",
+      "Des": "Шкаф шириной 601 мм",
+      "Memo": "1\t601\t593",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGSHMIXAL",
+      "Codopz": "4",
+      "Des": "Шкаф шириной 899 мм",
+      "Memo": "2\t899\t443",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGSHMIXAL",
+      "Codopz": "5",
+      "Des": "Шкаф шириной 999 мм",
+      "Memo": "2\t999\t493",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "LARGSHMIXAL",
+      "Codopz": "6",
+      "Des": "Шкаф шириной 1199 мм",
+      "Memo": "2\t1199\t593",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

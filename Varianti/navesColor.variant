@@ -1,0 +1,126 @@
+{
+  "MainVar": {
+    "Cod": "navesColor",
+    "Des": "Цвет заглушки",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1515\u0010Артикул l R\u0010 1770\u0010RGB\u0010 2400\r\r\r3: 1 - SAH130,2-CAMAR807\u0011\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "0",
+      "Des": "Бежевый",
+      "Memo": "1\tzagNavBegL|zagNavBegR\t136;115;89",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "1",
+      "Des": "Белый",
+      "Memo": "1\tzagNavWhL|zagNavWhR\t250;250;250",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "10",
+      "Des": "Черный",
+      "Memo": "2\tkrishCamBlL|krishCamBlR\t10;10;10",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "2",
+      "Des": "Ваниль/Клен",
+      "Memo": "1\tzagNavVanL|zagNavVanR\t253;217;181",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "3",
+      "Des": "Антрацит",
+      "Memo": "1\tzagNavAnzL|zagNavAnzR\t71;75;78",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "4",
+      "Des": "Лен серый",
+      "Memo": "1\tzagNavLenL|zagNavLenR\t165;165;165",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "5",
+      "Des": "Орех",
+      "Memo": "1\tzagNavOrL|zagNavOrR\t91;58;41",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "6",
+      "Des": "Серый/Аллюминий",
+      "Memo": "1\tzagNavAlL|zagNavAlR\t105;105;105",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "7",
+      "Des": "Тёмн. дуб Wenge",
+      "Memo": "1\tzagNavDubL|zagNavDubR\t20;15;11",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "8",
+      "Des": "Белый",
+      "Memo": "2\tkrishCamWhL|krishCamWhR\t254;254;254",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NAVESCOLOR",
+      "Codopz": "9",
+      "Des": "Серый",
+      "Memo": "2\tkrishCamGrL|krishCamGrR\t105;105;105",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

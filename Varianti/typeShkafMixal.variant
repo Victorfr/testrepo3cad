@@ -1,0 +1,76 @@
+{
+  "MainVar": {
+    "Cod": "typeShkafMixal",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5055\u0010a створки\u0010 1200\u0010l створки\u0010 1200\u0010a shkafa\u0010 1200\u0010l shkafa\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TYPESHKAFMIXAL",
+      "Codopz": "1",
+      "Des": "1 створка 2400х443",
+      "Memo": "2400\t443\t2420\t451",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPESHKAFMIXAL",
+      "Codopz": "2",
+      "Des": "1 створка 2400х493",
+      "Memo": "2400\t493\t2420\t501",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPESHKAFMIXAL",
+      "Codopz": "3",
+      "Des": "1 створка 2400х593",
+      "Memo": "2400\t593\t2420\t601",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPESHKAFMIXAL",
+      "Codopz": "4",
+      "Des": "1 створка 2600х443",
+      "Memo": "2600\t443\t2620\t451",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPESHKAFMIXAL",
+      "Codopz": "5",
+      "Des": "1 створка 2600х493",
+      "Memo": "2600\t493\t2620\t501",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPESHKAFMIXAL",
+      "Codopz": "6",
+      "Des": "1 створка 2600х593",
+      "Memo": "2600\t593\t2620\t601",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

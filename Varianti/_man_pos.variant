@@ -1,0 +1,116 @@
+{
+  "MainVar": {
+    "Cod": "_man_pos",
+    "Des": "Положение ручки",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\u0010\u0010 1200\u0010петл\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^2;5;153;245;4;#3ds\\maniglie\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "00",
+      "Des": "По умолчанию",
+      "Memo": "0\t00.jpg\t1;2",
+      "Ges": "0",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "01",
+      "Des": "Сверху слева",
+      "Memo": "1\t01.jpg\t2",
+      "Ges": "1",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "02",
+      "Des": "Сверху по центру",
+      "Memo": "2\t02.jpg\t1;2",
+      "Ges": "2",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "03",
+      "Des": "Сверху справа",
+      "Memo": "3\t03.jpg\t1",
+      "Ges": "3",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "04",
+      "Des": "По середине слева",
+      "Memo": "4\t04.jpg\t2",
+      "Ges": "4",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "05",
+      "Des": "По середине по центру",
+      "Memo": "5\t05.jpg\t1;2",
+      "Ges": "5",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "06",
+      "Des": "По середине справа",
+      "Memo": "6\t06.jpg\t1",
+      "Ges": "6",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "07",
+      "Des": "Снизу слева",
+      "Memo": "7\t07.jpg\t2",
+      "Ges": "7",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "08",
+      "Des": "Снизу по центру",
+      "Memo": "8\t08.jpg\t1;2",
+      "Ges": "8",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MAN_POS",
+      "Codopz": "09",
+      "Des": "Снизу справа",
+      "Memo": "9\t09.jpg\t1",
+      "Ges": "9",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

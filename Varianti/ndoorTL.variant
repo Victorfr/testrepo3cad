@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "ndoorTL",
+    "Des": "Кол-во дверей",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\u0010jpg\u0010 1200\u0010minL\u0010 1200\u0010maxL\u0010 1200\u0010cod napr\u0010 2040\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^2;3;150;150;4;#FOTO\\Kupe\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "NDOORTL",
+      "Codopz": "1",
+      "Des": "2 двери левый",
+      "Memo": "2\t2DoorLTL.jpg\t1200\t2344\tkomplTLXL2300",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NDOORTL",
+      "Codopz": "2",
+      "Des": "2 двери правый",
+      "Memo": "2\t2DoorRTL.jpg\t1200\t2344\tkomplTLXL2300",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NDOORTL",
+      "Codopz": "3",
+      "Des": "3 двери симметрично",
+      "Memo": "3\t3DoorTL.jpg\t2344\t2794\tkomplTLXL4000",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

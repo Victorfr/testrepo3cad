@@ -1,0 +1,66 @@
+{
+  "MainVar": {
+    "Cod": "numb_metbox",
+    "Des": "Количество выдвижных",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "NUMB_METBOX",
+      "Codopz": "1",
+      "Des": "1 выдвижной ящик",
+      "Memo": "180",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NUMB_METBOX",
+      "Codopz": "2",
+      "Des": "2 выдвижных ящика",
+      "Memo": "360",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NUMB_METBOX",
+      "Codopz": "3",
+      "Des": "3 выдвижных ящика",
+      "Memo": "540",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NUMB_METBOX",
+      "Codopz": "4",
+      "Des": "4 выдвижных ящика",
+      "Memo": "720",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NUMB_METBOX",
+      "Codopz": "5",
+      "Des": "5 выдвижных ящиков",
+      "Memo": "900",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

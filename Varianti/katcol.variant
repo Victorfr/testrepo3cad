@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "katcol",
+    "Des": "Категория цвета",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 690\u0010Описание\u0010 2295\u0010артикул нижней направляющей\u0010 3240\u0010артикул верхней направляющей\u0010 3315\u0010артикул нижнего гор. проф.\u0010 2880\u0010артикул верхнего гор. проф.\u0010 2955\u0010артикул гориз. разделителя\u0010 2865\u0010суффикс артикула профиля ручки и/или фильтр цветов по категориям\u0010 6705\u0010фильтр категории цветов\u0010 3840\u0010\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "KATCOL",
+      "Codopz": "001",
+      "Des": "Анод",
+      "Memo": "$(tipsystem:20)_st\t$(tipsystem:21)_ar\t$(tipsystem:22)_an\t$(tipsystem:23)_an\t$(tipsystem:24)_an\tan\tAristo_ST_;Aristo_FS_;Aristo_NV_;Aristo_FL_\tAR1;AR2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "KATCOL",
+      "Codopz": "002",
+      "Des": "Древесная категория 1",
+      "Memo": "$(tipsystem:20)_dr\t$(tipsystem:21)_dr\t$(tipsystem:22)_dr\t$(tipsystem:23)_dr\t$(tipsystem:24)_dr\tdr\tAristo_ST_;Aristo_FS_;Aristo_FL_\tAR1;AR2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "KATCOL",
+      "Codopz": "003",
+      "Des": "Премиум категория 1",
+      "Memo": "$(tipsystem:20)_pr\t$(tipsystem:21)_pr\t$(tipsystem:22)_pr\t$(tipsystem:23)_pr\t$(tipsystem:24)_pr\tpr\tAristo_ST_;Aristo_FL_\tAR1;AR2",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "KATCOL",
+      "Codopz": "004",
+      "Des": "Крашеный",
+      "Memo": "$(tipsystem:20)_col\t$(tipsystem:21)_col\t$(tipsystem:22)_col\t$(tipsystem:23)_col\t$(tipsystem:24)_col\tcol\tAristo_FS_;Aristo_FL_\tAR3",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

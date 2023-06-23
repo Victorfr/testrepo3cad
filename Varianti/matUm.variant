@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "matUm",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010w\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "MATUM",
+      "Codopz": "1",
+      "Des": "Стекло",
+      "Memo": "6",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATUM",
+      "Codopz": "2",
+      "Des": "Лдсп 16 мм",
+      "Memo": "16",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATUM",
+      "Codopz": "3",
+      "Des": "Лдсп 22 мм",
+      "Memo": "22",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "MATUM",
+      "Codopz": "4",
+      "Des": "Лдсп 25 мм",
+      "Memo": "25",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

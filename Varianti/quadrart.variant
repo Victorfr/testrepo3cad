@@ -1,0 +1,526 @@
+{
+  "MainVar": {
+    "Cod": "quadrart",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 2250\u0010\u0010 1200\u0010prefixcod\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "quadrart",
+      "Codopz": "1",
+      "Des": "Направляющая  250 левая",
+      "Memo": "999QDRsln250L\t1\t250L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "10",
+      "Des": "Направляющая  450 правая",
+      "Memo": "999QDRsln450R\t1\t450R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "11",
+      "Des": "Направляющая  500 левая",
+      "Memo": "999QDRsln500L\t1\t500L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "12",
+      "Des": "Направляющая  500 правая",
+      "Memo": "999QDRsln500R\t1\t500R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "13",
+      "Des": "Направляющая Push-to-Open  250 левая",
+      "Memo": "999QDRp20250L\t1\t2050L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "14",
+      "Des": "Направляющая Push-to-Open  250 правая",
+      "Memo": "999QDRp20250R\t1\t2050R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "15",
+      "Des": "Направляющая Push-to-Open  300 левая",
+      "Memo": "999QDRp20300L\t1\t2030L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "16",
+      "Des": "Направляющая Push-to-Open  300 правая",
+      "Memo": "999QDRp20300R\t1\t2030R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "17",
+      "Des": "Направляющая Push-to-Open  350 левая",
+      "Memo": "999QDRp20350L\t1\t2035L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "18",
+      "Des": "Направляющая Push-to-Open  350 правая",
+      "Memo": "999QDRp20350R\t1\t2035R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "19",
+      "Des": "Направляющая Push-to-Open  400 левая",
+      "Memo": "999QDRp20400L\t1\t2040L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "2",
+      "Des": "Направляющая  250 правая",
+      "Memo": "999QDRsln250R\t1\t250R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "20",
+      "Des": "Направляющая Push-to-Open  400 правая",
+      "Memo": "999QDRp20400R\t1\t2040R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "21",
+      "Des": "Направляющая Push-to-Open  450 левая",
+      "Memo": "999QDRp20450L\t1\t2045L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "22",
+      "Des": "Направляющая Push-to-Open  450 правая",
+      "Memo": "999QDRp20450R\t1\t2045R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "23",
+      "Des": "Направляющая Push-to-Open  500 левая",
+      "Memo": "999QDRp20500L\t1\t2050L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "24",
+      "Des": "Направляющая Push-to-Open  500 правая",
+      "Memo": "999QDRp20500R\t1\t2050R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "25",
+      "Des": "Адаптер Push to open 1 шт.",
+      "Memo": "999QDRadapPTO\t1;2\tPTO",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "26",
+      "Des": "Фиксатор для направляющей левый",
+      "Memo": "999HETTICH075806\t1;2\t806",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "27",
+      "Des": "Фиксатор для направляющей правый",
+      "Memo": "999HETTICH075807\t1;2\t807",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "28",
+      "Des": "Направляющая  частичного выдвижения 250 левая",
+      "Memo": "999qdr2525L\t2\t2525L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "29",
+      "Des": "Направляющая  частичного выдвижения 250 правая",
+      "Memo": "999qdr2525R\t2\t2525R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "3",
+      "Des": "Направляющая  300 левая",
+      "Memo": "999QDRsln300L\t1\t300L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "30",
+      "Des": "Направляющая  частичного выдвижения 300 левая",
+      "Memo": "999qdr2530L\t2\t2530L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "31",
+      "Des": "Направляющая  частичного выдвижения 300 правая",
+      "Memo": "999qdr2530R\t2\t2530R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "32",
+      "Des": "Направляющая  частичного выдвижения 350 левая",
+      "Memo": "999qdr2535L\t2\t2535L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "33",
+      "Des": "Направляющая  частичного выдвижения 350 правая",
+      "Memo": "999qdr2535R\t2\t2535R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "34",
+      "Des": "Направляющая  частичного выдвижения 400 левая",
+      "Memo": "999qdr2540L\t2\t2540L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "35",
+      "Des": "Направляющая  частичного выдвижения 400 правая",
+      "Memo": "999qdr2540R\t2\t2540R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "36",
+      "Des": "Направляющая  частичного выдвижения 450 левая",
+      "Memo": "999qdr2545L\t2\t2545L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "37",
+      "Des": "Направляющая  частичного выдвижения 450 правая",
+      "Memo": "999qdr2545R\t2\t2545R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "38",
+      "Des": "Направляющая  частичного выдвижения 500 левая",
+      "Memo": "999qdr2550L\t2\t2550L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "39",
+      "Des": "Направляющая  частичного выдвижения 500 правая",
+      "Memo": "999qdr2550R\t2\t2550R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "4",
+      "Des": "Направляющая  300 правая",
+      "Memo": "999QDRsln300R\t1\t300R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "40",
+      "Des": "Направляющая част. выдв. Push-to-Open  250 левая",
+      "Memo": "999qdr25P2O25L\t2\tP2025L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "41",
+      "Des": "Направляющая част. выдв. Push-to-Open  250 правая",
+      "Memo": "999qdr25P2O25R\t2\tP2025R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "42",
+      "Des": "Направляющая част. выдв. Push-to-Open  300 левая",
+      "Memo": "999qdr25P2O30L\t2\tP2030L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "43",
+      "Des": "Направляющая част. выдв. Push-to-Open  300 правая",
+      "Memo": "999qdr25P2O30R\t2\tP2030R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "44",
+      "Des": "Направляющая част. выдв. Push-to-Open  350 левая",
+      "Memo": "999qdr25P2O35L\t2\tP2035L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "45",
+      "Des": "Направляющая част. выдв. Push-to-Open  350 правая",
+      "Memo": "999qdr25P2O35R\t2\tP2035R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "46",
+      "Des": "Направляющая част. выдв. Push-to-Open  400 левая",
+      "Memo": "999qdr25P2O40L\t2\tP2040L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "47",
+      "Des": "Направляющая част. выдв. Push-to-Open  400 правая",
+      "Memo": "999qdr25P2O40R\t2\tP2040R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "48",
+      "Des": "Направляющая част. выдв. Push-to-Open  450 левая",
+      "Memo": "999qdr25P2O45L\t2\tP2045L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "49",
+      "Des": "Направляющая част. выдв. Push-to-Open  450 правая",
+      "Memo": "999qdr25P2O45R\t2\tP2045R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "5",
+      "Des": "Направляющая  350 левая",
+      "Memo": "999QDRinn350L\t1\t350L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "50",
+      "Des": "Направляющая част. выдв. Push-to-Open  500 левая",
+      "Memo": "999qdr25P2O50L\t2\tP2050L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "51",
+      "Des": "Направляющая част. выдв. Push-to-Open  500 правая",
+      "Memo": "999qdr25P2O50R\t2\tP2050R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "6",
+      "Des": "Направляющая  350 правая",
+      "Memo": "999QDRinn350R\t1\t350R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "7",
+      "Des": "Направляющая  400 левая",
+      "Memo": "999QDRsln400L\t1\t400L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "8",
+      "Des": "Направляющая  400 правая",
+      "Memo": "999QDRsln400R\t1\t400R",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "quadrart",
+      "Codopz": "9",
+      "Des": "Направляющая  450 левая",
+      "Memo": "999QDRsln450L\t1\t450L",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

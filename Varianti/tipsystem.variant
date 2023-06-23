@@ -1,0 +1,66 @@
+{
+  "MainVar": {
+    "Cod": "tipsystem",
+    "Des": "Система дверей",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 855\u0010Descrizione\u0010 1245\u0010зазор ниж\u0010 1320\u0010зазор верх\u0010 1335\u0010нахлест\u0010 1245\u0010мин Ш дв\u0010 1260\u0010макс Ш дв\u0010 1275\u0010Макс Ш ниж рельс\u0010 1980\u0010Макс Ш верх рельс\u0010 570\u0010Макс нагрузка\u0010 510\u0010Профиль ниж\u0010 2115\u0010Профиль верх\u0010 1710\u0010мин Выс Дв\u0010 2055\u0010макс выс дв\u0010 1500\u0010Глуб ниж напр\u0010 600\u0010Глуб верх напр\u0010 465\u0010заглубления перегородок\u0010 1200\u0010Модель системы\u0010 1200\u0010Ширина шлегеля\u0010 1200\u0010Префикс артикула нижней направляющей\u0010 1200\u0010Префикс артикула верхней направляющей\u0010 1200\u0010Префикс артикула нижнего гор. профиля\u0010 1380\u0010Префикс артикула верхнего гор. профиля\u0010 1200\u0010Префикс артикула горизонт. разделителя\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TIPSYSTEM",
+      "Codopz": "01",
+      "Des": "Раздвижные",
+      "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSYSTEM",
+      "Codopz": "01.001",
+      "Des": "Aristo",
+      "Memo": "15\t30\t$(tipruch:3)\t450\t1200\t5300\t5300\t100\taristonr\taristovr\t600\t2700\t62.5\t80\t100\tAR1\t5\tnn_ar\tvn\tARISTO_nz\tARISTO_vr\tARISTO_sr",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSYSTEM",
+      "Codopz": "01.002",
+      "Des": "Aristo Nova",
+      "Memo": "15\t30\t$(tipruch:3)\t500\t1500\t5300\t5300\t100\taristonr\taristovr\t700\t2700\t62.5\t80\t100\tAR2\t0\tnn_ar\tvn\tARINOV_nz\tARINOV_nz\tARINOV_nz",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSYSTEM",
+      "Codopz": "01.003",
+      "Des": "Top Line",
+      "Memo": "15\t30\t$(tipruch:3)\t500\t1500\t5300\t5300\t100\ttoplineNR\ttoplineVR\t700\t2700\t59\t80\t100\tTL1\t0\tnn_ar\tvn\tARINOV_nz\tARINOV_nz\tARINOV_nz",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TIPSYSTEM",
+      "Codopz": "01.004",
+      "Des": "Aristo крашенная",
+      "Memo": "15\t30\t$(tipruch:3)\t450\t1200\t5300\t5300\t100\taristonr\taristovr\t600\t2700\t62.5\t80\t100\tAR3\t5\tnn_ar\tvn\tARISTO_nz\tARISTO_vr\tARISTO_sr",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

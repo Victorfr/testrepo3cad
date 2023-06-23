@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "typBox",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010Высота\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "TYPBOX",
+      "Codopz": "1",
+      "Des": "MixBox45",
+      "Memo": "45",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPBOX",
+      "Codopz": "2",
+      "Des": "MixBox100",
+      "Memo": "100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "TYPBOX",
+      "Codopz": "3",
+      "Des": "MixBox200",
+      "Memo": "200",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

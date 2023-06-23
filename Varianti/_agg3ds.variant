@@ -1,0 +1,2056 @@
+{
+  "MainVar": {
+    "Cod": "_agg3ds",
+    "Des": "",
+    "Obbl": true,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 3600\u0010ds\u0010 2520\u0010jpg\u0010 2760\u0010L\u0010 1200\u0010A\u0010 1200\u0010P\u0010 1200\u0010C1\u0010 3465\u0010c2\u0010 1890\u0010c3\u0010 2100\u0010c4\u0010 1200\u0010c5\u0010 1200\r\r\r22  bl:60\r\n100 bl:37\r\n101 bl:20\r\n104 bl:4\r\n102 bl:30 pr:20\r\n103 0:0 mat\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;3;200;200;4;#HTML\\fotocat\\agg3ds\\;2;1;1",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "01",
+      "Des": "багеты и зеркала",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "01.01",
+      "Des": "классика",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "01.01.01",
+      "Des": "_",
+      "Memo": "_zer11.3DS\t_zer11.jpg\t437\t713\t36\t103|-1|\\3ds\\agg3ds\\zer11m_map.jpg|0|0|0|0|0|0|1|0\t101|126;108;88|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "01.01.02",
+      "Des": "_",
+      "Memo": "_port1.3DS\t_port1.jpg\t490\t621\t35\t22|-1|0|0|0|0|0|0|0|0|0\t101|-1|\\foto\\ante\\acatcia.jpg|0|0|0|0|0|90|0|0\t22|134;96;30|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "01.01.03",
+      "Des": "_",
+      "Memo": "_mirr.3DS\t_mirr.jpg\t635\t543\t30\t22|-1|0|0|0|0|0|0|0|0|0\t101|224;224;224|0|0|0|0|0|0|0|0|0\t101|224;224;224|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "01.01.04",
+      "Des": "_",
+      "Memo": "_mirr1.3DS\t_mirr1.jpg\t442\t600\t23\t22|-1|0|0|0|0|0|0|0|0|0\t101|70;130;180|0|0|0|0|0|0|0|0|0\t101|70;130;180|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "01.01.05",
+      "Des": "_",
+      "Memo": "_mirr2.3DS\t_mirr2.jpg\t600\t600\t13\t22|-1|0|0|0|0|0|0|0|0|0\t101|0;128;128|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02",
+      "Des": "вазы",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02.01",
+      "Des": "классика",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02.01.01",
+      "Des": "_",
+      "Memo": "_vaz1.3DS\t_vaz1.jpg\t154\t300\t154\t102|-1|\\3ds\\agg3ds\\_vaz1_map.jpg|0|0|-1|0|0|0|1|\\3ds\\agg3ds\\_vaz1_bump.jpg\t22|110;110;110|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02.02",
+      "Des": "модерн",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02.02.01",
+      "Des": "_",
+      "Memo": "_vaz2.3DS\t_vaz2.jpg\t262\t180\t230\t102|70;0;150|0|0|0|0|0|0|0|0|0\t102|150;0;70|0|0|0|0|0|0|0|0|0\t102|0;204;204|0|0|0|0|0|0|0|0|0\t101|204;104;0|0|0|0|0|0|0|0|0|0\t1|0;100;0|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02.02.02",
+      "Des": "_",
+      "Memo": "_vaz3.3DS\t_vaz3.jpg\t154\t400\t202\t101|65;40;15|\\3DS\\Accessori\\_nerz.jpg|0|0|0|0|0|90|1|\\3ds\\agg3ds\\_vaz3_bump.jpg\t1|64;64;64|0|0|0|0|0|0|0|0|0\t1|246;246;246|0|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_vaz3_bump.jpg\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02.02.03",
+      "Des": "_",
+      "Memo": "_vaz4.3DS\t_vaz4.jpg\t308\t350\t100\t101|-1|\\3ds\\agg3ds\\_vaz4_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_vaz4_bump.jpg\t101|-1|\\3ds\\agg3ds\\_vaz4_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_vaz4_bump.jpg\t101|-1|\\3ds\\agg3ds\\_vaz4_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_vaz4_bump.jpg\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "02.02.04",
+      "Des": "_",
+      "Memo": "_lamp1.3DS\t_lamp1.jpg\t218\t350\t169\t102|150;204;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t101|60;60;60|0|0|0|0|0|0|0|0|0\t1|204;229;255|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03",
+      "Des": "ванная",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.01",
+      "Des": "_",
+      "Memo": "_bath_12_2.3DS\t_bath_12_2.jpg\t278\t282\t279\t1|255;255;255|0|0|0|0|0|0|0|0|0\t1|0;0;150|0|0|0|0|0|0|0|0|0\t1|150;0;0|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.02",
+      "Des": "_",
+      "Memo": "_bath_13_2.3DS\t_bath_13_2.jpg\t301\t190\t242\t1|255;255;255|0|0|0|0|0|0|0|0|0\t1|0;0;150|0|0|0|0|0|0|0|0|0\t1|150;0;0|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.03",
+      "Des": "_",
+      "Memo": "_bath_14.3DS\t_bath_14.jpg\t288\t95\t212\t1|0;0;150|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.04",
+      "Des": "_",
+      "Memo": "_bath_15.3DS\t_bath_15.jpg\t288\t95\t114\t1|0;0;150|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.05",
+      "Des": "_",
+      "Memo": "_bath_16_2.3DS\t_bath_16_2.jpg\t260\t102\t157\t1|0;0;150|0|0|0|0|0|0|0|0|0\t1|150;0;0|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.06",
+      "Des": "_",
+      "Memo": "_bath_17.3DS\t_bath_17.jpg\t50\t67\t200\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.07",
+      "Des": "_",
+      "Memo": "_bath_24.3DS\t_bath_24.jpg\t80\t80\t250\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.08",
+      "Des": "_",
+      "Memo": "_bath_25.3DS\t_bath_25.jpg\t80\t80\t400\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.09",
+      "Des": "_",
+      "Memo": "_bath_18_2.3DS\t_bath_18_2.jpg\t154\t63\t76\t1|0;0;150|0|0|0|0|0|0|0|0|0\t1|150;0;0|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.10",
+      "Des": "_",
+      "Memo": "_bath_19_4.3DS\t_bath_19_4.jpg\t598\t296\t260\t1|0;0;150|0|0|0|0|0|0|0|0|0\t1|150;0;0|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.11",
+      "Des": "_",
+      "Memo": "_bath_20.3DS\t_bath_20.jpg\t420\t1660\t583\t1|0;0;150|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t1|0;0;0|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.12",
+      "Des": "_",
+      "Memo": "_bath_21.3DS\t_bath_21.jpg\t195\t1248\t293\t1|0;0;0|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.13",
+      "Des": "_",
+      "Memo": "_bath_Dispenser.3DS\t_bath_Dispenser.jpg\t75\t147\t115\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.14",
+      "Des": "_",
+      "Memo": "_bath_Grab_Bar.3DS\t_bath_Grab_Bar.jpg\t470\t55\t71\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.15",
+      "Des": "_",
+      "Memo": "_bath_Roll Holder.3DS\t_bath_Roll Holder.jpg\t122\t153\t108\t22|-1|0|0|0|0|0|0|0|0|0\t7|255;255;255|0|0|0|0|0|0|0|0|0\t1|60;60;60|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.16",
+      "Des": "_",
+      "Memo": "_bath_Roll Holder2.3DS\t_bath_Roll Holder2.jpg\t53\t53\t160\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.17",
+      "Des": "_",
+      "Memo": "_bath_Shave_Mirror.3DS\t_bath_Shave_Mirror.jpg\t212\t313\t60\t22|-1|0|0|0|0|0|0|0|0|0\t22|60;60;60|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.18",
+      "Des": "_",
+      "Memo": "_bath_Single Hook.3DS\t_bath_Single Hook.jpg\t22\t22\t37\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.19",
+      "Des": "_",
+      "Memo": "_bath_Soap_Basket.3DS\t_bath_Soap_Basket.jpg\t153\t101\t118\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.20",
+      "Des": "_",
+      "Memo": "_bath_Soap_Basket2.3DS\t_bath_Soap_Basket2.jpg\t153\t81\t135\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.21",
+      "Des": "_",
+      "Memo": "_bath_Soap_Dish.3DS\t_bath_Soap_Dish.jpg\t75\t53\t106\t22|-1|0|0|0|0|0|0|0|0|0\t102|204;230;255|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.22",
+      "Des": "_",
+      "Memo": "_bath_Toilet_Brush.3DS\t_bath_Toilet_Brush.jpg\t75\t345\t106\t22|-1|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t1|204;230;255|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.23",
+      "Des": "_",
+      "Memo": "_bath_Toothbrush.3DS\t_bath_Toothbrush.jpg\t76\t106\t106\t102|204;230;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.24",
+      "Des": "_",
+      "Memo": "_bath_Toothbrush2.3DS\t_bath_Toothbrush2.jpg\t75\t104\t106\t22|-1|0|0|0|0|0|0|0|0|0\t102|204;230;255|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.25",
+      "Des": "_",
+      "Memo": "_bath_Towel_Holder.3DS\t_bath_Towel_Holder.jpg\t54\t54\t417\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.26",
+      "Des": "_",
+      "Memo": "_bath_Towel_Holder2.3DS\t_bath_Towel_Holder2.jpg\t791\t55\t71\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.27",
+      "Des": "_",
+      "Memo": "_bath_Towel_Ring.3DS\t_bath_Towel_Ring.jpg\t216\t238\t66\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.28",
+      "Des": "_",
+      "Memo": "_bath_wall_lamp.3DS\t_bath_wall_lamp.jpg\t68\t176\t115\t22|-1|0|0|0|0|0|0|0|0|0\t102|204;230;255|0|0|0|0|0|0|0|0|0\t1|224;224;224|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.29",
+      "Des": "_",
+      "Memo": "_wann.3DS\t_wann.jpg\t1500\t637\t802\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.30",
+      "Des": "_",
+      "Memo": "_bath_falper.3DS\t_bath_falper.jpg\t1500\t861\t804\t22|-1|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.31",
+      "Des": "_",
+      "Memo": "_bath_Gentiana.3DS\t_bath_Gentiana.jpg\t1500\t630\t1500\t1|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.32",
+      "Des": "_",
+      "Memo": "_bath_hitech.3DS\t_bath_hitech.jpg\t1765\t542\t821\t1|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.33",
+      "Des": "_",
+      "Memo": "_bath_toilet.3DS\t_bath_toilet.jpg\t500\t1036\t677\t22|-1|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t7|255;255;255|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "03.01.34",
+      "Des": "_",
+      "Memo": "_bath_dush.3DS\t_bath_dush.jpg\t826\t2000\t826\t22|-1|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t7|50;150;255|0|0|0|0|0|0|0|0|0\t102|204;230;255|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04",
+      "Des": "декор",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.01",
+      "Des": "_",
+      "Memo": "_knut.3ds\t_knut.jpg\t421\t434\t321\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.02",
+      "Des": "_",
+      "Memo": "_dek_flow.3DS\t_dek_flow.jpg\t183\t200\t195\t7|159;0;58|0|0|0|0|0|0|0|0|0\t7|224;167;228|0|0|0|0|0|0|0|0|0\t7|28;111;28|0|0|0|0|0|0|0|0|0\t7|142;234;192|0|0|0|0|0|0|0|0|0\t7|196;0;0|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.03",
+      "Des": "_",
+      "Memo": "_dek_hleb.3DS\t_dek_hleb.jpg\t400\t175\t278\t7|-1|\\3ds\\agg3ds\\_dek_hleb_map.jpg|0|0|0|0|0|0|1|0\t7|-1|\\3ds\\agg3ds\\_dek_hleb_map.jpg|0|0|0|0|0|0|1|0\t7|-1|\\3ds\\agg3ds\\_dek_hleb_map.jpg|0|0|0|0|0|0|1|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.04",
+      "Des": "_",
+      "Memo": "_dek_kaktus.3DS\t_dek_kaktus.jpg\t393\t447\t388\t7|64;94;45|0|0|0|0|0|0|0|0|0\t7|148;140;50|0|0|0|0|0|0|0|0|0\t\t7|153;176;208|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.05",
+      "Des": "_",
+      "Memo": "_dek_kitch.3DS\t_dek_kitch.jpg\t400\t245\t303\t22|-1|0|0|0|0|0|0|0|0|0\t102|50;100;0|0|0|0|0|0|0|0|0|0\t7|-1|\\3ds\\agg3ds\\_dek_hleb_map.jpg|0|0|0|0|0|90|0|0\t7|150;75;0|0|0|0|0|0|0|0|0|\\3ds\\agg3ds\\_dek_podn_bump2.jpg\t101|-1|\\3DS\\Accessori\\_nerz.jpg|0|0|0|0|0|90|1|\\3ds\\agg3ds\\_vaz3_bump.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.06",
+      "Des": "_",
+      "Memo": "_dek_koffemash.3DS\t_dek_koffemash.jpg\t294\t400\t391\t22|-1|0|0|0|0|0|0|0|0|0\t102|150;130;100|0|0|0|-1|0|0|0|0|0\t101|60;60;60|0|0|0|0|0|0|0|0|0\t101|120;120;120|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.07",
+      "Des": "_",
+      "Memo": "_dek_kophevar.3DS\t_dek_kophevar.jpg\t228\t300\t160\t101|190;190;190|0|0|0|0|0|0|0|0|0\t101|60;60;60|0|0|0|0|0|0|0|0|0\t1|0;0;0|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.08",
+      "Des": "_",
+      "Memo": "_dek_podn.3DS\t_dek_podn.jpg\t670\t300\t411\t100|-1|\\3ds\\agg3ds\\_dek_podn_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump.jpg\t100|200;189;154|0|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump2.jpg\t100|-1|\\3ds\\agg3ds\\_dek_podn_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump.jpg\t100|-1|\\3ds\\agg3ds\\_dek_podn_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump.jpg\t100|-1|\\3ds\\agg3ds\\_dek_podn_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump.jpg",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.09",
+      "Des": "_",
+      "Memo": "_dek_Shelving.3DS\t_dek_Shelving.jpg\t570\t308\t217\t101|-1|\\3ds\\agg3ds\\_dek_Shelving_map.jpg|0|0|0|0|0|0|1|0\t101|-1|\\3ds\\agg3ds\\_dek_Shelving_map.jpg|0|0|0|0|0|0|1|0\t102|0;0;255|0|0|0|0|0|0|0|0|0\t7|-1|\\foto\\ante\\acatcia_b.jpg|0|0|0|0|0|90|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.10",
+      "Des": "_",
+      "Memo": "_dek_rolli.3ds\t_dek_rolli.jpg\t361\t139\t200\t103|-1|\\3ds\\agg3ds\\_dek_rolli_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_t_gr255888_map.jpg|0|0|0|0|0|0|1|0\t103|195;0;0|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t103|0;0;0|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.11",
+      "Des": "_",
+      "Memo": "_dek_specii.3DS\t_dek_specii.jpg\t209\t107\t100\t103|-1|\\3ds\\agg3ds\\_dek_specii_map2.jpg|0|0|0|0|0|0|1|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\agg3ds\\_dek_specii_map.jpg|0|0|0|0|0|0|1|0\t101|70;2;2|0|0|0|0|0|0|0|0|0\t7|-1|\\foto\\ante\\acatcia.jpg|0|0|0|0|0|90|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.12",
+      "Des": "_",
+      "Memo": "_dek_tea.3DS\t_dek_tea.jpg\t395\t103\t281\t100|160;142;15|0|0|0|0|0|0|0|0|0\t101|-1|\\3ds\\agg3ds\\_dek_tea_map.jpg|0|0|0|0|0|0|1|0\t101|-1|\\3ds\\agg3ds\\_dek_tea_map2.jpg|0|0|0|0|0|0|1|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.13",
+      "Des": "_",
+      "Memo": "_dek_TeeSET.3DS\t_dek_TeeSET.jpg\t300\t420\t304\t22|-1|0|0|0|0|0|0|0|0|0\t101|-1|\\3ds\\maniglie\\art80.jpg|0|0|0|0|0|0|1|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.14",
+      "Des": "_",
+      "Memo": "_dek_banks.3DS\t_dek_banks.jpg\t614\t300\t161\t102|240;246;255|0|0|0|-1|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t103|50;50;55|0|0|0|0|0|0|0|0|0\t103|250;250;255|0|0|0|0|0|0|0|0|0\t103|240;240;180|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.15",
+      "Des": "_",
+      "Memo": "_dek_blender.3ds\t_dek_blender.jpg\t422\t400\t347\t102|240;246;255|0|0|0|-1|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t103|153;204;255|0|0|0|0|0|0|0|0|0\t103|60;60;60|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.16",
+      "Des": "_",
+      "Memo": "_dek_chvaz.3ds\t_dek_chvaz.jpg\t390\t600\t386\t22|218;165;32|0|0|0|0|0|0|0|0|0\t22|218;165;32|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.17",
+      "Des": "_",
+      "Memo": "_dek_clock_barometr.3ds\t_dek_clock_barometr.jpg\t130\t250\t130\t103|-1|\\3ds\\agg3ds\\_dek_clock_barometr_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_dek_clock_barometr_map2.jpg|0|0|0|0|0|0|1|0\t103|200;189;154|0|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump2.jpg\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.18",
+      "Des": "_",
+      "Memo": "_dek_clock_beeline.3ds\t_dek_clock_beeline.jpg\t350\t350\t30\t103|-1|\\3ds\\agg3ds\\_dek_clock_beeline_map.jpg|0|0|0|0|0|0|1|0\t103|245;220;0|0|0|0|0|0|0|0|0|0\t103|50;50;55|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.19",
+      "Des": "_",
+      "Memo": "_dek_clock_book.3ds\t_dek_clock_book.jpg\t240\t300\t292\t103|-1|\\3ds\\agg3ds\\_dek_clock_book_map.jpg|0|0|0|0|0|0|1|0\t103|0;0;204|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t103|0;0;0|0|0|0|0|0|0|0|0|0\t103|255;255;255|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.20",
+      "Des": "_",
+      "Memo": "_dek_clock_butterfly.3ds\t_dek_clock_butterfly.jpg\t500\t468\t30\t103|0;0;0|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\agg3ds\\_dek_clock_butterfly_map.jpg|0|0|0|0|0|0|1|0\t103|0;76;153|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.21",
+      "Des": "_",
+      "Memo": "_dek_clock_eggs.3ds\t_dek_clock_eggs.jpg\t350\t530\t30\t103|-1|\\3ds\\agg3ds\\_dek_clock_eggs_map.jpg|0|0|0|0|0|0|1|0\t101|0;0;0|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t101|204;0;0|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.22",
+      "Des": "_",
+      "Memo": "_dek_clock_eggs2.3ds\t_dek_clock_eggs2.jpg\t350\t350\t20\t103|-1|\\3ds\\agg3ds\\_dek_clock_eggs_map2.jpg|0|0|0|0|0|90|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t101|204;0;0|0|0|0|0|0|0|0|0|0\t103|249;249;239|0|0|0|0|0|0|0|0|0\t103|200;200;30|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.23",
+      "Des": "_",
+      "Memo": "_dek_clock_heart.3ds\t_dek_clock_heart.jpg\t177\t213\t55\t102|127;0;255|0|0|0|0|0|0|0|0|0\t101|0;0;0|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.24",
+      "Des": "_",
+      "Memo": "_dek_clock_hunter.3ds\t_dek_clock_hunter.jpg\t350\t350\t25\t103|-1|\\3ds\\agg3ds\\_dek_clock_hunter_map.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t101|0;0;0|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.25",
+      "Des": "_",
+      "Memo": "_dek_clock_pattern.3ds\t_dek_clock_pattern.jpg\t400\t400\t23\t103|-1|\\3ds\\agg3ds\\_dek_clock_pattern_map.jpg|0|0|0|0|0|0|1|0\t103|116;78;59|0|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump2.jpg\t101|0;0;0|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.26",
+      "Des": "_",
+      "Memo": "_dek_clock_smile.3ds\t_dek_clock_smile.jpg\t128\t150\t63\t103|-1|\\3ds\\agg3ds\\_dek_clock_smile_map.jpg|0|0|0|0|0|0|1|0\t103|200;200;30|0|0|0|0|0|0|0|0|0\t103|76;153;0|0|0|0|0|0|0|0|0|0\t103|204;0;0|0|0|0|0|0|0|0|0|0\t103|0;0;204|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.27",
+      "Des": "_",
+      "Memo": "_dek_clock_star.3ds\t_dek_clock_star.jpg\t457\t500\t15\t103|-1|\\3ds\\agg3ds\\_dek_clock_star_map.jpg|0|0|0|0|0|0|1|0\t103|9;64;129|0|0|0|0|0|0|0|1|\\3ds\\agg3ds\\ruvido.jpg\t22|-1|0|0|0|0|0|0|0|0|0\t103|0;0;0|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.28",
+      "Des": "_",
+      "Memo": "_dek_clock_sun.3ds\t_dek_clock_sun.jpg\t494\t500\t17\t103|-1|\\3ds\\agg3ds\\_dek_clock_sun_map.jpg|0|0|0|0|0|0|1|0\t101|0;0;0|0|0|0|0|0|0|0|0|0\t101|255;255;204|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.29",
+      "Des": "_",
+      "Memo": "_dek_clock_wall.3ds\t_dek_clock_wall.jpg\t400\t1181\t343\t103|-1|\\3ds\\agg3ds\\_dek_clock_wall_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\acatcia.jpg|0|0|0|0|0|0|1|0\t101|0;0;0|0|0|0|0|0|0|0|0|0\t22|218;165;32|0|0|0|0|0|0|0|0|0\t22|218;165;32|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.30",
+      "Des": "_",
+      "Memo": "_dek_clock_wheel.3ds\t_dek_clock_wheel.jpg\t400\t400\t11\t103|-1|\\3ds\\agg3ds\\_dek_clock_wheel_map.jpg|0|0|0|0|0|0|1|0\t101|0;0;0|0|0|0|0|0|0|0|0|0\t100|117;99;87|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.31",
+      "Des": "_",
+      "Memo": "_dek_cofemol.3ds\t_dek_cofemol.jpg\t136\t220\t158\t103|-1|\\FOTO\\ante\\yulia_p18al.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\yulia_p18al.jpg|0|0|0|0|0|0|1|0\t22|205;133;63|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.32",
+      "Des": "_",
+      "Memo": "_dek_cupstea.3ds\t_dek_cupstea.jpg\t462\t300\t435\t103|-1|\\3ds\\agg3ds\\_dek_cupstea_map.jpg|0|0|0|0|0|0|1|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|218;165;32|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.33",
+      "Des": "_",
+      "Memo": "_dek_globus.3DS\t_dek_globus.jpg\t643\t1100\t643\t22|218;165;32|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\agg3ds\\_dek_globus_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_dek_globus_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\yulia_p92nbm.jpg|0|0|0|0|0|0|1|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.34",
+      "Des": "_",
+      "Memo": "_dek_kastrul.3ds\t_dek_kastrul.jpg\t902\t230\t565\t101|128;128;128|0|0|0|0|0|0|0|0|0\t22|128;128;128|0|0|0|0|0|0|0|0|0\t102|240;246;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.35",
+      "Des": "_",
+      "Memo": "_dek_knifes.3ds\t_dek_knifes.jpg\t115\t300\t195\t103|-1|\\3ds\\agg3ds\\_dek_knifes_map.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t103|139;69;19|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.36",
+      "Des": "_",
+      "Memo": "_dek_natur.3ds\t_dek_natur.jpg\t432\t300\t254\t103|-1|\\3ds\\agg3ds\\_dek_natur_sir.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_dek_natur_sir_ob.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_dek_natur_etiketka.jpg|0|0|0|0|0|0|1|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t102|240;246;255|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.37",
+      "Des": "_",
+      "Memo": "_dek_pots.3ds\t_dek_pots.jpg\t829\t230\t716\t101|0;0;0|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.38",
+      "Des": "_",
+      "Memo": "_dek_rakushka.3ds\t_dek_rakushka.jpg\t251\t130\t194\t103|222;133;73|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.39",
+      "Des": "_",
+      "Memo": "_dek_ramka.3ds\t_dek_ramka.jpg\t500\t782\t46\t103|-1|\\3ds\\agg3ds\\_dek_ramka_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_dek_ramka_map2.jpg|0|0|0|0|0|0|1|0\t101|72;69;54|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.40",
+      "Des": "_",
+      "Memo": "_dek_retrtelef.3ds\t_dek_retrtelef.jpg\t295\t240\t245\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|218;165;32|0|0|0|0|0|0|0|0|0\t101|0;0;0|0|0|0|0|0|0|0|0|0\t103|218;150;20|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.41",
+      "Des": "_",
+      "Memo": "_dek_stat.3ds\t_dek_stat.jpg\t101\t300\t126\t103|-1|\\FOTO\\ante\\3209.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.42",
+      "Des": "_",
+      "Memo": "_dek_teapot.3ds\t_dek_teapot.jpg\t220\t230\t150\t102|153;204;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t103|96;96;96|0|0|0|0|0|0|0|0|0\t103|230;230;230|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.43",
+      "Des": "_",
+      "Memo": "_dek_teaturk.3ds\t_dek_teaturk.jpg\t418\t300\t263\t100|128;128;128|0|0|0|0|0|0|0|0|0\t101|0;50;100|0|0|0|0|0|0|0|0|0\t100|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.44",
+      "Des": "_",
+      "Memo": "_dek_vasdek.3ds\t_dek_vasdek.jpg\t698\t608\t482\t103|255;255;255|0|0|0|0|0|0|0|0|0\t1|255;255;255|0|0|0|0|0|0|0|0|0\t22|218;165;32|0|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_dek_podn_bump2.jpg\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.45",
+      "Des": "_",
+      "Memo": "_dek_vaz_torcher.3ds\t_dek_vaz_torcher.jpg\t152\t600\t148\t103|-1|\\3ds\\agg3ds\\_dek_vaz_torcher_map.jpg|0|0|0|0|0|0|1|0\t103|0;100;0|0|0|0|0|0|0|0|0|0\t103|135;90;30|0|0|0|0|0|0|0|0|0\t103|100;50;0|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "04.01.46",
+      "Des": "_",
+      "Memo": "_cat.tga\t_cat_prev.jpg\t390\t300\t20\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05",
+      "Des": "диваны",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.01",
+      "Des": "классика",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.01.01",
+      "Des": "_",
+      "Memo": "_divan_classic1.3ds\t_divan_classic1.jpg\t2000\t515\t787\t103|-1|\\3ds\\agg3ds\\_divan_classic1_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_divan_classic1_bump.jpg\t103|-1|\\3ds\\agg3ds\\_divan_classic1_map2.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.01.02",
+      "Des": "_",
+      "Memo": "_divan_bruno.3ds\t_divan_bruno.jpg\t2000\t733\t756\t103|-1|\\3ds\\agg3ds\\_divan_bruno_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_dek_clock_butterfly_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3DS\\Maniglie\\art78_79.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_divan_bruno_map.jpg|0|0|0|0|0|0|1|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.01.03",
+      "Des": "_",
+      "Memo": "_divan_doria.3ds\t_divan_doria.jpg\t1600\t1013\t600\t103|236;219;176|\\3ds\\agg3ds\\_divan_doria_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\firenze.jpg|0|0|0|0|0|0|1|0\t103|192;192;192|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.02",
+      "Des": "модерн",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.02.01",
+      "Des": "_",
+      "Memo": "_divan_chicago.3ds\t_divan_chicago.jpg\t2000\t712\t1332\t103|-1|\\3ds\\agg3ds\\_divan_chicago_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_divan_chicago_bump.jpg\t103|-1|\\3ds\\agg3ds\\_divan_bruno_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_divan_classic1_map2.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.02.02",
+      "Des": "_",
+      "Memo": "_divan_alberta.3ds\t_divan_alberta.jpg\t1800\t607\t643\t104|-1|\\3ds\\agg3ds\\_divan_alberta_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_divan_alberta_bump.jpg\t104|-1|\\3ds\\agg3ds\\_divan_alberta_map2.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_divan_alberta_bump2.jpg\t22|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "05.02.03",
+      "Des": "_",
+      "Memo": "_divan_corner.3ds\t_divan_corner.jpg\t2000\t507\t1422\t103|-1|\\3ds\\agg3ds\\_divan_corner_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_divan_corner_map2.jpg|0|0|0|0|0|0|1|0\t103|100;64;27|\\3ds\\agg3ds\\_divan_classic1_map2.jpg|0|0|0|0|0|0|1|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06",
+      "Des": "комоды тумбы",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.01",
+      "Des": "классика",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.01.01",
+      "Des": "_",
+      "Memo": "_dek_tumba.3ds\t_dek_tumba.jpg\t1215\t943\t578\t103|-1|\\3ds\\agg3ds\\_dek_tumba_map.jpg|0|0|0|0|0|0|1|0\t22|192;192;192|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.01.02",
+      "Des": "_",
+      "Memo": "_bedside_table.3ds\t_bedside_table.jpg\t650\t600\t637\t103|-1|\\FOTO\\ante\\acatcia.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\acatcia_b.jpg|0|0|0|0|0|0|1|0\t22|218;165;32|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.01.03",
+      "Des": "_",
+      "Memo": "_coff_table.3ds\t_coff_table.jpg\t679\t700\t680\t104|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\agg3ds\\_coff_table_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_coff_table_map2.jpg|0|0|0|0|0|0|1|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.01.04",
+      "Des": "_",
+      "Memo": "_night_table.3ds\t_night_table.jpg\t790\t777\t528\t103|-1|\\FOTO\\ante\\acatcia_b.jpg|0|0|0|0|0|0|1|0\t22|192;192;192|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.02",
+      "Des": "модерн",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.02.01",
+      "Des": "_",
+      "Memo": "_tumb_stand.3ds\t_tumb_stand.jpg\t1714\t960\t340\t104|-1|\\FOTO\\ante\\acatcia_b.jpg|0|0|0|0|0|0|1|0\t104|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.02.02",
+      "Des": "_",
+      "Memo": "_aura_cred.3ds\t_aura_cred.jpg\t1995\t720\t476\t104|-1|\\FOTO\\accessori\\buk.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\acatcia_b.jpg|0|0|0|0|0|0|1|0\t101|128;128;128|\\3ds\\agg3ds\\_aura_cred_map3.jpg|0|0|0|0|0|0|1|0\t22|192;192;192|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "06.02.03",
+      "Des": "_",
+      "Memo": "_vismara.3ds\t_vismara.jpg\t1200\t1190\t328\t22|-1|0|0|0|0|0|0|0|0|0\t103|66;66;66|0|0|0|0|0|0|0|0|0\t101|102;51;0|0|0|0|0|0|0|0|0|0\t103|36;36;36|0|0|0|0|0|0|0|0|0\t100|201;166;126|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07",
+      "Des": "кровать",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.01",
+      "Des": "классика",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.01.01",
+      "Des": "_",
+      "Memo": "_bed_novian.3ds\t_bed_novian.jpg\t2436\t750\t2280\t103|-1|\\3ds\\agg3ds\\_bed_novian_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_divan_chicago_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_divan_corner_map2.jpg|0|0|0|0|0|0|1|0\t103|66;66;66|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.01.02",
+      "Des": "_",
+      "Memo": "_bed_clasd4.3ds\t_bed_clasd4.jpg\t938\t787\t1800\t103|-1|\\3ds\\agg3ds\\_bed_clasd4_odeyalo.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_bed_clasd4_nozgnoe.jpg|0|0|0|0|0|0|1|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t103|-1|\\FOTO\\ante\\firenze.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\firenze.jpg|0|0|0|0|0|0|1|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.01.03",
+      "Des": "_",
+      "Memo": "_bed_clasf77.3ds\t_bed_clasf77.jpg\t2144\t1162\t2000\t103|-1|\\3ds\\agg3ds\\_bed_clasf77_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_bed_clasf77_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_bed_clasf77_map3.jpg|0|0|0|0|0|0|1|0\t103|-1|\\FOTO\\ante\\acatcia.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.01.04",
+      "Des": "_",
+      "Memo": "_bed_clasv57.3ds\t_bed_clasv57.jpg\t2084\t1145\t2000\t103|-1|\\3ds\\agg3ds\\_bed_clasv57_map.jpg|0|0|0|0|0|0|1|0\t104|-1|\\FOTO\\ante\\acatcia_b.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3DS\\Maniglie\\art152.jpg|0|0|0|0|0|0|1|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t22|192;192;192|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.01.05",
+      "Des": "_",
+      "Memo": "_bed_classic.3ds\t_bed_classic.jpg\t1860\t862\t2000\t103|-1|\\3ds\\agg3ds\\_bed_classic_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_bed_classic_map2.jpg|0|0|0|0|0|0|1|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.02",
+      "Des": "модерн",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.02.01",
+      "Des": "_",
+      "Memo": "_bed_8marta.3ds\t_bed_8marta.jpg\t1810\t756\t2000\t103|-1|\\3ds\\agg3ds\\_bed_8marta_map.jpg|0|0|0|0|0|0|1|0\t104|-1|\\FOTO\\ante\\acatcia.jpg|0|0|0|0|0|0|1|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.02.02",
+      "Des": "_",
+      "Memo": "_bed_bamar.3ds\t_bed_bamar.jpg\t1777\t980\t2000\t103|-1|\\3ds\\agg3ds\\_bed_bamar_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_bed_bamar_map2.jpg|0|0|0|0|0|0|1|0\t104|-1|\\FOTO\\ante\\acatcia.jpg|0|0|0|0|0|0|1|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "07.02.03",
+      "Des": "_",
+      "Memo": "_bed_rom.3ds\t_bed_rom.jpg\t1745\t1010\t2000\t103|-1|\\3ds\\agg3ds\\_bed_rom_map.jpg|0|0|0|0|0|0|1|0\t104|-1|\\FOTO\\ante\\dub_goa.jpg|0|0|0|0|0|0|1|0\t22|212;190;149|0|0|0|0|0|0|0|0|0\t103|172;147;107|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08",
+      "Des": "освещение",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.01",
+      "Des": "_",
+      "Memo": "_light1185.3ds\t_light1185.jpg\t566\t745\t586\t102|204;230;255|0|0|0|0|0|0|0|0|0\t103|255;255;255|0|0|0|0|0|0|0|0|0\t22|218;165;32|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.02",
+      "Des": "_",
+      "Memo": "_light12315.3ds\t_light12315.jpg\t314\t1810\t314\t103|-1|\\3ds\\agg3ds\\_divan_corner_map2.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.03",
+      "Des": "_",
+      "Memo": "_light12739.3ds\t_light12739.jpg\t238\t357\t238\t103|255;255;255|0|0|0|0|0|0|0|0|0\t22|238;232;170|0|0|0|0|0|0|0|0|0\t103|238;232;170|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.04",
+      "Des": "_",
+      "Memo": "_light133.3ds\t_light133.jpg\t423\t1420\t421\t103|255;255;255|0|0|0|0|0|0|0|0|0\t102|204;230;255|0|0|0|0|0|0|0|0|0\t22|238;232;170|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.05",
+      "Des": "_",
+      "Memo": "_light15027.3ds\t_light15027.jpg\t470\t423\t193\t103|255;255;255|0|0|0|0|0|0|0|0|0\t102|204;230;255|0|0|0|0|0|0|0|0|0\t22|238;232;170|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.06",
+      "Des": "_",
+      "Memo": "_light2743.3ds\t_light2743.jpg\t274\t420\t274\t102|204;230;255|0|0|0|0|0|0|0|0|0\t22|241;235;219|0|0|0|0|0|0|0|0|0\t102|118;82;30|0|0|0|0|0|0|0|0|0\t104|50;32;12|0|0|0|0|0|0|0|0|0\t104|241;235;219|0|0|0|0|0|0|0|0|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.07",
+      "Des": "_",
+      "Memo": "_light3681.3ds\t_light3681.jpg\t130\t884\t130\t103|-1|\\3ds\\agg3ds\\_light3681_map.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.08",
+      "Des": "_",
+      "Memo": "_light46051_1.3ds\t_light46051_1.jpg\t430\t736\t427\t22|-1|0|0|0|0|0|0|0|0|0\t102|-1|\\3ds\\agg3ds\\_divan_corner_map2.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.09",
+      "Des": "_",
+      "Memo": "_light46501_2.3ds\t_light46501_2.jpg\t325\t1654\t1060\t22|-1|0|0|0|0|0|0|0|0|0\t104|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.10",
+      "Des": "_",
+      "Memo": "_light51287.3ds\t_light51287.jpg\t206\t332\t170\t22|-1|0|0|0|0|0|0|0|0|0\t104|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.11",
+      "Des": "_",
+      "Memo": "_light51769.3ds\t_light51769.jpg\t285\t1000\t285\t22|-1|0|0|0|0|0|0|0|0|0\t22|0;0;0|0|0|0|0|0|0|0|0|0\t100|255;255;255|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.12",
+      "Des": "_",
+      "Memo": "_light54514.3ds\t_light54514.jpg\t713\t1036\t704\t102|-1|\\3ds\\agg3ds\\_light54514_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_divan_alberta_bump.jpg\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "08.01.13",
+      "Des": "_",
+      "Memo": "_light5761.3ds\t_light5761.jpg\t224\t1149\t239\t22|0;0;0|0|0|0|0|0|0|0|0|0\t104|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t22|0;0;153|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09",
+      "Des": "растения",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.01",
+      "Des": "_",
+      "Memo": "_rs_trio.3ds\t_rs_trio.jpg\t1570\t737\t1398\t103|-1|\\3ds\\agg3ds\\_rs_trio_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_trio_map2.jpg|0|0|0|0|0|0|1|0\t103|0;0;0|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.02",
+      "Des": "_",
+      "Memo": "_rs_2707.3ds\t_rs_2707.jpg\t608\t1190\t639\t103|0;0;0|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\agg3ds\\_rs_2707_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_trio_map2.jpg|0|0|0|0|0|0|1|0\t103|204;204;0|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.03",
+      "Des": "_",
+      "Memo": "_rs_2707_2.3ds\t_rs_2707_2.jpg\t635\t661\t613\t103|-1|\\3ds\\agg3ds\\_vaz4_map.jpg|0|0|0|0|0|0|1|0\t103|0;0;0|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\agg3ds\\_rs_trio_map2.jpg|0|0|0|0|0|0|1|0\t103|102;51;0|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.04",
+      "Des": "_",
+      "Memo": "_rs_47407.3ds\t_rs_47407.jpg\t756\t1046\t687\t104|-1|\\3ds\\agg3ds\\_rs_47407_map.jpg|0|0|0|0|0|0|1|0\t101|-1|\\3ds\\agg3ds\\_bed_classic_map.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.05",
+      "Des": "_",
+      "Memo": "_rs_49711.3ds\t_rs_49711.jpg\t280\t300\t254\t103|-1|\\3ds\\agg3ds\\_rs_49711_map.jpg|0|0|0|0|0|0|1|0\t103|200;200;200|\\3ds\\agg3ds\\_divan_corner_map2.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.06",
+      "Des": "_",
+      "Memo": "_rs_vazflowers.3ds\t_rs_vazflowers.jpg\t297\t450\t320\t103|-1|\\3ds\\agg3ds\\_rs_vazflowers_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_vazflowers_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_vazflowers_map3.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_vazflowers_map4.jpg|0|0|0|0|0|0|1|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.07",
+      "Des": "_",
+      "Memo": "_rs_iris.3ds\t_rs_iris.jpg\t260\t633\t239\t103|-1|\\3ds\\agg3ds\\_rs_iris_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_rs_iris_bump.jpg\t103|-1|\\3ds\\agg3ds\\_rs_iris_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_iris_map3.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_iris_map4.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_iris_map5.jpg|0|0|0|0|0|0|1|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "09.01.08",
+      "Des": "_",
+      "Memo": "_rs_roses.3ds\t_rs_roses.jpg\t334\t330\t413\t103|-1|\\3ds\\agg3ds\\_rs_roses_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_roses_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_roses_map3.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_roses_map3.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_rs_roses_map3.jpg|0|0|0|0|0|0|1|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10",
+      "Des": "столы",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.01",
+      "Des": "классика",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.01.01",
+      "Des": "_",
+      "Memo": "_table_1.3ds\t_table_1.jpg\t1204\t740\t798\t103|-1|\\FOTO\\ante\\yasen_bel_cher.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.01.02",
+      "Des": "_",
+      "Memo": "_table188403.3ds\t_table188403.jpg\t1684\t792\t750\t22|255;248;220|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\agg3ds\\_table188403_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_table188403_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_table188403_map3.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_table188403_map4.jpg|0|0|0|0|0|0|1|0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.01.03",
+      "Des": "_",
+      "Memo": "_table282075.3ds\t_table282075.jpg\t1280\t775\t1280\t104|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.01.04",
+      "Des": "_",
+      "Memo": "_table435773.3ds\t_table435773.jpg\t1598\t785\t1000\t103|-1|\\3ds\\agg3ds\\_table435773_map.jpg|0|0|0|0|0|0|1|0\t100|218;165;32|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.01.05",
+      "Des": "_",
+      "Memo": "_table68377.3ds\t_table68377.jpg\t1395\t750\t1386\t103|-1|\\3ds\\agg3ds\\_table68377_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_st68377_map.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02",
+      "Des": "модерн",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.01",
+      "Des": "_",
+      "Memo": "_t_gr124200.3ds\t_t_gr124200.jpg\t2100\t1038\t1581\t103|-1|\\3ds\\agg3ds\\_t_gr124200_map.jpg|0|0|0|0|0|0|1|0\t102|-1|0|0|0|-1|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t22|100;100;100|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.02",
+      "Des": "_",
+      "Memo": "_t_gr192895.3ds\t_t_gr192895.jpg\t2076\t1107\t1982\t102|-1|0|0|0|-1|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t104|192;194;129|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.03",
+      "Des": "_",
+      "Memo": "_t_gr255888.3ds\t_t_gr255888.jpg\t1600\t1050\t1192\t103|-1|\\3ds\\agg3ds\\_t_gr255888_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_t_gr255888_map2.jpg|0|0|0|0|0|0|1|0\t102|-1|0|0|0|-1|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.04",
+      "Des": "_",
+      "Memo": "_t_gr323508.3ds\t_t_gr323508.jpg\t2130\t814\t2128\t102|-1|0|0|0|-1|0|0|0|0|0\t104|239;215;155|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.05",
+      "Des": "_",
+      "Memo": "_t_gr34095.3ds\t_t_gr34095.jpg\t2300\t950\t1330\t103|-1|\\3ds\\agg3ds\\_t_gr34095_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_t_gr34095_map2.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.06",
+      "Des": "_",
+      "Memo": "_t_gr537519.3ds\t_t_gr537519.jpg\t1440\t755\t1575\t103|-1|\\3ds\\agg3ds\\_t_gr537519_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_t_gr537519_map2.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.07",
+      "Des": "_",
+      "Memo": "_t_gr550742.3ds\t_t_gr550742.jpg\t1560\t757\t1277\t103|-1|\\3ds\\agg3ds\\_t_gr550742_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_t_gr550742_map2.jpg|0|0|0|0|0|0|1|0\t101|76;74;75|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "10.02.08",
+      "Des": "_",
+      "Memo": "_t_gr75639.3ds\t_t_gr75639.jpg\t1730\t952\t1730\t103|-1|\\3ds\\agg3ds\\_t_gr75639_map.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11",
+      "Des": "стулья",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.01",
+      "Des": "классика",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.01.01",
+      "Des": "_",
+      "Memo": "_st17415.3ds\t_st17415.jpg\t524\t923\t551\t103|-1|\\FOTO\\ante\\yasen_bel_cher.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_st17415_map.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.01.02",
+      "Des": "_",
+      "Memo": "_st188403.3ds\t_st188403.jpg\t609\t1043\t711\t103|-1|\\3ds\\agg3ds\\_st188403_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_table188403_map4.jpg|0|0|0|0|0|0|1|0\t22|255;248;220|0|0|0|0|0|0|0|0|0\t103|193;132;77|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.01.03",
+      "Des": "_",
+      "Memo": "_st282075.3ds\t_st282075.jpg\t468\t949\t537\t104|255;255;255|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.01.04",
+      "Des": "_",
+      "Memo": "_st435773.3ds\t_st435773.jpg\t440\t921\t420\t103|-1|\\3ds\\agg3ds\\_st435773_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_table435773_map.jpg|0|0|0|0|0|0|1|0\t100|218;165;32|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.01.05",
+      "Des": "_",
+      "Memo": "_st68377.3ds\t_st68377.jpg\t425\t905\t518\t103|-1|\\3ds\\agg3ds\\_st68377_map.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.01.06",
+      "Des": "_",
+      "Memo": "_st541513.3ds\t_st541513.jpg\t533\t930\t503\t103|-1|\\3ds\\agg3ds\\_t_gr34095_map.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_t_gr537519_map2.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.02",
+      "Des": "модерн",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.02.01",
+      "Des": "_",
+      "Memo": "_st532264.3ds\t_st532264.jpg\t466\t977\t462\t102|224;116;46|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.02.02",
+      "Des": "_",
+      "Memo": "_st532928.3ds\t_st532928.jpg\t1313\t812\t633\t103|-1|\\3ds\\agg3ds\\_t_gr255888_map.jpg|0|0|0|0|0|0|1|0\t103|247;238;58|0|0|0|0|0|0|0|0|0\t103|74;200;243|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.02.03",
+      "Des": "_",
+      "Memo": "_st540247.3ds\t_st540247.jpg\t441\t982\t460\t103|-1|\\3ds\\agg3ds\\_st540247_map.jpg|0|0|0|0|0|0|1|0\t22|-1|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.02.04",
+      "Des": "_",
+      "Memo": "_st551308.3ds\t_st551308.jpg\t460\t837\t510\t103|-1|\\3ds\\agg3ds\\_t_gr537519_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_st551308_map.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.02.05",
+      "Des": "_",
+      "Memo": "_st551308_2.3ds\t_st551308_2.jpg\t391\t1100\t433\t103|-1|\\3ds\\agg3ds\\_t_gr537519_map2.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\_st551308_map.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "11.02.06",
+      "Des": "_",
+      "Memo": "_st551802.3ds\t_st551802.jpg\t405\t1100\t546\t103|-1|\\3ds\\agg3ds\\_st551802_map.jpg|0|0|0|0|0|0|1|\\3ds\\agg3ds\\_st551802_bump.jpg\t103|-1|\\3ds\\agg3ds\\_dek_tumba_map.jpg|0|0|0|0|0|0|1|0\t103|58;53;57|0|0|0|0|0|0|0|0|0\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "12",
+      "Des": "люди",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "12.01",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "12.01.01",
+      "Des": "",
+      "Memo": "ledi.3ds\t\t472\t1820\t454\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13",
+      "Des": "овощи",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.01",
+      "Des": "_",
+      "Memo": "Broccoli.3DS\tbroccoli.jpg\t156\t86\t114\t103|-1|\\3ds\\agg3ds\\broccoli.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.02",
+      "Des": "_",
+      "Memo": "cabbage.3DS\tkapusta.jpg\t162\t162\t166\t103|-1|\\3ds\\agg3ds\\kapusta.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.03",
+      "Des": "_",
+      "Memo": "Carrot.3ds\tcarrot.jpg\t178\t107\t232\t103|-1|\\3ds\\agg3ds\\carrot.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.04",
+      "Des": "_",
+      "Memo": "Cucumber.3ds\tCucumber.jpg\t100\t56\t115\t103|-1|\\3ds\\agg3ds\\Cucumber.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.05",
+      "Des": "_",
+      "Memo": "Eggplant.3ds\tEggplant.jpg\t82\t173\t72\t7|64;94;45|0|0|0|0|0|0|0|0|0\t7|75;50;68|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.06",
+      "Des": "_",
+      "Memo": "garlic.3ds\tgarlic.jpg\t240\t87\t180\t103|-1|\\3ds\\agg3ds\\garlic.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.07",
+      "Des": "_",
+      "Memo": "Onion.3ds\tOnion.jpg\t131\t69\t148\t103|-1|\\3ds\\agg3ds\\Onion.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.08",
+      "Des": "_",
+      "Memo": "Onion_green.3ds\tOnion_green.jpg\t250\t24\t358\t103|-1|\\3ds\\agg3ds\\Onion_green_diff.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.09",
+      "Des": "_",
+      "Memo": "Parsley.3ds\tParsley.jpg\t133\t62\t166\t7|64;94;45|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.10",
+      "Des": "_",
+      "Memo": "Pepper.3ds\tPepper.jpg\t352\t141\t111\t7|30;125;13|0|0|0|0|0|0|0|0|0\t7|230;0;0|0|0|0|0|0|0|0|0|0\t7|64;94;45|0|0|0|0|0|0|0|0|0\t7|254;236;10|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.11",
+      "Des": "_",
+      "Memo": "Pepper_Chili.3ds\tPepper_Chili.jpg\t312\t39\t263\t7|230;0;0|0|0|0|0|0|0|0|0|0\t7|30;125;13|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.12",
+      "Des": "_",
+      "Memo": "Potato.3ds\tPotato.jpg\t176\t67\t181\t103|-1|\\3ds\\agg3ds\\Potato.jpg|0|0|0|0|0|0|1|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.13",
+      "Des": "_",
+      "Memo": "Radish.3ds\tRadish.jpg\t178\t71\t188\t103|-1|\\3ds\\agg3ds\\radish_leaf.jpg|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\agg3ds\\Radish_Map_2.jpg|0|0|0|0|0|0|1|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_AGG3DS",
+      "Codopz": "13.01.14",
+      "Des": "_",
+      "Memo": "Tomato.3ds\tTomato.jpg\t88\t76\t87\t7|230;0;0|0|0|0|0|0|0|0|0|0\t7|30;125;13|0|0|0|0|0|0|0|0|0\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

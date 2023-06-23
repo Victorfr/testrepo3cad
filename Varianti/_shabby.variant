@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "_shabby",
+    "Des": "Потертости",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010id mr.3\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_SHABBY",
+      "Codopz": "0",
+      "Des": "Без потертостей",
+      "Memo": "129733617",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_SHABBY",
+      "Codopz": "1",
+      "Des": "С потертостями",
+      "Memo": "129733614",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

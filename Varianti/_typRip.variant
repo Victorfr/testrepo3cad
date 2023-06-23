@@ -1,0 +1,46 @@
+{
+  "MainVar": {
+    "Cod": "_typRip",
+    "Des": "Тип полок",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010\u0010 1200\u0010обозначение обработки в дисинте\u0010 1200\r\r\r\u0011\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^1;2;300;300;3;#foto\\accessori\\;2;1",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_TYPRIP",
+      "Codopz": "1",
+      "Des": "Радиус наружный",
+      "Memo": "radius.jpg\tro01",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TYPRIP",
+      "Codopz": "2",
+      "Des": "Радиус внутренний",
+      "Memo": "\tri01",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TYPRIP",
+      "Codopz": "3",
+      "Des": "Скос",
+      "Memo": "scos.jpg\tug01",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

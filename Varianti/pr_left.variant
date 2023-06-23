@@ -1,0 +1,56 @@
+{
+  "MainVar": {
+    "Cod": "pr_left",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 1800\u0010Описание\u0010 5250\u0010Значение припуска\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "PR_LEFT",
+      "Codopz": "01",
+      "Des": "Без припуска",
+      "Memo": "0",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PR_LEFT",
+      "Codopz": "02",
+      "Des": "Припуск 30 мм",
+      "Memo": "30",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PR_LEFT",
+      "Codopz": "03",
+      "Des": "Припуск 50 мм",
+      "Memo": "50",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "PR_LEFT",
+      "Codopz": "04",
+      "Des": "Припуск 100 мм",
+      "Memo": "100",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

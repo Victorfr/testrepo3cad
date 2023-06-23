@@ -1,0 +1,2256 @@
+{
+  "MainVar": {
+    "Cod": "_colkarkas",
+    "Des": "Цвет ЛДСП",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Код\u0010 720\u0010Описание\u0010 4410\u0010jpg\u0010 3510\u0010RGB\u0010 1395\u0010толщина для фильтра цветов\u0010 3540\u0010id цвета ДСП\u0010 1545\u0010id цвета кромки для ДСП\u0010 2640\u0010id цвета ХДФ 4мм (ДСП 10мм)\u0010 1440\u0010артикул пиломатерила кромки код параметра цвета\u0010 5220\u0010id пиломат. кромки\u0010 2085\u0010Артикул клея для кромки\u0010 1830\u0010Артикул заглушки эксцентрика\u0010 2025\u0010Артикул уголка с заглушкой\u0010 1620\u0010артикул самоклейки\u0010 1695\u0010id цвета самоклейки\u0010 4920\u0010код ДСП и код параметра цвета\u0010 2610\u0010Модель для распашных фасадов\u0010 1875\u0010Поворот текстуры для дверей\u0010 1485\u0010Соответ. цветов кар. цветам 16 дсп\u0010 4860\u0010фильтр для каркаса - 1 и фасадов - 2\u0010 1095\u0010Название цвета самоклеющейся заглушки\\уголка\\эксцентрика\u0010 3975\u0010Дата ввода\u0010 1200\u0010Дата вывода\u0010 1200\u0010сеть\u0010 4635\u0010соотв загл нав\u0010 765\u0010laserkrom\u0010 1200\u0010каркасный мат.\u0010 1200\r\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "^3;4;170;170;3,4;#foto\\struttura\\;2;2",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "001",
+      "Des": "Белый",
+      "Memo": "ral1.jpg\t255;255;255\t16;4\t2001\t719495401\t2036\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam\t16797024\tLDSP16|_16CKD\t\t\t\t1\tпод цвет каркаса Белый\t01.01.2018\t03.10.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "002",
+      "Des": "ЯССП Ваниль",
+      "Memo": "eg_u108_st2.jpg\t\t16;4\t6253654\t6253655\t6253656\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999ZAGUGbez]\t999sam\t16797023\tLDSP16|_16CKD\tS24;S30\t0\t\t1\tпод цвет каркаса Ваниль\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "003",
+      "Des": "Временно недоступен Вяз Капский белый",
+      "Memo": "wjaz_kaps_H3760.jpg\t\t16;4\t316197196\t302063135\t316198459\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam_vaz_kaps\t\tLDSP16|_16CKD\t\t\t\t1\tпод цвет каркаса Вяз Капский белый\t01.01.2018\t02.09.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "004",
+      "Des": "Чарльстон табак",
+      "Memo": "dub_charl_tabakH3155.jpg\t\t16;4\t316197198\t302063130\t316198460\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagBlck]\t999sam\t16797020\tLDSP16|_16CKD\tS24;S30\t1\t\t1\tпод цвет каркаса Дуб Чарльстон табак\t01.01.2018\t22.01.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t7;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "005",
+      "Des": "Кокоболо натуральный",
+      "Memo": "H3012ST22.jpg\t\t16;4\t316197195\t302063132\t316198458\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagGru]\t999sam_kok_nat\t\tLDSP16|_16CKD\t\t\t\t1\tпод цвет каркаса Кокоболо натуральный\t01.01.2018\t03.10.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "006",
+      "Des": "Лён бежевый",
+      "Memo": "eg_f425_st10.jpg\t\t16;4\t246797115\t130407167\t130920209\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam\t130203875\tLDSPN16|_25CKD\tS24;S30\t0\t\t1\tпод цвет каркаса Лён бежевый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "007",
+      "Des": "ЭССП Лён серый",
+      "Memo": "eg_f426_st10.jpg\t\t16;4\t246797116\t130407168\t130920208\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999ZAGUGsilv]\t999sam\t130203874\tLDSPN16|_25CKD\tS24;S30\t0\t\t1\tпод цвет каркаса Лён серый\t01.01.2018\t22.01.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t4;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "008",
+      "Des": "Временно недоступен Сосна Джексон",
+      "Memo": "h1486_ST36.jpg\t\t16;4\t233088060\t232430536\t233790430\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999ZAGUGbl]\t999sam\t226295085\tLDSP16|_16CKD\t\t\t\t1\tпод цвет каркаса Сосна Джексон\t01.01.2018\t02.09.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "009",
+      "Des": "Белый",
+      "Memo": "eg_w0980_st2.jpg\t\t25\t246797123\t6008304\t\tkromka30|_25CKK|1\t6008350\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam\t16797024\tLDSP25|_25CKD\t\t\t001\t1\tпод цвет каркаса Белый\t01.01.2018\t03.10.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "010",
+      "Des": "Ваниль",
+      "Memo": "eg_u108_st2.jpg\t\t25\t246797122\t6283056\t\tkromka30|_25CKK|1\t6008350\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam\t16797023\tLDSP25|_25CKD\t\t\t002\t1\tпод цвет каркаса Ваниль\t01.01.2018\t02.12.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "011",
+      "Des": "Лён бежевый",
+      "Memo": "eg_f425_st10.jpg\t\t25\t246797115\t131938197\t\tkromka28х08|_25CKK|1\t6008350\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam\t130203875\tLDSP25|_25CKD\t\t\t006\t1\tпод цвет каркаса Лён бежевый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "012",
+      "Des": "Лён серый",
+      "Memo": "eg_f426_st10.jpg\t\t25\t246797116\t131938198\t\tkromka30|_25CKK|1\t6008350\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagGray]\t999sam\t130203874\tLDSP25|_25CKD\t\t\t048\t1\tпод цвет каркаса Лён серый\t01.01.2018\t02.12.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t4;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "013",
+      "Des": "ЯССП Алебастр",
+      "Memo": "ral1.jpg\t232;232;208\t22;10\t122041268\t190981806\t122041268\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999ZAGUGbez]\t999sam\t16797024\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Алебастр\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "014",
+      "Des": "Белый премиум",
+      "Memo": "ral1.jpg\t255;255;255\t22;10\t177195936\t190981808\t177195936\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam\t16797024\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Белый премиум\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "015",
+      "Des": "Бетон Светлый",
+      "Memo": "mix_beton_sv.jpg\t\t22;10\t126588554\t190981809\t126588554\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagGray]\t999sam_bet_svet\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Бетон Светлый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "016",
+      "Des": "Бетон Темный",
+      "Memo": "mix_beton_t.jpg\t\t22;10\t126588553\t190981810\t126588553\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagBlck]\t999sam_bet_temn\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Бетон Темный\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "017",
+      "Des": "Вяз Капский белый",
+      "Memo": "wjaz_kaps_H3760.jpg\t\t22;10\t316667613\t680927466\t316667613\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam_vaz_kaps\t\tLDSP22|CVET_VST\tS02\t1\t044\t1;2\tпод цвет каркаса Вяз Капский белый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "018",
+      "Des": "ЯССП Гасиенда белый",
+      "Memo": "H3078ST22.jpg\t\t22;10\t122041280\t190981813\t122041280\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999ZAGUGwt]\t999sam\t16797017\tLDSP22|CVET_VST\tS02\t1\t048\t1;2\tпод цвет каркаса Гасиенда белый\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "019",
+      "Des": "Гасиенда чёрный",
+      "Memo": "H3081ST22.jpg\t\t22;10\t122041281\t190981814\t122041281\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagBlck]\t999sam_gas_temn\t\tLDSP22|CVET_VST\tS02\t1\t048\t1;2\tпод цвет каркаса Гасиенда чёрный\t01.01.2018\t10.06.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "020",
+      "Des": "Кашемир",
+      "Memo": "ral1.jpg\t200;193;185\t22;10\t188682253\t716276027\t188682253\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagYas]\t999sam_kash\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Кашемир\t01.01.2018\t21.03.2023\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "021",
+      "Des": "Кокоболо натуральный",
+      "Memo": "H3012ST22.jpg\t\t22;10\t122041278\t190981819\t122041278\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagGru]\t999sam_kok_nat\t\tLDSP22|CVET_VST\tS02\t1\t056\t1;2\tпод цвет каркаса Кокоболо натуральный\t01.01.2018\t20.04.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "022",
+      "Des": "Сосна Джексон",
+      "Memo": "h1486_ST36.jpg\t\t22;10\t233088397\t232430132\t233088397\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagGray]\t999sam\t226295085\tLDSP22|CVET_VST\tS02\t1\t045\t1;2\tпод цвет каркаса Сосна Джексон\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "023",
+      "Des": "Временно недоступен Чарльстон табак",
+      "Memo": "dub_charl_tabakH3155.jpg\t\t22;10\t370262705\t377578752\t370262705\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999ZAGUGbl]\t999sam\t16797020\tLDSP22|CVET_VST\tS02\t1\t004\t1;2\tпод цвет каркаса Дуб Чарльстон табак\t01.01.2018\t22.01.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t7;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "024",
+      "Des": "Серый асфальт",
+      "Memo": "ral1.jpg\t147;149;146\t16\t246797127\t181712269\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagGray]\t999sam\t196321874\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Серый асфальт\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "025",
+      "Des": "Алюминий",
+      "Memo": "eg_f0509_st2.jpg\t\t4\t\t\t3152325\t\t\t\t\t\t\t\t\t\t\t\t1\tпод цвет каркаса Алюминий\t01.01.2018\t02.12.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "026",
+      "Des": "Металл винтаж серо-коричневый",
+      "Memo": "met_vint_kor.jpg\t\t22;10\t319260568\t319262591\t319260568\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGveng;999grugzagOreh]\t999sam_kapuch\t\tLDSP22|CVET_VST\tS02\t1\t048\t1;2\tпод цвет каркаса Металл винтаж серо-коричневый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "027",
+      "Des": "Известняк белый",
+      "Memo": "izvestnyak_belyjFB50.jpg\t\t22;8\t232580962\t232656430\t232580962\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam\t16797024\tLDSP22S|CFSP\tS04\t0\t048\t1;2\tпод цвет каркаса Известняк белый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "028",
+      "Des": "Античный травертин",
+      "Memo": "antichnyj_travertinFB48.jpg\t\t22;8\t232580963\t232656431\t232580963\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagGray]\t999sam_bazalt\t\tLDSP22S|CFSP\tS04\t0\t048\t1;2\tпод цвет каркаса Античный травертин\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "029",
+      "Des": "Известняк бежевый",
+      "Memo": "izvestnyak_bezhevyjFB52.jpg\t\t22;8\t232580964\t232656432\t232580964\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t999ZAGVBkofe\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagYas]\t999sam_bazalt\t\tLDSP22S|CFSP\tS04\t0\t048\t1;2\tпод цвет каркаса Известняк бежевый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "030",
+      "Des": "Бронзовый травертин",
+      "Memo": "bronzovyj_travertinFB49.jpg\t\t22;8\t232580965\t232656433\t232580965\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagVen]\t999sam_kor_bol\t\tLDSP22S|CFSP\tS04\t0\t048\t1;2\tпод цвет каркаса Бронзовый травертин\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "031",
+      "Des": "Пепельный травертин",
+      "Memo": "pepelnyj_travertinFB67.jpg\t\t22;8\t232580966\t232656434\t232580966\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagGray]\t999sam_antrazit\t\tLDSP22S|CFSP\tS04\t0\t048\t1;2\tпод цвет каркаса Пепельный травертин\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "032",
+      "Des": "Дуб Бардолино натуральный",
+      "Memo": "H1145ST10.jpg\t\t16\t246797126\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Дуб Бардолино натуральный\t01.01.2018\t03.10.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "033",
+      "Des": "ЯССП Бетон Чикаго светло-серый",
+      "Memo": "beton_chicago_svet.jpg\t\t16\t280070691\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Бетон Чикаго светло-серый\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "034",
+      "Des": "ЯССП Бетон Чикаго темно-серый",
+      "Memo": "beton_chicago_temn.jpg\t\t16\t280070696\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Бетон Чикаго темно-серый\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "035",
+      "Des": "ЯССП Ясень Наварра",
+      "Memo": "H1250 ST36.jpg\t\t16\t254662234\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Ясень Наварра\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "036",
+      "Des": "Дуб Орлеанский коричневый",
+      "Memo": "H1379 ST36.jpg\t\t16\t254662224\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Дуб Орлеанский коричневый\t01.01.2018\t23.12.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t7;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "037",
+      "Des": "ЯССП Гикори коричневый",
+      "Memo": "gikori_korich.jpg\t\t16\t280070683\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Гикори коричневый\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t7;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "038",
+      "Des": "ЯССП Бежевый песок",
+      "Memo": "ral1.jpg\t219;202;184\t16\t254662230\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Бежевый песок\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "039",
+      "Des": "ЯССП Фисташка",
+      "Memo": "ral1.jpg\t199;213;196\t16\t254662228\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Фисташка\t01.01.2018\t23.12.2019\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "040",
+      "Des": "ЯССП Зеленый киви",
+      "Memo": "zeleni_kivi.jpg\t\t16\t280070698\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Зеленый киви\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "041",
+      "Des": "ЯССП Трюфель",
+      "Memo": "ral1.jpg\t100;90;88\t16\t254662233\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Трюфель\t01.01.2018\t15.01.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "042",
+      "Des": "Белый премиум",
+      "Memo": "ral1.jpg\t255;255;255\t16\t254662220\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Белый премиум\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "043",
+      "Des": "Сосна Винтер",
+      "Memo": "sosna_vinter.jpg\t\t16\t270855237\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Сосна Винтер\t01.01.2018\t19.05.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "044",
+      "Des": "Вяз Капский белый",
+      "Memo": "wjaz_kaps_H3760.jpg\t\t16;$[IIF;$[DATECOMPARE;$(dataordine);11.11.2022]<0;4;999]\t317532506\t302063135\t316198459\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam_vaz_kaps\t\tLDSPN16|_25CKD\tS24;S12;D02;E02;S30\t1\t\t1\tпод цвет каркаса Вяз Капский белый\t02.09.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "045",
+      "Des": "Сосна Джексон",
+      "Memo": "h1486_ST36.jpg\t\t16;4\t246797121\t232430536\t233790430\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagGray]\t999sam\t226295085\tLDSPN16|_25CKD\tS24;S30\t1\t\t1\tпод цвет каркаса Сосна Джексон\t02.09.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "046",
+      "Des": "Белый",
+      "Memo": "ral1.jpg\t255;255;255\t16;4\t246797123\t719495401\t2036\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam\t16797024\tLDSPN16|_25CKD\tS24;S30\t0\t\t1\tпод цвет каркаса Белый каркасный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "047",
+      "Des": "Белый",
+      "Memo": "ral1.jpg\t255;255;255\t25\t246797123\t6008304\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam\t16797024\tLDSP25|_25CKD\t\t\t046\t1\tпод цвет каркаса Белый каркасный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "048",
+      "Des": "Серый камень (0112 РЕ)",
+      "Memo": "ral1.jpg\t198;202;201\t16;4\t410144923\t428319621\t428316641\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999ZAGUGsilv]\t999sam_ser_k\t\tLDSPN16|_25CKD\tS24;S30\t0\t\t1\tпод цвет каркаса Серый камень\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "049",
+      "Des": "Временно недоступен Серый камень (0112 РЕ)",
+      "Memo": "ral1.jpg\t198;202;201\t25\t410144923\t428324787\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999ZAGUGsilv]\t999sam_ser_k\t\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Серый камень\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "050",
+      "Des": "Дуб Крафт Серый (K002 PW)",
+      "Memo": "db_kr_ser.jpg\t\t16;4\t410144924\t428319619\t428316639\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBkash\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam_db_ser\t\tLDSPN16|_25CKD\tS24;S30\t1\t\t1\tпод цвет каркаса Дуб крафт серый\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "051",
+      "Des": "Дуб Крафт Серый (K002 PW)",
+      "Memo": "db_kr_ser.jpg\t\t22;10\t428342088\t428372094\t428342088\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBkash\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam_db_ser\t\tLDSP22|CVET_VST\tS02\t1\t050\t1;2\tпод цвет каркаса Дуб крафт серый\t03.10.2019\t20.04.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "052",
+      "Des": "Дуб Крафт Серый (K002 PW)",
+      "Memo": "db_kr_ser.jpg\t\t25\t410144924\t428324785\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBkash\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam_db_ser\t\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Дуб крафт серый\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "053",
+      "Des": "ЯССП Слоновая кость (0514 PE)",
+      "Memo": "ral1.jpg\t254;248;224\t16;4\t410144925\t428319623\t428316642\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t999grugzagYas\t999sam_slkos\t\tLDSPN16|_25CKD\tS24;S30\t0\t\t1\tпод цвет каркаса Слоновая кость\t03.10.2019\t21.02.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "054",
+      "Des": "ЯССП Слоновая кость (0514 PE)",
+      "Memo": "ral1.jpg\t254;248;224\t22;10\t428342094\t428372107\t428342094\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t999grugzagYas\t999sam_slkos\t\tLDSP22|CVET_VST\tS02\t0\t053\t1;2\tпод цвет каркаса Слоновая кость\t03.10.2019\t15.09.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "055",
+      "Des": "Слоновая кость (0514 PE)",
+      "Memo": "ral1.jpg\t254;248;224\t25\t410144925\t428324788\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBsliv\t999grugzagYas\t999sam_slkos\t\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Слоновая кость\t03.10.2019\t01.09.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "056",
+      "Des": "Кокоболо натуральный",
+      "Memo": "H3012ST22.jpg\t\t16;4\t317532502\t302063132\t316198458\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagGru]\t999sam_kok_nat\t\tLDSPN16|_25CKD\tS24;S30\t1\t\t1\tпод цвет каркаса Кокоболо натуральный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "057",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "058",
+      "Des": "Дуб Крафт Золотой (K003 PW)",
+      "Memo": "db_kr_gld.jpg\t\t16;4\t410144927\t428319616\t428316636\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGolh;999grugzagGru]\t999sam_db_gd\t\tLDSPN16|_25CKD\tS24;S30\t1\t\t1\tпод цвет каркаса Дуб крафт золотой\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t5;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "059",
+      "Des": "Дуб Крафт Золотой (K003 PW)",
+      "Memo": "db_kr_gld.jpg\t\t22;10\t428342087\t428372092\t428342087\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGolh;999grugzagGru]\t999sam_db_gd\t\tLDSP22|CVET_VST\tS02\t1\t058\t1;2\tпод цвет каркаса Дуб крафт золотой\t03.10.2019\t20.04.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "060",
+      "Des": "Дуб Крафт Золотой (K003 PW)",
+      "Memo": "db_kr_gld.jpg\t\t25\t410144927\t428324784\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGolh;999grugzagGru]\t999sam_db_gd\t\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Дуб крафт золотой\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "061",
+      "Des": "Дуб Крафт Белый (K001 PW)",
+      "Memo": "db_kr_wh.jpg\t\t16;4\t410148994\t428319614\t428316635\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam_db_w\t\tLDSPN16|_25CKD\tS24;S30\t1\t\t1\tпод цвет каркаса Дуб крафт белый\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "062",
+      "Des": "Дуб Крафт Белый (K001 PW)",
+      "Memo": "db_kr_wh.jpg\t\t22;10\t428342086\t680927468\t428342086\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam_db_w\t\tLDSP22|CVET_VST\tS02\t1\t061\t1;2\tпод цвет каркаса Дуб крафт белый\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "063",
+      "Des": "Дуб Крафт Белый (K001 PW)",
+      "Memo": "db_kr_wh.jpg\t\t25\t410148994\t428324781\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam_db_w\t\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Дуб крафт белый\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "064",
+      "Des": "Дуб Бардолино натуральный",
+      "Memo": "H1145ST10.jpg\t\t16;$[IIF;$[DATECOMPARE;$(dataordine);04.03.2023]<0;4;999]\t246797126\t226143858\t231213896\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagGru]\t999sam\t226295086\tLDSPN16|_25CKD\tS30\t\t\t1\tпод цвет каркаса Дуб Бардолино натуральный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "065",
+      "Des": "Дуб Бардолино натуральный",
+      "Memo": "H1145ST10.jpg\t\t25;10\t246797126\t680933122\t188457201\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagGru]\t999sam\t226295086\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Дуб Бардолино натуральный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "066",
+      "Des": "Белый премиум",
+      "Memo": "ral1.jpg\t255;255;255\t16\t254662220\t250431367\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGwt;999grugzagWH]\t999sam\t16797024\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Белый снег\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "067",
+      "Des": "",
+      "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "068",
+      "Des": "ЯССП Сатин (7045 PE)",
+      "Memo": "ral1.jpg\t217;204;188\t22;10\t428342093\t428372103\t428342093\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999ZAGUGbez]\t999sam_sat\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Сатин\t03.10.2019\t01.11.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "069",
+      "Des": "Ателье Светлое (4298 SU)",
+      "Memo": "at_wh.jpg\t\t22;10\t428342082\t428370784\t428342082\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999ZAGUGsilv]\t999sam_at_sv\t\tLDSP22|CVET_VST\tS02\t1\t048\t1;2\tпод цвет каркаса Ателье Светлое\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "070",
+      "Des": "Ателье Светлое (4298 SU)",
+      "Memo": "at_wh.jpg\t\t16\t410149000\t428534341\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagWH]\t999sam_at_sv\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Ателье Светлое\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "071",
+      "Des": "Ателье Темное (4299 SU)",
+      "Memo": "at_bl.jpg\t\t22;10\t428342084\t428372087\t428342084\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999ZAGUGbl]\t999sam_bet_temn\t\tLDSP22|CVET_VST\tS02\t1\t048\t1;2\tпод цвет каркаса Ателье Темное\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "072",
+      "Des": "Ателье Темное (4299 SU)",
+      "Memo": "at_bl.jpg\t\t16\t410149002\t428534345\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbl;999grugzagBlck]\t999sam_bet_temn\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Ателье Темное\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "073",
+      "Des": "Кобальт Серый (6299 PE)",
+      "Memo": "ral1.jpg\t93;88;84\t10\t428342089\t428372096\t428342089\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t\t\t\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Кобальт Серый\t02.09.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "074",
+      "Des": "ЭССП Глиняный Серый (K096 PE)",
+      "Memo": "ral1.jpg\t160;145;134\t22;10\t428342085\t428372089\t428342085\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBkofe\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagYas]\t999sam_bet_svet\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Глиняный Серый\t03.10.2019\t01.06.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "075",
+      "Des": "Океан Зеленый (8996 PE)",
+      "Memo": "ral1.jpg\t176;181;91\t22;10\t428342090\t428372099\t428342090\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t\t\t\t\tLDSP22|CVET_VST\tS02\t0\t048\t2\tпод цвет каркаса Океан Зеленый\t03.10.2019\t01.05.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "076",
+      "Des": "Океан Зеленый (8996 PE)",
+      "Memo": "ral1.jpg\t176;181;91\t16\t410149005\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Океан Зеленый\t03.10.2019\t01.03.2021\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "077",
+      "Des": "ЯССП Сумеречный Голубой (K097 PE)",
+      "Memo": "ral1.jpg\t111;142;137\t22;10\t428342095\t428372108\t428342095\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999ZAGUGsilv]\t999sam_sum_gol\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Сумеречный Голубой\t03.10.2019\t01.11.2021\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "078",
+      "Des": "Кашемир (5981 PE)",
+      "Memo": "ral1.jpg\t200;193;185\t16\t410149008\t428534352\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagYas]\t999sam_kash_m\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Кашемир\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "079",
+      "Des": "Кашемир (5981 PE)",
+      "Memo": "ral1.jpg\t200;193;185\t0\t188682253\t\t188682253\t\t\t\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagYas]\t999sam_kash_m\t\tLDSP10|cvet_vst\t\t\t\t0\tпод цвет каркаса Кашемир\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "080",
+      "Des": "Земля (7184 PE)",
+      "Memo": "ral1.jpg\t75;65;63\t10\t434252959\t\t434252959\t\t\tKLEI\t\t\t\t\tLDSP10|cvet_vst\t\t\t\t1\tпод цвет каркаса Земля\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "081",
+      "Des": "Земля (7184 PE)",
+      "Memo": "ral1.jpg\t75;65;63\t16\t410149011\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Земля\t03.10.2019\t06.11.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "082",
+      "Des": "Артвуд Темный (K084 SN)",
+      "Memo": "artw_bl.jpg\t\t16\t410149015\t428534343\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagGray]\t999sam_art_tm\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Артвуд Темный\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "083",
+      "Des": "Артвуд Темный (K084 SN)",
+      "Memo": "artw_bl.jpg\t\t10\t434252961\t\t434252961\t\t\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999grugzagGray]\t999sam_art_tm\t\tLDSP10|cvet_vst\t\t\t\t1\tпод цвет каркаса Артвуд Темный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "084",
+      "Des": "Кремовый (7031 PE)",
+      "Memo": "ral1.jpg\t255;253;232\t16\t410149017\t428534353\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999ZAGUGbez]\t999sam_slkos\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Кремовый\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "085",
+      "Des": "Кремовый (7031 PE)",
+      "Memo": "ral1.jpg\t255;253;232\t10\t434252963\t\t434252963\t\t\t\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999ZAGUGbez]\t999sam_slkos\t\tLDSP10|cvet_vst\t\t\t\t1\tпод цвет каркаса Кремовый\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "086",
+      "Des": "Дуб Винтаж Оксид (5194 SN)",
+      "Memo": "vint_oxyd.jpg\t\t16\t410149018\t$[IIF;$[DATECOMPARE;$(dataordine);17.06.2022]<0;428534347;688346885]\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBkofe\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGveng;999grugzagVen]\t999sam_db_oxyd\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Дуб Винтаж Оксид\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "087",
+      "Des": "Дуб Винтаж Оксид (5194 SN)",
+      "Memo": "vint_oxyd.jpg\t\t10\t434252964\t\t434252964\t\t\tKLEI\t999ZAGVBkofe\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGveng;999grugzagVen]\t999sam_db_oxyd\t\tLDSP10|cvet_vst\t\t\t\t1\tпод цвет каркаса Дуб Винтаж Оксид\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "088",
+      "Des": "Пастельный Зеленый (7063 PE)",
+      "Memo": "ral1.jpg\t199;209;201\t16\t410149020\t428534355\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999ZAGUGsilv]\t999sam_p_green\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Пастельный Зеленый\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "089",
+      "Des": "Пастельный Зеленый (7063 PE)",
+      "Memo": "ral1.jpg\t199;209;201\t10\t434252965\t\t434252965\t\t\t\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGsilv;999ZAGUGsilv]\t999sam_p_green\t\tLDSP10|cvet_vst\t\t\t\t1\tпод цвет каркаса Пастельный Зеленый\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "090",
+      "Des": "Дуб каменный (5527 SN)",
+      "Memo": "db_stone.jpg\t\t16\t410149021\t428534348\t\tKRPVH|CKRPVH|2\t185407190\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGolh;999ZAGUGolh]\t999sam_db_kam\t\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Дуб Каменный\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "091",
+      "Des": "Дуб каменный (5527 SN)",
+      "Memo": "db_stone.jpg\t\t10\t434252966\t\t434252966\t\t\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGolh;999ZAGUGolh]\t999sam_db_kam\t\tLDSP10|cvet_vst\t\t\t\t1\tпод цвет каркаса Дуб Каменный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "092",
+      "Des": "Кокоболо натуральный",
+      "Memo": "H3012ST22.jpg\t\t25\t317532502\t302064548\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagGru]\t999sam_kok_nat\t\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Кокоболо натуральный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "093",
+      "Des": "Кокоболо натуральный",
+      "Memo": "H3012ST22.jpg\t\t16\t317532502\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Кокоболо натуральный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "094",
+      "Des": "Белый Снег (8685 BS)",
+      "Memo": "ral1.jpg\t255;255;255\t16\t254662220\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Белый снег\t03.10.2019\t08.07.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "095",
+      "Des": "Дуб Бардолино",
+      "Memo": "H1145ST10.jpg\t\t16\t246797126\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Дуб Бардолино\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "096",
+      "Des": "Ателье Светлое (4298 SU)",
+      "Memo": "at_wh.jpg\t\t16\t410149000\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Ателье Светлое\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "097",
+      "Des": "Ателье Темное (4299 SU)",
+      "Memo": "at_bl.jpg\t\t16\t410149002\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Ателье Темное\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "098",
+      "Des": "Кашемир (5981 PE)",
+      "Memo": "ral1.jpg\t200;193;185\t16\t410149008\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Кашемир\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "099",
+      "Des": "Артвуд Темный (K084 SN)",
+      "Memo": "artw_bl.jpg\t\t16\t410149015\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Артвуд Темный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "100",
+      "Des": "Кремовый (7031 PE)",
+      "Memo": "ral1.jpg\t255;253;232\t16\t410149017\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Кремовый\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "101",
+      "Des": "Дуб Винтаж Оксид (5194 SN)",
+      "Memo": "vint_oxyd.jpg\t\t16\t410149018\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Дуб Винтаж Оксид\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "102",
+      "Des": "Пастельный Зеленый (7063 PE)",
+      "Memo": "ral1.jpg\t199;209;201\t16\t410149020\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Пастельный Зеленый\t03.10.2019\t01.03.2021\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "103",
+      "Des": "Дуб каменный (5527 SN)",
+      "Memo": "db_stone.jpg\t\t16\t410149021\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Дуб Каменный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "104",
+      "Des": "Кобальт Серый (6299 PE)",
+      "Memo": "ral1.jpg\t93;88;84\t22;10\t428342089\t428372096\t428342089\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t\t\t\t\tLDSP22|CVET_VST\tS02\t0\t048\t2\tпод цвет каркаса Кобальт Серый\t02.09.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "105",
+      "Des": "Тёмн. дуб EG-H1555-ST3",
+      "Memo": "eg_h1555_st3.jpg\t\t16;4\t246797118\t2828819\t3152326\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGveng;999ZAGUGveng]\t999sam\t16797020\tLDSPN16|_25CKD\t\t\t\t1\tпод цвет каркаса Темный Дуб\t26.05.2020\t16.11.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "106",
+      "Des": "Дюна терра (FC05)",
+      "Memo": "duna_terra_fc05.jpg\t\t22\t461103366\t461105229\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\tпод цвет каркаса Дюна терра\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "107",
+      "Des": "Дюна сахара (FC06)",
+      "Memo": "duna_sahara_fc06.jpg\t\t22;8\t461103367\t461105230\t461103367\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\tпод цвет каркаса Дюна сахара\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "108",
+      "Des": "Дюна базальт (FC14)",
+      "Memo": "duna_bazalt_fc14.jpg\t\t22\t461103369\t461105232\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\tпод цвет каркаса Дюна базальт\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "109",
+      "Des": "Макассар шоколадный (S158)",
+      "Memo": "makassar_shok_s158.jpg\t\t22\t461103379\t461105233\t\tKROMKA27x1S|_22CKKS|1\t232658465\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSP22S|CFSP\tS04\t1\t\t2\tпод цвет каркаса Макассар шоколадный\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "110",
+      "Des": "Макассар натуральный (S160)",
+      "Memo": "makassar_nat_s160.jpg\t\t22\t461103387\t461105234\t\tKROMKA27x1S|_22CKKS|1\t742541845\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSP22S|CFSP\tS04\t1\t\t2\tпод цвет каркаса Макассар натуральный\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "111",
+      "Des": "Макассар черный (S161)",
+      "Memo": "makassar_black_s161.jpg\t\t22\t461103399\t461105235\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSP22S|CFSP\tS04\t1\t\t2\tпод цвет каркаса Макассар черный\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "112",
+      "Des": "Текстиль бежевый (FC45)",
+      "Memo": "tex_bezh_fc45.jpg\t\t22\t461293573\t461293936\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\tпод цвет каркаса Текстиль бежевый\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "113",
+      "Des": "Текстиль светло-серый (FC47)",
+      "Memo": "tex_svser_fc47.jpg\t\t22\t461293574\t461293937\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\tпод цвет каркаса Текстиль светло-серый\t15.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "114",
+      "Des": "Кашемир NEW (U702 ST9)",
+      "Memo": "ral1.jpg\t200;193;185\t16\t497023674\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t020\t2\tпод цвет каркаса Кашемир New\t23.06.2020\t11.02.2022\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "115",
+      "Des": "Алебастр белый (U104 ST9)",
+      "Memo": "ral1.jpg\t255;253;228\t16\t497023677\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Алебастр белый\t23.06.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "116",
+      "Des": "Сланец графит 2-х сторонний R 2658E (AR 3366 luna)",
+      "Memo": "slanec_grafit.jpg\t\t16\t284457646\t284457646\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t20.04.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "117",
+      "Des": "Сланец графит односторонний (AR 3366 luna)",
+      "Memo": "slanec_grafit.jpg\t\t16\t439473944\t284457646\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "118",
+      "Des": "Штукатурка кремовая ГЛЯНЕЦ 2-х сторонний (LC 5560",
+      "Memo": "shtukaturka_k.jpg\t\t16\t285527830\t285527830\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "119",
+      "Des": "Штукатурка кремовая ГЛЯНЕЦ односторонний (LC 5560",
+      "Memo": "shtukaturka_k.jpg\t\t16\t439473946\t285527830\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "120",
+      "Des": "Сланец бежевый 2-х сторонний (AR 3364 luna)",
+      "Memo": "slanec_bezh.jpg\t\t16\t284457643\t284457643\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "121",
+      "Des": "Сланец бежевый односторонний (AR 3364 luna)",
+      "Memo": "slanec_bezh.jpg\t\t16\t439473950\t284457643\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "122",
+      "Des": "Шлифованная сталь 2-х сторонний (LC 933 lucida)",
+      "Memo": "sh_stal.jpg\t\t16\t284457636\t284457636\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "123",
+      "Des": "Шлифованная сталь односторонний (LC 933 lucida)",
+      "Memo": "sh_stal.jpg\t\t16\t439473953\t284457636\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "124",
+      "Des": "Натуральный дуб глянец 2-х сторонний (4539) R 2516",
+      "Memo": "Vector_4539_.jpg\t\t16\t112532885\t112532885\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "125",
+      "Des": "Натуральный дуб глянец односторонний (4539)",
+      "Memo": "Vector_4539_.jpg\t\t16\t439480346\t112532885\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "126",
+      "Des": "Венге 2-х сторонний (LM 08 )",
+      "Memo": "lm_08.jpg\t\t16\t245124571\t245124571\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t16.05.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "127",
+      "Des": "Венге односторонний (LM08) REH 3163W",
+      "Memo": "lm_08.jpg\t\t16\t439473952\t245124571\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t16.05.2022\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "128",
+      "Des": "Шлифованная бронза 2-х сторонний (LC 934 lucida)",
+      "Memo": "sh_bronza.jpg\t\t16\t284457637\t284457637\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "129",
+      "Des": "Шлифованная бронза односторонний (LC 934 lucida)",
+      "Memo": "sh_bronza.jpg\t\t16\t439473951\t284457637\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "130",
+      "Des": "Штукатурка серо-бежевая ГЛЯНЕЦ 2-х сторонний (LC 5",
+      "Memo": "shtukaturka_sb.jpg\t\t16\t285527829\t285527829\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "131",
+      "Des": "Штукатурка серо-бежевая ГЛЯНЕЦ односторонний (LC 5",
+      "Memo": "shtukaturka_sb.jpg\t\t16\t439480341\t285527829\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t10.08.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "132",
+      "Des": "Земля NEW (7184 BS)",
+      "Memo": "ral1.jpg\t75;65;63\t16\t527896732\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t0\t\t2\tпод цвет каркаса Земля\t06.11.2020\t16.11.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "133",
+      "Des": "Черный графит (U961 ST10)",
+      "Memo": "bl_grafit.jpg\t\t16;$[IIF;$[DATECOMPARE;$(dataordine);11.11.2022]<0;4;999]\t506161609\t506159206\t381900282\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagBlck]\t999sam_bl_gr\t\tLDSPN16|_25CKD\tS30;E02;d02\t0\t\t1;2\tпод цвет каркаса Черный графит\t04.12.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;10\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "134",
+      "Des": "Черный графит (U961 ST10)",
+      "Memo": "bl_grafit.jpg\t\t25\t506161609\t506160932\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagBlck]\t999sam_bl_gr\t\tLDSP25|_25CKD\t\t0\t\t1\tпод цвет каркаса Черный графит\t04.12.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "135",
+      "Des": "Вяз Капский белый",
+      "Memo": "wjaz_kaps_H3760.jpg\t\t25\t317532506\t302064549\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsliv;999grugzagYas]\t999sam_vaz_kaps\t\tLDSP25|_25CKD\t\t1\t\t1\tпод цвет каркаса Вяз Капский белый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t2;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "136",
+      "Des": "Чарльстон табак",
+      "Memo": "dub_charl_tabakH3155.jpg\t\t25\t317532509\t302064547\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagBlck]\t999sam\t16797020\tLDSP25|_25CKD\t\t1\t\t1\tпод цвет каркаса Дуб Чарльстон табак\t14.12.2020\t22.01.2021\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "137",
+      "Des": "Сосна Джексон",
+      "Memo": "h1486_ST36.jpg\t\t25\t246797121\t238472769\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagGray]\t999sam\t226295085\tLDSP25|_25CKD\t\t1\t\t1\tпод цвет каркаса Сосна Джексон\t12.02.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "138",
+      "Des": "Фабрик Металл антрацит pr. (F461 ST10)",
+      "Memo": "fab_metall_antracit.jpg\t\t16;$[IIF;$[DATECOMPARE;$(dataordine);01.10.2022]<0;4;999]\t516008961\t516048101\t516006634\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagGray]\t999sam_bet_temn\t\tLDSPN16|_25CKD\tS30\t0\t\t1\tпод цвет каркаса Фабрик металл антрацит\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "139",
+      "Des": "Фабрик Металл антрацит pr. (F461 ST10)",
+      "Memo": "fab_metall_antracit.jpg\t\t25;10\t516008961\t516049491\t516013181\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagGray]\t999sam_bet_temn\t\tLDSP25|_25CKD\t\t1\t\t1\tпод цвет каркаса Фабрик металл антрацит\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "140",
+      "Des": "Дуб Чарльстон темно-кор. (H3154 ST36)",
+      "Memo": "dub_charlston_tkor.jpg\t\t22;10\t516013183\t516022242\t516013183\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBbr;999grugzagOreh]\t999sam_dub_kor\t\tLDSP22|CVET_VST\tS02\t1\t\t1;2\tпод цвет каркаса Дуб Чарльстон темно-коричневый\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "141",
+      "Des": "Врем. нед. Лиственница горная кор. (H3404 ST38)",
+      "Memo": "List_gor_korich.jpg\t\t22;10\t516013184\t516022243\t516013184\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBdbfr;999grugzagGru]\t999sam_db_gd\t\tLDSP22|CVET_VST\tS02\t1\t\t1;2\tпод цвет каркаса Лиственница горная коричневая\t01.04.2021\t20.04.2022\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "142",
+      "Des": "Лиственница горная белая (H3403 ST38)",
+      "Memo": "List_gor_belaya.jpg\t\t22;10\t516013186\t516022244\t516013186\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsliv;999grugzagYas]\t999sam_vaz_kaps\t\tLDSP22|CVET_VST\tS02\t1\t\t1;2\tпод цвет каркаса Лиственница горная белая\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t2;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "143",
+      "Des": "Лиственница горная антрацит (H3406 ST38)",
+      "Memo": "List_gor_antracit.jpg\t\t22;10\t516013188\t$[IIF;$[DATECOMPARE;$(dataordine);17.06.2022]<0;516022245;672068509]\t516013188\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagBlck]\t999sam_gas_temn\t\tLDSP22|CVET_VST\tS02\t1\t\t1;2\tпод цвет каркаса Лиственница горная антрацит\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "144",
+      "Des": "Врем. нед. Фабрик Металл антрацит (F461 ST10)",
+      "Memo": "fab_metall_antracit.jpg\t\t22\t516013181\t516022241\t516013181\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagGray]\t999sam_bet_temn\t\tLDSP22|CVET_VST\tS02\t0\t\t1;2\tпод цвет каркаса Фабрик металл антрацит\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "145",
+      "Des": "Временно недоступен Мрамор Каррара белый(F204 ST9)",
+      "Memo": "mr_kar_belyj.jpg\t\t22;10\t516013189\t516022246\t516013189\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBwt;999grugzagWH]\t999sam\t16797024\tLDSP22|CVET_VST\tS02\t0\t\t1;2\tпод цвет каркаса Мрамор Каррара белый\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "146",
+      "Des": "Камень Пьетра черный (F206 ST9)",
+      "Memo": "kamen_pcher.jpg\t\t22;10\t516013194\t516022248\t516013194\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagBlck]\t999sam_bl_gr\t\tLDSP22|CVET_VST\tS02\t0\t\t1;2\tпод цвет каркаса Камень Пьетра черный\t01.04.2021\t20.04.2022\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t3;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "147",
+      "Des": "Врем. нед. Серый монументальный (U780 ST9)",
+      "Memo": "ser_manum.jpg\t\t22;10\t516013196\t676876156\t516013196\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagGray]\t999sam_sum_gol\t\tLDSP22|CVET_VST\tS02\t0\t\t1;2\tпод цвет каркаса Серый монументальный\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t1\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "148",
+      "Des": "Кобальт Серый (6299 PE)",
+      "Memo": "ral1.jpg\t93;88;84\t22\t428342089\t428372096\t\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagGray]\t999sam_bazalt\t\tLDSP22|CVET_VST\t\t0\t\t1\tпод цвет каркаса Кобальт Серый\t01.04.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "149",
+      "Des": "Кашемир NEW (U702 ST9)",
+      "Memo": "ral1.jpg\t200;193;185\t16\t497023674\t571563802\t\tkromka19|_16CKK|1\t45706094\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t\t\tLDSPN16|_25CKD\tS12;D02;E02;S30\t0\t020\t1\tпод цвет каркаса Кашемир New\t20.05.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "150",
+      "Des": "Светло-серый st. (EG-U708 ST9)",
+      "Memo": "ral1.jpg\t209;205;194\t16;4\t542954908\t542952674\t428316641\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_ser_k\t\tLDSPN16|_25CKD\t\t0\t\t1\tпод цвет каркаса Светло-серый\t29.07.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t4;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "151",
+      "Des": "Ванильный st. (EG-U108-ST9)",
+      "Memo": "ral1.jpg\t255;241;202\t16;$[IIF;$[DATECOMPARE;$(dataordine);04.03.2023]<0;4;999]\t542954906\t542952673\t428316642\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsliv;999grugzagYas]\t999sam_slkos\t\tLDSPN16|_25CKD\t\t0\t\t1\tпод цвет каркаса Ванильный\t29.07.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "152",
+      "Des": "Светло-серый st. (EG-U708 ST9)",
+      "Memo": "ral1.jpg\t209;205;194\t25\t542954908\t542953425\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_ser_k\t\tLDSP25|_25CKD\t\t0\t\t1\tпод цвет каркаса Светло-серый\t29.07.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t4;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "153",
+      "Des": "Ванильный st. (EG-U108-ST9)",
+      "Memo": "ral1.jpg\t255;241;202\t25\t542954906\t542953424\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsliv;999grugzagYas]\t999sam_slkos\t\tLDSP25|_25CKD\t\t0\t\t1\tпод цвет каркаса Ванильный\t29.07.2020\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "154",
+      "Des": "B2B Белый премиум (W1000-ST9)",
+      "Memo": "ral1.jpg\t252;252;242\t16;4\t254662220\t719495401\t2036\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBbr;999ZAGUGwt]\t999sam\t16797024\tLDSPN16|_25CKD\tS30\t\t\t1\tпод цвет каркаса Белый премиум (W1000-ST9)\t16.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "155",
+      "Des": "B2B Белый премиум (W1000-ST9)",
+      "Memo": "ral1.jpg\t252;252;242\t25\t254662220\t602592072\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBbr;999ZAGUGwt]\t999sam\t16797024\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Белый премиум (W1000-ST9)\t16.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "156",
+      "Des": "B2B Орех Карини (H3710 ST12)",
+      "Memo": "orehkar.jpg\t\t16;10\t603730931\t578867667\t605505917\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGveng;999ZAGUGveng]\t999sam_dub_kor\t\tLDSPN16|_25CKD\tS30\t1\t\t1\tпод цвет каркаса Орех Карини\t16.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "157",
+      "Des": "B2B Орех Карини (H3710 ST12)",
+      "Memo": "orehkar.jpg\t\t25\t578865226\t601756077\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGveng;999ZAGUGveng]\t999sam_dub_kor\t\tLDSP25|_25CKD\t\t1\t\t1\tпод цвет каркаса Орех Карини\t16.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "158",
+      "Des": "Дуб Чарльстон темно-кор. (H3154 ST36)",
+      "Memo": "dub_charlston_tkor.jpg\t\t0\t\t\t516006632\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999grugzagOreh;999grugzagOreh]\t999sam_dub_kor\t\tLDSPN16|_25CKD\t\t1\t\t1\tпод цвет каркаса Дуб Чарльстон темно-коричневый\t16.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;9\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "159",
+      "Des": "B2B Орех Карини (H3710 ST12)",
+      "Memo": "orehkar.jpg\t\t22\t598798497\t601755725\t605505917\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGveng;999ZAGUGveng]\t999sam_dub_kor\t\tLDSP22|CVET_VST\tS02\t1\t\t1;2\tпод цвет каркаса Орех Карини\t16.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "160",
+      "Des": "Дуб Чарльстон темно-коричневый (H3154 ST22)",
+      "Memo": "dub_charlston_tkor.jpg\t\t16;$[IIF;$[DATECOMPARE;$(dataordine);11.11.2022]<0;4;999]\t575873153\t516048103\t516006632\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999grugzagOreh;999grugzagOreh]\t999sam_dub_kor\t\tLDSPN16|_25CKD\tS30\t1\t\t1\tпод цвет каркаса Дуб Чарльстон темно-коричневый\t01.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;10\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "161",
+      "Des": "Дуб Чарльстон темно-коричневый (H3154 ST22)",
+      "Memo": "dub_charlston_tkor.jpg\t\t25\t575873153\t516049492\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBbr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsliv;999grugzagOreh]\t999sam_dub_kor\t\tLDSP25|_25CKD\t\t0\t\t1\tпод цвет каркаса Дуб Чарльстон темно-коричневый\t01.08.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "162",
+      "Des": "Белый Бриллиант (8681 UM)",
+      "Memo": "ral1.jpg\t255;255;255\t18\t516147280\t516138295\t\tKRVT23*1LAS|CVTHLK|1\t516141920\tNO\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t01.09.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "163",
+      "Des": "Антрацит (KR 0164 UM)",
+      "Memo": "ral1.jpg\t57;59;58\t18\t516147282\t516138297\t\tKRVT23*1LAS|CVTHLK|1\t516141920\tNO\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t01.09.2021\t21.06.2022\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "164",
+      "Des": "Слоновая кость (KR 0514 UM)",
+      "Memo": "ral1.jpg\t253;243;220\t18\t516147283\t516138298\t\tKRVT23*1LAS|CVTHLK|1\t516141920\tNO\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBwt;]\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t01.09.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "165",
+      "Des": "Кашемир (EG U702 PM)",
+      "Memo": "ral1.jpg\t207;195;179\t18\t516147284\t725303005\t\tSRKRVT23*1LAS|CVTHLK|1\t725295810\tNO\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t01.09.2021\t21.06.2022\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "166",
+      "Des": "Индиго синий (EG U599 PM)",
+      "Memo": "ral1.jpg\t35;37;49\t18\t516147285\t516138300\t\tKRVT23*1LAS|CVTHLK|1\t516141920\tNO\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t01.09.2021\t21.06.2022\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "167",
+      "Des": "Ванильный (U108 ST9)",
+      "Memo": "ral1.jpg\t255;241;202\t22;10\t558394158\t554525296\t558394158\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;999grugzagYas]\t999sam_slkos\t\tLDSP22|CVET_VST\tS02\t0\t002\t1;2\tпод цвет каркаса Ванильный\t08.09.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t1\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "168",
+      "Des": "Черный графит (U961 PM)",
+      "Memo": "ral1.jpg\t57;59;58\t18\t627114463\t516138297\t\tKRVT23*1LAS|CVTHLK|1\t516141920\tNO\t\t\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t22.11.2021\t21.06.2022\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "169",
+      "Des": "Белый альпийский (W1100 PM)",
+      "Memo": "ral1.jpg\t255;254;249\t18\t627114467\t725303001\t\tSRKRVT23*1LAS|CVTHLK|1\t725295810\tNO\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t10.12.2021\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "170",
+      "Des": "Белый премиум",
+      "Memo": "ral1.jpg\t255;255;255\t18\t177195936\t190981808\t\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBwt\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t999sam\t16797024\tDSPL18M|cvet_vst\t\t\t\t1\t\t03.10.2019\t01.04.2020\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "174",
+      "Des": "Дуб Крафт Золотой (K003 PW)",
+      "Memo": "db_kr_gld.jpg\t\t22;10\t428342087\t677946165\t428342087\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGolh;999grugzagGru]\t999sam_db_gd\t\tLDSP22|CVET_VST\tS02\t1\t058\t1;2\tпод цвет каркаса Дуб крафт золотой\t20.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "175",
+      "Des": "Дуб Крафт Серый (K002 PW)",
+      "Memo": "db_kr_ser.jpg\t\t22;10\t428342088\t677946169\t428342088\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBkash\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagYas]\t999sam_db_ser\t\tLDSP22|CVET_VST\tS02\t1\t050\t1;2\tпод цвет каркаса Дуб крафт серый\t20.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "176",
+      "Des": "Камень Пьетра черный (F206 ST9)",
+      "Memo": "kamen_pcher.jpg\t\t22;10\t516013194\t672068493\t516013194\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBarab;999grugzagBlck]\t999sam_bl_gr\t\tLDSP22|CVET_VST\tS02\t0\t\t1;2\tпод цвет каркаса Камень Пьетра черный\t20.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "177",
+      "Des": "Кокоболо натуральный",
+      "Memo": "H3012ST22.jpg\t\t22;10\t122041278\t672068501\t122041278\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsliv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGUGbez;999grugzagGru]\t999sam_kok_nat\t\tLDSP22|CVET_VST\tS02\t1\t056\t1;2\tпод цвет каркаса Кокоболо натуральный\t20.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "178",
+      "Des": "Лиственница горная кор. (H3404 ST38)",
+      "Memo": "List_gor_korich.jpg\t\t22;10\t516013184\t620663659\t516013184\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBdbfr\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBdbfr;999grugzagGru]\t999sam_db_gd\t\tLDSP22|CVET_VST\tS02\t1\t\t1;2\tпод цвет каркаса Лиственница горная коричневая\t01.10.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "179",
+      "Des": "Сланец графит 2-х сторонний R 2658E (AR 3366 luna)",
+      "Memo": "slanec_grafit.jpg\t\t16\t284457646\t677943920\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t20.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "180",
+      "Des": "Дуб Шерман Коньяк Коричневый (H1344 ST32)",
+      "Memo": "Dub_Sherman_K.jpg\t\t16\t678804310\t678797331\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_kash\t\tLDSPN16|_25CKD\tE02\t1\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "181",
+      "Des": "Дуб Шерман серый (H1345 ST32)",
+      "Memo": "Dub_Sherman_S.jpg\t\t16\t678804312\t678797333\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_kash\t\tLDSPN16|_25CKD\tE02\t1\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "182",
+      "Des": "Дуб Шерман антрацит (H1346 ST32)",
+      "Memo": "Dub_Sherman_A.jpg\t\t16\t678804313\t678797334\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_kash\t\tLDSPN16|_25CKD\tE02\t1\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "183",
+      "Des": "Дуб Санта-Фе винтаж (H1330 ST10)",
+      "Memo": "Dub_Santa_fe_Vintag.jpg\t\t16\t678804314\t678797335\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_kash\t\tLDSPN16|_25CKD\tE02\t1\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "184",
+      "Des": "Робиния Брэнсон натуральная коричневая (H1251 ST19",
+      "Memo": "Brenson.jpg\t\t16\t678804317\t678797341\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_kash\t\tLDSPN16|_25CKD\tE02\t1\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "185",
+      "Des": "Временно недоступен Орех Линкольн (H1714 ST19)",
+      "Memo": "Oreh_Linkoln.jpg\t\t16\t678804319\t678797349\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBbr\t999grugzagYas\t999sam_dub_kor\t\tLDSPN16|_25CKD\tE02;S30\t1\t020\t1;2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t0;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "186",
+      "Des": "Дикий дуб натуральный (H1318 ST10)",
+      "Memo": "Dikiy_Dub_Nat.jpg\t\t16\t678804320\t678797350\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_kash\t\tLDSPN16|_25CKD\tE02\t1\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "187",
+      "Des": "Дуб Винченца (EG H3157 ST12)",
+      "Memo": "Dub_Vinchentsa.jpg\t\t16\t602396235\t602397516\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;999ZAGVBsilv;999grugzagYas]\t999sam_kash\t\tLDSPN16|_25CKD\tE02\t1\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "188",
+      "Des": "Диамант серый (U963 ST9)",
+      "Memo": "Diamant_Seriy.jpg\t\t16\t678804315\t678797339\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t999grugzagBlck\t999sam_bet_temn\t\tLDSPN16|_25CKD\tE02\t\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "189",
+      "Des": "Серый пыльный (U732 ST9)",
+      "Memo": "Seriy_Asfalt.jpg\t\t16\t678804316\t181712269\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t999grugzagYas\t999sam_serpil\t\tLDSPN16|_25CKD\tE02;S30\t\t020\t2\t\t21.04.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "190",
+      "Des": "Венге 2-х сторонний (LM 08 )",
+      "Memo": "lm_08.jpg\t\t16\t245124571\t677943917\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL20|OCFV\tS28\t1\t\t2\t\t16.05.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "191",
+      "Des": "Венге односторонний (LM08) REH 3163W",
+      "Memo": "lm_08.jpg\t\t16\t439473952\t677943917\t\tKRABSV|CKAB|1\t112533319\tKLEI\t\t$[IIF;$[DATECOMPARE;$(dataordine);18.03.2022]<0;;]\t\t\tVDSPL19|OCFVO\tS28\t1\t\t2\t\t16.05.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "192",
+      "Des": "Глиняный серый NEW (U727 ST9)",
+      "Memo": "ral1.jpg\t160;145;134\t22;10\t687780469\t676876150\t687780469\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBkofe\t999grugzagYas\t999sam_bet_svet\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Глиняный Серый\t01.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;9\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "193",
+      "Des": "Бетон Чикаго светло-серый (F186 ST9)",
+      "Memo": "beton_chicago_svet.jpg\t\t22;10\t687388688\t687389777\t687388688\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t999grugzagGray\t999sam_at_sv\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Бетон Чикаго светло-серый\t01.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;9\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "194",
+      "Des": "Бетон Чикаго тёмно-серый (F187 ST9)",
+      "Memo": "beton_chicago_temn.jpg\t\t22;10\t685637533\t687389786\t685637533\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t999grugzagBlck\t999sam_bet_temn\t\tLDSP22|CVET_VST\tS02\t0\t048\t1;2\tпод цвет каркаса Бетон Чикаго тёмно-серый\t01.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t6;9\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "195",
+      "Des": "Лиственница горная антрацит (H3406 ST38)",
+      "Memo": "List_gor_antracit.jpg\t\t0\t516013188\t672068509\t516013188\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t999grugzagBlck\t999sam_gas_temn\t\tLDSP22|CVET_VST\tS02\t1\t\t1;2\tпод цвет каркаса Лиственница горная антрацит\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "196",
+      "Des": "Дуб Винтаж Оксид (5194 SN)",
+      "Memo": "vint_oxyd.jpg\t\t0\t410149018\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tS12;D02;E02\t1\t\t2\tпод цвет каркаса Дуб Винтаж Оксид\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "197",
+      "Des": "ЯССП B2b Белый премиум (W1000 ST9)",
+      "Memo": "ral1.jpg\t255;255;255\t16\t254662220\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tD02;E02\t0\t\t2\tпод цвет каркаса Белый премиум\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t5;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "198",
+      "Des": "ЯССП B2b Белый премиум (W1000 ST9)",
+      "Memo": "ral1.jpg\t255;255;255\t16;4\t254662220\t719495401\t2036\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBwt\t999grugzagWH\t999sam\t16797024\tLDSPN16|_25CKD\tS30\t1\t\t1\tпод цвет каркаса Белый премиум\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "199",
+      "Des": "ЯССП B2b Белый премиум (W1000 ST9)",
+      "Memo": "ral1.jpg\t255;255;255\t25;10\t254662220\t602592072\t177195936\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBwt\t999grugzagWH\t999sam\t16797024\tLDSP25|_25CKD\t\t\t\t1\tпод цвет каркаса Белый премиум (W1000-ST9)\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t1;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "200",
+      "Des": "ЯССП B2b Файнлайн коричневый (H3192 ST19)",
+      "Memo": "itsfineline.jpg\t\t16\t691158287\t$(_colkrom:5)\t\t$(_colkrom:6)\t$(_colkrom:7)\t$(_colkrom:8)\t\t\t\t\tLDSPN16|_25CKD\tD02;E02\t1\t\t2\tпод цвет каркаса Белый премиум\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "201",
+      "Des": "ЯССП B2b Файнлайн коричневый (H3192 ST19)",
+      "Memo": "itsfineline.jpg\t\t16;4\t691158287\t691160384\t691159542\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBbr\t999grugzagOreh\t999sam_fan\t\tLDSPN16|_25CKD\tS30\t1\t\t1;2\tпод цвет каркаса Белый премиум\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "202",
+      "Des": "ЯССП B2b Файнлайн коричневый (H3192 ST19)",
+      "Memo": "itsfineline.jpg\t\t25;10\t691158287\t691160613\t691159691\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBbr\t999grugzagOreh\t999sam_fan\t\tLDSP25|_25CKD\t\t1\t\t1\tпод цвет каркаса Белый премиум (W1000-ST9)\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "203",
+      "Des": "Диамант серый (U963 ST9)",
+      "Memo": "Diamant_Seriy.jpg\t\t22;10\t687780792\t687784613\t687780792\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBarab\t999grugzagBlck\t999sam_bet_temn\t\tLDSP22|CVET_VST\tS02\t\t020\t1;2\tпод цвет каркаса Диамант серый\t17.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t1\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "204",
+      "Des": "Серый пыльный (U732 ST9)",
+      "Memo": "Seriy_Asfalt.jpg\t\t22;10\t687780791\t687784614\t687780791\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t999grugzagGray\t999sam_serpil\t\tLDSP22|CVET_VST\tS02\t\t020\t1;2\tпод цвет каркаса Диамант серый\t17.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t1\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "205",
+      "Des": "Черный графит (U961 PM)",
+      "Memo": "ral1.jpg\t57;59;58\t18\t627114463\t676875541\t\tKRVT23*1|CVTHK|1\t516140878\tKLEI\t\t\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t21.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "206",
+      "Des": "Индиго синий (EG U599 PM)",
+      "Memo": "ral1.jpg\t35;37;49\t18\t516147285\t677205413\t\tKRVT23*1|CVTHK|1\t516140878\tKLEI\t\t\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t21.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "207",
+      "Des": "Кашемир (EG U702 PM)",
+      "Memo": "ral1.jpg\t207;195;179\t18\t516147284\t725303005\t\tSRKRVT23*1LAS|CVTHLK|1\t725295810\tKLEI\t\t\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t21.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "208",
+      "Des": "Серый пыльный (U732 ST9)",
+      "Memo": "Seriy_Asfalt.jpg\t\t16\t678804316\t181712269\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBsilv\t999grugzagYas\t999sam_serpil\t\tLDSPN16|_25CKD\tE02\t1\t020\t1\t\t06.07.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "209",
+      "Des": "ЯССП B2b Трюфель коричневый U748 ST9",
+      "Memo": "ral1.jpg\t96;83;74\t4\t\t\t616535023\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBbr\t999grugzagOreh\t999sam_fan\t\tLDSPN16|_25CKD\tS30\t1\t\t1;2\tпод цвет каркаса Белый премиум\t16.06.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "210",
+      "Des": "Кашемир (U702 ST9) st.",
+      "Memo": "ral1.jpg\t207;195;179\t25;10\t497023674\t716199551\t497023674\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBsilv\t999grugzagYas\t999sam_kash\t\tLDSP25|_25CKD\t\t1\t\t1\tпод цвет каркаса Кашемир (U702 ST9) st.\t25.08.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "211",
+      "Des": "Антрацит 0164 Kronospan",
+      "Memo": "ral1.jpg\t61;63;63\t4\t\t\t2088\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBbr\t999grugzagOreh\t999sam_fan\t\tLDSPN16|_25CKD\t\t1\t\t1\t\t01.10.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t7;10\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "212",
+      "Des": "ЯССП Кобальт Серый 6299 РЕ",
+      "Memo": "ral1.jpg\t92;87;83\t16\t410149003\t722594615\t\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBarab\t999grugzagBlck\t999sam_bet_temn\t\tLDSPN16|_25CKD\tS30;E02;D02\t0\t\t1;2\tпод цвет каркаса Кобальт Серый\t18.10.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "213",
+      "Des": "Дуб Крафт Табачный (K004 PW)",
+      "Memo": "dub_charlston_tkor.jpg\t\t4\t\t\t668742226\t\t\t\t999ZAGVBbr\t999grugzagOreh\t999sam_dub_kor\t\tLDSPN16|_25CKD\tS30\t1\t\t1\tпод цвет каркаса Дуб Чарльстон темно-коричневый\t11.11.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t7;10\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "214",
+      "Des": "Ромбус белый (B007)",
+      "Memo": "Mosaico_B007.jpg\t\t22\t690141368\t690141806\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\t\t15.11.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "215",
+      "Des": "Ромбус кашемир (UA92)",
+      "Memo": "Mosaico_UA92.jpg\t\t22\t690141370\t690141807\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\t\t15.11.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "216",
+      "Des": "Ромбус глиняный серый (UB05)",
+      "Memo": "Mosaico_UB05.jpg\t\t22\t690141371\t690141808\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\t\t15.11.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "217",
+      "Des": "Ромбус антрацит (UA01)",
+      "Memo": "Mosaico_UA01.jpg\t\t22\t690141374\t690141811\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\t\t15.11.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "218",
+      "Des": "Ромбус серый (UB32)",
+      "Memo": "Mosaico_UB32.jpg\t\t22\t690141376\t690141812\t\tKROMKA25x1S|_22CKKS|1\t232658465\tKLEI\t\t\t\t\tLDSP22S|CFSP\tS04\t0\t\t2\t\t15.11.2022\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t3;8\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "219",
+      "Des": "Серый пыльный (U732 PM)",
+      "Memo": "ral1.jpg\t123;123;121\t18\t709294298\t709295022\t\tKRVT23*1|CVTHK|1\t516140878\tKLEI\t\t\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "220",
+      "Des": "Серый глиняный (U727 PM)",
+      "Memo": "ral1.jpg\t162;149;132\t18\t627114469\t709295021\t\tKRVT23*1|CVTHK|1\t516140878\tKLEI\t\t\t\t\tMDFL18|CVTH\tS31\t0\t\t2\t\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "221",
+      "Des": "ЯССП В2В LS 47 Poro noce",
+      "Memo": "poronoce.jpg\t\t18;TSS\t749258859\t749274591\t749258859\tkrclef23*1|_22CKKS|1\t749273976\tKLEI\t999ZAGVBbr\t999grugzagVen\t999sam_dub_kor\t\tTSSDSPL18|CFSP\t\t\t\t1\t\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "222",
+      "Des": "Запрещен! B2B Белый",
+      "Memo": "ral1.jpg\t255;255;255\t16;4\t740650972\t719495401\t2036\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBwt\t999grugzagWH\t999sam\t16797024\tLDSPN16|_25CKD\tS30\t1\t\t1;2\tпод цвет каркаса B2B Белый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "223",
+      "Des": "Запрещен! B2B Белый",
+      "Memo": "ral1.jpg\t255;255;255\t25\t246797123\t6008304\t\tkromka28х08|_25CKK|1\t238473257\tKLEI\t999ZAGVBwt\t999grugzagWH\t999sam\t16797024\tLDSP25|_25CKD\t\t\t046\t1\tпод цвет каркаса Белый каркасный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t1;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "224",
+      "Des": "Фьёрд зеленый (AU636)",
+      "Memo": "ral1.jpg\t143;153;152\t22;10\t748360155\t748358864\t748360155\tKROMKA25x1|_22CKK|1\t233442848\tKLEI\t999ZAGVBsilv\t999grugzagGray\t999sam_bazalt\t\tLDSP22|CVET_VST\tS02\t\t\t1;2\tпод цвет каркаса Фьерд зеленый\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t6;9\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "225",
+      "Des": "Бежевый (Krono 0522)",
+      "Memo": "ral1.jpg\t224;210;183\t4\t\t\t620401040\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBdbfr\t\t999sam\t226295086\tLDSPN16|_25CKD\tS30\t\t\t1\tпод цвет каркаса Дуб Бардолино натуральный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "226",
+      "Des": "Дуб Сонома (Krono 3025)",
+      "Memo": "Dub_Bardolino_Nat.jpg\t\t4\t\t\t620401041\tkromka19|_16CKK|1\t45706094\tKLEI\t999ZAGVBdbfr\t\t999sam\t226295086\tLDSPN16|_25CKD\tS30\t\t\t1\tпод цвет каркаса Дуб Бардолино натуральный\t03.10.2019\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;MARIA_SHKAF;ELDOR_SHKAF\t0;8\t\t1",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_colkarkas",
+      "Codopz": "227",
+      "Des": "ЯССП B2B Pembroke S128/Maloja",
+      "Memo": "Pembroke_S128.jpg\t\t18;TSS\t781889906\t781890577\t781889906\tkrclef23*1|_22CKKS|1\t749273976\tKLEI\t999ZAGVBdbfr\t999grugzagVen\t999sam_db_gd\t\tTSSDSPL18|CFSP\t\t\t\t1\t\t01.01.2018\t01.01.2100\tEDDOM_SHKAF;TVDOM_SHKAF;ELDOR_SHKAF;MARIA_SHKAF\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

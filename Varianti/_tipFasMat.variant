@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "_tipFasMat",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\r\r\r\u0011\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_TIPFASMAT",
+      "Codopz": "0",
+      "Des": "Каркасный",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_TIPFASMAT",
+      "Codopz": "1",
+      "Des": "Модельный",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

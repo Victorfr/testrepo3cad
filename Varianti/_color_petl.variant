@@ -1,0 +1,36 @@
+{
+  "MainVar": {
+    "Cod": "_color_petl",
+    "Des": "Цвет петель",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\r\r\r\u0011\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_COLOR_PETL",
+      "Codopz": "1",
+      "Des": "Цвет петель - металл",
+      "Memo": "металл",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_COLOR_PETL",
+      "Codopz": "2",
+      "Des": "Цвет петель - черный металл",
+      "Memo": "черный металл",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+{
+  "MainVar": {
+    "Cod": "_3ds_agg",
+    "Des": "",
+    "Obbl": false,
+    "Tipo": 0,
+    "Memo": "1\u0010Codice\u0010 1800\u0010Descrizione\u0010 5250\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\u0010\u0010 1200\r01\r\r\u0011\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+    "Flmod": "0",
+    "FlNoStampa": 0,
+    "Codmet": "",
+    "Classe": "#F3.#3DS\\Accessori\\",
+    "Flvargest": 0
+  },
+  "Options": [
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "01",
+      "Des": "Банки",
+      "Memo": "banki_600.3ds\t\t560\t200\t500\t7|255;255;255|0|0|0|0|0|0|0|0|0\t22|-1|0|0|0|0|0|0|0|0|0\t1|50;50;220|0|0|0|0|0|0|0|0|0\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "02",
+      "Des": "Организация",
+      "Memo": "org70_900_1200.3ds\t\t1050\t50\t450\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "03",
+      "Des": "Подставка под тарелки",
+      "Memo": "derevjannaja_podst_pod_tarelki.3ds\t\t308\t315\t405\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "04",
+      "Des": "Сетка подвесная",
+      "Memo": "Setka podwesnaja.3ds\t\t265\t155\t190\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "05",
+      "Des": "Сетка подвесная под ножи",
+      "Memo": "Podwesnaja setka pod nozu.3ds\t\t305\t385\t110\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "06",
+      "Des": "Держатель бумажных полотенец",
+      "Memo": "derzatel bym_polotenec.3ds\t\t280\t215\t150\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "07",
+      "Des": "Сетка под бутылку",
+      "Memo": "Podwesnaja setka pod but.3ds\t\t135\t285\t160\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "08",
+      "Des": "Сетка под скалку",
+      "Memo": "Podwesnaja setka pod skalki.3ds\t\t490\t425\t260\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "09",
+      "Des": "Ножи на деревянном креплении",
+      "Memo": "nozi na dekorativnoi doske.3ds\t\t335\t255\t35\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "10",
+      "Des": "Сетка под полотенца",
+      "Memo": "Podwesnaja setka pod polotenca.3ds\t\t265\t240\t145\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "11",
+      "Des": "Сетка под специи 2-х уровневая",
+      "Memo": "Podwesnaja setka pod specii.3ds\t\t390\t380\t140\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "12",
+      "Des": "Сахарница со стаканчиком",
+      "Memo": "saxarnica so stakanchikon.3ds\t\t290\t115\t150\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "13",
+      "Des": "Сетка под стаканчики",
+      "Memo": "Setka pod stakanchiki.3ds\t\t465\t330\t95\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "14",
+      "Des": "Специи",
+      "Memo": "specii.3ds\t\t175\t165\t80\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "15",
+      "Des": "Тарелки с печеньем",
+      "Memo": "tarelki_s pecheniem.3ds\t\t520\t55\t235\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "16",
+      "Des": "Рейлинг 600",
+      "Memo": "Railing.3ds\t\t600\t30\t30\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "17",
+      "Des": "Рейлинг 1000",
+      "Memo": "Railing.3ds\t\t1000\t30\t30\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "18",
+      "Des": "Рейлинг 1200",
+      "Memo": "Railing.3ds\t\t1200\t30\t30\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "19",
+      "Des": "Рейлинг 1500",
+      "Memo": "Railing.3ds\t\t1500\t30\t30\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "20",
+      "Des": "Рейлинг бронза",
+      "Memo": "art8099.3ds\t\t545\t60\t30\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "21",
+      "Des": "Рейлинг бронза с крючками",
+      "Memo": "art8101.3ds\t\t380\t95\t50\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "22",
+      "Des": "Сетка 1",
+      "Memo": "art741.3ds\t\t240\t345\t115\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "23",
+      "Des": "Сетка под специи",
+      "Memo": "art8042.3ds\t\t350\t275\t90\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "24",
+      "Des": "Сетка 2",
+      "Memo": "art8047.3ds\t\t310\t270\t145\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "25",
+      "Des": "Сетка угловая",
+      "Memo": "art8052.3ds\t\t330\t280\t340\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "26",
+      "Des": "Сетка 3",
+      "Memo": "art8066.3ds\t\t85\t165\t55\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "27",
+      "Des": "Сетка для бутылок",
+      "Memo": "art8067.3ds\t\t480\t605\t205\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "28",
+      "Des": "Сетка 4",
+      "Memo": "art8069.3ds\t\t395\t410\t180\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "29",
+      "Des": "Сетка под тарелки",
+      "Memo": "art8116.3ds\t\t360\t255\t185\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "30",
+      "Des": "Хлебница",
+      "Memo": "chlebnica.3ds\t\t440\t160\t210\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "31",
+      "Des": "Хлебница подвесная",
+      "Memo": "chlebnica podwesnaja.3ds\t\t445\t190\t220\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "32",
+      "Des": "Ведро",
+      "Memo": "vedro art97G.3ds\t\t264\t480\t265\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "33",
+      "Des": "Ведро 1",
+      "Memo": "vedro art47001099.3ds\t\t340\t500\t335\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "34",
+      "Des": "Ведро 2",
+      "Memo": "vedro art47001100.3ds\t\t360\t530\t350\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "35",
+      "Des": "Светильник 1",
+      "Memo": "swetilnik1.3ds\t\t86\t154\t395\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "36",
+      "Des": "Светильник 2",
+      "Memo": "swetilnik2 .3ds\t\t393\t67\t67\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "37",
+      "Des": "Светильник 3",
+      "Memo": "swetilnik3.3ds\t\t310\t110\t320\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "38",
+      "Des": "Светильник 4",
+      "Memo": "swetilnik4.3ds\t\t60\t155\t195\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "39",
+      "Des": "Растение 1",
+      "Memo": "Rastenie 1.3ds\t\t785\t945\t690\t7|135;84;56|0|0|0|0|0|0|0|0|0\t7|85;145;60|0|0|0|0|0|0|0|0|0\t7|174;32;32|0|0|0|0|0|0|0|0|0\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "40",
+      "Des": "Растение 2",
+      "Memo": "Rastenie 3.3ds\t\t770\t830\t710\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "41",
+      "Des": "Растение 3",
+      "Memo": "Rastenie 4.3ds\t\t230\t455\t270\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "42",
+      "Des": "Растение 4",
+      "Memo": "Rastenie 5.3ds\t\t305\t410\t305\t7|252;230;163|0|0|0|0|0|0|0|0|0\t\t\t7|174;32;32|0|0|0|0|0|0|0|0|0\t7|85;145;60|0|0|0|0|0|0|0|0|0\t7|135;84;56|0|0|0|0|0|0|0|0|0\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "43",
+      "Des": "Растение 5",
+      "Memo": "Rastenie 6.3ds\t\t230\t510\t255\t102|252;230;163|0|0|0|-1|0|0|0|1|0\t7|254;249;54|0|0|0|0|0|0|0|0|0\t7|85;145;60|0|0|0|0|0|0|0|0|0\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "44",
+      "Des": "Растение 6",
+      "Memo": "Rastenie 7.3ds\t\t1350\t2120\t1105\t7|87;117;66|0|0|0|0|0|0|0|0|0\t7|43;57;32|0|0|0|0|0|0|0|0|0\t7|135;84;56|0|0|0|0|0|0|0|0|0\t7|0;0;0|0|0|0|0|0|0|0|0|0\t7|135;84;56|0|0|0|0|0|0|0|0|0\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "45",
+      "Des": "Свечи",
+      "Memo": "swechi.3ds\t\t185\t435\t200\t7|252;230;163|0|0|0|0|0|0|0|0|0\t7|254;249;54|0|0|0|0|0|0|0|0|0\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "46",
+      "Des": "Бокал",
+      "Memo": "bokal.3ds\t\t70\t210\t70\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "47",
+      "Des": "Бутылка со льдом",
+      "Memo": "butilka.3ds\t\t240\t375\t190\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "48",
+      "Des": "Чайник с чашками",
+      "Memo": "chainik s chashkai.3ds\t\t500\t185\t375\t7|112;75;67|0|0|0|0|0|0|0|0|0\t7|252;230;163|0|0|0|0|0|0|0|0|0\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "49",
+      "Des": "Набор приборов",
+      "Memo": "nabor priborow.3ds\t\t510\t210\t370\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "50",
+      "Des": "Фрукты на тарелке",
+      "Memo": "tarelka s fruktami.3ds\t\t300\t90\t300\t103|-1|\\3ds\\Accessori\\Banan.png|0|0|0|0|0|0|1|0\t103|-1|\\3ds\\Accessori\\Tarelka.jpg|0|0|0|0|0|0|1|0\t7|174;32;32|0|0|0|0|0|0|0|0|0\t103|-1|\\3ds\\Accessori\\pear.jpg|0|0|0|0|0|0|1|0\t7|85;145;60|0|0|0|0|0|0|0|0|0\t7|135;84;56|0|0|0|0|0|0|0|0|0\t7|94;35;116|0|0|0|0|0|0|0|0|0\t\t1|15;225;57|0|0|0|0|0|0|0|0|0\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "51",
+      "Des": "Барная стойка",
+      "Memo": "barnaya noga.3ds\t\t600\t910\t500\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "52",
+      "Des": "Стеклянная барная стойка",
+      "Memo": "p320.3ds\t\t1671\t10\t621\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_3DS_AGG",
+      "Codopz": "53",
+      "Des": "Кулер для воды",
+      "Memo": "Water_Cooler.3DS\t\t360\t1500\t400\t\t\t\t\t\t\t\t\t\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    }
+  ]
+}
