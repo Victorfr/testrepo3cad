@@ -1,0 +1,45 @@
+
+[info]
+Versione = 100
+TIPO=000
+DESCRIZIONE=SHDER.erg
+COMMENTI=
+CODICE=
+POSMODE=0
+LINK=000
+LINKPREC=
+LINKSUCC=
+TAB.DIM.=L,A,P,SA,DA,SL,DL
+DIM.MINIMA= 1, 1, 1
+DIM.MASSIMA= 5000, 5000, 5000
+DIM.DEFAULT= 0, 0, 0
+DIM.BLOCCA=0,0,0
+DIM.SPECIALI0,0,0
+MODOADD=
+SPEC=
+DIVIDER=
+TRADFLAGS=*,*,*,*,*
+
+
+[gene]
+T,MODELLO
+S,dataordine,,,,,,,,,,,,0
+T,_databox
+T,shdercol,,,Цвет
+M,count_sh,,,Количество,,,,1
+
+[GRAFICA]
+!SETCODICE x
+
+_DATABOX
+// ******************** макрос определеющий тип заказа (рекламация или нет) РАБОТАЕТ ТОЛЬКО С МАКРОСОМ _DATABOX*********************************
+_RECLAMATION
+// **********************************************************************************************************
+#LET l=450,a=45,p=2
+#LETV _WR=999dfuggk
+001,LATO=9,COD= /WR=$(_WR:3);FPL=N /Крепление к полке для штанг $(shdercol:2) /#l-1  //Tes
+001,LATO=6,COD=999$(shdercol:4) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Крепление к полке для штанг $(shdercol:2) /#l-1#Q$(count_sh:0),C1=2,DIS=$(cir)  //Test  999SHTANGderg
+
+//001,LATO=6,COD=999dub_driva / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+//001,LATO=6,COD=999sh3_5x30 / / /#q$(count_ug:0),L=1,A=1,P=1  //Test
+//001,LATO=6,COD=999SH4X16POT / / /#q$(count_ug:0),L=1,A=1,P=1  //Test

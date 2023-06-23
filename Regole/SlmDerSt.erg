@@ -55,5 +55,5 @@ _RECLAMATION
 
 #LETV _wr=ST1DOPFUR
 
-001,LATO=6,COD=ST1DOPFURGSH$(colsysSt:5) /WR=$(_wr:3);FPL=N /Компплект держателей гардеробной штанги $(colsysSt:2) /#l-1,L=1,A=1,P=1  //Test
+001,LATO=6,COD=ST1DOPFURGSH$(colsysSt:5) /WR=$(_wr:3);FPL=N /Компплект держателей гардеробной штанги /#l-1,L=1,A=1,P=1  //Test
 001,LATO=6,COD=$(dergShtCod),L=1,A=1,P=1  //Test

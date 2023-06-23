@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>eprice</title>
+<script language="javascript">
+
+
+	function load()
+	{
+		var results = window.location.href;
+		var valxx = results.split('?');
+                var valx = valxx[1].split('&');
+                if (valx[2] == 'THR4Robot')
+		  if (valx[3] != null)
+		  { 
+			var valori = valx[3].split(';');
+                        window.location.href='http://old.marya.ru/dealer/epl/3cad/'+ Number(valx[1])+ '/0/'+ valx[0] + '/' + valori[0] + '/';
+		  }
+		  else
+		  {
+			window.location.href='http://old.marya.ru/dealer/epl/3cad/'+ Number(valx[1])+ '/0/'+ valx[0]+ '/0/';
+		  }
+                else
+		  if (valx[3] != null)
+		  { 
+			var valori = valx[3].split(';');
+                        window.location.href='http://crm-udd.marya.ru/clients/epl/' + valori[0] + '/';
+		  }
+		  else
+		  {
+			window.location.href='http://crm-udd.marya.ru/clients/epl/';
+		  }
+	}
+
+</script>
+</head>
+<body onload="load()">
+</body>
+</html>

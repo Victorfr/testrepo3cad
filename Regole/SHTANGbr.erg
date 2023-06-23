@@ -11,7 +11,7 @@ LINKPREC=
 LINKSUCC=
 TAB.DIM.=L,A,P,SA,DA,SL,DL
 DIM.MINIMA= 1, 1, 1
-DIM.MASSIMA= 1950, 5000, 5000
+DIM.MASSIMA= 5000, 5000, 5000
 DIM.DEFAULT= 0, 0, 0
 DIM.BLOCCA=0,0,0
 DIM.SPECIALI0,0,0
@@ -34,24 +34,30 @@ T,_databox,,,,,,,,,,,,0
 _flag_plaser
 //***************************************************************************************************
 _DATABOX
-#LETS cod_shtang=999SHTANGbr
-#IF $l>1000 #LETS cod_shtang=999shtang1br
+#LET maxL=2000//1500 //1950
+#IF $L>1500
+   #LETS cod_shtang=999SH1530BR2000
+#ELSEIF $L>1000
+   #LETS cod_shtang=999SH1530BR1500
+#ELSE
+   #LETS cod_shtang=999SH1530BR1000
+#ENDIF
 
-#LET maxL=1500
 #IF $l>$(maxL)
    #MSG штанга не может быть длиной больше $(maxL) мм!
    001,LATO=19,COD=999 /ERROR=1 /Штанга овальная /#l-1,DIS=$(cir)  //Test
    
 #ELSE
-   001,LATO=19,COD=$(cod_shtang) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга овальная /#l-1,C1=2,DIS=$(cir)  //Test
+   001,LATO=19,COD=$(cod_shtang) /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга овальная 15х30 с демпфером /#l-1,C1=2,DIS=$(cir)  //Test
    
-   001,LATO=6,COD=999SHTANGdergbr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
-   001,LATO=6,COD=999SHTANGdergbr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
-   
+   001,LATO=6,COD=999SH1530DERGBR /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test  999SHTANGderg
+   001,LATO=6,COD=999SH1530DERGBR /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель /#l-1,C1=2,DIS=$(cir)  //Test
+   #IF $L>1500
+      001,LATO=6,COD=999SH1530KREPBR /FPL=$(FPL);_DATABOX=$(_DATABOX) / Крепление к полке /#l-1,C1=2,DIS=$(cir)  //Test
+   #ENDIF
    //#FOR $1:6
    001,LATO=6,COD=999sh4x16pot /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1#Q6,L=10,A=10,P=10  //Test
    //#ENDFOR
-   
 #ENDIF
 
 // ****************************************************** размер по высоте ***********************************************************************

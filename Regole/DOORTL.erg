@@ -23,11 +23,11 @@ TRADFLAGS=*,*,*,*
 
 [gene]
 T,MODELLO
-S,correctorcheck,,,,,,,,,,,,0
-S,flagCorrector,,,,,,,,,,,,0
-S,correctorType,,,,,,,,,,,,0
-S,correctorCount,,,,,,,,,,,,0
-S,dataordine,,,,,,,,,,,,0
+S,flagCorrector
+S,correctorcheck
+S,correctorType
+S,correctorCount
+S,dataordine
 T,_databox,,,,,,,,,,,,0
 T,MNP,,,,,,,,,,,,0
 T,WR,,,,,,,,,,,,0

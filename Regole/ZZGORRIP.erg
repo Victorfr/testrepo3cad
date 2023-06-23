@@ -24,9 +24,11 @@ TRADFLAGS=*,*,*,*,*
 [gene]
 T,MODELLO
 S,dataordine,,,,,,,,,,,,0
+C,shMantera,,,Для мантеры
+C,shrusal,,,Для Rusal
 T,_databox,,,,,,,,,,,,0
-T,mat,,,,$(mat:3)=1
-T,_colkarkas,,,,#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n#ELSE\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1\n#ENDIF
+T,mat,,,,#IF $(shMantera:1)[1] | $(shrusal:1)[1]\n   $(mat:1)[18]\n#ELSE\n   $(mat:3)[1]\n#ENDIF
+T,_colkarkas,,,,#IF $[DATECOMPARE;$(DATAORDINE);03.10.2019]>=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n#ELSE\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1  \n#ENDIF
 C,krepShkaf,,,Крепление к шкафу,,,,,,,2
 M,kolKrepShkaf,,$(krepShkaf:0)=1,Количество креплений,,,5,1
 C,krepDsp,,,Крепление к ДСП,,,,,,,2
@@ -43,6 +45,9 @@ G,SCOSGRUPP
 
 !SETCODICE x
 //_AGG_KREP
+//#LET shMantera=
+//#LETV shMantera=$(.globale1)
+
 _DATABOX
 #LET a=$(mat:1)
 #LET ndet=
@@ -61,20 +66,22 @@ _DATABOX
    
    
 #ENDIF
+#IF $(krepVB:0)=1
+   #LET minP=188
+#ENDIF
 ///проверка габаритов
+
 #IF $(ugolL_Up:0)=1 | $(ugolR_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Down:0)=1
    #LET minL=200
-   #LET maxL=1200
+   #LET maxL=1000
    #LET minP=150
-   #LET maxP=1200
+   #LET maxP=1000
    #IF $[ex;$(_COLKARKAS:9);|;3]>=2 & $(_COLKARKAS:27)=0
       
       
    #ENDIF
 #ENDIF
-#IF $(krepVB:0)=1
-   #LET minP=188
-#ENDIF
+
 #IF $l>$(maxL)
    #LET l=$(maxL)
    #MSG полка не может быть шириной более $(maxL) мм!
@@ -95,6 +102,7 @@ _DATABOX
    #LETV p=$(minP)
    #MSG полка не может быть глубиной меньше $(minP) мм!
 #ENDIF
+
 #IF $(ugolL_Up:0)=1 | $(ugolR_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Down:0)=1
    #IF $(krepVB:0)=1
       #MSG Нельзя добвлять стяжки при обработках на сторонах полки
@@ -118,7 +126,6 @@ _DATABOX
 
 
 
-
 #LETV _wr=999K_KARKASPL
 #LETV _MNP=999K_KARKASPL
 #LETS sk=$(_colkarkas:10),wk=$(_colkarkas:10),nk=$(_colkarkas:10),ek=$(_colkarkas:10)
@@ -132,7 +139,7 @@ _DATABOX
 //VOLUME
 //301
 //110,COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);FPL=N / /#l-1,SP=0,P=$p  // Полка на стяжках ДСП
-
+//15
 //////////////////////////////////макрос создания профиля для полки
 ////ограничения по габаритам
 _polkMisur
@@ -200,7 +207,7 @@ _sagomaPolkProv
 //STRANGBOX
 //_MODFASAD
 //_FASVID
-#IF $(polkObrStr)! | $(krepVB:0)=1
+#IF $(polkObrStr)!| $(krepVB:0)=1
    #LET IDD=1
    #LET IDO=1
    //если кромка больше 1 мм по толщине
@@ -235,8 +242,14 @@ _sagomaPolkProv
    #ENDIF
    
 #ENDIF
+//010
 #IF $(profilError)=0
-   110,COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=N / /#l-1,SP=0,P=$p,DIS=$(polkadsp),X9=$(polkObrStr),X0=$(krepVB:1)  //Полка на стяжках ДСП
+   #LETS params=MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=N
+   #IF $(shMantera)=1
+      //     #LETS params=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK);SDR=$(SDR);DDR=$(DDR);IDD=$(IDD);IDO=$(IDO);FPL=N
+      
+   #ENDIF
+   110,COD= /$(params) / /#l-1,SP=0,P=$p,DIS=$(polkadsp),X9=$(polkObrStr),X0=$(krepVB:1)  //Полка на стяжках ДСП
    //027
 #ELSE
    110,COD= /ERROR=1 / /#l-1,SP=0,P=$p,DIS=$(polkadsp),X9=$(polkObrStr),lato=6  //Полка на стяжках ДСП
@@ -251,48 +264,38 @@ _sagomaPolkProv
 #ENDIF
 
 #IF $(hiddedmensolo:0)=1
-   #IF $[datecompare;$(dataordine);07.06.2022]>=0
-      001,LATO=9,COD=999MENSFER / / /#Q#l-1#Q2,L=1,A=1,P=1  //Test
-   #ELSE
-      001,LATO=9,COD=999MENSDERJ / / /#l-1#Q2,L=1,A=1,P=1  //Test
-   #ENDIF
-   // 001,LATO=6,COD=999MENSDERJ / / /#l-1#Q2,L=1,A=1,P=1  //Test
+   //  001,LATO=6,COD=999MENSDERJ / / /#l-1#Q2,L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999MENSfer / / /#l-1#Q2,L=1,A=1,P=1  //Test
 #ENDIF
 /////крепеж для полок
 
 #IF $(krepDsp:0)=1
-   //#FOR $1:$(kolKrepDsp:0)
-   001,LATO=6,COD=999grandUg / / /#L-1#Q$(kolKrepDsp:0),L=1,A=1,P=1  //Test
-   
-   001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1#Q$(kolKrepDsp:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepDsp:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepDsp:0),L=1,A=1,P=1  //Test
-   // #ENDFOR
+   #FOR $1:$(kolKrepDsp:0)
+      001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
 #ENDIF
 #IF $(krepGips:0)=1
-   //#FOR $1:$(kolKrepGips:0)
-   001,LATO=6,COD=999grandUg / / /#L-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
-   
-   001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999sh3_5x30 / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999dub_driva / / /#l-1#Q$(kolKrepGips:0),L=1,A=1,P=1  //Test
-   // #ENDFOR
+   #FOR $1:$(kolKrepGips:0)
+      001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh3_5x30 / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999dub_driva / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
 #ENDIF
 #IF $(krepBeton:0)=1
-   // #FOR $1:$(kolKrepBeton:0)
-   001,LATO=6,COD=999grandUg / / /#L-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
-   
-   001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999sh4x16pot / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999sh3_5x30 / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
-   001,LATO=6,COD=999dub6x30 / / /#l-1#Q$(kolKrepBeton:0),L=1,A=1,P=1  //Test
-   /// #ENDFOR
+   #FOR $1:$(kolKrepBeton:0)
+      001,LATO=6,COD=$(_COLKARKAS:13) / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh4x16pot / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999sh3_5x30 / / /#l-1,L=1,A=1,P=1  //Test
+      001,LATO=6,COD=999dub6x30 / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
 #ENDIF
 #IF $(krepShkaf:0)=1
-   //#FOR $1:$(kolKrepShkaf:0)
-   001,LATO=6,COD=999sh4x30 / / /#l-1#Q$(kolKrepShkaf:0),L=1,A=1,P=1  //Test
-   // #ENDFOR
+   #FOR $1:$(kolKrepShkaf:0)
+      001,LATO=6,COD=999sh4x30 / / /#l-1,L=1,A=1,P=1  //Test
+   #ENDFOR
 #ENDIF
 #IF $(krepVB:0)=1
    _agg_krep_new,multiCount=2,flagTd=536
