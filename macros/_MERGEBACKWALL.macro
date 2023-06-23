@@ -61,7 +61,7 @@
          018	COD= /$(varBack)	SL=$(slBackWall)	SA=$(hzoc:0)+7	L=$(lBackWall) 	A=$(altBackWall)	P=$(mat_backwall:3)	lato=$(latoBackWall)	x9=$(virParBack)  // Задняя стенка ХДФ (ДСП)
       #ENDIF
       #LETS mis_zst=$(lBackWall)X$(altBackWall)|$(mis_zst)
-      //      010
+      //      010 
       //018	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)
    #ELSE
       #IF $(countBigWallFinish)>0

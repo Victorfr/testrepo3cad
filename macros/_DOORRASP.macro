@@ -343,11 +343,13 @@ _dataBox
 ///толщина боковины корпуса
 #LET lfiaKorp={$[ex;$(LOCP_BX0);|;9]}
 #LET doorNalog=$[ex;$(LOCP_BX0);|;10]
+ 
 //если дверь не в шк
 #IF $[ex;$(LOCP_BX0);|;5]=0
    #LET lfiaKorp={$(karkasLarge:1)}
-   //пока что только для накладных
-   #LET doorNalog=1
+   
+   #LET doorNalog=$(karkasdoornalog:3)
+   
 #ENDIF
 // ****************************** петли ************************
 #LET spostaLPetli = $[ex;$(LOCP_BX0);|;6]

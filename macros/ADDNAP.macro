@@ -75,7 +75,7 @@
       #LET flagNohdf=0
    #ENDIF
    #IF  $(_backWallDis:1)!1 & $(flagNoHDF)=0
-      #IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020;167]
+      #IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020;167] 
          #LETS mat_backwall:4=DSPLN8|CVET_VST
       #ENDIF
       NUMDET	sa=$a-75	sl=75	sp=15-$(p)

@@ -36,6 +36,6 @@
    001	LATO=6	COD=$(mat:6) / / /#Q$(col_krep)	L=1	A=1	P=1  //Test
    #LETS varParVB=//TD=536
    001	LATO=6	COD=$(_colkarkas:12) /$(varParVB) / /#Q$(col_krep)	L=1	A=1	P=1  //Test
-#ENDIF
+#ENDIF 
 //#ENDFOR
 //_AGG_KREP
