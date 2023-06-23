@@ -63,11 +63,11 @@
       obrabotka,,,,,,1;$(NPOMACRONAME);IDO=1,,,,,,
       //======================================
       !{
-      #LETS cod=999ZAGZAG
-      #M MnpWrNamedet,cod=$(cod)
-      $(cod),1,WR=$(wr);MNP=$(mnp),{92+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)1.1
+      //#LETS cod=999ZAGZAG
+      //#M MnpWrNamedet,cod=$(cod)
+      //$(cod),1,WR=$(wr);MNP=$(mnp),{92+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)1.1
       !{
-      999$(artpilomat),rn3({2450+4}*{92+4}/1000000),,{92+4},{2450+4},,,,,,,,$(mat)_$(matNum)1.1.1
+      999$(artpilomat),rn3({2450+4}*{92+4}/1000000),,{92+4},{2450+4},,,,,,,,$(mat)_$(matNum)1.1//.1
       !}
       !}
       999KLEI_PL,rn3((92*50/1000000)*0.2),,,,,,,,,,,$(mat)_$(matNum)2
@@ -82,11 +82,11 @@
       obrabotka,,,,,,1;$(NPOMACRONAME);IDO=2,,,,,,
       //======================================
       !{
-      #LETS cod=999ZAGZAG
-      #M MnpWrNamedet,cod=$(cod)
-      $(cod),1,WR=$(wr);MNP=$(mnp),{55+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)4.1
+      //#LETS cod=999ZAGZAG
+      //#M MnpWrNamedet,cod=$(cod)
+     // $(cod),1,WR=$(wr);MNP=$(mnp),{55+4},{2450+4},19,,,,,,$(namedet),$(mat)_$(matNum)4.1
       !{
-      999$(artpilomat),rn3({2450+4}*{55+4}/1000000),,{55+4},{2450+4},,,,,,,,$(mat)_$(matNum)4.1.1
+      999$(artpilomat),rn3({2450+4}*{55+4}/1000000),,{55+4},{2450+4},,,,,,,,$(mat)_$(matNum)4.1//.1
       !}
       !}
       999KLEI_PL,rn3((55*50/1000000)*0.2),,,,,,,,,,,$(mat)_$(matNum)5
