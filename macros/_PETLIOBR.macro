@@ -1,119 +1,118 @@
 #IF $(petlObr:0)=1
-   #LETS pop=470043779
-   #IF $(_FiaApertoAnta:1)=1
-      #LET LPBR=6214833
-   #ELSE
-      #LET LPBR=6214834
-   #ENDIF
+#LETS pop=470043779
+#IF $(_FiaApertoAnta:1)=1
+#LET LPBR=6214833
 #ELSE
-   #LETS POP=
-   #LETS LPBR=
+#LET LPBR=6214834
+#ENDIF
+#ELSE
+#LETS POP=
+#LETS LPBR=
 #ENDIF
 #IF $(flagCorrector)=1
-   #IF $(_FiaApertoAnta:1)=1
-      #LET LPBR=6214833
-   #ELSE
-      #LET LPBR=6214834
-   #ENDIF
+#IF $(_FiaApertoAnta:1)=1
+#LET LPBR=6214833
+#ELSE
+#LET LPBR=6214834
+#ENDIF
 #ENDIF
 #IF $(_petl:1)!!999
-   #LET spostaSxPetl=13-$(spostaLPetli)
-   #LETS fiaPetl=sx
-   #IF $(_FiaApertoAnta:1)=2
-      #LET spostaSxPetl=$l-40+$(spostaLPetli)
-      #LETS fiaPetl=dx
-   #ENDIF
-   #IF $(_color_petl:1)=2 #LETS 3ds=petlBl$(fiaPetl).3ds
-   #LET count_petl=2
-   #IF $a>956 #LET count_petl=3
-   #IF $a>1600 #LET count_petl=4
-   #IF $a>2200 #LET count_petl=5
-   #IF $a>2400 #LET count_petl=6
-   ///проверка двери на массу для модели зеркало на подложке
-   #LET flagAddPetl=0
-   #LET petlFinishCount=$(count_petl)
-   #IF $(_modDoorRasp:1)[s30]
-      #LET massaDoor={$l*$a/1000000}*21.63
-      #SELECT $(count_petl)
-      #CASE 2:
-         #LET maxMassDoor=7.7
-      #CASE 3:
-         #LET maxMassDoor=13.7
-      #CASE 4:
-         #LET maxMassDoor=17.1
-      #CASE 5:
-         #LET maxMassDoor=22
-      #ENDSELECT
-      #IF $(massaDoor)>$(maxMassDoor)
-         #LET flagAddPetl=1
-         #LET petlFinishCount=$(count_petl)+2
-      #ENDIF
-   #ENDIF
-   //   _PETLI
-   #LET sposta_petl=100
-   #LET petlYobr=0
-   ///поменять дату тут и в макросе петель когда определится
-   #IF $[DATECOMPARE;$(dataordine);18.04.2021]>0
-      #LET petlYdataObr=21
-   #ELSE
-      #LET petlYdataObr=20.5
-   #ENDIF
-   #IF $(doorNalog)[1;3]
-      #IF $(lfiaKorp)=16
-         #LET petlYobr=$(petlYdataObr)//20.5
-      #ELSEIF $(lfiaKorp)=22
-         #LET petlYobr=26.5-1//по тз подбор петель
-      #ELSEIF $(lfiaKorp)=25
-         #LET petlYobr=29.5
-      #ENDIF
-   #ELSE
-      #LET petlYobr=$(petlYdataObr)//20.5
-   #ENDIF
-
-   //303
-   #IF $(_MODDOORRASP:1)[s24;s30]
-      #IF ($(_manProf:0)=1 | $(_manProfBl:0)=1) & $(_man:1)[999] //если установлена ручка профиль
-         //так как подложка зеркала смещена на 1 мм
-         #LET petlYobr={$(petlYobr)-1}
-      #ENDIF
-   #ENDIF
-   #LETS petlObrPar={$(petlFinishCount)}|$(petlYobr)|
-   #LET addPrip=0
-   #IF $(varPrip)!0
-      #LET addPrip=$(misPrip)
-   #ENDIF
-   #FOR $1:$(count_petl)
-      //// old!!!
-      #IF $(i)=2 #LET sposta_petl=$a-100
-      #IF $(i)=3 & $(count_petl)=3 #LET sposta_petl=int($a/2)
-      #IF $(i)>=3 & $(count_petl)=4
-         #LET sposta_petl=int(($a-200)/3+100)
-         #IF $(i)=4 #LET sposta_petl=int((($a-200)/3)*2+100)
-      #ELSEIF $(i)>=3 & $(count_petl)=5
-         #LET sposta_petl=int(($a-200)/4+100)
-         #IF $(i)=4 #LET sposta_petl=int((($a-200)/4)*2+100)
-         #IF $(i)=5 #LET sposta_petl=int((($a-200)/4)*3+100)
-      #ENDIF
-      //////
-      #IF $I=1
-         #LET sposta_petl={100+$(addPrip)}
-      #ELSEIF $i=$(count_petl)
-         #LET sposta_petl=$a-100-$(addPrip)
-      #ELSE
-         #LET spostPetls=int((($a-200)/($(count_petl)-1)))
-         #LET sposta_petl=$(spostPetls)*($I-1)+100
-      #ENDIF
-      //формирование параметров для обработок
-      #IF $(i)!$(count_petl)
-         #LETS petlObrPar=$(petlObrPar)$(sposta_petl)x
-      #ELSE
-         #LETS petlObrPar=$(petlObrPar)$(sposta_petl)
-      #ENDIF
-   #ENDFOR
-   //добавляются дополнительные петли для тяжелых дверей
-   #IF $(flagAddPetl)=1
-      #LET spostaPetl1=$a-200-$(addPrip)
-      #LET spostaPEtl2=200+$(addPrip)
-      #LETS petlObrPar=$(petlObrPar)x$(sposta_petl1)x$(sposta_petl2)
-   #ENDIF
+#LET spostaSxPetl=13-$(spostaLPetli)
+#LETS fiaPetl=sx
+#IF $(_FiaApertoAnta:1)=2
+#LET spostaSxPetl=$l-40+$(spostaLPetli)
+#LETS fiaPetl=dx
+#ENDIF
+#IF $(_color_petl:1)=2 #LETS 3ds=petlBl$(fiaPetl).3ds
+#LET count_petl=2
+#IF $a>956 #LET count_petl=3
+#IF $a>1600 #LET count_petl=4
+#IF $a>2200 #LET count_petl=5
+#IF $a>2400 #LET count_petl=6
+///проверка двери на массу для модели зеркало на подложке
+#LET flagAddPetl=0
+#LET petlFinishCount=$(count_petl)
+#IF $(_modDoorRasp:1)[s30]
+#LET massaDoor={$l*$a/1000000}*21.63
+#SELECT $(count_petl)
+#CASE 2:
+#LET maxMassDoor=7.7
+#CASE 3:
+#LET maxMassDoor=13.7
+#CASE 4:
+#LET maxMassDoor=17.1
+#CASE 5:
+#LET maxMassDoor=22
+#ENDSELECT
+#IF $(massaDoor)>$(maxMassDoor)
+#LET flagAddPetl=1
+#LET petlFinishCount=$(count_petl)+2
+#ENDIF
+#ENDIF
+//   _PETLI
+#LET sposta_petl=100
+#LET petlYobr=0
+///поменять дату тут и в макросе петель когда определится
+#IF $[DATECOMPARE;$(dataordine);18.04.2021]>0
+#LET petlYdataObr=21
+#ELSE
+#LET petlYdataObr=20.5
+#ENDIF
+#IF $(doorNalog)[1;3]
+#IF $(lfiaKorp)=16
+#LET petlYobr=$(petlYdataObr)//20.5
+#ELSEIF $(lfiaKorp)=22
+#LET petlYobr=26.5-1//по тз подбор петель
+#ELSEIF $(lfiaKorp)=25
+#LET petlYobr=29.5
+#ENDIF
+#ELSE
+#LET petlYobr=$(petlYdataObr)//20.5
+#ENDIF
+//303
+#IF $(_MODDOORRASP:1)[s24;s30]
+#IF ($(_manProf:0)=1 | $(_manProfBl:0)=1) & $(_man:1)[999] //если установлена ручка профиль
+//так как подложка зеркала смещена на 1 мм
+#LET petlYobr={$(petlYobr)-1}
+#ENDIF
+#ENDIF
+#LETS petlObrPar={$(petlFinishCount)}|$(petlYobr)|
+#LET addPrip=0
+#IF $(varPrip)!0
+#LET addPrip=$(misPrip)
+#ENDIF
+#FOR $1:$(count_petl)
+//// old!!!
+#IF $(i)=2 #LET sposta_petl=$a-100
+#IF $(i)=3 & $(count_petl)=3 #LET sposta_petl=int($a/2)
+#IF $(i)>=3 & $(count_petl)=4
+#LET sposta_petl=int(($a-200)/3+100)
+#IF $(i)=4 #LET sposta_petl=int((($a-200)/3)*2+100)
+#ELSEIF $(i)>=3 & $(count_petl)=5
+#LET sposta_petl=int(($a-200)/4+100)
+#IF $(i)=4 #LET sposta_petl=int((($a-200)/4)*2+100)
+#IF $(i)=5 #LET sposta_petl=int((($a-200)/4)*3+100)
+#ENDIF
+//////
+#IF $I=1
+#LET sposta_petl={100+$(addPrip)}
+#ELSEIF $i=$(count_petl)
+#LET sposta_petl=$a-100-$(addPrip)
+#ELSE
+#LET spostPetls=int((($a-200)/($(count_petl)-1)))
+#LET sposta_petl=$(spostPetls)*($I-1)+100
+#ENDIF
+//формирование параметров для обработок
+#IF $(i)!$(count_petl)
+#LETS petlObrPar=$(petlObrPar)$(sposta_petl)x
+#ELSE
+#LETS petlObrPar=$(petlObrPar)$(sposta_petl)
+#ENDIF
+#ENDFOR
+//добавляются дополнительные петли для тяжелых дверей
+#IF $(flagAddPetl)=1
+#LET spostaPetl1=$a-200-$(addPrip)
+#LET spostaPEtl2=200+$(addPrip)
+#LETS petlObrPar=$(petlObrPar)x$(sposta_petl1)x$(sposta_petl2)
+#ENDIF
 #ENDIF

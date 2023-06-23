@@ -1,4 +1,3 @@
-
 [info]
 Versione = 100
 TIPO=000
@@ -10,8 +9,8 @@ LINK=000
 LINKPREC=
 LINKSUCC=
 TAB.DIM.=L,A,P,SA,DA,SL,DL
-DIM.MINIMA= 564, 235, 478
-DIM.MASSIMA= 564, 235, 478
+Dim.Minima= 564, 235, 478
+Dim.Massima= 564, 235, 478
 DIM.DEFAULT= 0, 0, 0
 DIM.BLOCCA=0,0,0
 DIM.SPECIALI0,0,0
@@ -37,7 +36,7 @@ _DATABOX
 #LETS 3ds=MATRIX_OBUV1.3ds
 
 
-001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,C1=2,FACC=100,X4=$(3ds)  //Test
+001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,C1=6,FACC=100,X4=$(3ds)  //Test
 
 
 // #FOR $1:2

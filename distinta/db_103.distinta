@@ -1,0 +1,21 @@
+#LETS _ckd=$(x4:1)
+#LETS _ckk=$(x4:2)
+#LETS idtip=$(x5:0)
+#LETS cod_mat=$[ex;$(x4:3);|;1]
+#LETS cod_krom=$[ex;$(x4:4);|;1]
+#LETS name_param_mat=$[ex;$(x4:3);|;2]
+#LETS name_param_krom=$[ex;$(x4:4);|;2]
+#LETS cod_klei=$(x4:5)
+#LETS sk=$(x5:3)
+#LETS wk=$(x5:4)
+#LETS nk=$(x5:5)
+#LETS ek=$(x5:6)
+#IF $(sk)=378917905
+   #LETS kol_stor_krom=00
+#ELSEIF $(sk)!378917905 & $(wk)!378917905 & $(nk)!378917905 & $(ek)!378917905
+   #LETS kol_stor_krom=zad4
+#ELSE
+   #LETS kol_stor_krom=bok1
+#ENDIF
+
+#M list_dsp,larg_zag=$(dl),prof_zag=$(dp),alte_zag=$(da),tip_det=zad,kol_stor_krom=$(kol_stor_krom),_ckd=$(_ckd),_ckk=$(_ckk),mat_add=$(mat),soed_str=_

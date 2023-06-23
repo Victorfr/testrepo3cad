@@ -38,6 +38,6 @@ _RECLAMATION
 #LET l=450,a=45,p=2
 #LETV _WR=999DFEX18
 001,LATO=9,COD=$(_WR:1) /WR=$(_WR:3);FPL=N /$(_WR:2) ($(_colkarkas:21)) /#l-1  //Tes
-001,LATO=6,COD=999EXVB18 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
-001,LATO=6,COD=$(_colkarkas:12) / / /#q$(count_st:0),L=1,A=1,P=1  //Test
-001,LATO=6,COD=999DUBVB / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999EXVB18 / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=$(_colkarkas:12) / / /#q$(count_st:0),L=1,A=1,P=1  //Test
+   001,LATO=6,COD=999DUBVB / / /#q$(count_st:0),L=1,A=1,P=1  //Test

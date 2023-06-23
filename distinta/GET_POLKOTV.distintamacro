@@ -1,0 +1,8 @@
+#LET Lotv=60
+#LET Lstep=$(ldet)-120
+#LET Nst=2
+#IF $(ldet)<=125
+#LET Nst=2
+#LET lotv=25
+#LET lstep=$(ldet)-50
+#ENDIF

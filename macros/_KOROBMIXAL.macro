@@ -47,6 +47,11 @@
       //  #LETS paramBok= MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
    #ENDIF
    #LET latoLeftBok=0
+   
+   #LET innerSa=0
+   #IF $(addzoc:1)=1
+      #LET innerSa=$(karkasSa)
+   #ENDIF
    #IF $(leftbok:0)=1
       #LET latoLeftBok=6
       #LETS sagColor=1|$(.percorso)\foto\struttura\$(_colkarkas:3)|$(_colkarkas:4)
@@ -121,7 +126,7 @@
       001	dis=$(leftSag)	c1=$(sagColor)	a=18	az=-90	sl=18
       010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	x9=$(virPar)  // Бок ЛВ ДСП
    #ELSE
-      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)  // Бок ЛВ ДСП
+      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	sa=-$(innerSa)	a=$a+$(innerSa)  // Бок ЛВ ДСП
    #ENDIF
    NUMDET	SL=$l-$(mat:0)	SA=$A/2
    #LET latoRightBok=0
@@ -199,13 +204,13 @@
       001	dis=$(rightSag)	c1=$(sagColor)	a=18	az=-90	sl=$l
       011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	x9=$(virPar)  // Бок ПР ДСП
    #ELSE
-      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)  // Бок ПР ДСП
+      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	sa=-$(innerSa)	a=$a+$(innerSa)  // Бок ПР ДСП
    #ENDIF
    #LET dnoSa=0
    #IF $(addzoc)=1
       //если скрытие цоколя не выбрано
       #IF $(hidezoctop:0)=0
-         NUMDET	SL=$(mat:0)+35	SA=0
+         NUMDET	SL=$(mat:0)+35	SA=-$(karkasSa)
          #LETV _wr=999T_KARKASZOC
          #LETV _MNP=999T_KARKASZOC
          #LETS sk=$(_colkarkas:10)	wk=378917905	nk=378917905	ek=378917905
@@ -218,25 +223,22 @@
             #LETS paramsZoc=$(paramsZoc);SDR={$(hzoc:0)-1};DDR={$L-$(mat:0)*2}
          #ENDIF
          ///////
-         
-         017	COD= /$(paramsZoc)	SP=$(spzoc)  //Цоколь ДСП
-         NUMDET	SL=$(mat:0)+35	SA=0	sp=20
-         017	COD= /$(paramsZoc)	SP= 20  // Цоколь ДСП
+         017	COD= /$(paramsZoc)	SP=$(spzoc)	sa=-$(karkasSa)  //Цоколь ДСП
+         NUMDET	SL=$(mat:0)+35	SA=0	sp=20	sa=-$(karkasSa)
+         017	COD= /$(paramsZoc)	SP= 20	sa=-$(karkasSa)  // Цоколь ДСП
       #ENDIF
       #IF $(addzoctop:0)=1 & $(hidezoctop:0)=0
          NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
          017	COD= /$(paramsZoc)	SP= $(spzoc)	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
-
          NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
          017	COD= /$(paramsZoc)	SP= 20	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
-
       #ENDIF
       #LET spPie=$(horDet)-100
       #IF $(p)>=400
-         047	COD= /TD=536  //Ножка регулировочная
-         047	COD= /TD=536	SP=$(spPie)  //Ножка регулировочная
-         047	COD= /TD=536	SL=$l-$(mat:1)-20  //Ножка регулировочная
-         047	COD= /TD=536	SL=$l-$(mat:1)-20	SP=$(spPie)  //Ножка регулировочная
+         047	COD= /TD=536	SA=$(hzoc:0)-30-$(innerSa)  //Ножка регулировочная
+         047	COD= /TD=536	SP=$(spPie)	SA=$(hzoc:0)-30-$(karkasSa)  //Ножка регулировочная
+         047	COD= /TD=536	SL=$l-$(mat:1)-20	SA=$(hzoc:0)-30-$(karkasSa)  //Ножка регулировочная
+         047	COD= /TD=536	SL=$l-$(mat:1)-20	SP=$(spPie)	SA=$(hzoc:0)-30-$(karkasSa)  //Ножка регулировочная
          #IF $l>900
             047	COD= /TD=536	SL=($l)/2  //Ножка регулировочная
             047	COD= /TD=536	SL=($l)/2	SP=$(spPie)  //Ножка регулировочная
@@ -270,10 +272,10 @@
    #IF $(shMantera)=1
       //     #LETS paramDn= MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NDS=$(ndet);WK=$(WK);NK=$(NK);EK=$(EK);SK=$(SK) ;NSE=$(SHPR)
    #ENDIF
-   NUMDET	SL=$l/2	SA=$(mat:1)
-   012	COD= /$(paramDn)	SA=$(dnoSa)	P=$(horDet)  //Дно ДСП
+   NUMDET	SL=$l/2	SA=$(mat:1)-$(karkasSa)
+   012	COD= /$(paramDn)	SA=$(dnoSa)-$(innerSa)	P=$(horDet)   //Дно ДСП
    _agg_krep	p=$(horDet)
-   _DRAWSTAG	SL=$(mat:0)	L=$l-$(mat:0)*2	P=$(horDet)	sa=$(saStag)+$(dnoSa)	orienta=0
+   _DRAWSTAG	SL=$(mat:0)	L=$l-$(mat:0)*2	P=$(horDet)	sa=$(saStag)+$(dnoSa)-$(karkasSa)	orienta=0
    #LETV _wr=999K_KARKASKR
    #LETV _MNP=999K_KARKASKR
    //  #LETS sk=$(_colkarkas:10)	wk=378917905	nk=$(_colkarkas:10)	ek=378917905

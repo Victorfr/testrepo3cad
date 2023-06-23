@@ -32,8 +32,8 @@ S,PRODUCTLINE,,,,,,,,,,,,0
 T,modShkaf,,,Сеть,##MODSHKAF\n#VB\n   v("addednumber")=Ambiente.tnumero\n#ENDVB\n#VB\n   set g=Ambiente.GetObject("GLOBAL")\n   V("PercorsoOrdini")=g.PercorsoOrdini\n#ENDVB\n#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml\n#LETS filetest=$[dir;$(strPathname)]\n#IF $(filetest)[1]\n   #VB\n      Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")\n      xmlDoc.load (V("strpathname"))\n      strSearch = "ProjectMetadata"\n      Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)\n      for each node in currNode\n         strLine="PRODUCT_LINE"\n         Dim PRODUCT_LINE: set PRODUCT_LINE=node.getElementsByTagName(strLine)\n         for each el in PRODUCT_LINE\n            V("PRODUCTLINE")=el.text\n         next\n      next\n   #ENDVB\n   #LETS PRODUCTLINE=$(PRODUCTLINE)\n#ELSE\n   #LETS PRODUCTLINE=MARIA_SHKAF\n#ENDIF\n$(PRODUCTLINE)[$(modshkaf:3)],,,,,,,,0
 S,stekloSize,,,макс размер стекла,,,,,,,,,0
 S,steklosizemax,,,итог макс стекла,,,,,,,,,0
-S,hdfsizemax,,,макс размер хдф,,,,,,,,,0
-S,hdfsize,,,размер хдф,,,,,,,,,0
+S,hdfsizemax,,,макс размер хдф
+S,hdfsize,,,размер хдф
 S,onlyHDF,,,,,,,,,,,,0
 S,strParamsAllLast,,,,,,,,,,,,0
 S,countProverkaLast,,,,,,,,,,,,0
@@ -49,14 +49,14 @@ T,mat,,,Материал внеш. панелей,$(mat:1)=$(matGl:1)
 T,_colkarkas,,,Цвет внешних панелей,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(productline:0)[$(_colkarkas:24)],,,,,,2
 T,_colkarkas,_colkarkasvn,,Цвет перегородок,$(matvn:1)[$(_colkarkasvn:5)] & $(_colkarkasvn:1)!!024 & $(_colkarkasvn:20)[1] & $[datecompare;$(dataordine);$(_colkarkasvn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasvn:23)]=-1 & $(productline:0)[$(_colkarkasvn:24)],,,,,,2,,0
 T,tipshkaf,,,Тип,$(tipshkaf:3)=2,,,,,,,,0
-S,furNabor,,,,,,,,,,,,0
+S,furnabor,,,,,,,,,,,,0
 T,varParamSkaf,,,,,,,,,,,,0
 T,typeliving,,,,,,,,,,,,0
 T,tipshkafliving,,,Тип
 T,typeKarkas,,,Тип каркаса,$(typeKarkas:4)[$(tipshkafliving:1)]
 C,addNog,,$(tipshkafliving:1)=2,Добавить опоры
 T,_dekPie,,$(addNog:0)=1,,$[datecompare;$(dataordine);$(_dekPie:8)]<0
-T,navesLiving,,,,#IF $p>=334\n   #IF $(tipshkafliving:3)[0] & $(addNog:0)=0\n      #IF  $(tipshkaf:1)[10]\n         $(navesLiving:1)[2;999]\n      #ELSE\n         #IF $a+$L<=1920\n            #IF $p<=450\n               $(navesLiving:1)[1;999]\n            #ELSE\n               $(navesLiving:1)[2;999]\n            #ENDIF\n         #ELSE\n            #IF $p<=450\n               $(navesLiving:1)[2;999]\n            #ELSE\n               $(navesLiving:1)[999]\n            #ENDIF\n         #ENDIF\n      #ENDIF\n   #ELSE\n      #IF  $(tipshkaf:1)[10]\n         $(navesLiving:1)[1;999]\n      #ELSE\n         #IF $a>960\n            $(navesLiving:1)[1;999]\n         #ELSE\n            #IF $P>450\n               $(navesLiving:1)[999]\n            #ELSE\n               $(navesLiving:1)[1;999]\n            #ENDIF\n         #ENDIF\n      #ENDIF\n   #ENDIF\n#ELSE\n   $(navesLiving:1)[999]\n#ENDIF
+T,navesLiving,,,,#IF $(tipshkafliving:3)[0] & $(addNog:0)=0\n   #IF  $(tipshkaf:1)[10]\n      $(navesLiving:1)[2;999]\n   #ELSE\n      #IF $a+$L<=1920\n         #IF $p<=450\n            $(navesLiving:1)[1;999]\n         #ELSE\n            $(navesLiving:1)[2;999]\n         #ENDIF\n      #ELSE\n         #IF $p<=450\n            $(navesLiving:1)[2;999]\n         #ELSE\n            $(navesLiving:1)[999]\n         #ENDIF\n      #ENDIF\n   #ENDIF\n#ELSE\n   #IF  $(tipshkaf:1)[10]\n      $(navesLiving:1)[1;999]\n   #ELSE\n      #IF $a>960\n         $(navesLiving:1)[1;999]\n      #ELSE\n         #IF $P>450\n            $(navesLiving:1)[999]\n         #ELSE\n            $(navesLiving:1)[1;999]\n         #ENDIF\n      #ENDIF\n   #ENDIF\n#ENDIF
 T,navesColor,,$(navesLiving:1)!999,,$(navesLiving:1)[$(navesColor:3)] & $(navesColor:1)[$(_colkarkas:25)]
 M,hzoc,,$(tipshkafliving:1)=1,Высота цоколя,,,,0,150
 T,mat_backwall,,,Материал задней стенки,$(mat_backwall:0)=1
@@ -72,38 +72,41 @@ T,_s_d,,$(_ModDoorRasp:1)[S08;s26] & $(_TipDoorRasp:3)==s,,#IF $a=476 & ($l=296 
 C,S_D,,$(_s_d:1)!0,Дверь SD
 T,mat,mat_vd,,Материал выдвижного,$(mat_vd:1)=16,,,,,,7,,0
 T,_colkarkas,_col_vd,,Цвет выдвижного,$(mat_vd:1)[$(_col_vd:5)] & $(_col_vd:1)!!024 & $(_col_vd:20)[1] & $[datecompare;$(dataordine);$(_col_vd:22)]>=0 & $[datecompare;$(dataordine);$(_col_vd:23)]=-1 & $(PRODUCTLINE:0)[$(_col_vd:24)],,,,,,7
-C,pto,,$l>=300,Push to open,,,,,,,2,,$[datecompare;$(dataordine);$(_dataNewMet:3)]>=0
+C,pto,,$l>=400,Push to open,,,,,,,2,,$[datecompare;$(dataordine);$(_dataNewMet:3)]>=0
 T,_man,,,,#IF $(_PRIMOCARICAMENTO)=1\n   $(_man:1)==999\n#ELSE\n   #IF $(pto:0)=1\n      $(_man:1)==999\n   #ELSE\n      ((abs({$(_man:3)-{$l-5-$[iif;{$(_doorpolog:0)[2;4]};$(mat:1)*2]})=0 | not($(_man:7)[naverhniytorec])) & $[mid;$(_man:1);1;2]!!03 & $[datecompare;$(dataordine);$(_man:15)]>=0 & $[datecompare;$(dataordine);$(_man:16)]=-1   #ENDIF\n#ENDIF
 C,fasBig,,$(_man:1)=999 & $(pto:0)=0,Фасад во всю высоту
 T,_man_pos,,$(_man:1)!999,,#IF $(_PRIMOCARICAMENTO)=1\n   $(_man_pos:3)=2\n#ELSE\n   $(_man_pos:3)!0 & (not($(_man:7)[verhniztorec]) | $(_man_pos:3)[2;8])\n#ENDIF
 T,_man_orient,,$(_man:7)[skoba]
+S,paramsTmpStr,,,tmp variant for params ,,,,,,,,,0
+M,altmetabox1,,,Высота отделения под 1-й выдвижной,,,,,,,2
+M,altmetabox2,,$(numb_metbox:3)>=360,Высота отделения под 2-й выдвижной,,,,,,,2
+M,altmetabox3,,$(numb_metbox:3)>=540,Высота отделения под 3-й выдвижной,,,,,,,2
+M,altmetabox4,,$(numb_metbox:3)>=720,Высота отделения под 4-й выдвижной,,,,,,,2
+M,altmetabox5,,$(numb_metbox:3)>=900 & $[datecompare;$(dataordine);27.11.2020]>=0,Высота отделения под 5-й выдвижной,,,,,,,2
 T,vidType,,,Тип выдвижного
-G,ANTA,,$(numb_metbox:1)>=1,Параметры фасада
-G,ANTA1,,$(numb_metbox:1)>=2,Параметры фасада
-G,ANTA2,,$(numb_metbox:1)>=3,Параметры фасада
-G,ANTA3,,$(numb_metbox:1)>=4,Параметры фасада
-G,ANTA4,,$(numb_metbox:1)>=5,Параметры фасада
+G,ANTA,,$(numb_metbox:1)>=1,Параметры фасада 
+G,ANTA1,,$(numb_metbox:1)>=2,Параметры фасада 
+G,ANTA2,,$(numb_metbox:1)>=3,Параметры фасада 
+G,ANTA3,,$(numb_metbox:1)>=4,Параметры фасада 
+G,ANTA4,,$(numb_metbox:1)>=5,Параметры фасада 
 -,dekorat,,,Декор
 C,dekor,,$(tipshkafliving:1)=1 & $(_doorPolog:4)!1,Декор
 T,_ModDoorRasp,_ModDoorRaspDek,$(dekor:0)=1,,$(_ModDoorRaspDek:1)[s08;S26]
 T,matvstav,matvstavDek,$(dekor:0)=1,Модель декора,$(matvstavDek:5)==$(_ModDoorRaspDek:1),,,,,,,,0
-T,cvetvstav,cvetvstavDek, ,Цвет декора,$(matvstavDek:5)[$(cvetvstavDek:3)] & $(matvstavDek:6)[$(cvetvstavDek:8)] & $[datecompare;$(dataordine);$(cvetvstavDek:15)]>=0 & $[datecompare;$(dataordine);$(cvetvstavDek:16)]=-1 ,,,,,,2,,$(matvstavDek:13)
+T,cvetvstav,cvetvstavDek, ,Цвет декора,$(matvstavDek:5)[$(cvetvstavDek:3)] & $(matvstavDek:6)[$(cvetvstavDek:8)],,,,,,2,,$(matvstavDek:13)
 T,TxtVst,TxtVstDek,$(cvetvstavDek:11)=1 & $(dekor:0)=1,,#IF $(matvstavDek:5)==s08\n   $(TxtVstDek:1)=1\n#ELSE\n   $(TxtVstDek:1)[0;1]\n#ENDIF,,,,,,,,$(matvstavDek:5)!!s08
 T,_patina,_patinaDek,$(dekor:0)=1,,##PATINACHECK\n#LET indexloop=0\n#LETS testpatina=$(cvetvstavDek:17)\n#LETS modelvstav=$(matvstavDek:5)\n#LETS patinamodel=\n#DO\n   #LET indexloop=$(indexloop)+1\n   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]\n   #IF $[LEN;$(teststr)]>0\n      #IF $[INSTR;$(teststr);$(modelvstav)]>0\n         #LETS patinamodel=$(teststr)\n      #ENDIF\n   #ELSE\n      #BREAK 1\n   #ENDIF\n#LOOP  $(teststr)==\n#IF $[len;$(patinamodel)]>0\n   $[INSTR;$(patinamodel);$(_patinaDek:1)]>0 | $(_patinaDek:1)[999]\n#ELSE\n   #IF ($(matvstavDek:5)[$(cvetvstavDek:14)])\n      $(_patinaDek:1)[$(cvetvstavDek:17)] | $(_patinaDek:1)[999]\n   #ELSE\n      $(_patinaDek:5)=60251733\n   #ENDIF\n#ENDIF,,,,,,,,$(matvstavDek:5)[$(cvetvstavDek:14)]
 T,_factura,_facturaDek,$(_ModDoorRaspDek:1)[S26] & $(dekor:0)=1,,#IF $(_ModDoorRaspDek:1)[S26] & $(_patinaDek:5)!60251733\n   $(_ModDoorRaspDek:1)[$(_facturaDek:6)] & $(_facturaDek:4)!511193732\n#ELSE\n   $(_ModDoorRaspDek:1)[$(_facturaDek:6)]\n#ENDIF
-Z,dekKolSxDx,,$(dekor:0)=1,Декор. колонки,,,,,,,2,,$(tipshkaf:7)=1
-Z,dekKolSx,,$(dekor:0)=1,Декор. колон. слева,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)[2;4]
-Z,bokSx,,$(dekor:0)=1,Декор. бок. слева,,,,,,,,,$(dekKolSxDx:0) & $(dekKolSx:0) & $(_prist:0)!=1
-M,AltBokFasSx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokSx:0)=1,Высота нижней левой дек. бок.
-C,dekKolDx,,$(dekor:0)=1,Декор. колон. справа,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)[2;4]
-C,bokDx,,$(dekor:0)=1,Декор. бок. справа,,,,,,,,,$(dekKolSxDx:0) & $(dekKolDx:0) & $(_prist:0)!=2
-M,AltBokFasDx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokDx:0)=1,Высота нижней правой дек. бок.
-C,dekallure,,$(dekor:0)=1 & $(_ModDoorRaspDek:1)[S26],Кололнка Allure,,,,,,,3
-T,dkallvar,,$(dekallure:0)=1,Тип колонки,,,,,,,3
+Z,bokSx,,$(dekor:0)=1,Декор. бок. слева
+M,AltBokFasSx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokSx:0)=1,Высота нижней левой дек. бок.,,,,,,,3
+Z,dekKolSx,,$(dekor:0)=1,Декор. колон. слева,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)=2
+Z,bokDx,,$(dekor:0)=1,Декор. бок. справа
+M,AltBokFasDx,,$a-($(mat:1)+$(hzoc:0)+$(SaNapr)-2)>2280 & $(bokDx:0)=1,Высота нижней правой дек. бок.,,,,,,,3
+Z,dekKolDx,,$(dekor:0)=1,Декор. колон. справа,,,,,,,2,,$(tipshkaf:6)=2 & $(tipshkaf:7)=2
+C,dekallure,,$(dekor:0)=1 & $(_ModDoorRaspDek:1)[S26],Кололнка Allure
+T,dkallvar,,$(dekallure:0)=1,Тип колонки
 C,dekVst,,$(dekor:0)=1 & ($(tipshkaf:6)=2 & $(tipshkaf:7)=1) | ($(tipshkaf:6)=2 & $(tipshkaf:7)=2),Декоративная вставка
 Z,cornic,,$(dekor:0)=1,Карниз,,,,,,,2
-C,cornicSx,,$(dekor:0)=1 & $(cornic:0) & (not($(dekKolSxDx:0)) | not($(dekKolSx:0))) & $(_prist:0)!=1,Карниз слева
-C,cornicDx,,$(dekor:0)=1 & $(cornic:0) & (not($(dekKolSxDx:0)) | not($(dekKolDx:0))) & $(_prist:0)!=2,Карниз справа
 T,mat,matKn,,Материал ЛДСП,$(matKn:1)=16,,,,,,9,,0
 T,_colkarkas,_colkarkasKn,,Цвет каркаса колонки,#IF $(mat:1)=16\n   $(_colkarkasKn:1)=$(_colkarkas:1)\n#ELSE\n   #IF $[datecompare;$(dataordine);21.10.2021]<0\n      $(_colkarkasKn:1)=$(_colkarkas:19)\n   #ELSE\n      $(matkn:1)[$(_colkarkaskn:5)] & $(_colkarkaskn:1)!!024 & $(_colkarkaskn:20)[1] & $[datecompare;$(dataordine);$(_colkarkaskn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkaskn:23)]=-1 & $(productline:0)[$(_colkarkaskn:24)]\n   #ENDIF\n#ENDIF,,,,,,9,,$(dekor:0)=1
 
@@ -113,21 +116,25 @@ _komodliving
 //_MODUL
 //300
 //301
-//301
+//303
+//_DEKELEMCODE
+//_DEKOR
+//_DEKORE303
 //_DOORRASP
 //_SHKAFLIVING
 //_MODUL
 //_FASVID
+//_PASPORT
 //_PETLI
 //010
-//303
+//301
 //011
 //12
 //13
 //14
 //47
 //_SHKAF
-
+//_VIDMODULNK
 //_AGG_KREP
 //_placerDoors
 //_OLD_PLACE
@@ -137,6 +144,7 @@ _komodliving
 //VOLUME
 //_SHKAF
 //_LAMP
+//_VIDLIVINGBASE
 //KORPSHKAF
 //******for living macros*******
 //_korobLiving
@@ -145,13 +153,13 @@ _komodliving
 //_POLKASTEKLO
 //_karkasperegor
 //_POLKAKARKAS
-//_VIDLIVINGBASE
 //_pasteplacer
 //_NICOLECLASSIC3DS
 //ADDNAPliving
 //_PETLJA
 //_KORPVID
-
+//_FASVID
+//_PARAMANTASTR
 //VOLUMEliving
 //_VIDLIVINGBASE
 //NUMDET

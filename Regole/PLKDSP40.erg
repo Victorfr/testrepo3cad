@@ -37,7 +37,6 @@ C,krepGips,,0,Крепление к гипсокартону,,,,,,,2
 M,kolKrepGips,,$(krepGips:0)=1,Количество креплений,,,,1
 C,krepBeton,,0,Крепление к бетону/кирпичу,,,,,,,2
 M,kolKrepBeton,,$(krepBeton:0)=1,Количество креплений,,,,1
-C,hiddedmensolo,,,Крепление на скрытом менсолодержателе,,,,,,,,,0
 G,SCOSGRUPP
 
 [GRAFICA]
@@ -153,6 +152,7 @@ _DATABOX
 
 #IF $(ugolL_Up:0)=1 | $(ugolR_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Down:0)=1
    #LETS ido=1
+   #LETS idd=1
    #IF $(_typRipL_UP:1)[1] | $(_typRipR_UP:1)[1] | $(_typRipL_DOWN:1)[1] | $(_typRipR_DOWN:1)[1]
       #LETS cod=$(cod)RD
    #ELSE
@@ -213,7 +213,7 @@ _sagomaPolkProv
 #ENDIF
 #IF $(mat:1)=25
    #IF $(ugolL_Up:0)=1 | $(ugolL_Down:0)=1 | $(ugolR_Up:0)=1 | $(ugolR_Down:0)=1
-     // #LET profilError=2
+      #LET profilError=2
    #ENDIF
 #ENDIF
 

@@ -1,136 +1,139 @@
-!parametri latoBackWall=	addzoctop=0
+!parametri latoBackWall=	addzoctop=0	shRusal=0
 #VB
-dim massive
-addstr=V("strBigWall")
-massive=split(addstr	"|" )
-intcount=Ubound(massive)
-for n=0 to intcount
-for m=0 to intcount
-paramsX=Split(massive(m)	"|")
-paramsY=Split(massive(n)	"|")
-intposX=int(paramsX(0))
-intposY=int(paramsY(0))
-if m<>n then
-if intposX>intposY then
-tmp=massive(n)
-massive(n)=massive(m)
-massive(m)=tmp
-end if
-end if
-next
-next
-' msgbox join(massive	"X")
-V("testwalls")=join(massive	";")
+   dim massive
+   addstr=V("strBigWall")
+   massive=split(addstr	"|" )
+   intcount=Ubound(massive)
+   for n=0 to intcount
+      for m=0 to intcount
+         paramsX=Split(massive(m)	"|")
+         paramsY=Split(massive(n)	"|")
+         intposX=int(paramsX(0))
+         intposY=int(paramsY(0))
+         if m<>n then
+            if intposX>intposY then
+               tmp=massive(n)
+               massive(n)=massive(m)
+               massive(m)=tmp
+            end if
+         end if
+      next
+   next
+   ' msgbox join(massive	"X")
+   V("testwalls")=join(massive	";")
 #ENDVB
 #LETV testBigWall=$(testwalls)
 #LETV countBigWallFinish=$(countBigWall)
 ///отрисовка задних стенок при обьединении ниш
 #IF $(tipshkaf:6)=2 & $(_backWallDis:1)!1 & $[datecompare;$(dataordine);25.10.2021]>=0
-#IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020]
-#LETS mat_backwall:4=DSPLN8|CVET_VST
-#ENDIF
-#LET maxaltBackWall=2750
-#IF $(_COLKARKASBack:1)[058]
-#LET maxaltBackWall=2500
-#ENDIF
-#IF $(_COLKARKASBack:1)[061]
-#LET maxaltBackWall=2440
-#ENDIF
-#IF $(lkorp)<=1200 & $(countBigWallFinish)=0
-#LETV _wr=999KARKASZST
-#LETV _MNP=999KARKASZST
-#LET slBackWall=7//$(matvn:1)-9
-#LET lBackWall=$(lkorp)-14
-#LET altBackWall=$(akorp)-{$(hzoc:0)}-14
-#IF $(addzoctop)=1
-#LET altBackWall=$(altBackWall)-$(hzoctop:0)
-#ENDIF
-#IF $(TIPSHKAF:1)[11] #LET altBackWall=$(altBackWall)-60
-NUMDET	sa=$a-75	sl=$(slBackWall)+75	sp=15-$(p)
-#IF $(altBackWall)>$(maxaltBackWall)
-018	COD= /ERROR=1	SL=$(slBackWall)	SA=$(hzoc:0)+7	SP=0	L=$(lBackWall)	A=$(altBackWall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
-025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
-025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
-#ELSE
-#LETS backPar=$(mat_backwall:4)
-#LETS parName=$[estrai;$(backPar);|;2]
-#LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
-018	COD= /$(varBack)	SL=$(slBackWall)	SA=$(hzoc:0)+7	L=$(lBackWall) 	A=$(altBackWall)	P=$(mat_backwall:3)	lato=$(latoBackWall)	x9=$(virParBack)  // Задняя стенка ХДФ (ДСП)
-#ENDIF
-#LETS mis_zst=$(lBackWall)X$(altBackWall)|$(mis_zst)
-//      010
-//018	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)
-#ELSE
-#IF $(countBigWallFinish)>0
-#LETV _wr=999KARKASZST
-#LETV _MNP=999KARKASZST
-#LET testIndex=0
-//ADDNAP
-#LET wallxstart=$(matvn:1)
-#LET wallxfinish=$(lkorp)-$(matvn:1)
-#LET wallx1=$(wallxstart)
-#FOR $(testBigWall)//$0:$(countBigWallFinish)
-//#MSG $i
-#IF $(testindex)!$(countBigWallFinish)
-#LET wallx2= $I//$(testBigWall:$(testindex))
-//#MSG $(wallx1) xx $(wallx2)
-//#MSG $(testindex) x $(wallx1) $(wallx2) x111
-#IF $(wallx2)-$(wallx1)<1200
-///если стенка первая
-#LET slBackWall=7//$(wallx1)+7
-#LET lBackWall=$(wallx2)-$(wallx1)+$(matvn:1)-7-1+$(matvn:1)/2
-#LET altBackWall=$(akorp)-{$(hzoc:0)}-14
-#IF $(TIPSHKAF:1)[11] #LET altBackWall=$(altBackWall)-60
-#IF $(wallx1)!$(wallxstart)
-#LET slBackWall=$(wallx1)+$(mat:1)/2+1
-#LET lBackWall=$(wallx2)-$(wallx1)-1
-#ENDIF
-NUMDET	sa=$a-75	sl=$(slBackWall)+75	sp=15-$(p)
-#IF $(altBackWall)>$(maxaltBackWall)
-018	COD= /ERROR=1	SL=$(slBackWall)	SA=$(hzoc:0)+7	SP=0	L=$(lBackWall)	A=$(altBackWall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
-025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
-025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
-#ELSE
-#LETS backPar=$(mat_backwall:4)
-#LETS parName=$[estrai;$(backPar);|;2]
-#LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
-018	COD= /$(varBack)	SL=$(slBackWall)	SA=$(hzoc:0)+7	L=$(lBackWall) 	A=$(altBackWall)	P=$(mat_backwall:3)  // Задняя стенка ХДФ (ДСП)
-#ENDIF
-#LETS mis_zst=$(lBackWall)X$(altBackWall)|$(mis_zst)
-#ENDIF
-#LET wallx1=$(wallx2)
-#ELSE
-//#LET wallx2= $(testBigWall:$(testindex))
-#ENDIF
-#LET testindex={$(testindex)+1}
-#ENDFOR
-///финальная проверка
-#LET wallx2=$(wallxfinish)
-//#MSG $(testindex) x $(wallx1) $(wallx2) x 222
-#IF $(wallx2)-$(wallx1)<1200
-///если стенка первая
-#LET slBackWall=$(wallx1)-4
-#LET lBackWall=$(wallx2)-$(wallx1)+$(mat:1)/2-1+4
-#LET altBackWall=$(akorp)-$(matvn:1)-$(hzoc:0)+2
-#IF $(TIPSHKAF:1)[11] #LET altBackWall=$(altBackWall)-60
-#IF $(wallx1)!$(wallxstart)
-#LET slBackWall=$(wallx1)+$(mat:1)/2+1
-#LET lBackWall=$(wallx2)-$(wallx1)-1
-#ENDIF
-NUMDET	sa=$a-75	sl=$(slBackWall)+75	sp=15-$(p)
-#IF $(altBackWall)>$(maxaltBackWall)
-018	COD= /ERROR=1	SL=$(slBackWall)	SA=$(hzoc:0)+7	SP=0	L=$(lBackWall)	A=$(altBackWall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
-025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
-025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
-#ELSE
-#LETS backPar=$(mat_backwall:4)
-#LETS parName=$[estrai;$(backPar);|;2]
-#LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
-018	COD= /$(varBack)	SL=$(slBackWall)	SA=$(hzoc:0)+7	L=$(lBackWall) 	A=$(altBackWall)	P=$(mat_backwall:3)  // Задняя стенка ХДФ (ДСП)
-#ENDIF
-#LETS mis_zst=$(lBackWall)X$(altBackWall)|$(mis_zst)
-#ENDIF
-#ENDIF
-#ENDIF
+   #IF $(_colkarkasback:1)[140;141;142;143;203;224;210;193;204;192;139;020;167]
+      #LETS mat_backwall:4=DSPLN8|CVET_VST
+   #ENDIF
+   #LET maxaltBackWall=2750
+   #IF $(_COLKARKASBack:1)[058]
+      #LET maxaltBackWall=2500
+   #ENDIF
+   #IF $(_COLKARKASBack:1)[061]
+      #LET maxaltBackWall=2440
+   #ENDIF
+   #IF $(lkorp)<=1200 & $(countBigWallFinish)=0
+      #LETV _wr=999KARKASZST
+      #LETV _MNP=999KARKASZST
+      #LET slBackWall=7//$(matvn:1)-9
+      #LET lBackWall=$(lkorp)-14
+      #LET altBackWall=$(akorp)-{$(hzoc:0)}-14
+      #IF $(shRusal)=1
+         #LET altBackWall=$(altBackWall)+$(karkasSa)
+      #ENDIF
+      #IF $(addzoctop)=1
+         #LET altBackWall=$(altBackWall)-$(hzoctop:0)
+      #ENDIF
+      #IF $(TIPSHKAF:1)[11] #LET altBackWall=$(altBackWall)-60
+      NUMDET	sa=$a-75	sl=$(slBackWall)+75	sp=15-$(p)
+      #IF $(altBackWall)>$(maxaltBackWall)
+         018	COD= /ERROR=1	SL=$(slBackWall)	SA=$(hzoc:0)+7	SP=0	L=$(lBackWall)	A=$(altBackWall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+         025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+         025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+      #ELSE
+         #LETS backPar=$(mat_backwall:4)
+         #LETS parName=$[estrai;$(backPar);|;2]
+         #LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
+         018	COD= /$(varBack)	SL=$(slBackWall)	SA=$(hzoc:0)+7	L=$(lBackWall) 	A=$(altBackWall)	P=$(mat_backwall:3)	lato=$(latoBackWall)	x9=$(virParBack)  // Задняя стенка ХДФ (ДСП)
+      #ENDIF
+      #LETS mis_zst=$(lBackWall)X$(altBackWall)|$(mis_zst)
+      //      010
+      //018	SL=$(spostl_backwall)	SA=$(sposta_backwall)	SP=0	L=$(larg_backwall)	A=$(alte_backwall)	P=$(mat_backwall:3)
+   #ELSE
+      #IF $(countBigWallFinish)>0
+         #LETV _wr=999KARKASZST
+         #LETV _MNP=999KARKASZST
+         #LET testIndex=0
+         //ADDNAP
+         #LET wallxstart=$(matvn:1)
+         #LET wallxfinish=$(lkorp)-$(matvn:1)
+         #LET wallx1=$(wallxstart)
+         #FOR $(testBigWall)//$0:$(countBigWallFinish)
+            //#MSG $i
+            #IF $(testindex)!$(countBigWallFinish)
+               #LET wallx2= $I//$(testBigWall:$(testindex))
+               //#MSG $(wallx1) xx $(wallx2)
+               //#MSG $(testindex) x $(wallx1) $(wallx2) x111
+               #IF $(wallx2)-$(wallx1)<1200
+                  ///если стенка первая
+                  #LET slBackWall=7//$(wallx1)+7
+                  #LET lBackWall=$(wallx2)-$(wallx1)+$(matvn:1)-7-1+$(matvn:1)/2
+                  #LET altBackWall=$(akorp)-{$(hzoc:0)}-14
+                  #IF $(TIPSHKAF:1)[11] #LET altBackWall=$(altBackWall)-60
+                  #IF $(wallx1)!$(wallxstart)
+                     #LET slBackWall=$(wallx1)+$(mat:1)/2+1
+                     #LET lBackWall=$(wallx2)-$(wallx1)-1
+                  #ENDIF
+                  NUMDET	sa=$a-75	sl=$(slBackWall)+75	sp=15-$(p)
+                  #IF $(altBackWall)>$(maxaltBackWall)
+                     018	COD= /ERROR=1	SL=$(slBackWall)	SA=$(hzoc:0)+7	SP=0	L=$(lBackWall)	A=$(altBackWall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+                     025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+                     025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+                  #ELSE
+                     #LETS backPar=$(mat_backwall:4)
+                     #LETS parName=$[estrai;$(backPar);|;2]
+                     #LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
+                     018	COD= /$(varBack)	SL=$(slBackWall)	SA=$(hzoc:0)+7	L=$(lBackWall) 	A=$(altBackWall)	P=$(mat_backwall:3)  // Задняя стенка ХДФ (ДСП)
+                  #ENDIF
+                  #LETS mis_zst=$(lBackWall)X$(altBackWall)|$(mis_zst)
+               #ENDIF
+               #LET wallx1=$(wallx2)
+            #ELSE
+               //#LET wallx2= $(testBigWall:$(testindex))
+            #ENDIF
+            #LET testindex={$(testindex)+1}
+         #ENDFOR
+         ///финальная проверка
+         #LET wallx2=$(wallxfinish)
+         //#MSG $(testindex) x $(wallx1) $(wallx2) x 222
+         #IF $(wallx2)-$(wallx1)<1200
+            ///если стенка первая
+            #LET slBackWall=$(wallx1)-4
+            #LET lBackWall=$(wallx2)-$(wallx1)+$(mat:1)/2-1+4
+            #LET altBackWall=$(akorp)-$(matvn:1)-$(hzoc:0)+2
+            #IF $(TIPSHKAF:1)[11] #LET altBackWall=$(altBackWall)-60
+            #IF $(wallx1)!$(wallxstart)
+               #LET slBackWall=$(wallx1)+$(mat:1)/2+1
+               #LET lBackWall=$(wallx2)-$(wallx1)-1
+            #ENDIF
+            NUMDET	sa=$a-75	sl=$(slBackWall)+75	sp=15-$(p)
+            #IF $(altBackWall)>$(maxaltBackWall)
+               018	COD= /ERROR=1	SL=$(slBackWall)	SA=$(hzoc:0)+7	SP=0	L=$(lBackWall)	A=$(altBackWall)	P=$(mat_backwall:3)	C1=5  //Полка на стяжках	 зазор надо будет установить взависимости от толщины кромки
+               025	COD= / /Превышен MAX размер высоты пиломатериала задней стенки!	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+               025	COD= / /Рекомендуемый материал для требуемой высоты - ЛДСП 10 мм.	SL=$(spostl_backwall)+$(mat:1)	SA=$(alte_backwall)/2-100	L=$(larg_backwall)-$(mat:1)*2	sp=15 //сообщение об ошибке
+            #ELSE
+               #LETS backPar=$(mat_backwall:4)
+               #LETS parName=$[estrai;$(backPar);|;2]
+               #LETS varBack=MNP=$(_MNP:3);WR=$(_wr:3);$(parName)=$(_colkarkasback:8);NDS=$(ndet)
+               018	COD= /$(varBack)	SL=$(slBackWall)	SA=$(hzoc:0)+7	L=$(lBackWall) 	A=$(altBackWall)	P=$(mat_backwall:3)  // Задняя стенка ХДФ (ДСП)
+            #ENDIF
+            #LETS mis_zst=$(lBackWall)X$(altBackWall)|$(mis_zst)
+         #ENDIF
+      #ENDIF
+   #ENDIF
 #ENDIF
 /////

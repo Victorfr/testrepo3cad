@@ -29,6 +29,8 @@ T,cvetvstav,, ,Цвет,$(matvstav:5)[$(cvetvstav:3)] & $(matvstav:6)[$(cvetvstav:8)
 T,TxtVst,,$(cvetvstav:11)=1,,#IF $(matvstav:5)==s08\n   $(TxtVst:1)=1\n#ELSE\n   $(TxtVst:1)[0;1]\n#ENDIF,,,,,,,,$(matvstav:5)!!s08
 T,_patina,,,,##PATINACHECK\n#LET indexloop=0\n#LETS testpatina=$(cvetvstav:17)\n#LETS modelvstav=$(matvstav:5)\n#LETS patinamodel=\n#DO\n   #LET indexloop=$(indexloop)+1\n   #LETS teststr= $[ex;$(testpatina);|;$(indexloop)]\n   #IF $[LEN;$(teststr)]>0\n      #IF $[INSTR;$(teststr);$(modelvstav)]>0\n         #LETS patinamodel=$(teststr)\n      #ENDIF\n   #ELSE\n      #BREAK 1\n   #ENDIF\n#LOOP  $(teststr)==\n#IF $[len;$(patinamodel)]>0\n   $[INSTR;$(patinamodel);$(_patina:1)]>0 | $(_patina:1)[999]\n#ELSE\n   #IF ($(matvstav:5)[$(cvetvstav:14)])\n      $(_patina:1)[$(cvetvstav:17)] | $(_patina:1)[999]\n   #ELSE\n      $(_patina:5)=60251733\n   #ENDIF\n#ENDIF,,,,,,,,$(matvstav:5)[$(cvetvstav:14)]
 T,_factura,,$(_ModDoorRasp:1)[S26],,#IF $(_ModDoorRasp:1)[S26] & $(_patina:5)!60251733\n   $(_ModDoorRasp:1)[$(_factura:6)] & $(_factura:4)!511193732\n#ELSE\n   $(_ModDoorRasp:1)[$(_factura:6)]\n#ENDIF
+C,dekallure,,$(_ModDoorRasp:1)[S26],Кололнка Allure
+T,dkallvar,,$(dekallure:0)=1,Тип колонки
 M,altFas,,,Высота
 M,lantFas,,,Ширина
 
@@ -59,10 +61,16 @@ M,lantFas,,,Ширина
    #LETV altFas=356
    #LETV a=$(altFas)
 #ENDIF
+#LET maxA=2280
+#LET maxL=105
+#IF $(dekallure:0)=1
+   #LET maxa=2186
+   #LET maxL=100
+#ENDIF
 
-#IF $(altFas:0)>2280
-   #MSG Максимальная высота 2280 мм!
-   #LETV altFas=2280
+#IF $(altFas:0)>$(maxA)
+   #MSG Максимальная высота $(maxA) мм!
+   #LETV altFas=$(maxA)
    #LETV a=$(altFas)
 #ENDIF
 
@@ -72,11 +80,12 @@ M,lantFas,,,Ширина
    #LETV l=$(lantFas)
 #ENDIF
 
-#IF $(lantFas:0)>105
-   #MSG Максимальная ширина 105 мм!
-   #LETV lantFas=105
+#IF $(lantFas:0)>$(maxL)
+   #MSG Максимальная ширина $(maxL) мм!
+   #LETV lantFas=$(maxL)
    #LETV l=$(lantFas)
 #ENDIF
+
 
 ///gluhov////
 
@@ -109,22 +118,82 @@ M,lantFas,,,Ширина
 _dekElemCode,_nameParam=DEKELM,_facturaDek=$(_factura)
 
 //_DEKORe303
+//_DEKOR
 #LETS 3ds=dekKol.3ds
 #LETS draw=404879767 //0032_008
+
+
+
 
 #IF $(_ModDoorRasp:1)[S26]
    #LETS draw=463208907 //0033_008
 #ENDIF
+
+
+#LET flagAllure=0
+#IF $(dekallure:0)=1
+   #IF $(dkallvar:1)=1
+      #LETS 3ds=allure_DK_100.3DS
+      #LETS draw=686842696 //0017_562
+   #ENDIF
+   #IF $(dkallvar:1)=2
+      #LETS 3ds=allure_DKZ_100.3DS
+      #LETS draw=686842697 //0017_563
+   #ENDIF
+   #LET flagAllure={$(dkallvar:1)}
+#ENDIF
+//_DEKOR
+#IF $(flagAllure)[1;2]
+   //#LETV patinaolddek=$(_patinaDek)
+   #LETV _patina=999
+   #IF $(flagAllure)[1]
+      ///////////////////////////////////////
+      _dekElemCode,_nameParam=DEKKOLALR,_facturaDek=$(_factura)
+      ///////////////////////////////////////
+      _paramAntaDek,_patinaDek=$(_patina)
+      
+      // 303,C1=$(c1),MAN=0,X0=$(flagAllure)  //Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+   #ENDIF
+   
+   
+   #IF $(flagAllure)[2]
+      ///////////////////////////////////////
+      // _dekElemCode,_nameParam=DEKELMALR
+      //S26DEKELMPROF
+      #LETV _wr=$(_MODDOORRASP:1)DEKELMPROF
+      #LETV _MNP=$(_MODDOORRASP:1)DEKELMPROF
+      ///////////////////////////////////////
+      ///добавить наряд на вставку профиля
+      //001,COD=$(_wr:1) /$(paramAnta) /$(_wr:2),lato=6  //Test
+      ///////////////////////////////////////
+      // _dekElemCode,_nameParam=DEKELMALR
+      //S26DEKELMPROF
+      _paramAntaDek,_patinaDek=$(_patina)
+      
+      //303,C1=$(c1),MAN=0,X0=$(flagAllure)  //Дверь распашная G (декоративные элементы) (МДФ фрезерованная)
+      
+   #ENDIF
+   #LETS nameDet=$(_wr:2)
+#ENDIF
+
+
 ///выборка имени детали по номеру программы обработки и имени чертежа
-_getDekoreName
-#LETS namedet=$(dekDES)
+#IF $(flagAllure)=0
+   _getDekoreName
+   #LETS namedet=$(dekDES)
+   
+#ENDIF
 /////////////////////////////////////////////////////////////////////
 //!!!!!!!!!!!!!Замена маршрута на патинирование для декора!!!!!!!!!!!
 #IF $(_ModDoorRasp:1)[s08] & $(_patina:5)!60251733
    #LETS _MNP:3=480680448
 #ENDIF
+
+
+
 #IF $(_ModDoorRasp:1)[s26]
-   303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);FPL=N /$(namedet) /#l-1,MAN=0  //Боковина фасадная
+   
+   303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);FPL=N /$(namedet) /#l-1,MAN=0,X0=$(flagAllure)  //Боковина фасадная
 #ELSE
    303,COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(cvetvstav:9);NT=$(nt);PTN=$(_patina:5);NPO=$(draw);IDD=$(IDD);IDO=$(IDO);FPL=N;PRIP=$(PRIP) /$(namedet) /#l-1,MAN=0  //Боковина фасадная
 #ENDIF

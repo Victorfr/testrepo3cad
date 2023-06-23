@@ -42,8 +42,11 @@
    #ENDIF
 #ELSE
    _misuraLim
-   #IF $(flagCorrector)=1
-      #LETV correctorType=1
+   #IF $(flagCorrector)[1;2;4]
+      #LETV correctorType=$(flagCorrector)
+      #IF $(flagCorrector)[4]
+         #LETV correctorType=2
+      #ENDIF
    #ELSE
       #LETV correctorType=0
    #ENDIF
@@ -165,7 +168,7 @@
 #LETS LPBR=
 #LETV correctorCheck=X
 //_MISURALIM
-#IF $(flagCorrector)=2
+#IF $(flagCorrector)[2;4]
    #LETV correctorCheck=1
 #ENDIF
 // _MODFASAD
@@ -227,7 +230,7 @@ _dataBox
    #LET shkafPrist=$[ex;$(LOCP_BX0);|;11]
    #LETS FPL=  // параметр определяющий что элемент является плейсером
    //принимаем значение вариантов плейсера	 если дверь топлайн
-   #IF $(flagCorrector)=2
+   #IF $(flagCorrector)[2;4]
       !PLACERPAR varPar	5
       #IF $(varPar)!3
          #LETV _manProfPol=$(varPar)
@@ -448,7 +451,7 @@ _petliObr
          #LET slDoor=1
       #ENDIF
    #ENDIF
-   #IF $(flagCorrector)[2;3] //для дверей топлайн
+   #IF $(flagCorrector)[2;3;4] //для дверей топлайн
       #IF $(_manProfPol:1)[1;2] //1-left 2-right
          #LET largDoor=$l-1
          #IF $(_manProfPol:1)[2]
@@ -504,7 +507,7 @@ _petli	altDoor=$a
    #ENDIF
    001	l=14	p=5	a=$a-200	sa=100	sl=$(slCorr)	sp=-5	C1=1	lato=$(show_door)
 #ENDIF
-#IF $(flagCorrector)=2
+#IF $(flagCorrector)[2;4]
    #LET slCorr=150
    001	l=14	p=5	a=1990	sa=($a-1990)/2	sl=$(slCorr)-7	sp=-5	C1=1	lato=$(show_door)
    001	l=14	p=5	a=1990	sa=($a-1990)/2	sl=$l-$(slCorr)-7	sp=-5	C1=1	lato=$(show_door)

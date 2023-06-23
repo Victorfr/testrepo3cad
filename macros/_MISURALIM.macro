@@ -1,8 +1,6 @@
 !parametri flagKol=0
 #LET flag_door=1
-#LETV flagCorrector=0 
-#MSG $(_ModDoorRasp:1)
-#MSG $(_ModDoorRasp:2)
+#LETV flagCorrector=0
 #IF $(_ModDoorRasp:1)==s02 // ограничения по модели Mix 22
    #IF $(_TipDoorRasp:3)==S
       #IF ($A>=297 & $A<=716) & ($L>=296 & $L<=1196)
@@ -115,7 +113,7 @@
       #ENDIF
       ///
    #ELSE
-      #LET maxACor=3000//2500
+      #LET maxACor=2500
       #LET maxlCor=596
       ///ограничения изменились с 20.01.2021
       #IF $[datecompare;$(dataordine);20.01.2021]>=0 & $(_MODDOORRASP:1)[s26]
@@ -126,6 +124,8 @@
          #ENDIF
       #ENDIF
       #IF $(_ModDoorRasp:1)[s26]
+         #LET maxACor=3000
+         
          #IF $a>2500
             #LET maxLcor=800
          #ENDIF
@@ -139,6 +139,7 @@
             #LET maxLcor=400
          #ENDIF
       #ENDIF
+      
       //_shkaf
       /////
       #IF (($a>=2240 & $a<=$(maxACor) & $(_MODDOORRASP:1)[s26]) | ($a>=2240 & $a<=2280 & $(_MODDOORRASP:1)[s08])) & ($l>=295 & $l<=$(maxlCor)) //для корректоров
@@ -202,6 +203,13 @@
    #CASE 5:
       #LET maxMassDoor=22
    #ENDSELECT
+   //задача
+   #IF $a>=2180
+      #LETV flagCorrector=1
+      
+      #IF $L>=500 #LETV flagCorrector=4
+      
+   #ENDIF
    // #IF $(massaDoor)>$(maxMassDoor) #LET flag_door=22
 #ELSEIF $(_MODDOORRASP:1)[s27] //ice
    #LET minA=117
@@ -467,7 +475,27 @@
    #IF $(_TIPDOORRASP:3)[gw]
       #LET MinA=220
    #ENDIF
-   #IF ($a>=2185 & $a<=$(maxA)) & ($l>=295 & $l<=595)//595 //для корректоров
+   #LET maxLcor=595
+   #IF $(_ModDoorRasp:1)[s32]
+      #LET maxA=3000
+      
+      #IF $a>2500
+         #LET maxLcor=800
+      #ENDIF
+      #IF $a>2600
+         #LET maxLcor=700
+      #ENDIF
+      #IF $a>2700
+         #LET maxLcor=600
+      #ENDIF
+      #IF $a>2800
+         #LET maxLcor=400
+      #ENDIF
+   #ENDIF
+   
+   
+   
+   #IF ($a>=2185 & $a<=$(maxA)) & ($l>=295 & $l<=$(maxLcor))//595 //для корректоров
       #LETV flagCorrector=1
       #LETV txtvst=1
    #ELSE

@@ -42,7 +42,7 @@ C,show_verh,,,Скрыть крышку
 M,otstniz,,,,,,,,,,,,0
 M,otstverh,,,,,,,,,,,,0
 T,tipshkaf,,,Тип,$(tipshkaf:1)[2],,,,,,,,$(_primocaricamento)=1
-S,furNabor,,,,,,,,,,,,0
+S,furnabor
 T,varParamSkaf,,,,,,,,,,,,0
 Z,nisha,,0,Показать нишу
 M,pZast,,$(tipshkaf:0)[1;3;4],Глубина наполнения

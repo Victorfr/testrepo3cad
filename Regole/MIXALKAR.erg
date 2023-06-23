@@ -17,7 +17,7 @@ DIM.BLOCCA=0,0,0
 DIM.SPECIALI0,0,0
 MODOADD=
 SPEC=
-DIVIDER=VOLUMEmixal,ADDNAPmixal,$(mat:1)-$(ua),$(mat:1)+$(ua),$(mat:1),$(mat:1) ,$(matvn:1),$(matvn:1),4,$(matvn1),,,4
+DIVIDER=VOLUMEmixal,ADDNAPmixal,$(mat:1)-$(ua),$(mat:1)+$(ua),$(mat:1),$(mat:1) ,$(matvn:1),$(matvn:1),,$(matvn1),,,4
 TRADFLAGS=*,*,*,*,*
 
 
@@ -26,13 +26,14 @@ TRADFLAGS=*,*,*,*,*
 T,MODELLO
 S,oldUnico,,,,,,,,,,,,0
 S,maxStekloL,,,,,,,,,,,,0
+C,shMantera,,,Шкаф Мантера
+C,shrusal,,,Шкаф Rusal
 S,stekloCount,,,количество полок в шкафу,,,,,,,,,0
 S,stekloCountScene,,,количество полок в сцене,,,,,,,,,0
 S,stekloSize,,,макс размер стекла,,,,,,,,,0
 S,steklosizemax,,,итог макс стекла,,,,,,,,,0
 S,hdfsizemax,,,макс размер хдф,,,,,,,,,0
 S,hdfsize,,,размер хдф,,,,,,,,,0
-S,provobr,,,,,,,,,,,,0
 S,onlyHDF,,,,,,,,,,,,0
 S,testBigWall,,,,,,,,,,,,0
 S,countBigWallFinish,,,,,,,,,,,,0
@@ -52,20 +53,29 @@ T,TSH,,,,,,,,,,,,0
 T,SHPR,,,,,,,,,,,,0
 C,hideNums,,,Скрыть номера деталей
 T,in_size
-T,matGl,,,Материал внешних панелей,$(matGl:1)=22,,,,,,,,$(_primocaricamento)=1
+T,matGl,,,Материал внешних панелей,$(matGl:1)[18;22],,,,,,,,$(_primocaricamento)=1
 T,mat,,,Материал внеш. панелей,$(mat:1)=$(matGl:1)
 T,typeKarkas,,,Тип каркаса,$(typeKarkas:1)=3,,,,,,,,0
 T,_colkarkas,,,Цвет внешних панелей,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(productline:0)[$(_colkarkas:24)],,,,,,2
 T,_ugolColor,,,Цвет уголка,$(_ugolColor:3)[$(_colkarkas:13)],,,,,,,,0
-T,mat,matvn,,Материал полок,$(matvn:1)[22;25]
+T,mat,matvn,,Материал полок,#IF $(matGl:1)[18]\n   $(matvn:1)[18]\n#ELSE\n   $(matvn:1)[22;25]\n#ENDIF
 T,_colkarkas,_colkarkasvn,,Цвет полок,$(matvn:1)[$(_colkarkasvn:5)] & $(_colkarkasvn:1)!!024 & $(_colkarkasvn:20)[1] & $[datecompare;$(dataordine);$(_colkarkasvn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasvn:23)]=-1 & $(productline:0)[$(_colkarkasvn:24)],,,,,,2
 T,tipshkaf,,,Тип,,,,,,,,,0
 T,varParamSkaf,,,,,,,,,,,,0
-T,mat_backwall,,,Материал задней стенки,$(mat_backwall:3)[8;10]
-T,_colkarkas,_colkarkasback,,Цвет задней стенки,$(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(productline:0)[$(_colkarkasback:24)],,,,,,2
+Z,addzoc,, $(shrusal)=1,Цоколь
+M,hzoc,,$(addzoc:1)=1,Высота цоколя,,,,40,150
+C,addzoctop,,$(shMantera)=1,Цоколь сверху
+C,hidezoctop,,$(shMantera)=1 & $(addzoctop:1)=1,Убрать цоколь
+M,hzoctop,,$(addzoctop:0)=1,Высота цоколя,,,,40,150
+T,mat_backwall,,,Материал задней стенки,#IF $(shMantera:1)[1] | $(shrusal:1)[1]\n   $(mat_backwall:3)[TSS]\n#ELSE\n   $(mat_backwall:3)[8;10]\n#ENDIF
 C,_backWallDis,,,Убрать задние стенки,,,,,,,,,0
+T,_colkarkas,_colkarkasback,,Цвет задней стенки,#IF $(shMantera)=1\n   MANTERA[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(productline:0)[$(_colkarkasback:24)]\n#ELSE\n   $(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(productline:0)[$(_colkarkasback:24)]\n#ENDIF,,,,,,2
 Z,addNogMixal,,,Ножки,,,,,,,,,0
-C,lamp,,$(mat:1)>16 & $p>=300,Врезной светильник
+C,lamp,,$(mat:1)>16 & $p>=300,Врезной светильник,,,,,,,3
+Z,lampleft,,$(lamp:0)=1,Слева,,,,,,,3
+Z,lampright,,$(lamp:0)=1,Справа,,,,,,,3
+M,lampoffset,,$(lamp:0)=1,Смещение,,,,50,,,3
+G,VIRESGROUP,,,Обклад
 -,sepDoors,,,Двери
 T,countDoorMl,,,Количество дверей
 T,largShMixal,,$(countDoorMl:1)!999,Ширина шкафа,$(largShMixal:3)[$(countDoorMl:1)],,,,,,2
@@ -95,14 +105,7 @@ _shkafmixal
 //_FINALEMIXAL
 //_placerMixal
 //_PASTEPLACER
-//_GABARITLIMIT
 //_OLD_PLACE
 //_DOOR
 //_SHKAF
 //064
-//_LAMP
-//001
-//001
-//001
-//_testmacro
-//_FIGURA

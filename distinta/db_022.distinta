@@ -1,0 +1,68 @@
+#LETS modprof=$(x4:0)
+#LETS art=$(x4:1)
+#LETS cod=$(modprof)GOR_VPR
+#IF $(modprof)==ar2 #LETS cod=$(modprof)GOR_NPR
+
+#LETS sks=$(x7:5)
+#LETS idbrand=$(x7:1)
+#LETS idname=$(x7:2)
+#LETS idukp=$(x7:3)
+#LETS coordY=$(x7:0)
+#LETS paramsX=$(x7:4)
+#LETS idoid=$(x7:6)
+#IF $(idoid)==
+   #LETS ido=1
+#ENDIF
+
+
+
+
+#LETS mat_add=
+#IF $(modprof)[ar3]
+   #M MnpWrNamedet,cod=ar3profkr2V
+   //длина передается в высоту так как в форматке мр3 этот класс и для вертикального и для горизонтального используется
+   AR3PROFKR2V,1,OCF=$(x4:2);MNP=$(mnp);WR=$(wr),$(da),$(dl),,,,,,,$(namedet),$(mat)_1
+   #LETS mat_add=.1
+#ENDIF
+
+#M MnpWrNamedet,cod=$(cod)
+
+#LETS paramProf=MNP=$(mnp);WR=$(wr)
+#LETS paramPilomat=
+
+
+#IF $(modprof)!!ar3
+   #LETS paramProf=_cprof=$(x4:2);$(paramProf)
+   #LETS paramPilomat=_cprof=$(x4:2)
+#ENDIF
+//рамка горизонтальная узкая
+#IF $(modprof)[ar2]// & $(art_polufab)[GOR_NPR]
+   #M letsks,profLenght=$(dl)
+   #LETS jobName=D3
+   #LETS paramProf=$(paramProf);BRD=$(idbrand);PRF=$(idname);UKP=689985695;IDO=$(idoid)
+   #LET parGLU={$[estrai;$(paramsX);|;3]}
+   #LET parY={$(coordY)}
+   
+   #VB
+      stringSKS=V("sks")
+      stringSKS=Replace(stringSKS,"|",";")
+      V("strSks")=stringSKS
+   #ENDVB
+   #IF $(strSKS)!!
+      #FOR $(strSKS)
+         #LET parX={$(I)}
+         obrabotka,,,,,,{6};$(jobName);X=$(parX);Y=5.9;GLU=7;IDO=$(idoid)
+      #ENDFOR
+   #ENDIF
+#ENDIF
+
+#IF $(modprof)[ar1]
+   $(cod),1,$(paramProf),$(dl),,,,,,,,$(namedet),$(mat)_1$(mat_add)
+#ELSEIF $(modprof)!!AR3
+   $(cod),1,$(paramProf),$(da),$(dl),$(dp),,,,,,$(namedet),$(mat)_1$(mat_add)
+#ELSE
+   $(cod),1,$(paramProf),$(dl),$(da),,,,,,,$(namedet),$(mat)_1$(mat_add)
+#ENDIF
+!{
+999$(art),{$(dl)/1000},$(paramPilomat),$(dl),,,,,,,,,$(mat)_1.1$(mat_add)
+!}

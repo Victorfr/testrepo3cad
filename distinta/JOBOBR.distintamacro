@@ -1,0 +1,787 @@
+#IF $(obr)!!
+#ELSE
+   999,1,ERROR=1,1,1,1,,,,,,Необходимо выполнить пересчет проекта!,$(mat)
+#ENDIF
+#IF $(soed_str)==
+   #LETS soed_str=.
+#ENDIF
+#LETS mat_add_kr=$(mat_add)$(soed_str)100
+#LETS mat_add_obr=//$(mat_add)$(soed_str)100
+#LET obr_count=$[ex;$(obr);|;1]//число обработок в данной типологии
+#LETS teststr=$[EX;$(obr);|;3]
+#LET count=$(obr_count)
+#LET mat_ind=0
+#LETS type_obr=$(x4:0)
+#LETS TIPSHKAF=$(x6:4)
+////временно/////
+#LETS type_obr_st=d20g14
+#IF $(cod_mat)==LDSP16 #LETS type_obr_st=d20g12.5
+#IF $(cod_mat)==LDSPN16 #LETS type_obr_st=d20g12.5
+#LETS type_obr=d5g13
+#IF $(TIPSHKAF)=1 #LETS type_obr_st=d3g5, type_obr=d3g5
+#LETS type_obr_st_karkas=$(type_obr_st)
+#LET flagLiving=0
+#LET HstagKarkas=9.5
+#IF $(x4:0)==rastex
+   #LETS type_obr_st_karkas=D15G{$(matSt)/2+5}
+   #LET flagLiving=1
+   #LET HstagKarkas=24
+   #LET storonaSt=$(x4:6)
+#ENDIF
+#LET Ldet=0
+#LET index_krep=1
+//////
+#LETS det_mod=$(x5:2)
+#LETS noPaz=$(x5:3)
+///////////////////////////////
+#LET has_back_obr=0
+#FOR $1:$(COUnt)
+   #LETS testobr=$[ex;$(obr);|;{$(i)+1}]
+   //параметры примыкающей типологии
+   //координеты относительно текущей типологии
+   #LET tipo=$[ex;$(testobr);X;1]
+   #LET xl=$[ex;$(testobr);X;2]
+   #LET xa=$[ex;$(testobr);X;3]
+   #LET xp=$[ex;$(testobr);X;4]
+   #LET xdl=$[ex;$(testobr);X;5]
+   #LET xda=$[ex;$(testobr);X;6]
+   #LET xdp=$[ex;$(testobr);X;7]
+   #LETS lati=$[ex;$(testobr);x;8]
+   #LETS sposts=$[ex;$(testobr);x;9]
+   #LETS _spostal=$[ex;$(sposts);O;1]
+   #LETS _spostaa=$[ex;$(sposts);O;2]
+   #LETS _spostap=$[ex;$(sposts);O;3]
+   #LETS main_tipo=$[ex;$(testobr);x;10]//номер главной типологии (текущей)
+   #LETS typeOpenDoors=$[ex;$(testobr);x;11]
+   ////обработки по типу типологий
+   #LET naprProf=100
+   #IF $(typeOpenDoors)!1
+      #LET naprProf=0
+   #ENDIF
+   #LETS lati=$[ex;$(lati);*;2]
+   // #IF $(main_tipo)=102 & $(tipo)=27
+   //  #MSG $(lati)
+   // #ENDIF
+   #IF $(lati)=0 #LET lato=2
+   #IF $(lati)=1 #LET lato=1
+   #IF $(main_tipo)=107 & $(tipo)=108 & $(lati)=0
+      #LET lati=4
+   #ENDIF
+   #IF $(main_tipo)=108 & $(tipo)=107 & ($(lati)=0 | $(lati)=1)
+      #LET lati=5
+   #ENDIF
+   //0 - справа
+   //1 - слева
+   //2 - под
+   //3 - над
+   //4 - спереди
+   //5 - сзади
+   #IF $(main_tipo)=12 | $(main_tipo)=13
+      //#MSG $(main_tipo) xx $(tipo)
+      #IF $(tipo)=18// & not($(main_tipo)=12 & $(noPaz)=1)
+         #IF $(has_back_obr)!1 & $(xp)>=0
+            #IF $(main_tipo)=12 #LET lato=1
+            #IF $(main_tipo)=13 #LET lato=2
+            //  !c обработка под заднюю стенку
+            #LET xstart=0
+            #LET xend=$(dl)
+            #IF $(xl)>0
+               #LET xstart=7//9
+               #LET xend={$(dl)-7}
+            #ENDIF
+            #IF $(xp)>$(XDP)
+               obrabotka,,,,,,{$(lato)};UPAZ;H=4;G=5;x={$(xstart)};y={$(xp)+4};xf=$(xend);yf={$(xp)+4},,,,,,$(mat_add_obr)
+            #ELSE
+               //obrabotka,,,,,,{$(lato)};PAZ11;x={0};y={10};xf=$(dl);yf=10,,,,,,$(mat_add_obr)
+               obrabotka,,,,,,{$(lato)};PAZ12;x={$(xstart)};y={10};xf=$(xend);yf=10,,,,,,$(mat_add_obr)
+            #ENDIF
+            #LET has_back_obr=1
+         #ENDIF
+      #ENDIF
+   #ENDIF
+   #IF $(lati)=2 | $(lati)=3
+      #IF $(main_tipo)=13 | $(main_tipo)=12 | $(main_tipo)=102
+         #IF $(tipo)=14 //пересечение с перегородкой
+            //!c обработки под перегородку
+            #IF $(lati)=2 #LET Ysm=5 //если касание под. то правая боковина
+            #IF $(lati)=3 #LET Ysm=-5 //если касание над. то левая боковина
+            #IF $(lati)=2 #LET lato=2
+            #IF $(lati)=3 #LET lato=1
+            //глубина расчета крепежа будет -100, так как надо учесть профиль направляющих на крышке (100 от переда)
+            #M get_vars, ldet={$(xdp)}
+            #LET st_count=$(Nst)-1
+            //#MSG $(pl) || $(xl)
+            #IF $(xdl)<=16
+               #LET Hsm=$(xdl)/2
+               //#LET x_per=$(_spostal)-$(Hsm)
+            #ELSEIF $(xdl)>16
+               #LET Hsm=9.5
+               //#LET x_per={$(_spostal)-$(da)+$(xdl)-$(Hsm)}
+            #ENDIF
+            ////////test/////////
+            #LET x_per={$(_spostal)-$(pl)+$(xdl)-$(Hsm)}
+            /////////////////////
+            #IF $(det_mod)=1
+               #LET x_per=$(xl)+$(Hsm)
+               #IF $(xl)>100 #LET x_per=$(xl)+$(xdl)-$(Hsm)
+            #ENDIF
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{$(lato)};$(type_obr);x={$(x_per)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm))},,,,,,$(mat_add_obr)
+            #ENDFOR
+         #ENDIF
+         #IF $(tipo)=47 // сверление под ножку
+            // !c обработка дна под ножку
+            // #MSG $(xl)  X $(_spostal)  x $(pl)
+            obrabotka,,,,,,{2};D7G;x={$(xl)+$(_spostal)};y={$(xp)},,,,,,$(mat_add_obr)
+            ///test
+            #IF 0
+               #LET Yotv={$(xp)}
+               #M get_vars, ldet={$(dp)-70-$(naprProf)}
+               #IF $(xl)<$(dl)/2
+                  #LET Ysm={-5+70}
+               #ENDIF //если касание слева.
+               #IF $(xl)>$(dl)/2
+                  #LET Ysm={5+70} //если касание справа.
+               #ENDIF
+               #LET st_count=$(Nst)-1
+               //#MSG $(lotv) xxx {$(st_count)*$(lstep)+$(lotv)} $(dp)
+               #LET yst1=$(lotv)+$(Ysm)
+               #LET yst2={$(st_count)*$(lstep)+$(lotv)+$(Ysm)}
+               #MSG $(yotv) $(yst1) $(yst2)
+               #IF abs($(Yotv)-$(yst1))<18.5
+                  #IF $(yotv)>$(yst1)
+                     #LET Yotv=$(yst1)+18.5
+                  #ENDIF
+                  #IF $(yotv)<$(yst1)
+                     #LET Yotv=$(yst1)-18.5
+                  #ENDIF
+               #ENDIF
+               #IF $(st_count)>1
+                  #IF abs($(Yotv)-$(yst2))<18.5
+                     #IF $(yotv)>$(yst2)
+                        #LET Yotv=$(yst2)+18.5
+                     #ENDIF
+                     #IF $(yotv)<$(yst2)
+                        #LET Yotv=$(yst2)-18.5
+                     #ENDIF
+                  #ENDIF
+               #ENDIF
+               obrabotka,,,,,,{2};D7G;x={$(xl)+$(_spostal)};y={$(Yotv)},,,,,,$(mat_add_obr)
+            #ENDIF
+            ///test
+         #ENDIF
+         #IF $(tipo)=27 // сверление перемычку цоколя
+            // !c обработка дна под перемычку цоколя
+            //#MSG {$(_spostal)-$(xdp)/2 -$(pl)} ||| {$(xl)+$(_spostal)+$(xdp)/2} || $(pl)
+            //#LET x_per_zoc={$(_spostal)-$(xdp)/2} /// старое значение
+            #LET x_per_zoc={$(xl)+$(_spostal)+$(xdp)/2}
+            #IF $(x_per_zoc)>=$(da) & $(x_per_zoc)<=$(dl)-$(da)
+               obrabotka,,,,,,2;D7G;x=$(x_per_zoc);y={68+$(xp)-$(xdl)-$(da)},,,,,,$(mat_add_obr)
+               obrabotka,,,,,,2;D7G;x=$(x_per_zoc);y={$(xp)+$(da)-68},,,,,,$(mat_add_obr)
+            #ENDIF
+         #ENDIF
+         #IF ($(tipo)=10 | $(tipo)=11 ) & $(main_tipo)=13
+            //!c обработки под боковину
+            #IF $(tipo)=10 #LET Ysm=-5 //если левая боковина
+            #IF $(tipo)=11 #LET Ysm=5 //если правая боковина
+            #LET lato=2
+            #IF $(flagLiving)=1
+               #LET ldet=$(xdp)-70
+               #LET hsmLiving=70
+            #ELSE
+               #LET ldet=$(xdp)
+               #LET hsmLiving=0
+            #ENDIF
+            #M get_vars, ldet={$(ldet)}
+            #LET st_count=$(Nst)-1
+            #IF $(xdl)<=16 | $(flagLiving)=1
+               #LET Hsm=$(xdl)/2
+            #ELSEIF $(xdl)>16
+               #LET Hsm=9.5
+            #ENDIF
+            #FOR $0:$(st_count)
+               #IF $(tipo)=10
+                  obrabotka,,,,,,{$(lato)};$(type_obr);x={$(xdl)-$(Hsm)+$(xl)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm)+$(hsmLiving))},,,,,,$(mat_add_obr)
+               #ELSEIF $(tipo)=11
+                  obrabotka,,,,,,{$(lato)};$(type_obr);x={$(Hsm)+$(xl)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm)+$(hsmLiving))},,,,,,$(mat_add_obr)
+               #ENDIF
+            #ENDFOR
+         #ENDIF
+         #IF ($(tipo)=10 | $(tipo)=11 ) & $(main_tipo)=12
+            //!c обработки под боковину
+            #IF $(tipo)=10 #LET Ysm=-5 //если левая боковина
+            #IF $(tipo)=11 #LET Ysm=5 //если правая боковина
+            #LET lato=1
+            #M get_vars, ldet={$(xdp)}
+            #LET st_count=$(Nst)-1
+            #IF $(xdl)<=16 | $(flagLiving)=1
+               #LET Hsm=$(xdl)/2
+            #ELSEIF $(xdl)>16
+               #LET Hsm=9.5
+            #ENDIF
+            #FOR $0:$(st_count)
+               #IF $(tipo)=10
+                  obrabotka,,,,,,{$(lato)};$(type_obr);x={$(xdl)-$(Hsm)+$(xl)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm))},,,,,,$(mat_add_obr)
+               #ELSEIF $(tipo)=11
+                  obrabotka,,,,,,{$(lato)};$(type_obr);x={$(Hsm)+$(xl)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm))},,,,,,$(mat_add_obr)
+               #ENDIF
+            #ENDFOR
+         #ENDIF
+      #ELSEIF $(main_tipo)=27
+         obrabotka,,,,,,5;D5G40;x={68-$(dp)};y=0,,,,,,$(mat_add_obr)
+         obrabotka,,,,,,5;D5G40;x={$(dl)+$(dp)-68};y=0,,,,,,$(mat_add_obr)
+      #ELSEIF $(main_tipo)=14 //главная-перегородка
+         #IF $(tipo)=13 | $(tipo)=12
+            //!c обработки под крышку/дно
+            #IF $(lati)=2 #LET Ysm=-5 //если касание под.
+            #IF $(lati)=3 #LET Ysm=5 //если касание над.
+            #LET lato=2
+            #IF $(xl)>-100 & $(det_mod)=1 // для перегородки внутри модуля выдвижных
+               #LET lato=1
+            #ENDIF
+            #M get_vars, ldet={$(dp)}
+            #LET st_count=$(Nst)-1
+            #IF $(lati)=3
+               #LET Hstag=$(da)-9.5 //сверху
+               #LET addSh=-2.5
+            #ENDIF
+            #IF $(lati)=2
+               #LET Hstag=9.5 //снизу
+               #LET addSh=2.5
+            #ENDIF
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{$(lato)};$(type_obr_st);x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               #IF $(det_mod)=1
+                  obrabotka,,,,,,{$(lato)};D7G;x={$(Hstag)+$(addSh)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               #ENDIF
+            #ENDFOR
+         #ENDIF
+         #IF $(tipo)=15
+            //!c обработки под полку
+            #IF $(lati)=2 #LET Ysm=-5 //если касание справа.
+            #IF $(lati)=3 #LET Ysm=5 //если касание слева.
+            #LET lato=2
+            #IF $(xdp)>=650
+               #M get_vars, ldet={$(xdp)}
+            #ELSE
+               #M get_polkotv,ldet={$(xdp)}
+            #ENDIF
+            #LET st_count=$(Nst)-1
+            #IF $(xda)<=16
+               #LET Hsm=$(xda)/2
+            #ELSEIF $(xda)>16
+               #LET Hsm=9.5
+            #ENDIF
+            #IF $(lati)=3 #LET Hstag=$(da)-9.5 //снизу
+            #IF $(lati)=2 #LET Hstag=9.5 //сверху
+            #IF $(TIPSHKAF)=1 //встраиваемый шкаф смещения под уголки
+               #IF $(lati)=3 #LET Hstag=$(da)-13//18 //снизу
+               #IF $(lati)=2 #LET Hstag=13//18 //сверху
+            #ENDIF
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{$(lato)};$(type_obr_st);x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm)+$(xp))},,,,,,$(mat_add_obr)
+            #ENDFOR
+         #ENDIF
+      #ELSEIF $(main_tipo)=10 | $(main_tipo)=11 //главная - левая или правая боковина
+         #IF $(tipo)=12 | $(tipo)=13
+            //!c обработка под крышку
+            #IF $(flagLiving)=1 & $(tipo)=13
+               #LET ldet=$(dp)-70
+               #LET hsmLiving=70 //отступ чтобы не попадать на навесы
+            #ELSE
+               #LET ldet=$(dp)
+               #LET hsmLiving=0
+            #ENDIF
+            #M get_vars, ldet={$(ldet)}
+            #IF $(main_tipo)=10
+               #LET lato=2,Ysm=-5
+               #IF $(flagLiving)=1
+                  #IF $(storonaSt)=2 #LET lato=1
+               #ENDIF
+            #ENDIF
+            #IF $(main_tipo)=11
+               #LET lato=1,Ysm=5
+               #IF $(flagLiving)=1
+                  #IF $(storonaSt)=2 #LET lato=2
+               #ENDIF
+            #ENDIF
+            #IF $(xda)<=16
+               #LET Hsm=$(xda)/2
+            #ELSEIF $(xda)>16
+               #LET Hsm=9.5
+            #ENDIF
+            #LET st_count=$(Nst)-1
+            #IF $(lati)=3 #LET Hstag=$(da)-$(HstagKarkas) //снизу
+            #IF $(lati)=2 #LET Hstag=$(HstagKarkas) //сверху
+            #FOR $0:$(st_count)
+               // obrabotka,,,,,,{$(lato)};$(type_obr_st);x={$(xa)+$(Hsm)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               obrabotka,,,,,,{$(lato)};$(type_obr_st_karkas);x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm)+$(hsmLiving))},,,,,,$(mat_add_obr)
+               #IF $(flagLiving)=1
+                  #IF $(lati)=3
+                     obrabotka,,,,,,{3};D8G30;y={($(Lotv)+$(lstep)*$i+$(Ysm)+$(hsmLiving))},,,,,,$(mat_add_obr)
+                  #ELSE
+                     obrabotka,,,,,,{4};D8G30;y={($(Lotv)+$(lstep)*$i+$(Ysm)+$(hsmLiving))},,,,,,$(mat_add_obr)
+                  #ENDIF
+               #ENDIF
+            #ENDFOR
+         #ENDIF
+         #IF $(tipo)=60
+            obrabotka,,,,,,{4};D8G14.5;y=$(xp),,,,,,$(mat_add_obr)
+         #ENDIF
+      #ELSEIF $(main_tipo)=15 // главная - полка на стяжках
+         #IF $(tipo)=14 //пересечение с перегородкой
+            //!c обработка под перегородку
+            #IF $(dp)>=650
+               #M get_vars, ldet={$(dp)}
+            #ELSE
+               #M get_polkotv,ldet={$(dp)}
+            #ENDIF
+            #IF $(lati)=2 #LET lato=2,Ysm=+5
+            #IF $(lati)=3 #LET lato=1,Ysm=-5
+            #IF $(xdl)<=16
+               #LET Hsm=$(xdl)/2
+            #ELSEIF $(xdl)>16
+               #LET Hsm=9.5
+            #ENDIF
+            #LET st_count=$(Nst)-1
+            //для встраиваемого шкафа смещения под уголки
+            #IF $(TIPSHKAF)=1
+               #LET Hsm=-13//18
+            #ENDIF
+            //#MSG ($(_spostal)-$(x5:4))+$(xdl)-$(Hsm)
+            #LET spostStag={($(_spostal)-$(x5:4))+$(xdl)-$(Hsm)}
+            ///$(spostStag)!0 & $(spostStag)!$(dl)
+            //#MSG $(spostStag)>=$(xdl)/2 & $(spostStag)<$(dl) & abs($(spostStag)-$(dl))>=$(xdl)/2 || $(spostStag)
+            #IF $(spostStag)>=$(xdl)/2 & $(spostStag)<=$(dl)-$(xdl)/2//  & abs($(spostStag)-$(dl))>=$(xdl)/2
+               #FOR $0:$(st_count)
+                  obrabotka,,,,,,{$(lato)};$(type_obr);x={($(_spostal)-$(x5:4))+$(xdl)-$(Hsm)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               #ENDFOR
+            #ENDIF
+         #ENDIF
+      #ENDIF
+   #ENDIF
+   #IF $(lati)=0 | $(lati)=1
+      #IF $(tipo)=13//пересечение с КРЫШкой
+         //!C обработки крышки
+         #IF $(lato)=1 #LET Ysm=5 //если касание слева. то правая боковина
+         #IF $(lato)=2 #LET Ysm=-5 //если касание слева. то левая боковина
+         //глубина расчета крепежа будет -100, так как надо учесть профиль направляющих на крышке (100 от переда)
+         #M get_vars, ldet={$(xdp)-$(naprProf)}
+         #LET st_count=$(Nst)-1
+         #IF $(xda)<=16 | $(flagLiving)=1
+            #LET Hsm=$(xda)/2
+         #ELSEIF $(xda)>16
+            #LET Hsm=9.5
+         #ENDIF
+         #FOR $0:$(st_count)
+            obrabotka,,,,,,{$(lato)};$(type_obr);x={$(xa)+$(Hsm)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm))},,,,,,$(mat_add_obr)
+            #M addkrepeg,cod_krep=999DUBVB,count_krep=1
+            #M addkrepeg,cod_krep=999EXVB,count_krep=1
+            #M addkrepeg,cod_krep=999ZAGVBSilv,count_krep=1
+         #ENDFOR
+      #ELSEIF $(tipo)=42 | $(tipo)=43 //левая направляющая выдвижного ящика касается боковины или перегородки
+         // ************************************************** старые направляющие ***********************************************
+         #LET delta_sv_napr=128
+         #IF $(xdp)=450 #LET delta_sv_napr=192
+         #IF $(xdp)=500 #LET delta_sv_napr=224
+         // ************************************************ новые направляющие **************************************************
+         #IF $(xdp)=251 #LET delta_sv_napr=142
+         #IF $(xdp)=401 #LET delta_sv_napr=224
+         #IF $(xdp)=451 #LET delta_sv_napr=256
+         #IF $(xdp)=501 #LET delta_sv_napr=288
+         // ***********************************************************************************************************************
+         //!C присадка под напр-ю выдвиж ящ
+         obrabotka,,,,,,{$(lato)};D5G13;x={$(xa)+$(_spostaa)+20};y={$(dp)-37-$(_spostap)},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D5G13;x={$(xa)+$(_spostaa)+20};y={$(dp)-37-32-$(_spostap)},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D5G13;x={$(xa)+$(_spostaa)+20};y={$(dp)-37-$(delta_sv_napr)-$(_spostap)},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D5G13;x={$(xa)+$(_spostaa)+20};y={$(dp)+32-37-$(delta_sv_napr)-$(_spostap)},,,,,,$(mat_add_obr)
+      #ELSEIF $(tipo)=44
+         // !c обработка боковин под врезной светильник
+         //xp- положение относительно этой типологии касающейся типологии
+         //#MSG {$(xp)+$(xdp)} xxx {$(dp)-224+4}
+         ///было
+         //  obrabotka,,,,,,{$(lato)};UPAZ;H=4;G=10;x={0};y={$(dp)-224+4};xf=$(da);yf={$(dp)-224+4},,,,,,$(mat_add_obr)
+         ////стало
+         obrabotka,,,,,,{$(lato)};UPAZ;H=4;G=10;x={0};y={$(xp)+$(xdp)};xf=$(da);yf={$(xp)+$(xdp)},,,,,,$(mat_add_obr)
+      #ELSEIF $(tipo)=12 //пересечение с дном
+         //!C обработка под дно
+         //глубина расчета крепежа будет -100 для шкафа, для модуля будет глубина детали, так как надо учесть профиль направляющих на крышке (100 от переда)
+         #LET ldet={$(xdp)-70-$(naprProf)}
+         #IF $(det_mod)=1 | $(xdp)<=125
+            #LET ldet=$(xdp)
+         #ENDIF
+         #M get_vars, ldet=$(ldet)
+         #IF $(xda)<=16 | $(flagLiving)=1
+            #LET Hsm=$(xda)/2
+         #ELSEIF $(xda)>16
+            #LET Hsm=9.5
+         #ENDIF
+         #IF $(lato)=1 #LET Ysm={5+70} //если касание слева. то правая боковина
+         #IF $(lato)=2 #LET Ysm={-5+70} //если касание слева. то левая боковина
+         #IF $(det_mod)=1 | $(xdp)<=125
+            #IF $(lato)=1 #LET Ysm={5} //если касание слева. то правая боковина
+            #IF $(lato)=2 #LET Ysm={-5} //если касание слева. то левая боковина
+         #ENDIF
+         #LET st_count=$(Nst)-1
+         #FOR $0:$(st_count)
+            obrabotka,,,,,,{$(lato)};$(type_obr);x={$(xa)+$(Hsm)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm))},,,,,,$(mat_add_obr)
+            #M addkrepeg,cod_krep=999DUBVB,count_krep=1
+            #M addkrepeg,cod_krep=999EXVB,count_krep=1
+            #M addkrepeg,cod_krep=999ZAGVBSilv,count_krep=1
+         #ENDFOR
+      #ELSEIF $(tipo)=15  //пересечение с каркасной полкой
+         // !C обработка под полку
+         #IF $(xdp)>=650
+            #M get_vars, ldet={$(xdp)}
+         #ELSE
+            #M get_polkotv,ldet={$(xdp)}
+         #ENDIF
+         #IF $(TIPSHKAF)=1
+            // #LET Hsm=-18+$(x3:0)
+            #LET Hsm=-13+$(x3:0)
+         #ELSE
+            #IF $(xda)<=16
+               #LET Hsm=$(xda)/2
+            #ELSEIF $(xda)>16
+               #LET Hsm=9.5
+            #ENDIF
+         #ENDIF
+         #IF $(main_tipo)=14
+            #IF $[ex;$(x8:0);O;2]>$(x5:3)
+               #LET _spostaa=$(_spostaa)-$[ex;$(x8:0);O;2]
+            #ELSE
+               #LET _spostaa=$(_spostaa)-$(x5:3)
+            #ENDIF
+         #ENDIF
+         #IF $(lato)=1 #LET Ysm=5 //если касание слева. то правая боковина
+         #IF $(lato)=2 #LET Ysm=-5 //если касание справа. то левая боковина
+         #LET st_count=$(Nst)-1
+         #FOR $0:$(st_count)
+            obrabotka,,,,,,{$(lato)};$(type_obr);x={$(xa)+$(Hsm)+$(_spostaa)};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm))},,,,,,$(mat_add_obr)
+            #M addkrepeg,cod_krep=999DUBVB,count_krep=1
+            #M addkrepeg,cod_krep=999EXVB,count_krep=1
+            #M addkrepeg,cod_krep=999ZAGVBSilv,count_krep=1
+         #ENDFOR
+      #ELSEIF $(tipo)=57  //пересечение с каркасной полкой
+         // !C обработка под полку
+         #M get_vars, ldet={$(xdp)}
+         #LET Hsm=-8
+         //  #MSG $(pa)
+         #IF $(lato)=1 #LET Ysm=5 //если касание слева. то правая боковина
+         #IF $(lato)=2 #LET Ysm=-5 //если касание справа. то левая боковина
+         #LET st_count=$(Nst)-1
+         //#MSG $(xa)+$(Hsm)+$(_spostaa)-rnd($(pa))
+         #FOR $0:$(st_count)
+            obrabotka,,,,,,{$(lato)};D5G13;x={$(Hsm)+$(_spostaa)-rnd($(pa))};y={($(Lotv)+$(lstep)*$i+$(xp)+$(Ysm))},,,,,,$(mat_add_obr)
+         #ENDFOR
+      #ELSEIF $(tipo)=58  //
+         // #MSG $(xa) xx $(pa)
+         // obrabotka,,,,,,{$(lato)};D10G13;x={$(xa)-rnd($(pa))};y={$(xp)},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D10G13;x={$(xa)};y={$(xp)},,,,,,$(mat_add_obr)
+      #ELSEIF $(tipo)=59  //
+         // #MSG $(xa) xx $(pa)
+         // obrabotka,,,,,,{$(lato)};D10G13;x={$(xa)-rnd($(pa))};y={$(xp)},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D5G13;x={$(xa)};y={$(xp)},,,,,,$(mat_add_obr)
+      #ELSEIF $(tipo)=61
+         // obrabotka,,,,,,{$(lato)};OP2;H=16;x={$(xa)};XF={$(xa)+26};y=$(dp);yf={$(dp)-51},,,,,,$(mat_add_obr)
+         #LET parOp2=16
+         #IF $(xl)=18
+            #LET parOp2=14
+         #ENDIF
+         obrabotka,,,,,,{$(lato)};OP2;G=$(parOp2);H=51;x={$(xa)};XF={$(xa)+26};yf=$(dp),,,,,,$(mat_add_obr)
+         ///mixal петли
+      #ELSEIF $(tipo)=63
+         obrabotka,,,,,,{$(lato)};$(type_obr);x={$(_spostaa)};y={$(_spostap)},,,,,,$(mat_add_obr)
+      #ELSEIF $(tipo)=26  //пересечение с каркасной царгой
+         //!c царга
+         //так как царга стоит вертикально. то da=dp И наоборот
+         #M get_vars, ldet={$(xda)}
+         #IF $(xdp)<=16
+            #LET Hsm=$(xdp)/2
+         #ELSEIF $(xdp)>16
+            #LET Hsm=9.5
+         #ENDIF
+         #IF $(main_tipo)=14 #LET _spostaa=$(_spostaa)-$(x5:3)
+         #IF $(lato)=1 #LET Ysm=5 //если касание слева. то правая деталь
+         #IF $(lato)=2 #LET Ysm=-5 //если касание справа. то левая деталь
+         #LET st_count=$(Nst)-1
+         #FOR $0:$(st_count)
+            obrabotka,,,,,,{$(lato)};$(type_obr);x={($(Lotv)+$(lstep)*$i+$(xa)+$(Ysm)+$(_spostaa))};y={$(xp)+$(Hsm)},,,,,,$(mat_add_obr)
+         #ENDFOR
+      #ELSEIF $(tipo)=7
+         //obrabotka,,,,,,{$(lato)};PAZ11;x=0;y={$(xp)+$(xdp)};xf=$(xda);yf={$(xp)+$(xdp)},,,,,,$(mat_add_obr)
+      #ELSEIF $(main_tipo)=12 //Дно
+         #IF $(tipo)=10 | $(tipo)=11
+            //!c обработка от боковины
+            #LET ldet={$(dp)-70-$(naprProf)}
+            #IF $(det_mod)=1 | {$(dp)}<=125
+               #LET ldet={$(dp)}
+            #ENDIF
+            #M get_vars, ldet={$(ldet)}//зависит от размера основной типологии
+            #IF $(lato)=1 #LET Ysm={-5+70} //если касание слева.
+            #IF $(lato)=2 #LET Ysm={5+70} //если касание справа.
+            #IF $(det_mod)=1 | {$(dp)}<=125
+               #IF $(lato)=1 #LET Ysm={-5} //если касание слева. то правая боковина
+               #IF $(lato)=2 #LET Ysm={5} //если касание слева. то левая боковина
+            #ENDIF
+            #LET st_count=$(Nst)-1
+            #IF $(lati)=0
+               #LET Hstag=$(dl)-$(HstagKarkas) //слева
+               #LET smeshReg=-2.5
+            #ENDIF
+            #IF $(lati)=1
+               #LET Hstag=$(HstagKarkas) //справа
+               #LET smeshReg=2.5
+            #ENDIF
+            #LET latoDno=2
+            #IF $(flagLIving)=1
+               #IF $(storonaSt)=2 #LET latoDno=1
+            #ENDIF
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{$(latoDno)};$(type_obr_st_karkas);x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               #IF $(main_tipo)=12 & $(det_mod)=0 & $(flagLiving)!1
+                  obrabotka,,,,,,{1};D7G;x={$(Hstag)+$(smeshReg)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               #ENDIF
+               #IF $(flagLiving)=1
+                  #IF $(lati)=0
+                     obrabotka,,,,,,{3};D8G30;y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+                  #ELSE
+                     obrabotka,,,,,,{4};D8G30;y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+                  #ENDIF
+               #ENDIF
+            #ENDFOR
+         #ENDIF
+      #ELSEIF $(main_tipo)=13 //Крышка
+         #IF $(tipo)=10 | $(tipo)=11
+            //!c обработка от боковины
+            #LET ldet={$(dp)-$(naprProf)}
+            #IF $(det_mod)=1 #LET ldet={$(dp)}
+            #M get_vars, ldet={$(ldet)}//зависит от размера основной типологии
+            #IF $(lato)=1 #LET Ysm=-5 //если касание слева.
+            #IF $(lato)=2 #LET Ysm=5 //если касание справа.
+            #LET st_count=$(Nst)-1
+            #IF $(lati)=0 #LET Hstag=$(dl)-$(HstagKarkas) //слева
+            #IF $(lati)=1 #LET Hstag=$(HstagKarkas) //справа
+            #LET latoDno=2
+            #IF $(flagLIving)=1
+               #IF $(storonaSt)=2 #LET latoDno=1
+            #ENDIF
+            //test
+            #IF $(lati)=0
+               #LET Hstag=$(dl)-$(HstagKarkas) //слева
+               #LET smeshReg=-2.5
+            #ENDIF
+            #IF $(lati)=1
+               #LET Hstag=$(HstagKarkas) //справа
+               #LET smeshReg=2.5
+            #ENDIF
+            #IF $(x6:0)=1 //shMantera
+               #LET latoDno=1
+            #ENDIF
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{$(latoDno)};$(type_obr_st_karkas);x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               #IF $(x6:0)=1 //for shMantera
+                  obrabotka,,,,,,{2};D7G;x={$(Hstag)+$(smeshReg)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               #ENDIF
+               #IF $(flagLiving)=1
+                  #IF $(lati)=0
+                     obrabotka,,,,,,{3};D8G30;y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+                  #ELSE
+                     obrabotka,,,,,,{4};D8G30;y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+                  #ENDIF
+               #ENDIF
+               // #IF $(main_tipo)=12 & $(det_mod)=0
+               // obrabotka,,,,,,{1};D8G;x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+               // #ENDIF
+            #ENDFOR
+         #ENDIF
+      #ELSEIF $(main_tipo)=15 //обработки в каркасной полке
+         #IF $(tipo)=10 | $(tipo)=11
+            //!c Обработка от боковин
+            #IF $(dp)>=650
+               #M get_vars, ldet={$(dp)}//зависит от размера основной типологии
+            #ELSE
+               #M get_polkotv,ldet={$(dp)}
+            #ENDIF
+            #IF $(lato)=1 #LET Ysm=-5 //если касание слева.
+            #IF $(lato)=2 #LET Ysm=5 //если касание справа.
+            #LET st_count=$(Nst)-1
+            #IF $(lati)=0 #LET Hstag=$(dl)-9.5 //справа
+            #IF $(lati)=1 #LET Hstag=9.5 //слева
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{2};$(type_obr_st);x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+            #ENDFOR
+         #ENDIF
+         #IF $(tipo)=14
+            //!c Обработка от перегородки
+            #IF $(dp)>=650
+               #M get_vars, ldet={$(dp)}//зависит от размера основной типологии
+            #ELSE
+               #M get_polkotv,ldet={$(dp)}
+            #ENDIF
+            #IF $(lato)=1 #LET Ysm=-5 //если касание слева.
+            #IF $(lato)=2 #LET Ysm=5 //если касание справа.
+            #LET st_count=$(Nst)-1
+            #IF $(TIPSHKAF)=1
+               #IF $(lati)=0 #LET Hstag=$(dl)-13//18 //справа
+               #IF $(lati)=1 #LET Hstag=13//18 //слева
+            #ELSE
+               #IF $(lati)=0 #LET Hstag=$(dl)-9.5 //справа
+               #IF $(lati)=1 #LET Hstag=9.5 //слева
+            #ENDIF
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{2};$(type_obr_st);x={$(Hstag)};y={($(Lotv)+$(lstep)*$i+$(Ysm))},,,,,,$(mat_add_obr)
+            #ENDFOR
+         #ENDIF
+      #ELSEIF $(main_tipo)=26 //обработки в каркасной царге
+         #IF $(tipo)=10 | $(tipo)=11 | $(tipo)=14
+            //!c обработка от боковин/перегородки
+            #M get_vars, ldet={$(da)}
+            #IF $(lato)=1 #LET Ysm=-5 //если касание слева.
+            #IF $(lato)=2 #LET Ysm=5 //если касание справа.
+            #IF $(lati)=0 #LET Hstag=$(dl)-9.5 //справа
+            #IF $(lati)=1 #LET Hstag=9.5 //слева
+            #LET st_count=$(Nst)-1
+            #FOR $0:$(st_count)
+               obrabotka,,,,,,{2};$(type_obr_st);x={($(Lotv)+$(lstep)*$i+$(Ysm))};y={$(Hstag)},,,,,,$(mat_add_obr)
+            #ENDFOR
+         #ENDIF
+      #ELSEIF $(tipo)=18
+         #IF $(lati)=0 #LET lato=2
+         #IF $(lati)=1 #LET lato=1
+         //!c обработка под заднюю стенку
+         //savepos добавить смещение паза взависимости от того вложенная или нет боковина
+         #LET xstart=0
+         #LET xend=$(da)
+         #IF $(xa)>0
+            #LET xstart=9
+            #LET xend={$(da)-9}
+         #ENDIF
+         //         #MSG _spostaa= $(_spostaa) xl =$(xa) xdl= $(xda) dl= $(da)
+         #IF $(xp)>$(XDP)
+            obrabotka,,,,,,{$(lato)};UPAZ;H=4;G=5;x={$(xstart)};y={$(xp)+4};xf=$(xend);yf={$(xp)+4},,,,,,$(mat_add_obr)
+         #ELSE
+            #IF $(xstart)=0
+               obrabotka,,,,,,{$(lato)};PAZ11;x={0};y={10};xf=$(da);yf=10,,,,,,$(mat_add_obr)
+            #ELSE
+               obrabotka,,,,,,{$(lato)};PAZ12;x={$(xstart)};y={10};xf=$(xend);yf=10,,,,,,$(mat_add_obr)
+            #ENDIF
+         #ENDIF
+      #ELSEIF $(tipo)=106
+         #IF $(main_tipo)=108
+            #IF $(lati)=0 #LET lato=3, anglav=2
+            #IF $(lati)=1 #LET lato=4, anglav=3
+            // !c обработка угла
+            #IF $(namelav)==ro01
+               #LETS paramLav=r=$(rad)
+            #ELSEIF $(namelav)==ug01
+               #LETS paramLav=x={$(dl)-$(lScos)};y={$(dp)-$(pScos)}
+            #ENDIF
+            //для отрисовки в полках
+            obrabotka,,,,,,1;$(namelav);ug=$(anglav);$(paramLav);IDO=1,,,,,,$(mat_add_obr)
+            // !c обработка под боковину
+            obrabotka,,,,,,{$(lato)};D5G40;y=32;IDO=2,,,,,,$(mat_add_obr)
+            obrabotka,,,,,,{$(lato)};D5G40;y={$(dp)-64};IDO=2,,,,,,$(mat_add_obr)
+            #IF $(dp)-32-64>300
+               obrabotka,,,,,,{$(lato)};D5G40;y={(($(dp)-32-64)/2)+32};IDO=2,,,,,,$(mat_add_obr)
+            #ENDIF
+         #ELSE
+            #IF $(lati)=0 #LET lato=5
+            #IF $(lati)=1 #LET lato=6
+            // !c обработка под боковину
+            // obrabotka,,,,,,{$(lato)};D5G40;x=64,,,,,,$(mat_add_obr)
+            // obrabotka,,,,,,{$(lato)};D5G40;x={$(da)-64},,,,,,$(mat_add_obr)
+            #IF $(da)-128>800
+               //    obrabotka,,,,,,{$(lato)};D5G40;x={(($(da)-128)/2)+64},,,,,,$(mat_add_obr)
+            #ENDIF
+         #ENDIF
+         //gluhov test
+         #IF $(main_tipo)=107
+            #IF $(lati)=0 #LET lato=5
+            #IF $(lati)=1 #LET lato=6
+            // !c обработка под боковину
+            obrabotka,,,,,,{$(lato)};D5G40;x=64,,,,,,$(mat_add_obr)
+            obrabotka,,,,,,{$(lato)};D5G40;x={$(da)-64},,,,,,$(mat_add_obr)
+            #IF $(da)-128>800
+               obrabotka,,,,,,{$(lato)};D5G40;x={(($(da)-128)/2)+64},,,,,,$(mat_add_obr)
+            #ENDIF
+         #ENDIF
+      #ELSEIF $(tipo)=107
+         //!c обработка под заднюю стенку
+         obrabotka,,,,,,{$(lato)};D7G;x={$(xa)+64};y={$(xdp)/2},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D7G;x={$(xda)+$(xa)-64};y={$(xdp)/2},,,,,,$(mat_add_obr)
+         #IF $(xda)-128>800
+            obrabotka,,,,,,{$(lato)};D7G;x={(($(xda)-128)/2)+64+$(xa)};y={$(xdp)/2},,,,,,$(mat_add_obr)
+         #ENDIF
+      #ELSEIF $(tipo)=108
+         // !c обработка под полку
+         //#MSG $(xp)+$(xdp)-64 xx $(main_tipo)
+         obrabotka,,,,,,{$(lato)};D7G;x={$(_spostaa)+$(xda)/2};y={$(xp)+32},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D7G;x={$(_spostaa)+$(xda)/2};y={$(xp)+$(xdp)-64},,,,,,$(mat_add_obr)
+         #IF $(xdp)-32-64>300
+            obrabotka,,,,,,{$(lato)};D7G;x={$(_spostaa)+$(xda)/2};y={($(xdp)-32-64)/2+$(xp)+32},,,,,,$(mat_add_obr)
+         #ENDIF
+      #ENDIF
+   #ENDIF
+   ///обработка фасадов тшки под ответки петель
+   #IF $(main_tipo)=301
+      #IF $(tipo)=59
+         #LETS sposts=$(x8)
+         #LETS _spostal=$[ex;$(sposts);O;1]
+         #LETS _spostaa=$[ex;$(sposts);O;2]
+         #LETS _spostap=$[ex;$(sposts);O;3]
+         obrabotka,,,,,,2;D5G13;x={$(xa)-$(_spostaa)};y={$(xl)-$(_spostal)};IDO=$(idoPar),,,,,,$(mat_add_obr)
+      #ENDIF
+   #ENDIF
+   #IF $(main_tipo)=303
+      #IF $(tipo)=59
+         #LETS sposts=$(x8)
+         #LETS _spostal=$[ex;$(sposts);O;1]
+         #LETS _spostaa=$[ex;$(sposts);O;2]
+         #LETS _spostap=$[ex;$(sposts);O;3]
+         obrabotka,,,,,,2;D5G13;x={$(xa)-$(_spostaa)};y={$(xl)-$(_spostal)};IDO=$(idoPar),,,,,,$(mat_add_obr)
+      #ENDIF
+   #ENDIF
+   #IF $(lati)=4 | $(lati)=5
+      #IF $(tipo)=108
+         #IF $(lati)=4 #LET lato=1
+         // !c обработка под полку
+         obrabotka,,,,,,{$(lato)};D7G;x={$(_spostaa)+$(xda)/2};y={$(xl)+64},,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D7G;x={$(_spostaa)+$(xda)/2};y={$(xl)+$(xdl)-64},,,,,,$(mat_add_obr)
+         #IF $(xdl)-64-64>300
+            obrabotka,,,,,,{$(lato)};D7G;x={$(_spostaa)+$(xda)/2};y={($(xdl)-64-64)/2+64+$(xl)},,,,,,$(mat_add_obr)
+         #ENDIF
+      #ELSEIF $(tipo)=107
+         #IF $(lati)=5 #LET lato=6
+         // !c обработка под заднюю стенку
+         obrabotka,,,,,,{$(lato)};D5G40;x=64;IDO=2,,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{$(lato)};D5G40;x={$(dl)-64};IDO=2,,,,,,$(mat_add_obr)
+         #IF $(dl)-64-64>300
+            obrabotka,,,,,,{$(lato)};D5G40;x={($(dl)-64-64)/2+64};IDO=2,,,,,,$(mat_add_obr)
+         #ENDIF
+      #ENDIF
+   #ENDIF
+   #IF $(tipo)=46
+      #IF $(main_tipo)=10 | $(main_tipo)=11
+         //!c обработка под транспортир планку
+         obrabotka,,,,,,{6};D5G40;x={$(xa)+36};y=0,,,,,,$(mat_add_obr)
+         obrabotka,,,,,,{6};D5G40;x={$(xa)+164};y=0,,,,,,$(mat_add_obr)
+      #ENDIF
+   #ENDIF
+   #IF $(main_tipo)=46
+      //!c обработка под крепление к боковинам
+      obrabotka,,,,,,{1};D7G;x={$(xdl)/2};y=36,,,,,,$(mat_add_obr)
+      obrabotka,,,,,,{1};D7G;x={$(xdl)/2};y=164,,,,,,$(mat_add_obr)
+      obrabotka,,,,,,{1};D7G;x={$(dl)-$(xdl)/2};y=36,,,,,,$(mat_add_obr)
+      obrabotka,,,,,,{1};D7G;x={$(dl)-$(xdl)/2};y=164,,,,,,$(mat_add_obr)
+   #ENDIF
+   #IF $(tipo)=47
+      #IF $(main_tipo)=10 | $(main_tipo)=11 | $(main_tipo)=27 | $(main_tipo)=100
+         #LET k_x=0,k_y=$(xp),lato=4
+         #IF $(main_tipo)=27 #LET k_x={$(dl)+$(xp)},k_y=0,lato=6
+         // !c обработка боковин/перемычки подиума под ножку
+         obrabotka,,,,,,$(lato);D5G3;x={$(k_x)};y={$(k_y)},,,,,,$(mat_add_obr)
+      #ENDIF
+   #ENDIF
+   #LET mat_ind=$(mat_ind)+1
+#ENDFOR

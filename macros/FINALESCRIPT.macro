@@ -1,51 +1,51 @@
 PROVERKA
 #IF $(tipshkaf:6)=2
-   #LETS mat_old=$(mat)
-   #LETS mat=$(matvn)
-   #IF $(sk_sys:0)=1 & $(_backWallDis:1)!1
-      #LETV _wr=999KARKASZST
-      #LETV _MNP=999KARKASZST
-      #LET larg_zst=($l-$(mat:1)*2)+18	 sl_zst=$(mat:1)-9
-      #IF (($l-$(mat:1)*2)+18)>$[ex;$(mat_backwall:6);m;2]
-         NUMDET	sa=$a-{$(sksysheight:0)}/2	sl=75	sp=15-$(p)
-         018	SL=$(mat:1)-9	SA=$a-$(mat:1)-{$(sksysheight:0)}-9	SP=0	L=(($l-$(mat:1)*2)+18)/2	A={$(sksysheight:0)}+18	P=$(mat_backwall:3)  //Задняя стенка
-         #LET larg_zst=(($l-$(mat:1)*2)+18)/2	 sl_zst=(($l-$(mat:1)*2)+18)/2+($(mat:1)-9)
-      #ENDIF
-      NUMDET	sa=$a-{$(sksysheight:0)/2}	sl=$(sl_zst)+75	sp=15-$(p)
-      018	SL=$(sl_zst)	SA=$a-$(mat:1)-{$(sksysheight:0)}-9	SP=0	L=$(larg_zst)	A={$(sksysheight:0)}+18	P=$(mat_backwall:3)  //Задняя стенка
-   #ENDIF
-   #LETS oldColkarkastmp = $(_COLKARKAS:0)
-   #IF not($(ColkarkasUniq)==NotLastBox)
-      #FOR $(ColkarkasUniq)
-         #LETV _COLKARKAS=$(I)
-         //#MSG $(_COLKARKAS:13)
-         001	LATO=6	COD=999grandUg / /Grandis Уголок стальной 20х20 мм /#Q4 //Test
-         001	LATO=6	COD=$(_COLKARKAS:13) / /Grandis Пластиковая заглушка 20х20 мм для стального уголка /#Q4  //Test
-      #ENDFOR
-      #LETV _COLKARKAS=$(oldColkarkastmp)
-   #ENDIF
+#LETS mat_old=$(mat)
+#LETS mat=$(matvn)
+#IF $(sk_sys:0)=1 & $(_backWallDis:1)!1
+#LETV _wr=999KARKASZST
+#LETV _MNP=999KARKASZST
+#LET larg_zst=($l-$(mat:1)*2)+18	 sl_zst=$(mat:1)-9
+#IF (($l-$(mat:1)*2)+18)>$[ex;$(mat_backwall:6);m;2]
+NUMDET	sa=$a-{$(sksysheight:0)}/2	sl=75	sp=15-$(p)
+018	SL=$(mat:1)-9	SA=$a-$(mat:1)-{$(sksysheight:0)}-9	SP=0	L=(($l-$(mat:1)*2)+18)/2	A={$(sksysheight:0)}+18	P=$(mat_backwall:3)  //Задняя стенка
+#LET larg_zst=(($l-$(mat:1)*2)+18)/2	 sl_zst=(($l-$(mat:1)*2)+18)/2+($(mat:1)-9)
+#ENDIF
+NUMDET	sa=$a-{$(sksysheight:0)/2}	sl=$(sl_zst)+75	sp=15-$(p)
+018	SL=$(sl_zst)	SA=$a-$(mat:1)-{$(sksysheight:0)}-9	SP=0	L=$(larg_zst)	A={$(sksysheight:0)}+18	P=$(mat_backwall:3)  //Задняя стенка
+#ENDIF
+#LETS oldColkarkastmp = $(_COLKARKAS:0)
+#IF not($(ColkarkasUniq)==NotLastBox)
+#FOR $(ColkarkasUniq)
+#LETV _COLKARKAS=$(I)
+//#MSG $(_COLKARKAS:13)
+001	LATO=6	COD=999grandUg / /Grandis Уголок стальной 20х20 мм /#Q4 //Test
+001	LATO=6	COD=$(_COLKARKAS:13) / /Grandis Пластиковая заглушка 20х20 мм для стального уголка /#Q4  //Test
+#ENDFOR
+#LETV _COLKARKAS=$(oldColkarkastmp)
+#ENDIF
 #ENDIF
 NAPR
 #IF 0
-   #IF $(TIPSHKAF:7)=2 & $(tipRaspshkaf:1)=1
-      #IF $(mat:1)=16
-         #IF $(lkorp)>900 & $(tipRaspshkaf:1)=1
-            #IF $(countVert)=0
-               #MSG Ширина крышки и дна шкафа шире 900мм рекомендуем вам установить вертикальную перегородку или увеличить толщину каркаса!
-            #ENDIF
-         #ENDIF
-      #ENDIF
-   #ENDIF
+#IF $(TIPSHKAF:7)=2 & $(tipRaspshkaf:1)=1
+#IF $(mat:1)=16
+#IF $(lkorp)>900 & $(tipRaspshkaf:1)=1
+#IF $(countVert)=0
+#MSG Ширина крышки и дна шкафа шире 900мм рекомендуем вам установить вертикальную перегородку или увеличить толщину каркаса!
+#ENDIF
+#ENDIF
+#ENDIF
+#ENDIF
 #ENDIF
 #IF $(tipshkaf:6)=2
-   #LETS mat=$(mat_old)
+#LETS mat=$(mat_old)
 #ENDIF
 #LET pripuskKorD=0	 pripuskKorU=0
 _mergeBackWall
 #IF $(mat_backwall:3)=4
-   #LETV hdfsize =$(mis_zst)
+#LETV hdfsize =$(mis_zst)
 #ELSE
-   #LETV hdfsize =0x0
+#LETV hdfsize =0x0
 #ENDIF
 _calculate_dsphdf
 _calcul_back_krep

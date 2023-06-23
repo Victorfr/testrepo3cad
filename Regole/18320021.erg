@@ -33,7 +33,7 @@ _flag_plaser
 //***************************************************************************************************
 _DATABOX
 #LETS cod_pan=99918320021
-#LETS 3ds=18320021(copy).3ds
+#LETS 3ds=18320021.3ds
 
 //#MSG $l $a $p
 001,COD=$(cod_pan) /FPL=$(FPL);_DATABOX=$(_DATABOX) / /#l-1,L=455,C1=2,FACC=100,X4=$(3ds)  //Test

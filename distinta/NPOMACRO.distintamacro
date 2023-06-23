@@ -1,0 +1,1 @@
+#LETS NPOMACRONAME=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(NPO)' and codvar like 'NPOMACRO']

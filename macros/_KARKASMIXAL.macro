@@ -34,12 +34,10 @@
    //#ENDIF
 #ENDIF
 #IF $(addNogMixal:0)=1
-   
    #LETV ua=11
    #LET karkasSA=11
    !SAGOMA cir C30	0	0	10
    //#IF $(shMantera)=0
-   
    060	SL=$(mat:1)/2	SP=70	L=10	A=11	DIS=$(cir)	c1=1  //Test
    060	SL=$(mat:1)/2	SP=$p-70	L=10	A=11	DIS=$(cir)	c1=1  //Test
    060	SL=$l-$(mat:1)/2	SP=70	L=10	A=11	DIS=$(cir)	c1=1  //Test
@@ -55,6 +53,12 @@
    001	LATO=6	COD=999nogPI05 / / /#Q4	L=1	A=1	P=1  //Test
    //гайка для опоры
    001	LATO=6	COD=999gnogBP01 / / /#Q4	L=1	A=1	P=1  //Test
+   //#ENDIF
+#ELSEIF $(addzoc:1)=1 //если добавлен цоколь
+   #LET karkasSa=$(hzoc:0)
+   #LETV ua=$(hzoc:0)
+   // #IF $(ua)!0
+   //   #LETV ua=0
    //#ENDIF
 #ELSE
    #IF $(ua)!0
