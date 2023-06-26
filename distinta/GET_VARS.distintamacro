@@ -16,21 +16,21 @@
 #LET Lmax4=750
 #LET Lmin5=750.1
 #LET Lmax5=2040//1000
-#LET Nst=0	Lotv=0	Lstep=0
+#LET Nst=0,Lotv=0,Lstep=0
 //#LET Ldet=800
 #LET Nst= $[iif;$(Lmin1)<=$(Ldet) & $(Ldet)<=$(Lmax1);1;0]+$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);2;0]+$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);3;0]\
 +$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);4;0]\
-+$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);5;0]
+                         +$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);5;0]
 #LET Lotv=$(Ldet)/2*$[iif;$(Lmin1)<=$(Ldet)&$(Ldet)<=$(Lmax1);1;0]+($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/32)*32)/2*$[iif;$(Lmin2)<=$(Ldet)&$(Ldet)<=$(Lmax2);1;0]\
 +($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/2/32)*32*2)/2*$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);1;0]\
-+($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*3)/2*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
-+($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*4)/2*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
+                                                                           +($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*3)/2*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
+                                                                           +($(Ldet)-int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*4)/2*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
 #LET Lstep=int(($(Ldet)-$(Lmin_sr)*2)/32)*32*$[iif;$(Lmin2)<=$(Ldet) & $(Ldet)<=$(Lmax2);1;0]\
 +int(($(Ldet)-$(Lmin_sr)*2)/2/32)*32*$[iif;$(Lmin3)<=$(Ldet) & $(Ldet)<=$(Lmax3);1;0]\
-+int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
-+int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
-#IF $(ldet)<=125
-#LET Nst=2
-#LET lotv=25
-#LET lstep=$(ldet)-50
+                                                             +int(($(Ldet)-$(Lmin_sr)*2)/3/32)*32*$[iif;$(Lmin4)<=$(Ldet) & $(Ldet)<=$(Lmax4);1;0]\
+                                                             +int(($(Ldet)-$(Lmin_sr)*2)/4/32)*32*$[iif;$(Lmin5)<=$(Ldet) & $(Ldet)<=$(Lmax5);1;0]
+#IF $(ldet)<=150
+   #LET Nst=2
+   #LET lotv=25
+   #LET lstep=$(ldet)-50
 #ENDIF
