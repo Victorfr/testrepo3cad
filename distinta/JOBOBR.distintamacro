@@ -485,7 +485,8 @@
       #ELSEIF $(tipo)=61
          // obrabotka,,,,,,{$(lato)};OP2;H=16;x={$(xa)};XF={$(xa)+26};y=$(dp);yf={$(dp)-51},,,,,,$(mat_add_obr)
          #LET parOp2=16
-         #IF $(xl)=18
+        
+         #IF $(dl)=18
             #LET parOp2=14
          #ENDIF
          obrabotka,,,,,,{$(lato)};OP2;G=$(parOp2);H=51;x={$(xa)};XF={$(xa)+26};yf=$(dp),,,,,,$(mat_add_obr)
