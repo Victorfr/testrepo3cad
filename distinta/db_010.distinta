@@ -13,8 +13,6 @@
    #LETS kol_stor_krom=bok4
 #ENDIF
 ///новые наряды на каркасные детали из фасадного материала
-///коммент с 3cadnew для тестирования работы
-test,1
 #LETS soedMat=
 #LET flagNarad=0
 #LETS soedZagstr=_

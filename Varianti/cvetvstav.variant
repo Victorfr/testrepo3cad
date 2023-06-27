@@ -16574,6 +16574,16 @@
     },
     {
       "Codvar": "cvetvstav",
+      "Codopz": "2514",
+      "Des": "Пыльный серый [P209AGM]",
+      "Memo": "S27;S08;s16\t\tral1.jpg\t160;160;160\t\tLMDF19SH;LMDF16WF\t759352191\t\t0\t\tpl_grey_pil\t\t01.01.2018\t01.01.2100\t",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "cvetvstav",
       "Codopz": "252",
       "Des": "Орнамент_010_ShK",
       "Memo": "S06;S07;S21\t\tornam_010_ShK_3000x1400_pr.jpg\t\t\tvet_proz4;vet_him_osv4;LDSP16\t378401998\t378289007\t0\tornam_010_ShK_3000x1400.jpg\t\t\t01.01.2018\t01.01.2100\t",
