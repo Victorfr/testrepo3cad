@@ -1,3 +1,3 @@
-#LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
+﻿#LETS MNP=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_MNP']
 #LETS WR=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT memo from varianti where codopz like '$(cod)' and codvar like '_WR']
 #LETS namEDET=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(cod)' and codvar like '_WR']

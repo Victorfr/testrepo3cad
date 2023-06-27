@@ -1,4 +1,4 @@
-#LET Lotv=60
+﻿#LET Lotv=60
 #LET Lstep=$(ldet)-120
 #LET Nst=2
 #IF $(ldet)<=125

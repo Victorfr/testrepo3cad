@@ -1,4 +1,4 @@
-#LETS codVertProf=$(x4:0)
+﻿#LETS codVertProf=$(x4:0)
 #LETS codManProf=$(x4:1)
 #LETS codGorProf=$(x4:2)
 #LETS codPrefVetro=$(x4:3)

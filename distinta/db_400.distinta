@@ -1,4 +1,4 @@
-#LETS codFur=$(x4:0)
+﻿#LETS codFur=$(x4:0)
 
 #IF $(codFur)[topline2door]
    

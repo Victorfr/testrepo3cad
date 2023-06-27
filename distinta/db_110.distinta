@@ -1,4 +1,4 @@
-#LETS _ckd=$(x4:1)
+﻿#LETS _ckd=$(x4:1)
 #LETS _ckk=$(x4:2)
 #LETS idtip=$(x5:0)
 #LETS cod_mat=$[ex;$(x4:3);|;1]

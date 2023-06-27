@@ -1,4 +1,4 @@
-#LETS modvstav=$(x4:0)
+﻿#LETS modvstav=$(x4:0)
 #LETS artpilomat=$(x4:1)
 #LETS cvetvstav=$(x4:2)
 #LETS TxtVst=$(x4:4)

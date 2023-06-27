@@ -1,4 +1,4 @@
-#IF $(soed_str)==
+﻿#IF $(soed_str)==
 #LETS soed_str=.
 #ENDIF
 #IF $(tip_det)==bok

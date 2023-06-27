@@ -1,4 +1,4 @@
-!parametri idopar=999	detYash=0
+﻿!parametri idopar=999	detYash=0
 #IF $(dl)>=296
 #LETS parNameX=x
 #LETS parNameY=y

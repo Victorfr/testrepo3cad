@@ -1,4 +1,4 @@
-#LETS cod=999PODLZST
+﻿#LETS cod=999PODLZST
 #M MnpWrNamedet,cod=$(cod)
 999PODZST,1,WR=$(WR);MNP=$(MNP),$(dl),$(da),16,,,,,,$(namEDET),$(mat)_1
 !{

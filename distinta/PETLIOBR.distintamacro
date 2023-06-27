@@ -1,4 +1,4 @@
-!parametri idopar=999,stagOts=100
+﻿!parametri idopar=999,stagOts=100
 #LETS nameObrPetl=D35G13
 #IF $[DATECOMPARE;$(dataordine);18.04.2021]>0
    #LETS nameObrPetl=D35.2G13

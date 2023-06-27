@@ -1,4 +1,4 @@
-#LETS cod_nabora=$(x4:0)
+﻿#LETS cod_nabora=$(x4:0)
 #LETS material=$(x4:1)
 #LETS colorZagEx=$(x4:2)
 #LETS colorAngolo=$(x4:3)

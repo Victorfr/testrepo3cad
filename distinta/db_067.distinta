@@ -1,4 +1,4 @@
-#M letsks,profLenght=$(da)
+﻿#M letsks,profLenght=$(da)
 #LETS jobName=D3
 #VB
    stringSKS=V("sks")

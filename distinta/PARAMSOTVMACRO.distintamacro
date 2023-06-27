@@ -1,4 +1,4 @@
-!parametri ldet=$(dp)
+﻿!parametri ldet=$(dp)
 #LET lOtv=$(ldet)-100
 #LET countOtv=0
 #LETS paramsOtv=50;{$(ldet)-50}

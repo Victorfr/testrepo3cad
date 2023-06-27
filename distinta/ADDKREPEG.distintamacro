@@ -1,2 +1,2 @@
-// $(cod_krep)	$(count_krep)											$(mat_add_kr)$(index_krep)
+﻿// $(cod_krep)	$(count_krep)											$(mat_add_kr)$(index_krep)
 #LET index_krep=$(index_krep)+1

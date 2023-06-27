@@ -1,4 +1,4 @@
-#LETS dekdes=
+﻿#LETS dekdes=
 #LETS dekDES=$[SQLITE;$(.percorso)\HTML\variant.ddb;SELECT des from varianti where codopz like '$(name)' and codvar like 'DEKMACRONAME']
 #IF $(dekdes)!! #LETS namedet=Заготовка для $(dekdes)
 #IF $(dekdes)!! #LETS namedetosn=$(dekdes)

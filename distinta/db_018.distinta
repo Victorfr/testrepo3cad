@@ -1,4 +1,4 @@
-#LETS _ckh=$(x4:0)
+﻿#LETS _ckh=$(x4:0)
 #LETS cod_mat=$[ex;$(x4:1);|;1]
 #LETS name_param_mat=$[ex;$(x4:1);|;2]
 #LETS navesType=$(x5:0)

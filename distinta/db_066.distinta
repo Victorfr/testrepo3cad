@@ -1,4 +1,4 @@
-
+﻿
 ///вертикальный усилитель
 #LETS paramPilomat=_cprof=$(x4:2)
 #LETS sks=$(x7:5)

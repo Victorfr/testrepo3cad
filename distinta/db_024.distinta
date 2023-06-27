@@ -1,4 +1,4 @@
-#LETS modprof=$(x4:0)
+﻿#LETS modprof=$(x4:0)
 #LETS art=$(x4:1)
 #LETS alt_door=$(x5:0)
 #LETS art_polufab=GOR_SPR

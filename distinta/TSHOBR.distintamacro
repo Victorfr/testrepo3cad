@@ -1,4 +1,4 @@
-#LETS sposts=$(x8)
+﻿#LETS sposts=$(x8)
 #LETS _spostal=$[ex;$(sposts);O;1]
 //#LETS _spostaa=$[ex;$(sposts);O;2]
 //#LETS _spostap=$[ex;$(sposts);O;3]

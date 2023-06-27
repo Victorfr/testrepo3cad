@@ -1,4 +1,4 @@
-#LETS modprof=$(x4:0)
+﻿#LETS modprof=$(x4:0)
 #LETS art=$(x4:1)$(x4:2)
 #LETS cha=$(x4:4)
 #LETS cod=$(modprof)VERT_PROF
