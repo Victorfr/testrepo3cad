@@ -35,22 +35,36 @@ _flag_plaser
 _DATABOX
 #LET larg_shtang=$l-30
 #IF $l-45>1800
-   #LET larg_shtang=($l-60)/3
-   001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$(larg_shtang)+30,L=$(larg_shtang),A=30,P=8,C1=2  //Test
-   001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$(larg_shtang)*2+45,L=$(larg_shtang),A=30,P=8,C1=2  //Test
-   001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$(larg_shtang)+15,SP=-3,L=15,A=80,P=15,C1=2  //Test
-   001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$(larg_shtang)*2+30,SP=-3,L=15,A=80,P=15,C1=2  //Test
-   #IF $(show_msg_vst$(_idunico))=0
-      #MSG ширина штанги превышает 900 мм. в заказ будут добавлены 3-и штанги и 2-а соединителя!
-      #LET show_msg_vst$(_idunico)=1
+   #IF $[DATECOMPARE;$(dataordine);27.07.2023]>=0
+      001
+      025,COD= / /Товар не доступен к заказу с 27.07.2023,SA=$a/2,SP=$p,l=300,sl=$l/2-150  // Номер детали
+      ///товар выведен
+   #ELSE
+      #LET larg_shtang=($l-60)/3
+      001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$(larg_shtang)+30,L=$(larg_shtang),A=30,P=8,C1=2  //Test
+      001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$(larg_shtang)*2+45,L=$(larg_shtang),A=30,P=8,C1=2  //Test
+      
+      001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$(larg_shtang)+15,SP=-3,L=15,A=80,P=15,C1=2  //Test
+      001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$(larg_shtang)*2+30,SP=-3,L=15,A=80,P=15,C1=2  //Test
+      
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG ширина штанги превышает 900 мм. в заказ будут добавлены 3-и штанги и 2-а соединителя!
+         #LET show_msg_vst$(_idunico)=1
+      #ENDIF
    #ENDIF
 #ELSEIF $l-30>900
    #LET larg_shtang=($l-45)/2
-   001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$l/2+7.5,L=$(larg_shtang),A=30,P=8,C1=2  //Test
-   001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$l/2-7.5,SP=-3,L=15,A=80,P=15,C1=2  //Test
-   #IF $(show_msg_vst$(_idunico))=0
-      #MSG ширина штанги превышает 900 мм. в заказ будут добавлены 2-е штанги и 1-н соединитель!
-      #LET show_msg_vst$(_idunico)=1
+   #IF $[DATECOMPARE;$(dataordine);27.07.2023]>=0
+      001
+      025,COD= / /Товар не доступен к заказу с 27.07.2023,SA=$a/2,SP=$p,l=300,sl=$l/2-150  // Номер детали
+      ///товар выведен
+   #ELSE
+      001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,SL=$l/2+7.5,L=$(larg_shtang),A=30,P=8,C1=2  //Test
+      001,COD=999shdertorzBrS /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штангодержатель средний /#l-1,SL=$l/2-7.5,SP=-3,L=15,A=80,P=15,C1=2  //Test
+      #IF $(show_msg_vst$(_idunico))=0
+         #MSG ширина штанги превышает 900 мм. в заказ будут добавлены 2-е штанги и 1-н соединитель!
+         #LET show_msg_vst$(_idunico)=1
+      #ENDIF
    #ENDIF
 #ENDIF
 001,COD=999shtangPrjamBr /FPL=$(FPL);_DATABOX=$(_DATABOX) /Штанга прямоугольная /#l-1,A=30,P=8,C1=2,l=$(larg_shtang),sl=15  //Test
