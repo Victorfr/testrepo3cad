@@ -31,7 +31,7 @@
    #IF $(dl)=22
       #LETS codZag=ZAGLDSP22
    #ENDIF
-   ///макрос определяющий параметры каркасных деталей
+   ///макрос определяющий параметры каркасных деталей 2222
    
    #IF $(da)<=146
       #IF $(dl)=16
@@ -98,8 +98,8 @@
       #LET virDepth=$[estrai;$i;|;3]
       #LET virHeight=$[estrai;$i;|;4]
       //obrabotka,,,,,,{1};OP3;Y={$(virBack)};X={$(virBottom)};YF={$(virBack)+$(virDepth)};XF={$(virBottom)+$(virHeight)},,,,,,$(mat_add_obr)
-            obrabotka,,,,,,{1};OP3;x={$(virBottom)};y={$(virBack)};xf={$(virBottom)+$(virHeight)};yf={$(virBack)+$(virDepth)},,,,,,$(mat_add_obr)
-
+      obrabotka,,,,,,{1};OP3;x={$(virBottom)};y={$(virBack)};xf={$(virBottom)+$(virHeight)};yf={$(virBack)+$(virDepth)},,,,,,$(mat_add_obr)
+      
    #ENDFOR
    
 #ENDIF
