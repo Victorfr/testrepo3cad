@@ -1,432 +1,435 @@
 man_overridepos
 #VB
-namebokfas="Боковой фасад"
-v("namebokfas")=namebokfas
+   namebokfas="Боковой фасад"
+   v("namebokfas")=namebokfas
 #ENDVB
 //FINALESCRIPT
 #IF $(flagbok)==on
-#LETS _wr:2=$(namebokfas)
-//$(_wr:2)
+   #LETS _wr:2=$(namebokfas)
+   //$(_wr:2)
 #ENDIF
 #IF $(_ModDoorRasp:7)[DSP]
-#IF $(_ModDoorRasp:1)[S12;E02;D02] //для меоделей  у которых выбирается кромка отдельно	 заменим параметр в варианте( так как в самом варе используется без индекса)
-#LETS _colkarkas:7=$(_COLKROM:5)
-#LETS _colkarkas:9=$(_COLKROM:6)
-#LETS _colkarkas:10=$(_COLKROM:7)
-#ENDIF
-//если кромка лазер для микса
-#IF $(_MODDOORRASP:1)[S02] & $(kromLaser:1)=1
-#LETS _colkarkas:7=$(_COLKROM:5)
-#LETS _colkarkas:9=$(_COLKROM:6)
-#LETS _colkarkas:10=$(_COLKROM:7)
-#ENDIF
-#IF $(_TipDoorRasp:3)[s]
-#IF $(petlObr)=1
-#ELSE
-#LETS IDD=
-#LETS LPBR=
-#ENDIF
-#IF $(_MODDOORRASP:1)[s28]
-#LET sideFas=$[IIF;$(_colSide:1)=1;0;1]
-#ELSE
-#LET sideFas=0
-#ENDIF
-302	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)	x6=$(_colkarkas:3)/$(_colkarkas:4)/{$(sideFas)}  //Дверь распашная S
-040	LATO=6	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=$p/2	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]  //Вставка двери
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ELSE //глухой фасад
-#IF $(_ModDoorRasp:1)[s24;s30] //зеркала на подложке
-#IF $(petlObr)!1
-#LET idd=
-#ENDIF
-//_PARAMANTASTR
-#LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
-// #LETS sk=$(_colkarkas:10)	wk=$(wkBok)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
-301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);VZ=$(cvetvstav:9);POP=$(pop);FPL=$(fpl);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR) / /#L-1	P=$p-4	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
-//добавлю обьед параметры
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-// 040	LATO=9	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=$p/2	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]  //Вставка двери
-001	SP=$p-4	P=4	C1=$(matvstav:7)	lato=$(show_door)  //графика для зеркала
-////
-/////
-#IF $(_MODDOORRASP:1)[s30] & $a>1495 //усиленная упаковка как в дверях купе при большой высоте двери
-_upakovka_door
-#ENDIF
-#ELSE
-#IF $(flagCorrector)=1
-//  #LETV petlObr=2
-#ENDIF
-#IF $(petlObr:0)=1 | $(flagCorrector)[1;2;3] //фрезеровка под петли
-//            #MSG $(codPetl) xx $(cod)
-#LETS IDO=1
-#LETS IDD=1
-#LETV _MNP=$(codPETL)
-#LETV _WR=$(codPETL)
-#IF $(flagCorrector)[1;2;3] //для дверей с  корректором меняется маршрут и тип товара
-#LETV _MNP=$(cod)STAG
-#LETV _WR=$(cod)STAG
-#ENDIF
-#LETV MNP=$(_MNP:3)
-#LETV WR=$(_WR:3)
-#LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
-//001	LATO=6	COD=$(codPetl) /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl) /$(_wr:2) /#l-1	C1=$(color_door1)	C2=$(color_door2)  //Test
-//#LETV _MNP=$(cod)
-//#LETV MNP=$(_MNP:3)
-//#LETV _WR=$(cod)
-//#LETV WR=$(_WR:3)
-//!COMMENTO $(_WR:2)
-//               _FASVID
-//301	COD= / / /#L+1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)  //Дверь распашная
-#ELSE // без фрезеровки под петли
-#LETS x5par=
-#LETV _MNP=$(cod)
-#LETV MNP=$(_MNP:3)
-#LETV _WR=$(cod)
-#LETV WR=$(_WR:3)
-#LETS IDO=
-#LETS IDD=
-#ENDIF
-#IF $(flagCorrector)[2;3]
-#LETS _wr:2=Дверь купе Top Line
-#ENDIF
-#IF $(flagbok)==on
-#LETS _wr:2=$(namebokfas)
-#ENDIF
-#IF $(a)<146 | $(l)<146
-#LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
-#ENDIF
-!COMMENTO $(_WR:2)
-//301	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	x5=$(x5par)	lato=$(show_door)  //Дверь распашная
-#IF $(_MODDOORRASP:1)[s28]
-301	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	x5=$(x5par)	lato=$(show_door)	facc=3	x6=$(_colkarkas:3)/$(_colkarkas:4)/$(_colSide:1)  //Дверь распашная
-#ELSE
-#IF $(_MODDOORRASP:5)[16]
-#LET SDR=
-#LET DDR=
-#IF $[ex;$(_COLKARKAS:9);|;3]>=2  & not($(petlObr:0)=1 | $(flagCorrector)[1;2;3])
-//#LET SDR={$l-2}
-//#LET DDR={$a-2}
-#ENDIF
-//301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);SDR=$(SDR);DDR=$(DDR);NSE=$(SHPR) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
-301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);SDR=$(SDR);DDR=$(DDR);NSE=$(SHPR) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
-#ELSE
-//_FASVID
-301	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	x5=$(x5par)	lato=$(show_door)  //Дверь распашная
-#ENDIF
-#ENDIF
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ENDIF
-#ENDIF
+   #IF $(_ModDoorRasp:1)[S12;E02;D02] //для меоделей  у которых выбирается кромка отдельно	 заменим параметр в варианте( так как в самом варе используется без индекса)
+      #LETS _colkarkas:7=$(_COLKROM:5)
+      #LETS _colkarkas:9=$(_COLKROM:6)
+      #LETS _colkarkas:10=$(_COLKROM:7)
+   #ENDIF
+   //если кромка лазер для микса
+   #IF $(_MODDOORRASP:1)[S02] & $(kromLaser:1)=1
+      #LETS _colkarkas:7=$(_COLKROM:5)
+      #LETS _colkarkas:9=$(_COLKROM:6)
+      #LETS _colkarkas:10=$(_COLKROM:7)
+   #ENDIF
+   #IF $(_TipDoorRasp:3)[s]
+      #IF $(petlObr)=1
+      #ELSE
+         #LETS IDD=
+         #LETS LPBR=
+      #ENDIF
+      #IF $(_MODDOORRASP:1)[s28]
+         #LET sideFas=$[IIF;$(_colSide:1)=1;0;1]
+      #ELSE
+         #LET sideFas=0
+      #ENDIF
+      302	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)	x6=$(_colkarkas:3)/$(_colkarkas:4)/{$(sideFas)}  //Дверь распашная S
+      040	LATO=6	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=$p/2	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]  //Вставка двери
+      025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+   #ELSE //глухой фасад
+      #IF $(_ModDoorRasp:1)[s24;s30] //зеркала на подложке
+         #IF $(petlObr)!1
+            #LET idd=
+         #ENDIF
+         //_PARAMANTASTR
+         #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
+         // #LETS sk=$(_colkarkas:10)	wk=$(wkBok)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
+         301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);VZ=$(cvetvstav:9);POP=$(pop);FPL=$(fpl);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR) / /#L-1	P=$p-4	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
+         //добавлю обьед параметры
+         025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+         // 040	LATO=9	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=$p/2	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]  //Вставка двери
+         001	SP=$p-4	P=4	C1=$(matvstav:7)	lato=$(show_door)  //графика для зеркала
+         ////
+         /////
+         #IF $(_MODDOORRASP:1)[s30] & $a>1495 //усиленная упаковка как в дверях купе при большой высоте двери
+            _upakovka_door
+         #ENDIF
+      #ELSE
+         #IF $(flagCorrector)=1
+            //  #LETV petlObr=2
+         #ENDIF
+         #IF $(petlObr:0)=1 | $(flagCorrector)[1;2;3] //фрезеровка под петли
+            //            #MSG $(codPetl) xx $(cod)
+            #LETS IDO=1
+            #LETS IDD=1
+            #LETV _MNP=$(codPETL)
+            #LETV _WR=$(codPETL)
+            #IF $(flagCorrector)[1;2;3] //для дверей с  корректором меняется маршрут и тип товара
+               #LETV _MNP=$(cod)STAG
+               #LETV _WR=$(cod)STAG
+            #ENDIF
+            #LETV MNP=$(_MNP:3)
+            #LETV WR=$(_WR:3)
+            #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
+            //001	LATO=6	COD=$(codPetl) /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl) /$(_wr:2) /#l-1	C1=$(color_door1)	C2=$(color_door2)  //Test
+            //#LETV _MNP=$(cod)
+            //#LETV MNP=$(_MNP:3)
+            //#LETV _WR=$(cod)
+            //#LETV WR=$(_WR:3)
+            //!COMMENTO $(_WR:2)
+            //               _FASVID
+            //301	COD= / / /#L+1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)  //Дверь распашная
+         #ELSE // без фрезеровки под петли
+            #LETS x5par=
+            #LETV _MNP=$(cod)
+            #LETV MNP=$(_MNP:3)
+            #LETV _WR=$(cod)
+            #LETV WR=$(_WR:3)
+            #LETS IDO=
+            #LETS IDD=
+         #ENDIF
+         #IF $(flagCorrector)[2;3]
+            #LETS _wr:2=Дверь купе Top Line
+         #ENDIF
+         #IF $(flagbok)==on
+            #LETS _wr:2=$(namebokfas)
+         #ENDIF
+         #IF $(a)<146 | $(l)<146
+            #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
+         #ENDIF
+         !COMMENTO $(_WR:2)
+         //301	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	x5=$(x5par)	lato=$(show_door)  //Дверь распашная
+         #IF $(_MODDOORRASP:1)[s28]
+            301	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	x5=$(x5par)	lato=$(show_door)	facc=3	x6=$(_colkarkas:3)/$(_colkarkas:4)/$(_colSide:1)  //Дверь распашная
+         #ELSE
+            #IF $(_MODDOORRASP:5)[16]
+               #LET SDR=
+               #LET DDR=
+               #IF $[ex;$(_COLKARKAS:9);|;3]>=2  & not($(petlObr:0)=1 | $(flagCorrector)[1;2;3])
+                  //#LET SDR={$l-2}
+                  //#LET DDR={$a-2}
+               #ENDIF
+               //301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);_CKD=$(_colkarkas:6);_CKK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);SDR=$(SDR);DDR=$(DDR);NSE=$(SHPR) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
+               301	COD= /MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);SDR=$(SDR);DDR=$(DDR);NSE=$(SHPR) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
+            #ELSE
+               //_FASVID
+               301	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	x5=$(x5par)	lato=$(show_door)  //Дверь распашная
+            #ENDIF
+         #ENDIF
+         025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+      #ENDIF
+   #ENDIF
 #ELSEIF $(_ModDoorRasp:7)==MDF
-//макрос	 формирующий параметры для моделей
-_paramAntaStr
-#IF $(_TipDoorRasp:3)[s]
-#IF ($a[475;476;595;596] & $l[295;296;;395;396;445;446;595;596]) | ($a[716;956] & $l[295;296;329;330;377;378;395;396;445;446;595;596]) | ($a[1315;1316] & $l[395;396;445;446;595;596]) & $[ex;$(LOCP_BX0);|;5]=1
-#ELSEIF ($a[476;596] & $l[296;396;446;596]) | ($a[716;956] & $l[296;330;378;396;446;596]) | ($a[1316] & $l[396;446;596])
-#ELSE
-#LETV S_D=0
-#LETV _s_d=0
-#ENDIF
-//#LETS draw=52722857
-#LETS draw=463203661
-#LETS 3ds=classicS.3ds
-#IF $(S_D:0)=1
-#LETS 3ds=$(_S_D:3)	 draw=$(_S_D:5)
-#LETS _wr:2=$(_wr:2)D тип 5
-#LETV _gsd=1
-#ENDIF
-//замена кода рисунка для другой модели
-#IF $(_ModDoorRasp:1)[s26]
-#LET draw=485706208
-#IF $(S_D:0)=1
-#LETS 3ds=$(_S_D:3)	 draw=$(_S_D:7)
-#ENDIF
-#ENDIF
-#LETS IDO=
-#IF $(_MODDOORRASP:1)[s27]
-#LETS 3ds=iceS.3ds
-#LETS draw=490743244//0016_010
-#ENDIF
-#IF $(_MODDOORRASP:1)[s01]
-#LETS 3ds=iceS.3ds
-#LETS draw=490743245//0017_010
-#ENDIF
-#IF $(_MODDOORRASP:1)[s29]
-#LETS 3ds=vectors.3ds
-#ENDIF
-//#IF $(_gsd:1)=1 & $(_gsd_en:0)=1 #LETV _gsd_en=0
-#IF $(_gsd:1)!1
-//////////////////////////////////////////номера столбцов с номерами программ обработок
-#LET numbStolbez=6
-#IF $(_MODDOORRASP:1)[s08] #LET numbStolbez=9
-///////////////////////////////////////////////////////////////////////////////////////
-#IF $l=396
-#LETS  3ds=$[ex;$(_gsd:5);|;1]
-#LETS draw=$[ex;$(_gsd:$(numbStolbez));|;1]
-#ELSEIF $l=446
-#LETS  3ds=$[ex;$(_gsd:5);|;2]
-#LETS draw=$[ex;$(_gsd:$(numbStolbez));|;2]
-#ELSEIF $l=596
-#LETS  3ds=$[ex;$(_gsd:5);|;3]
-#LETS draw=$[ex;$(_gsd:$(numbStolbez));|;3]
-#ELSEIF $l=896
-#LETS  3ds=$[ex;$(_gsd:5);|;4]
-#LETS draw=$[ex;$(_gsd:$(numbStolbez));|;4]
-#ENDIF
-//#MSG $(_gsd_colum_num:1)
-////в варианте прописано из какого номера в строке брать элемент для текущей ширины фасада
-#LET colNum=$(_gsd_colum_num:1)
-#LETS 3ds=$[ex;$(_gsd:5);|;$(colNum)]
-#LETS draw=$[ex;$(_gsd:$(numbStolbez));|;$(colNum)]
-// #LETS _wr:2=$(_wr:2) тип GSD
-#ENDIF
-#LETS PLVS=
-#IF $(_gsd:5)[param] //если параметрический фасад то рамку S и наполнения отрисовываем
-_paramFasad
-#ELSEIF $(_gsd:5)[paramsize] //растягиваемый sd фасад jazz
-#LETS 3ds=$[ex;$(_gsd:7);|;$(_gsd_vst:4)]
-#LETS draw=$(_gsd:6)
-#LETS plvs=$(_gsd_vst:5)
-////////
-#ENDIF
-//_paramantastr
-//замена кода рисунка для другой модели
-#IF 0
-#IF $(_ModDoorRasp:1)[s26;s01]
-#IF $(petlObr:0)!1 #LETS IDD=
-305	COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);VZ=$(cvetvstav_old:9);FPL=$(fpl);POP=$(pop);IDD=$(IDD);LPBR=$(LPBR) / /#l-1	C1=$(color_door1)	lato=$(show_door)	x1=0/$(_factura:4)	lato=$(show_door) //Боковина фасадная
-#ELSE
-#IF $(petlobr:0)=1
-#ELSE
-#LETS idd=
-#ENDIF
-#ENDIF
-#ENDIF
-_paramantastr
-//302	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)	x6=$(_colkarkas:3)/$(_colkarkas:4)/{$(sideFas)}  //Дверь распашная S
-305	COD= / / /#l-1	C1=$(color_door1)	x1=0/$(_factura:4)	lato=$(show_door)  //Боковина фасадная
-//#ENDIF
-#LETS matvstav=$(matvstav_old)	 cvetvstav=$(cvetvstav_old)
-//вставка стекло
-#IF ($(_s_d:0)!1 & $(_gsd:1)=1) | $(_gsd:1)=1
-040	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=3	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]	FACC=99	X6=$(cvetvstav:5)/$(cvetvstav:6)/$(matvstav:7)	lato=$(show_vst)  //Вставка двери
-#ENDIF
-#IF $(_gsd:5)[paramsize] //растягиваемый sd фасад jazz
-/////////отрисовка стеклянных вставок для jazz
-#IF $(_gsd_vst:0)=1 //вставка слева
-#LET slVst=62
-#LET saVst=62
-#LET altVst=$a-124
-#LET largVst=142
-#ELSEIF $(_gsd_vst:0)=2 //вставка справа
-#LET slVst=$l-62-142
-#LET saVst=62
-#LET altVst=$a-124
-#LET largVst=142
-#ELSEIF $(_gsd_vst:0)=3 //вставка сверху
-#LET slVst=62
-#LET saVst=$a-62-142
-#LET altVst=142
-#LET largVst=$l-124
-#ELSEIF $(_gsd_vst:0)=4 //вставка снизу
-#LET slVst=62
-#LET saVst=62
-#LET altVst=142
-#LET largVst=$l-124
-#ENDIF
-040	SL=$(slVst)	SA=$(saVst)	SP=3	L=$(largVst)	A=$(altVst)	FACC=99	X6=$(cvetvstav:5)/$(cvetvstav:6)/$(matvstav:7)	lato=$(show_vst)  //Вставка двери
-#ENDIF
-//#LETS matvstav=$(matvstav_old)	 cvetvstav=$(cvetvstav_old)
-#IF $(_gsd:1)!1 & $(_s_d:0)!1
-#IF $L=396
-#LETS  vetrocount=$[ex;$(_gsd:7);|;1]
-#LETS  vetropar=$[ex;$(_gsd:7);|;2]
-#ELSEIF $l=446
-#LETS  vetrocount=$[ex;$(_gsd:7);|;1]
-#LETS  vetropar=$[ex;$(_gsd:7);|;3]
-#ELSE
-#LETS  vetrocount=$[ex;$(_gsd:7);|;1]
-#LETS  vetropar=$[ex;$(_gsd:7);|;4]
-#ENDIF
-//Новый расчет высот стсекла (высоты одинаковые	 ширины рассчитываются)
-#LETS  vetrocount=$[ex;$(_gsd:7);|;1]
-#LETS  vetropar=$[ex;$(_gsd:7);|;2]
-#LET vetroA=$[ex;$(vetropar);X;1]
-#LET vetroL=$[ex;$(vetropar);X;2]
-#LET vetroSaPrev=0
-#FOR $1:$(vetroCount)
-#LET vetroA=$[ex;$(vetropar);X;{$(I)}]
-#LET vetroSaPrev=$(vetroA)+65+$(vetroSaPrev)
-040	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a-$(vetroSaPrev)	SP=3	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$(vetroA)	FACC=99	X6=$(cvetvstav:5)/$(cvetvstav:6)/$(matvstav:7)	lato=$(show_vst)  //Вставка двери
-#ENDFOR
-#ENDIF
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ELSEIF $(_TipDoorRasp:3)[G]//G type
-///old
-#IF 0 //до обощенных параметров
-#LETS IDD=1
-#IF $(petlobr:0)=1
-#LETS IDO=1_2
-#ELSE
-#LETS IDO=2
-#LETS IDD=
-#ENDIF
-#IF ($(_MODDOORRASP:1)[$(CVETVSTAV_DOOR:14)] & $(_patina:5)!60251733) & $(_TipDoorRasp:3)!!S
-#LETS IDO=
-#IF $(petlobr:0)=1
-#LETS IDD=1
-#ELSE
-#LETS IDD=
-#ENDIF
-#ENDIF
-#ENDIF
-/////////////////////////////////////////////////////////////////////
-_nicoleClassic3ds
-// #IF $(_MODDOORRASP:1)[s27]
-//    #LETS 3ds=iceG.3ds
-//    #LETS draw=404879828 //0016_001
-//    #LETS IDO=1
-//   #IF $(petlObr:0)!1 #LETS IDO=
-// #ENDIF
-// #IF $(_MODDOORRASP:1)[s01]
-//   #IF $(_petlObr:0)!1 #LETS IDO=
-// #ENDIF
-//      _MISURALIM
-_paramantastr
-//040
-// #IF $(_ModDoorRasp:1)[s26;s01]
-//#LET draw=
-//    303	COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);FPL=$(fpl);POP=$(POP);IDD=$(IDD);LPBR=$(LPBR) / /#L-1	C1=$(color_door1)	lato=$(show_door)  //Боковина фасадная
-// #ELSE
-//      _DRAWSTAG
-#IF $(flagCorrector)[2;3]
-#LETS _wr:2=Дверь купе Top Line
-#ENDIF
-#IF $(_gjp:0)=0
-303	COD= / / /#l-1	C1=$(color_door1)	lato=$(show_door)  //Боковина фасадная
-#ENDIF
-#IF $(_gjp:0)=1
-#LETS addsagparam=$l-4	$p
-#LET sagx1=4
-#LET sagN={$(gjpCountLine:1)}
-#LET sagA=($l-2*($(sagN)-1)-8)/$(sagN)
-#FOR $1:$(sagN)
-#LET sagL=($l-($(sagA)+8))/($i-1)
-#LET sagL1=$(sagA)/2+4
-#LET sagH=
-#LET sagX2=$(sagx1)+$(sagA)/2
-#LET sagY2=$p-5
-#LET sagX3=$(sagX1)+$(sagA)
-#LET sagY3=$P
-#LETS addsagparam= $(addsagparam)	A30	$l-$(sagx1)	$p	$l-$(sagx2)	$(sagY2)	$l-$(sagx3)	$(sagy3)	$l-$(sagx3)-2	$p
-#LET sagx1=$(sagx3)+2
-#ENDFOR
-!SAGOMA sagfasad  0	0 	$l	0	$l	$p 	$(addsagparam)	0	$P
-303	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)  //Боковина фасадная
-#ENDIF
-//#ENDIF
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ELSEIF $(_TipDoorRasp:3)[GJP] //для теста
-_nicoleClassic3ds
-_paramantastr
-#IF $(flagCorrector)[2;3]
-#LETS _wr:2=Дверь купе Top Line
-#ENDIF
-#LETS addsagparam=$l-4	$p
-#LET sagx1=4
-#LET sagN={$(gjpCountLine:1)}
-#LET sagA=($l-2*($(sagN)-1)-8)/$(sagN)
-#FOR $1:$(sagN)
-#LET sagL=($l-($(sagA)+8))/($i-1)
-#LET sagL1=$(sagA)/2+4
-#LET sagH=
-#LET sagX2=$(sagx1)+$(sagA)/2
-#LET sagY2=$p-5
-#LET sagX3=$(sagX1)+$(sagA)
-#LET sagY3=$P
-#LETS addsagparam= $(addsagparam)	A30	$l-$(sagx1)	$p	$l-$(sagx2)	$(sagY2)	$l-$(sagx3)	$(sagy3)	$l-$(sagx3)-2	$p
-#LET sagx1=$(sagx3)+2
-#ENDFOR
-!SAGOMA sagfasad  0	0 	$l	0	$l	$p 	$(addsagparam)	0	$P
-303	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)  //Боковина фасадная
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ELSEIF $(_TipDoorRasp:3)[GW]
-_paramantastr
-#IF $(_man:1)!999 #LETV _man=999
-#LET latofas=0
-//расположение ручки интеграто integrato
-#LETS dis=
-#IF $(_MANINTEGRATO:0)[01] // слева
-#LETS profilintegrato= a10	 25.75	22	 24.5	20.75	 25.75	19.5	  a10	 37	18	 42	11	 36	5	 0	5      	
-!SAGOMA sagfasad  0	0	 $L	0	 $L	$p	  $(profilintegrato)//
-#LETS dis=$(sagfasad)
-#ELSEIF $(_MANINTEGRATO:0)[02]  // справа
-#LETS profilintegrato= $L	5	 a10	 $L-36	5	 $L-42	11	 $L-37	18	  a10	 $l-25.75	19.5	 $l-24.5	20.75	 $l-25.75	22// //	 //
-!SAGOMA sagfasad    0	0	 $L	0	  $(profilintegrato)	 0	22////
-#LETS dis=$(sagfasad)
-#ELSEIF $(_MANINTEGRATO:0)[03] // сверху
-#LETS profilintegrato=5	$a	  a10	 5	 $a-36	 11	 $a-42	 18	 $a-37	 a10	 19.5	$a-25.75	 20.75	$a-24.5	 22	$a-25.75
-!SAGOMAL sagfasad  0	0 	 0	$A	 $(profilintegrato)	 $p	0
-#LETS dis=$(sagfasad)
-#ELSEIF $(_MANINTEGRATO:0)[04]  // снизу
-#LETS profilintegrato=a10	 22	25.75	 20.75	24.5	 19.5	25.75	 a10	  18	36	 11	 42	 5	37	 5	0  //a10	   //5	$a   5	 $a-36	 11	 $a-42	 18	 $a-37	
-!SAGOMAL sagfasad  0	0 	 0	$A	 22	$A	  $(profilintegrato)
-#LETS dis=$(sagfasad)
-#ENDIF
-#LETS draw=$(_manIntegrato:4)
-_integratoProfile
-_paramantastr
-//607	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)	a=$a	p=$P	l=$l
-303	COD= / / /#l-1	C1=$(color_door1)	dis=$(dis)	FACC=0	X1=$(sagomap)	lato=$(latofas)   //Боковина фасадная
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ENDIF
+   //макрос	 формирующий параметры для моделей
+   _paramAntaStr
+   #IF $(_TipDoorRasp:3)[s]
+      #IF ($a[475;476;595;596] & $l[295;296;;395;396;445;446;595;596]) | ($a[716;956] & $l[295;296;329;330;377;378;395;396;445;446;595;596]) | ($a[1315;1316] & $l[395;396;445;446;595;596]) & $[ex;$(LOCP_BX0);|;5]=1
+      #ELSEIF ($a[476;596] & $l[296;396;446;596]) | ($a[716;956] & $l[296;330;378;396;446;596]) | ($a[1316] & $l[396;446;596])
+      #ELSE
+         #LETV S_D=0
+         #LETV _s_d=0
+      #ENDIF
+      //#LETS draw=52722857
+      #LETS draw=463203661
+      #LETS 3ds=classicS.3ds
+      #IF $(S_D:0)=1
+         #LETS 3ds=$(_S_D:3)	 draw=$(_S_D:5)
+         #LETS _wr:2=$(_wr:2)D тип 5
+         #LETV _gsd=1
+      #ENDIF
+      //замена кода рисунка для другой модели
+      #IF $(_ModDoorRasp:1)[s26]
+         #LET draw=485706208
+         #IF $(S_D:0)=1
+            #LETS 3ds=$(_S_D:3)	 draw=$(_S_D:7)
+         #ENDIF
+      #ENDIF
+      #LETS IDO=
+      #IF $(_MODDOORRASP:1)[s27]
+         #LETS 3ds=iceS.3ds
+         #LETS draw=490743244//0016_010
+      #ENDIF
+      #IF $(_MODDOORRASP:1)[s01]
+         #LETS 3ds=iceS.3ds
+         #LETS draw=490743245//0017_010
+      #ENDIF
+      #IF $(_MODDOORRASP:1)[s29]
+         #LETS 3ds=vectors.3ds
+      #ENDIF
+      //#IF $(_gsd:1)=1 & $(_gsd_en:0)=1 #LETV _gsd_en=0
+      #IF $(_gsd:1)!1
+         //////////////////////////////////////////номера столбцов с номерами программ обработок
+         #LET numbStolbez=6
+         #IF $(_MODDOORRASP:1)[s08] #LET numbStolbez=9
+         ///////////////////////////////////////////////////////////////////////////////////////
+         #IF $l=396
+            #LETS  3ds=$[ex;$(_gsd:5);|;1]
+            #LETS draw=$[ex;$(_gsd:$(numbStolbez));|;1]
+         #ELSEIF $l=446
+            #LETS  3ds=$[ex;$(_gsd:5);|;2]
+            #LETS draw=$[ex;$(_gsd:$(numbStolbez));|;2]
+         #ELSEIF $l=596
+            #LETS  3ds=$[ex;$(_gsd:5);|;3]
+            #LETS draw=$[ex;$(_gsd:$(numbStolbez));|;3]
+         #ELSEIF $l=896
+            #LETS  3ds=$[ex;$(_gsd:5);|;4]
+            #LETS draw=$[ex;$(_gsd:$(numbStolbez));|;4]
+         #ENDIF
+         //#MSG $(_gsd_colum_num:1)
+         ////в варианте прописано из какого номера в строке брать элемент для текущей ширины фасада
+         #LET colNum=$(_gsd_colum_num:1)
+         #LETS 3ds=$[ex;$(_gsd:5);|;$(colNum)]
+         #LETS draw=$[ex;$(_gsd:$(numbStolbez));|;$(colNum)]
+         // #LETS _wr:2=$(_wr:2) тип GSD
+      #ENDIF
+      #LETS PLVS=
+      #IF $(_gsd:5)[param] //если параметрический фасад то рамку S и наполнения отрисовываем
+         _paramFasad
+      #ELSEIF $(_gsd:5)[paramsize] //растягиваемый sd фасад jazz
+         #LETS 3ds=$[ex;$(_gsd:7);|;$(_gsd_vst:4)]
+         #LETS draw=$(_gsd:6)
+         #LETS plvs=$(_gsd_vst:5)
+         ////////
+      #ENDIF
+      //_paramantastr
+      //замена кода рисунка для другой модели
+      #IF 0
+         #IF $(_ModDoorRasp:1)[s26;s01]
+            #IF $(petlObr:0)!1 #LETS IDD=
+            305	COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);VZ=$(cvetvstav_old:9);FPL=$(fpl);POP=$(pop);IDD=$(IDD);LPBR=$(LPBR) / /#l-1	C1=$(color_door1)	lato=$(show_door)	x1=0/$(_factura:4)	lato=$(show_door) //Боковина фасадная
+         #ELSE
+            #IF $(petlobr:0)=1
+            #ELSE
+               #LETS idd=
+            #ENDIF
+         #ENDIF
+      #ENDIF
+      _paramantastr
+      //302	COD= / / /#L-1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)	x6=$(_colkarkas:3)/$(_colkarkas:4)/{$(sideFas)}  //Дверь распашная S
+      305	COD= / / /#l-1	C1=$(color_door1)	x1=0/$(_factura:4)	lato=$(show_door)  //Боковина фасадная
+      //#ENDIF
+      #LETS matvstav=$(matvstav_old)	 cvetvstav=$(cvetvstav_old)
+      //вставка стекло
+      #IF ($(_s_d:0)!1 & $(_gsd:1)=1) | $(_gsd:1)=1
+         040	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=3	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]	FACC=99	X6=$(cvetvstav:5)/$(cvetvstav:6)/$(matvstav:7)	lato=$(show_vst)  //Вставка двери
+      #ENDIF
+      #IF $(_gsd:5)[paramsize] //растягиваемый sd фасад jazz
+         /////////отрисовка стеклянных вставок для jazz
+         #IF $(_gsd_vst:0)=1 //вставка слева
+            #LET slVst=62
+            #LET saVst=62
+            #LET altVst=$a-124
+            #LET largVst=142
+         #ELSEIF $(_gsd_vst:0)=2 //вставка справа
+            #LET slVst=$l-62-142
+            #LET saVst=62
+            #LET altVst=$a-124
+            #LET largVst=142
+         #ELSEIF $(_gsd_vst:0)=3 //вставка сверху
+            #LET slVst=62
+            #LET saVst=$a-62-142
+            #LET altVst=142
+            #LET largVst=$l-124
+         #ELSEIF $(_gsd_vst:0)=4 //вставка снизу
+            #LET slVst=62
+            #LET saVst=62
+            #LET altVst=142
+            #LET largVst=$l-124
+         #ENDIF
+         040	SL=$(slVst)	SA=$(saVst)	SP=3	L=$(largVst)	A=$(altVst)	FACC=99	X6=$(cvetvstav:5)/$(cvetvstav:6)/$(matvstav:7)	lato=$(show_vst)  //Вставка двери
+      #ENDIF
+      //#LETS matvstav=$(matvstav_old)	 cvetvstav=$(cvetvstav_old)
+      #IF $(_gsd:1)!1 & $(_s_d:0)!1
+         #IF $L=396
+            #LETS  vetrocount=$[ex;$(_gsd:7);|;1]
+            #LETS  vetropar=$[ex;$(_gsd:7);|;2]
+         #ELSEIF $l=446
+            #LETS  vetrocount=$[ex;$(_gsd:7);|;1]
+            #LETS  vetropar=$[ex;$(_gsd:7);|;3]
+         #ELSE
+            #LETS  vetrocount=$[ex;$(_gsd:7);|;1]
+            #LETS  vetropar=$[ex;$(_gsd:7);|;4]
+         #ENDIF
+         //Новый расчет высот стсекла (высоты одинаковые	 ширины рассчитываются)
+         #LETS  vetrocount=$[ex;$(_gsd:7);|;1]
+         #LETS  vetropar=$[ex;$(_gsd:7);|;2]
+         #LET vetroA=$[ex;$(vetropar);X;1]
+         #LET vetroL=$[ex;$(vetropar);X;2]
+         #LET vetroSaPrev=0
+         #FOR $1:$(vetroCount)
+            #LET vetroA=$[ex;$(vetropar);X;{$(I)}]
+            #LET vetroSaPrev=$(vetroA)+65+$(vetroSaPrev)
+            040	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a-$(vetroSaPrev)	SP=3	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$(vetroA)	FACC=99	X6=$(cvetvstav:5)/$(cvetvstav:6)/$(matvstav:7)	lato=$(show_vst)  //Вставка двери
+         #ENDFOR
+      #ENDIF
+      025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+   #ELSEIF $(_TipDoorRasp:3)[G]//G type
+      ///old
+      #IF 0 //до обощенных параметров
+         #LETS IDD=1
+         #IF $(petlobr:0)=1
+            #LETS IDO=1_2
+         #ELSE
+            #LETS IDO=2
+            #LETS IDD=
+         #ENDIF
+         #IF ($(_MODDOORRASP:1)[$(CVETVSTAV_DOOR:14)] & $(_patina:5)!60251733) & $(_TipDoorRasp:3)!!S
+            #LETS IDO=
+            #IF $(petlobr:0)=1
+               #LETS IDD=1
+            #ELSE
+               #LETS IDD=
+            #ENDIF
+         #ENDIF
+      #ENDIF
+      /////////////////////////////////////////////////////////////////////
+      _nicoleClassic3ds
+      // #IF $(_MODDOORRASP:1)[s27]
+      //    #LETS 3ds=iceG.3ds
+      //    #LETS draw=404879828 //0016_001
+      //    #LETS IDO=1
+      //   #IF $(petlObr:0)!1 #LETS IDO=
+      // #ENDIF
+      // #IF $(_MODDOORRASP:1)[s01]
+      //   #IF $(_petlObr:0)!1 #LETS IDO=
+      // #ENDIF
+      //      _MISURALIM
+      _paramantastr
+      //040
+      // #IF $(_ModDoorRasp:1)[s26;s01]
+      //#LET draw=
+      //    303	COD= /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(cvetvstav:9);_FKF=$(_factura:4);PTN=$(_patina:5);NPO=$(draw);FPL=$(fpl);POP=$(POP);IDD=$(IDD);LPBR=$(LPBR) / /#L-1	C1=$(color_door1)	lato=$(show_door)  //Боковина фасадная
+      // #ELSE
+      //      _DRAWSTAG
+      #IF $(flagCorrector)[2;3]
+         #LETS _wr:2=Дверь купе Top Line
+      #ENDIF
+      #IF $(_gjp:0)=0
+         303	COD= / / /#l-1	C1=$(color_door1)	lato=$(show_door)  //Боковина фасадная
+      #ENDIF
+      #IF $(_gjp:0)=1
+         #LETS addsagparam=$l-4	$p
+         #LET sagx1=4
+         #LET sagN={$(gjpCountLine:1)}
+         #LET sagA=($l-2*($(sagN)-1)-8)/$(sagN)
+         #FOR $1:$(sagN)
+            #LET sagL=($l-($(sagA)+8))/($i-1)
+            #LET sagL1=$(sagA)/2+4
+            #LET sagH=
+            #LET sagX2=$(sagx1)+$(sagA)/2
+            #LET sagY2=$p-5
+            #LET sagX3=$(sagX1)+$(sagA)
+            #LET sagY3=$P
+            #LETS addsagparam= $(addsagparam)	A30	$l-$(sagx1)	$p	$l-$(sagx2)	$(sagY2)	$l-$(sagx3)	$(sagy3)	$l-$(sagx3)-2	$p
+            #LET sagx1=$(sagx3)+2
+         #ENDFOR
+         !SAGOMA sagfasad  0	0 	$l	0	$l	$p 	$(addsagparam)	0	$P
+         303	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)  //Боковина фасадная
+      #ENDIF
+      //#ENDIF
+      025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+   #ELSEIF $(_TipDoorRasp:3)[GJP] //для теста
+      _nicoleClassic3ds
+      _paramantastr
+      #IF $(flagCorrector)[2;3]
+         #LETS _wr:2=Дверь купе Top Line
+      #ENDIF
+      #LETS addsagparam=$l-4	$p
+      #LET sagx1=4
+      #LET sagN={$(gjpCountLine:1)}
+      #LET sagA=($l-2*($(sagN)-1)-8)/$(sagN)
+      #FOR $1:$(sagN)
+         #LET sagL=($l-($(sagA)+8))/($i-1)
+         #LET sagL1=$(sagA)/2+4
+         #LET sagH=
+         #LET sagX2=$(sagx1)+$(sagA)/2
+         #LET sagY2=$p-5
+         #LET sagX3=$(sagX1)+$(sagA)
+         #LET sagY3=$P
+         #LETS addsagparam= $(addsagparam)	A30	$l-$(sagx1)	$p	$l-$(sagx2)	$(sagY2)	$l-$(sagx3)	$(sagy3)	$l-$(sagx3)-2	$p
+         #LET sagx1=$(sagx3)+2
+      #ENDFOR
+      !SAGOMA sagfasad  0	0 	$l	0	$l	$p 	$(addsagparam)	0	$P
+      303	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)  //Боковина фасадная
+      025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+   #ELSEIF $(_TipDoorRasp:3)[GW]
+      _paramantastr
+      #IF $(_man:1)!999 #LETV _man=999
+      #LET latofas=0
+      //расположение ручки интеграто integrato
+      #LETS dis=
+      #IF $(_MANINTEGRATO:0)[01] // слева
+         #LETS profilintegrato= a10	 25.75	22	 24.5	20.75	 25.75	19.5	  a10	 37	18	 42	11	 36	5	 0	5      	
+         !SAGOMA sagfasad  0	0	 $L	0	 $L	$p	  $(profilintegrato)//
+         #LETS dis=$(sagfasad)
+      #ELSEIF $(_MANINTEGRATO:0)[02]  // справа
+         #LETS profilintegrato= $L	5	 a10	 $L-36	5	 $L-42	11	 $L-37	18	  a10	 $l-25.75	19.5	 $l-24.5	20.75	 $l-25.75	22// //	 //
+         !SAGOMA sagfasad    0	0	 $L	0	  $(profilintegrato)	 0	22////
+         #LETS dis=$(sagfasad)
+      #ELSEIF $(_MANINTEGRATO:0)[03] // сверху
+         #LETS profilintegrato=5	$a	  a10	 5	 $a-36	 11	 $a-42	 18	 $a-37	 a10	 19.5	$a-25.75	 20.75	$a-24.5	 22	$a-25.75
+         !SAGOMAL sagfasad  0	0 	 0	$A	 $(profilintegrato)	 $p	0
+         #LETS dis=$(sagfasad)
+      #ELSEIF $(_MANINTEGRATO:0)[04]  // снизу
+         #LETS profilintegrato=a10	 22	25.75	 20.75	24.5	 19.5	25.75	 a10	  18	36	 11	 42	 5	37	 5	0  //a10	   //5	$a   5	 $a-36	 11	 $a-42	 18	 $a-37	
+         !SAGOMAL sagfasad  0	0 	 0	$A	 22	$A	  $(profilintegrato)
+         #LETS dis=$(sagfasad)
+      #ENDIF
+      #LETS draw=$(_manIntegrato:4)
+      #IF $(_manintegratotype:1)[2]
+         #LETS draw=$(_manIntegrato:9)
+      #ENDIF
+      _integratoProfile
+      _paramantastr
+      //607	COD= / / /#l-1	C1=$(color_door1)	FACC=0	DIS=$(sagfasad)	X1=$(sagomap)	a=$a	p=$P	l=$l
+      303	COD= / / /#l-1	C1=$(color_door1)	dis=$(dis)	FACC=0	X1=$(sagomap)	lato=$(latofas)   //Боковина фасадная
+      025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+   #ENDIF
 #ELSEIF $(_ModDoorRasp:7)[LMDF]
-#IF $(_TipDoorRasp:3)[s]
-#IF $(petlObr)=1
-#ELSE
-#LETS IDD=
-#LETS LPBR=
-#ENDIF
-#LET sideFas=0
-#LETS params=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NT=$(nt);FPL=$(fpl);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);VZ=$(cvetvstav:9);POP=$(POP);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
-302	COD= /$(params) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)	x6=$(_colkarkas:3)/$(_colkarkas:4)/{$(sideFas)}  //Дверь распашная S
-040	LATO=6	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=$p/2	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]  //Вставка двери
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ELSEIF $(_TipDoorRasp:3)[G] //глухой фасад
-#IF $(petlObr:0)=1 | $(flagCorrector)[1;2;3] //фрезеровка под петли
-//            #MSG $(codPetl) xx $(cod)
-#LETS IDO=1
-#LETS IDD=1
-#LETV _MNP=$(codPETL)
-#LETV _WR=$(codPETL)
-#IF $(flagCorrector)[1;2;3] //для дверей с  корректором меняется маршрут и тип товара
-#LETV _MNP=$(cod)STAG
-#LETV _WR=$(cod)STAG
-#ENDIF
-#LETV MNP=$(_MNP:3)
-#LETV WR=$(_WR:3)
-#LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
-#ELSE // без фрезеровки под петли
-#LETS x5par=
-#LETV _MNP=$(cod)
-#LETV MNP=$(_MNP:3)
-#LETV _WR=$(cod)
-#LETV WR=$(_WR:3)
-#LETS IDO=
-#LETS IDD=
-#ENDIF
-#IF $(flagCorrector)[2;3]
-#LETS _wr:2=Дверь купе Top Line
-#ENDIF
-#IF $(flagbok)==on
-#LETS _wr:2=$(namebokfas)
-#ENDIF
-#IF $(a)<146 | $(l)<146
-#LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
-#ENDIF
-!COMMENTO $(_WR:2)
-#LETS params=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
-301	COD= /$(params) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
-025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
-#ENDIF
+   #IF $(_TipDoorRasp:3)[s]
+      #IF $(petlObr)=1
+      #ELSE
+         #LETS IDD=
+         #LETS LPBR=
+      #ENDIF
+      #LET sideFas=0
+      #LETS params=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NT=$(nt);FPL=$(fpl);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);VZ=$(cvetvstav:9);POP=$(POP);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
+      302	COD= /$(params) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	lato=$(show_door)	x6=$(_colkarkas:3)/$(_colkarkas:4)/{$(sideFas)}  //Дверь распашная S
+      040	LATO=6	SL=$l/2-($l-$[ex;$(_ModDoorRasp:4);:;2])/2	SA=$a/2-($a-$[ex;$(_ModDoorRasp:4);:;1])/2	SP=$p/2	L=$l-$[ex;$(_ModDoorRasp:4);:;2]	A=$a-$[ex;$(_ModDoorRasp:4);:;1]  //Вставка двери
+      025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+   #ELSEIF $(_TipDoorRasp:3)[G] //глухой фасад
+      #IF $(petlObr:0)=1 | $(flagCorrector)[1;2;3] //фрезеровка под петли
+         //            #MSG $(codPetl) xx $(cod)
+         #LETS IDO=1
+         #LETS IDD=1
+         #LETV _MNP=$(codPETL)
+         #LETV _WR=$(codPETL)
+         #IF $(flagCorrector)[1;2;3] //для дверей с  корректором меняется маршрут и тип товара
+            #LETV _MNP=$(cod)STAG
+            #LETV _WR=$(cod)STAG
+         #ENDIF
+         #LETV MNP=$(_MNP:3)
+         #LETV WR=$(_WR:3)
+         #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
+      #ELSE // без фрезеровки под петли
+         #LETS x5par=
+         #LETV _MNP=$(cod)
+         #LETV MNP=$(_MNP:3)
+         #LETV _WR=$(cod)
+         #LETV WR=$(_WR:3)
+         #LETS IDO=
+         #LETS IDD=
+      #ENDIF
+      #IF $(flagCorrector)[2;3]
+         #LETS _wr:2=Дверь купе Top Line
+      #ENDIF
+      #IF $(flagbok)==on
+         #LETS _wr:2=$(namebokfas)
+      #ENDIF
+      #IF $(a)<146 | $(l)<146
+         #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
+      #ENDIF
+      !COMMENTO $(_WR:2)
+      #LETS params=MNP=$(_MNP:3);WR=$(_wr:3);OCF=$(_colkarkas:6);CK=$(_colkarkas:7);NT=$(nt);WK=$(_colkarkas:10);NK=$(_colkarkas:10);EK=$(_colkarkas:10);SK=$(_colkarkas:10);FPL=$(fpl);POP=$(POP);IDO=$(IDO);IDD=$(IDD);LPBR=$(LPBR);NSE=$(SHPR)
+      301	COD= /$(params) / /#L-1	C1=$(color_door1)	C2=$(color_door2)	X5=$(x5par)	lato=$(show_door)  //Дверь распашная
+      025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
+   #ENDIF
 #ENDIF

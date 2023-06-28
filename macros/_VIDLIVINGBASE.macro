@@ -127,9 +127,9 @@
    //в фасад передаем переопределенные варианты из групп для каждого фасада
    _fasVid	SL=$(SxSpostaLRaspD)	SA=$(PnSpostaARaspD)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+{$(deltaSa)}	SP=$(p)	L=$(fasL)	A=$(newAlt)	P=$(_ModDoorRasp:5)	_COLKARKAS=$(_COLKARKASFAS$(FasInd))\
    	cvetvstav_door=$(cvetvstav_door$(fasInd))	cvetvstav=$(cvetvstav$(fasInd)	TxtVst=$(TxtVst$(fasInd))	_factura=$(_factura$(fasInd))	_patina=$(_patina$(fasInd))	_colkrom=$(_colkrom$(FasInd))	detYash=2	kromLaser=$(kromLaser$(fasInd))\
-   	_gjp=$(_gjp$(fasInd))	gjpCountLine=$(gjpCountLine$(fasInd))	_tipDoorRasp=$(_TIPDOORRASP$(fasInd))	_manIntX=$(_manIntx$(fasInd))	_manIntY=$(_manIntY$(fasInd))	_manIntegrato=$(_manIntegrato$(fasInd))
+   	_gjp=$(_gjp$(fasInd))	gjpCountLine=$(gjpCountLine$(fasInd))	_tipDoorRasp=$(_TIPDOORRASP$(fasInd))	_manIntX=$(_manIntx$(fasInd))	_manIntY=$(_manIntY$(fasInd))	_manIntegrato=$(_manIntegrato$(fasInd))	_manintegratotype=$(_manintegratotype$(fasInd))
    #LET spostaa_met=$(sposta_macro)+($(fasa)+$(StSpostaARaspD)*2+$(spostaAfas))*($(index)-1)+16+$(mat:1)+$(saVid) +{$(deltaSa) //добавил +{$(deltaSa)
-     
+   
    #LET spostaNavesP=0	spostaNavesA=0
    //проверка навесов
    #IF $(NAVESLIVING:1)!999 & $(vidCount)=$(index) //если ящик самый верхний

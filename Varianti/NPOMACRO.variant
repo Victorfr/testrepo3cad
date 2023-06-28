@@ -2321,6 +2321,126 @@
       "Ordinamento": 0,
       "Extra": "",
       "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789619152",
+      "Des": "0036_065",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620669",
+      "Des": "0036_066",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620695",
+      "Des": "0036_067",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620710",
+      "Des": "0036_068",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620732",
+      "Des": "0036_069",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620755",
+      "Des": "0036_070",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620767",
+      "Des": "0036_071",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620779",
+      "Des": "0036_072",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620789",
+      "Des": "0036_073",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789620805",
+      "Des": "0036_074",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789621758",
+      "Des": "0036_075",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "NPOMACRO",
+      "Codopz": "789621835",
+      "Des": "0036_076",
+      "Memo": "",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
     }
   ]
 }

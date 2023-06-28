@@ -6,13 +6,16 @@
 !SAGSPOSTA sagomatest	$(sagomatest)	-43
 #LETS 3ds=IntegratoGW_new.3ds
 #LET rad=38
+#IF $(_manintegratotype:1)[2]
+   #LET rad=5
+#ENDIF
 #LET x=-({$(rad)*sin(45)})
 #LET y={$(rad)*CSD(45)}
 #IF {$(oldManX)}!$(_manIntX:0)
-#IF $(_manIntX:0)+$(minIntSize)>=$a
-#LETV _manIntX={$a-$(minIntSize)}
-#ENDIF
-#LETV oldManX={$(_manIntX:0)}
+   #IF $(_manIntX:0)+$(minIntSize)>=$a
+      #LETV _manIntX={$a-$(minIntSize)}
+   #ENDIF
+   #LETV oldManX={$(_manIntX:0)}
 #ENDIF
 //#IF $(_manIntX:0)+10>=$A
 // #LETV _manIntX=$A-10

@@ -6,20 +6,24 @@
 !SAGSPOSTA sagomatest	$(sagomatest)	-43
 #LETS 3ds=IntegratoGW_new.3ds
 #LET rad=38
+#IF $(_manintegratotype:1)[2]
+   #LET rad=5
+#ENDIF
 #LET x=-({$(rad)*sin(45)})
 #LET y={$(rad)*CSD(45)}
 #IF $(oldManX)!$(_manIntX:0) | $(oldAlt)!$a
-#IF $(_manIntX:0)+$(minIntSize)>=$a
-#LETV _manIntX={$a-$(minIntSize)}
-#ENDIF
-#LETV oldManX={$(_manIntX:0)}
-#LETV oldAlt=$a
+   #IF $(_manIntX:0)+$(minIntSize)>=$a
+      #LETV _manIntX={$a-$(minIntSize)}
+   #ENDIF
+   #LETV oldManX={$(_manIntX:0)}
+   #LETV oldAlt=$a
 #ENDIF
 //#IF $(_manIntX:0)+10>=$A
 //   #LETV _manIntX=$A-10
 //#ENDIF
 #LET manLarg=$(_manIntX:0)-$(rad)
 #LETS manProfile=43	0	43	$(manLarg)	A5	43	$(manLarg)	43-($(rad)-$(rad)*csd(45))	$(manLarg)+$(rad)*csd(45)	 43-$(rad)	$(manLarg)+$(rad)	0	$(manLarg)+$(rad)
+
 !SAGOMA test $(manProfile)
 !SAGMIRROR test 	$(test)	Y
 !SAGOMAp sagfasad $(manProfile)	0	$a	$l	$a	$l	0

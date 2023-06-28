@@ -70,6 +70,7 @@ T,_manProfAlt,,$(_manProfBl:0)=1,Размер ручки-профиль
 T,_man_orient,,$(_man:7)[skoba]
 S,oldManInt,,,,,,,,,,,,0
 T,_manIntegrato,,$(_TipDoorRasp:3)[GW] & $(_ModDoorRasp:1)==s32,Положение ручки,$(_FiaApertoAnta:1)[$(_manIntegrato:8)]
+T,_manintegratotype,,$(_manIntegrato:11)!0,Тип ручки
 S,oldAlt,,,,,,,,,,,,0
 S,oldLarg,,,,,,,,,,,,0
 S,oldManX,,,,,,,,,,,,0

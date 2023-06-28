@@ -4,30 +4,39 @@
 !SAGSPOSTA sagomatest	$(sagomatest)	-43
 #LETS 3ds=IntegratoGW_new.3ds
 #LET rad=44.5
+#IF $(_manintegratotype:1)[2]
+   #LET rad=5
+#ENDIF
 #LET x=-({$(rad)*sin(45)})
 #LET y={$(rad)*CSD(45)}
 #IF $(oldManX)!$(_manIntX:0) |  $(oldAlt)!$a
-#IF $(_manIntY:0)+$(_manIntX:0)+10>$A
-#LETV _manIntX={$a-$(_manIntY:0)-10}
-#ENDIF
-#IF $(_manIntY:0)<$(minIntSize)
-#LETV _manIntY=$(minIntSize)
-#LETV _manIntX=$(_manIntY:0)+200
-#ENDIF
-#LETV oldManX={$(_manIntX:0)}
-#LETV oldAlt=$a
+   #IF $(_manIntY:0)+$(_manIntX:0)+10>$A
+      #LETV _manIntX={$a-$(_manIntY:0)-10}
+   #ENDIF
+   #IF $(_manIntY:0)<$(minIntSize)
+      #LETV _manIntY=$(minIntSize)
+      #LETV _manIntX=$(_manIntY:0)+200
+   #ENDIF
+   #LETV oldManX={$(_manIntX:0)}
+   #LETV oldAlt=$a
 #ENDIF
 #IF {$(oldManY)}!$(_manIntY:0)|  $(oldAlt)!$a
-#IF $(_manIntY:0)+$(_manIntX:0)+$(minIntSize)>$A
-#LETV _manIntY={$a-$(_manIntX:0)-$(minIntSize)}
-#ENDIF
-#LETV oldManY={$(_manIntY:0)}
-#LETV oldAlt=$a
+   #IF $(_manIntY:0)+$(_manIntX:0)+$(minIntSize)>$A
+      #LETV _manIntY={$a-$(_manIntX:0)-$(minIntSize)}
+   #ENDIF
+   #LETV oldManY={$(_manIntY:0)}
+   #LETV oldAlt=$a
 #ENDIF
 #LET manLarg=$(_manIntY:0)
 #LET manLargY=$(_manIntX:0)
 #LETS manProfile= 0	$(manLarg)	0	$(manLarg)	A25	0	$(manLarg)	$(rad)*csd(45)	$(manLarg)+($(rad)-$(rad)*csd(45))	43	$(manLarg)+$(rad)	\
 43	$(manLarg)+$(manLargY)-$(rad)	A25	43	$(manLarg)+$(manLargY)-$(rad)	$(rad)*csd(45)	$(manLarg)+$(manLargY)-$(rad)+$(rad)*csd(45)	0	$(manLarg)+$(manLargY)
+
+#IF $(_manintegratotype:1)[2]
+   #LETS manProfile= 0	$(manLarg)	43	$(manLarg)	\
+   43	$(manLarg)+$(manLargY)	43	$(manLarg)+$(manLargY)	0	$(manLarg)+$(manLargY)
+   
+#ENDIF
 !SAGOMA test $(manProfile)
 !SAGMIRROR test 	$(test)	Y
 !SAGOMAp sagfasad 0	0	$(manProfile)	0	$a	$l	$a	$l	0
