@@ -12,7 +12,7 @@
       #ENDIF
       #LET slBackWall=7//$(matvn:1)-9
       #LET lBackWall=$(lkorp)-14
-      #LET altBackWall=$(akorp)-{$(hzoc:0)}-14
+      #LET altBackWall=$(akorp)//-{$(hzoc:0)}-14
       ##OTSTUPP
       #LET bottomOts=$(backVirBottom:0)-7-$(hzoc:0)
       #IF $(bottomOts)<50

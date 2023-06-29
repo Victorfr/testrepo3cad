@@ -10,6 +10,7 @@
 #LET countVert=0
 #LET profkarkasVertSP=0
 #LET profkarkasGorSP=0
+#LET karkasTopOffset=0
 //////////////////////////////////
 //_gabaritLimit
 #LET spBackWall=0//17
@@ -25,24 +26,25 @@
    #LET index=$(index)+1
    #LET flagDoor$(index)=0
 #ENDFOR
-#LET shMantera=0
+//#LET shMantera=0
 #IF $(matvn:1)[18]
    #IF $(_COLKARKAS:1)[221]
       // #LETV shMantera=1
-   #ENDIF 
+   #ENDIF
    #LETV _krepeg=1
-   // #LETV addzoc=1 
+   // #LETV addzoc=1
    #LET .globale1=1
 #ELSE
    #LETV shMantera=0
    #LET .globale1=0
 #ENDIF
-#IF $(shMantera)=0
+#IF $(shMantera:0)=0
    //#LETV hzoc=0
-   //#LETV addzoc=0
+   
 #ENDIF
-#IF $(shMantera)=1
+#IF $(shMantera:0)=1
    #LETS mat_backwall:3=8
+    #LETV  addzoc=1
 #ENDIF
 ////////////////////////////////////////////////
 //VOLUMEMIXAL
@@ -53,7 +55,7 @@
    //#LETV pbokr=2
    //#LETV pup=2
    #LETS msg_lim_kol=0
-   #IF $(shMantera)=0
+   #IF $(shMantera:0)=0
       #LETV hzoc=0
       #LETV addzoc=0
    #ENDIF

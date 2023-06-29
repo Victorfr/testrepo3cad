@@ -49,7 +49,7 @@
    #LET latoLeftBok=0
    
    #LET innerSa=0
-   #IF $(addzoc:1)=1
+   #IF $(addzoc:0)=1
       #LET innerSa=$(karkasSa)
    #ENDIF
    #IF $(leftbok:0)=1
@@ -60,7 +60,7 @@
       #IF $(lamp:0)=1
          #LET minProfVir=150
       #ENDIF
-      !SAGOMA leftsag  0	0	0	$P	$a	$p	$a	0
+      !SAGOMA leftsag  0	0	0	$P	{$a+{$(hzoc:0)}+{$(hzoctop:0)}}	$p	{$a+{$(hzoc:0)}+{$(hzoctop:0)}}	0
       ///===================проверка ограничений==================================
       #IF $(oldleftVirBack)!$(leftVirBack:0)
          #IF $(leftVirDepth:0)+$(leftVirBack:0)>$(vertDet)-$(minProfVir)
@@ -123,10 +123,10 @@
          #LETS virPar=$(virPar);$(leftVirBack1:0)|$(leftVirBottom1:0)|$(leftVirDepth1:0)|$(leftVirHeight1:0)
       #ENDIF
       ///
-      001	dis=$(leftSag)	c1=$(sagColor)	a=18	az=-90	sl=18
-      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	x9=$(virPar)  // Бок ЛВ ДСП
+      001	dis=$(leftSag)	c1=$(sagColor)	a=18	az=-90	sl=18	sa=-$(innersa)
+      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	x9=$(virPar)	a=$a+$(innerSa)+$(hzoctop:0)  // Бок ЛВ ДСП
    #ELSE
-      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	sa=-$(innerSa)	a=$a+$(innerSa)  // Бок ЛВ ДСП
+      010	COD= /$(paramBok)	P=$(vertDet)	lato=$(latoLeftBok)	sa=-$(innerSa)	a=$a+$(innerSa)+$(hzoctop:0)  // Бок ЛВ ДСП
    #ENDIF
    NUMDET	SL=$l-$(mat:0)	SA=$A/2
    #LET latoRightBok=0
@@ -138,7 +138,9 @@
       #IF $(lamp:0)=1
          #LET minProfVir=150
       #ENDIF
-      !SAGOMA rightsag  0	0	0	$P	$a	$p	$a	0
+      //!SAGOMA rightsag  0	0	0	$P	$a	$p	$a	0
+      !SAGOMA rightsag  0	0	0	$P	{$a+{$(hzoc:0)}+{$(hzoctop:0)}}	$p	{$a+{$(hzoc:0)}+{$(hzoctop:0)}}	0
+      
       ///===================???????? ???????????==================================
       #IF $(oldrightVirBack)!$(rightVirBack:0)
          #IF $(rightVirDepth:0)+$(rightVirBack:0)>$(vertDet)-$(minProfVir)
@@ -201,13 +203,13 @@
          #LETS virPar=$(virPar);$(rightVirBack1:0)|$(rightVirBottom1:0)|$(rightVirDepth1:0)|$(rightVirHeight1:0)
       #ENDIF
       ///
-      001	dis=$(rightSag)	c1=$(sagColor)	a=18	az=-90	sl=$l
-      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	x9=$(virPar)  // Бок ПР ДСП
+      001	dis=$(rightSag)	c1=$(sagColor)	a=18	az=-90	sl=$l	sa=-$(innerSa)
+      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	x9=$(virPar)	a=$a+$(innerSa)+$(hzoctop:0)  // Бок ПР ДСП
    #ELSE
-      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	sa=-$(innerSa)	a=$a+$(innerSa)  // Бок ПР ДСП
+      011	COD= /$(paramBok)	P=$(vertDet)	lato=$(latorightbok)	sa=-$(innerSa)	a=$a+$(innerSa)+$(hzoctop:0)  // Бок ПР ДСП
    #ENDIF
    #LET dnoSa=0
-   #IF $(addzoc)=1
+   #IF $(addzoc:0)=1
       //если скрытие цоколя не выбрано
       #IF $(hidezoctop:0)=0
          NUMDET	SL=$(mat:0)+35	SA=-$(karkasSa)
@@ -229,9 +231,9 @@
       #ENDIF
       #IF $(addzoctop:0)=1 & $(hidezoctop:0)=0
          NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
-         017	COD= /$(paramsZoc)	SP= $(spzoc)	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
+         017	COD= /$(paramsZoc)	SP= $(spzoc)	sa=$a	a=$(hzoctop:0)  // Цоколь ДСП
          NUMDET	SL=$(mat:0)+35	SA=$a	sp=20
-         017	COD= /$(paramsZoc)	SP= 20	sa=$a-$(hzoctop:0)	a=$(hzoctop:0)  // Цоколь ДСП
+         017	COD= /$(paramsZoc)	SP= 20	sa=$a	a=$(hzoctop:0)  // Цоколь ДСП
       #ENDIF
       #LET spPie=$(horDet)-100
       #IF $(p)>=400
@@ -283,7 +285,7 @@
    //если крышка под люк
    #LET saTop=$a-$(mat:1)
    #IF $(addzoctop:1)=1 //цоколь сверху для мантеры
-      #LET saTop=$(a)-$(mat:1)-$(hzoctop:0)
+      #LET saTop=$(a)-$(mat:1)
    #ENDIF
    #IF $(verhLuk:0)=1
       013	COD= /$(paramDn)	SA=$(saTop)	P={$(horDet)-10}	sp=10	x6=$(shMantera)//$(mat_backwall:3)  //Крышка ДСП

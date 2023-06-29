@@ -21,7 +21,8 @@
    //  #LETV hzoc=0
    // #ELSE
    //#LETV addNogMixal=0
-   #IF $(addzoc:1)=1
+   
+   #IF $(addzoc:0)=1
       #LETV addNogMixal=0
       #IF $(hzoc:0)<40
          #LETV hzoc=40
@@ -54,7 +55,7 @@
    //гайка для опоры
    001	LATO=6	COD=999gnogBP01 / / /#Q4	L=1	A=1	P=1  //Test
    //#ENDIF
-#ELSEIF $(addzoc:1)=1 //если добавлен цоколь
+#ELSEIF $(addzoc:0)=1 //если добавлен цоколь
    #LET karkasSa=$(hzoc:0)
    #LETV ua=$(hzoc:0)
    // #IF $(ua)!0
@@ -70,4 +71,7 @@
 //VOLUMEMIXAL
 //отрисовка констрктивных деталей шкафа
 //_korobLiving	sa=$(karkasSA)
+#IF $(addzoctop:0)=1
+   #LET karkasTopOffset=$(hzoctop:0)
+#ENDIF
 _korobMixal	sa=$(karkasSa)

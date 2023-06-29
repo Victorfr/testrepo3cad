@@ -39,7 +39,7 @@ C,shrusal,,,Модуль для Rusal,,,,,,,8
 T,WR,,,,,,,,,,,,0
 T,_TipDoorRasp,_TipDoorRaspFas,$(_ModDoorRasp:3)!0,,$(_TipDoorRaspFas:3)[G]
 M,altMetBox,,$(FPL)!!N,Высота модуля,#IF $(FPL)==N\n   #LETV altMetbox=$a\n#ENDIF
-T,mat,,,Материал модуля,#IF $(shMantera:1)=0\n   $(mat:3)=1 & $(mat:1)!25\n#ELSE\n   $(mat:1)[16;18]\n#ENDIF
+T,mat,,,Материал модуля,#IF $(shMantera:1)=1 | $(shRusal:0)=1\n   $(mat:1)[16;18]\n#ELSE\n   $(mat:3)=1 & $(mat:1)!25\n#ENDIF
 T,_colkarkas,,,Цвет модуля,#IF $(shMantera:1)=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n#ELSE\n   #IF $(mat:1)[16]\n      $(_colkarkas:1)[133]\n   #ELSE\n      $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n   #ENDIF\n#ENDIF
 Z,rip_sot,,,Полка снизу,,,,,,,,,0
 C,changeMat,,0,Обклад18мм

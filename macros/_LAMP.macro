@@ -1,20 +1,20 @@
 !parametri otstuplamp=228	leftlamp=1	rightlamp=1	shMantera=0
 #IF $(lamp:0)=1
-#IF $(leftlamp)=1
-044	SL=$(matvnL:0)-9	SP=$p-$(otstuplamp)  //Светильник врезной
-#ENDIF
-#IF $(rightlamp)=1
-044	SL=$l-$(matvnR:0)-1	SP=$p-$(otstuplamp)  //Светильник врезной
-#ENDIF
-#IF $(shMantera)=0
-001	LATO=6	COD=999LedLenta / / /#Q2	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999SensVkl / / /#Q2	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999TransForLedLent / / /#Q2	L=1	A=1	P=1  //Test
-#ENDIF
-#IF $(shMantera)=1
-#LET countLedMant={{$(leftLamp)}+{$(rightlamp)}}
-001	LATO=6	COD=999manteroled / / /#Q$(countLedMant)	L=1	A=1	P=1  //Test
-//001	LATO=6	COD=999SensVkl / / /#Q2	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999TransForLedLent / / /#Q1	L=1	A=1	P=1  //Test
-#ENDIF
+   #IF $(leftlamp)=1
+      044	SL=$(matvnL:0)-9	SP=$p-$(otstuplamp)  //Светильник врезной
+   #ENDIF
+   #IF $(rightlamp)=1
+      044	SL=$l-$(matvnR:0)-1	SP=$p-$(otstuplamp)  //Светильник врезной
+   #ENDIF
+   #IF $(shMantera:0)=0
+      001	LATO=6	COD=999LedLenta / / /#Q2	L=1	A=1	P=1  //Test
+      001	LATO=6	COD=999SensVkl / / /#Q2	L=1	A=1	P=1  //Test
+      001	LATO=6	COD=999TransForLedLent / / /#Q2	L=1	A=1	P=1  //Test
+   #ENDIF
+   #IF $(shMantera:0)=1
+      #LET countLedMant={{$(leftLamp)}+{$(rightlamp)}}
+      001	LATO=6	COD=999manteroled / / /#Q$(countLedMant)	L=1	A=1	P=1  //Test
+      //001	LATO=6	COD=999SensVkl / / /#Q2	L=1	A=1	P=1  //Test
+      001	LATO=6	COD=999TransForLedLent / / /#Q1	L=1	A=1	P=1  //Test
+   #ENDIF
 #ENDIF

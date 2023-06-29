@@ -62,14 +62,14 @@ T,mat,matvn,,Материал полок,#IF $(matGl:1)[18]\n   $(matvn:1)[18]\n#ELSE\n   $(m
 T,_colkarkas,_colkarkasvn,,Цвет полок,$(matvn:1)[$(_colkarkasvn:5)] & $(_colkarkasvn:1)!!024 & $(_colkarkasvn:20)[1] & $[datecompare;$(dataordine);$(_colkarkasvn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasvn:23)]=-1 & $(productline:0)[$(_colkarkasvn:24)],,,,,,2
 T,tipshkaf,,,Тип,,,,,,,,,0
 T,varParamSkaf,,,,,,,,,,,,0
-Z,addzoc,, $(shrusal)=1,Цоколь
+Z,addzoc,,$(shrusal:1)=1 | $(shMantera:1)=1,Цоколь
 M,hzoc,,$(addzoc:1)=1,Высота цоколя,,,,40,150
 C,addzoctop,,$(shMantera)=1,Цоколь сверху
 C,hidezoctop,,$(shMantera)=1 & $(addzoctop:1)=1,Убрать цоколь
 M,hzoctop,,$(addzoctop:0)=1,Высота цоколя,,,,40,150
 T,mat_backwall,,,Материал задней стенки,#IF $(shMantera:1)[1] | $(shrusal:1)[1]\n   $(mat_backwall:3)[TSS]\n#ELSE\n   $(mat_backwall:3)[8;10]\n#ENDIF
 C,_backWallDis,,,Убрать задние стенки,,,,,,,,,0
-T,_colkarkas,_colkarkasback,,Цвет задней стенки,#IF $(shMantera)=1\n   MANTERA[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(productline:0)[$(_colkarkasback:24)]\n#ELSE\n   $(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(productline:0)[$(_colkarkasback:24)]\n#ENDIF,,,,,,2
+T,_colkarkas,_colkarkasback,,Цвет задней стенки,$(mat_backwall:3)[$(_colkarkasback:5)] & $(_colkarkasback:1)!!025 & $[datecompare;$(dataordine);$(_colkarkasback:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkasback:23)]=-1 & $(productline:0)[$(_colkarkasback:24)],,,,,,2
 Z,addNogMixal,,,Ножки,,,,,,,,,0
 C,lamp,,$(mat:1)>16 & $p>=300,Врезной светильник,,,,,,,3
 Z,lampleft,,$(lamp:0)=1,Слева,,,,,,,3
