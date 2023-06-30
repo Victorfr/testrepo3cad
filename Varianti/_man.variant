@@ -203,7 +203,7 @@
       "Tipovar": ""
     },
     {
-      "Codvar": "_MAN",
+      "Codvar": "_man",
       "Codopz": "01.02",
       "Des": "Ручка скоба",
       "Memo": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
@@ -936,7 +936,7 @@
       "Codvar": "_man",
       "Codopz": "01.02.186",
       "Des": "Ручка 438",
-      "Memo": "180\t16\t20\t438.3ds\tskoba\t000art438\tart438.jpg\t0\t7331053\t999man438\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
+      "Memo": "180\t16\t20\t438.3ds\tskoba\t000art438\tart438.jpg\t0\t7331053\t999man438\t999VINT5\t2\t02.11.2022\t01.08.2023\t\t",
       "Ges": "",
       "Ordinamento": 0,
       "Extra": "",
@@ -946,7 +946,7 @@
       "Codvar": "_man",
       "Codopz": "01.02.187",
       "Des": "Ручка 439",
-      "Memo": "180\t16\t20\t439.3ds\tskoba\t000art439\tart439.jpg\t0\t7331053\t999man439\t999VINT5\t2\t02.11.2022\t01.01.2100\t\t",
+      "Memo": "180\t16\t20\t439.3ds\tskoba\t000art439\tart439.jpg\t0\t7331053\t999man439\t999VINT5\t2\t02.11.2022\t01.08.2023\t\t",
       "Ges": "",
       "Ordinamento": 0,
       "Extra": "",
