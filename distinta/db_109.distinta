@@ -49,6 +49,7 @@
    #ENDIF
    $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)_1
    #LETS soedMat=1.
+#LETS soedZagstr=_1.
 #ENDIF
 
 
@@ -64,7 +65,7 @@
    #IF $(dl)=16
       #LETS codZag=ZAGLDSPSK16
    #ENDIF
-  
+   
    #IF $(dl)=22
       #LETS codZag=ZAGLDSPSK22
    #ENDIF
@@ -76,7 +77,7 @@
             #LETS codZag=ZAGLDSP14616
             #LETS codZagUp=ZAGLDSPUP16
          #ENDIF
-       #IF $(dl)=18
+         #IF $(dl)=18
             #LETS codZag=ZAGLDSP14618
             #LETS codZagUp=ZAGLDSPUP18
          #ENDIF

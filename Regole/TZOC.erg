@@ -24,7 +24,7 @@ TRADFLAGS=*,*,*,*,*
 [gene]
 T,MODELLO
 S,dataordine,,,,,,,,,,,,0
-S,shMantera,,,Для мантеры
+C,shMantera,,,Для мантеры
 T,_databox,,,,,,,,,,,,0
 T,mat,,,Материал,#IF $(shMantera)[1]\n   $(mat:1)[18]\n#ELSE\n   $(mat:3)[1]\n#ENDIF
 T,_colkarkas,,,Цвет ,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(productline:0)[$(_colkarkas:24)]

@@ -58,6 +58,7 @@
    #ENDIF
    $(codZag),1,$(params),$(dl),$(da),$(dp),,,,,,$(namedet),$(mat)_1
    #LETS soedMat=1.
+   #LETS soedZagstr=_1.
 #ENDIF
 
 
