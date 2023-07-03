@@ -39,10 +39,10 @@ C,shrusal,,,Модуль для Rusal,,,,,,,8
 T,WR,,,,,,,,,,,,0
 T,_TipDoorRasp,_TipDoorRaspFas,$(_ModDoorRasp:3)!0,,$(_TipDoorRaspFas:3)[G]
 M,altMetBox,,$(FPL)!!N,Высота модуля,#IF $(FPL)==N\n   #LETV altMetbox=$a\n#ENDIF
-T,mat,,,Материал модуля,#IF $(shMantera:1)=1 | $(shRusal:0)=1\n   $(mat:1)[16;18]\n#ELSE\n   $(mat:3)=1 & $(mat:1)!25\n#ENDIF
+T,mat,,,Материал модуля,#IF $(shMantera:1)=1 | $(shRusal:0)=1\n   $(mat:1)[16]\n#ELSE\n   $(mat:3)=1 & $(mat:1)!25\n#ENDIF
 T,_colkarkas,,,Цвет модуля,#IF $(shMantera:1)=0\n   $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n#ELSE\n   #IF $(mat:1)[16]\n      $(_colkarkas:1)[133]\n   #ELSE\n      $(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)]\n   #ENDIF\n#ENDIF
 Z,rip_sot,,,Полка снизу,,,,,,,,,0
-C,changeMat,,0,Обклад18мм
+C,changeMat,,$(shMantera:0)=1 | $(shRusal:0)=1,Обклад18мм
 T,mat,mat_krdn,$(changeMat:1)=1,Материал модуля,$(mat_krdn:1)[18]
 T,_colkarkas,_colkarkas_krdn,$(changeMat:1)=1,Цвет модуля,$(mat_krdn:1)[$(_colkarkas_krdn:5)] & $(_colkarkas_krdn:1)!!024 & $(_colkarkas_krdn:20)[1] & $[datecompare;$(dataordine);$(_colkarkas_krdn:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas_krdn:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas_krdn:24)]
 T,falsh_sx,,,Фальш-фасад слева,,,,,,,7
@@ -127,7 +127,7 @@ T,tipshkaf,,,,$(tipshkaf:1)=10,,,,,,,,0
 //300
 //301
 //_SHKAF
-//010
+
 
 //_FASVID
 //_KARKASFAS
@@ -428,7 +428,7 @@ _proverkaPlacer ///зоны пересечения с петлями
       // ************************************************************************
    #ELSE //фасад торцом
       #LET lbokSl=$(mat:1)//$(fasP)
-      #LET dnoSl=$(mat:1)*2//+$(fasP)
+      #LET dnoSl=$(mat:1)*2+102//+$(fasP)
       #LET dnoLarg=$l-$(mat:1)*3//*2-$(fasP)
       #IF $(rip_sot:1)=1
          #LET dnoSl=0
@@ -436,6 +436,9 @@ _proverkaPlacer ///зоны пересечения с петлями
       #ENDIF
       //**********************************************************************
       #LET lOtst=$(mat:1)//$(fasp)
+      #IF $(changeMat:1)=1
+         #LET lOtst=$(mat_krdn:1)
+      #ENDIF
       #IF $(lotstOld)!$(lotst)
          #LET lprov=$l-($(lOtst)+$(potst))
          #LET lotstOld=$(lotst)
@@ -452,6 +455,7 @@ _proverkaPlacer ///зоны пересечения с петлями
       #LET a_falsh_fasad=$a-$(mat:1),sp_falsh_fasad=$(p)
       #IF $(changeMat:1)=1
          #LET a_falsh_fasad=$a-$(mat_krdn:1)
+         #LET lbokSl=$(mat_krdn:1)
       #ENDIF
       #LETV _wr=999v_karkasBokmod
       #LETV _MNP=999v_karkasBokmod
@@ -464,9 +468,14 @@ _proverkaPlacer ///зоны пересечения с петлями
       #IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>1
          #LETS paramsAnta=$(paramsAnta);SDR={$(falshLargPlank)-1};DDR={$(a_falsh_fasad)-$(lBokSA)}
       #ENDIF
-      100,COD= /$(paramsAnta),SA=$(sa_falsh_fasad)+$(lbokSA),SP=$(sp_falsh_fasad)+$(profAdd)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
-      100,COD= /$(paramsAnta),SA=$(sa_falsh_fasad)+$(lBokSA),SP=$(falshLargPlank)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
-      
+      //100,COD= /$(paramsAnta),SA=$(sa_falsh_fasad)+$(lbokSA),SP=$(sp_falsh_fasad)+$(profAdd)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      //100,COD= /$(paramsAnta),SA=$(sa_falsh_fasad)+$(lBokSA),SP=$(falshLargPlank)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(lBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      #IF $(changeMat:1)=1
+         _plankFalshModul,mat=$(mat_krdn),_colkarkas=$(_COLKARKAS_krdn)
+      #ELSE
+         _plankFalshModul
+         
+      #ENDIF
       
       // ************************************************************************
    #ENDIF
@@ -535,6 +544,10 @@ _proverkaPlacer ///зоны пересечения с петлями
       #ENDIF
       //**********************************************************************
       #LET pOtst=$(mat:1)
+      #IF $(changeMat:1)=1
+         #LET pOtst=$(mat_krdn:1)
+         #LET pbokSl=$l-$(mat_krdn:1)-$(mat:1)
+      #ENDIF
       #IF $(potstOld)!$(potst)
          #LET lprov=$l-($(lOtst)+$(potst))
          #LET potstOld=$(potst)
@@ -561,9 +574,13 @@ _proverkaPlacer ///зоны пересечения с петлями
       #IF $(_COLKARKAS:27)=0 & $[ex;$(_COLKARKAS:9);|;3]>1
          #LETS paramsAnta=$(paramsAnta);SDR={$(falshLargPlank)-1};DDR={$(a_falsh_fasad)-$(lBokSA)}
       #ENDIF
-      100,COD= /$(paramsAnta),SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(sp_falsh_fasad)+$(profAdd)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(pBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
-      100,COD= /$(paramsAnta),SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(falshLargPlank)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(pBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
-      
+      //100,COD= /$(paramsAnta),SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(sp_falsh_fasad)+$(profAdd)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(pBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      //100,COD= /$(paramsAnta),SL=$l-$(mat:1),SA=$(sa_falsh_fasad)+$(pBokSa),SP=$(falshLargPlank)-$(falshLargPlank),L=$(mat:1),A=$(a_falsh_fasad)-$(pBokSA),P=$(falshLargPlank),MAN=0,X4=$(_krepeg:3)/$(_colkarkas:6)/$(_colkarkas:7)/$(_colkarkas:16)/$(_colkarkas:9)/$(_colkarkas:11)/0/$(_colkarkas:27)  //Фасад
+      #IF $(changeMat:1)=1
+         _plnkFalshModRight,mat=$(mat_krdn),_colkarkas=$(_COLKARKAS_krdn)
+      #ELSE
+         _plnkFalshModRight
+      #ENDIF
       // ************************************************************************
    #ENDIF
 #ELSE
