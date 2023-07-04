@@ -5424,6 +5424,16 @@
     },
     {
       "Codvar": "_MNP",
+      "Codopz": "S30DOORSTAG",
+      "Des": "$(tipshkaf:8)",
+      "Memo": "790771170",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_MNP",
       "Codopz": "S30FASAD",
       "Des": "Фасад",
       "Memo": "452965744",

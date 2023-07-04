@@ -96,7 +96,7 @@
    
    
    #LETS params=WR=$(WR);MNP=$(MNP);_ckd=$(_ckd);_ckk=$(_ckk);sk=$(krompar);wk=$(krompar);nk=$(krompar);ek=$(krompar)
-   #IF $(petlObr)=1
+   #IF $(petlObr)=1 | $(flagCorrector)[1;2]
       #LETS params=$(params);POP=470043779;LPBR=$(LPBR);IDO=1;IDD=1
    #ENDIF
    #IF $(x5:6)[ZERK]

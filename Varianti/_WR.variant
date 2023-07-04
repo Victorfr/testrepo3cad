@@ -5684,6 +5684,16 @@
     },
     {
       "Codvar": "_WR",
+      "Codopz": "S30DOORSTAG",
+      "Des": "$(tipshkaf:8)",
+      "Memo": "517593995",
+      "Ges": "",
+      "Ordinamento": 0,
+      "Extra": "",
+      "Tipovar": ""
+    },
+    {
+      "Codvar": "_WR",
       "Codopz": "S30FASAD",
       "Des": "Фасад",
       "Memo": "403912114",
