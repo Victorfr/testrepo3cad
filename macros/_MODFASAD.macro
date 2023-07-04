@@ -8,6 +8,7 @@ man_overridepos
    #LETS _wr:2=$(namebokfas)
    //$(_wr:2)
 #ENDIF
+
 #IF $(_ModDoorRasp:7)[DSP]
    #IF $(_ModDoorRasp:1)[S12;E02;D02] //для меоделей  у которых выбирается кромка отдельно	 заменим параметр в варианте( так как в самом варе используется без индекса)
       #LETS _colkarkas:7=$(_COLKROM:5)
@@ -36,8 +37,13 @@ man_overridepos
       025	COD= / /$ax$l	SL=$l/2-75	SA=$a/2-50	L=150	A=100	lato=$(show_num)  //	lato=$(show_num)  //Номер детали
    #ELSE //глухой фасад
       #IF $(_ModDoorRasp:1)[s24;s30] //зеркала на подложке
-         #IF $(petlObr)!1
+         
+         #IF $(petlObr)!1 & not($(flagCorrector)[1;2;3])
             #LET idd=
+         #ENDIF
+         #IF $(flagCorrector)[1;2;3] //для дверей с  корректором меняется маршрут и тип товара
+            #LETV _MNP=$(cod)STAG
+            #LETV _WR=$(cod)STAG
          #ENDIF
          //_PARAMANTASTR
          #LETS x5par=0/0/0/$(matvstav:6)/$(cvetvstav:9)/$(_colkarkas:10)
