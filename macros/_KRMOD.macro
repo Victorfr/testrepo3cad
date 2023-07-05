@@ -1,6 +1,18 @@
 #LETV _wr=999k_karkasKrmod
 #LETV _MNP=999k_karkasKrmod
 #LETS sk=$(_colkarkas:10)	wk=$(_colkarkas:10)	nk=$(_colkarkas:10)	ek=$(_colkarkas:10)
-013	sa=$a-$(mat:0)	p=$p+$(profAdd)	sl=0	l=$L
+
+#LET slKr=0
+#LET lKr=$l
+#IF $(overLeft:0)=1
+   #LET slKr=-$(mat:0)
+   #LET lKr=$(lKr)+$(mat:0)
+#ENDIF
+#IF $(overRight:0)=1
+   #LET lKr=$(lKr)+$(mat:0)
+#ENDIF
+
+
+013	sa=$a-$(mat:0)	p=$p+$(profAdd)	sl=$(slKr)	l=$(lKr)
 //_agg_krep_mod	p=$(p)	detMod=1
 _AGG_KREP_mod	p=$(p)	multiCount=2

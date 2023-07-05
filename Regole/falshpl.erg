@@ -25,7 +25,8 @@ TRADFLAGS=*,*,*,*
 T,MODELLO
 S,dataordine,,,,,,,,,,,,0
 T,_databox,,,,,,,,,,,,0
-T,mat,,,,$(mat:1)[16;22]
+C,shMantera,,,Äëÿ Mantera
+T,mat,,,,#IF $(shMantera:0)=1\n   $(mat:1)[18]\n#ELSE\n   $(mat:1)[16;22]\n#ENDIF
 T,_colkarkas,,,,$(mat:1)[$(_colkarkas:5)] & $(_colkarkas:1)!!024 & $(_colkarkas:20)[1] & $[datecompare;$(dataordine);$(_colkarkas:22)]>=0 & $[datecompare;$(dataordine);$(_colkarkas:23)]=-1 & $(PRODUCTLINE:0)[$(_colkarkas:24)] 
 
 [GRAFICA]
