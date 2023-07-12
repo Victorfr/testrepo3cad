@@ -1,45 +1,49 @@
 #IF $(flagCorrector)[1] | $(correctorType)[1;2]
-#LETV correctorCheck={$(flagCorrector)}
-#IF $(correctorType)[1]
-#LETV correctorCheck=1
-#ENDIF
-///если стоит флак корректора что дверь топлайн то меняется значение корректоров на дверь
-#IF $(correctorType)[2]
-#LETV correctorCheck=2
-#ENDIF
+   #LETV correctorCheck={$(flagCorrector)}
+   #IF $(correctorType)[1]
+      #LETV correctorCheck=1
+   #ENDIF
+   ///если стоит флак корректора что дверь топлайн то меняется значение корректоров на дверь
+   #IF $(correctorType)[2]
+      #LETV correctorCheck=2
+   #ENDIF
 #ELSE
-#LETV correctorCheck=X
+   #LETV correctorCheck=X
 #ENDIF
 #IF $(correctorCount)!!X
-#LET countCOr=rnd({$(correctorCount)}/2)
-#IF $(flagCorrector)[2]
-//  #LET countCor=$(countCor)*2
-#ENDIF
-///добавим корректор как дистинту типологии
-#LETV _wr=TL1DOPFUR
-400	COD=TL1DOPFUR /FPL=$(FPL);WR=$(_WR:3) /Комплект стяжек-выпрямителей  (2шт.) /#L-1#Q$(countCOr)	A=$A-200	P=5	X4=STAGCOR  //Фурнитура
-//001	LATO=6	COD=999stagcor /TD=536 /Корректор для распашных дверей /#Q$(countCor)	A=$A-200	P=5  //Test
-//napr
+   #LET countCOr=rnd({$(correctorCount)}/2)
+   #IF $(flagCorrector)[2]
+      //  #LET countCor=$(countCor)*2
+   #ENDIF
+   ///добавим корректор как дистинту типологии
+   #LETV _wr=TL1DOPFUR
+   #LETS flagTd=536
+   #IF $(_MODDOORRASP:1)[S30]
+      #LETS flagTd=
+   #ENDIF
+   400	COD=TL1DOPFUR /FPL=$(FPL);WR=$(_WR:3);TD=$(flagTD) /Комплект стяжек-выпрямителей  (2шт.) /#L-1#Q$(countCOr)	A=$A-200	P=5	X4=STAGCOR  //Фурнитура
+   //001	LATO=6	COD=999stagcor /TD=536 /Корректор для распашных дверей /#Q$(countCor)	A=$A-200	P=5  //Test
+   //napr
 #ENDIF
 #IF $(_MODDOORRASP:1)[s01;s08;s26]
-#IF $(naborkras)!!X
-//001	LATO=6	COD=999NABREMKRAS /OCF=$(naborkras) /Комплект для ремонта крашеных фасадов /#L-1	L=1	A=1	P=1  //Test
-#LETV _WR=999remfas
-#LETV _MNP=999remfas
-//псевдотовар для маршрута и типа товара
-001	LATO=6	COD=999remfas /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(naborkras);FPL=$(FPL) /$(_wr:2) /#L-1	L=1	A=1	P=1  //Test
-//товар в мр3
-001	LATO=6	COD=999kompremfas /CFK=$(naborkras)	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999gofrYashF	L=1	A=1	P=1  //Test
-#ENDIF
-#IF 0
-#IF $(naborpat)!!X
-#LETV _WR=999remfaspat
-#LETV _MNP=999remfaspat
-//псевдотовар для маршрута и типа товара
-001	LATO=6	COD=999remfaspat /MNP=$(_MNP:3);WR=$(_wr:3);PTN=$(naborpat);FPL=$(FPL) /$(_wr:2) /#L-1	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999komprempat /PTN=$(naborpat)	L=1	A=1	P=1  //Test
-001	LATO=6	COD=999gofrYashF	L=1	A=1	P=1  //Test
-#ENDIF
-#ENDIF
+   #IF $(naborkras)!!X
+      //001	LATO=6	COD=999NABREMKRAS /OCF=$(naborkras) /Комплект для ремонта крашеных фасадов /#L-1	L=1	A=1	P=1  //Test
+      #LETV _WR=999remfas
+      #LETV _MNP=999remfas
+      //псевдотовар для маршрута и типа товара
+      001	LATO=6	COD=999remfas /MNP=$(_MNP:3);WR=$(_wr:3);CFK=$(naborkras);FPL=$(FPL) /$(_wr:2) /#L-1	L=1	A=1	P=1  //Test
+      //товар в мр3
+      001	LATO=6	COD=999kompremfas /CFK=$(naborkras)	L=1	A=1	P=1  //Test
+      001	LATO=6	COD=999gofrYashF	L=1	A=1	P=1  //Test
+   #ENDIF
+   #IF 0
+      #IF $(naborpat)!!X
+         #LETV _WR=999remfaspat
+         #LETV _MNP=999remfaspat
+         //псевдотовар для маршрута и типа товара
+         001	LATO=6	COD=999remfaspat /MNP=$(_MNP:3);WR=$(_wr:3);PTN=$(naborpat);FPL=$(FPL) /$(_wr:2) /#L-1	L=1	A=1	P=1  //Test
+         001	LATO=6	COD=999komprempat /PTN=$(naborpat)	L=1	A=1	P=1  //Test
+         001	LATO=6	COD=999gofrYashF	L=1	A=1	P=1  //Test
+      #ENDIF
+   #ENDIF
 #ENDIF
