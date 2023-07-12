@@ -1,38 +1,75 @@
 #IF $(pasp_count)=0
-#LETV AllCount_pasp=0
+   #LETV AllCount_pasp=0
 #ENDIF
 #LETS cod_pasport=
+#LETS MR3BRANDID=0
+#LETS CRMUSER=0
+#VB
+   v("addednumber")=Ambiente.tnumero
+#ENDVB
+#VB
+   set g=Ambiente.GetObject("GLOBAL")
+   V("PercorsoOrdini")=g.PercorsoOrdini
+#ENDVB
+#LETS strPathname=$(PercorsoOrdini)\metadata$(addednumber).xml
+#LETS filetest=$[dir;$(strPathname)]
+#IF $(filetest)[1]
+   #VB
+      Dim xmlDoc: Set xmlDoc = CreateObject("MSXML2.DOMDocument")
+      xmlDoc.load (V("strpathname"))
+      strSearch = "ProjectMetadata"
+      Dim currNode: set currNode=xmlDoc.getElementsByTagName(strsearch)
+      for each node in currNode
+         
+         strName="MR3BRANDID"
+         Dim data: set data = node.getElementsByTagName(strName)
+         
+         for each el in data
+            V("MR3BRANDID")=el.text
+         next
+      next
+   #ENDVB
+#ENDIF
+#LETS askonaid=768201550;768201196
+
+
 #IF $(productLine)==MARIA_SHKAF
-// ********************* шильдик *********************************
-001	LATO=6	COD=999shildM	L=1	A=1	P=1  // Test
-// ***************************************************************
-#LETS cod_pasport=999pasport_sh
+   // ********************* шильдик *********************************
+   001	LATO=6	COD=999shildM	L=1	A=1	P=1  // Test
+   // ***************************************************************
+   #LETS cod_pasport=999pasport_sh
+   #IF $(MR3BRANDID)[$(askonaid)]
+      #LETS cod_pasport=999pasport_sh_ask
+   #ENDIF
 #ELSEIF $(productLine)==ELDOR_SHKAF
-#LETS cod_pasport=999pasport_sh_el
+   #LETS cod_pasport=999pasport_sh_el
 #ELSEIF $(productLine)==EDDOM_SHKAF
-#LETS cod_pasport=999pasport_sh_ed
+   #LETS cod_pasport=999pasport_sh_ed
+   #IF $(MR3BRANDID)[$(askonaid)]
+      #LETS cod_pasport=999pasport_sh_ask
+   #ENDIF
 #ELSEIF $(productLine)==TVDOM_SHKAF
-#LETS cod_pasport=999pasport_sh_td
+   #LETS cod_pasport=999pasport_sh_td
 #ENDIF
 #IF $(AllCount_pasp)>0
-001	LATO=6	COD=$(cod_pasport)	L=1	A=1	P=1  // Test
+   001	LATO=6	COD=$(cod_pasport)	L=1	A=1	P=1  // Test
 #ENDIF
 #IF $(furNabor)!!X
-#LETV _wr=999NAB_FUR_OST
-#IF $(TIPSHKAF:6)=1
-#LETV _wr=999NAB_FUR_VST
-#ENDIF
-#IF $(TIPSHKAF:1)[9;10]
-#LETV _wr=999NAB_FUR_LIV
-#ENDIF
-056  //Наборы
+   #LETV _wr=999NAB_FUR_OST
+   #IF $(TIPSHKAF:6)=1
+      #LETV _wr=999NAB_FUR_VST
+   #ENDIF
+   #IF $(TIPSHKAF:1)[9;10]
+      #LETV _wr=999NAB_FUR_LIV
+   #ENDIF
+   056  //Наборы
 #ENDIF
 #IF $(TIPSHKAF:1)[2]
-#IF $(allScUp:0)>0
-#LETS codLenta=9993MGRPH
-001	LATO=6	COD=$(codLenta)	L=1	A=1	P=1  // Test
-#ENDIF
+   #IF $(allScUp:0)>0
+      #LETS codLenta=9993MGRPH
+      001	LATO=6	COD=$(codLenta)	L=1	A=1	P=1  // Test
+   #ENDIF
 #ENDIF
 #IF $(TIPSHKAF:1)[12]
-001	LATO=6	COD=999mxRemKom /TD=536 /MIXAL 601002 ремкомплект для профиля	L=1	A=1	P=1  //Test
+   001	LATO=6	COD=999mxRemKom /TD=536 /MIXAL 601002 ремкомплект для профиля	L=1	A=1	P=1  //Test
 #ENDIF
