@@ -39,6 +39,8 @@ Dim correctorraspzerk
 Dim testVar
 Dim idzerk
 '------------зполнение массива данными из вариантов---------
+idsection=9999
+idzerk=9999
 for i=0 to xamb.nbox-1
    set x=xamb.box(i)
    'msgbox x.varREgola("tipshkaf")&" "&i
@@ -72,20 +74,24 @@ for i=0 to xamb.nbox-1
  x.varREgola("correctorCount")="X"
  next
 
-set x=xamb.box(idsection)
-x.varREgola("correctorCount")=correctorCount
-set x=xamb.box(idzerk)
-x.varREgola("correctorCount")=correctorraspzerk
+
 for i=0 to xamb.nbox-1
  set x=xamb.box(i)
  
  if i=idsection  then
-		'x.varREgola("correctorCount")=correctorCount
+		x.varREgola("correctorCount")=correctorCount
 		else
 		'x.varREgola("correctorCount")="X"
  end if
   if i=idzerk  then
-		'x.varREgola("correctorCount")=correctorraspzerk
+		x.varREgola("correctorCount")=correctorraspzerk
+		else
+		'x.varREgola("correctorCount")="X"
+ end if
+next 
+
+end function
+a("correctorCount")=correctorraspzerk
 		else
 		'x.varREgola("correctorCount")="X"
  end if
