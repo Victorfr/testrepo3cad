@@ -89,12 +89,5 @@ for i=0 to xamb.nbox-1
 		'x.varREgola("correctorCount")="X"
  end if
 next 
-
 end function
-a("correctorCount")=correctorraspzerk
-		else
-		'x.varREgola("correctorCount")="X"
- end if
-next 
 
-end function
